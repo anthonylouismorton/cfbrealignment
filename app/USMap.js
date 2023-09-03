@@ -2,10 +2,14 @@
 import { useEffect } from 'react';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
-import mapdata from './mapData.json'
-import conferenceData from './conferenceData.json'
+import mapdata from './mapData.json';
+import conferenceData from './conferenceData.json';
+import { getSchools } from './getSchools';
+import Year from './Year';
+import Legend from './Legend';
 
 function USMap() {
+  
   useEffect(() => {
     const width = 975;
     const height = 610;
@@ -14,7 +18,7 @@ function USMap() {
       .select('#map')
       .append('svg')
       .attr('width', width)
-      .attr('height', height)
+      .attr('height', 610)
       .attr('viewBox', [0, 0, 975, 610])
       .attr('style', 'width: 100%; height: auto; height: intrinsic;');
     
@@ -29,7 +33,8 @@ function USMap() {
       .append('path')
       .datum(topojson.feature(mapdata, mapdata.objects.nation))
       .attr('d', d3.geoPath());
-
+      
+    const fillStates = getSchools(svg, projection, conferenceData[0].schools);
     const state = svg
       .append('g')
       .attr('stroke', 'black')
@@ -38,42 +43,24 @@ function USMap() {
       .data(topojson.feature(mapdata, mapdata.objects.states).features)
       .join('path')
       .attr('vector-effect', 'non-scaling-stroke')
-      .attr('d', d3.geoPath());
-    console.log(conferenceData[0].schools)
-    const secSchools = conferenceData[0].schools
-    secSchools.forEach((school) => {
-      const schoolCords = [school.lat, school.lon];
-      const [x, y] = projection(schoolCords);
-      svg
-        .append('circle')
-        .attr('cx', x)
-        .attr('cy', y)
-        .attr('r', 2)
-        .attr('fill', 'red');
+      .attr('d', d3.geoPath())
+      .style('fill', (d) => {
+        if (fillStates.includes(d.id)) {
+          return 'rgba(0, 75, 141, 90)'; // Adjust the color and opacity as needed
+        } else {
+          return 'white'; // This will make states not in the array transparent
+        }
+      });      
 
-      svg
-        .append('text')
-        .attr('x', x + 5)  // Adjust the position as needed
-        .attr('y', y)
-        .attr('dy', '0.35em')  // Vertical alignment
-        .text(school.school)
-        .attr('fill', 'black')
-        .attr('font-size', '10px');
-    });
-    // const phoenixCoords = [-87.3246, 33.1239];
-    // const [x, y] = projection(phoenixCoords);
-    // svg
-    //   .append('circle')
-    //   .attr('cx', x)
-    //   .attr('cy', y)
-    //   .attr('r', 2)
-    //   .attr('fill', 'red');
-
-      
+      getSchools(svg, projection, conferenceData[0].schools)
   }, [mapdata]);
 
   return (
-    <div id="map"></div>
+    <div style={{ position: 'relative' }}>
+      <div id="map"></div>
+      <Year year={2023} />
+      <Legend/>
+    </div>
   );
 }
 
