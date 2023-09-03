@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 
 const conferenceColors = {
   "SEC": "rgba(0, 75, 141, 90)",
-  "Conference B": "#33FF57",
+  "PCC": "rgba(210, 180, 140, 90)",
   "Conference C": "#5733FF",
 };
 

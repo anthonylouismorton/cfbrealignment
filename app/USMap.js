@@ -1,14 +1,21 @@
 "use client"
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 import mapdata from './mapData.json';
 import conferenceData from './conferenceData.json';
 import { getSchools } from './getSchools';
+import { mapFill } from './mapFill';
 import Year from './Year';
 import Legend from './Legend';
 
 function USMap() {
+  const [year, setYear] = useState(1915);
+  const conferenceColors = [
+    { school: "Southeastern Conference", color: "rgba(0, 75, 141, 0.90)" },
+    { school: "Pac-12", color: "rgba(210, 180, 140, 0.90)" },
+    { school: "Conference C", color: "#5733FF" },
+  ];
   
   useEffect(() => {
     const width = 975;
@@ -34,7 +41,11 @@ function USMap() {
       .datum(topojson.feature(mapdata, mapdata.objects.nation))
       .attr('d', d3.geoPath());
       
-    const fillStates = getSchools(svg, projection, conferenceData[0].schools);
+    const fillStates = getSchools(svg, projection, conferenceData, year);
+    const stateConferenceMap = {};
+    fillStates.forEach((item) => {
+        stateConferenceMap[item.state] = item.conference;
+      });
     const state = svg
       .append('g')
       .attr('stroke', 'black')
@@ -45,20 +56,23 @@ function USMap() {
       .attr('vector-effect', 'non-scaling-stroke')
       .attr('d', d3.geoPath())
       .style('fill', (d) => {
-        if (fillStates.includes(d.id)) {
-          return 'rgba(0, 75, 141, 90)'; // Adjust the color and opacity as needed
+        const conference = stateConferenceMap[d.id];
+        if (conference) {
+          // Use the conference's color here, e.g., based on your conferenceColors array
+          const color = conferenceColors.find((c) => c.school === conference);
+          return color ? color.color : 'white'; // Default to white if no color is found
         } else {
           return 'white'; // This will make states not in the array transparent
         }
       });      
 
-      getSchools(svg, projection, conferenceData[0].schools)
-  }, [mapdata]);
+      getSchools(svg, projection, conferenceData, year)
+  }, [mapdata, year]);
 
   return (
     <div style={{ position: 'relative' }}>
       <div id="map"></div>
-      <Year year={2023} />
+      <Year year={year} setYear={setYear} />
       <Legend/>
     </div>
   );

@@ -1,6 +1,8 @@
-export function getSchools(svg, projection, schools, year) {
+export function mapFill(svg, projection, schools, year) {
+  console.log(schools)
   var currentConferences = []
   schools.forEach((conference) => {
+    console.log(conference.founded, year, conference.disbanded )
     if(conference.founded <= year && (conference.disbanded === null || conference.disbanded > year)){
       currentConferences.push(conference)
     }
@@ -9,8 +11,9 @@ export function getSchools(svg, projection, schools, year) {
 
   currentConferences.forEach((conference) => {
     conference.schools.forEach((school) => {
+      console.log(school)
       if(!schoolStates.includes(school.stateId)){
-        schoolStates.push({state: school.stateId, conference: conference.conference})
+        schoolStates.push(school.stateId)
       }
       const schoolCords = [school.lat, school.lon];
       const [x, y] = projection(schoolCords);
@@ -33,11 +36,3 @@ export function getSchools(svg, projection, schools, year) {
   });
   return schoolStates
 }
-// svg
-//   .append('text')
-//   .attr('x', x - 5)
-//   .attr('y', y + 10)
-//   .attr('dy', '0.35em')
-//   .text(school.nickName)
-//   .attr('fill', 'red')
-//   .attr('font-size', '10px');

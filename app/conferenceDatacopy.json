@@ -236,111 +236,852 @@
     "schools": [
       {
         "school": "University of Arizona",
-        "stateId": "04",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Arizona_Wildcats_logo.svg/1200px-Arizona_Wildcats_logo.svg.png",
         "division": "South",
-        "lat": -110.9489,
-        "lon": 32.2288,
+        "lat": -86.804972,
+        "lon": 36.148649,
         "years": [1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023]
       },
       {
         "school": "Arizona State University",
-        "stateId": "04",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Arizona_State_Sun_Devils_logo.svg/150px-Arizona_State_Sun_Devils_logo.svg.png",
         "division": "South",
-        "lat": -111.9326,
-        "lon": 33.4625,
+        "lat": -86.804972,
+        "lon": 36.148649,
         "years": [1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023]
       },
       {
         "school": "University of California, Berkeley",
-        "stateId": "06",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/0/03/Cal_logo.png",
         "division": "North",
-        "lat": -122.2508,
-        "lon": 37.8707,
+        "lat": -86.804972,
+        "lon": 36.148649,
         "years": [1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023]
       },
       {
         "school": "University of California, Los Angeles (UCLA)",
-        "stateId": "06",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/UCLA_Bruins_logo.svg/220px-UCLA_Bruins_logo.svg.png",
         "division": "South",
-        "lat": -118.168,
-        "lon": 34.161,
+        "lat": -86.804972,
+        "lon": 36.148649,
         "years": [1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023]
       },
       {
         "school": "University of Colorado Boulder",
-        "stateId": "08",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Colorado_Buffaloes_logo.svg/300px-Colorado_Buffaloes_logo.svg.png",
         "division": "South",
-        "lat": -105.267,
-        "lon": 40.009,
+        "lat": -86.804972,
+        "lon": 36.148649,
         "years": [2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023]
       },
       {
         "school": "University of Oregon",
-        "stateId": "41",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Oregon_Ducks_logo.svg/1200px-Oregon_Ducks_logo.svg.png",
         "division": "North",
-        "lat": -123.47,
-        "lon": 44.330,
+        "lat": -86.804972,
+        "lon": 36.148649,
         "years": [1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023]
       },
       {
         "school": "Oregon State University",
-        "stateId": "41",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Oregon_State_Beavers_logo.svg/1200px-Oregon_State_Beavers_logo.svg.png",
         "division": "North",
-        "lat": -123.163180,
-        "lon": 44.332039,
+        "lat": -86.804972,
+        "lon": 36.148649,
         "years": [1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023]
       },
       {
         "school": "Stanford University",
-        "stateId": "06",
         "logo": "https://identity.stanford.edu/wp-content/uploads/sites/3/2020/07/block-s-right.png",
         "division": "North",
-        "lat": -122.1701,
-        "lon": 37.4277,
+        "lat": -86.804972,
+        "lon": 36.148649,
         "years": [1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023]
       },
       {
         "school": "University of Southern California (USC)",
-        "stateId": "06",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/USC_Trojans_logo.svg/1200px-USC_Trojans_logo.svg.png",
         "division": "South",
-        "lat": -118.2851,
-        "lon": 34.0224,
+        "lat": -86.804972,
+        "lon": 36.148649,
         "years": [1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023]
       },
       {
         "school": "University of Utah",
-        "stateId": "49",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Utah_Utes_logo.svg/2242px-Utah_Utes_logo.svg.png",
         "division": "South",
-        "lat": -111.8421,
-        "lon": 40.7649,
+        "lat": -86.804972,
+        "lon": 36.148649,
         "years": [2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023]
       },
       {
         "school": "University of Washington",
-        "stateId": "53",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/3/36/University_of_Washington_Block_W_logo_RGB_brand_colors.SVG",
         "division": "North",
-        "lat": -122.3075,
-        "lon": 47.6546,
+        "lat": -86.804972,
+        "lon": 36.148649,
         "years": [1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023]
       },
       {
         "school": "Washington State University",
-        "stateId": "53",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/07/Washington_State_Cougars_logo.svg/1200px-Washington_State_Cougars_logo.svg.png",
         "division": "North",
-        "lat": -117.1745,
-        "lon": 46.7298,
+        "lat": -86.804972,
+        "lon": 36.148649,
         "years": [1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023]
+      }
+    ]
+  },
+  {
+    "conference": "Big Ten",
+    "founded": 1896,
+    "logo": null,
+    "headquarters": "Rosemont, Illinois",
+    "formerNames": [
+      {
+        "name": "Intercollegiate Conference of Faculty Representatives (ICFR)",
+        "startYear": 1896,
+        "endYear": 1899
+      },
+      {
+        "name": "Western Conference",
+        "startYear": 1899,
+        "endYear": 1917
+      }
+    ],
+    "schools": [
+      {
+        "school": "University of Illinois Urbana-Champaign",
+        "division": "West",
+        "joined": 1896
+      },
+      {
+        "school": "Indiana University Bloomington",
+        "division": "East",
+        "joined": 1899
+      },
+      {
+        "school": "University of Iowa",
+        "division": "West",
+        "joined": 1899
+      },
+      {
+        "school": "University of Maryland",
+        "division": "East",
+        "joined": 2014
+      },
+      {
+        "school": "University of Michigan",
+        "division": "East",
+        "joined": 1896
+      },
+      {
+        "school": "Michigan State University",
+        "division": "East",
+        "joined": 1950
+      },
+      {
+        "school": "University of Minnesota",
+        "division": "West",
+        "joined": 1896
+      },
+      {
+        "school": "University of Nebraska-Lincoln",
+        "division": "West",
+        "joined": 2011
+      },
+      {
+        "school": "Northwestern University",
+        "division": "West",
+        "joined": 1896
+      },
+      {
+        "school": "Ohio State University",
+        "division": "East",
+        "joined": 1912
+      },
+      {
+        "school": "Pennsylvania State University (Penn State)",
+        "division": "East",
+        "joined": 1993
+      },
+      {
+        "school": "Purdue University",
+        "division": "West",
+        "joined": 1896
+      },
+      {
+        "school": "Rutgers University",
+        "division": "East",
+        "joined": 2014
+      },
+      {
+        "school": "University of Wisconsin-Madison",
+        "division": "West",
+        "joined": 1896
+      }
+    ]
+  },
+  {
+    "conference": "Big 12",
+    "founded": 1996,
+    "logo": null,
+    "headquarters": "Irving, Texas",
+    "formerNames": [
+      {
+        "name": "Big Eight Conference",
+        "startYear": 1907,
+        "endYear": 1996
+      },
+      {
+        "name": "Big 12 Conference",
+        "startYear": 1996,
+        "endYear": 2021
+      }
+    ],
+    "schools": [
+      {
+        "school": "Baylor University",
+        "division": " ",
+        "joined": 1996
+      },
+      {
+        "school": "Iowa State University",
+        "division": " ",
+        "joined": 1996
+      },
+      {
+        "school": "University of Kansas",
+        "division": " ",
+        "joined": 1996
+      },
+      {
+        "school": "Kansas State University",
+        "division": " ",
+        "joined": 1996
+      },
+      {
+        "school": "University of Missouri",
+        "division": " ",
+        "joined": 1907,
+        "left": 2012
+      },
+      {
+        "school": "University of Nebraska-Lincoln",
+        "division": " ",
+        "joined": 1907,
+        "left": 2011
+      },
+      {
+        "school": "University of Oklahoma",
+        "division": " ",
+        "joined": 1996
+      },
+      {
+        "school": "Oklahoma State University",
+        "division": " ",
+        "joined": 1996
+      },
+      {
+        "school": "Texas Christian University (TCU)",
+        "division": " ",
+        "joined": 2012
+      },
+      {
+        "school": "University of Texas at Austin",
+        "division": " ",
+        "joined": 1996
+      },
+      {
+        "school": "Texas Tech University",
+        "division": " ",
+        "joined": 1996
+      },
+      {
+        "school": "West Virginia University",
+        "division": " ",
+        "joined": 2012
+      }
+    ]
+  },
+  {
+    "conference": "ACC",
+    "founded": 1953,
+    "logo": null,
+    "headquarters": "Greensboro, North Carolina",
+    "formerNames": [
+      {
+        "name": "Southern Conference",
+        "startYear": 1921,
+        "endYear": 1953
+      }
+    ],
+    "schools": [
+      {
+        "school": "Boston College",
+        "division": "Atlantic",
+        "joined": 2005
+      },
+      {
+        "school": "Clemson University",
+        "division": "Atlantic",
+        "joined": 1953
+      },
+      {
+        "school": "Duke University",
+        "division": "Coastal",
+        "joined": 1953
+      },
+      {
+        "school": "Florida State University",
+        "division": "Atlantic",
+        "joined": 1991
+      },
+      {
+        "school": "Georgia Institute of Technology (Georgia Tech)",
+        "division": "Coastal",
+        "joined": 1979
+      },
+      {
+        "school": "University of Louisville",
+        "division": "Atlantic",
+        "joined": 2014
+      },
+      {
+        "school": "University of Miami",
+        "division": "Coastal",
+        "joined": 2004
+      },
+      {
+        "school": "University of North Carolina at Chapel Hill",
+        "division": "Coastal",
+        "joined": 1953
+      },
+      {
+        "school": "North Carolina State University",
+        "division": "Atlantic",
+        "joined": 1953
+      },
+      {
+        "school": "University of Notre Dame",
+        "division": "Atlantic",
+        "joined": 2020
+      },
+      {
+        "school": "University of Pittsburgh",
+        "division": "Coastal",
+        "joined": 2013
+      },
+      {
+        "school": "Syracuse University",
+        "division": "Atlantic",
+        "joined": 2013
+      },
+      {
+        "school": "University of Virginia",
+        "division": "Coastal",
+        "joined": 1953
+      },
+      {
+        "school": "Virginia Polytechnic Institute and State University (Virginia Tech)",
+        "division": "Coastal",
+        "joined": 2004
+      },
+      {
+        "school": "Wake Forest University",
+        "division": "Atlantic",
+        "joined": 1953
+      }
+    ]
+  },
+  {
+    "conference": "American Athletic Conference (AAC)",
+    "founded": 2013,
+    "logo": null,
+    "headquarters": "Providence, Rhode Island",
+    "formerNames": [
+      {
+        "name": "Big East Conference",
+        "startYear": 1979,
+        "endYear": 2013
+      },
+      {
+        "name": "American Athletic Conference (AAC)",
+        "startYear": 2013,
+        "endYear": 2021
+      }
+    ],
+    "schools": [
+      {
+        "school": "University of Central Florida",
+        "division": "East",
+        "joined": 2013
+      },
+      {
+        "school": "University of Cincinnati",
+        "division": "East",
+        "joined": 2013
+      },
+      {
+        "school": "University of Connecticut",
+        "division": "East",
+        "joined": 2013,
+        "left": 2020
+      },
+      {
+        "school": "East Carolina University",
+        "division": "East",
+        "joined": 2014
+      },
+      {
+        "school": "University of Houston",
+        "division": "West",
+        "joined": 2013
+      },
+      {
+        "school": "University of Memphis",
+        "division": "West",
+        "joined": 2013
+      },
+      {
+        "school": "University of South Florida",
+        "division": "East",
+        "joined": 2013
+      },
+      {
+        "school": "Southern Methodist University (SMU)",
+        "division": "West",
+        "joined": 2013
+      },
+      {
+        "school": "Temple University",
+        "division": "East",
+        "joined": 2013
+      },
+      {
+        "school": "Tulane University",
+        "division": "West",
+        "joined": 2014
+      },
+      {
+        "school": "Tulsa University",
+        "division": "West",
+        "joined": 2014
+      },
+      {
+        "school": "Wichita State University",
+        "division": "West",
+        "joined": 2017
+      }
+    ]
+  },
+  {
+    "conference": "Mid-American Conference (MAC)",
+    "founded": 1946,
+    "logo": null,
+    "headquarters": "Cleveland, Ohio",
+    "formerNames": [
+      {
+        "name": "Mid-American Conference (MAC)",
+        "startYear": 1946,
+        "endYear": 2021
+      }
+    ],
+    "schools": [
+      {
+        "school": "Akron University",
+        "division": "East",
+        "joined": 1992
+      },
+      {
+        "school": "Ball State University",
+        "division": "West",
+        "joined": 1973
+      },
+      {
+        "school": "Bowling Green State University",
+        "division": "East",
+        "joined": 1952
+      },
+      {
+        "school": "University at Buffalo",
+        "division": "East",
+        "joined": 1998
+      },
+      {
+        "school": "Central Michigan University",
+        "division": "West",
+        "joined": 1971
+      },
+      {
+        "school": "Eastern Michigan University",
+        "division": "West",
+        "joined": 1971
+      },
+      {
+        "school": "Kent State University",
+        "division": "East",
+        "joined": 1951
+      },
+      {
+        "school": "Miami University",
+        "division": "East",
+        "joined": 1947
+      },
+      {
+        "school": "Northern Illinois University",
+        "division": "West",
+        "joined": 1975
+      },
+      {
+        "school": "Ohio University",
+        "division": "East",
+        "joined": 1946
+      },
+      {
+        "school": "University of Toledo",
+        "division": "West",
+        "joined": 1950
+      },
+      {
+        "school": "Western Michigan University",
+        "division": "West",
+        "joined": 1947
+      }
+    ]
+  },
+  {
+    "conference": "Conference USA (C-USA)",
+    "founded": 1995,
+    "logo": null,
+    "headquarters": "Irving, Texas",
+    "formerNames": [
+      {
+        "name": "Metro Conference",
+        "startYear": 1975,
+        "endYear": 1995
+      },
+      {
+        "name": "Conference USA (C-USA)",
+        "startYear": 1995,
+        "endYear": 2021
+      }
+    ],
+    "schools": [
+      {
+        "school": "University of Alabama at Birmingham (UAB)",
+        "division": "East",
+        "joined": 1995,
+        "left": 2012
+      },
+      {
+        "school": "Florida Atlantic University",
+        "division": "East",
+        "joined": 2005
+      },
+      {
+        "school": "Florida International University",
+        "division": "East",
+        "joined": 2013
+      },
+      {
+        "school": "Louisiana Tech University",
+        "division": "West",
+        "joined": 2013
+      },
+      {
+        "school": "Marshall University",
+        "division": "East",
+        "joined": 1997
+      },
+      {
+        "school": "University of North Carolina at Charlotte",
+        "division": "East",
+        "joined": 2013
+      },
+      {
+        "school": "University of North Texas",
+        "division": "West",
+        "joined": 2013
+      },
+      {
+        "school": "Old Dominion University",
+        "division": "East",
+        "joined": 2013
+      },
+      {
+        "school": "Rice University",
+        "division": "West",
+        "joined": 2005
+      },
+      {
+        "school": "University of Southern Mississippi",
+        "division": "West",
+        "joined": 1995
+      },
+      {
+        "school": "University of Texas at El Paso (UTEP)",
+        "division": "West",
+        "joined": 2005
+      },
+      {
+        "school": "University of Texas at San Antonio (UTSA)",
+        "division": "West",
+        "joined": 2013
+      },
+      {
+        "school": "Western Kentucky University",
+        "division": "East",
+        "joined": 2014
+      }
+    ]
+  },
+  {
+    "conference": "Mountain West Conference (MWC)",
+    "founded": 1999,
+    "logo": null,
+    "headquarters": "Colorado Springs, Colorado",
+    "formerNames": [
+      {
+        "name": "Western Athletic Conference (WAC)",
+        "startYear": 1962,
+        "endYear": 1999
+      },
+      {
+        "name": "Mountain West Conference (MWC)",
+        "startYear": 1999,
+        "endYear": 2021
+      }
+    ],
+    "schools": [
+      {
+        "school": "Air Force Academy",
+        "division": "Mountain",
+        "joined": 1999
+      },
+      {
+        "school": "Boise State University",
+        "division": "Mountain",
+        "joined": 2011
+      },
+      {
+        "school": "California State University, Fresno (Fresno State)",
+        "division": "West",
+        "joined": 2012
+      },
+      {
+        "school": "Colorado State University",
+        "division": "Mountain",
+        "joined": 1999
+      },
+      {
+        "school": "University of Hawai'i at Mānoa",
+        "division": "West",
+        "joined": 2012
+      },
+      {
+        "school": "University of Nevada, Las Vegas (UNLV)",
+        "division": "West",
+        "joined": 1999
+      },
+      {
+        "school": "University of Nevada, Reno (Nevada)",
+        "division": "West",
+        "joined": 2012
+      },
+      {
+        "school": "University of New Mexico",
+        "division": "Mountain",
+        "joined": 1999
+      },
+      {
+        "school": "San Diego State University",
+        "division": "West",
+        "joined": 2013
+      },
+      {
+        "school": "San Jose State University",
+        "division": "West",
+        "joined": 2013
+      },
+      {
+        "school": "University of Utah",
+        "division": "Mountain",
+        "joined": 1999,
+        "left": 2011
+      },
+      {
+        "school": "University of Wyoming",
+        "division": "Mountain",
+        "joined": 1999
+      }
+    ]
+  },
+  {
+    "conference": "Sun Belt Conference",
+    "founded": 1976,
+    "logo": null,
+    "headquarters": "New Orleans, Louisiana",
+    "formerNames": [
+      {
+        "name": "Southland Conference",
+        "startYear": 1976,
+        "endYear": 2000
+      },
+      {
+        "name": "Sun Belt Conference",
+        "startYear": 2000,
+        "endYear": 2021
+      }
+    ],
+    "schools": [
+      {
+        "school": "Appalachian State University",
+        "division": "East",
+        "joined": 2014
+      },
+      {
+        "school": "Arkansas State University",
+        "division": "West",
+        "joined": 2001
+      },
+      {
+        "school": "Coastal Carolina University",
+        "division": "East",
+        "joined": 2016
+      },
+      {
+        "school": "Georgia Southern University",
+        "division": "East",
+        "joined": 2014
+      },
+      {
+        "school": "Georgia State University",
+        "division": "East",
+        "joined": 2013
+      },
+      {
+        "school": "University of Louisiana at Lafayette (Louisiana)",
+        "division": "West",
+        "joined": 2001
+      },
+      {
+        "school": "University of Louisiana at Monroe (ULM)",
+        "division": "West",
+        "joined": 2001
+      },
+      {
+        "school": "University of South Alabama",
+        "division": "West",
+        "joined": 2012
+      },
+      {
+        "school": "Texas State University",
+        "division": "West",
+        "joined": 2012
+      },
+      {
+        "school": "Troy University",
+        "division": "East",
+        "joined": 2004
+      }
+    ]
+  },
+  {
+    "conference": "Southwest Conference (SWC)",
+    "founded": 1914,
+    "disbanded": 1996,
+    "logo": null,
+    "formerNames": [],
+    "schools": [
+      {
+        "school": "Baylor University",
+        "joined": 1914,
+        "left": 1996
+      },
+      {
+        "school": "University of Arkansas",
+        "joined": 1915,
+        "left": 1991
+      },
+      {
+        "school": "University of Houston",
+        "joined": 1976,
+        "left": 1996
+      },
+      {
+        "school": "Rice University",
+        "joined": 1914,
+        "left": 1996
+      },
+      {
+        "school": "Southern Methodist University (SMU)",
+        "joined": 1918,
+        "left": 1996
+      },
+      {
+        "school": "Texas A&M University",
+        "joined": 1915,
+        "left": 1996
+      },
+      {
+        "school": "Texas Christian University (TCU)",
+        "joined": 1923,
+        "left": 1996
+      },
+      {
+        "school": "Texas Tech University",
+        "joined": 1958,
+        "left": 1996
+      }
+    ]
+  },
+  {
+    "conference": "Big Eight Conference",
+    "founded": 1907,
+    "disbanded": 1996,
+    "logo": null,
+    "formerNames": [],
+    "schools": [
+      {
+        "school": "University of Colorado Boulder",
+        "joined": 1948,
+        "left": 1996
+      },
+      {
+        "school": "Iowa State University",
+        "joined": 1907,
+        "left": 1996
+      },
+      {
+        "school": "University of Kansas",
+        "joined": 1907,
+        "left": 1996
+      },
+      {
+        "school": "Kansas State University",
+        "joined": 1913,
+        "left": 1996
+      },
+      {
+        "school": "University of Missouri",
+        "joined": 1907,
+        "left": 1996
+      },
+      {
+        "school": "University of Nebraska-Lincoln",
+        "joined": 1907,
+        "left": 1996
+      },
+      {
+        "school": "Oklahoma State University",
+        "joined": 1915,
+        "left": 1996
+      },
+      {
+        "school": "University of Oklahoma",
+        "joined": 1907,
+        "left": 1996
       }
     ]
   }
