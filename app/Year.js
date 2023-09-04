@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 
 function Year({ year, setYear }) {
-  console.log(setYear)
   const handleInputChange = (e) => {
     setYear(e.target.value);
   };

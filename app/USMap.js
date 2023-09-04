@@ -10,28 +10,38 @@ import Year from './Year';
 import Legend from './Legend';
 
 function USMap() {
-  const [year, setYear] = useState(1915);
+  const [year, setYear] = useState(1896);
+  const [activeConferences, setActiveConferences] = useState(null)
   const conferenceColors = [
-    { school: "Southeastern Conference", color: "rgba(0, 75, 141, 0.90)" },
-    { school: "Pac-12", color: "rgba(210, 180, 140, 0.90)" },
-    { school: "Conference C", color: "#5733FF" },
+    { school: "Southeastern Conference", color: "rgba(255, 208, 70, 0.90)" },
+    { school: "Pac-12", color: "rgba(210, 180, 140)" },
+    { school: "Big 12", color: "rgba(239, 72, 62, 0.90)" },
+    { school: "Atlantic Coast Conference", color: "rgba(1, 60, 166, 0.90)" },
+    { school: "Big Ten", color: "rgba(0, 136, 206, 0.90)" },
   ];
-  
+
   useEffect(() => {
     const width = 975;
     const height = 610;
 
-    const svg = d3
-      .select('#map')
-      .append('svg')
-      .attr('width', width)
-      .attr('height', 610)
-      .attr('viewBox', [0, 0, 975, 610])
-      .attr('style', 'width: 100%; height: auto; height: intrinsic;');
-    
+    var svg = d3.select('#map').select('svg');
+
+    //Need to clear SVG on year change or it creates a new Map beneath the old one
+    if (svg.empty()) {
+      svg = d3
+        .select('#map')
+        .append('svg')
+        .attr('width', width)
+        .attr('height', 610)
+        .attr('viewBox', [0, 0, 975, 610])
+        .attr('style', 'width: 100%; height: auto; height: intrinsic;');
+    } else {
+      svg.selectAll('*').remove();
+    }
+
     const projection = d3.geoAlbersUsa()
-    .scale(1300)
-    .translate([width / 2, height / 2]);
+      .scale(1300)
+      .translate([width / 2, height / 2]);
 
     const path = d3.geoPath(projection);
 
@@ -40,12 +50,19 @@ function USMap() {
       .append('path')
       .datum(topojson.feature(mapdata, mapdata.objects.nation))
       .attr('d', d3.geoPath());
-      
+
     const fillStates = getSchools(svg, projection, conferenceData, year);
     const stateConferenceMap = {};
     fillStates.forEach((item) => {
-        stateConferenceMap[item.state] = item.conference;
-      });
+      stateConferenceMap[item.state] = item.conference;
+    });
+    const legendConferences = []
+    fillStates.forEach(item => {
+      if (!legendConferences.includes(item.conference)) {
+        legendConferences.push(item.conference);
+      }
+    });
+    setActiveConferences(legendConferences)
     const state = svg
       .append('g')
       .attr('stroke', 'black')
@@ -58,22 +75,21 @@ function USMap() {
       .style('fill', (d) => {
         const conference = stateConferenceMap[d.id];
         if (conference) {
-          // Use the conference's color here, e.g., based on your conferenceColors array
           const color = conferenceColors.find((c) => c.school === conference);
-          return color ? color.color : 'white'; // Default to white if no color is found
+          return color ? color.color : 'white'; 
         } else {
-          return 'white'; // This will make states not in the array transparent
+          return 'white';
         }
-      });      
+      });
 
-      getSchools(svg, projection, conferenceData, year)
+    getSchools(svg, projection, conferenceData, year);
   }, [mapdata, year]);
 
   return (
     <div style={{ position: 'relative' }}>
       <div id="map"></div>
       <Year year={year} setYear={setYear} />
-      <Legend/>
+      <Legend activeConferences={activeConferences}/>
     </div>
   );
 }

@@ -1,33 +1,37 @@
 export function getSchools(svg, projection, schools, year) {
   var currentConferences = []
   schools.forEach((conference) => {
+    console.log(conference)
     if(conference.founded <= year && (conference.disbanded === null || conference.disbanded > year)){
+      console.log(conference)
       currentConferences.push(conference)
     }
   })
   var schoolStates = []
-
+  console.log(schools)
   currentConferences.forEach((conference) => {
     conference.schools.forEach((school) => {
-      if(!schoolStates.includes(school.stateId)){
+      if(!schoolStates.includes(school.stateId) && (school.years.includes(year))){
         schoolStates.push({state: school.stateId, conference: conference.conference})
-      }
-      const schoolCords = [school.lat, school.lon];
-      const [x, y] = projection(schoolCords);
-      svg
-        .append('circle')
-        .attr('cx', x)
-        .attr('cy', y)
-        .attr('r', 2)
+
+        //Double check Lat Lon in JSON if you get a projection error
+        const schoolCords = [school.lat, school.lon];
+        const [x, y] = projection(schoolCords);
+        // svg
+        //   .append('circle')
+        //   .attr('cx', x)
+        //   .attr('cy', y)
+        //   .attr('r', 2)
+        //   .attr('fill', 'red');
+        svg
+        .append('image')
+        .attr('x', x - 15) 
+        .attr('y', y - 15) 
+        .attr('width', 30) 
+        .attr('height', 30) 
+        .attr('href', school.logo)
         .attr('fill', 'red');
-      svg
-      .append('image')
-      .attr('x', x - 9) // Adjust the x position as needed
-      .attr('y', y - 9) // Adjust the y position as needed
-      .attr('width', 18) // Set the width of the image
-      .attr('height', 18) // Set the height of the image
-      .attr('href', school.logo) // Use the URL or path to the logo image
-      .attr('fill', 'red');
+    }
 
   })
   });
