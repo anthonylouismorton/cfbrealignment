@@ -3,11 +3,22 @@ import React, { useState } from 'react';
 
 function Year({ year, setYear }) {
   const handleInputChange = (e) => {
-    setYear(e.target.value);
+    let newYear = Number(e.target.value);
+
+    if (newYear < 1896) {
+      newYear = 1896;
+    } else if (newYear > 2024) {
+      newYear = 2024;
+    }
+  
+    setYear(newYear);
   };
+  
 
   const handleYearChange = (newYear) => {
-    setYear(newYear);
+    if (newYear >= 1896 && newYear <= 2024) {
+      setYear(newYear);
+    }
   };
 
   return (
