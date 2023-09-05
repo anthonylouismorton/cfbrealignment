@@ -13,11 +13,11 @@ function USMap() {
   const [year, setYear] = useState(1896);
   const [activeConferences, setActiveConferences] = useState(null)
   const conferenceColors = [
-    { school: "Southeastern Conference", color: "rgba(255, 208, 70, 0.90)" },
-    { school: "Pac-12", color: "rgba(210, 180, 140)" },
-    { school: "Big 12", color: "rgba(239, 72, 62, 0.90)" },
-    { school: "Atlantic Coast Conference", color: "rgba(1, 60, 166, 0.90)" },
-    { school: "Big Ten", color: "rgba(0, 136, 206, 0.90)" },
+    { conference: "SEC", color: "rgba(255, 208, 70, 0.90)" },
+    { conference: "Pac-12", color: "rgba(210, 180, 140)" },
+    { conference: "Big 12", color: "rgba(239, 72, 62, 0.90)" },
+    { conference: "ACC", color: "rgba(1, 60, 166, 0.90)" },
+    { conference: "Big Ten", color: "rgba(0, 136, 206, 0.90)" },
   ];
 
   useEffect(() => {
@@ -74,8 +74,9 @@ function USMap() {
       .attr('d', d3.geoPath())
       .style('fill', (d) => {
         const conference = stateConferenceMap[d.id];
+        console.log(conference)
         if (conference) {
-          const color = conferenceColors.find((c) => c.school === conference);
+          const color = conferenceColors.find((c) => c.conference === conference);
           return color ? color.color : 'white'; 
         } else {
           return 'white';
@@ -89,7 +90,7 @@ function USMap() {
     <div style={{ position: 'relative' }}>
       <div id="map"></div>
       <Year year={year} setYear={setYear} />
-      <Legend activeConferences={activeConferences}/>
+      <Legend activeConferences={activeConferences} conferenceColors={conferenceColors}/>
     </div>
   );
 }
