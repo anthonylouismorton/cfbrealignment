@@ -43,7 +43,6 @@ export function mapFill(svg, projection, conferenceData, year, conferenceColors,
         // Multiple conferences, create a gradient fill with dynamically calculated stop offsets
         const gradientId = `gradient-${d.id}`;
         const numConferences = conferences.length;
-
         const stops = [];
         if(conferences.length === 2){
           for (let i = 0; i < numConferences; i++) {
@@ -54,6 +53,26 @@ export function mapFill(svg, projection, conferenceData, year, conferenceColors,
             stops.push(`<stop offset="${offset}" stop-color="${color ? color.color : 'white'}"/>`);
           }
         }
+        else if (conferences.length === 3) {
+          for (let i = 0; i < numConferences; i++) {
+            const color = conferenceColors.find((c) => c.conference === conferences[i]);
+            let offset;
+            
+            if (i === 0) {
+              stops.push(`<stop offset="33.33%" stop-color="${color ? color.color : 'white'}"/>`);
+            } else if (i === 1) {
+              offset = '33.33%, 66.66%'; // The second color gets two offsets, 33.33% and 66.66%
+              stops.push(`<stop offset="33.33%" stop-color="${color ? color.color : 'white'}"/>`);
+              stops.push(`<stop offset="66.66%" stop-color="${color ? color.color : 'white'}"/>`);
+            } else {
+              stops.push(`<stop offset="66.66%" stop-color="${color ? color.color : 'white'}"/>`);
+            }
+      
+          }
+        }
+        
+        
+        
         console.log(stops)
         svg
           .append('defs')
