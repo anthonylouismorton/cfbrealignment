@@ -373,7 +373,7 @@
       {
         "school": "Baylor University",
         "division": null,
-        "stateId": "53",
+        "stateId": "48",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Baylor_Athletics_logo.svg/1200px-Baylor_Athletics_logo.svg.png",
         "lat": -97.1472,
         "lon": 31.5582,
@@ -431,7 +431,7 @@
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Nebraska_Cornhuskers_logo%2C_1992%E2%80%932003.svg/363px-Nebraska_Cornhuskers_logo%2C_1992%E2%80%932003.svg.png?20180405205404",
         "lat": -96.7056,
         "lon": 40.8207,
-        "years": [1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011]
+        "years": [1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]
       },
       {
         "school": "University of Oklahoma",
