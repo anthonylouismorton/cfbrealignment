@@ -18,6 +18,8 @@ function USMap() {
     { conference: "Big 12", color: "rgba(239, 72, 62, 0.90)" },
     { conference: "ACC", color: "rgba(1, 60, 166, 0.90)" },
     { conference: "Big Ten", color: "rgba(0, 136, 206, 0.90)" },
+    { conference: "SOCON", color: "rgba(218, 41, 28, 0.90)" },
+    { conference: "Big 8", color: "rgba(1, 158, 79, 0.90)" },
   ];
 
   useEffect(() => {
