@@ -38,7 +38,7 @@ export function mapFill(svg, projection, conferenceData, year, conferenceColors,
       if (conferences.length === 1) {
         // Single conference, use its color
         const color = conferenceColors.find((c) => c.conference === conferences[0]);
-        return color ? color.color : 'white';
+        return color ? color.color : '#D1D5DB';
       } else {
         // Multiple conferences, create a gradient fill with dynamically calculated stop offsets
         const gradientId = `gradient-${d.id}`;
@@ -50,7 +50,7 @@ export function mapFill(svg, projection, conferenceData, year, conferenceColors,
             const offset = `${(100 / numConferences)}%`; // Calculate dynamic stop offsets
             console.log(offset)
             console.log(color.color)
-            stops.push(`<stop offset="${offset}" stop-color="${color ? color.color : 'white'}"/>`);
+            stops.push(`<stop offset="${offset}" stop-color="${color ? color.color : '#D1D5DB'}"/>`);
           }
         }
         else if (conferences.length === 3) {
@@ -59,13 +59,13 @@ export function mapFill(svg, projection, conferenceData, year, conferenceColors,
             let offset;
             
             if (i === 0) {
-              stops.push(`<stop offset="33.33%" stop-color="${color ? color.color : 'white'}"/>`);
+              stops.push(`<stop offset="33.33%" stop-color="${color ? color.color : '#D1D5DB'}"/>`);
             } else if (i === 1) {
               offset = '33.33%, 66.66%'; // The second color gets two offsets, 33.33% and 66.66%
-              stops.push(`<stop offset="33.33%" stop-color="${color ? color.color : 'white'}"/>`);
-              stops.push(`<stop offset="66.66%" stop-color="${color ? color.color : 'white'}"/>`);
+              stops.push(`<stop offset="33.33%" stop-color="${color ? color.color : '#D1D5DB'}"/>`);
+              stops.push(`<stop offset="66.66%" stop-color="${color ? color.color : '#D1D5DB'}"/>`);
             } else {
-              stops.push(`<stop offset="66.66%" stop-color="${color ? color.color : 'white'}"/>`);
+              stops.push(`<stop offset="66.66%" stop-color="${color ? color.color : '#D1D5DB'}"/>`);
             }
       
           }
@@ -85,7 +85,7 @@ export function mapFill(svg, projection, conferenceData, year, conferenceColors,
         return `url(#${gradientId})`;
       }
     } else {
-      return 'white';
+      return '#D1D5DB';
     }
   });
     return legendConferences

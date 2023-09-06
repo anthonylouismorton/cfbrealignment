@@ -33,7 +33,11 @@ function Legend({activeConferences, conferenceColors}) {
 
   }, [activeConferences]);
   return (
-    <div id="legend" style={{ position: "absolute", bottom: "20px", right: "20px" }}></div>
+    <div className="bg-white absolute bottom-5 bg-white right-5 p-5 rounded">
+      <h2 className="text-center text-lg font-semibold">Conferences</h2>
+      <div id="legend"></div>
+    </div>
+
   );
 }
 
