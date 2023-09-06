@@ -20,6 +20,7 @@ function USMap() {
     { conference: "Big Ten", color: "rgba(0, 136, 206, 0.90)" },
     { conference: "SOCON", color: "rgba(218, 41, 28, 0.90)" },
     { conference: "Big 8", color: "rgba(1, 158, 79, 0.90)" },
+    { conference: "Big East", color: "rgba(228, 28, 57, 0.90)" },
   ];
 
   useEffect(() => {
@@ -33,9 +34,9 @@ function USMap() {
         .select('#map')
         .append('svg')
         .attr('width', width)
-        .attr('height', 610)
-        .attr('viewBox', [0, 0, 975, 610])
-        .attr('style', 'width: 100%; height: auto; height: intrinsic;');
+        .attr('height', height)
+        .attr('viewBox', [0, 0, width, height])
+        // .attr('style', 'width: 100%; height: auto; height: intrinsic;');
     } else {
       svg.selectAll('*').remove();
     }
@@ -55,8 +56,8 @@ function USMap() {
   }, [mapdata, year]);
 
   return (
-    <div style={{ position: 'relative' }}>
-      <div id="map"></div>
+    <div style={{ position: 'relative', textAlign: 'center', display: 'flex', justifyContent: 'center' }}>
+      <div id="map" style={{ margin: '0 auto' }}></div>
       <Year year={year} setYear={setYear} />
       <Legend activeConferences={activeConferences} conferenceColors={conferenceColors}/>
     </div>
