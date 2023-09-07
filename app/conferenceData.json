@@ -2,8 +2,8 @@
   {
     "conference": "Southeastern Conference",
     "abbreviation": "SEC",
-    "primaryColor": "rgba(0, 75, 141, 0.90)",
-    "secondaryColor": "rgba(255, 208, 70, 0.90)",
+    "primaryColor": "rgba(255, 208, 70, 0.90)",
+    "secondaryColor": "rgba(0, 75, 141, 0.90)",
     "founded": 1932,
     "logo": null,
     "headquarters": "Birmingham, Alabama",
@@ -205,6 +205,7 @@
   {
     "conference": "Pac-12 Conference",
     "abbreviation": "Pac-12",
+    "primaryColor": "rgba(210, 180, 140, 0.90)",
     "founded": 1915,
     "logo": null,
     "headquarters": "San Francisco, California",
@@ -1467,6 +1468,99 @@
         "lat": -79.9551,
         "lon": 39.6501,
         "years": [1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011]
+      }
+    ]
+  },
+  {
+    "conference": "Border Conference",
+    "abbreviation": "Border",
+    "founded": 1931,
+    "disbanded": 1962,
+    "logo": null,
+    "primaryColor": "rgba(125, 118, 98, 0.90)",
+    "headquarters": "Unknown",
+    "formerNames": [null],
+    "schools": [
+      {
+        "school": "University of Arizona",
+        "stateId": "04",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Arizona_Wildcats_logo.svg/1200px-Arizona_Wildcats_logo.svg.png",
+        "division": null,
+        "lat": -110.9489,
+        "lon": 32.2288,
+        "years": [1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961]
+      },
+      {
+        "school": "Arizona State University",
+        "stateId": "04",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Arizona_State_Sun_Devils_logo.svg/150px-Arizona_State_Sun_Devils_logo.svg.png",
+        "division": null,
+        "lat": -111.9326,
+        "lon": 33.4625,
+        "years": [1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961]
+      },
+      {
+        "school": "Nothern Arizona University",
+        "stateId": "04",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a7/NAU_Alternate_Identity_PMS_WBG.png",
+        "division": null,
+        "lat": -111.6540,
+        "lon": 35.1803,
+        "years": [1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952]
+      },
+      {
+        "school": "University of New Mexico",
+        "stateId": "35",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/45/New_Mexico_Lobos_logo.svg/1200px-New_Mexico_Lobos_logo.svg.png",
+        "division": null,
+        "lat": -106.6198,
+        "lon": 35.0843,
+        "years": [1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951]
+      },
+      {
+        "school": "New Mexico State University",
+        "stateId": "35",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/New_Mexico_State_Aggies_logo.svg/1200px-New_Mexico_State_Aggies_logo.svg.png",
+        "division": null,
+        "lat": -106.748,
+        "lon": 32.2833,
+        "years": [1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961]
+      },
+      {
+        "school": "Texas Tech University",
+        "division": null,
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Texas_Tech_Athletics_logo.svg/875px-Texas_Tech_Athletics_logo.svg.png",
+        "lat": -101.8729,
+        "lon": 33.5911,
+        "years": [1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956]
+      },
+      {
+        "school": "University of Texas at El Paso",
+        "division": null,
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/06/UTEP_Miners_logo.svg/1200px-UTEP_Miners_logo.svg.png",
+        "lat": -106.3018,
+        "lon": 31.4612,
+        "years": [1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961]
+      },
+      {
+        "school": "West Texas A&M University",
+        "division": null,
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/60/WTAMU_Buffs_logo.png",
+        "lat": -101.9134,
+        "lon": 34.9844,
+        "years": [1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961]
+      },
+      {
+        "school": "Hardin–Simmons University",
+        "division": null,
+        "stateId": "48",
+        "logo": "https://www.ncaa.com/sites/default/files/images/logos/schools/bgl/hardin-simmons.svg",
+        "lat": -99.44109752,
+        "lon": 32.28297228,
+        "years": [1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961]
       }
     ]
   }

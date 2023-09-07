@@ -8,27 +8,33 @@ import { getSchools } from './getSchools';
 import { mapFill } from './mapFill';
 import Year from './Year';
 import Legend from './Legend';
+import Changes from './Changes';
 
 function USMap() {
-  const [year, setYear] = useState(1896);
+  const [currentYear, setCurrentYear] = useState(1896);
+  const [previousYear, setPreviousYear] = useState(null);
+  const [currentSchools, setCurrentSchools] = useState(1896);
+  const [previousSchools, setPreviousSchools] = useState(null);
   const [activeConferences, setActiveConferences] = useState(null)
-  const conferenceColors = [
-    { conference: "SEC", color: "rgba(255, 208, 70, 0.90)" },
-    { conference: "Pac-12", color: "rgba(210, 180, 140, 0.90)" },
-    { conference: "Big 12", color: "rgba(239, 72, 62, 0.90)" },
-    { conference: "ACC", color: "rgba(1, 60, 166, 0.90)" },
-    { conference: "Big Ten", color: "rgba(0, 136, 206, 0.90)" },
-    { conference: "SOCON", color: "rgba(218, 41, 28, 0.90)" },
-    { conference: "Big 8", color: "rgba(1, 158, 79, 0.90)" },
-    { conference: "Big East", color: "rgba(228, 28, 57, 0.90)" },
-  ];
+  const [oldConferences, setOldConferences] = useState(null)
+  // const conferenceColors = [
+  //   { conference: "SEC", color: "rgba(255, 208, 70, 0.90)" },
+  //   { conference: "Pac-12", color: "rgba(210, 180, 140, 0.90)" },
+  //   { conference: "Big 12", color: "rgba(239, 72, 62, 0.90)" },
+  //   { conference: "ACC", color: "rgba(1, 60, 166, 0.90)" },
+  //   { conference: "Big Ten", color: "rgba(0, 136, 206, 0.90)" },
+  //   { conference: "SOCON", color: "rgba(218, 41, 28, 0.90)" },
+  //   { conference: "Big 8", color: "rgba(1, 158, 79, 0.90)" },
+  //   { conference: "Big East", color: "rgba(228, 28, 57, 0.90)" },
+  //   { conference: "Border", color: "rgba(125, 118, 98, 0.90)" },
+  // ];
 
   useEffect(() => {
     const width = 975;
     const height = 610;
     var svg = d3.select('#map').select('svg');
 
-    //Need to clear SVG on year change or it creates a new Map beneath the old one
+    //Need to clear SVG on currentYear change or it creates a new Map beneath the old one
     if (svg.empty()) {
       svg = d3
         .select('#map')
@@ -50,16 +56,18 @@ function USMap() {
       .append('path')
       .datum(topojson.feature(mapdata, mapdata.objects.nation))
       .attr('d', d3.geoPath());
-    const getLegendConferences = mapFill(svg, projection, conferenceData, year, conferenceColors, mapdata)
+    const getLegendConferences = mapFill(svg, projection, conferenceData, currentYear, mapdata)
     setActiveConferences(getLegendConferences)
-    getSchools(svg, projection, conferenceData, year);
-  }, [mapdata, year]);
+    let theseAreSchools = getSchools(svg, projection, conferenceData, currentYear);
+    console.log(theseAreSchools)
+  }, [mapdata, currentYear]);
 
   return (
     <div style={{ position: 'relative', textAlign: 'center', display: 'flex', justifyContent: 'center' }}>
       <div id="map" style={{ margin: '0 auto' }}></div>
-      <Year year={year} setYear={setYear} />
-      <Legend activeConferences={activeConferences} conferenceColors={conferenceColors}/>
+      <Year currentYear={currentYear} setCurrentYear={setCurrentYear} />
+      <Legend activeConferences={activeConferences}/>
+      {/* <Changes/> */}
     </div>
   );
 }
