@@ -2,7 +2,7 @@ import { getSchools } from "./getSchools";
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 
-export function mapFill(svg, projection, conferenceData, year, conferenceColors, mapdata) {
+export function mapFill(svg, projection, conferenceData, year, mapdata) {
   
   const fillStates = getSchools(svg, projection, conferenceData, year);
   const stateConferenceMap = {};
@@ -16,14 +16,13 @@ export function mapFill(svg, projection, conferenceData, year, conferenceColors,
       stateConferenceMap[state].push(conference);
     }
   });
-  
   const legendConferences = []
-  fillStates.forEach(item => {
-    if (!legendConferences.includes(item.conference)) {
-      legendConferences.push(item.conference);
+  fillStates.forEach((item) => {
+    if (!legendConferences.some((conf) => conf.conference === item.conference)) {
+      legendConferences.push({ conference: item.conference, mapColor: item.mapColor });
     }
   });
-  console.log(stateConferenceMap)
+  
   const statePaths = svg
   .append('g')
   .attr('stroke', 'black')
@@ -36,44 +35,37 @@ export function mapFill(svg, projection, conferenceData, year, conferenceColors,
     const conferences = stateConferenceMap[d.id];
     if (conferences) {
       if (conferences.length === 1) {
-        // Single conference, use its color
-        const color = conferenceColors.find((c) => c.conference === conferences[0]);
-        return color ? color.color : '#D1D5DB';
-      } else {
-        // Multiple conferences, create a gradient fill with dynamically calculated stop offsets
+        const color = legendConferences.find((c) => c.conference === conferences[0]);
+        return color ? color.mapColor : '#D1D5DB';
+      } 
+      else {
         const gradientId = `gradient-${d.id}`;
         const numConferences = conferences.length;
         const stops = [];
         if(conferences.length === 2){
           for (let i = 0; i < numConferences; i++) {
-            const color = conferenceColors.find((c) => c.conference === conferences[i]);
+            const color = legendConferences.find((c) => c.conference === conferences[i]);
             const offset = `${(100 / numConferences)}%`; // Calculate dynamic stop offsets
-            console.log(offset)
-            console.log(color.color)
-            stops.push(`<stop offset="${offset}" stop-color="${color ? color.color : '#D1D5DB'}"/>`);
+            stops.push(`<stop offset="${offset}" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
           }
         }
         else if (conferences.length === 3) {
           for (let i = 0; i < numConferences; i++) {
-            const color = conferenceColors.find((c) => c.conference === conferences[i]);
+            const color = legendConferences.find((c) => c.conference === conferences[i]);
             let offset;
             
             if (i === 0) {
-              stops.push(`<stop offset="33.33%" stop-color="${color ? color.color : '#D1D5DB'}"/>`);
+              stops.push(`<stop offset="33.33%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
             } else if (i === 1) {
               offset = '33.33%, 66.66%'; // The second color gets two offsets, 33.33% and 66.66%
-              stops.push(`<stop offset="33.33%" stop-color="${color ? color.color : '#D1D5DB'}"/>`);
-              stops.push(`<stop offset="66.66%" stop-color="${color ? color.color : '#D1D5DB'}"/>`);
+              stops.push(`<stop offset="33.33%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+              stops.push(`<stop offset="66.66%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
             } else {
-              stops.push(`<stop offset="66.66%" stop-color="${color ? color.color : '#D1D5DB'}"/>`);
+              stops.push(`<stop offset="66.66%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
             }
       
           }
         }
-        
-        
-        
-        console.log(stops)
         svg
           .append('defs')
           .html(
