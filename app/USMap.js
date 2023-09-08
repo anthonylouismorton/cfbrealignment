@@ -12,11 +12,7 @@ import Changes from './Changes';
 
 function USMap() {
   const [currentYear, setCurrentYear] = useState(1896);
-  const [previousYear, setPreviousYear] = useState(null);
-  const [currentSchools, setCurrentSchools] = useState(1896);
-  const [previousSchools, setPreviousSchools] = useState(null);
   const [activeConferences, setActiveConferences] = useState(null)
-  const [oldConferences, setOldConferences] = useState(null)
   const [changesList, setChangesList] =useState([])
 
   useEffect(() => {
@@ -53,8 +49,21 @@ function USMap() {
     var conferenceChanges = []
     currentConferences.forEach((conference) => {
       if(conference.founded === currentYear){
-        conferenceChanges.push({founded: conference.founded, conference: conference.conference, logo: conference.logo})
+        conferenceChanges.push({change: 'founded', founded: conference.founded, conference: conference.conference, logo: conference.logo})
       }
+      conference.schools.forEach((school)=>{
+        if(school.years[0] === currentYear){
+          conferenceChanges.push({change: 'joined', joined: currentYear, conference: conference.abbreviation, ...school})
+        }
+        if(school.left){
+          school.left.forEach((left) => {
+            console.log(left, school)
+            if(left.year === currentYear){
+              conferenceChanges.push({change: 'left', left: left.year, newConference: left.newConference, conference: conference.abbreviation, ...school})
+            }
+          })
+        }
+      })
     })
     console.log(conferenceChanges)
     setChangesList(conferenceChanges)
