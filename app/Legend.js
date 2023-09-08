@@ -32,7 +32,7 @@ function Legend({activeConferences}) {
 
   }, [activeConferences]);
   return (
-    <div className="bg-white absolute bottom-5 bg-white right-5 p-5 rounded">
+    <div className="bg-white absolute bottom-0 bg-white right-0 p-5 rounded">
       <h2 className="text-center text-lg font-semibold">Conferences</h2>
       <div id="legend"></div>
     </div>

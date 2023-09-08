@@ -22,7 +22,7 @@ function Year({ currentYear, setCurrentYear }) {
   };
 
   return (
-    <div className="absolute top-5 right-5 bg-white border rounded border-gray-300 p-2 text-center">
+    <div className="absolute top-0 right-0 bg-white border rounded border-gray-300 p-2 text-center">
       <div className="mb-2 flex items-center justify-center">
         <button onClick={handlePrevYear} className="arrow-button pr-1">
           <FaStepBackward />
