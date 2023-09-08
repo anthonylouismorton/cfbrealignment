@@ -12,8 +12,8 @@ export function getSchools(svg, projection, conferenceData, year) {
       currentConferences.push(conference)
     }
   })
-  var schoolStates = []
 
+  var schoolStates = []
   currentConferences.forEach((conference) => {
     //need the states for schools playing during the current year for filling in the states on the map to represent active conferences
     conference.schools.forEach((school) => {
@@ -35,7 +35,7 @@ export function getSchools(svg, projection, conferenceData, year) {
 
   })
   });
-  return schoolStates
+  return { schoolStates, currentConferences }
 }
 // svg
 //   .append('text')

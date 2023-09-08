@@ -1,43 +1,42 @@
-"use client"
-import React, { useEffect } from 'react';
-import * as d3 from 'd3';
+import React from 'react';
 
-function Changes() {
-  useEffect(() => {
-  //   const changeContainer = d3.select("#change");
-  //   if(activeConferences){
-  //     const filteredConferences = conferenceColors.filter(conference => activeConferences.includes(conference.conference))
-  //     const changeItems = changeContainer
-  //       .selectAll(".change-item")
-  //       .data(filteredConferences);
-
-  //     // Need to clear change items after year change
-  //     changeContainer.selectAll(".change-item").remove();
-
-  //     filteredConferences.forEach((conference) => {
-  //       const changeItem = changeContainer
-  //         .append("div")
-  //         .attr("class", "change-item flex items-center mb-2");
-
-  //       changeItem
-  //         .append("div")
-  //         .attr("class", "change-color w-6 h-6 mr-2")
-  //         .style("background-color", conference.color);
-
-  //       changeItem
-  //         .append("div")
-  //         .attr("class", "change-label text-sm")
-  //         .text(conference.conference);
-  //     });
-  //   }
-
-  }, []);
+function Changes({ changesList, currentYear }) {
+  console.log(changesList)
   return (
     <div className="bg-white absolute top-5 bg-white left-5 pl-8 pr-8 pb-10 rounded">
-      <h2 className="text-center text-lg font-semibold">Changes</h2>
-      <div id="change"></div>
-    </div>
+      <h2 className="text-center font-semibold">Conference History</h2>
+      <div id="change">
+      {changesList.map((change, index) => (
+        <div key={index} className="change-item flex items-center mb-2">
+          {change.change === 'founded' && (
+            <>
+              <div className="change-logo w-4 h-4 mr-2 flex items-center">
+                <img src={change.logo} alt={`${change.abbreviation} logo`} />
+              </div>
+              <div className="change-conference text-sm">{`conference founded`}</div>
+            </>
+          )}
+          {change.change === 'left' && (
+            <>
+              <div className="change-logo w-4 h-4 mr-2 flex items-center">
+                <img src={change.logo} alt={`${change.school} logo`} />
+              </div>
+              <div className="change-conference text-sm">{`leaves ${change.conference}`}</div>
+            </>
+          )}
+          {change.change === 'joined' && (
+            <>
+              <div className="change-logo w-4 h-4 mr-2 flex items-center">
+                <img src={change.logo} alt={`${change.school} logo`} />
+              </div>
+              <div className="change-conference text-sm">{`joins ${change.conference}`}</div>
+            </>
+          )}
+        </div>
+      ))}
 
+      </div>
+    </div>
   );
 }
 

@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import * as d3 from 'd3';
 
 function Legend({activeConferences}) {
-  console.log(activeConferences)
   useEffect(() => {
     const legendContainer = d3.select("#legend");
     if(activeConferences){
