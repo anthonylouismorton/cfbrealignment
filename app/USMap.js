@@ -17,17 +17,7 @@ function USMap() {
   const [previousSchools, setPreviousSchools] = useState(null);
   const [activeConferences, setActiveConferences] = useState(null)
   const [oldConferences, setOldConferences] = useState(null)
-  // const conferenceColors = [
-  //   { conference: "SEC", color: "rgba(255, 208, 70, 0.90)" },
-  //   { conference: "Pac-12", color: "rgba(210, 180, 140, 0.90)" },
-  //   { conference: "Big 12", color: "rgba(239, 72, 62, 0.90)" },
-  //   { conference: "ACC", color: "rgba(1, 60, 166, 0.90)" },
-  //   { conference: "Big Ten", color: "rgba(0, 136, 206, 0.90)" },
-  //   { conference: "SOCON", color: "rgba(218, 41, 28, 0.90)" },
-  //   { conference: "Big 8", color: "rgba(1, 158, 79, 0.90)" },
-  //   { conference: "Big East", color: "rgba(228, 28, 57, 0.90)" },
-  //   { conference: "Border", color: "rgba(125, 118, 98, 0.90)" },
-  // ];
+  const [changesList, setChangesList] =useState([])
 
   useEffect(() => {
     const width = 975;
@@ -43,7 +33,8 @@ function USMap() {
         .attr('height', height)
         .attr('viewBox', [0, 0, width, height])
         // .attr('style', 'width: 100%; height: auto; height: intrinsic;');
-    } else {
+    } 
+    else {
       svg.selectAll('*').remove();
     }
 
@@ -58,8 +49,15 @@ function USMap() {
       .attr('d', d3.geoPath());
     const getLegendConferences = mapFill(svg, projection, conferenceData, currentYear, mapdata)
     setActiveConferences(getLegendConferences)
-    let theseAreSchools = getSchools(svg, projection, conferenceData, currentYear);
-    console.log(theseAreSchools)
+    const { currentConferences } = getSchools(svg, projection, conferenceData, currentYear);
+    var conferenceChanges = []
+    currentConferences.forEach((conference) => {
+      if(conference.founded === currentYear){
+        conferenceChanges.push({founded: conference.founded, conference: conference.conference, logo: conference.logo})
+      }
+    })
+    console.log(conferenceChanges)
+    setChangesList(conferenceChanges)
   }, [mapdata, currentYear]);
 
   return (
@@ -67,7 +65,7 @@ function USMap() {
       <div id="map" style={{ margin: '0 auto' }}></div>
       <Year currentYear={currentYear} setCurrentYear={setCurrentYear} />
       <Legend activeConferences={activeConferences}/>
-      {/* <Changes/> */}
+      <Changes changesList={changesList} currentYear={currentYear}/>
     </div>
   );
 }
