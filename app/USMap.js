@@ -57,15 +57,21 @@ function USMap() {
         }
         if(school.left){
           school.left.forEach((left) => {
-            console.log(left, school)
             if(left.year === currentYear){
               conferenceChanges.push({change: 'left', left: left.year, newConference: left.newConference, conference: conference.abbreviation, ...school})
             }
           })
         }
+        if(school.rejoined){
+          school.rejoined.forEach((rejoined) => {
+            if(rejoined.year === currentYear){
+              conferenceChanges.push({change: 'rejoined', year: rejoined.year, oldConference: rejoined.oldConference, conference: conference.abbreviation, ...school})
+            }
+          })
+        }
       })
     })
-    console.log(conferenceChanges)
+    console.log(changesList)
     setChangesList(conferenceChanges)
   }, [mapdata, currentYear]);
 
