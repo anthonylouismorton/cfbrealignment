@@ -8,7 +8,7 @@ export function getSchools(svg, projection, conferenceData, year) {
   //so that it can be saved in the state to be compared to last time
   var currentConferences = []
   conferenceData.forEach((conference) => {
-    if(conference.founded <= year && (conference.disbanded === null || conference.disbanded > year)){
+    if(conference.founded <= year && (conference.disbanded === null || conference.disbanded >= year)){
       currentConferences.push(conference)
     }
   })
@@ -19,29 +19,8 @@ export function getSchools(svg, projection, conferenceData, year) {
     conference.schools.forEach((school) => {
       if(!schoolStates.includes(school.stateId) && (school.years.includes(year))){
         schoolStates.push({state: school.stateId, conference: conference.abbreviation, mapColor: conference.primaryColor})
-
-        //Double check Lat Lon in JSON if you get a projection error
-        const schoolCords = [school.lat, school.lon];
-        const [x, y] = projection(schoolCords);
-
-        svg
-        .append('image')
-        .attr('x', x - 15) 
-        .attr('y', y - 15) 
-        .attr('width', 30) 
-        .attr('height', 30) 
-        .attr('href', school.logo)
     }
-
   })
   });
   return { schoolStates, currentConferences }
 }
-// svg
-//   .append('text')
-//   .attr('x', x - 5)
-//   .attr('y', y + 10)
-//   .attr('dy', '0.35em')
-//   .text(school.nickName)
-//   .attr('fill', 'red')
-//   .attr('font-size', '10px');

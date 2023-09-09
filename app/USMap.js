@@ -6,6 +6,7 @@ import mapdata from './mapData.json';
 import conferenceData from './conferenceData.json';
 import { getSchools } from './getSchools';
 import { mapFill } from './mapFill';
+import { schoolLocations } from './schoolLocations';
 import Year from './Year';
 import Legend from './Legend';
 import Changes from './Changes';
@@ -43,13 +44,17 @@ function USMap() {
       .append('path')
       .datum(topojson.feature(mapdata, mapdata.objects.nation))
       .attr('d', d3.geoPath());
-    const getLegendConferences = mapFill(svg, projection, conferenceData, currentYear, mapdata)
-    setActiveConferences(getLegendConferences)
-    const { currentConferences } = getSchools(svg, projection, conferenceData, currentYear);
-    var conferenceChanges = []
+      const { schoolStates, currentConferences } = getSchools(svg, projection, conferenceData, currentYear, mapdata);
+      var conferenceChanges = []
+      const getLegendConferences = mapFill(svg, schoolStates, mapdata)
+      setActiveConferences(getLegendConferences)
     currentConferences.forEach((conference) => {
       if(conference.founded === currentYear){
         conferenceChanges.push({change: 'founded', founded: conference.founded, conference: conference.conference, logo: conference.logo})
+      }
+      if(conference.disbanded === currentYear){
+        console.log(conference.disbanded)
+        conferenceChanges.push({change: 'disbanded', disbanded: conference.disbanded, conference: conference.conference, logo: conference.logo})
       }
       conference.schools.forEach((school)=>{
         if(school.years[0] === currentYear){
@@ -71,8 +76,9 @@ function USMap() {
         }
       })
     })
-    console.log(changesList)
+
     setChangesList(conferenceChanges)
+    schoolLocations(svg, projection, currentConferences, currentYear);
   }, [mapdata, currentYear]);
 
   return (
