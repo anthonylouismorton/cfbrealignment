@@ -2,10 +2,8 @@ import { getSchools } from "./getSchools";
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 
-export function mapFill(svg, projection, conferenceData, year, mapdata) {
+export function mapFill(svg, schoolStates, mapdata) {
   
-  const { schoolStates } = getSchools(svg, projection, conferenceData, year);
-  console.log(schoolStates)
   const stateConferenceMap = {};
 
   schoolStates.forEach((item) => {

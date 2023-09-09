@@ -402,7 +402,7 @@
         "lon": 40.009,
         "years": [1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2024],
         "rejoined": [{"year": 2024, "oldConference": "Pac-12"}],
-        "left": [{"year": 1996, "newConference": "Pac-12"}]
+        "left": [{"year": 2011, "newConference": "Pac-12"}]
       },
       {
         "school": "Iowa State University",

@@ -13,7 +13,15 @@ function Changes({ changesList, currentYear }) {
               <div className="change-logo w-4 h-4 mr-2 flex items-center">
                 <img src={change.logo} alt={`${change.abbreviation} logo`} />
               </div>
-              <div className="change-conference text-sm">{`conference founded`}</div>
+              <div className="change-conference text-sm">{`founded`}</div>
+            </>
+          )}
+          {change.change === 'disbanded' && (
+            <>
+              <div className="change-logo w-4 h-4 mr-2 flex items-center">
+                <img src={change.logo} alt={`${change.abbreviation} logo`} />
+              </div>
+              <div className="change-conference text-sm">{`disbanded`}</div>
             </>
           )}
           {change.change === 'left' && (
