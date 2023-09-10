@@ -58,7 +58,7 @@ function USMap() {
       <div id="map" style={{ margin: '0 auto' }}></div>
       <Year currentYear={currentYear} setCurrentYear={setCurrentYear} />
       <Legend activeConferences={activeConferences}/>
-      <Changes changesList={changesList} currentYear={currentYear}/>
+      <Changes changesList={changesList}/>
     </div>
   );
 }
