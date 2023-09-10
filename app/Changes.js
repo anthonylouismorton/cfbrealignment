@@ -1,4 +1,6 @@
 import React from 'react';
+import { } from 'react-icons/fa';
+import { FaArrowRight } from 'react-icons/fa';
 
 function Changes({ changesList, currentYear }) {
   console.log(changesList)
@@ -29,7 +31,15 @@ function Changes({ changesList, currentYear }) {
               <div className="change-logo w-4 h-4 mr-2 flex items-center">
                 <img src={change.logo} alt={`${change.school} logo`} />
               </div>
-              <div className="change-conference text-sm">{`leaves ${change.conference}`}</div>
+              <div className="change-logo w-4 h-4 mr-2 flex items-center">
+                <img src={change.oldConferenceLogo} alt={`old conference logo`} />
+              </div>
+              <div className="change-logo w-4 h-4 mr-2 flex items-center">
+                <FaArrowRight icon="fa-right-to-bracket" />
+              </div>
+              <div className="change-logo w-4 h-4 mr-2 flex items-center">
+                <img src={change.newConferenceLogo} alt={`new conference logo`} />
+              </div>
             </>
           )}
           {change.change === 'joined' && (
@@ -37,7 +47,12 @@ function Changes({ changesList, currentYear }) {
               <div className="change-logo w-4 h-4 mr-2 flex items-center">
                 <img src={change.logo} alt={`${change.school} logo`} />
               </div>
-              <div className="change-conference text-sm">{`joins ${change.conference}`}</div>
+              <div className="change-logo w-4 h-4 mr-2 flex items-center">
+                <FaArrowRight icon="fa-right-to-bracket" />
+              </div>
+              <div className="change-logo w-4 h-4 mr-2 flex items-center">
+                <img src={change.conferenceLogo} alt={`${change.conferenceLogo} logo`} />
+              </div>
             </>
           )}
           {change.change === 'rejoined' && (
@@ -45,7 +60,9 @@ function Changes({ changesList, currentYear }) {
               <div className="change-logo w-4 h-4 mr-2 flex items-center">
                 <img src={change.logo} alt={`${change.school} logo`} />
               </div>
-              <div className="change-conference text-sm">{`rejoins ${change.conference}`}</div>
+              <div className="change-logo w-4 h-4 mr-2 flex items-center">
+                <img src={change.conferenceLogo} alt={`${change.conferenceLogo} logo`} />
+              </div>
             </>
           )}
         </div>

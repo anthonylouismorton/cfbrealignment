@@ -14,11 +14,14 @@ export function getSchools(svg, projection, conferenceData, year) {
   })
 
   var schoolStates = []
+
   currentConferences.forEach((conference) => {
+    var conAbbrv = conference.abbreviation
+    var conColor = conference
     //need the states for schools playing during the current year for filling in the states on the map to represent active conferences
     conference.schools.forEach((school) => {
       if(!schoolStates.includes(school.stateId) && (school.years.includes(year))){
-        schoolStates.push({state: school.stateId, conference: conference.abbreviation, mapColor: conference.primaryColor})
+        schoolStates.push({state: school.stateId, ...conference})
     }
   })
   });

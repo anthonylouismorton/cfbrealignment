@@ -5,6 +5,7 @@ import * as topojson from 'topojson-client';
 import mapdata from './mapData.json';
 import conferenceData from './conferenceData.json';
 import { getSchools } from './getSchools';
+import { getChanges } from './getChanges';
 import { mapFill } from './mapFill';
 import { schoolLocations } from './schoolLocations';
 import Year from './Year';
@@ -14,8 +15,7 @@ import Changes from './Changes';
 function USMap() {
   const [currentYear, setCurrentYear] = useState(1896);
   const [activeConferences, setActiveConferences] = useState(null)
-  const [changesList, setChangesList] =useState([])
-
+  const [changesList, setChangesList] = useState([])
   useEffect(() => {
     const width = 975;
     const height = 610;
@@ -45,38 +45,10 @@ function USMap() {
       .datum(topojson.feature(mapdata, mapdata.objects.nation))
       .attr('d', d3.geoPath());
       const { schoolStates, currentConferences } = getSchools(svg, projection, conferenceData, currentYear, mapdata);
-      var conferenceChanges = []
-      const getLegendConferences = mapFill(svg, schoolStates, mapdata)
+      const getLegendConferences = mapFill(svg, schoolStates, mapdata, currentYear)
       setActiveConferences(getLegendConferences)
-    currentConferences.forEach((conference) => {
-      if(conference.founded === currentYear){
-        conferenceChanges.push({change: 'founded', founded: conference.founded, conference: conference.conference, logo: conference.logo})
-      }
-      if(conference.disbanded === currentYear){
-        console.log(conference.disbanded)
-        conferenceChanges.push({change: 'disbanded', disbanded: conference.disbanded, conference: conference.conference, logo: conference.logo})
-      }
-      conference.schools.forEach((school)=>{
-        if(school.years[0] === currentYear){
-          conferenceChanges.push({change: 'joined', joined: currentYear, conference: conference.abbreviation, ...school})
-        }
-        if(school.left){
-          school.left.forEach((left) => {
-            if(left.year === currentYear){
-              conferenceChanges.push({change: 'left', left: left.year, newConference: left.newConference, conference: conference.abbreviation, ...school})
-            }
-          })
-        }
-        if(school.rejoined){
-          school.rejoined.forEach((rejoined) => {
-            if(rejoined.year === currentYear){
-              conferenceChanges.push({change: 'rejoined', year: rejoined.year, oldConference: rejoined.oldConference, conference: conference.abbreviation, ...school})
-            }
-          })
-        }
-      })
-    })
 
+    var conferenceChanges = getChanges(currentConferences, currentYear)
     setChangesList(conferenceChanges)
     schoolLocations(svg, projection, currentConferences, currentYear);
   }, [mapdata, currentYear]);
