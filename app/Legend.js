@@ -21,12 +21,12 @@ function Legend({activeConferences}) {
         legendItem
           .append("div")
           .attr("class", "legend-color w-6 h-6 mr-2")
-          .style("background-color", conference.mapColor);
+          .style("background-color", conference.primaryColor);
 
         legendItem
           .append("div")
           .attr("class", "legend-label text-sm")
-          .text(conference.conference);
+          .text(conference.abbreviation);
       });
     }
 

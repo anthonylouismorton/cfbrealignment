@@ -7,8 +7,18 @@
     "founded": 1933,
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Southeastern_Conference_logo.svg/225px-Southeastern_Conference_logo.svg.png",
     "headquarters": "Birmingham, Alabama",
-    "formerNames": null,
     "disbanded": null,
+    "names": [
+      {
+        "conference": "Southeastern Conference",
+        "abbreviation": "SEC",
+        "primaryColor": "rgba(255, 208, 70, 0.90)",
+        "secondaryColor": "rgba(0, 75, 141, 0.90)",
+        "startYear": 1933,
+        "endYear": null,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Southeastern_Conference_logo.svg/225px-Southeastern_Conference_logo.svg.png"
+      }
+    ],
     "schools": [
       {
         "school": "University of Alabama",
@@ -213,31 +223,46 @@
     "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/a/ac/Pac-12_logo.svg/110px-Pac-12_logo.svg.png",
     "headquarters": "San Francisco, California",
     "disbanded": null,
-    "formerNames": [
+    "names": [
       {
-        "name": "Pacific Coast Conference",
+        "conference": "Pacific Coast Conference",
+        "abbreviation": "PCC",
         "startYear": 1915,
-        "endYear": 1959
+        "endYear": 1958,
+        "primaryColor": "rgba(210, 180, 140, 0.90)",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Pacific_Coast_Conference_logo.svg/180px-Pacific_Coast_Conference_logo.svg.png"
       },
       {
-        "name": "Big Five Conference",
-        "startYear": 1938,
-        "endYear": 1946
-      },
-      {
-        "name": "Big Six Conference",
+        "conference": "Athletic Association of Western Universities",
+        "abbreviation": "AAWU",
         "startYear": 1959,
-        "endYear": 1968
+        "endYear": 1967,
+        "primaryColor": "rgba(210, 180, 140, 0.90)",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Pacific_Coast_Conference_logo.svg/180px-Pacific_Coast_Conference_logo.svg.png"
       },
       {
-        "name": "Pacific-8 Conference",
+        "conference": "Pacific-8 Conference",
+        "abbreviation": "Pac-8",
         "startYear": 1968,
-        "endYear": 1978
+        "endYear": 1977,
+        "primaryColor": "rgba(210, 180, 140, 0.90)",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Pacific_Coast_Conference_logo.svg/180px-Pacific_Coast_Conference_logo.svg.png"
       },
       {
-        "name": "Pacific-10 Conference",
+        "conference": "Pacific-10 Conference",
+        "abbreviation": "Pac-10",
         "startYear": 1978,
-        "endYear": 2011
+        "endYear": 2011,
+        "primaryColor": "rgba(210, 180, 140, 0.90)",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/7/7e/Pacific-10_Conference_logo.png"
+      },
+      {
+        "conference": "Pacific-12 Conference",
+        "abbreviation": "Pac-12",
+        "startYear": 2012,
+        "endYear": null,
+        "primaryColor": "rgba(210, 180, 140, 0.90)",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/7/7e/Pacific-10_Conference_logo.png"
       }
     ],
     "schools": [
@@ -371,16 +396,16 @@
     "secondaryColor": "rgba(207, 212, 216, 0.90)",
     "tertiaryColor": "rgba(255, 255, 255, 0.90)",
     "headquarters": "Irving, Texas",
-    "formerNames": [
+    "names": [
       {
-        "name": "Big Eight Conference",
-        "startYear": 1907,
-        "endYear": 1996
-      },
-      {
-        "name": "Big 12 Conference",
+        "conference": "Big 12 Conference",
+        "abbreviation": "Big 12",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Big_12_Conference_%28cropped%29_logo.svg/300px-Big_12_Conference_%28cropped%29_logo.svg.png",
+        "primaryColor": "rgba(239, 72, 62, 0.90)",
+        "secondaryColor": "rgba(207, 212, 216, 0.90)",
+        "tertiaryColor": "rgba(255, 255, 255, 0.90)",
         "startYear": 1996,
-        "endYear": 2021
+        "endYear": null
       }
     ],
     "schools": [
@@ -593,11 +618,15 @@
     "primaryColor": "rgba(1, 60, 166, 0.90)",
     "secondaryColor": "rgba(165, 169, 216, 0.90)",
     "headquarters": "Greensboro, North Carolina",
-    "formerNames": [
+    "names": [
       {
-        "name": "Southern Conference",
-        "startYear": 1921,
-        "endYear": 1953
+        "conference": "Atlantic Coast Conference",
+        "abbreviation": "ACC",
+        "startYear": 1953,
+        "endYear": null,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Atlantic_Coast_Conference_logo.svg/2560px-Atlantic_Coast_Conference_logo.svg.png",
+        "primaryColor": "rgba(1, 60, 166, 0.90)",
+        "secondaryColor": "rgba(165, 169, 216, 0.90)"
       }
     ],
     "schools": [
@@ -794,16 +823,51 @@
     "primaryColor": "rgba(0, 136, 206, 0.90)",
     "secondaryColor": "rgba(0, 0, 0, 0.90)",
     "headquarters": "Rosemont, Illinois",
-    "formerNames": [
+    "names": [
       {
-        "name": "Intercollegiate Conference of Faculty Representatives (ICFR)",
+        "conference": "Western Conference",
+        "abbreviation": "Western",
+        "primaryColor": "rgba(0, 136, 206, 0.90)",
         "startYear": 1896,
-        "endYear": 1899
+        "endYear": 1898
       },
       {
-        "name": "Western Conference",
+        "conference": "Big Nine Conference",
+        "abbreviation": "Big Nine",
+        "primaryColor": "rgba(0, 136, 206, 0.90)",
+        "secondaryColor": "rgba(0, 0, 0, 0.90)",
         "startYear": 1899,
-        "endYear": 1917
+        "endYear": 1916,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Big_Ten_Conference_logo.svg/200px-Big_Ten_Conference_logo.svg.png"
+      },
+      {
+        "conference": "Big Ten Conference",
+        "abbreviation": "Big Ten",
+        "startYear": 1917,
+        "endYear": 1945,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Big_Ten_Conference_logo.svg/200px-Big_Ten_Conference_logo.svg.png",
+        "disbanded": null,
+        "primaryColor": "rgba(0, 136, 206, 0.90)",
+        "secondaryColor": "rgba(0, 0, 0, 0.90)"
+      },
+      {
+        "conference": "Big Nine Conference",
+        "abbreviation": "Big Nine",
+        "startYear": 1946,
+        "endYear": 1949,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Big_Ten_Conference_logo.svg/200px-Big_Ten_Conference_logo.svg.png",
+        "primaryColor": "rgba(0, 136, 206, 0.90)",
+        "secondaryColor": "rgba(0, 0, 0, 0.90)"
+      },
+      {
+        "conference": "Big Ten Conference",
+        "abbreviation": "Big Ten",
+        "startYear": 1917,
+        "endYear": null,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Big_Ten_Conference_logo.svg/200px-Big_Ten_Conference_logo.svg.png",
+        "disbanded": null,
+        "primaryColor": "rgba(0, 136, 206, 0.90)",
+        "secondaryColor": "rgba(0, 0, 0, 0.90)"
       }
     ],
     "schools": [
@@ -1009,10 +1073,21 @@
     "primaryColor": "rgba(218, 41, 28, 0.90)",
     "secondaryColor": "rgba(0, 20. 137, 0.90)",
     "founded": 1921,
+    "disbanded": null,
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Southern_Conference_logo.svg/1200px-Southern_Conference_logo.svg.png",
     "headquarters": "Spartanburg, South Carolina",
-    "formerNames": null,
-    "disbanded": null,
+    "names": [
+      {
+      "conference": "Southern Conference",
+      "abbreviation": "SOCON",
+      "primaryColor": "rgba(218, 41, 28, 0.90)",
+      "secondaryColor": "rgba(0, 20. 137, 0.90)",
+      "startYear": 1921,
+      "endYear": null,
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Southern_Conference_logo.svg/1200px-Southern_Conference_logo.svg.png",
+      "headquarters": "Spartanburg, South Carolina"
+      }
+    ],
     "schools": [
       {
         "school": "University of Alabama",
@@ -1266,26 +1341,42 @@
     "logo": "https://1000logos.net/wp-content/uploads/2021/06/Big-Eight-Conference-logo.png",
     "primaryColor": "rgba(1, 158, 79, 0.90)",
     "headquarters": "Kansas City, Missouri",
-    "formerNames": [
+    "names": [
       {
-        "name": "Big Six Conference",
-        "startYear": 1928,
-        "endYear": 1948
-      },
-      {
-        "name": "Big Seven Conference",
-        "startYear": 1948,
-        "endYear": 1957
-      },
-      {
-        "name": "Big Eight Conference",
-        "startYear": 1957,
-        "endYear":1964
-      },
-      {
-        "name": "Missouri Valley Intercollegiate Athletic Association",
+        "conference": "Missouri Valley Intercollegiate Athletic Association",
+        "abbreviation": "MVIAA",
         "startYear": 1907,
-        "endYear": 1964
+        "endYear": 1927,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Missouri_Valley_Conference_logo.svg/270px-Missouri_Valley_Conference_logo.svg.png",
+        "primaryColor": "rgba(24, 70, 139, 0.90)",
+        "secondaryColor": "rgba(229, 22, 54, 0.90)"
+      },
+      {
+        "conference": "Big Six Conference",
+        "abbreviation": "Big 6",
+        "startYear": 1928,
+        "endYear": 1947,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Missouri_Valley_Conference_logo.svg/270px-Missouri_Valley_Conference_logo.svg.png",
+        "primaryColor": "rgba(24, 70, 139, 0.90)",
+        "secondaryColor": "rgba(229, 22, 54, 0.90)"
+      },
+      {
+        "conference": "Big Seven Conference",
+        "abbreviation": "Big 7",
+        "startYear": 1948,
+        "endYear": 1956,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Missouri_Valley_Conference_logo.svg/270px-Missouri_Valley_Conference_logo.svg.png",
+        "primaryColor": "rgba(24, 70, 139, 0.90)",
+        "secondaryColor": "rgba(229, 22, 54, 0.90)"
+      },
+      {
+        "conference": "Big Eight Conference",
+        "abbreviation": "Big 8",
+        "startYear": 1957,
+        "endYear":1996,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Missouri_Valley_Conference_logo.svg/270px-Missouri_Valley_Conference_logo.svg.png",
+        "primaryColor": "rgba(24, 70, 139, 0.90)",
+        "secondaryColor": "rgba(229, 22, 54, 0.90)"
       }
     ],
     "schools": [
@@ -1409,11 +1500,21 @@
     "abbreviation": "Big East",
     "founded": 1991,
     "disbanded": 2013,
-    "logo": null,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Big_East_Conference_logo_stacked.svg/2560px-Big_East_Conference_logo_stacked.svg.png",
     "primaryColor": "rgba(228, 28, 57, 0.90)",
     "secondaryColor": "rgba(26, 66, 125, 0.90)",
     "headquarters": "Providence Rhode Island",
-    "formerNames": [null],
+    "names": [
+      {
+        "conference": "Big East Conference",
+        "abbreviation": "Big East",
+        "startYear": 1991,
+        "endYear": 2013,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Big_East_Conference_logo_stacked.svg/2560px-Big_East_Conference_logo_stacked.svg.png",
+        "primaryColor": "rgba(228, 28, 57, 0.90)",
+        "secondaryColor": "rgba(26, 66, 125, 0.90)"
+      }
+    ],
     "schools": [
       {
         "school": "Boston College",
@@ -1533,7 +1634,15 @@
     "logo": "https://i.pinimg.com/originals/05/f6/8b/05f68b6df16ad6c83f85d4ed50a1638b.jpg",
     "primaryColor": "rgba(125, 118, 98, 0.90)",
     "headquarters": "Unknown",
-    "formerNames": [null],
+    "names": [
+      {"conference": "Border Conference",
+        "startYear": 1931,
+        "endYear": 1962,
+        "abbreviation": "Border",
+        "logo": "https://i.pinimg.com/originals/05/f6/8b/05f68b6df16ad6c83f85d4ed50a1638b.jpg",
+        "primaryColor": "rgba(125, 118, 98, 0.90)"
+      }
+    ],
     "schools": [
       {
         "school": "University of Arizona",
@@ -1617,5 +1726,162 @@
         "years": [1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961]
       }
     ]
+  },
+  {
+    "conference": "Southwest Conference",
+    "abbreviation": "Southwest",
+    "founded": 1915,
+    "disbanded": 1995,
+    "logo": "https://upload.wikimedia.org/wikipedia/en/c/cb/Swc-logo-tshof-1.jpg",
+    "primaryColor": "rgba(0, 128, 0, 0.90)",
+    "secondaryColor": "rgba(255, 0, 0, 0.90) ",
+    "headquarters": "Gerogetown, Texas",
+    "names": [
+      {
+        "conference": "Southwest Conference",
+        "abbreviation": "Southwest",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/c/cb/Swc-logo-tshof-1.jpg",
+        "primaryColor": "rgba(0, 128, 0, 0.90)",
+        "secondaryColor": "rgba(255, 0, 0, 0.90) ",
+        "startYear": 1914,
+        "endYear": 1995
+      }
+    ],
+    "schools": [
+      {
+        "school": "University of Arkansas",
+        "stateId": "05",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Arkansas_Razorbacks_logo.svg/1200px-Arkansas_Razorbacks_logo.svg.png",
+        "nickName": "Arkansas",
+        "division": "West",
+        "years": [1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990],
+        "lat": -94.1034,
+        "lon": 36.0407
+      },
+      {
+        "school": "Baylor University",
+        "division": null,
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Baylor_Athletics_logo.svg/1200px-Baylor_Athletics_logo.svg.png",
+        "lat": -97.1472,
+        "lon": 31.5582,
+        "years": [1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995]
+      },
+      {
+        "school": "University of Houston",
+        "stateId": "48",
+        "logo": "https://uh.edu/brand/_img/uh_red.png",
+        "division": null,
+        "lat": -95.339162,
+        "lon": 29.718922,
+        "years": [1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995]
+      },
+      {
+        "school": "University of Oklahoma",
+        "stateId": "40",
+        "division": null,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Oklahoma_Sooners_logo.svg/225px-Oklahoma_Sooners_logo.svg.png",
+        "lat": -97.2645,
+        "lon": 35.1231,
+        "years": [1915,1916,1917,1918]
+      },
+      {
+        "school": "Oklahoma State University",
+        "stateId": "40",
+        "division": null,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Oklahoma_State_University_system_logo.svg/1200px-Oklahoma_State_University_system_logo.svg.png",
+        "lat": -97.0665,
+        "lon": 36.1256,
+        "years": [1915,1916,1917,1918,1919,1920,1921,1922,1923,1924]
+      },
+      {
+        "school": "Phillips University",
+        "stateId": "40",
+        "logo": "http://www.pulf.org/images/main/pu-skunkorig.png",
+        "division": null,
+        "lat": -97.5041,
+        "lon": 36.2349,
+        "years": [1920]
+      },
+      {
+        "school": "Rice University",
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Rice_Owls_logo.svg/180px-Rice_Owls_logo.svg.png",
+        "division": null,
+        "lat": -95.2433,
+        "lon": 29.4259,
+        "years": [1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995]
+      },
+      {
+        "school": "Southern Methodist University (SMU)",
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/SMU_Mustang_logo.svg/1200px-SMU_Mustang_logo.svg.png",
+        "division": null,
+        "lat": -96.47238,
+        "lon": 32.501192,
+        "years": [1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995]
+      },
+      {
+        "school": "Southwestern University",
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/ATH_Full-FC_2021_F.svg/1200px-ATH_Full-FC_2021_F.svg.png",
+        "division": null,
+        "lat": -97.66480,
+        "lon": 30.63600,
+        "years": [1915,1916]
+      },
+      {
+        "school": "Texas Christian University (TCU)",
+        "division": null,
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/TCU_Horned_Frogs_logo.svg/1200px-TCU_Horned_Frogs_logo.svg.png",
+        "lat": -97.3674,
+        "lon": 32.7096,
+        "years": [1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995]
+      },
+      {
+        "school": "University of Texas at Austin",
+        "division": null,
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Texas_Longhorns_logo.svg/300px-Texas_Longhorns_logo.svg.png",
+        "nickName": "Texas",
+        "lat": -97.735,
+        "lon": 30.285,
+        "years": [1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995],
+        "left": [{"year": 2024, "newConference": "SEC"}]
+      },
+      {
+        "school": "Texas A&M",
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Texas_A%26M_University_logo.svg/225px-Texas_A%26M_University_logo.svg.png",
+        "nickName": "Texas A&M",
+        "division": null,
+        "years": [1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995],
+        "left": [{"year": 2012, "newConference": "SEC"}],
+        "lat": -96.2037,
+        "lon": 30.3637
+      },
+      {
+        "school": "Texas Tech University",
+        "division": null,
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Texas_Tech_Athletics_logo.svg/875px-Texas_Tech_Athletics_logo.svg.png",
+        "lat": -101.8729,
+        "lon": 33.5911,
+        "years": [1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995]
+      }
+    ]
+  },
+  {
+    "conference": "Independent",
+    "abbreviation": "Independent",
+    "primaryColor": null,
+    "secondaryColor": null,
+    "founded": null,
+    "disbanded": null,
+    "logo": "https://1000logos.net/wp-content/uploads/2021/06/Division-I-FBS-Independents-logo.png",
+    "headquarters": null,
+    "names": null,
+    "schools": []
   }
 ]
