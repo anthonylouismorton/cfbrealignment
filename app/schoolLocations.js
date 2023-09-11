@@ -12,7 +12,7 @@ export function schoolLocations(svg, projection, currentConferences, year) {
         //Double check Lat Lon in JSON if you get a projection error
         const schoolCords = [school.lat, school.lon];
         const [x, y] = projection(schoolCords);
-        if(school.years[0] === year){
+        if(school.years[0] === year || (school.rejoined && school.rejoined.some(obj => obj.year === year))){
           //add bounce effect
           const schoolImage = svg
             .append('image')

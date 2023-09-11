@@ -17,6 +17,7 @@ function USMap() {
   const [activeConferences, setActiveConferences] = useState(null)
   const [changesList, setChangesList] = useState([])
   useEffect(() => {
+
     const width = 975;
     const height = 610;
     var svg = d3.select('#map').select('svg');
@@ -54,11 +55,13 @@ function USMap() {
   }, [mapdata, currentYear]);
 
   return (
-    <div style={{ position: 'relative', textAlign: 'center', display: 'flex', justifyContent: 'center' }}>
-      <div id="map" style={{ margin: '0 auto' }}></div>
+    <div>
+      <div className="pt-5 relative text-center flex justify-center">
+        <div id="map" style={{ margin: '0 auto' }}></div>
+      </div>
       <Year currentYear={currentYear} setCurrentYear={setCurrentYear} />
       <Legend activeConferences={activeConferences}/>
-      <Changes changesList={changesList} currentYear={currentYear}/>
+      <Changes changesList={changesList}/>
     </div>
   );
 }

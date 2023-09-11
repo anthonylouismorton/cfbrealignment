@@ -2,10 +2,9 @@ import React from 'react';
 import { } from 'react-icons/fa';
 import { FaArrowRight } from 'react-icons/fa';
 
-function Changes({ changesList, currentYear }) {
-  console.log(changesList)
+function Changes({ changesList }) {
   return (
-    <div className="bg-white absolute top-0 left-0 pl-8 pr-8 pb-2 rounded">
+    <div className="bg-white absolute bottom-0 left-0 pl-8 pr-8 pb-2 rounded">
       <h2 className="text-center font-semibold pt-1">History</h2>
       <div id="change">
       {changesList.map((change, index) => (
@@ -59,6 +58,9 @@ function Changes({ changesList, currentYear }) {
             <>
               <div className="change-logo w-4 h-4 mr-2 flex items-center">
                 <img src={change.logo} alt={`${change.school} logo`} />
+              </div>
+              <div className="change-logo w-4 h-4 mr-2 flex items-center">
+                <FaArrowRight icon="fa-right-to-bracket" />
               </div>
               <div className="change-logo w-4 h-4 mr-2 flex items-center">
                 <img src={change.conferenceLogo} alt={`${change.conferenceLogo} logo`} />

@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import * as d3 from 'd3';
 
 function Legend({activeConferences}) {
+  const width = window.innerWidth
   useEffect(() => {
     const legendContainer = d3.select("#legend");
     if(activeConferences){
@@ -30,10 +31,12 @@ function Legend({activeConferences}) {
       });
     }
 
-  }, [activeConferences]);
+  }, [activeConferences, width]);
   return (
     <div className="bg-white absolute bottom-0 bg-white right-0 p-5 rounded">
       <h2 className="text-center text-lg font-semibold">Conferences</h2>
+      {/* <p className="text-center text-lg font-semibold">{window.innerHeight}</p>
+      <p className="text-center text-lg font-semibold">{window.innerWidth}</p> */}
       <div id="legend"></div>
     </div>
 

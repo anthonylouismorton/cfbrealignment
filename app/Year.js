@@ -1,12 +1,8 @@
 import React from 'react';
-import { FaStepBackward, FaStepForward } from 'react-icons/fa';
+import YearSlider from './YearSlider';
 
 function Year({ currentYear, setCurrentYear }) {
-  const handleSliderChange = (e) => {
-    const newYear = parseInt(e.target.value, 10);
-    setCurrentYear(newYear);
-  };
-
+  
   const handlePrevYear = () => {
     const newYear = currentYear - 1;
     if (newYear >= 1896) {
@@ -22,28 +18,8 @@ function Year({ currentYear, setCurrentYear }) {
   };
 
   return (
-    <div className="absolute top-0 right-0 bg-white border rounded border-gray-300 p-2 text-center">
-      <div className="mb-2 flex items-center justify-center">
-        <button onClick={handlePrevYear} className="arrow-button pr-1">
-          <FaStepBackward />
-        </button>
-        <span className="currentYear-text">{currentYear}</span>
-        <button onClick={handleNextYear} className="arrow-button pl-1">
-          <FaStepForward />
-        </button>
-      </div>
-      <div className="slider-container">
-        <span>Year</span>
-        <input
-          type="range"
-          min="1896"
-          max="2024"
-          step="1"
-          value={currentYear}
-          onChange={handleSliderChange}
-          className="slider"
-        />
-      </div>
+    <div className="fixed top-0 left-0 w-full text-center">
+      <YearSlider currentYear={currentYear} setCurrentYear={setCurrentYear} />
     </div>
   );
 }

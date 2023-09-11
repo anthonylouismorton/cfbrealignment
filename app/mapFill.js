@@ -54,7 +54,6 @@ export function mapFill(svg, schoolStates, mapdata, currentYear) {
       });
     }
   });
-  console.log(legendConferences)
 
   const statePaths = svg
     .append('g')

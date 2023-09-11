@@ -7,7 +7,6 @@ export function getChanges(currentConferences, currentYear) {
       conferenceChanges.push({change: 'founded', founded: conference.founded, conference: conference.conference, logo: conference.logo})
     }
     if(conference.disbanded === currentYear){
-      console.log(conference.disbanded)
       conferenceChanges.push({change: 'disbanded', disbanded: conference.disbanded, conference: conference.conference, logo: conference.logo})
     }
     conference.schools.forEach((school)=>{
@@ -19,7 +18,6 @@ export function getChanges(currentConferences, currentYear) {
           if(left.year === currentYear){
             conferenceData.forEach((item) => {
               if(left.newConference === item.abbreviation){
-                console.log(conference)
                 conferenceChanges.push({change: 'left', left: left.year, newConferenceLogo: item.logo,  oldConferenceLogo: conference.logo, conference: conference.abbreviation, ...school})
               }
             })
@@ -35,5 +33,16 @@ export function getChanges(currentConferences, currentYear) {
       }
     })
   })
-  return conferenceChanges;
+
+  const filteredConferences = conferenceChanges.filter((school, index, self) => {
+    const hasDuplicate = self.some(
+      (otherSchool, otherIndex) =>
+        otherIndex !== index &&
+        otherSchool.school === school.school &&
+        otherSchool.change === "left"
+    );
+      
+    return !hasDuplicate || school.change !== "joined";
+  });
+  return filteredConferences;
 }
