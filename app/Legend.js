@@ -35,8 +35,8 @@ function Legend({activeConferences}) {
   return (
     <div className="bg-white absolute bottom-0 bg-white right-0 p-5 rounded">
       <h2 className="text-center text-lg font-semibold">Conferences</h2>
-      <p className="text-center text-lg font-semibold">{window.innerHeight}</p>
-      <p className="text-center text-lg font-semibold">{window.innerWidth}</p>
+      {/* <p className="text-center text-lg font-semibold">{window.innerHeight}</p>
+      <p className="text-center text-lg font-semibold">{window.innerWidth}</p> */}
       <div id="legend"></div>
     </div>
 
