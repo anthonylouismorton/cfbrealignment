@@ -4,7 +4,7 @@ import { FaArrowRight } from 'react-icons/fa';
 
 function Changes({ changesList }) {
   return (
-    <div className="bg-white absolute top-0 left-0 pl-8 pr-8 pb-2 rounded">
+    <div className="bg-white absolute bottom-0 left-0 pl-8 pr-8 pb-2 rounded">
       <h2 className="text-center font-semibold pt-1">History</h2>
       <div id="change">
       {changesList.map((change, index) => (
