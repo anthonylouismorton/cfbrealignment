@@ -10,7 +10,7 @@ function Year({ currentYear, setCurrentYear }) {
     const hideSlider = () => {
       hideTimer = setTimeout(() => {
         setIsVisible(false);
-      }, 5000); // 5 seconds
+      }, 5000);
     };
 
     const showSlider = () => {
@@ -20,9 +20,7 @@ function Year({ currentYear, setCurrentYear }) {
 
 
     hideSlider();
-
-    // Listen for mouse enter and leave events on the parent div
-    const div = document.getElementById('yearDiv'); // Replace with your actual div ID
+    const div = document.getElementById('yearDiv');
     div.addEventListener('mouseenter', showSlider);
     div.addEventListener('mouseleave', hideSlider);
 
@@ -37,7 +35,7 @@ function Year({ currentYear, setCurrentYear }) {
   };
   return (
     <div
-      id="yearDiv" // Give your div an ID for event handling
+      id="yearDiv"
       className="fixed top-0 left-0 w-full text-center h-20"
       onFocus={showSlider}
     >

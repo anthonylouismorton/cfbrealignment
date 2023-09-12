@@ -24,22 +24,23 @@ function Legend({activeConferences}) {
           .attr("class", "legend-color w-6 h-6 mr-2")
           .style("background-color", conference.primaryColor);
 
-        legendItem
+          legendItem
           .append("div")
           .attr("class", "legend-label text-sm")
+          .style("color", conference.primaryColor) // Set the text color to conference.primaryColor
           .text(conference.abbreviation);
+        
       });
     }
 
   }, [activeConferences, width]);
   return (
-    <div className="bg-white absolute bottom-0 bg-white right-0 p-5 rounded">
-      <h2 className="text-center text-lg font-semibold">Conferences</h2>
+    <div className="bg-white absolute bottom-2 bg-white bg-opacity-10 right-2 p-5 rounded">
+      <h2 className="text-center mb-2 text-lg text-white font-semibold">Conferences</h2>
       {/* <p className="text-center text-lg font-semibold">{window.innerHeight}</p>
       <p className="text-center text-lg font-semibold">{window.innerWidth}</p> */}
       <div id="legend"></div>
     </div>
-
   );
 }
 

@@ -10,7 +10,7 @@ import { mapFill } from './mapFill';
 import { schoolLocations } from './schoolLocations';
 import Year from './Year';
 import Legend from './Legend';
-import Changes from './Changes';
+import Changes from './History';
 
 function USMap() {
   const [currentYear, setCurrentYear] = useState(1896);
