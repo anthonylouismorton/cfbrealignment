@@ -2,6 +2,9 @@ import * as React from 'react';
 import Slider from '@mui/material/Slider';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
+import { Icon, IconButton } from '@mui/material';
+import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
+import SkipNextIcon from '@mui/icons-material/SkipNext';
 
 const iOSBoxShadow =
   '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)';
@@ -27,7 +30,6 @@ const iOSBoxShadow =
 const CustomSlider = styled(Slider)(({ theme }) => ({
   color: theme.palette.mode === 'dark' ? '#3880ff' : '#3880ff',
   height: 2,
-  // padding: '15px',
   '& .MuiSlider-thumb': {
     height: 15,
     width: 15,
@@ -90,9 +92,25 @@ export default function YearSlider({currentYear,setCurrentYear}) {
   const handleSliderChange = (e, newValue) => {
     setCurrentYear(newValue);
   };
+  const handlePrevYear = () => {
+    const newYear = currentYear - 1;
+    if (newYear >= 1896) {
+      setCurrentYear(newYear);
+    }
+  };
+  const handleNextYear = () => {
+    const newYear = currentYear + 1;
+    if (newYear <= 2024) {
+      setCurrentYear(newYear);
+    }
+  };
   return (
-    <Box className="pl-10 pr-10 pt-6 w-full">
+    <Box className="pl-3 pr-3 w-full flex justify-center">
+        <IconButton onClick={handlePrevYear}>
+          <SkipPreviousIcon className="text-white ml-2"/>
+        </IconButton>
       <CustomSlider
+        className='mt-5'
         aria-label="Custom marks"
         value={currentYear}
         valueLabelDisplay="auto"
@@ -101,6 +119,9 @@ export default function YearSlider({currentYear,setCurrentYear}) {
         marks={marks}
         onChange={handleSliderChange}
       />
+      <IconButton onClick={handleNextYear}>
+        <SkipNextIcon className="text-white mr-2"/>
+      </IconButton>
     </Box>
   );
 }
