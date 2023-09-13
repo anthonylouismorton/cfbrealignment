@@ -35,7 +35,7 @@ function Legend({activeConferences}) {
 
   }, [activeConferences]);
   return (
-    <div className="bg-white absolute bottom-2 bg-white bg-opacity-10 right-2 p-5 rounded">
+    <div className="bg-white absolute bottom-2 bg-white bg-opacity-40 right-2 p-5 rounded">
       <h2 className="text-center mb-2 text-lg text-white font-semibold">Conferences</h2>
       {/* <p className="text-center text-lg font-semibold">{window.innerHeight}</p>
       <p className="text-center text-lg font-semibold">{window.innerWidth}</p> */}

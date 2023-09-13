@@ -60,12 +60,15 @@ const CustomSlider = styled(Slider)(({ theme }) => ({
   },
   '& .MuiSlider-track': {
     border: 'none',
-    color: 'white'
+    color: 'white',
+    '&:focus, &:hover, &.Mui-active': {
+      color: 'blue'
+    }
   },
   '& .MuiSlider-rail': {
     opacity: 0.5,
     backgroundColor: 'white',
-    color: 'white'
+    color: 'white',
   },
   '& .MuiSlider-mark': {
     backgroundColor: 'gray',
