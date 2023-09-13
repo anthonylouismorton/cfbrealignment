@@ -39,6 +39,7 @@ function USMap() {
     const projection = d3.geoAlbersUsa()
       .scale(1300)
       .translate([width / 2, height / 2]);
+
     const path = d3.geoPath(projection);
     const usa = svg
       .append('g')
@@ -48,12 +49,42 @@ function USMap() {
       const { schoolStates, currentConferences } = getSchools(svg, projection, conferenceData, currentYear, mapdata);
       const getLegendConferences = mapFill(svg, schoolStates, mapdata, currentYear)
       setActiveConferences(getLegendConferences)
-
+    
+    const yearGroup = svg.append('g')
+      .attr('class', 'year-group')
+      .attr('transform', 'translate(600, 550)');
+    
+    const rectWidth = 100;
+    const rectHeight = 40;
+    
+    yearGroup.append('rect')
+      .attr('width', rectWidth)
+      .attr('height', rectHeight)
+      .attr('rx', 4)
+      .attr('ry', 4)
+      .style('fill', 'white')
+      .style('opacity', 0.4)
+    
+    const centerX = rectWidth / 2;
+    const centerY = rectHeight / 2;
+    
+    yearGroup.append('text')
+      .attr('class', 'year-text')
+      .attr('x', centerX)
+      .attr('y', centerY) 
+      .style('font-size', '16px')
+      .style('fill', 'white')
+      .style('font-weight', '500')
+      .style('text-anchor', 'middle')
+      .style('dominant-baseline', 'middle')
+      .text(`Year ${currentYear}`);
+    
     var conferenceChanges = getChanges(currentConferences, currentYear)
     setChangesList(conferenceChanges)
     schoolLocations(svg, projection, currentConferences, currentYear);
-  }, [mapdata, currentYear]);
 
+  }, [mapdata, currentYear]);
+  console.log(changesList)
   return (
     <div>
       <div className="pt-5 relative text-center flex justify-center">
@@ -61,7 +92,9 @@ function USMap() {
       </div>
       <Year currentYear={currentYear} setCurrentYear={setCurrentYear} />
       <Legend activeConferences={activeConferences}/>
+      {changesList.length > 0 &&
       <Changes changesList={changesList}/>
+      }
     </div>
   );
 }

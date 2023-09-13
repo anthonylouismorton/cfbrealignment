@@ -338,7 +338,7 @@
       {
         "school": "Stanford University",
         "stateId": "06",
-        "logo": "https://identity.stanford.edu/wp-content/uploads/sites/3/2020/07/block-s-right.png",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Stanford_Cardinal_logo.svg/304px-Stanford_Cardinal_logo.svg.png",
         "division": "North",
         "lat": -122.1701,
         "lon": 37.4277,
@@ -368,7 +368,7 @@
       {
         "school": "University of Washington",
         "stateId": "53",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/3/36/University_of_Washington_Block_W_logo_RGB_brand_colors.SVG",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Washington_Huskies_logo.svg/1200px-Washington_Huskies_logo.svg.png",
         "division": "North",
         "lat": -122.3075,
         "lon": 47.6546,
@@ -574,7 +574,7 @@
       {
         "school": "University of Houston",
         "stateId": "48",
-        "logo": "https://uh.edu/brand/_img/uh_red.png",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Houston_Cougars_primary_logo.svg/1200px-Houston_Cougars_primary_logo.svg.png",
         "division": null,
         "lat": -95.339162,
         "lon": 29.718922,
@@ -777,7 +777,7 @@
       {
         "school": "Stanford University",
         "stateId": "06",
-        "logo": "https://identity.stanford.edu/wp-content/uploads/sites/3/2020/07/block-s-right.png",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Stanford_Cardinal_logo.svg/304px-Stanford_Cardinal_logo.svg.png",
         "division": null,
         "lat": -122.1701,
         "lon": 37.4277,
@@ -1342,7 +1342,7 @@
     "abbreviation": "Big 8",
     "founded": 1907,
     "disbanded": 1996,
-    "logo": "https://1000logos.net/wp-content/uploads/2021/06/Big-Eight-Conference-logo.png",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/4/46/Big_8_Conference.png",
     "primaryColor": "rgba(1, 158, 79, 0.90)",
     "headquarters": "Kansas City, Missouri",
     "names": [
@@ -1351,7 +1351,7 @@
         "abbreviation": "MVIAA",
         "startYear": 1907,
         "endYear": 1927,
-        "logo": "https://1000logos.net/wp-content/uploads/2021/06/Big-Eight-Conference-logo.png",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/4/46/Big_8_Conference.png",
         "primaryColor": "rgba(24, 70, 139, 0.90)",
         "secondaryColor": "rgba(229, 22, 54, 0.90)"
       },
@@ -1369,7 +1369,7 @@
         "abbreviation": "Big 7",
         "startYear": 1948,
         "endYear": 1956,
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Missouri_Valley_Conference_logo.svg/270px-Missouri_Valley_Conference_logo.svg.png",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/4/46/Big_8_Conference.png",
         "primaryColor": "rgba(24, 70, 139, 0.90)",
         "secondaryColor": "rgba(229, 22, 54, 0.90)"
       },
@@ -1378,7 +1378,7 @@
         "abbreviation": "Big 8",
         "startYear": 1957,
         "endYear":1996,
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Missouri_Valley_Conference_logo.svg/270px-Missouri_Valley_Conference_logo.svg.png",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/4/46/Big_8_Conference.png",
         "primaryColor": "rgba(24, 70, 139, 0.90)",
         "secondaryColor": "rgba(229, 22, 54, 0.90)"
       }
@@ -1584,7 +1584,7 @@
         "school": "Temple University",
         "division": "Atlantic",
         "stateId": "42",
-        "logo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/218.png&h=200&w=200",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Temple_T_logo.svg/1200px-Temple_T_logo.svg.png",
         "lat": -75.0916,
         "lon": 39.5853,
         "years": [1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2012],
@@ -1788,7 +1788,7 @@
       {
         "school": "University of Houston",
         "stateId": "48",
-        "logo": "https://uh.edu/brand/_img/uh_red.png",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Houston_Cougars_primary_logo.svg/1200px-Houston_Cougars_primary_logo.svg.png",
         "division": null,
         "lat": -95.339162,
         "lon": 29.718922,
@@ -1974,14 +1974,105 @@
   {
     "conference": "Skyline Conference",
     "abbreviation": "Skyline",
-    "primaryColor": null,
-    "secondaryColor": null,
-    "founded": null,
-    "disbanded": null,
+    "primaryColor": "rgba(30, 144, 255, 0.90)",
+    "secondaryColor": "rgba(139, 69, 19, 0.90)",
+    "founded": 1937,
+    "disbanded": 1962,
     "logo": "https://upload.wikimedia.org/wikipedia/en/a/ac/Skyline_Conference_logo.jpg",
     "headquarters": null,
-    "names": null,
-    "schools": []
+    "names": [
+      {
+        "conference": "Skyline Conference",
+        "abbreviation": "Skyline",
+        "primaryColor": "rgba(30, 144, 255, 0.90)",
+        "secondaryColor": "rgba(139, 69, 19, 0.90)",
+        "startYear": 1937,
+        "endYear": 1962,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Southeastern_Conference_logo.svg/225px-Southeastern_Conference_logo.svg.png"
+      }
+    ],
+    "schools": [
+      {
+        "school": "University of Colorado Boulder",
+        "stateId": "08",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Colorado_Buffaloes_logo.svg/300px-Colorado_Buffaloes_logo.svg.png",
+        "division": null,
+        "lat": -105.267,
+        "lon": 40.009,
+        "years": [1937,1938,1939,1940,1941,1942,1943,1944,1945,1946],
+        "left": [{"year": 1947, "newConference": "Big 8"}]
+      },
+      {
+        "school": "Colorado State University",
+        "stateId": "08",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/14/Colorado_State_Rams_logo.svg/800px-Colorado_State_Rams_logo.svg.png",
+        "division": null,
+        "lat": -105.0519,
+        "lon": 40.3412,
+        "years": [1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
+        "left": [{"year": 2024, "newConference": "Big 12"}]
+      },
+      {
+        "school": "University of Denver",
+        "stateId": "08",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Denver_Pioneers_Athletics_logo.svg/1200px-Denver_Pioneers_Athletics_logo.svg.png",
+        "division": null,
+        "lat": -104.963,
+        "lon": 39.6815,
+        "years": [1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
+        "left": [{"year": 2024, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "Bringham Young University",
+        "stateId": "49",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/BYU_Cougars_logo.svg/2560px-BYU_Cougars_logo.svg.png",
+        "division": null,
+        "lat": -111.3857,
+        "lon": 40.153,
+        "years": [1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
+        "left": [{"year": 1962, "newConference": "WAC"}]
+      },
+      {
+        "school": "University of Utah",
+        "stateId": "49",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Utah_Utes_logo.svg/2242px-Utah_Utes_logo.svg.png",
+        "division": null,
+        "lat": -111.8421,
+        "lon": 40.7649,
+        "years": [1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
+        "left": [{"year": 1962, "newConference": "WAC"}]
+      },
+      {
+        "school": "University of Wyoming",
+        "stateId": "56",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/9/91/Wyoming_Athletics_logo.svg",
+        "division": null,
+        "lat": -105.568,
+        "lon": 41.312,
+        "years": [1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
+        "left": [{"year": 1962, "newConference": "WAC"}]
+      },
+      {
+        "school": "University of New Mexico",
+        "stateId": "35",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/45/New_Mexico_Lobos_logo.svg/1200px-New_Mexico_Lobos_logo.svg.png",
+        "division": null,
+        "lat": -106.6198,
+        "lon": 35.0843,
+        "years": [1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
+        "left": [{"year": 1962, "newConference": "WAC"}]
+      },
+      {
+        "school": "University of Montana",
+        "stateId": "30",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Montana_Griz_logo.svg/1200px-Montana_Griz_logo.svg.png",
+        "division": null,
+        "lat": -113.981,
+        "lon": 46.864,
+        "years": [1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
+        "left": [{"year": 1962, "newConference": "FBS Independent"}]
+      }
+    ]
   },
   {
     "conference": "American Athletic Conference",
