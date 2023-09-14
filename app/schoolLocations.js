@@ -1,11 +1,5 @@
 export function schoolLocations(svg, projection, currentConferences, year) {
-  //TO DO
-  //Need take in a list of the previous conferences and schools from the previous year. 
-  //Next we need to compare them to the currentConferences array. If a school was removed from the array
-  //we need to make note if they went to another conference or not. If they haven't
-  //They will be marked as independent
-  //We need to also need to return the current conference information to the USMap component
-  //so that it can be saved in the state to be compared to last time
+
   currentConferences.forEach((conference) => {
     conference.schools.forEach((school) => {
       if(school.years.includes(year)){

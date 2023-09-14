@@ -36,7 +36,7 @@ function Year({ currentYear, setCurrentYear }) {
   return (
     <div
       id="yearDiv"
-      className="fixed top-0 left-0 w-full text-center h-20"
+      className="w-full text-center h-20 mt-200"
       onFocus={showSlider}
     >
       {isVisible && 
