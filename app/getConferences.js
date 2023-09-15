@@ -1,22 +1,29 @@
-export function getConferences(svg, projection, conferenceData, year) {
+export function getConferences(conferenceData, year, mapdata, majorConferences) {
 
-  var currentConferences = []
+  var getCurrentConferences = []
   conferenceData.forEach((conference) => {
     if(conference.founded <= year && (conference.disbanded === null || conference.disbanded >= year)){
-      currentConferences.push(conference)
+      if(!majorConferences){
+        getCurrentConferences.push(conference)
+      }
+      else{
+        if((conference.majorConference.start >= year && conference.majorConference.end > year) || (conference.majorConference.start >= !conference.majorConference.end)){
+          getCurrentConferences.push(conference)
+        }
+      }
     }
-  })
+  });
 
-  var schoolStates = []
+  var getSchoolStates = []
 
-  currentConferences.forEach((conference) => {
+  getCurrentConferences.forEach((conference) => {
     
     //need the states for schools playing during the current year for filling in the states on the map to represent active conferences
     conference.schools.forEach((school) => {
-      if(!schoolStates.includes(school.stateId) && (school.years.includes(year))){
-        schoolStates.push({state: school.stateId, ...conference})
+      if(!getSchoolStates.includes(school.stateId) && (school.years.includes(year))){
+        getSchoolStates.push({state: school.stateId, ...conference})
     }
   })
   });
-  return { schoolStates, currentConferences }
+  return { getSchoolStates, getCurrentConferences }
 }

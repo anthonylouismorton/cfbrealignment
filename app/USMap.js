@@ -12,12 +12,17 @@ import Year from './Year';
 import Legend from './Legend';
 import Changes from './History';
 import Header from './Header';
-import Filter from './Options';
+import Options from './Options';
+import { getOptions } from './getOptions';
 
 function USMap() {
   const [currentYear, setCurrentYear] = useState(1896);
-  const [activeConferences, setActiveConferences] = useState(null)
-  const [changesList, setChangesList] = useState([])
+  const [activeConferences, setActiveConferences] = useState(null);
+  const [changesList, setChangesList] = useState([]);
+  const [options, setOptions] = useState({conferences: false, majorConferences: false, showHistory: true});
+  const [currentConferences, setCurrentConferences] = useState(null);
+  const [schoolStates, setSchoolStates] = useState(null);
+
   useEffect(() => {
 
     const width = 975;
@@ -44,17 +49,27 @@ function USMap() {
       .append('path')
       .datum(topojson.feature(mapdata, mapdata.objects.nation))
       .attr('d', d3.geoPath());
-      const { schoolStates, currentConferences } = getConferences(svg, projection, conferenceData, currentYear, mapdata);
-      const getLegendConferences = mapFill(svg, schoolStates, mapdata, currentYear)
+      const { getSchoolStates, getCurrentConferences } = getConferences(conferenceData, currentYear, mapdata, options.majorConferences);
+      setCurrentConferences(getCurrentConferences)
+      setSchoolStates(getSchoolStates)
+      const getLegendConferences = mapFill(svg, getSchoolStates, mapdata, currentYear)
       setActiveConferences(getLegendConferences)
     
     
-    var conferenceChanges = getChanges(currentConferences, currentYear)
+    var conferenceChanges = getChanges(getCurrentConferences, currentYear)
     setChangesList(conferenceChanges)
-    schoolLocations(svg, projection, currentConferences, currentYear);
 
-  }, [mapdata, currentYear]);
+    if(!options.conferences){
+      schoolLocations(svg, projection, getCurrentConferences, currentYear);
+    }
 
+  }, [mapdata, currentYear, options]);
+
+  useEffect(()=>{
+    // if(activeConferences){
+    //   getOptions(options, currentConferences, setCurrentConferences, activeConferences, setActiveConferences, currentYear)
+    // }
+  }, [options])
   return (
     <div>
       <div className="flex flex-col justify-center items-center">
@@ -62,14 +77,16 @@ function USMap() {
         <Header currentYear={currentYear} />
         <div className="flex w-full">
           <div className="w-[17.5%]">
-            <Changes changesList={changesList}/>
+            {options.showHistory &&
+              <Changes changesList={changesList}/>
+            }
           </div>
           <div className="w-[65%]">
             <div id="map" className="w-full"></div>
           </div>
           <div className="w-[17.5%] flex flex-col justify-between">
             <div className="flex justify-end items-start">
-              <Filter activeConferences={activeConferences} />
+              <Options options={options} setOptions={setOptions} activeConferences={activeConferences} />
             </div>
             <div className="flex justify-end items-end">
               <Legend activeConferences={activeConferences} />
