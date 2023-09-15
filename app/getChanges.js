@@ -32,6 +32,21 @@ export function getChanges(currentConferences, currentYear) {
         })
       }
     })
+    // you can remove the first if statement once all conferences has a names array
+    if(conference.names){
+      if(conference.names.length > 1 && conference.names[1].startYear <= currentYear){
+        let prevConfName = {}
+        console.log(prevConfName)
+        conference.names.forEach((name) => {
+          if(name.startYear === currentYear){
+            console.log(prevConfName)
+            conferenceChanges.push({change: 'nameChange', oldName: prevConfName.abbreviation, newName: name.abbreviation, oldLogo: prevConfName.logo, newLogo: name.logo, oldColor: prevConfName.primaryColor, newColor: name.primaryColor})
+            return false
+          }
+            prevConfName = name
+        })
+      }
+    }
   })
 
   const filteredConferences = conferenceChanges.filter((school, index, self) => {

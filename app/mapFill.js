@@ -1,10 +1,10 @@
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 
-export function mapFill(svg, schoolStates, mapdata, currentYear) {
+export function mapFill(svg, getSchoolStates, mapdata, currentYear) {
   
   const stateConferenceMap = {};
-  schoolStates.forEach((item) => {
+  getSchoolStates.forEach((item) => {
     var state = item.state
     var conference = ''
     if(item.names){
@@ -22,7 +22,7 @@ export function mapFill(svg, schoolStates, mapdata, currentYear) {
     }
   });
   const legendConferences = []
-  schoolStates.forEach((item) => {
+  getSchoolStates.forEach((item) => {
     if(item.names){
       item.names.forEach((former) => {
         if (!legendConferences.some((conf) => conf.conference === former.conference)) {

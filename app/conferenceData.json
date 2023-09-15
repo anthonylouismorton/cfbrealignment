@@ -843,7 +843,8 @@
         "abbreviation": "Western",
         "primaryColor": "rgba(0, 136, 206, 0.90)",
         "startYear": 1896,
-        "endYear": 1898
+        "endYear": 1898,  
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Big_Ten_Conference_logo.svg/200px-Big_Ten_Conference_logo.svg.png"
       },
       {
         "conference": "Big Nine Conference",
@@ -1365,6 +1366,7 @@
     "headquarters": "Kansas City, Missouri",
     "divisionI": {"start": 1907, "end": 1977},
     "divisionIA": {"start": 1978, "end": 1996},
+    "majorConference": {"start": 1907, "end": 1996},
     "names": [
       {
         "conference": "Missouri Valley Intercollegiate Athletic Association",
@@ -1664,7 +1666,7 @@
     "primaryColor": "rgba(125, 118, 98, 0.90)",
     "headquarters": "Unknown",
     "divisionI": {"start": 1931, "end": 1962},
-    "majorConference": null,
+    "majorConference": {"start": null, "end": null},
     "names": [
       {"conference": "Border Conference",
         "startYear": 1931,
@@ -1936,6 +1938,7 @@
     "logo": "https://collegepolltracker.com/logos/png/Indy_300_100.png",
     "headquarters": null,
     "names": null,
+    "majorConference": {"start": null, "end": null},
     "schools": []
   },
   {
@@ -1948,6 +1951,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/NCAA_DIII_logo_c.svg/2560px-NCAA_DIII_logo_c.svg.png",
     "headquarters": null,
     "names": null,
+    "majorConference": {"start": null, "end": null},
     "schools": []
   },
   {
@@ -1960,6 +1964,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/CUSA_logo.svg/375px-CUSA_logo.svg.png",
     "headquarters": null,
     "names": null,
+    "majorConference": {"start": null, "end": null},
     "schools": []
   },
   {
@@ -1972,6 +1977,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Logo_WAC.png",
     "headquarters": null,
     "names": null,
+    "majorConference": {"start": null, "end": null},
     "schools": []
   },
   {
@@ -1984,6 +1990,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Missouri_Valley_Conference_logo.svg/270px-Missouri_Valley_Conference_logo.svg.png",
     "headquarters": null,
     "names": null,
+    "majorConference": {"start": null, "end": null},
     "schools": []
   },
   {
@@ -1996,6 +2003,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/en/6/6e/Frontier_Conference_logo.svg",
     "headquarters": null,
     "names": null,
+    "majorConference": {"start": null, "end": null},
     "schools": []
   },
   {
@@ -2008,7 +2016,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/en/a/ac/Skyline_Conference_logo.jpg",
     "headquarters": null,
     "divisionI": {"start": 1921, "end": 1977},
-    "majorConference": null,
+    "majorConference": {"start": null, "end": null},
     "names": [
       {
         "conference": "Skyline Conference",
@@ -2113,6 +2121,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/American_Athletic_Conference_logo.svg/1200px-American_Athletic_Conference_logo.svg.png",
     "headquarters": null,
     "names": null,
+    "majorConference": {"start": null, "end": null},
     "schools": []
   },
   {
@@ -2125,6 +2134,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Mid-American_Conference_logo.svg/1200px-Mid-American_Conference_logo.svg.png",
     "headquarters": null,
     "names": null,
+    "majorConference": {"start": null, "end": null},
     "schools": []
   }
 ]

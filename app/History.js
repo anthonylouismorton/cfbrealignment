@@ -1,12 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import RedoIcon from '@mui/icons-material/Redo';
+import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 
 function History({ changesList }) {
+  console.log(changesList)
   return (
-    <div className="bg-white bg-opacity-40 w-3/4 pb-5 rounded">
+    <div className="bg-white w-3/4 pb-5 rounded">
       <div className="text-center " id="change">
-      <p className="text-xl font-semibold text-white pt-1 mb-2">History</p>
+      <p className="text-xl font-semibold pt-1 mb-2">History</p>
         {changesList.map((change, index) => (
           <div key={index} className="change-item flex items-center mb-2 pl-8">
             {change.change === 'founded' && (
@@ -18,7 +20,7 @@ function History({ changesList }) {
                     src={change.logo} alt={`${change.abbreviation} logo`} 
                   />
                 </div>
-                <div className="change-conference text-lg text-white">{`founded`}</div>
+                <div className="change-conference text-lg">{`founded`}</div>
               </>
             )}
             {change.change === 'disbanded' && (
@@ -30,7 +32,7 @@ function History({ changesList }) {
                     src={change.logo} alt={`${change.abbreviation} logo`} 
                   />
                 </div>
-                <div className="change-conference text-lg text-white">{`disbanded`}</div>
+                <div className="change-conference text-lg">{`disbanded`}</div>
               </>
             )}
             {change.change === 'left' && (
@@ -50,7 +52,7 @@ function History({ changesList }) {
                   />
                 </div>
                 <div className="change-logo flex items-center">
-                  <RedoIcon className='text-white'/>
+                  <RedoIcon/>
                 </div>
                 <div className="change-logo ml-4 flex items-center">
                   <Image
@@ -71,7 +73,7 @@ function History({ changesList }) {
                   />
                 </div>
                 <div className="change-logo flex items-center">
-                  <RedoIcon className='text-white'/>
+                  <RedoIcon/>
                 </div>
                 <div className="change-logo ml-4 flex items-center">
                   <Image
@@ -92,7 +94,7 @@ function History({ changesList }) {
                   />
                 </div>
                 <div className="change-logo flex items-center">
-                  <RedoIcon className='text-white'/>
+                  <RedoIcon/>
                 </div>
                 <div className="change-logo ml-4 flex items-center">
                   <Image                   
@@ -103,8 +105,22 @@ function History({ changesList }) {
                 </div>
               </>
             )}
+            {change.change === 'nameChange' && (
+              <>
+                <div style={{color: `${change.oldColor}`}} className="change-conference text-lg">{change.oldName}</div>
+                <div className="change-logo flex items-center">
+                  <TrendingFlatIcon/>
+                </div>
+                <div style={{color: `${change.newColor}`}}  className="change-conference text-lg">{change.newName}</div>
+              </>
+            )}
           </div>
         ))}
+        {changesList.length === 0 && (
+          <>
+            <h2 className='px-4'>Everything stable...for now</h2>
+          </>
+        )}
       </div>
     </div>
   );
