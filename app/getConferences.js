@@ -1,4 +1,4 @@
-export function getSchools(svg, projection, conferenceData, year) {
+export function getConferences(svg, projection, conferenceData, year) {
 
   var currentConferences = []
   conferenceData.forEach((conference) => {

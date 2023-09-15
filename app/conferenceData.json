@@ -7,6 +7,9 @@
     "founded": 1933,
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Southeastern_Conference_logo.svg/225px-Southeastern_Conference_logo.svg.png",
     "headquarters": "Birmingham, Alabama",
+    "divisionI": {"start": 1933, "end": 1977},
+    "divisionIA": {"start": 1978, "end": null},
+    "majorConference": {"start": 1933, "end": null},
     "disbanded": null,
     "names": [
       {
@@ -223,6 +226,9 @@
     "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/a/ac/Pac-12_logo.svg/110px-Pac-12_logo.svg.png",
     "headquarters": "San Francisco, California",
     "disbanded": null,
+    "divisionI": {"start": 1915, "end": 1977},
+    "divisionIA": {"start": 1978, "end": null},
+    "majorConference": {"start": 1915, "end": null},
     "names": [
       {
         "conference": "Pacific Coast Conference",
@@ -396,6 +402,8 @@
     "secondaryColor": "rgba(207, 212, 216, 0.90)",
     "tertiaryColor": "rgba(255, 255, 255, 0.90)",
     "headquarters": "Irving, Texas",
+    "divisionIA": {"start": 1996, "end": null},
+    "majorConference": {"start": 1996, "end": null},
     "names": [
       {
         "conference": "Big 12 Conference",
@@ -618,6 +626,9 @@
     "primaryColor": "rgba(1, 60, 166, 0.90)",
     "secondaryColor": "rgba(165, 169, 216, 0.90)",
     "headquarters": "Greensboro, North Carolina",
+    "divisionI": {"start": 1953, "end": 1977},
+    "divisionIA": {"start": 1978, "end": null},
+    "majorConference": {"start": 1953, "end": null},
     "names": [
       {
         "conference": "Atlantic Coast Conference",
@@ -823,6 +834,9 @@
     "primaryColor": "rgba(0, 136, 206, 0.90)",
     "secondaryColor": "rgba(0, 0, 0, 0.90)",
     "headquarters": "Rosemont, Illinois",
+    "divisionI": {"start": 1896, "end": 1977},
+    "divisionIA": {"start": 1978, "end": null},
+    "majorConference": {"start": 1896, "end": null},
     "names": [
       {
         "conference": "Western Conference",
@@ -1076,6 +1090,10 @@
     "disbanded": null,
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Southern_Conference_logo.svg/1200px-Southern_Conference_logo.svg.png",
     "headquarters": "Spartanburg, South Carolina",
+    "divisionI": {"start": 1921, "end": 1977},
+    "divisionIA": {"start": 1978, "end": 1981},
+    "divisionIAA": {"start": 1982, "end": null},
+    "majorConference": {"start": 1921, "end": 1952},
     "names": [
       {
       "conference": "Southern Conference",
@@ -1345,6 +1363,8 @@
     "logo": "https://upload.wikimedia.org/wikipedia/en/4/46/Big_8_Conference.png",
     "primaryColor": "rgba(1, 158, 79, 0.90)",
     "headquarters": "Kansas City, Missouri",
+    "divisionI": {"start": 1907, "end": 1977},
+    "divisionIA": {"start": 1978, "end": 1996},
     "names": [
       {
         "conference": "Missouri Valley Intercollegiate Athletic Association",
@@ -1508,6 +1528,8 @@
     "primaryColor": "rgba(228, 28, 57, 0.90)",
     "secondaryColor": "rgba(26, 66, 125, 0.90)",
     "headquarters": "Providence Rhode Island",
+    "divisionIA": {"start": 1991, "end": 2013},
+    "majorConference": {"start": 1991, "end": 2013},
     "names": [
       {
         "conference": "Big East Conference",
@@ -1641,6 +1663,8 @@
     "logo": "https://i.pinimg.com/originals/05/f6/8b/05f68b6df16ad6c83f85d4ed50a1638b.jpg",
     "primaryColor": "rgba(125, 118, 98, 0.90)",
     "headquarters": "Unknown",
+    "divisionI": {"start": 1931, "end": 1962},
+    "majorConference": null,
     "names": [
       {"conference": "Border Conference",
         "startYear": 1931,
@@ -1752,6 +1776,9 @@
     "primaryColor": "rgba(0, 128, 0, 0.90)",
     "secondaryColor": "rgba(255, 0, 0, 0.90) ",
     "headquarters": "Gerogetown, Texas",
+    "divisionI": {"start": 1915, "end": 1977},
+    "divisionIA": {"start": 1978, "end": 1996},
+    "majorConference": {"start": 1915, "end": 1996},
     "names": [
       {
         "conference": "Southwest Conference",
@@ -1980,6 +2007,8 @@
     "disbanded": 1962,
     "logo": "https://upload.wikimedia.org/wikipedia/en/a/ac/Skyline_Conference_logo.jpg",
     "headquarters": null,
+    "divisionI": {"start": 1921, "end": 1977},
+    "majorConference": null,
     "names": [
       {
         "conference": "Skyline Conference",
