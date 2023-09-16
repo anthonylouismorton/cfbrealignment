@@ -104,7 +104,7 @@ function USMap() {
               <Changes changesList={changesList}/>
             }
           </div>
-          <div className="w-[80%] lg:w-[95%] xl:w-[65%]">
+          <div className="w-full lg:w-[95%] xl:w-[65%]">
             <div id="map" className="w-full"></div>
           </div>
           <div className="xl:flex xl:w-[17.5%] xl:flex-col xl:justify-between">
