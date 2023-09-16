@@ -33,8 +33,26 @@ body {
     transform: translateY(-3px); /* Adjust the bounce height as needed */
   }
 }
+/* OptionsMenu.css */
+.menu-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
 
+.menu-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms; /* Updated to milliseconds */
+}
 
+.menu-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
 
-
+.menu-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 300ms, transform 300ms; /* Updated to milliseconds */
+}
 

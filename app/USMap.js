@@ -13,13 +13,12 @@ import Legend from './Legend';
 import Changes from './History';
 import Header from './Header';
 import Options from './Options';
-import { getOptions } from './getOptions';
 
 function USMap() {
   const [currentYear, setCurrentYear] = useState(1896);
   const [activeConferences, setActiveConferences] = useState(null);
   const [changesList, setChangesList] = useState([]);
-  const [options, setOptions] = useState({conferences: false, majorConferences: false, showHistory: true});
+  const [options, setOptions] = useState({conferences: false, majorConferences: false, hideHistory: false, hideLegend: false, hideHeader: false, hideSettings: false});
   const [currentConferences, setCurrentConferences] = useState(null);
   const [schoolStates, setSchoolStates] = useState(null);
 
@@ -39,9 +38,25 @@ function USMap() {
       .attr('style', 'width: 100%; height: auto;')
       .attr('viewBox', `0 0 ${width} ${height}`);
 
+
+
     const projection = d3.geoAlbersUsa()
       .scale(1300)
       .translate([width / 2, height / 2]);
+    
+      if (options.hideHeader) {
+        const [x, y] = projection([-89.588, 27.2033]);
+      
+        svg
+          .append('text')
+          .attr('x', x)
+          .attr('y', y)
+          .attr('text-anchor', 'middle')
+          .style('fill', 'white')
+          .style('font-weight', 'bold') 
+          .text("Year: " + currentYear);
+      }
+      
 
     const path = d3.geoPath(projection);
     const usa = svg
@@ -65,19 +80,16 @@ function USMap() {
 
   }, [mapdata, currentYear, options]);
 
-  useEffect(()=>{
-    // if(activeConferences){
-    //   getOptions(options, currentConferences, setCurrentConferences, activeConferences, setActiveConferences, currentYear)
-    // }
-  }, [options])
   return (
     <div>
       <div className="flex flex-col justify-center items-center">
         <Year currentYear={currentYear} setCurrentYear={setCurrentYear} />
-        <Header currentYear={currentYear} />
+          {!options.hideHeader &&
+            <Header currentYear={currentYear} />
+          }
         <div className="flex w-full">
           <div className="w-[17.5%]">
-            {options.showHistory &&
+            {!options.hideHistory &&
               <Changes changesList={changesList}/>
             }
           </div>
@@ -89,7 +101,9 @@ function USMap() {
               <Options options={options} setOptions={setOptions} activeConferences={activeConferences} />
             </div>
             <div className="flex justify-end items-end">
-              <Legend activeConferences={activeConferences} />
+              {!options.hideLegend &&
+                <Legend activeConferences={activeConferences} />
+              }
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import RedoIcon from '@mui/icons-material/Redo';
+// import RedoIcon from '@mui/icons-material/Redo';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 
 function History({ changesList }) {
@@ -13,7 +13,7 @@ function History({ changesList }) {
           <div key={index} className="change-item flex items-center mb-2 pl-8">
             {change.change === 'founded' && (
               <>
-                <div className="change-logo mr-2 flex items-center">
+                <div className="change-logo mr-4 flex items-center">
                   <Image
                     width={30}
                     height={30}
@@ -25,7 +25,7 @@ function History({ changesList }) {
             )}
             {change.change === 'disbanded' && (
               <>
-                <div className="change-logo mr-2 flex items-center">
+                <div className="change-logo mr-4 flex items-center">
                   <Image
                     width={30}
                     height={30}
@@ -37,14 +37,14 @@ function History({ changesList }) {
             )}
             {change.change === 'left' && (
               <>
-                <div className="change-logo mr-2 flex items-center">
+                <div className="change-logo mr-4 flex items-center">
                   <Image
                     width={30}
                     height={30}
                     src={change.logo} alt={`${change.school} logo`}
                   />
                 </div>
-                <div className="change-logo mr-2 flex items-center">
+                <div className="change-logo mr-4 flex items-center">
                   <Image
                     width={30}
                     height={30}
@@ -52,7 +52,7 @@ function History({ changesList }) {
                   />
                 </div>
                 <div className="change-logo flex items-center">
-                  <RedoIcon/>
+                  <TrendingFlatIcon style={{ fontSize: 36 }}/>
                 </div>
                 <div className="change-logo ml-4 flex items-center">
                   <Image
@@ -65,7 +65,7 @@ function History({ changesList }) {
             )}
             {change.change === 'joined' && (
               <>
-                <div className="change-logo mr-2 flex items-center">
+                <div className="change-logo mr-4 flex items-center">
                   <Image
                     width={30}
                     height={30}
@@ -73,7 +73,7 @@ function History({ changesList }) {
                   />
                 </div>
                 <div className="change-logo flex items-center">
-                  <RedoIcon/>
+                  <TrendingFlatIcon style={{ fontSize: 36 }}/>
                 </div>
                 <div className="change-logo ml-4 flex items-center">
                   <Image
@@ -86,7 +86,7 @@ function History({ changesList }) {
             )}
             {change.change === 'rejoined' && (
               <>
-                <div className="change-logo mr-2 flex items-center">
+                <div className="change-logo mr-4 flex items-center">
                   <Image
                     width={30}
                     height={30}
@@ -94,7 +94,7 @@ function History({ changesList }) {
                   />
                 </div>
                 <div className="change-logo flex items-center">
-                  <RedoIcon/>
+                  <TrendingFlatIcon style={{ fontSize: 36 }}/>
                 </div>
                 <div className="change-logo ml-4 flex items-center">
                   <Image                   
@@ -107,11 +107,11 @@ function History({ changesList }) {
             )}
             {change.change === 'nameChange' && (
               <>
-                <div style={{color: `${change.oldColor}`}} className="change-conference text-lg">{change.oldName}</div>
+                <div style={{color: `${change.oldColor}`}} className="mr-4 change-conference text-lg">{change.oldName}</div>
                 <div className="change-logo flex items-center">
-                  <TrendingFlatIcon/>
+                  <TrendingFlatIcon style={{ fontSize: 36 }}/>
                 </div>
-                <div style={{color: `${change.newColor}`}}  className="change-conference text-lg">{change.newName}</div>
+                <div style={{color: `${change.newColor}`}}  className=" ml-4 change-conference text-lg">{change.newName}</div>
               </>
             )}
           </div>

@@ -2,7 +2,7 @@ import * as React from 'react';
 import Slider from '@mui/material/Slider';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import { Icon, IconButton } from '@mui/material';
+import { IconButton } from '@mui/material';
 import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 
@@ -84,14 +84,13 @@ const CustomSlider = styled(Slider)(({ theme }) => ({
     color: 'gray',
     '&.MuiSlider-markLabelActive': {
       opacity: 1,
-      // backgroundColor: 'currentColor',
       color: 'white'
     },
   },
 }));
 
 
-export default function YearSlider({currentYear,setCurrentYear}) {
+export default function YearSlider({currentYear, setCurrentYear}) {
   const handleSliderChange = (e, newValue) => {
     setCurrentYear(newValue);
   };
