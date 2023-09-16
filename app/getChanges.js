@@ -36,10 +36,9 @@ export function getChanges(currentConferences, currentYear) {
     if(conference.names){
       if(conference.names.length > 1 && conference.names[1].startYear <= currentYear){
         let prevConfName = {}
-        console.log(prevConfName)
         conference.names.forEach((name) => {
           if(name.startYear === currentYear){
-            console.log(prevConfName)
+            console.log('in the if') 
             conferenceChanges.push({change: 'nameChange', oldName: prevConfName.abbreviation, newName: name.abbreviation, oldLogo: prevConfName.logo, newLogo: name.logo, oldColor: prevConfName.primaryColor, newColor: name.primaryColor})
             return false
           }
@@ -48,7 +47,7 @@ export function getChanges(currentConferences, currentYear) {
       }
     }
   })
-
+  console.log(conferenceChanges)
   const filteredConferences = conferenceChanges.filter((school, index, self) => {
     const hasDuplicate = self.some(
       (otherSchool, otherIndex) =>
