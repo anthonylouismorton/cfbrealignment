@@ -6,7 +6,7 @@ import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 function History({ changesList }) {
   console.log(changesList)
   return (
-    <div className="bg-white w-4/5 pb-5 rounded">
+    <div className="bg-white w-full  xl:w-4/5 pb-5 rounded">
       <div className="text-center" id="change">
       <p className="text-xl font-semibold pt-2 pb-4">History</p>
         {changesList.map((change, index) => (

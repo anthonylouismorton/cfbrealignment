@@ -119,6 +119,16 @@ function USMap() {
           </div>
         </div>
       </div>
+      <div className="xl:hidden">
+          <div className="w-full">
+            {/* <div className="hidden md:flex justify-end items-start">
+              <Options options={options} setOptions={setOptions} activeConferences={activeConferences} />
+            </div> */}
+            {!options.hideHistory &&
+              <Changes changesList={changesList}/>
+            }
+        </div>
+      </div>
     </div>
   );
 }
