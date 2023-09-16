@@ -38,8 +38,6 @@ function USMap() {
       .attr('style', 'width: 100%; height: auto;')
       .attr('viewBox', `0 0 ${width} ${height}`);
 
-
-
     const projection = d3.geoAlbersUsa()
       .scale(1300)
       .translate([width / 2, height / 2]);
@@ -100,20 +98,20 @@ function USMap() {
           {!options.hideHeader &&
             <Header currentYear={currentYear} />
           }
-        <div className="flex w-full">
-          <div className="w-[17.5%]">
+        <div className="flex w-full justify-between">
+          <div className="hidden xl:block xl:w-[17.5%]">
             {!options.hideHistory &&
               <Changes changesList={changesList}/>
             }
           </div>
-          <div className="w-[65%]">
+          <div className="w-full lg:w-[95%] xl:w-[65%]">
             <div id="map" className="w-full"></div>
           </div>
-          <div className="w-[17.5%] flex flex-col justify-between">
-            <div className="flex justify-end items-start">
+          <div className="xl:flex xl:w-[17.5%] xl:flex-col xl:justify-between">
+            <div className="hidden md:flex justify-end items-start">
               <Options options={options} setOptions={setOptions} activeConferences={activeConferences} />
             </div>
-            <div className="flex justify-end items-end">
+            <div className="hidden xl:flex justify-end items-end">
               {!options.hideLegend &&
                 <Legend activeConferences={activeConferences} />
               }
