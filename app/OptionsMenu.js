@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 export default function OptionsMenu({ options, setOptions, menu, setMenu }) {
-  const [isChecked, setIsChecked] = useState({ conferences: options.conferences, majorConferences: options.majorConferences, hideHistory: options.hideHistory, hideLegend: options.hideLegend, hideSettings: options.hideSettings });
+  const [isChecked, setIsChecked] = useState({ conferences: options.conferences, majorConferences: options.majorConferences, hideHistory: options.hideHistory, hideHeader: options.hideHeader, hideLegend: options.hideLegend, hideSettings: options.hideSettings });
   const menuRef = useRef(null);
   const conferences = ['SEC', 'Pac-12','Big 12','ACC','Big Ten','SOCON','BIG 8','Border','Southwest','C-USA','WAC','MVC','NMC','Skyline']
 

@@ -77,6 +77,19 @@ function USMap() {
     if(!options.conferences){
       schoolLocations(svg, projection, getCurrentConferences, currentYear);
     }
+    const handleKeyDown = (e) => {
+      if (e.keyCode === 37) { // Left arrow key
+        setCurrentYear(currentYear - 1);
+      } else if (e.keyCode === 39) { // Right arrow key
+        setCurrentYear(currentYear + 1);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
 
   }, [mapdata, currentYear, options]);
 

@@ -13,14 +13,7 @@ export default function Options({ options, setOptions }) {
     if(options.hideSettings){
       setShowHiddenDiv(false);
     }
-    // if (!menu) {
-    //   setTimeout(() => {
-    //     setShowDiv(!menu);
-    //   }, 50);
-    // }
-    //  else {
-    //   setShowDiv(false);
-    // }
+
   };
   const handleMouseLeave = () => {
   
