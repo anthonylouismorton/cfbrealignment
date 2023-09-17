@@ -99,19 +99,19 @@ function USMap() {
             <Header currentYear={currentYear} />
           }
         <div className="flex w-full justify-between">
-          <div className="hidden xl:block xl:w-[17.5%]">
+          <div className="hidden 2xl:block 2xl:w-[17.5%]">
             {!options.hideHistory &&
               <Changes changesList={changesList}/>
             }
           </div>
-          <div className="w-full lg:w-[95%] xl:w-[65%]">
+          <div className="w-full lg:w-[95%] 2xl:w-[65%]">
             <div id="map" className="w-full"></div>
           </div>
-          <div className="xl:flex xl:w-[17.5%] xl:flex-col xl:justify-between">
+          <div className="2xl:flex 2xl:w-[17.5%] 2xl:flex-col 2xl:justify-between">
             <div className="hidden md:flex justify-end items-start">
               <Options options={options} setOptions={setOptions} activeConferences={activeConferences} />
             </div>
-            <div className="hidden xl:flex justify-end items-end">
+            <div className="hidden 2xl:flex justify-end items-end">
               {!options.hideLegend &&
                 <Legend activeConferences={activeConferences} />
               }
@@ -119,7 +119,7 @@ function USMap() {
           </div>
         </div>
       </div>
-      <div className="xl:hidden">
+      <div className="2xl:hidden">
           <div className="w-full">
             {/* <div className="hidden md:flex justify-end items-start">
               <Options options={options} setOptions={setOptions} activeConferences={activeConferences} />
