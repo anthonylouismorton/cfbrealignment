@@ -5,8 +5,6 @@ import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 
 function History({ changesList }) {
   console.log(changesList)
-  var width = window.innerWidth
-  var height = window.innerHeight
   return (
     <div className="bg-white w-full  xl:w-4/5 pb-5 rounded">
       <div className="text-center" id="change">
@@ -123,8 +121,6 @@ function History({ changesList }) {
             <h2 className='px-4'>Everything stable...for now</h2>
           </>
         )}
-        <p>{width}</p>
-        <p>{height}</p>
       </div>
     </div>
   );
