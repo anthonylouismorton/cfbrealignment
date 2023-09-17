@@ -50,7 +50,7 @@ const CustomSlider = styled(Slider)(({ theme }) => ({
       fontSize: '6px',
       top: 35,
     },
-    '@media ( (min-width: 400px) and max-width: 524px)': {
+    '@media (min-width: 400px) and max-width: 524px)': {
       fontSize: '11px',
       top: 43,
     },
@@ -110,7 +110,10 @@ const CustomSlider = styled(Slider)(({ theme }) => ({
   '& .MuiSlider-markLabel': {
     fontSize: '18px', // Default font size
     color: 'gray',
-    '@media (max-width: 524px)': {
+    '@media (max-width: 399px)': {
+      fontSize: '6px',
+    },
+    '@media (min-width: 400px) and max-width: 524px)': {
       fontSize: '11px',
     },
     '@media (min-width: 525px) and (max-width: 650px)': {
