@@ -6,7 +6,7 @@ import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 function History({ changesList }) {
   console.log(changesList)
   return (
-    <div className="bg-white w-full  xl:w-4/5 pb-5 rounded">
+    <div className="bg-white w-full  xl:w-full pb-5 rounded">
       <div className="text-center" id="change">
       <p className="text-xl font-bold pt-2 pb-4">History</p>
         {changesList.map((change, index) => (
@@ -44,6 +44,7 @@ function History({ changesList }) {
                     src={change.logo} alt={`${change.school} logo`}
                   />
                 </div>
+                <div className="change-conference text-lg font-bold mr-4">{`leaves`}</div>
                 <div className="change-logo mr-4 flex items-center">
                   <Image
                     width={30}
@@ -52,7 +53,7 @@ function History({ changesList }) {
                   />
                 </div>
                 <div className="change-logo flex items-center">
-                  <TrendingFlatIcon style={{ fontSize: 36 }}/>
+                <div className="change-conference text-lg font-bold">{`joins`}</div>
                 </div>
                 <div className="change-logo ml-4 flex items-center">
                   <Image
@@ -73,7 +74,7 @@ function History({ changesList }) {
                   />
                 </div>
                 <div className="change-logo flex items-center">
-                  <TrendingFlatIcon style={{ fontSize: 36 }}/>
+                <div className="change-conference text-lg font-bold">{`joins`}</div>
                 </div>
                 <div className="change-logo ml-4 flex items-center">
                   <Image
@@ -94,7 +95,7 @@ function History({ changesList }) {
                   />
                 </div>
                 <div className="change-logo flex items-center">
-                  <TrendingFlatIcon style={{ fontSize: 36 }}/>
+                <div className="change-conference text-lg font-bold">{`rejoins`}</div>
                 </div>
                 <div className="change-logo ml-4 flex items-center">
                   <Image                   
@@ -109,7 +110,7 @@ function History({ changesList }) {
               <>
                 <div style={{color: `${change.oldColor}`}} className="mr-4 change-conference text-lg">{change.oldName}</div>
                 <div className="change-logo flex items-center">
-                  <TrendingFlatIcon style={{ fontSize: 36 }}/>
+                <div className="change-conference text-lg font-bold">{`rebrands to`}</div>
                 </div>
                 <div style={{color: `${change.newColor}`}}  className=" ml-4 change-conference text-lg">{change.newName}</div>
               </>

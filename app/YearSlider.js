@@ -46,7 +46,11 @@ const CustomSlider = styled(Slider)(({ theme }) => ({
   },
   '& .MuiSlider-valueLabel': {
     fontWeight: 'bold',
-    '@media (max-width: 524px)': {
+    '@media (max-width: 399px)': {
+      fontSize: '6px',
+      top: 35,
+    },
+    '@media ( (min-width: 400px) and max-width: 524px)': {
       fontSize: '11px',
       top: 43,
     },
