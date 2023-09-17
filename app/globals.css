@@ -22,15 +22,15 @@ body {
 }
 
 .bouncing-element {
-  animation: bounce 8s linear; /* 6-second animation, does not repeat */
+  animation: bounce 8s linear;
 }
 
 @keyframes bounce {
   0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% ,100% {
-    transform: translateY(0); /* Start and end at no translation */
+    transform: translateY(0);
   }
   5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
-    transform: translateY(-3px); /* Adjust the bounce height as needed */
+    transform: translateY(-3px);
   }
 }
 /* OptionsMenu.css */
@@ -42,7 +42,7 @@ body {
 .menu-enter-active {
   opacity: 1;
   transform: translateX(0);
-  transition: opacity 300ms, transform 300ms; /* Updated to milliseconds */
+  transition: opacity 300ms, transform 300ms;
 }
 
 .menu-exit {
