@@ -48,37 +48,37 @@ export default function OptionsMenu({ options, setOptions, menu, setMenu }) {
       unmountOnExit
     >
 
-    <div className='bg-white rounded w-60' ref={menuRef}>
-      <p className='flex flex-col p-4 text-center text-xl font-bold'>Settings</p>
+    <div className='bg-white rounded w-48' ref={menuRef}>
+      <p className='flex flex-col p-3 text-center text-sm font-bold'>SETTINGS</p>
       <div className='pl-2'>
-        <div>
+        <div className='flex items-center'>
           <input type="checkbox" checked={isChecked.conferences} value="conferences" onChange={handleOptions} />
-          <label className='p-2 font-semibold'>Logos off</label>
+          <label className='pl-2 text-[11px] font-semibold'>Logos off</label>
         </div>
-        <div>
+        <div className='flex items-center'>
           <input type="checkbox" checked={isChecked.majorConferences} value="majorConferences" onChange={handleOptions} />
-          <label className='p-2 font-semibold'>Major Conferences Only</label>
+          <label className='pl-2 text-[11px] font-semibold'>Major Conferences Only</label>
         </div>
-        <div>
+        <div className='flex items-center'>
           <input type="checkbox" checked={isChecked.hideHistory} value="hideHistory" onChange={handleOptions} />
-          <label className='p-2 font-semibold'>Hide History</label>
+          <label className='pl-2 text-[11px] font-semibold'>Hide History</label>
         </div>
-        <div>
+        <div className='flex items-center'>
           <input type="checkbox" checked={isChecked.hideLegend} value="hideLegend" onChange={handleOptions} />
-          <label className='p-2 font-semibold'>Hide Legend</label>
+          <label className='pl-2 text-[11px] font-semibold'>Hide Legend</label>
         </div>
-        <div>
+        <div className='flex items-center'>
           <input type="checkbox" checked={isChecked.hideHeader} value="hideHeader" onChange={handleOptions} />
-          <label className='p-2 font-semibold'>Hide Header</label>
+          <label className='pl-2 text-[11px] font-semibold'>Hide Header</label>
         </div>
-        <div>
+        <div className='flex items-center'>
           <input type="checkbox" checked={isChecked.hideSettings} value="hideSettings" onChange={handleOptions} />
-          <label className='p-2 font-semibold'>Hide Options</label>
+          <label className='pl-2 text-[11px] font-semibold'>Hide Options</label>
         </div>
       </div>
       <div className='text-center py-3'>
-        <button className='bg-black text-white rounded p-3 font-bold' onClick={openMenu}>
-          hide
+        <button className='bg-black text-white text-[11px] rounded p-2 font-bold' onClick={openMenu}>
+          Hide
         </button>
       </div>
     </div>

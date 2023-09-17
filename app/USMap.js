@@ -98,17 +98,17 @@ function USMap() {
           {!options.hideHeader &&
             <Header currentYear={currentYear} />
           }
-        <div className="flex w-full justify-between">
+        <div className="flex w-full">
           <div className="hidden 2xl:block 2xl:w-[17.5%]">
             {!options.hideHistory &&
               <Changes changesList={changesList}/>
             }
           </div>
-          <div className="w-full lg:w-[95%] 2xl:w-[65%]">
+          <div className="w-[95%] lg:w-[95%] 2xl:w-[65%]">
             <div id="map" className="w-full"></div>
           </div>
-          <div className="2xl:flex 2xl:w-[17.5%] 2xl:flex-col 2xl:justify-between">
-            <div className="hidden md:flex justify-end items-start">
+          <div className="2xl:flex  md:w-[5%] 2xl:w-[17.5%] md:flex-col md:justify-between">
+            <div className="md:flex justify-end items-start">
               <Options options={options} setOptions={setOptions} activeConferences={activeConferences} />
             </div>
             <div className="hidden 2xl:flex justify-end items-end">
@@ -120,13 +120,13 @@ function USMap() {
         </div>
       </div>
       <div className="2xl:hidden">
-          <div className="w-full">
-            {/* <div className="hidden md:flex justify-end items-start">
-              <Options options={options} setOptions={setOptions} activeConferences={activeConferences} />
-            </div> */}
-            {!options.hideHistory &&
-              <Changes changesList={changesList}/>
-            }
+        <div className="w-full">
+          {/* <div className="hidden md:flex justify-end items-start">
+            <Options options={options} setOptions={setOptions} activeConferences={activeConferences} />
+          </div> */}
+          {!options.hideHistory &&
+            <Changes changesList={changesList}/>
+          }
         </div>
       </div>
     </div>
