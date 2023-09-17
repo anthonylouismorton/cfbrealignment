@@ -10,7 +10,7 @@ function History({ changesList }) {
         <p className="text-xl font-bold pt-2 pb-4 text-white">History</p>
         <div className='flex flex-wrap'>
           {changesList.map((change, index) => (
-            <div key={index} className="change-item flex items-center mb-2 pl-3 w-1/4 2xl:w-full">
+            <div key={index} className="change-item flex items-center mb-2 pl-3 w-full md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-full">
               {change.change === 'founded' && (
                 <>
                   <div className="change-logo mr-4 flex items-center bg-white p-1">
