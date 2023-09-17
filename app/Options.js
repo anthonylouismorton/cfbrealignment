@@ -28,7 +28,7 @@ export default function Options({ options, setOptions }) {
   return (
     <div className='menu-container'>
       {!options.hideSettings && !showDiv && (
-        <div>
+        <div className='w-[28px] h-[114px]'>
         <button
           onClick={openMenu}
           className="flex flex-col items-center text-center font-bold"
@@ -40,7 +40,7 @@ export default function Options({ options, setOptions }) {
       </div>
       )}
       {options.hideSettings && !showHiddenDiv && !showDiv &&(
-        <div className="hover-div w-[35.19px] h-[144.56px]" onMouseEnter={handleMouseEnter}></div>
+        <div className="hover-div w-[28px] h-[114px]" onMouseEnter={handleMouseEnter}></div>
       )}
       {showHiddenDiv &&
         <div className='bg-white'>
@@ -49,7 +49,7 @@ export default function Options({ options, setOptions }) {
           onMouseLeave={handleMouseLeave}
           className="flex flex-col items-center text-center font-bold"
         >
-            <h1 className='px-2 py-5' style={{fontSize: '1rem', color: 'black', letterSpacing: '3px', transform: 'rotate(180deg)', writingMode: 'vertical-lr', lineHeight: '1.2'}}>
+            <h1 className='px-2 py-5 w-[28px] h-[114px]' style={{fontSize: '10px', color: 'black', letterSpacing: '3px', transform: 'rotate(180deg)', writingMode: 'vertical-lr', lineHeight: '1.2'}}>
               SETTINGS
             </h1>
         </button>

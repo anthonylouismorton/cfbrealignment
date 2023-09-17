@@ -7,11 +7,11 @@ function History({ changesList }) {
   return (
     <div className="w-full pb-5 rounded">
       <div className="text-center flex flex-col" id="change">
-        <p className="text-xl font-bold pt-2 pb-4 text-white">HISTORY</p>
+        <p className="text-lg md:text-xl font-bold pt-2 pb-4 text-white">HISTORY</p>
         {/* <p className='text-white font-bold text-lg'>{window.innerWidth}</p> */}
-        <div className='flex flex-wrap flex-column justify-center items-center w-full'>
+        <div className='flex flex-wrap flex-column items-center w-full'>
           {changesList.map((change, index) => (
-            <div key={index} className="change-item flex justify-center items-center mb-2 w-full md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-full">
+            <div key={index} className="change-item flex justify-center items-center mb-2 w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-full">
               {change.change === 'founded' && (
                 <div className='flex text-center items-center w-[140px]'>
                   <div className="change-logo mr-3 bg-white p-1">
