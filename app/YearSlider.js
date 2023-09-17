@@ -45,9 +45,27 @@ const CustomSlider = styled(Slider)(({ theme }) => ({
     },
   },
   '& .MuiSlider-valueLabel': {
-    fontSize: 13,
-    fontWeight: 'normal',
-    top: 47,
+    fontWeight: 'bold',
+    '@media (max-width: 524px)': {
+      fontSize: '11px',
+      top: 43,
+    },
+    '@media (min-width: 525px) and (max-width: 650px)': {
+      fontSize: '12px',
+      top: 45,
+    },
+    '@media (min-width: 651px) and (max-width: 920px)': {
+      fontSize: '16px',
+      top: 51,
+    },
+    '@media (min-width: 921px) and (max-width: 1299px)': {
+      fontSize: '19px',
+      top: 55,
+    },
+    '@media (min-width: 1300px)': {
+      fontSize: '22px',
+      top: 58,
+    },
     backgroundColor: 'transparent',
     color: 'white',
     '&:before': {
@@ -62,13 +80,18 @@ const CustomSlider = styled(Slider)(({ theme }) => ({
     border: 'none',
     color: 'white',
     '&:focus, &:hover, &.Mui-active': {
-      color: 'blue'
+      color: 'white',
+      height: '6px'
     }
   },
   '& .MuiSlider-rail': {
     opacity: 0.5,
     backgroundColor: 'white',
     color: 'white',
+    '&:focus, &:hover': {
+      color: 'white',
+      height: '6px'
+    }
   },
   '& .MuiSlider-mark': {
     backgroundColor: 'gray',
@@ -81,12 +104,28 @@ const CustomSlider = styled(Slider)(({ theme }) => ({
     },
   },
   '& .MuiSlider-markLabel': {
+    fontSize: '18px', // Default font size
     color: 'gray',
+    '@media (max-width: 524px)': {
+      fontSize: '11px',
+    },
+    '@media (min-width: 525px) and (max-width: 650px)': {
+      fontSize: '12px',
+    },
+    '@media (min-width: 651px) and (max-width: 920px)': {
+      fontSize: '16px',
+    },
+    '@media (min-width: 921px) and (max-width: 1299px)': {
+      fontSize: '19px',
+    },
+    '@media (min-width: 1300px)': {
+      fontSize: '22px',
+    },
     '&.MuiSlider-markLabelActive': {
       opacity: 1,
-      color: 'white'
     },
   },
+  
 }));
 
 
@@ -107,9 +146,9 @@ export default function YearSlider({currentYear, setCurrentYear}) {
     }
   };
   return (
-    <Box className="pl-3 pr-3 w-full flex justify-center">
+    <Box className="w-full flex justify-center">
         <IconButton onClick={handlePrevYear}>
-          <SkipPreviousIcon className="text-white ml-2"/>
+          <SkipPreviousIcon className="text-white"/>
         </IconButton>
       <CustomSlider
         className='mt-5'
@@ -122,7 +161,7 @@ export default function YearSlider({currentYear, setCurrentYear}) {
         onChange={handleSliderChange}
       />
       <IconButton onClick={handleNextYear}>
-        <SkipNextIcon className="text-white mr-2"/>
+        <SkipNextIcon className="text-white"/>
       </IconButton>
     </Box>
   );

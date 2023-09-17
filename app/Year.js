@@ -39,9 +39,8 @@ function Year({ currentYear, setCurrentYear }) {
       className="w-full text-center h-20 mt-200"
       onFocus={showSlider}
     >
-      {isVisible && 
         <YearSlider currentYear={currentYear} setCurrentYear={setCurrentYear} />
-      }
+  
     </div>
   );
 }
