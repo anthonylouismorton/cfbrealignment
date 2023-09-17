@@ -129,6 +129,7 @@ const CustomSlider = styled(Slider)(({ theme }) => ({
       fontSize: '22px',
     },
     '&.MuiSlider-markLabelActive': {
+      color: 'white',
       opacity: 1,
     },
   },
