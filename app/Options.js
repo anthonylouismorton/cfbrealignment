@@ -33,7 +33,7 @@ export default function Options({ options, setOptions }) {
           onClick={openMenu}
           className="flex flex-col items-center text-center font-bold"
          >
-          <h1 className='px-2 py-5' style={{fontSize: '1rem', color: 'white', letterSpacing: '3px', transform: 'rotate(180deg)', writingMode: 'vertical-lr', lineHeight: '1.2'}}>
+          <h1 className='px-2 py-5' style={{fontSize: '10px', color: 'white', letterSpacing: '3px', transform: 'rotate(180deg)', writingMode: 'vertical-lr', lineHeight: '1.2'}}>
             SETTINGS
           </h1>
         </button>
