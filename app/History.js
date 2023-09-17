@@ -8,6 +8,7 @@ function History({ changesList }) {
     <div className="w-full pb-5 rounded">
       <div className="text-center flex flex-col items-center" id="change">
         <p className="text-xl font-bold pt-2 pb-4 text-white">History</p>
+        {/* <p className='text-white font-bold text-lg'>{window.innerWidth}</p> */}
         <div className='flex flex-wrap'>
           {changesList.map((change, index) => (
             <div key={index} className="change-item flex items-center mb-2 pl-3 w-full md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-full">

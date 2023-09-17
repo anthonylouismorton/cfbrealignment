@@ -50,17 +50,17 @@ const CustomSlider = styled(Slider)(({ theme }) => ({
       fontSize: '6px',
       top: 35,
     },
-    '@media (min-width: 400px) and max-width: 524px)': {
-      fontSize: '11px',
-      top: 43,
+    '@media (min-width: 400px) and (max-width: 549px)': {
+      fontSize: '10px',
+      top: 42,
     },
-    '@media (min-width: 525px) and (max-width: 650px)': {
+    '@media (min-width: 550px) and (max-width: 650px)': {
       fontSize: '12px',
       top: 45,
     },
     '@media (min-width: 651px) and (max-width: 920px)': {
       fontSize: '16px',
-      top: 51,
+      top: 50,
     },
     '@media (min-width: 921px) and (max-width: 1299px)': {
       fontSize: '19px',
@@ -68,7 +68,7 @@ const CustomSlider = styled(Slider)(({ theme }) => ({
     },
     '@media (min-width: 1300px)': {
       fontSize: '22px',
-      top: 58,
+      top: 59,
     },
     backgroundColor: 'transparent',
     color: 'white',
@@ -108,15 +108,14 @@ const CustomSlider = styled(Slider)(({ theme }) => ({
     },
   },
   '& .MuiSlider-markLabel': {
-    fontSize: '18px', // Default font size
     color: 'gray',
     '@media (max-width: 399px)': {
       fontSize: '6px',
     },
-    '@media (min-width: 400px) and max-width: 524px)': {
-      fontSize: '11px',
+    '@media (min-width: 400px) and (max-width: 549px)': {
+      fontSize: '10px',
     },
-    '@media (min-width: 525px) and (max-width: 650px)': {
+    '@media (min-width: 550px) and (max-width: 650px)': {
       fontSize: '12px',
     },
     '@media (min-width: 651px) and (max-width: 920px)': {
