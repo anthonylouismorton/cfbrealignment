@@ -3,7 +3,7 @@ import Image from 'next/image';
 // import RedoIcon from '@mui/icons-material/Redo';
 
 function History({ changesList }) {
-  console.log(changesList)
+
   return (
     <div className="w-full pb-5 rounded">
       <div className="text-center flex flex-col" id="change">
@@ -11,10 +11,10 @@ function History({ changesList }) {
         {/* <p className='text-white font-bold text-lg'>{window.innerWidth}</p> */}
         <div className='flex flex-wrap flex-column items-center w-full'>
           {changesList.map((change, index) => (
-            <div key={index} className="change-item flex justify-center items-center mb-2 w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-full">
+            <div key={index} className="change-item flex justify-center items-center mb-2 w-1/2 sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-full">
               {change.change === 'founded' && (
                 <div className='flex text-center items-center w-[140px]'>
-                  <div className="change-logo mr-3 bg-white p-1">
+                  <div className="change-logo mr-1 sm:mr-3 bg-white p-1">
                     <Image
                       width={30}
                       height={30}
@@ -26,7 +26,7 @@ function History({ changesList }) {
               )}
               {change.change === 'disbanded' && (
                 <div className='flex text-center items-center w-[140px]'>
-                  <div className="change-logo mr-3 bg-white p-1">
+                  <div className="change-logo mr-1 sm:mr-3 bg-white p-1">
                     <Image
                       width={30}
                       height={30}
@@ -38,15 +38,15 @@ function History({ changesList }) {
               )}
               {change.change === 'left' && (
                 <>
-                  <div className="change-logo mr-3 flex items-center bg-white p-1">
+                  <div className="change-logo mr-1 sm:mr-3 flex items-center bg-white p-1">
                     <Image
                       width={30}
                       height={30}
                       src={change.logo} alt={`${change.school} logo`}
                     />
                   </div>
-                  <div className="change-conference text-sm mr-3 text-white">{`leaves`}</div>
-                  <div className="change-logo mr-3 flex items-center bg-white p-1">
+                  <div className="change-conference text-sm mr-1 sm:mr-3 text-white">{`leaves`}</div>
+                  <div className="change-logo mr-1 sm:mr-3 flex items-center bg-white p-1">
                     <Image
                       width={30}
                       height={30}
@@ -56,7 +56,7 @@ function History({ changesList }) {
                   <div className="change-logo">
                   <div className="change-conference text-sm text-white">{`joins`}</div>
                   </div>
-                  <div className="change-logo ml-3 flex items-center bg-white p-1">
+                  <div className="change-logo ml-1 sm:ml-3 flex items-center bg-white p-1">
                     <Image
                       width={30}
                       height={30}
@@ -67,7 +67,7 @@ function History({ changesList }) {
               )}
               {change.change === 'joined' && (
                 <div className='flex text-center items-center w-[140px]'>
-                  <div className="change-logo mr-3 flex items-center bg-white p-1">
+                  <div className="change-logo mr-1 sm:mr-3 flex items-center bg-white p-1">
                     <Image
                       width={30}
                       height={30}
@@ -77,7 +77,7 @@ function History({ changesList }) {
                   <div className="change-logo flex items-center">
                   <div className="change-conference text-sm text-white">{`joins`}</div>
                   </div>
-                  <div className="change-logo ml-3 flex items-center bg-white p-1">
+                  <div className="change-logo ml-1 sm:ml-3 flex items-center bg-white p-1">
                     <Image
                       width={30}
                       height={30}
@@ -88,7 +88,7 @@ function History({ changesList }) {
               )}
               {change.change === 'rejoined' && (
                 <div className='flex text-center items-center w-[140px]'>
-                  <div className="change-logo mr-3 flex items-center bg-white p-1">
+                  <div className="change-logo mr-1 sm:mr-3 flex items-center bg-white p-1">
                     <Image
                       width={30}
                       height={30}
@@ -98,7 +98,7 @@ function History({ changesList }) {
                   <div className="change-logo flex items-center">
                     <div className="change-conference text-sm text-white">{`rejoins`}</div>
                   </div>
-                  <div className="change-logo ml-3 flex items-center bg-white p-1">
+                  <div className="change-logo ml-1 sm:ml-3 flex items-center bg-white p-1">
                     <Image                   
                       width={30}
                       height={30}
