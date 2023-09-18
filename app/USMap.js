@@ -120,7 +120,7 @@ function USMap() {
           <div className="w-[90%] lg:w-[95%] 2xl:w-[65%] flex justify-center">
             <div id="map" className="w-full sm:w-4/5 lg:w-full"></div>
           </div>
-          <div className="hidden sm:block sm:absolute right-[15px] top-[200px] sm:right-[80px] sm:top-[150px] md:right-[90px] md:top-[250px] lg:right-[25px] lg:top-[400px]  xl:right-[40px] xl:top-[480px] 2xl:right-[110px] 2xl:top-[375px]">
+          <div className="hidden sm:block sm:absolute right-[15px] top-[200px] sm:right-[80px] sm:top-[150px] md:right-[90px] md:top-[250px] lg:right-[25px] lg:top-[400px] xl:right-[40px] xl:top-[480px] 2xl:right-[110px] 2xl:top-[375px] z-0">
             {!options.hideLegend &&
               <Legend activeConferences={activeConferences} />
             }
