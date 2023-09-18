@@ -13,6 +13,7 @@ import Legend from './Legend';
 import Changes from './History';
 import Header from './Header';
 import Options from './Options';
+import MobileButtons from './MobileButtons';
 
 function USMap() {
   const [currentYear, setCurrentYear] = useState(1896);
@@ -33,7 +34,6 @@ function USMap() {
       );
     };
 
-    // Initial check
     handleWindowResize();
     window.addEventListener('resize', handleWindowResize);
 
@@ -132,6 +132,11 @@ function USMap() {
             </div>
           </div>
         </div>
+      <div className='flex justify-center'>
+        {isYearVisible &&
+          <MobileButtons currentYear={currentYear} setCurrentYear={setCurrentYear}/>
+        }
+      </div>
       <div className="2xl:hidden">
         <div className="w-full">
           {/* <div className="hidden md:flex justify-end items-start">
