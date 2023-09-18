@@ -116,15 +116,15 @@ function USMap() {
               <Changes changesList={changesList}/>
             }
           </div>
-          <div className="w-[90%] sm:w-[60%] lg:w-[95%] 2xl:w-[65%]">
-            <div id="map" className="w-full"></div>
+          <div className="w-[90%] lg:w-[95%] 2xl:w-[65%] flex justify-center">
+            <div id="map" className="w-full sm:w-4/5"></div>
           </div>
           <div className="hidden sm:block sm:absolute right-[15px] top-[200px] sm:right-[15px] sm:top-[250px] md:right-[25px] md:top-[350px] lg:right-[25px] lg:top-[475px]  xl:right-[40px] xl:top-[600px] 2xl:right-[110px] 2xl:top-[500px]">
             {!options.hideLegend &&
               <Legend activeConferences={activeConferences} />
             }
           </div>
-          <div className="w-[10%] sm:w-[40%] lg:w-[5%] 2xl:w-[17.5%] md:flex-col md:justify-between">
+          <div className="w-[10%] lg:w-[5%] 2xl:w-[17.5%]">
             <div className="flex justify-end items-start">
               <Options options={options} setOptions={setOptions} activeConferences={activeConferences} />
             </div>
