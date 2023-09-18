@@ -24,7 +24,7 @@ export default function Options({ options, setOptions }) {
       setShowHiddenDiv(true);
     }
   };
-  console.log(!options.hideSettings, !showHiddenDiv)
+
   return (
     <div className='menu-container'>
       {!options.hideSettings && !showDiv && (

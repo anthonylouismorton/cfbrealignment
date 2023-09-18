@@ -52,7 +52,7 @@ const CustomSlider = styled(Slider)(({ theme }) => ({
     },
     '@media (min-width: 400px) and (max-width: 549px)': {
       fontSize: '10px',
-      top: 42,
+      top: 43,
     },
     '@media (min-width: 550px) and (max-width: 650px)': {
       fontSize: '12px',
