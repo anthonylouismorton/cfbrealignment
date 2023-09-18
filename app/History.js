@@ -18,6 +18,7 @@ function History({ changesList }) {
                     <Image
                       width={30}
                       height={30}
+                      className='max-h-[30px]'
                       src={change.logo} alt={`${change.abbreviation} logo`} 
                     />
                   </div>
@@ -30,6 +31,7 @@ function History({ changesList }) {
                     <Image
                       width={30}
                       height={30}
+                      className='max-h-[30px]'
                       src={change.logo} alt={`${change.abbreviation} logo`} 
                     />
                   </div>
@@ -42,6 +44,7 @@ function History({ changesList }) {
                     <Image
                       width={30}
                       height={30}
+                      className='max-h-[30px]'
                       src={change.logo} alt={`${change.school} logo`}
                     />
                   </div>
@@ -50,6 +53,7 @@ function History({ changesList }) {
                     <Image
                       width={30}
                       height={30}
+                      className='max-h-[30px]'
                       src={change.oldConferenceLogo} alt={`old conference logo`}
                     />
                   </div>
@@ -60,6 +64,7 @@ function History({ changesList }) {
                     <Image
                       width={30}
                       height={30}
+                      className='max-h-[30px]'
                       src={change.newConferenceLogo} alt={`new conference logo`}
                     />
                   </div>
@@ -71,6 +76,7 @@ function History({ changesList }) {
                     <Image
                       width={30}
                       height={30}
+                      className='max-h-[30px]'
                       src={change.logo} alt={`${change.school} logo`}
                     />
                   </div>
@@ -81,6 +87,7 @@ function History({ changesList }) {
                     <Image
                       width={30}
                       height={30}
+                      className='max-h-[30px]'
                       src={change.conferenceLogo} alt={`${change.conferenceLogo} logo`} 
                     />
                   </div>
@@ -92,6 +99,7 @@ function History({ changesList }) {
                     <Image
                       width={30}
                       height={30}
+                      className='max-h-[30px]'
                       src={change.logo} alt={`${change.school} logo`} 
                     />
                   </div>
@@ -102,6 +110,7 @@ function History({ changesList }) {
                     <Image                   
                       width={30}
                       height={30}
+                      className='max-h-[30px]'
                       src={change.conferenceLogo} alt={`${change.conferenceLogo} logo`} 
                     />
                   </div>
