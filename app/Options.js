@@ -26,7 +26,7 @@ export default function Options({ options, setOptions }) {
   };
 
   return (
-    <div className='menu-container'>
+    <div className='menu-container z-10'>
       {!options.hideSettings && !showDiv && (
         <div className='w-[28px] h-[114px]'>
         <button
