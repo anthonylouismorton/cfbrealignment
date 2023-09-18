@@ -67,7 +67,7 @@ export default function OptionsMenu({ options, setOptions, menu, setMenu }) {
           <input type="checkbox" checked={isChecked.hideLegend} value="hideLegend" onChange={handleOptions} />
           <label className='pl-2 text-[11px] font-semibold'>Hide Legend</label>
         </div>
-        <div className='flex items-center'>
+        <div className='hidden sm:flex items-center'>
           <input type="checkbox" checked={isChecked.hideHeader} value="hideHeader" onChange={handleOptions} />
           <label className='pl-2 text-[11px] font-semibold'>Hide Header</label>
         </div>

@@ -21,8 +21,21 @@ function USMap() {
   const [options, setOptions] = useState({conferences: false, majorConferences: false, hideHistory: false, hideLegend: false, hideHeader: false, hideSettings: false});
   const [currentConferences, setCurrentConferences] = useState(null);
   const [schoolStates, setSchoolStates] = useState(null);
+  const [isYearVisible,setIsYearVisible] = useState(false);
+  const minWidth = (768)
 
   useEffect(() => {
+    console.log(isYearVisible)
+    console.log(options.hideHeader)
+    const handleWindowResize = () => {
+      setIsYearVisible(
+        options.hideHeader || window.innerWidth <= minWidth
+      );
+    };
+
+    // Initial check
+    handleWindowResize();
+    window.addEventListener('resize', handleWindowResize);
 
     const width = 975;
     const height = 610;
@@ -41,10 +54,9 @@ function USMap() {
     const projection = d3.geoAlbersUsa()
       .scale(1300)
       .translate([width / 2, height / 2]);
-    
-      if (options.hideHeader) {
+      console.log(options.hideHeader || window.innerWidth < 640)
+      if (isYearVisible) {
         const [x, y] = projection([-89.588, 27.2033]);
-      
         svg
           .append('text')
           .attr('x', x)
@@ -89,7 +101,7 @@ function USMap() {
       document.removeEventListener('keydown', handleKeyDown);
     };
 
-  }, [mapdata, currentYear, options]);
+  }, [mapdata, currentYear, options, isYearVisible]);
 
   return (
     <div>
@@ -107,7 +119,7 @@ function USMap() {
           <div className="w-[95%] lg:w-[95%] 2xl:w-[65%]">
             <div id="map" className="w-full"></div>
           </div>
-          <div className="hidden sm:absolute right-[15px] top-[200px] sm:right-[15px] sm:top-[250px] md:right-[25px] md:top-[350px] lg:right-[25px] lg:top-[475px]  xl:right-[40px] xl:top-[600px] 2xl:right-[110px] 2xl:top-[500px]">
+          <div className="hidden sm:block sm:absolute right-[15px] top-[200px] sm:right-[15px] sm:top-[250px] md:right-[25px] md:top-[350px] lg:right-[25px] lg:top-[475px]  xl:right-[40px] xl:top-[600px] 2xl:right-[110px] 2xl:top-[500px]">
             {!options.hideLegend &&
               <Legend activeConferences={activeConferences} />
             }
