@@ -13,7 +13,7 @@ import Legend from './Legend';
 import Changes from './History';
 import Header from './Header';
 import Options from './Options';
-import MobileButtons from './MobileButtons';
+import MobileSlider from './MobileSlider';
 
 function USMap() {
   const [currentYear, setCurrentYear] = useState(1896);
@@ -103,7 +103,7 @@ function USMap() {
     };
 
   }, [mapdata, currentYear, options, isYearVisible]);
-
+  console.log(isYearVisible)
   return (
     <div>
       <div className="flex flex-col justify-center items-center">
@@ -134,7 +134,7 @@ function USMap() {
         </div>
       <div className='flex justify-center'>
         {isYearVisible &&
-          <MobileButtons currentYear={currentYear} setCurrentYear={setCurrentYear}/>
+          <MobileSlider currentYear={currentYear} setCurrentYear={setCurrentYear}/>
         }
       </div>
       <div className="2xl:hidden">
