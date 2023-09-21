@@ -49,7 +49,7 @@ export default function OptionsMenu({ options, setOptions, menu, setMenu }) {
     >
 
     <div className='bg-white rounded w-48' ref={menuRef}>
-      <p className='flex flex-col p-3 text-center text-sm font-bold'>SETTINGS</p>
+      <p className='flex flex-col p-3 text-center text-sm text-black font-bold'>SETTINGS</p>
       <div className='pl-2'>
         <div className='flex items-center'>
           <input type="checkbox" checked={isChecked.conferences} value="conferences" onChange={handleOptions} />
@@ -58,6 +58,10 @@ export default function OptionsMenu({ options, setOptions, menu, setMenu }) {
         <div className='flex items-center'>
           <input type="checkbox" checked={isChecked.majorConferences} value="majorConferences" onChange={handleOptions} />
           <label className='pl-2 text-[11px] text-black font-semibold'>Major Conferences Only</label>
+        </div>
+        <div className='flex items-center'>
+          <input type="checkbox" checked={isChecked.hideYear} value="hideYear" onChange={handleOptions} />
+          <label className='pl-2 text-[11px] text-black font-semibold'>Discreet Slider</label>
         </div>
         <div className='flex items-center'>
           <input type="checkbox" checked={isChecked.hideHistory} value="hideHistory" onChange={handleOptions} />

@@ -19,15 +19,13 @@ function USMap() {
   const [currentYear, setCurrentYear] = useState(1896);
   const [activeConferences, setActiveConferences] = useState(null);
   const [changesList, setChangesList] = useState([]);
-  const [options, setOptions] = useState({conferences: false, majorConferences: false, hideHistory: false, hideLegend: false, hideHeader: false, hideSettings: false});
+  const [options, setOptions] = useState({conferences: false, majorConferences: false, hideHistory: false, hideLegend: false, hideHeader: false, hideSettings: false, hideYear: false});
   const [currentConferences, setCurrentConferences] = useState(null);
   const [schoolStates, setSchoolStates] = useState(null);
   const [isYearVisible,setIsYearVisible] = useState(false);
   const minWidth = (768)
 
   useEffect(() => {
-    console.log(isYearVisible)
-    console.log(window.innerWidth)
     const handleWindowResize = () => {
       setIsYearVisible(
         options.hideHeader || window.innerWidth <= minWidth
@@ -54,8 +52,8 @@ function USMap() {
     const projection = d3.geoAlbersUsa()
       .scale(1300)
       .translate([width / 2, height / 2]);
-      console.log(options.hideHeader || window.innerWidth < 640)
-      if (isYearVisible) {
+
+      if (isYearVisible || options.hideYear) {
         const [x, y] = projection([-89.588, 27.2033]);
         svg
           .append('text')
@@ -68,7 +66,6 @@ function USMap() {
           .text("Year: " + currentYear);
       }
       
-
     const path = d3.geoPath(projection);
     const usa = svg
       .append('g')
@@ -107,7 +104,9 @@ function USMap() {
   return (
     <div>
       <div className="flex flex-col justify-center items-center">
-        <Year currentYear={currentYear} setCurrentYear={setCurrentYear} />
+        {!options.hideYear &&
+          <Year currentYear={currentYear} setCurrentYear={setCurrentYear} />
+        }
           {!options.hideHeader &&
             <Header currentYear={currentYear} />
           }
@@ -133,7 +132,7 @@ function USMap() {
           </div>
         </div>
       <div className='flex justify-center'>
-        {isYearVisible &&
+        {isYearVisible || options.hideYear &&
           <MobileSlider currentYear={currentYear} setCurrentYear={setCurrentYear}/>
         }
       </div>
