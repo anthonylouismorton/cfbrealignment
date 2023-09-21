@@ -28,8 +28,10 @@ function USMap() {
   useEffect(() => {
     console.log(localStorage)
     if(localStorage.savedYear){
-      console.log((parseInt(localStorage.savedYear)))
       setCurrentYear(parseInt(localStorage.savedYear))
+    }
+    if(localStorage.savedOptions){
+      setOptions(JSON.parse(localStorage.getItem('savedOptions')));
     }
   },[])
 
@@ -102,17 +104,16 @@ function USMap() {
     };
     document.addEventListener('keydown', handleKeyDown);
     const saveToLocalStorage = () => {
-      localStorage.setItem("savedYear", currentYear)
-      localStorage.setItem("savedOptions", options)
+      localStorage.setItem("savedYear", JSON.stringify(currentYear))
+      localStorage.setItem("savedOptions", JSON.stringify(options))
     }
     saveToLocalStorage();
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
 
-  }, [mapdata, currentYear, options, isYearVisible, localStorage]);
+  }, [mapdata, currentYear, options, isYearVisible]);
 
-  console.log(currentYear)
   return (
     <div>
       <div className="flex flex-col justify-center items-center">
