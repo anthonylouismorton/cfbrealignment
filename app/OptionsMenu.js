@@ -53,27 +53,27 @@ export default function OptionsMenu({ options, setOptions, menu, setMenu }) {
       <div className='pl-2'>
         <div className='flex items-center'>
           <input type="checkbox" checked={isChecked.conferences} value="conferences" onChange={handleOptions} />
-          <label className='pl-2 text-[11px] font-semibold'>Logos off</label>
+          <label className='pl-2 text-[11px] text-black font-semibold'>Logos off</label>
         </div>
         <div className='flex items-center'>
           <input type="checkbox" checked={isChecked.majorConferences} value="majorConferences" onChange={handleOptions} />
-          <label className='pl-2 text-[11px] font-semibold'>Major Conferences Only</label>
+          <label className='pl-2 text-[11px] text-black font-semibold'>Major Conferences Only</label>
         </div>
         <div className='flex items-center'>
           <input type="checkbox" checked={isChecked.hideHistory} value="hideHistory" onChange={handleOptions} />
-          <label className='pl-2 text-[11px] font-semibold'>Hide History</label>
+          <label className='pl-2 text-[11px] text-black font-semibold'>Hide History</label>
         </div>
         <div className='flex items-center'>
           <input type="checkbox" checked={isChecked.hideLegend} value="hideLegend" onChange={handleOptions} />
-          <label className='pl-2 text-[11px] font-semibold'>Hide Legend</label>
+          <label className='pl-2 text-[11px] text-black font-semibold'>Hide Legend</label>
         </div>
         <div className='hidden sm:flex items-center'>
           <input type="checkbox" checked={isChecked.hideHeader} value="hideHeader" onChange={handleOptions} />
-          <label className='pl-2 text-[11px] font-semibold'>Hide Header</label>
+          <label className='pl-2 text-[11px] text-black font-semibold'>Hide Header</label>
         </div>
         <div className='flex items-center'>
           <input type="checkbox" checked={isChecked.hideSettings} value="hideSettings" onChange={handleOptions} />
-          <label className='pl-2 text-[11px] font-semibold'>Hide Options</label>
+          <label className='pl-2 text-[11px] text-black font-semibold'>Hide Options</label>
         </div>
       </div>
       <div className='text-center py-3'>
