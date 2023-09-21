@@ -16,7 +16,7 @@ import Options from './Options';
 import MobileSlider from './MobileSlider';
 
 function USMap() {
-  const [currentYear, setCurrentYear] = useState(1896);
+  const [currentYear, setCurrentYear] = useState(1894);
   const [activeConferences, setActiveConferences] = useState(null);
   const [changesList, setChangesList] = useState([]);
   const [options, setOptions] = useState({conferences: false, majorConferences: false, hideHistory: false, hideLegend: false, hideHeader: false, hideSettings: false, hideYear: false});
@@ -24,6 +24,14 @@ function USMap() {
   const [schoolStates, setSchoolStates] = useState(null);
   const [isYearVisible,setIsYearVisible] = useState(false);
   const minWidth = (768)
+
+  useEffect(() => {
+    console.log(localStorage)
+    if(localStorage.savedYear){
+      console.log((parseInt(localStorage.savedYear)))
+      setCurrentYear(parseInt(localStorage.savedYear))
+    }
+  },[])
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -53,7 +61,7 @@ function USMap() {
       .scale(1300)
       .translate([width / 2, height / 2]);
 
-      if (isYearVisible || options.hideYear) {
+      if (isYearVisible || options.hideYear){
         const [x, y] = projection([-89.588, 27.2033]);
         svg
           .append('text')
@@ -92,15 +100,19 @@ function USMap() {
         setCurrentYear(currentYear + 1);
       }
     };
-
     document.addEventListener('keydown', handleKeyDown);
-
+    const saveToLocalStorage = () => {
+      localStorage.setItem("savedYear", currentYear)
+      localStorage.setItem("savedOptions", options)
+    }
+    saveToLocalStorage();
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
 
-  }, [mapdata, currentYear, options, isYearVisible]);
-  console.log(isYearVisible)
+  }, [mapdata, currentYear, options, isYearVisible, localStorage]);
+
+  console.log(currentYear)
   return (
     <div>
       <div className="flex flex-col justify-center items-center">
