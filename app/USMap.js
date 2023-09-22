@@ -2,10 +2,10 @@
 import { useEffect, useState } from 'react';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
-import mapdata from './mapData.json';
-import conferenceData from './conferenceData.json';
-import { getConferences } from './getConferences';
-import { getChanges } from './getChanges';
+import mapdata from './data/mapData.json';
+import conferenceData from './data/conferenceData.json';
+import { getConferences } from './functions/getConferences';
+import { getChanges } from './functions/getChanges';
 import { mapFill } from './mapFill';
 import { schoolLocations } from './schoolLocations';
 import Year from './Year';
