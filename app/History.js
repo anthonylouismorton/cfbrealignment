@@ -18,7 +18,7 @@ function History({ changesList }) {
                     <Image
                       width={30}
                       height={30}
-                      className='max-h-[30px]'
+                      className='max-h-[30px] max-w-auto'
                       src={change.logo} alt={`${change.abbreviation} logo`} 
                     />
                   </div>
