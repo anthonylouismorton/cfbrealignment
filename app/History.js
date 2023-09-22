@@ -1,9 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-// import RedoIcon from '@mui/icons-material/Redo';
 
 function History({ changesList }) {
-
+  console.log(changesList)
   return (
     <div className="w-full pb-5 rounded">
       <div className="text-center flex flex-col" id="change">
@@ -121,6 +120,11 @@ function History({ changesList }) {
                   <div style={{color: `${change.oldColor}`}} className="mr-1 change-conference text-lg font-bold">{change.oldName}</div>
                   <div className="change-conference text-md text-white">{`rebrands to`}</div>
                   <div style={{color: `${change.newColor}`}}  className="ml-1 change-conference text-lg font-bold">{change.newName}</div>
+                </div>
+              )}
+              {change.change === 'history' && (
+                <div className='flex text-center items-center'>
+                  <div className="p-4 change-conference text-sm text-white font-semibold">{change.event}</div>
                 </div>
               )}
             </div>
