@@ -17,7 +17,7 @@ import MobileSlider from './MobileSlider';
 import Welcome from './Welcome';
 
 function USMap() {
-  const [currentYear, setCurrentYear] = useState(1894);
+  const [currentYear, setCurrentYear] = useState(1896);
   const [activeConferences, setActiveConferences] = useState(null);
   const [changesList, setChangesList] = useState([]);
   const [options, setOptions] = useState({conferences: false, majorConferences: false, hideHistory: false, hideLegend: false, hideHeader: false, hideSettings: false, hideYear: false, showWelcome: true});
@@ -26,14 +26,14 @@ function USMap() {
   const [isYearVisible,setIsYearVisible] = useState(false);
   const minWidth = (768)
 
-  useEffect(() => {
-    if(localStorage.savedYear){
-      setCurrentYear(parseInt(localStorage.savedYear))
-    }
-    if(localStorage.savedOptions){
-      setOptions(JSON.parse(localStorage.getItem('savedOptions')));
-    }
-  },[])
+  // useEffect(() => {
+  //   if(localStorage.savedYear){
+  //     setCurrentYear(parseInt(localStorage.savedYear))
+  //   }
+  //   if(localStorage.savedOptions){
+  //     setOptions(JSON.parse(localStorage.getItem('savedOptions')));
+  //   }
+  // },[])
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -113,7 +113,7 @@ function USMap() {
     };
 
   }, [mapdata, currentYear, options, isYearVisible]);
-  console.log(options.showWelcome)
+
   return (
     <div>
       <div className="flex flex-col justify-center items-center">
