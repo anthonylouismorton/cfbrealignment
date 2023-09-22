@@ -14,26 +14,26 @@ import Changes from './History';
 import Header from './Header';
 import Options from './Options';
 import MobileSlider from './MobileSlider';
+import Welcome from './Welcome';
 
 function USMap() {
-  const [currentYear, setCurrentYear] = useState(1894);
+  const [currentYear, setCurrentYear] = useState(1896);
   const [activeConferences, setActiveConferences] = useState(null);
   const [changesList, setChangesList] = useState([]);
-  const [options, setOptions] = useState({conferences: false, majorConferences: false, hideHistory: false, hideLegend: false, hideHeader: false, hideSettings: false, hideYear: false});
+  const [options, setOptions] = useState({conferences: false, majorConferences: false, hideHistory: false, hideLegend: false, hideHeader: false, hideSettings: false, hideYear: false, showWelcome: true});
   const [currentConferences, setCurrentConferences] = useState(null);
   const [schoolStates, setSchoolStates] = useState(null);
   const [isYearVisible,setIsYearVisible] = useState(false);
   const minWidth = (768)
 
-  useEffect(() => {
-    console.log(localStorage)
-    if(localStorage.savedYear){
-      setCurrentYear(parseInt(localStorage.savedYear))
-    }
-    if(localStorage.savedOptions){
-      setOptions(JSON.parse(localStorage.getItem('savedOptions')));
-    }
-  },[])
+  // useEffect(() => {
+  //   if(localStorage.savedYear){
+  //     setCurrentYear(parseInt(localStorage.savedYear))
+  //   }
+  //   if(localStorage.savedOptions){
+  //     setOptions(JSON.parse(localStorage.getItem('savedOptions')));
+  //   }
+  // },[])
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -117,6 +117,9 @@ function USMap() {
   return (
     <div>
       <div className="flex flex-col justify-center items-center">
+        {options.showWelcome &&
+          <Welcome setOptions={setOptions}/>
+        }
         {!options.hideYear &&
           <Year currentYear={currentYear} setCurrentYear={setCurrentYear} />
         }
