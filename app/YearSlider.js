@@ -10,7 +10,7 @@ const iOSBoxShadow =
   '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)';
 
   const marks = [
-    { value: 1896, label: '1896' }, 
+    { value: 1895, label: '1895' }, 
     { value: 1905, label: '1905' }, 
     { value: 1915, label: '1915' }, 
     { value: 1925, label: '1925' },
@@ -142,7 +142,7 @@ export default function YearSlider({currentYear, setCurrentYear}) {
   };
   const handlePrevYear = () => {
     const newYear = currentYear - 1;
-    if (newYear >= 1896) {
+    if (newYear >= 1895) {
       setCurrentYear(newYear);
     }
   };
@@ -162,7 +162,7 @@ export default function YearSlider({currentYear, setCurrentYear}) {
         aria-label="Custom marks"
         value={currentYear}
         valueLabelDisplay="auto"
-        min={1896}
+        min={1895}
         max={2024}
         marks={marks}
         onChange={handleSliderChange}
