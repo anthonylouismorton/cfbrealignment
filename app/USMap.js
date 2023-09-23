@@ -6,7 +6,7 @@ import mapdata from './data/mapData.json';
 import conferenceData from './data/conferenceData.json';
 import { getConferences } from './functions/getConferences';
 import { getChanges } from './functions/getChanges';
-import { mapFill } from './mapFill';
+import { mapFill } from './functions/mapFill';
 import { schoolLocations } from './schoolLocations';
 import Year from './Year';
 import Legend from './Legend';
@@ -15,6 +15,7 @@ import Header from './Header';
 import Options from './Options';
 import MobileSlider from './MobileSlider';
 import Welcome from './Welcome';
+import Maps from './Maps';
 
 function USMap() {
   const [currentYear, setCurrentYear] = useState(1895);
@@ -44,57 +45,6 @@ function USMap() {
 
     handleWindowResize();
     window.addEventListener('resize', handleWindowResize);
-
-    const width = 975;
-    const height = 610;
-    
-    // Clear the previous SVG, if it exists
-    d3.select('#map').select('svg').remove();
-    
-    const svg = d3
-      .select('#map')
-      .append('svg')
-      .attr('width', width)
-      .attr('height', height)
-      .attr('style', 'width: 100%; height: auto;')
-      .attr('viewBox', `0 0 ${width} ${height}`);
-
-    const projection = d3.geoAlbersUsa()
-      .scale(1300)
-      .translate([width / 2, height / 2]);
-
-      if (isYearVisible || options.hideYear){
-        const [x, y] = projection([-89.588, 27.2033]);
-        svg
-          .append('text')
-          .attr('x', x)
-          .attr('y', y)
-          .attr('text-anchor', 'middle')
-          .style('fill', 'white')
-          .style('font-size', '20px') 
-          .style('font-weight', 'bold') 
-          .text("Year: " + currentYear);
-      }
-      
-    const path = d3.geoPath(projection);
-    const usa = svg
-      .append('g')
-      .append('path')
-      .datum(topojson.feature(mapdata, mapdata.objects.nation))
-      .attr('d', d3.geoPath());
-      const { getSchoolStates, getCurrentConferences } = getConferences(conferenceData, currentYear, mapdata, options.majorConferences);
-      setCurrentConferences(getCurrentConferences)
-      setSchoolStates(getSchoolStates)
-      const getLegendConferences = mapFill(svg, getSchoolStates, mapdata, currentYear)
-      setActiveConferences(getLegendConferences)
-    
-    
-    var conferenceChanges = getChanges(getCurrentConferences, currentYear)
-    setChangesList(conferenceChanges)
-
-    if(!options.conferences){
-      schoolLocations(svg, projection, getCurrentConferences, currentYear);
-    }
     const handleKeyDown = (e) => {
       if (e.keyCode === 37) { // Left arrow key
         setCurrentYear(currentYear - 1);
@@ -133,7 +83,22 @@ function USMap() {
             }
           </div>
           <div className="w-[90%] lg:w-[95%] 2xl:w-[65%] flex justify-center">
-            <div id="map" className="w-full sm:w-4/5 lg:w-full"></div>
+            {/* <div id="map" className="w-full sm:w-4/5 lg:w-full"></div> */}
+            <Maps
+              mapdata={mapdata}
+              currentYear={currentYear}
+              options={options}
+              isYearVisible={isYearVisible}
+              changesList={changesList}
+              setChangesList={setChangesList}
+              schoolStates={schoolStates}
+              setSchoolStates={setSchoolStates}
+              currentConferences={currentConferences}
+              setCurrentConferences={setCurrentConferences}
+              setActiveConferences={setActiveConferences}
+              activeConferences={activeConferences}
+
+            />
           </div>
           <div className="hidden sm:block sm:absolute right-[15px] top-[200px] sm:right-[80px] sm:top-[150px] md:right-[90px] md:top-[250px] lg:right-[25px] lg:top-[400px] xl:right-[40px] xl:top-[480px] 2xl:right-[110px] 2xl:top-[375px] z-0">
             {!options.hideLegend &&
