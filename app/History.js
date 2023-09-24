@@ -2,7 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 
 function History({ changesList }) {
-  console.log(changesList)
   return (
     <div className="w-full pb-5 rounded">
       <div className="text-center flex flex-col" id="change">
