@@ -1,13 +1,6 @@
 "use client"
 import { useEffect, useState } from 'react';
-import * as d3 from 'd3';
-import * as topojson from 'topojson-client';
 import mapdata from './data/mapData.json';
-import conferenceData from './data/conferenceData.json';
-import { getConferences } from './functions/getConferences';
-import { getChanges } from './functions/getChanges';
-import { mapFill } from './functions/mapFill';
-import { schoolLocations } from './schoolLocations';
 import Year from './Year';
 import Legend from './Legend';
 import Changes from './History';
@@ -15,10 +8,11 @@ import Header from './Header';
 import Options from './Options';
 import MobileSlider from './MobileSlider';
 import Welcome from './Welcome';
-import Maps from './Maps';
+import Map from './Map';
+import AutoPlay from './AutoPlay';
 
 function USMap() {
-  const [currentYear, setCurrentYear] = useState(1895);
+  const [currentYear, setCurrentYear] = useState(1892);
   const [activeConferences, setActiveConferences] = useState(null);
   const [changesList, setChangesList] = useState([]);
   const [options, setOptions] = useState({conferences: false, majorConferences: false, hideHistory: false, hideLegend: false, hideHeader: false, hideSettings: false, hideYear: false, showWelcome: true});
@@ -74,7 +68,10 @@ function USMap() {
           <Year currentYear={currentYear} setCurrentYear={setCurrentYear} />
         }
           {!options.hideHeader &&
+          <div>
             <Header currentYear={currentYear} />
+            <AutoPlay currentYear={currentYear} setCurrentYear={setCurrentYear} changesList={changesList}/>
+          </div>
           }
         <div className="flex w-full">
           <div className="hidden 2xl:block 2xl:w-[17.5%]">
@@ -84,7 +81,7 @@ function USMap() {
           </div>
           <div className="w-[90%] lg:w-[95%] 2xl:w-[65%] flex justify-center">
             {/* <div id="map" className="w-full sm:w-4/5 lg:w-full"></div> */}
-            <Maps
+            <Map
               mapdata={mapdata}
               currentYear={currentYear}
               options={options}
@@ -106,7 +103,7 @@ function USMap() {
             }
           </div>
           <div className="w-[10%] lg:w-[5%] 2xl:w-[17.5%]">
-            <div className="flex justify-end items-start">
+            <div className="flex flex-col items-end">
               <Options options={options} setOptions={setOptions} activeConferences={activeConferences} />
             </div>
             </div>

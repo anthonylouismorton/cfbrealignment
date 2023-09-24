@@ -7,7 +7,7 @@ import { getChanges } from './functions/getChanges';
 import { mapFill } from './functions/mapFill';
 import { schoolLocations } from './schoolLocations';
 
-export default function Maps({ mapdata, currentYear, options, isYearVisible, setChangesList, changesList, schoolStates, setSchoolStates, currentConferences, setCurrentConferences, activeConferences, setActiveConferences }) {
+export default function Map({ mapdata, currentYear, options, isYearVisible, setChangesList, changesList, schoolStates, setSchoolStates, currentConferences, setCurrentConferences, activeConferences, setActiveConferences }) {
 
   useEffect(() => {
     
@@ -38,6 +38,27 @@ export default function Maps({ mapdata, currentYear, options, isYearVisible, set
           .style('font-weight', 'bold') 
           .text("Year: " + currentYear);
       }
+    // const [x2, y2] = projection([-79.873968, 46.657440]);
+    // var timelapse = svg
+    //   .append('text')
+    //   .attr('x', x2)
+    //   .attr('y', y2)
+    //   .attr('text-anchor', 'middle')
+    //   .style('fill', 'white')
+    //   .style('border', 'white')
+    //   .style('font-size', '12px')
+    //   .style('font-weight', 'bold')
+    //   .text('Time-lapse');
+
+    // // Add an onclick event listener
+    // timelapse.on('click', function() {
+    //   // Your code to be executed when the text is clicked goes here
+    //   // For example, you can open a URL or perform any other action.
+    //   // To open a URL in a new tab, you can use window.open():
+    //   // window.open('https://example.com', '_blank');
+    // });
+    // timelapse.style('cursor', 'pointer');
+
       
     const path = d3.geoPath(projection);
     const usa = svg
@@ -59,6 +80,7 @@ export default function Maps({ mapdata, currentYear, options, isYearVisible, set
       schoolLocations(svg, projection, getCurrentConferences, currentYear);
     }
     return () => {
+      //Need to clear the map every year change or map duplicates
       d3.select('#map').select('svg').remove();
     };
   }, [mapdata, currentYear, options, isYearVisible]);

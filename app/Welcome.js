@@ -17,7 +17,7 @@ export default  function Welcome({options, setOptions}){
   const handleCheck = (e) => {
     setWelcomeCheck(e.target.checked)
   }
-  console.log(open)
+
   return (
     <div>
       <Modal
