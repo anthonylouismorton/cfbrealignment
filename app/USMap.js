@@ -56,8 +56,8 @@ function USMap() {
       document.removeEventListener('keydown', handleKeyDown);
     };
 
-  }, [mapdata, currentYear, options, isYearVisible]);
-  // console.log(window.innerWidth)
+  }, [currentYear, options, isYearVisible]);
+
   return (
     <div>
       <div className="flex flex-col justify-center items-center">
