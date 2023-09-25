@@ -57,7 +57,7 @@ function USMap() {
     };
 
   }, [mapdata, currentYear, options, isYearVisible]);
-  console.log(window.innerWidth)
+  // console.log(window.innerWidth)
   return (
     <div>
       <div className="flex flex-col justify-center items-center">
