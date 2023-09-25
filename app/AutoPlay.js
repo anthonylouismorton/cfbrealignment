@@ -4,10 +4,8 @@ import { IconButton } from '@mui/material';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
 export default function Autoplay({changesList, currentYear, setCurrentYear}){
-  const [step, setStep] = useState(10000);
   const [start, setStart] = useState(false);
   const timeIntervalRef = useRef(null);
-  const timeRef = useRef(3000);
 
   const handleStart = () => {
     setStart(true)
@@ -18,21 +16,23 @@ export default function Autoplay({changesList, currentYear, setCurrentYear}){
 
   
   useEffect(() => {
-    if (start) {
+    let time = 5000
+    let nextYear = currentYear + 1
+    console.log(nextYear)
+    if(changesList.length === 0){
+      time = 1000
+    }
+    if (start && nextYear < 2025) {
       timeIntervalRef.current = setInterval(() => {
         setCurrentYear((prevYear) => prevYear + 1);
-        console.log(changesList, currentYear)
-        if (changesList.length === 0) {
-          console.log('in the if');
-          timeRef.current = 1000;
-        }
-        else{
-          timeRef.current = 5000
-        }
-      }, timeRef.current);
+      }, time);
     } 
     else if (!start) {
       clearInterval(timeIntervalRef.current);
+    }
+    else if(nextYear === 2025){
+      clearInterval(timeIntervalRef.current);
+      setStart(false)
     }
 
     return () => {
@@ -40,19 +40,18 @@ export default function Autoplay({changesList, currentYear, setCurrentYear}){
     };
   }, [start, currentYear, changesList]);
 
-
   return (
     <div className='flex flex-row justify-center'>
-      <h1 className='text-white text-[20px] font-bold mt-1'>
+      <h1 className='text-white text-[20px] font-bold mr-2'>
         AutoPlay
       </h1>
       {!start &&
-        <IconButton className='mt-1 p-0' onClick={handleStart}>
+        <IconButton className='p-0' onClick={handleStart}>
           <PlayArrowIcon className='text-white'/>
         </IconButton>
       }
       {start &&
-        <IconButton className='mt-1 p-0' onClick={handleStop}>
+        <IconButton className='p-0' onClick={handleStop}>
           <StopIcon className='text-white'/>
         </IconButton>
       }

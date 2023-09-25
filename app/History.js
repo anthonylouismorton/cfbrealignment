@@ -3,13 +3,12 @@ import Image from 'next/image';
 
 function History({ changesList }) {
   return (
-    <div className="w-full pb-5 rounded">
+    <div className="w-full pl-1 pb-5">
       <div className="text-center flex flex-col" id="change">
         <p className="text-md md:text-lg lg:text-xl font-bold pb-4 text-white">HISTORY</p>
-        {/* <p className='text-white font-bold text-lg'>{window.innerWidth}</p> */}
         <div className='flex flex-wrap flex-column items-center w-full'>
           {changesList.map((change, index) => (
-            <div key={index} className="change-item flex justify-center items-center mb-2 w-1/2 sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-full">
+            <div key={index} className="change-item flex justify-center items-center mb-2 w-1/2 sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-full 2xl:w-full">
               {change.change === 'founded' && (
                 <div className='flex text-center items-center w-[140px]'>
                   <div className="change-logo mr-1 sm:mr-3 bg-white p-1">
@@ -116,9 +115,9 @@ function History({ changesList }) {
               )}
               {change.change === 'nameChange' && (
                 <div className='flex text-center items-center'>
-                  <div style={{color: `${change.oldColor}`}} className="mr-1 change-conference text-lg font-bold">{change.oldName}</div>
-                  <div className="change-conference text-md text-white">{`rebrands to`}</div>
-                  <div style={{color: `${change.newColor}`}}  className="ml-1 change-conference text-lg font-bold">{change.newName}</div>
+                  <div style={{color: `${change.oldColor}`}} className="mr-1 change-conference text-lg xl:text-md 2xl:text-lg font-bold">{change.oldName}</div>
+                  <div className="change-conference text-md xl:text-sm 2xl:text-md text-white">{`rebrands to`}</div>
+                  <div style={{color: `${change.newColor}`}}  className="ml-1 change-conference text-lg xl:text-md 2xl:text-lg font-bold">{change.newName}</div>
                 </div>
               )}
               {change.change === 'history' && (

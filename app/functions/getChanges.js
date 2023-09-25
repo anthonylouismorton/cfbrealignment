@@ -17,7 +17,6 @@ export function getChanges(currentConferences, currentYear) {
       if(school.left){
         school.left.forEach((left) => {
           if(left.year === currentYear){
-            console.log(conferenceData)
             conferenceData.forEach((item) => {
               if(left.newConference === item.abbreviation){
                 historyArray.push({change: 'left', left: left.year, newConferenceLogo: item.logo,  oldConferenceLogo: conference.logo, conference: conference.abbreviation, ...school})
