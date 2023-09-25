@@ -1,5 +1,70 @@
 [
   {
+    "conference": "Western Interstate University Football Association",
+    "abbreviation": "WIUFA",
+    "founded": 1892,
+    "history": null,
+    "disbanded": 1898,
+    "logo": "/WIUFA.png",
+    "primaryColor": "rgba(173, 216, 230, 0.90)",
+    "headquarters": null,
+    "divisionIA": null,
+    "majorConference": {"start": 1892, "end": 1897},
+    "names": [
+      {
+        "conference": "Western Interstate University Football Association",
+        "abbreviation": "WIUFA",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Big_12_Conference_%28cropped%29_logo.svg/300px-Big_12_Conference_%28cropped%29_logo.svg.png",
+        "primaryColor": "rgba(173, 216, 230, 0.90)",
+        "startYear": 1892,
+        "endYear": 1898
+      }
+    ],
+    "schools": [
+      {
+        "school": "University of Iowa",
+        "division": "West",
+        "stateId": "19",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Iowa_Hawkeyes_logo.svg/1200px-Iowa_Hawkeyes_logo.svg.png",
+        "nickName": "Iowa",
+        "lat": -91.5511,
+        "lon": 41.6587,
+        "years": [1892,1893,1894,1895,1896,1897],
+        "left": [{"year": 1898, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "University of Kansas",
+        "stateId": "20",
+        "division": null,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Kansas_Jayhawks_1946_logo.svg/1200px-Kansas_Jayhawks_1946_logo.svg.png",
+        "lat": -96.5939,
+        "lon": 39.2020,
+        "years": [1892,1893,1894,1895,1896,1897],
+        "left": [{"year": 1898, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "University of Missouri",
+        "stateId": "29",
+        "division": null,
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2c/Missouri_Tigers_logo.svg/1200px-Missouri_Tigers_logo.svg.png",
+        "lat": -92.3288,
+        "lon": 38.9453,
+        "years": [1892,1893,1894,1895,1896,1897],
+        "left": [{"year": 1898, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "University of Nebraska-Lincoln",
+        "stateId": "31",
+        "division": null,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Nebraska_Cornhuskers_logo%2C_1992%E2%80%932003.svg/363px-Nebraska_Cornhuskers_logo%2C_1992%E2%80%932003.svg.png?20180405205404",
+        "lat": -96.7056,
+        "lon": 40.8207,
+        "years": [1892,1893,1894,1895,1896,1897],
+        "left": [{"year": 1898, "newConference": "FBS Independent"}]
+      }
+    ]
+  },
+  {
     "conference": "Southern Intercollegiate Athletic Association",
     "abbreviation": "SIAA",
     "primaryColor": "rgba(176, 152, 186, 0.90)",

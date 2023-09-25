@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 export default function OptionsMenu({ options, setOptions, menu, setMenu }) {
-  const [isChecked, setIsChecked] = useState({ conferences: options.conferences, majorConferences: options.majorConferences, hideHistory: options.hideHistory, hideHeader: options.hideHeader, hideLegend: options.hideLegend, hideSettings: options.hideSettings, hideYear: options.hideYear });
   const menuRef = useRef(null);
   const conferences = ['SEC', 'Pac-12','Big 12','ACC','Big Ten','SOCON','BIG 8','Border','Southwest','C-USA','WAC','MVC','NMC','Skyline']
 
@@ -12,7 +11,13 @@ export default function OptionsMenu({ options, setOptions, menu, setMenu }) {
 
   const handleOptions = (e) => {
     const value = e.target.value;
-    setIsChecked({ ...isChecked, [value]: e.target.checked });
+    // if(value === hideHeader){
+    //   setOptions({
+    //     ...options,
+    //     [value]: e.target.checked,
+    //     options.
+    //   })
+    // }
       setOptions({
         ...options,
         [value]: e.target.checked,
@@ -33,7 +38,7 @@ export default function OptionsMenu({ options, setOptions, menu, setMenu }) {
     return () => {
       document.removeEventListener('click', handleDocumentClick);
     };
-  }, [menu, setMenu, isChecked]);
+  }, [menu, setMenu, options]);
 
   return (
     <CSSTransition
@@ -52,31 +57,31 @@ export default function OptionsMenu({ options, setOptions, menu, setMenu }) {
       <p className='flex flex-col p-3 text-center text-sm text-black font-bold'>SETTINGS</p>
       <div className='pl-2'>
         <div className='flex items-center'>
-          <input type="checkbox" checked={isChecked.conferences} value="conferences" onChange={handleOptions} />
+          <input type="checkbox" checked={options.logo} value="logos" onChange={handleOptions} />
           <label className='pl-2 text-[11px] text-black font-semibold'>Logos off</label>
         </div>
         <div className='flex items-center'>
-          <input type="checkbox" checked={isChecked.majorConferences} value="majorConferences" onChange={handleOptions} />
+          <input type="checkbox" checked={options.majorConferences} value="majorConferences" onChange={handleOptions} />
           <label className='pl-2 text-[11px] text-black font-semibold'>Major Conferences Only</label>
         </div>
-        <div className='flex items-center'>
-          <input type="checkbox" checked={isChecked.hideYear} value="hideYear" onChange={handleOptions} />
+        {/* <div className='flex items-center'>
+          <input type="checkbox" checked={options.hideYear} value="hideYear" onChange={handleOptions} />
           <label className='pl-2 text-[11px] text-black font-semibold'>Discreet Slider</label>
-        </div>
+        </div> */}
         <div className='flex items-center'>
-          <input type="checkbox" checked={isChecked.hideHistory} value="hideHistory" onChange={handleOptions} />
+          <input type="checkbox" checked={options.hideHistory} value="hideHistory" onChange={handleOptions} />
           <label className='pl-2 text-[11px] text-black font-semibold'>Hide History</label>
         </div>
         <div className='flex items-center'>
-          <input type="checkbox" checked={isChecked.hideLegend} value="hideLegend" onChange={handleOptions} />
+          <input type="checkbox" checked={options.hideLegend} value="hideLegend" onChange={handleOptions} />
           <label className='pl-2 text-[11px] text-black font-semibold'>Hide Legend</label>
         </div>
         <div className='hidden sm:flex items-center'>
-          <input type="checkbox" checked={isChecked.hideHeader} value="hideHeader" onChange={handleOptions} />
+          <input type="checkbox" checked={options.hideHeader} value="hideHeader" onChange={handleOptions} />
           <label className='pl-2 text-[11px] text-black font-semibold'>Hide Header</label>
         </div>
         <div className='flex items-center'>
-          <input type="checkbox" checked={isChecked.hideSettings} value="hideSettings" onChange={handleOptions} />
+          <input type="checkbox" checked={options.hideSettings} value="hideSettings" onChange={handleOptions} />
           <label className='pl-2 text-[11px] text-black font-semibold'>Hide Options</label>
         </div>
       </div>
