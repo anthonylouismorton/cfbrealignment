@@ -24,50 +24,29 @@ export default  function Welcome({options, setOptions}){
         open={open}
         onClose={handleClose}
       >
-        <Box className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full md:w-[768px] md:h-auto bg-black bg-opacity-80 p-6 rounded">
-          <Typography className='text-center font-bold text-[10px] sm:text-[14px] md:text-[18px] text-white' id="keep-mounted-modal-title">
+        <Box className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-h-full overflow-y-auto max-w-[700px] bg-black bg-opacity-80 p-6 rounded">
+          <Typography className='text-center font-bold text-[12px] sm:text-[14px] md:text-[18px] text-white' id="keep-mounted-modal-title">
             WECLOME TO THE COLLEGE FOOTBALL CONFERENCE HISTORY MAP
           </Typography>
-          <Typography className="text-center pt-5 font-normal text-[10px] sm:text-[12px] md:text-[16px] text-white">
+          <Typography className="text-center pt-2 lg:pt-5 font-normal text-[12px] sm:text-[12px] md:text-[16px] text-white">
             With the recent chaos of conference realignment, it is a good time to look back on how we got here.
           </Typography>
-          <Typography className="text-center pt-5 font-normal text-[10px] sm:text-[12px] md:text-[16px] text-white">
+          <Typography className="text-center pt-2 lg:pt-5 font-normal text-[12px] sm:text-[12px] md:text-[16px] text-white">
             This conference map will start in 1894 before the creation of the NCAA. It will then follow along the Division I Conferences, until the 1978 Division I split and continue following the Division IA Conferences, which would later be known as the Football Bowl Subdivision. 
           </Typography>
-          <Typography className="text-center pt-5 font-normal text-[10px] sm:text-[12px] md:text-[16px] text-white">
+          <Typography className="text-center pt-2 lg:pt-5 font-normal text-[12px] sm:text-[12px] md:text-[16px] text-white">
             You can use the left and right arrows on your keyboard to change years.
           </Typography>
-          <Typography className="text-center pt-5 font-normal text-[10px] sm:text-[12px] md:text-[16px] text-white">
+          <Typography className="text-center pt-2 lg:pt-5 font-normal text-[12px] sm:text-[12px] md:text-[16px] text-white">
             Checkout the settings menu for filtering options and display settings.
           </Typography>
-          <div className='flex flex-col'>
-            <div className='text-center'>
-            <FormControlLabel
-              control={
-                <Checkbox 
-                  checked={welcomeCheck}
-                  onChange={handleCheck}
-                  name="noWelcome"
-                  sx={{
-                    color: 'white',
-                    '&.Mui-checked': {
-                      color: "white", // Change color when checked
-                    },
-                    '&:hover': {
-                      color: "black", // Change color on hover (optional)
-                    },
-                  }}
-                />
-              }
-              className='text-white mt-5'
-              label="Don't show me this message again"
-            />
-
-            </div>
-            <div className='flex justify-center items-center mt-5'>
-              <Button className='text-black font-bold bg-white border-white hover:bg-black hover:text-white hover:border-white' variant='outlined' onClick={handleClose}>Close</Button>
-            </div>
+          <div className='flex justify-center pt-2 lg:pt-5'>
+            <input type="checkbox" checked={welcomeCheck} value="welcomeCheck" onChange={handleCheck} />
+            <label className='pl-2 text-white font-normal text-[12px] sm:text-[12px] md:text-[16px]'>Don't show me this message again</label>
           </div>
+            <div className='flex justify-center items-center pt-2 lg:pt-5'>
+              <Button className='text-black text-[12px] sm:text-[12px] md:text-[14px] font-semibold bg-white border-white hover:bg-black hover:text-white hover:border-white' variant='outlined' onClick={handleClose}>Close</Button>
+            </div>
         </Box>
       </Modal>
     </div>
