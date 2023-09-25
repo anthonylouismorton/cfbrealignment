@@ -41,7 +41,7 @@ export default function Autoplay({changesList, currentYear, setCurrentYear}){
 
   return (
     <div className='flex flex-row justify-center'>
-      <h1 className='text-white text-[20px] font-bold mr-2'>
+      <h1 className='text-white text-[16px] xl:text-[20px] font-bold mr-2'>
         AutoPlay
       </h1>
       {!start &&

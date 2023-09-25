@@ -11,14 +11,6 @@ export default function OptionsMenu({ options, setOptions, menu, setMenu }) {
 
   const handleOptions = (e) => {
     const value = e.target.value;
-    console.log(value)
-    // if(value === hideHeader){
-    //   setOptions({
-    //     ...options,
-    //     [value]: e.target.checked,
-    //     options.
-    //   })
-    // }
       setOptions({
         ...options,
         [value]: e.target.checked,
@@ -26,7 +18,6 @@ export default function OptionsMenu({ options, setOptions, menu, setMenu }) {
   };
 
   useEffect(() => {
-    console.log(options)
     const handleDocumentClick = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
         setMenu(false);
@@ -41,7 +32,7 @@ export default function OptionsMenu({ options, setOptions, menu, setMenu }) {
       document.removeEventListener('click', handleDocumentClick);
     };
   }, [menu, setMenu, options]);
-  console.log(options)
+
   return (
     <CSSTransition
       in={menu}

@@ -78,7 +78,7 @@ function USMap() {
               <Changes changesList={changesList}/>
             }
           </div>
-          <div className="w-[90%] lg:w-[95%] xl:w-[65%] flex justify-center">
+          <div className="md:w-[80%] lg:w-[75%] xl:w-[65%] flex justify-center">
             <Map
               mapdata={mapdata}
               currentYear={currentYear}
@@ -94,23 +94,21 @@ function USMap() {
               activeConferences={activeConferences}
             />
           </div>
-          <div className="hidden sm:block sm:absolute right-[15px] top-[200px] sm:right-[80px] sm:top-[150px] md:right-[90px] md:top-[250px] lg:right-[25px] lg:top-[400px] xl:right-[40px] xl:top-[480px] 2xl:right-[110px] 2xl:top-[375px] z-0">
-            {!options.hideLegend &&
-              <Legend activeConferences={activeConferences} />
-            }
-          </div>
-          <div className="w-[10%] lg:w-[5%] xl:w-[17.5%]">
-            <div className="flex flex-col">
-              <div className='flex flew-row justify-between'>
-                <div className='w-full'>
-                  <AutoPlay currentYear={currentYear} setCurrentYear={setCurrentYear} changesList={changesList}/>
+          <div className="flex flex-col md:w-[20%] lg:w-[25%] xl:w-[17.5%]">
+            <div className="flex flex-col flex-grow">
+              <div className="flex flex-row h-[50%]">
+                <div className="w-full">
+                  <AutoPlay currentYear={currentYear} setCurrentYear={setCurrentYear} changesList={changesList} />
                 </div>
                 <Options options={options} setOptions={setOptions} activeConferences={activeConferences} />
               </div>
-            </div>
+            {!options.hideLegend && (
+              <Legend activeConferences={activeConferences} />
+            )}
             </div>
           </div>
         </div>
+      </div>
       <div className='flex justify-center'>
         {isYearVisible &&
           <MobileSlider currentYear={currentYear} setCurrentYear={setCurrentYear}/>
