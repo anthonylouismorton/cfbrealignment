@@ -3,12 +3,10 @@ import OptionsMenu from './OptionsMenu';
 
 export default function Options({ options, setOptions }) {
   const [open, setOpen] = useState(true);
-  const [showDiv, setShowDiv] = useState(false);
   const [showHiddenDiv, setShowHiddenDiv] = useState(false)
 
   const handleOpen = () => {
     setOpen(!open);
-    setShowDiv(!open);
     if(options.hideSettings){
       setShowHiddenDiv(false);
     }
@@ -22,7 +20,7 @@ export default function Options({ options, setOptions }) {
       setShowHiddenDiv(true);
     }
   };
-  console.log(!showDiv)
+
   return (
     <div className='menu-container z-10'>
       {!options.hideSettings && (
