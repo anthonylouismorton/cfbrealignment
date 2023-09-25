@@ -31,14 +31,14 @@ function USMap() {
   // },[])
 
   useEffect(() => {
-    const handleWindowResize = () => {
-      setIsYearVisible(
-        options.hideHeader || window.innerWidth <= minWidth
-      );
-    };
+    // const handleWindowResize = () => {
+    //   setIsYearVisible(
+    //     options.hideHeader || window.innerWidth <= minWidth
+    //   );
+    // };
 
-    handleWindowResize();
-    window.addEventListener('resize', handleWindowResize);
+    // handleWindowResize();
+    // window.addEventListener('resize', handleWindowResize);
     const handleKeyDown = (e) => {
       if (e.keyCode === 37) { // Left arrow key
         setCurrentYear(currentYear - 1);
