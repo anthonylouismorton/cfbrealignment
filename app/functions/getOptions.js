@@ -1,5 +1,5 @@
 
-export function getOptions(options, currentConferences, setCurrentConferences, activeConferences, setActiveConferences, currentYear){
+export function getOptions(options, currentConferences, setActiveConferences, currentYear){
 
   var filterConferences = []
   if(!options.majorConferences){

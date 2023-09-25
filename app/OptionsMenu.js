@@ -11,6 +11,7 @@ export default function OptionsMenu({ options, setOptions, menu, setMenu }) {
 
   const handleOptions = (e) => {
     const value = e.target.value;
+    console.log(value)
     // if(value === hideHeader){
     //   setOptions({
     //     ...options,
@@ -25,9 +26,10 @@ export default function OptionsMenu({ options, setOptions, menu, setMenu }) {
   };
 
   useEffect(() => {
+    console.log(options)
     const handleDocumentClick = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
-        setMenu(false); // Close the menu
+        setMenu(false);
       }
     };
 
@@ -39,7 +41,7 @@ export default function OptionsMenu({ options, setOptions, menu, setMenu }) {
       document.removeEventListener('click', handleDocumentClick);
     };
   }, [menu, setMenu, options]);
-
+  console.log(options)
   return (
     <CSSTransition
       in={menu}
@@ -57,17 +59,13 @@ export default function OptionsMenu({ options, setOptions, menu, setMenu }) {
       <p className='flex flex-col p-3 text-center text-sm text-black font-bold'>SETTINGS</p>
       <div className='pl-2'>
         <div className='flex items-center'>
-          <input type="checkbox" checked={options.logo} value="logos" onChange={handleOptions} />
+          <input type="checkbox" checked={options.hideLogos} value="hideLogos" onChange={handleOptions} />
           <label className='pl-2 text-[11px] text-black font-semibold'>Logos off</label>
         </div>
         <div className='flex items-center'>
           <input type="checkbox" checked={options.majorConferences} value="majorConferences" onChange={handleOptions} />
           <label className='pl-2 text-[11px] text-black font-semibold'>Major Conferences Only</label>
         </div>
-        {/* <div className='flex items-center'>
-          <input type="checkbox" checked={options.hideYear} value="hideYear" onChange={handleOptions} />
-          <label className='pl-2 text-[11px] text-black font-semibold'>Discreet Slider</label>
-        </div> */}
         <div className='flex items-center'>
           <input type="checkbox" checked={options.hideHistory} value="hideHistory" onChange={handleOptions} />
           <label className='pl-2 text-[11px] text-black font-semibold'>Hide History</label>

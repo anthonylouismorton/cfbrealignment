@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
@@ -18,6 +18,11 @@ export default  function Welcome({options, setOptions}){
     setWelcomeCheck(e.target.checked)
   }
 
+  useEffect(() => {
+    console.log(options)
+  },[options])
+
+  console.log(options)
   return (
     <div>
       <Modal
