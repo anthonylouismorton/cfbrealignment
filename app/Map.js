@@ -5,7 +5,7 @@ import conferenceData from './data/conferenceData.json';
 import { getConferences } from './functions/getConferences';
 import { getChanges } from './functions/getChanges';
 import { mapFill } from './functions/mapFill';
-import { schoolLocations } from './schoolLocations';
+import { schoolLocations } from './functions/schoolLocations';
 
 export default function Map({ mapdata, currentYear, options, isYearVisible, setChangesList, changesList, schoolStates, setSchoolStates, currentConferences, setCurrentConferences, activeConferences, setActiveConferences }) {
 
@@ -76,7 +76,7 @@ export default function Map({ mapdata, currentYear, options, isYearVisible, setC
     var conferenceChanges = getChanges(getCurrentConferences, currentYear)
     setChangesList(conferenceChanges)
 
-    if(!options.conferences){
+    if(!options.hideLogos){
       schoolLocations(svg, projection, getCurrentConferences, currentYear);
     }
     return () => {

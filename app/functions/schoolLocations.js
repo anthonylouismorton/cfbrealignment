@@ -33,11 +33,3 @@ export function schoolLocations(svg, projection, currentConferences, year) {
   });
   return
 }
-// svg
-//   .append('text')
-//   .attr('x', x - 5)
-//   .attr('y', y + 10)
-//   .attr('dy', '0.35em')
-//   .text(school.nickName)
-//   .attr('fill', 'red')
-//   .attr('font-size', '10px');

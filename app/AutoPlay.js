@@ -18,7 +18,6 @@ export default function Autoplay({changesList, currentYear, setCurrentYear}){
   useEffect(() => {
     let time = 5000
     let nextYear = currentYear + 1
-    console.log(nextYear)
     if(changesList.length === 0){
       time = 1000
     }
