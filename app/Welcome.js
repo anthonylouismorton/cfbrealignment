@@ -40,7 +40,7 @@ export default  function Welcome({options, setOptions}){
           </Typography>
           <div className='flex justify-center pt-2 lg:pt-5'>
             <input type="checkbox" checked={welcomeCheck} value="welcomeCheck" onChange={handleCheck} />
-            <label className='pl-2 text-white font-normal text-[12px] sm:text-[12px] md:text-[16px]'>Don't show me this message again</label>
+            <label className='pl-2 text-white font-normal text-[12px] sm:text-[12px] md:text-[16px]'>Don&apos;t show me this message again</label>
           </div>
             <div className='flex justify-center items-center pt-2 lg:pt-5'>
               <Button className='text-black text-[12px] sm:text-[12px] md:text-[14px] font-semibold bg-white border-white hover:bg-black hover:text-white hover:border-white' variant='outlined' onClick={handleClose}>Close</Button>

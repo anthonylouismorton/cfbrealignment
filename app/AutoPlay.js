@@ -37,7 +37,7 @@ export default function Autoplay({changesList, currentYear, setCurrentYear}){
     return () => {
       clearInterval(timeIntervalRef.current);
     };
-  }, [start, currentYear, changesList]);
+  }, [start, currentYear, setCurrentYear, changesList]);
 
   return (
     <div className='flex flex-row justify-center'>
