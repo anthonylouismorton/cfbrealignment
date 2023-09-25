@@ -38,27 +38,6 @@ export default function Map({ mapdata, currentYear, options, isYearVisible, setC
           .style('font-weight', 'bold') 
           .text("Year: " + currentYear);
       }
-    // const [x2, y2] = projection([-79.873968, 46.657440]);
-    // var timelapse = svg
-    //   .append('text')
-    //   .attr('x', x2)
-    //   .attr('y', y2)
-    //   .attr('text-anchor', 'middle')
-    //   .style('fill', 'white')
-    //   .style('border', 'white')
-    //   .style('font-size', '12px')
-    //   .style('font-weight', 'bold')
-    //   .text('Time-lapse');
-
-    // // Add an onclick event listener
-    // timelapse.on('click', function() {
-    //   // Your code to be executed when the text is clicked goes here
-    //   // For example, you can open a URL or perform any other action.
-    //   // To open a URL in a new tab, you can use window.open():
-    //   // window.open('https://example.com', '_blank');
-    // });
-    // timelapse.style('cursor', 'pointer');
-
       
     const path = d3.geoPath(projection);
     const usa = svg
@@ -85,5 +64,5 @@ export default function Map({ mapdata, currentYear, options, isYearVisible, setC
     };
   }, [mapdata, currentYear, options, isYearVisible]);
 
-  return <div className="w-full sm:w-4/5 lg:w-full" id="map"></div>;
+  return <div className="w-full sm:w-full md:w-full lg:w-full" id="map"></div>;
 }

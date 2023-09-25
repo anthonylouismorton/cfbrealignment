@@ -100,20 +100,8 @@ export default function YearSlider({currentYear, setCurrentYear}) {
   const handleSliderChange = (e, newValue) => {
     setCurrentYear(newValue);
   };
-  const handlePrevYear = () => {
-    const newYear = currentYear - 1;
-    if (newYear >= 1896) {
-      setCurrentYear(newYear);
-    }
-  };
-  const handleNextYear = () => {
-    const newYear = currentYear + 1;
-    if (newYear <= 2024) {
-      setCurrentYear(newYear);
-    }
-  };
   return (
-    <Box className="w-2/3 flex items-center justify-center content-center">
+    <Box className="w-3/5 flex items-center justify-center content-center">
         {/* <IconButton className="text-white p-1" onClick={handlePrevYear}>
           <SkipPreviousIcon className="text-white"/>
         </IconButton> */}
