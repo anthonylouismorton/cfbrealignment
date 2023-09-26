@@ -8,11 +8,11 @@ import Header from './Header';
 import Options from './Options';
 import MobileSlider from './mobile/MobileSlider';
 import Welcome from './Welcome';
-import Map from './UsMap';
+import UsMap from './UsMap';
 import AutoPlay from './AutoPlay';
 import MobileOptions from './mobile/MobileOptions'
 
-function USMap() {
+function Main() {
   const [currentYear, setCurrentYear] = useState(1891);
   const [activeConferences, setActiveConferences] = useState(null);
   const [changesList, setChangesList] = useState([]);
@@ -82,7 +82,7 @@ function USMap() {
             }
           </div>
           <div className="w-full md:w-[80%] lg:w-[75%] xl:w-[65%] flex flex-col items-center">
-            <Map
+            <UsMap
               mapdata={mapdata}
               currentYear={currentYear}
               setCurrentYear={setCurrentYear}
@@ -132,4 +132,4 @@ function USMap() {
   );
 }
 
-export default USMap;
+export default Main;
