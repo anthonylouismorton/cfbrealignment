@@ -1,17 +1,24 @@
 import { useEffect, useState, useRef } from 'react'
-import StopIcon from '@mui/icons-material/Stop';
+import PauseIcon from '@mui/icons-material/Pause';
 import { IconButton } from '@mui/material';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import ReplayIcon from '@mui/icons-material/Replay';
 
 export default function Autoplay({changesList, currentYear, setCurrentYear}){
   const [start, setStart] = useState(false);
+  const [showReplay, setShowReplay] = useState(false);
   const timeIntervalRef = useRef(null);
 
   const handleStart = () => {
-    setStart(true)
+    setStart(true);
   };
   const handleStop = () => {
-    setStart(false)
+    setStart(false);
+  };
+  const handleReplay = () => {
+    setCurrentYear(1891)
+    setStart(true);
+    setShowReplay(false)
   };
 
   
@@ -32,6 +39,7 @@ export default function Autoplay({changesList, currentYear, setCurrentYear}){
     else if(nextYear === 2025){
       clearInterval(timeIntervalRef.current);
       setStart(false)
+      setShowReplay(true)
     }
 
     return () => {
@@ -42,18 +50,23 @@ export default function Autoplay({changesList, currentYear, setCurrentYear}){
   return (
     <div className='flex justify-center items-center'>
       <div className='flex items-center'>
-        <h1 className='text-white text-[6px] sm:text-[10px] md:text-[12px] lg:text-[20px] font-semibold md:pr-1'>
+        <h1 className='text-white text-[6px] sm:text-[10px] md:text-[12px] lg:text-[20px] font-semibold pr-0 md:pr-1'>
           AutoPlay
         </h1>
       </div>
-      {!start &&
+      {!start && !showReplay &&
         <IconButton className='p-0' onClick={handleStart}>
-          <PlayArrowIcon className='text-white text-[10px] sm:text-[12px] md:text-[18px] lg:text-[21px] xl:text-[23px] 2xl:text-[26px]'/>
+          <PlayArrowIcon className='text-white text-[8px] sm:text-[12px] md:text-[18px] lg:text-[21px] xl:text-[23px] 2xl:text-[26px]'/>
         </IconButton>
       }
       {start &&
         <IconButton className='p-0' onClick={handleStop}>
-          <StopIcon className='text-white text-[10px] sm:text-[12px] md:text-[18px] lg:text-[21px] xl:text-[23px] 2xl:text-[26px]'/>
+          <PauseIcon className='text-white text-[8px] sm:text-[12px] md:text-[18px] lg:text-[21px] xl:text-[23px] 2xl:text-[26px]'/>
+        </IconButton>
+      }
+      {showReplay &&
+        <IconButton className='p-0' onClick={handleReplay}>
+          <ReplayIcon className='text-white text-[8px] sm:text-[12px] md:text-[18px] lg:text-[21px] xl:text-[23px] 2xl:text-[26px]'/>
         </IconButton>
       }
     </div>
