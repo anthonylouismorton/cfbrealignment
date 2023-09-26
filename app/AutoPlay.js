@@ -40,18 +40,20 @@ export default function Autoplay({changesList, currentYear, setCurrentYear}){
   }, [start, currentYear, setCurrentYear, changesList]);
 
   return (
-    <div className='flex flex-row justify-center'>
-      <h1 className='text-white text-[16px] xl:text-[20px] font-bold mr-2'>
-        AutoPlay
-      </h1>
+    <div className='flex justify-center items-center'>
+      <div className='flex items-center'>
+        <h1 className='text-white text-[6px] sm:text-[10px] md:text-[12px] lg:text-[20px] font-semibold md:pr-1'>
+          AutoPlay
+        </h1>
+      </div>
       {!start &&
         <IconButton className='p-0' onClick={handleStart}>
-          <PlayArrowIcon className='text-white'/>
+          <PlayArrowIcon className='text-white text-[12px] sm:text-[16px] md:text-[18px] lg:text-[21px] xl:text-[23px] 2xl:text-[26px]'/>
         </IconButton>
       }
       {start &&
         <IconButton className='p-0' onClick={handleStop}>
-          <StopIcon className='text-white'/>
+          <StopIcon className='text-white text-[12px] sm:text-[16px] md:text-[18px] lg:text-[21px] xl:text-[23px] 2xl:text-[26px]'/>
         </IconButton>
       }
     </div>

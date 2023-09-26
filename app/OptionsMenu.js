@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import Modal from '@mui/material/Modal';
 
 export default function OptionsMenu({ options, setOptions, open, setOpen }) {
-  const openRef = useRef(null);
   const conferences = ['SEC', 'Pac-12','Big 12','ACC','Big Ten','SOCON','BIG 8','Border','Southwest','C-USA','WAC','MVC','NMC','Skyline']
 
   const handleClose = () =>{
@@ -17,29 +16,13 @@ export default function OptionsMenu({ options, setOptions, open, setOpen }) {
       });
   };
 
-  useEffect(() => {
-    const handleDocumentClick = (e) => {
-      if (openRef.current && !openRef.current.contains(e.target)) {
-        setOpen(false);
-      }
-    };
-
-    if (open) {
-      document.addEventListener('click', handleDocumentClick);
-    }
-
-    return () => {
-      document.removeEventListener('click', handleDocumentClick);
-    };
-  }, [open, setOpen, options]);
-
   return (
     <div>
       <Modal
         open={open}
         onClose={handleClose}
       >
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-h-full overflow-y-auto max-w-[700px] bg-black bg-opacity-80 p-6 rounded" ref={openRef}>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-h-full overflow-y-auto max-w-[700px] bg-black bg-opacity-80 p-6 rounded">
           <p className='flex flex-col p-3 text-center text-[20px] text-white font-semibold'>SETTINGS</p>
           <div className='pl-2'>
             <div className='flex items-center'>
