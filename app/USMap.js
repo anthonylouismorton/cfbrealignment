@@ -12,7 +12,7 @@ import Map from './Map';
 import AutoPlay from './AutoPlay';
 
 function USMap() {
-  const [currentYear, setCurrentYear] = useState(1892);
+  const [currentYear, setCurrentYear] = useState(1891);
   const [activeConferences, setActiveConferences] = useState(null);
   const [changesList, setChangesList] = useState([]);
   const [options, setOptions] = useState({hideLogos: false, majorConferences: false, hideHistory: false, hideLegend: false, hideHeader: false, hideSettings: false, hideYear: false, showWelcome: true});
