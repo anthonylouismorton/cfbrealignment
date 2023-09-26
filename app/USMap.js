@@ -77,7 +77,7 @@ function USMap() {
               <Changes changesList={changesList}/>
             }
           </div>
-          <div className="md:w-[80%] lg:w-[75%] xl:w-[65%] flex flex-col items-center">
+          <div className="w-full md:w-[80%] lg:w-[75%] xl:w-[65%] flex flex-col items-center">
             <Map
               mapdata={mapdata}
               currentYear={currentYear}
@@ -99,7 +99,7 @@ function USMap() {
             </div>
             }
           </div>
-          <div className="flex flex-col md:w-[20%] lg:w-[25%] xl:w-[17.5%] pt-5 md:pt-8 xl:pt-2 2xl:pt-4">
+          <div className="flex flex-col hidden md:block md:w-[20%] lg:w-[25%] xl:w-[17.5%] pt-5 md:pt-8 xl:pt-2 2xl:pt-4">
             <div className="flex flex-col">
               <div className="flex flex-row justify-end">
                 {!isYearVisible &&
