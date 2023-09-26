@@ -48,12 +48,12 @@ export default function Autoplay({changesList, currentYear, setCurrentYear}){
       </div>
       {!start &&
         <IconButton className='p-0' onClick={handleStart}>
-          <PlayArrowIcon className='text-white text-[10px] sm:text-[16px] md:text-[18px] lg:text-[21px] xl:text-[23px] 2xl:text-[26px]'/>
+          <PlayArrowIcon className='text-white text-[8px] sm:text-[16px] md:text-[18px] lg:text-[21px] xl:text-[23px] 2xl:text-[26px]'/>
         </IconButton>
       }
       {start &&
         <IconButton className='p-0' onClick={handleStop}>
-          <StopIcon className='text-white text-[10px] sm:text-[16px] md:text-[18px] lg:text-[21px] xl:text-[23px] 2xl:text-[26px]'/>
+          <StopIcon className='text-white text-[8px] sm:text-[16px] md:text-[18px] lg:text-[21px] xl:text-[23px] 2xl:text-[26px]'/>
         </IconButton>
       }
     </div>
