@@ -16,10 +16,10 @@ export default function Autoplay({changesList, currentYear, setCurrentYear}){
 
   
   useEffect(() => {
-    let time = 5000
+    let time = 2000
     let nextYear = currentYear + 1
     if(changesList.length === 0){
-      time = 1000
+      time = 500
     }
     if (start && nextYear < 2025) {
       timeIntervalRef.current = setInterval(() => {
