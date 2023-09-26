@@ -21,34 +21,33 @@ function USMap() {
   const [isYearVisible,setIsYearVisible] = useState(false);
   const minWidth = (768)
 
-  // useEffect(() => {
-  //   if(localStorage.savedYear){
-  //     setCurrentYear(parseInt(localStorage.savedYear))
-  //   }
-  //   if(localStorage.savedOptions){
-  //     setOptions(JSON.parse(localStorage.getItem('savedOptions')));
-  //   }
-  // },[])
+  useEffect(() => {
+    if(localStorage.savedYear){
+    }
+    if(localStorage.savedOptions){
+      setOptions(JSON.parse(localStorage.getItem('savedOptions')));
+    }
+  },[])
 
   useEffect(() => {
-    // const handleWindowResize = () => {
-    //   setIsYearVisible(
-    //     options.hideHeader || window.innerWidth <= minWidth
-    //   );
-    // };
+    const handleWindowResize = () => {
+      setIsYearVisible(
+        window.innerWidth <= minWidth
+      );
+    };
 
-    // handleWindowResize();
-    // window.addEventListener('resize', handleWindowResize);
+    handleWindowResize();
+    window.addEventListener('resize', handleWindowResize);
     const handleKeyDown = (e) => {
-      if (e.keyCode === 37) { // Left arrow key
+      if (e.keyCode === 37) {
         setCurrentYear(currentYear - 1);
-      } else if (e.keyCode === 39) { // Right arrow key
+      } 
+      else if (e.keyCode === 39) {
         setCurrentYear(currentYear + 1);
       }
     };
     document.addEventListener('keydown', handleKeyDown);
     const saveToLocalStorage = () => {
-      localStorage.setItem("savedYear", JSON.stringify(currentYear))
       localStorage.setItem("savedOptions", JSON.stringify(options))
     }
     saveToLocalStorage();
@@ -67,18 +66,18 @@ function USMap() {
         {!options.hideYear &&
           <Year currentYear={currentYear} setCurrentYear={setCurrentYear} />
         }
-          {!options.hideHeader &&
-          <div>
-            <Header currentYear={currentYear} />
-          </div>
-          }
+        {!options.hideHeader &&
+        <div>
+          <Header currentYear={currentYear} />
+        </div>
+        }
         <div className="flex w-full">
-          <div className="hidden xl:block xl:w-[17.5%]">
+          <div className="hidden xl:block xl:w-[17.5%] xl:pt-2 2xl:pt-4">
             {!options.hideHistory &&
               <Changes changesList={changesList}/>
             }
           </div>
-          <div className="md:w-[80%] lg:w-[75%] xl:w-[65%] flex justify-center">
+          <div className="md:w-[80%] lg:w-[75%] xl:w-[65%] flex flex-col items-center">
             <Map
               mapdata={mapdata}
               currentYear={currentYear}
@@ -93,26 +92,29 @@ function USMap() {
               setActiveConferences={setActiveConferences}
               activeConferences={activeConferences}
             />
+            {isYearVisible &&
+            <div className='flex w-full justify-center items-center text-center'>
+              <MobileSlider currentYear={currentYear} setCurrentYear={setCurrentYear} />
+              <AutoPlay currentYear={currentYear} setCurrentYear={setCurrentYear} changesList={changesList} />
+            </div>
+            }
           </div>
-          <div className="flex flex-col md:w-[20%] lg:w-[25%] xl:w-[17.5%]">
-            <div className="flex flex-col flex-grow">
-              <div className="flex flex-row h-[50%]">
-                <div className="w-full">
-                  <AutoPlay currentYear={currentYear} setCurrentYear={setCurrentYear} changesList={changesList} />
-                </div>
+          <div className="flex flex-col md:w-[20%] lg:w-[25%] xl:w-[17.5%] pt-5 md:pt-8 xl:pt-2 2xl:pt-4">
+            <div className="flex flex-col">
+              <div className="flex flex-row justify-end">
+                {!isYearVisible &&
+                  <div className="w-full">
+                    <AutoPlay currentYear={currentYear} setCurrentYear={setCurrentYear} changesList={changesList} />
+                  </div>
+                }
                 <Options options={options} setOptions={setOptions} activeConferences={activeConferences} />
               </div>
-            {!options.hideLegend && (
+            {!options.hideLegend && !isYearVisible && (
               <Legend activeConferences={activeConferences} />
             )}
             </div>
           </div>
         </div>
-      </div>
-      <div className='flex justify-center'>
-        {isYearVisible &&
-          <MobileSlider currentYear={currentYear} setCurrentYear={setCurrentYear}/>
-        }
       </div>
       <div className="xl:hidden">
         <div className="w-full">

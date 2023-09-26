@@ -101,10 +101,7 @@ export default function YearSlider({currentYear, setCurrentYear}) {
     setCurrentYear(newValue);
   };
   return (
-    <Box className="w-3/5 flex items-center justify-center content-center">
-        {/* <IconButton className="text-white p-1" onClick={handlePrevYear}>
-          <SkipPreviousIcon className="text-white"/>
-        </IconButton> */}
+    <Box className="w-[50%] lg:w-[90%] flex items-center justify-center content-center mr-3">
       <CustomSlider
         value={currentYear}
         valueLabelDisplay="auto"
@@ -112,9 +109,6 @@ export default function YearSlider({currentYear, setCurrentYear}) {
         max={2024}
         onChange={handleSliderChange}
       />
-      {/* <IconButton className="text-white p-1" onClick={handleNextYear}>
-        <SkipNextIcon className="text-white"/>
-      </IconButton> */}
     </Box>
   );
 }
