@@ -8,7 +8,7 @@ import Header from './Header';
 import Options from './Options';
 import MobileSlider from './mobile/MobileSlider';
 import Welcome from './Welcome';
-import UsMap from './UsMap';
+import Map from './Map';
 import AutoPlay from './AutoPlay';
 import MobileOptions from './mobile/MobileOptions'
 
@@ -82,7 +82,7 @@ function Main() {
             }
           </div>
           <div className="w-full md:w-[80%] lg:w-[75%] xl:w-[65%] flex flex-col items-center">
-            <UsMap
+            <Map
               mapdata={mapdata}
               currentYear={currentYear}
               setCurrentYear={setCurrentYear}

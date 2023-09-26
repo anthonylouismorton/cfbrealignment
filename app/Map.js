@@ -9,7 +9,7 @@ import { schoolLocations } from './functions/schoolLocations';
 import AutoPlay from './AutoPlay';
 import ReactDOMServer from 'react-dom/server';
 
-export default function UsMap({ mapdata, currentYear, setCurrentYear, changesList, options, isYearVisible, setChangesList, setSchoolStates, setCurrentConferences, setActiveConferences }) {
+export default function Map({ mapdata, currentYear, setCurrentYear, changesList, options, isYearVisible, setChangesList, setSchoolStates, setCurrentConferences, setActiveConferences }) {
   useEffect(() => {
     const width = 975;
     const height = 610;
