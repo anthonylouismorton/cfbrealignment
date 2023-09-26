@@ -1,130 +1,84 @@
-"use client"
-import { useEffect, useState } from 'react';
-import mapdata from './data/mapData.json';
-import Year from './Year';
-import Legend from './Legend';
-import Changes from './History';
-import Header from './Header';
-import Options from './Options';
-import MobileSlider from './MobileSlider';
-import Welcome from './Welcome';
-import Map from './Map';
+import React, { useEffect, useState } from 'react';
+import * as d3 from 'd3'; 
+import * as topojson from 'topojson-client';
+import conferenceData from './data/conferenceData.json';
+import { getConferences } from './functions/getConferences';
+import { getChanges } from './functions/getChanges';
+import { mapFill } from './functions/mapFill';
+import { schoolLocations } from './functions/schoolLocations';
 import AutoPlay from './AutoPlay';
+import ReactDOMServer from 'react-dom/server';
 
-function USMap() {
-  const [currentYear, setCurrentYear] = useState(1891);
-  const [activeConferences, setActiveConferences] = useState(null);
-  const [changesList, setChangesList] = useState([]);
-  const [options, setOptions] = useState({hideLogos: false, majorConferences: false, hideHistory: false, hideLegend: false, hideHeader: false, hideSettings: false, hideYear: false, showWelcome: true});
-  const [currentConferences, setCurrentConferences] = useState(null);
-  const [schoolStates, setSchoolStates] = useState(null);
-  const [isYearVisible,setIsYearVisible] = useState(false);
-  const minWidth = (768)
-
+export default function Map({ mapdata, currentYear, setCurrentYear, changesList, options, isYearVisible, setChangesList, setSchoolStates, setCurrentConferences, setActiveConferences }) {
   useEffect(() => {
-    if(localStorage.savedYear){
-    }
-    if(localStorage.savedOptions){
-      setOptions(JSON.parse(localStorage.getItem('savedOptions')));
-    }
-  },[])
+    const width = 975;
+    const height = 610;
+    const autoPlayCoords = [-81.480081, 48.];
+    const projection = d3.geoAlbersUsa()
+      .scale(1300)
+      .translate([width / 2, height / 2]);
+    
+    const [playX, playY] = projection(autoPlayCoords);
+    
+    const svg = d3
+      .select('#map')
+      .append('svg')
+      .attr('width', width)
+      .attr('height', height)
+      .attr('style', 'width: 100%; height: auto;')
+      .attr('viewBox', `0 0 ${width} ${height}`);
 
-  useEffect(() => {
-    const handleWindowResize = () => {
-      setIsYearVisible(
-        window.innerWidth <= minWidth
-      );
-    };
-
-    handleWindowResize();
-    window.addEventListener('resize', handleWindowResize);
-    const handleKeyDown = (e) => {
-      if (e.keyCode === 37) {
-        setCurrentYear(currentYear - 1);
-      } 
-      else if (e.keyCode === 39) {
-        setCurrentYear(currentYear + 1);
+      if (isYearVisible || options.hideHeader){
+        const [x, y] = projection([-89.588, 27.2033]);
+        svg
+          .append('text')
+          .attr('x', x)
+          .attr('y', y)
+          .attr('text-anchor', 'middle')
+          .style('fill', 'white')
+          .style('font-size', '22px') 
+          .style('font-weight', '600') 
+          .text("Year: " + currentYear);
       }
-    };
-    document.addEventListener('keydown', handleKeyDown);
-    const saveToLocalStorage = () => {
-      localStorage.setItem("savedOptions", JSON.stringify(options))
+      
+    const path = d3.geoPath(projection);
+    const usa = svg
+      .append('g')
+      .append('path')
+      .datum(topojson.feature(mapdata, mapdata.objects.nation))
+      .attr('d', d3.geoPath());
+    // const autoPlayProps = { currentYear, setCurrentYear, changesList };
+    // const autoPlayElement = React.createElement(AutoPlay, autoPlayProps);
+
+    // const autoPlayComponent = ReactDOMServer.renderToString(autoPlayElement);
+    //   svg
+    //   .append('g')
+    //   .attr('transform', `translate(${playX},${playY})`)
+    //   .append('foreignObject') 
+    //   .attr('width', 130) 
+    //   .attr('height', 30)
+    //   .append('xhtml:div')
+    //   .style('width', '100%')
+    //   .style('height', '100%')
+    //   .html(autoPlayComponent);
+      
+    const { getSchoolStates, getCurrentConferences } = getConferences(conferenceData, currentYear, mapdata, options.majorConferences);
+    setCurrentConferences(getCurrentConferences)
+    setSchoolStates(getSchoolStates)
+    const getLegendConferences = mapFill(svg, getSchoolStates, mapdata, currentYear)
+    setActiveConferences(getLegendConferences)
+    var conferenceChanges = getChanges(getCurrentConferences, currentYear)
+    setChangesList(conferenceChanges)
+
+    if(!options.hideLogos){
+      schoolLocations(svg, projection, getCurrentConferences, currentYear);
     }
-    saveToLocalStorage();
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
+      //Need to clear the map every year change or map duplicates
+      d3.select('#map').select('svg').remove();
     };
+  }, [mapdata, currentYear, options, isYearVisible]);
 
-  }, [currentYear, options, isYearVisible]);
-
-  return (
-    <div>
-      <div className="flex flex-col justify-center items-center">
-        {options.showWelcome &&
-          <Welcome options={options} setOptions={setOptions}/>
-        }
-        {!options.hideYear &&
-          <Year currentYear={currentYear} setCurrentYear={setCurrentYear} />
-        }
-        {!options.hideHeader &&
-        <div>
-          <Header currentYear={currentYear} />
-        </div>
-        }
-        <div className="flex w-full">
-          <div className="hidden xl:block xl:w-[17.5%] xl:pt-2 2xl:pt-4">
-            {!options.hideHistory &&
-              <Changes changesList={changesList}/>
-            }
-          </div>
-          <div className="w-full md:w-[80%] lg:w-[75%] xl:w-[65%] flex flex-col items-center">
-            <Map
-              mapdata={mapdata}
-              currentYear={currentYear}
-              options={options}
-              isYearVisible={isYearVisible}
-              changesList={changesList}
-              setChangesList={setChangesList}
-              schoolStates={schoolStates}
-              setSchoolStates={setSchoolStates}
-              currentConferences={currentConferences}
-              setCurrentConferences={setCurrentConferences}
-              setActiveConferences={setActiveConferences}
-              activeConferences={activeConferences}
-            />
-            {isYearVisible &&
-            <div className='flex w-full justify-center items-center text-center'>
-              <MobileSlider currentYear={currentYear} setCurrentYear={setCurrentYear} />
-              <AutoPlay currentYear={currentYear} setCurrentYear={setCurrentYear} changesList={changesList} />
-            </div>
-            }
-          </div>
-          <div className="flex flex-col hidden md:block md:w-[20%] lg:w-[25%] xl:w-[17.5%] pt-5 md:pt-8 xl:pt-2 2xl:pt-4">
-            <div className="flex flex-col">
-              <div className="flex flex-row justify-end">
-                {!isYearVisible &&
-                  <div className="w-full">
-                    <AutoPlay currentYear={currentYear} setCurrentYear={setCurrentYear} changesList={changesList} />
-                  </div>
-                }
-                <Options options={options} setOptions={setOptions} activeConferences={activeConferences} />
-              </div>
-            {!options.hideLegend && !isYearVisible && (
-              <Legend activeConferences={activeConferences} />
-            )}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="xl:hidden">
-        <div className="w-full">
-          {!options.hideHistory &&
-            <Changes changesList={changesList}/>
-          }
-        </div>
-      </div>
-    </div>
-  );
+  return <div id="map"></div>
+  
 }
-
-export default USMap;

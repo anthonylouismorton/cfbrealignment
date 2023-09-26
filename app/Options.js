@@ -3,22 +3,9 @@ import OptionsMenu from './OptionsMenu';
 
 export default function Options({ options, setOptions }) {
   const [open, setOpen] = useState(false);
-  const [showHiddenDiv, setShowHiddenDiv] = useState(false)
 
   const handleOpen = () => {
     setOpen(!open);
-    if(options.hideSettings){
-      setShowHiddenDiv(false);
-    }
-
-  };
-  const handleMouseLeave = () => {
-      setShowHiddenDiv(false);
-  };
-  const handleMouseEnter = () => {
-    if (options.hideSettings) {
-      setShowHiddenDiv(true);
-    }
   };
 
   return (

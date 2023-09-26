@@ -2,7 +2,6 @@ import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 
 export function mapFill(svg, getSchoolStates, mapdata, currentYear) {
-  
   const stateConferenceMap = {};
   getSchoolStates.forEach((item) => {
     var state = item.state
@@ -33,8 +32,7 @@ export function mapFill(svg, getSchoolStates, mapdata, currentYear) {
               headquarters: item.headquarters,
               state: item.state,
               schools: item.schools,
-              primaryColor: former.primaryColor,
-              secondaryColor: item.secondaryColor,
+              mapColor: item.mapColor,
               state: item.state
             });
           }
@@ -48,8 +46,7 @@ export function mapFill(svg, getSchoolStates, mapdata, currentYear) {
         headquarters: item.headquarters,
         state: item.state,
         schools: item.schools,
-        primaryColor: item.primaryColor,
-        secondaryColor: item.secondaryColor,
+        mapColor: item.mapColor,
         state: item.state
       });
     }
@@ -68,7 +65,7 @@ export function mapFill(svg, getSchoolStates, mapdata, currentYear) {
       if (conferences) {
         if (conferences.length === 1) {
           const color = legendConferences.find((c) => c.conference === conferences[0]);
-          return color ? color.primaryColor : '#D1D5DB';
+          return color ? color.mapColor : '#D1D5DB';
         } 
         else {
           const gradientId = `gradient-${d.id}`;
@@ -78,7 +75,7 @@ export function mapFill(svg, getSchoolStates, mapdata, currentYear) {
             for (let i = 0; i < numConferences; i++) {
               const color = legendConferences.find((c) => c.conference === conferences[i]);
               const offset = `${(100 / numConferences)}%`;
-              stops.push(`<stop offset="${offset}" stop-color="${color ? color.primaryColor : '#D1D5DB'}"/>`);
+              stops.push(`<stop offset="${offset}" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
             }
           }
           else if (conferences.length === 3) {
@@ -87,15 +84,15 @@ export function mapFill(svg, getSchoolStates, mapdata, currentYear) {
               let offset;
               
               if (i === 0) {
-                stops.push(`<stop offset="33.33%" stop-color="${color ? color.primaryColor : '#D1D5DB'}"/>`);
+                stops.push(`<stop offset="33.33%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
               } 
               else if (i === 1) {
                 offset = '33.33%, 66.66%';
-                stops.push(`<stop offset="33.33%" stop-color="${color ? color.primaryColor : '#D1D5DB'}"/>`);
-                stops.push(`<stop offset="66.66%" stop-color="${color ? color.primaryColor : '#D1D5DB'}"/>`);
+                stops.push(`<stop offset="33.33%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+                stops.push(`<stop offset="66.66%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
               } 
               else {
-                stops.push(`<stop offset="66.66%" stop-color="${color ? color.primaryColor : '#D1D5DB'}"/>`);
+                stops.push(`<stop offset="66.66%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
               }
         
             }

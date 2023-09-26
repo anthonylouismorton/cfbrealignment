@@ -50,23 +50,23 @@ export default function Autoplay({changesList, currentYear, setCurrentYear}){
   return (
     <div className='flex justify-center items-center'>
       <div className='flex items-center'>
-        <h1 className='text-white text-[6px] sm:text-[10px] md:text-[12px] lg:text-[20px] font-semibold pr-0 md:pr-1'>
+        <h1 className='text-white text-[10px] md:text-[12px] lg:text-[20px] font-semibold pr-0 md:pr-1'>
           AutoPlay
         </h1>
       </div>
       {!start && !showReplay &&
         <IconButton className='p-0' onClick={handleStart}>
-          <PlayArrowIcon className='text-white text-[8px] sm:text-[12px] md:text-[18px] lg:text-[21px] xl:text-[23px] 2xl:text-[26px]'/>
+          <PlayArrowIcon className='text-white text-[10px] sm:text-[12px] md:text-[18px] lg:text-[21px] xl:text-[23px] 2xl:text-[26px]'/>
         </IconButton>
       }
       {start &&
         <IconButton className='p-0' onClick={handleStop}>
-          <PauseIcon className='text-white text-[8px] sm:text-[12px] md:text-[18px] lg:text-[21px] xl:text-[23px] 2xl:text-[26px]'/>
+          <PauseIcon className='text-white text-[10px] sm:text-[12px] md:text-[18px] lg:text-[21px] xl:text-[23px] 2xl:text-[26px]'/>
         </IconButton>
       }
       {showReplay &&
         <IconButton className='p-0' onClick={handleReplay}>
-          <ReplayIcon className='text-white text-[8px] sm:text-[12px] md:text-[18px] lg:text-[21px] xl:text-[23px] 2xl:text-[26px]'/>
+          <ReplayIcon className='text-white text-[10px] sm:text-[12px] md:text-[18px] lg:text-[21px] xl:text-[23px] 2xl:text-[26px]'/>
         </IconButton>
       }
     </div>
