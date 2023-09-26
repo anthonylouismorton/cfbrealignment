@@ -103,7 +103,7 @@ export function mapFill(svg, getSchoolStates, mapdata, currentYear) {
         svg
           .append('defs')
           .html(
-            `<linearGradient id="${gradientId}" x1="0%" y1="0%" x2="100%" y2="0%">
+            `<linearGradient id="${gradientId}" x1="0%" y1="0%" x2="100%" y2="100%">
                 ${stops.join('')}
               </linearGradient>`
           );
