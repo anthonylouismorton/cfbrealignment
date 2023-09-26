@@ -41,9 +41,13 @@ export default function OptionsMenu({ options, setOptions, open, setOpen }) {
               <input type="checkbox" checked={options.hideLegend} value="hideLegend" onChange={handleOptions} />
               <label className='pl-2 text-[16px] text-white font-normal'>Hide Legend</label>
             </div>
-            <div className='hidden sm:flex items-center'>
+            <div className='hidden md:flex items-center'>
               <input type="checkbox" checked={options.hideHeader} value="hideHeader" onChange={handleOptions} />
               <label className='pl-2 text-[16px] text-white font-normal'>Hide Header</label>
+            </div>
+            <div className='hidden md:flex items-center'>
+              <input type="checkbox" checked={options.hideYear} value="hideYear" onChange={handleOptions} />
+              <label className='pl-2 text-[16px] text-white font-normal'>Hide Year Slider</label>
             </div>
           </div>
           <div className='text-center py-3'>
