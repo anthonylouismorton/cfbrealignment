@@ -32,7 +32,7 @@ function History({ changesList }) {
                       src={change.logo} alt={`${change.abbreviation} logo`} 
                     />
                   </div>
-                  <div className="change-conference text-lg text-white">{`disbanded`}</div>
+                  <div className="change-conference text-sm lg:text-lg text-white">{`disbanded`}</div>
                 </div>
               )}
               {change.change === 'left' && (
@@ -115,9 +115,9 @@ function History({ changesList }) {
               )}
               {change.change === 'nameChange' && (
                 <div className='flex text-center items-center'>
-                  <div style={{color: `${change.oldColor}`}} className="mr-1 change-conference text-lg xl:text-md 2xl:text-lg font-bold">{change.oldName}</div>
-                  <div className="change-conference text-md xl:text-sm 2xl:text-md text-white">{`rebrands to`}</div>
-                  <div style={{color: `${change.newColor}`}}  className="ml-1 change-conference text-lg xl:text-md 2xl:text-lg font-bold">{change.newName}</div>
+                  <div style={{color: `${change.oldColor}`}} className="mr-1 change-conference text-sm xl:text-md 2xl:text-lg font-bold">{change.oldName}</div>
+                  <div className="change-conference text-sm xl:text-sm 2xl:text-md text-white">{`rebrands to`}</div>
+                  <div style={{color: `${change.newColor}`}}  className="ml-1 change-conference text-sm xl:text-md 2xl:text-lg font-bold">{change.newName}</div>
                 </div>
               )}
               {change.change === 'history' && (
