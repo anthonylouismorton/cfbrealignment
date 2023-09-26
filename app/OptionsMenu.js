@@ -45,10 +45,6 @@ export default function OptionsMenu({ options, setOptions, open, setOpen }) {
               <input type="checkbox" checked={options.hideHeader} value="hideHeader" onChange={handleOptions} />
               <label className='pl-2 text-[16px] text-white font-normal'>Hide Header</label>
             </div>
-            <div className='flex items-center'>
-              <input type="checkbox" checked={options.hideSettings} value="hideSettings" onChange={handleOptions} />
-              <label className='pl-2 text-[16px] text-white font-normal'>Hide Options</label>
-            </div>
           </div>
           <div className='text-center py-3'>
             <button className='bg-white text-black text-[16px] rounded p-2 font-bold' onClick={handleClose}>

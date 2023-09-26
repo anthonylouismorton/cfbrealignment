@@ -39,7 +39,7 @@ export function getChanges(currentConferences, currentYear) {
         let prevConfName = {}
         conference.names.forEach((name) => {
           if(name.startYear === currentYear){
-            historyArray.push({change: 'nameChange', oldName: prevConfName.abbreviation, newName: name.abbreviation, oldLogo: prevConfName.logo, newLogo: name.logo, oldColor: prevConfName.primaryColor, newColor: name.primaryColor})
+            historyArray.push({change: 'nameChange', oldName: prevConfName.abbreviation, newName: name.abbreviation, oldLogo: prevConfName.logo, newLogo: name.logo, oldColor: prevConfName.primaryColor, newColor: name.primaryColor, mapColor: conference.mapColor})
             return false
           }
             prevConfName = name

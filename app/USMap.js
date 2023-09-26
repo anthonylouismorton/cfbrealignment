@@ -6,10 +6,11 @@ import Legend from './Legend';
 import Changes from './History';
 import Header from './Header';
 import Options from './Options';
-import MobileSlider from './MobileSlider';
+import MobileSlider from './mobile/MobileSlider';
 import Welcome from './Welcome';
 import Map from './Map';
 import AutoPlay from './AutoPlay';
+import MobileOptions from './mobile/MobileOptions'
 
 function USMap() {
   const [currentYear, setCurrentYear] = useState(1891);
@@ -62,6 +63,9 @@ function USMap() {
       <div className="flex flex-col justify-center items-center">
         {options.showWelcome &&
           <Welcome options={options} setOptions={setOptions}/>
+        }
+        {isYearVisible &&
+          <MobileOptions options={options} setOptions={setOptions} activeConferences={activeConferences} />
         }
         {!options.hideYear &&
           <Year currentYear={currentYear} setCurrentYear={setCurrentYear} />
