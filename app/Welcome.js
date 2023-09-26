@@ -30,10 +30,10 @@ export default  function Welcome({options, setOptions}){
             With the recent chaos of conference realignment, it is a good time to look back on how we got here.
           </Typography>
           <Typography className="text-center pt-2 lg:pt-5 font-normal text-[12px] sm:text-[12px] md:text-[16px] text-white">
-            This conference map will start in 1894 before the creation of the NCAA. It will then follow along the Division I Conferences, until the 1978 Division I split and continue following the Division IA Conferences, which would later be known as the Football Bowl Subdivision. 
+            This conference map will start in 1892 before the creation of the NCAA. It will then follow along the Division I Conferences, until the 1978 Division I split and continue following the Division IA Conferences, which would later be known as the Football Bowl Subdivision. 
           </Typography>
           <Typography className="text-center pt-2 lg:pt-5 font-normal text-[12px] sm:text-[12px] md:text-[16px] text-white">
-            You can use the left and right arrows on your keyboard to change years.
+            Use the left and right arrows on your keyboard to change years.
           </Typography>
           <Typography className="text-center pt-2 lg:pt-5 font-normal text-[12px] sm:text-[12px] md:text-[16px] text-white">
             Checkout the settings menu for filtering options and display settings.
