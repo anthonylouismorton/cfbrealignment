@@ -63,6 +63,7 @@ export function mapFill(svg, getSchoolStates, mapdata, currentYear) {
     .style('fill', (d) => {
       const conferences = stateConferenceMap[d.id];
       if (conferences) {
+        console.log(conferences.length)
         if (conferences.length === 1) {
           const color = legendConferences.find((c) => c.conference === conferences[0]);
           return color ? color.mapColor : '#D1D5DB';

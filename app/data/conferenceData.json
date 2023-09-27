@@ -809,7 +809,7 @@
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Oklahoma_Sooners_logo.svg/225px-Oklahoma_Sooners_logo.svg.png",
         "lat": -97.2645,
         "lon": 35.1231,
-        "years": [1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],
+        "years": [1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023],
         "left": [{"year": 2024, "newConference": "SEC"}]
       },
       {
@@ -838,7 +838,7 @@
         "nickName": "Texas",
         "lat": -97.735,
         "lon": 30.285,
-        "years": [1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],
+        "years": [1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023],
         "left": [{"year": 2024, "newConference": "SEC"}]
       },
       {
@@ -2095,7 +2095,7 @@
         "lat": -99.44109752,
         "lon": 32.28297228,
         "years": [1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
-        "left": [{"year": 1962, "newConference": "DIII Independent"}]
+        "left": [{"year": 1962, "newConference": "DIII"}]
       }
     ]
   },
@@ -2261,57 +2261,675 @@
     ]
   },
   {
-    "conference": "FBS Independent",
-    "abbreviation": "FBS Independent",
-    "primaryColor": null,
-    "secondaryColor": null,
-    "founded": null,
-    "history": null,
-    "disbanded": null,
-    "logo": "https://collegepolltracker.com/logos/png/Indy_300_100.png",
-    "headquarters": null,
-    "names": null,
-    "majorConference": {"start": null, "end": null},
-    "schools": []
-  },
-  {
-    "conference": "Division III Independent",
-    "abbreviation": "DIII Independent",
-    "primaryColor": null,
-    "secondaryColor": null,
-    "founded": null,
-    "disbanded": null,
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/NCAA_DIII_logo_c.svg/2560px-NCAA_DIII_logo_c.svg.png",
-    "headquarters": null,
-    "names": null,
-    "majorConference": {"start": null, "end": null},
-    "schools": []
-  },
-  {
-    "conference": "Conference USA",
-    "abbreviation": "C-USA",
-    "primaryColor": null,
-    "secondaryColor": null,
-    "founded": null,
-    "disbanded": null,
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/CUSA_logo.svg/375px-CUSA_logo.svg.png",
-    "headquarters": null,
-    "names": null,
-    "majorConference": {"start": null, "end": null},
-    "schools": []
-  },
-  {
     "conference": "Western Athletic Conference",
     "abbreviation": "WAC",
-    "primaryColor": null,
-    "secondaryColor": null,
-    "founded": null,
-    "disbanded": null,
+    "primaryColor": "rgba(134, 38, 51, 0.90)",
+    "mapColor": "rgba(227, 157, 169, 0.90)",
+    "secondaryColor": "rgba(238, 178, 17, 0.90) ",
+    "founded": 1962,
+    "disbanded": 2012,
     "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Logo_WAC.png",
     "headquarters": null,
-    "names": null,
+    "names": [
+      {
+        "conference": "Western Athletic Conference",
+        "abbreviation": "WAC",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Logo_WAC.png",
+        "primaryColor": "rgba(134, 38, 51, 0.90)",
+        "secondaryColor": "rgba(238, 178, 17, 0.90) ",
+        "startYear": 1962,
+        "endYear": 2012
+      }
+    ],
     "majorConference": {"start": null, "end": null},
-    "schools": []
+    "schools": [
+      {
+        "school": "University of Arizona",
+        "stateId": "04",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Arizona_Wildcats_logo.svg/1200px-Arizona_Wildcats_logo.svg.png",
+        "division": "South",
+        "lat": -110.9489,
+        "lon": 32.2288,
+        "years": [1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977],
+        "left": [{"year": 1978, "newConference": "Pac-12"}]
+      },
+      {
+        "school": "Arizona State University",
+        "stateId": "04",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Arizona_State_Sun_Devils_logo.svg/150px-Arizona_State_Sun_Devils_logo.svg.png",
+        "division": "South",
+        "lat": -111.9326,
+        "lon": 33.4625,
+        "years": [1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977],
+        "left": [{"year": 1978, "newConference": "Pac-12"}]
+      },
+      {
+        "school": "Bringham Young University",
+        "stateId": "49",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/BYU_Cougars_logo.svg/2560px-BYU_Cougars_logo.svg.png",
+        "division": null,
+        "lat": -111.3857,
+        "lon": 40.153,
+        "years": [1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997],
+        "left": [{"year": 1998, "newConference": "MWC"}]
+      },
+      {
+        "school": "Air Force",
+        "stateId": "08",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Air_Force_Falcons_logo.svg/1024px-Air_Force_Falcons_logo.svg.png",
+        "division": null,
+        "lat": -104.89,
+        "lon": 39.01,
+        "years": [1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997],
+        "left": [{"year": 1998, "newConference": "MWC"}]
+      },
+      {
+        "school": "Boise State University",
+        "stateId": "16",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/9/94/Primary_Boise_State_Broncos_Athletics_Logo.svg/1200px-Primary_Boise_State_Broncos_Athletics_Logo.svg.png",
+        "division": null,
+        "lat": -116.204,
+        "lon": 43.604,
+        "years": [2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],
+        "left": [{"year": 2011, "newConference": "MWC"}]
+      },
+      {
+        "school": "California State University, Fresno",
+        "stateId": "06",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/Fresno_State_Bulldogs_logo.svg/640px-Fresno_State_Bulldogs_logo.svg.png",
+        "division": "North",
+        "lat": -119.4500,
+        "lon": 36.4848,
+        "years": [1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011],
+        "left": [{"year": 2012, "newConference": "MWC"}]
+      },
+      {
+        "school": "Colorado State University",
+        "stateId": "08",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/14/Colorado_State_Rams_logo.svg/800px-Colorado_State_Rams_logo.svg.png",
+        "division": null,
+        "lat": -105.0519,
+        "lon": 40.3412,
+        "years": [1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997],
+        "left": [{"year": 1998, "newConference": "MWC"}]
+      },
+      {
+        "school": "Hawaii at Manoa",
+        "stateId": "15",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Hawaii_Warriors_logo.svg/1280px-Hawaii_Warriors_logo.svg.png",
+        "division": null,
+        "lat": -157.817,
+        "lon": 21.297,
+        "years": [1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011],
+        "left": [{"year": 2012, "newConference": "MWC"}]
+      },
+      {
+        "school": "University of Idaho",
+        "stateId": "16",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Idaho_Vandals_logo.svg/800px-Idaho_Vandals_logo.svg.png",
+        "division": null,
+        "lat": -117.011,
+        "lon": 46.726,
+        "years": [2005,2006,2007,2008,2009,2010,2011],
+        "left": [{"year": 2012, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "Louisiana Tech University",
+        "stateId": "22",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/8/86/Louisiana_Tech_Athletics_logo.svg/1920px-Louisiana_Tech_Athletics_logo.svg.png",
+        "division": "West",
+        "lat": -92.3851,
+        "lon": 32.3139,
+        "years": [2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011],
+        "left": [{"year": 2012, "newConference": "C-USA"}]
+      },
+      {
+        "school": "University of Nevada, Las Vegas",
+        "stateId": "32",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/UNLV_Rebels_wordmark.svg/1920px-UNLV_Rebels_wordmark.svg.png",
+        "division": "West",
+        "lat": -115.14376,
+        "lon": 36.10779,
+        "years": [1996,1997,1998],
+        "left": [{"year": 1999, "newConference": "MWC"}]
+      },
+      {
+        "school": "University of Nevada, Reno",
+        "stateId": "32",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Nevada_Wolf_Pack_logo.svg/1920px-Nevada_Wolf_Pack_logo.svg.png",
+        "division": "West",
+        "lat": -119.4850,
+        "lon": 39.3216,
+        "years": [2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011],
+        "left": [{"year": 2012, "newConference": "MWC"}]
+      },
+      {
+        "school": "University of New Mexico",
+        "stateId": "35",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/45/New_Mexico_Lobos_logo.svg/1200px-New_Mexico_Lobos_logo.svg.png",
+        "division": null,
+        "lat": -106.6198,
+        "lon": 35.0843,
+        "years": [1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997],
+        "left": [{"year": 1998, "newConference": "MWC"}]
+      },
+      {
+        "school": "New Mexico State University",
+        "stateId": "35",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/New_Mexico_State_Aggies_logo.svg/1200px-New_Mexico_State_Aggies_logo.svg.png",
+        "division": null,
+        "lat": -106.748,
+        "lon": 32.2833,
+        "years": [2005,2006,2007,2008,2009,2010,2011],
+        "left": [{"year": 2012, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "Rice University",
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Rice_Owls_logo.svg/180px-Rice_Owls_logo.svg.png",
+        "division": null,
+        "lat": -95.2433,
+        "lon": 29.4259,
+        "years": [1996,1997,1998,1999,2000,2001,2002,2003,2004],
+        "left": [{"year": 2005, "newConference": "C-USA"}]
+      },
+      {
+        "school": "San Diego State University",
+        "stateId": "06",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/San_Diego_State_Aztecs_logo.svg/1280px-San_Diego_State_Aztecs_logo.svg.png",
+        "division": "North",
+        "lat": -117.0420,
+        "lon": 32.4631,
+        "years": [1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997],
+        "left": [{"year": 1998, "newConference": "MWC"}]
+      },
+      {
+        "school": "San Jose State University",
+        "stateId": "06",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/e/ec/San_Jose_State_Spartans_logo.svg/800px-San_Jose_State_Spartans_logo.svg.png",
+        "division": "North",
+        "lat": -121.5253,
+        "lon": 37.2007,
+        "years": [1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011],
+        "left": [{"year": 2012, "newConference": "MWC"}]
+      },
+      {
+        "school": "Southern Methodist University (SMU)",
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/SMU_Mustang_logo.svg/1200px-SMU_Mustang_logo.svg.png",
+        "division": null,
+        "lat": -96.47238,
+        "lon": 32.501192,
+        "years": [1996,1997,1998,1999,2000,2001,2002,2003,2004],
+        "left": [{"year": 2005, "newConference": "C-USA"}]
+      },
+      {
+        "school": "Texas Christian University (TCU)",
+        "division": null,
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/TCU_Horned_Frogs_logo.svg/1200px-TCU_Horned_Frogs_logo.svg.png",
+        "lat": -97.3674,
+        "lon": 32.7096,
+        "years": [1996,1997,1998,1999,2000],
+        "left": [{"year": 2001, "newConference": "C-USA"}]
+      },
+      {
+        "school": "University of Texas at El Paso",
+        "division": null,
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/UTEP_Miners_wordmark.svg/1200px-UTEP_Miners_wordmark.svg.png",
+        "lat": -106.3018,
+        "lon": 31.4612,
+        "years": [1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004],
+        "left": [{"year": 2005, "newConference": "C-USA"}]
+      },
+      {
+        "school": "University of Texas at San Antonio (UTSA)",
+        "division": null,
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/UTSA_Athletics_logo.svg/1920px-UTSA_Athletics_logo.svg.png",
+        "lat": -98.3715,
+        "lon": 29.3500,
+        "years": [2011],
+        "left": [{"year": 2012, "newConference": "C-USA"}]
+      },
+      {
+        "school": "Texas State University",
+        "division": null,
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/9/97/Texas_State_Bobcats_logo.svg/800px-Texas_State_Bobcats_logo.svg.png",
+        "lat": -97.5620,
+        "lon": 29.5320,
+        "years": [2011],
+        "left": [{"year": 2012, "newConference": "C-USA"}]
+      },
+      {
+        "school": "University of Tulsa",
+        "division": null,
+        "stateId": "40",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Tulsa_Golden_Hurricane_logo.svg/1280px-Tulsa_Golden_Hurricane_logo.svg.png",
+        "lat": -95.5647,
+        "lon": 36.0908,
+        "years": [1996,1997,1998,1999,2000,2001,2002,2003,2004],
+        "left": [{"year": 2005, "newConference": "C-USA"}]
+      },
+      {
+        "school": "University of Utah",
+        "stateId": "49",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Utah_Utes_logo.svg/2242px-Utah_Utes_logo.svg.png",
+        "division": null,
+        "lat": -111.8421,
+        "lon": 40.7649,
+        "years": [1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997],
+        "left": [{"year": 1998, "newConference": "MWC"}]
+      },
+      {
+        "school": "Utah State University",
+        "stateId": "49",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Utah_State_Aggies_logo.svg/1280px-Utah_State_Aggies_logo.svg.png",
+        "division": null,
+        "lat": -111.809,
+        "lon": 41.745,
+        "years": [2005,2006,2007,2008,2009,2010,2011,2012],
+        "left": [{"year": 2013, "newConference": "MWC"}]
+      },
+      {
+        "school": "University of Wyoming",
+        "stateId": "56",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/9/91/Wyoming_Athletics_logo.svg",
+        "division": null,
+        "lat": -105.568,
+        "lon": 41.312,
+        "years": [1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997],
+        "left": [{"year": 1998, "newConference": "MWC"}]
+      }
+    ]
+  },
+  {
+    "conference": "Big West Conference",
+    "abbreviation": "BWC",
+    "primaryColor": "rgba(213, 184, 255, 0.90)",
+    "mapColor": "rgba(213, 184, 255, 0.90)",
+    "founded": 1969,
+    "disbanded": 2000,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Big_West_Conference_logo_2021.svg/1920px-Big_West_Conference_logo_2021.svg.png",
+    "headquarters": null,
+    "names": [
+      {
+        "conference": "Pacific Coast Athletic Conference",
+        "abbreviation": "PCAA",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Big_West_Conference_logo_2021.svg/1920px-Big_West_Conference_logo_2021.svg.png",
+        "primaryColor": "rgba(213, 184, 255, 0.90)",
+        "startYear": 1969,
+        "endYear": 1988
+      },
+      {
+        "conference": "Pacific Coast Athletic Conference",
+        "abbreviation": "PCAA",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Big_West_Conference_logo_2021.svg/1920px-Big_West_Conference_logo_2021.svg.png",
+        "primaryColor": "rgba(213, 184, 255, 0.90)",
+        "startYear": 1989,
+        "endYear": 2000
+      }
+    ],
+    "majorConference": {"start": null, "end": null},
+    "schools": [
+      {
+        "school": "Boise State University",
+        "stateId": "16",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/9/94/Primary_Boise_State_Broncos_Athletics_Logo.svg/1200px-Primary_Boise_State_Broncos_Athletics_Logo.svg.png",
+        "division": null,
+        "lat": -116.204,
+        "lon": 43.604,
+        "years": [1996,1997,1998,1999,2000],
+        "left": [{"year": 2001, "newConference": "WAC"}]
+      },
+      {
+        "school": "California State University, Fresno",
+        "stateId": "06",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/Fresno_State_Bulldogs_logo.svg/640px-Fresno_State_Bulldogs_logo.svg.png",
+        "division": "North",
+        "lat": -119.4500,
+        "lon": 36.4848,
+        "years": [1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991],
+        "left": [{"year": 1992, "newConference": "WAC"}]
+      },
+      {
+        "school": "California State University, Los Angeles",
+        "stateId": "06",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Cal_State_Los_Angeles_Golden_Eagles_logo.svg/1024px-Cal_State_Los_Angeles_Golden_Eagles_logo.svg.png",
+        "division": "North",
+        "lat": -118.1004,
+        "lon": 34.0400,
+        "years": [1969,1970,1971,1972,1973],
+        "left": [{"year": 1974, "newConference": "DII"}]
+      },
+      {
+        "school": "University of Idaho",
+        "stateId": "16",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Idaho_Vandals_logo.svg/800px-Idaho_Vandals_logo.svg.png",
+        "division": null,
+        "lat": -117.011,
+        "lon": 46.726,
+        "years": [1996,1997,1998,1999,2000],
+        "left": [{"year": 2001, "newConference": "Sun Belt"}]
+      },
+      {
+        "school": "Louisiana Tech University",
+        "stateId": "22",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/8/86/Louisiana_Tech_Athletics_logo.svg/1920px-Louisiana_Tech_Athletics_logo.svg.png",
+        "division": "West",
+        "lat": -92.3851,
+        "lon": 32.3139,
+        "years": [1993,1994,1995],
+        "left": [{"year": 1996, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "University of Nevada, Las Vegas",
+        "stateId": "32",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/UNLV_Rebels_wordmark.svg/1920px-UNLV_Rebels_wordmark.svg.png",
+        "division": "West",
+        "lat": -115.14376,
+        "lon": 36.10779,
+        "years": [1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995],
+        "left": [{"year": 1996, "newConference": "WAC"}]
+      },
+      {
+        "school": "University of Nevada, Reno",
+        "stateId": "32",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Nevada_Wolf_Pack_logo.svg/1920px-Nevada_Wolf_Pack_logo.svg.png",
+        "division": "West",
+        "lat": -119.4850,
+        "lon": 39.3216,
+        "years": [1992,1993,1994,1995,1996,1997,1998,1999],
+        "left": [{"year": 2000, "newConference": "WAC"}]
+      },
+      {
+        "school": "New Mexico State University",
+        "stateId": "35",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/New_Mexico_State_Aggies_logo.svg/1200px-New_Mexico_State_Aggies_logo.svg.png",
+        "division": null,
+        "lat": -106.748,
+        "lon": 32.2833,
+        "years": [1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000],
+        "left": [{"year": 2001, "newConference": "WAC"}]
+      },
+      {
+        "school": "San Diego State University",
+        "stateId": "06",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/San_Diego_State_Aztecs_logo.svg/1280px-San_Diego_State_Aztecs_logo.svg.png",
+        "division": "North",
+        "lat": -117.0420,
+        "lon": 32.4631,
+        "years": [1969,1970,1971,1972,1973,1974,1975],
+        "left": [{"year": 1976, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "San Jose State University",
+        "stateId": "06",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/e/ec/San_Jose_State_Spartans_logo.svg/800px-San_Jose_State_Spartans_logo.svg.png",
+        "division": "North",
+        "lat": -121.5253,
+        "lon": 37.2007,
+        "years": [1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995],
+        "left": [{"year": 1996, "newConference": "WAC"}]
+      },
+      {
+        "school": "California State University, Long Beach",
+        "stateId": "06",
+        "logo": "https://seeklogo.com/images/L/long-beach-state-logo-9781A24CEF-seeklogo.com.png",
+        "division": "North",
+        "lat": -118.112858,
+        "lon": 33.783022,
+        "years": [1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991],
+        "left": [{"year": 1992, "newConference": null}]
+      },
+      {
+        "school": "California State University, Fullerton",
+        "stateId": "06",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cal_State_Fullerton_Titans_logo.svg/1920px-Cal_State_Fullerton_Titans_logo.svg.png",
+        "division": "North",
+        "lat": -117.5307,
+        "lon": 33.5250,
+        "years": [1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991],
+        "left": [{"year": 1992, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "University of California, Santa Barbara",
+        "stateId": "06",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a8/UC_Santa_Barbara_Gauchos_logo.svg/1280px-UC_Santa_Barbara_Gauchos_logo.svg.png",
+        "division": "North",
+        "lat": -119.5047,
+        "lon": 34.2459,
+        "years": [1969,1970,1971],
+        "left": [{"year": 1972, "newConference": null}]
+      },
+      {
+        "school": "Utah State University",
+        "stateId": "49",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Utah_State_Aggies_logo.svg/1280px-Utah_State_Aggies_logo.svg.png",
+        "division": null,
+        "lat": -111.809,
+        "lon": 41.745,
+        "years": [1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000],
+        "left": [{"year": 2001, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "University of the Pacific",
+        "stateId": "06",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5e/Pacific_Tigers_logo.svg/1280px-Pacific_Tigers_logo.svg.png",
+        "division": null,
+        "lat": -121.1845,
+        "lon": 37.5846,
+        "years": [1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995],
+        "left": [{"year": 1996, "newConference": null}]
+      },
+      {
+        "school": "Northern Illinois University",
+        "stateId": "17",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/8/87/Northern_Illinois_Huskies_logo.svg/1024px-Northern_Illinois_Huskies_logo.svg.png",
+        "division": null,
+        "lat": -88.4640,
+        "lon": 41.562,
+        "years": [1993,1994,1995],
+        "left": [{"year": 1996, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "University of Louisiana at Lafayette",
+        "stateId": "22",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/06/Ragin_Cajuns_logo.svg/1920px-Ragin_Cajuns_logo.svg.png",
+        "nickName": "LSU",
+        "division": "West",
+        "lat": -92.019,
+        "lon": 30.213,
+        "years": [1993,1994,1995],
+        "left": [{"year": 1996, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "Arkansas State University",
+        "stateId": "05",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/36/Arkansas_State_Red_Wolves_logo.svg/1024px-Arkansas_State_Red_Wolves_logo.svg.png",
+        "division": "null",
+        "years": [1993,1994,1995,1999,2000],
+        "lat": -90.4047,
+        "lon": 35.5028,
+        "left": [{"year": 1996, "newConference": "FBS Independent"},{"year": 2001, "newConference": "Sun Belt"}],
+        "rejoined": [{"year": 1999, "oldConference": "FBS Independent"}]
+      },
+      {
+        "school": "University of North Texas",
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/North_Texas_Mean_Green_logo.svg/800px-North_Texas_Mean_Green_logo.svg.png",
+        "division": "West",
+        "years": [1996,1997,1998,1999,2000],
+        "lat": -97.90,
+        "lon": 33.1235,
+        "left": [{"year": 2001, "newConference": "Sun Belt"}]
+      }
+    ]
+  },
+  {
+    "conference": "Mountain West Conference",
+    "abbreviation": "MWC",
+    "primaryColor": "rgba(79, 45, 127, 0.90)",
+    "mapColor": "rgba(143, 143, 140, 0.90)",
+    "secondaryColor": "rgba(143, 143, 140, 0.90) ",
+    "founded": 1998,
+    "disbanded": null,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Mountain_West_Conference_logo.svg/800px-Mountain_West_Conference_logo.svg.png",
+    "headquarters": "Colorado Springs, Colorado",
+    "names": [
+      {
+        "conference": "Mountain West Conference",
+        "abbreviation": "MWC",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Mountain_West_Conference_logo.svg/800px-Mountain_West_Conference_logo.svg.png",
+        "primaryColor": "rgba(79, 45, 127, 0.90)",
+        "secondaryColor": "rgba(143, 143, 140, 0.90) ",
+        "startYear": 1998,
+        "endYear": null
+      }
+    ],
+    "majorConference": {"start": null, "end": null},
+    "schools": [
+      {
+        "school": "Bringham Young University",
+        "stateId": "49",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/BYU_Cougars_logo.svg/2560px-BYU_Cougars_logo.svg.png",
+        "division": null,
+        "lat": -111.3857,
+        "lon": 40.153,
+        "years": [1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],
+        "left": [{"year": 2011, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "Air Force",
+        "stateId": "08",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Air_Force_Falcons_logo.svg/1024px-Air_Force_Falcons_logo.svg.png",
+        "division": null,
+        "lat": -104.89,
+        "lon": 39.01,
+        "years": [1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "Boise State University",
+        "stateId": "16",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/9/94/Primary_Boise_State_Broncos_Athletics_Logo.svg/1200px-Primary_Boise_State_Broncos_Athletics_Logo.svg.png",
+        "division": null,
+        "lat": -116.204,
+        "lon": 43.604,
+        "years": [2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "California State University, Fresno",
+        "stateId": "06",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/Fresno_State_Bulldogs_logo.svg/640px-Fresno_State_Bulldogs_logo.svg.png",
+        "division": "North",
+        "lat": -119.4500,
+        "lon": 36.4848,
+        "years": [2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "Colorado State University",
+        "stateId": "08",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/14/Colorado_State_Rams_logo.svg/800px-Colorado_State_Rams_logo.svg.png",
+        "division": null,
+        "lat": -105.0519,
+        "lon": 40.3412,
+        "years": [1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "Hawaii at Manoa",
+        "stateId": "15",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Hawaii_Warriors_logo.svg/1280px-Hawaii_Warriors_logo.svg.png",
+        "division": null,
+        "lat": -157.817,
+        "lon": 21.297,
+        "years": [2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "University of Nevada, Las Vegas",
+        "stateId": "32",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/UNLV_Rebels_wordmark.svg/1920px-UNLV_Rebels_wordmark.svg.png",
+        "division": "West",
+        "lat": -115.14376,
+        "lon": 36.10779,
+        "years": [1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "University of Nevada, Reno",
+        "stateId": "32",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Nevada_Wolf_Pack_logo.svg/1920px-Nevada_Wolf_Pack_logo.svg.png",
+        "division": "West",
+        "lat": -119.4850,
+        "lon": 39.3216,
+        "years": [2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "University of New Mexico",
+        "stateId": "35",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/45/New_Mexico_Lobos_logo.svg/1200px-New_Mexico_Lobos_logo.svg.png",
+        "division": null,
+        "lat": -106.6198,
+        "lon": 35.0843,
+        "years": [1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "San Diego State University",
+        "stateId": "06",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/San_Diego_State_Aztecs_logo.svg/1280px-San_Diego_State_Aztecs_logo.svg.png",
+        "division": "North",
+        "lat": -117.0420,
+        "lon": 32.4631,
+        "years": [1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "San Jose State University",
+        "stateId": "06",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/e/ec/San_Jose_State_Spartans_logo.svg/800px-San_Jose_State_Spartans_logo.svg.png",
+        "division": "North",
+        "lat": -121.5253,
+        "lon": 37.2007,
+        "years": [2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "Texas Christian University (TCU)",
+        "division": null,
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/TCU_Horned_Frogs_logo.svg/1200px-TCU_Horned_Frogs_logo.svg.png",
+        "lat": -97.3674,
+        "lon": 32.7096,
+        "years": [2005,2006,2007,2008,2009,2010,2011],
+        "left": [{"year": 2012, "newConference": "Big 12"}]
+      },
+      {
+        "school": "University of Utah",
+        "stateId": "49",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Utah_Utes_logo.svg/2242px-Utah_Utes_logo.svg.png",
+        "division": null,
+        "lat": -111.8421,
+        "lon": 40.7649,
+        "years": [1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],
+        "left": [{"year": 2011, "newConference": "Pac-12"}]
+      },
+      {
+        "school": "Utah State University",
+        "stateId": "49",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Utah_State_Aggies_logo.svg/1280px-Utah_State_Aggies_logo.svg.png",
+        "division": null,
+        "lat": -111.809,
+        "lon": 41.745,
+        "years": [2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "University of Wyoming",
+        "stateId": "56",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/9/91/Wyoming_Athletics_logo.svg",
+        "division": null,
+        "lat": -105.568,
+        "lon": 41.312,
+        "years": [1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      }
+    ]
   },
   {
     "conference": "Missouri Valley Conference",
@@ -2444,6 +3062,74 @@
         "left": [{"year": 1962, "newConference": "FBS Independent"}]
       }
     ]
+  },
+  {
+    "conference": "Ivy League",
+    "abbreviation": "Ivy",
+    "primaryColor": "rgba(1, 86, 63, 0.90)",
+    "mapColor": "rgba(1, 86, 63, 0.90)",
+    "secondaryColor": "rgba(0, 0, 0, 0.90)",
+    "founded": null,
+    "history": null,
+    "disbanded": null,
+    "logo": "https://collegepolltracker.com/logos/png/Indy_300_100.png",
+    "headquarters": null,
+    "names": null,
+    "majorConference": {"start": null, "end": null},
+    "schools": []
+  },
+  {
+    "conference": "FBS Independent",
+    "abbreviation": "FBS Independent",
+    "primaryColor": null,
+    "secondaryColor": null,
+    "founded": null,
+    "history": null,
+    "disbanded": null,
+    "logo": "https://collegepolltracker.com/logos/png/Indy_300_100.png",
+    "headquarters": null,
+    "names": null,
+    "majorConference": {"start": null, "end": null},
+    "schools": []
+  },
+  {
+    "conference": "Division II",
+    "abbreviation": "DII",
+    "primaryColor": null,
+    "secondaryColor": null,
+    "founded": null,
+    "disbanded": null,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/NCAA_DII_logo_c.svg/1920px-NCAA_DII_logo_c.svg.png",
+    "headquarters": null,
+    "names": null,
+    "majorConference": {"start": null, "end": null},
+    "schools": []
+  },
+  {
+    "conference": "Division III",
+    "abbreviation": "DIII",
+    "primaryColor": null,
+    "secondaryColor": null,
+    "founded": null,
+    "disbanded": null,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/NCAA_DIII_logo_c.svg/2560px-NCAA_DIII_logo_c.svg.png",
+    "headquarters": null,
+    "names": null,
+    "majorConference": {"start": null, "end": null},
+    "schools": []
+  },
+  {
+    "conference": "Conference USA",
+    "abbreviation": "C-USA",
+    "primaryColor": null,
+    "secondaryColor": null,
+    "founded": null,
+    "disbanded": null,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/CUSA_logo.svg/375px-CUSA_logo.svg.png",
+    "headquarters": null,
+    "names": null,
+    "majorConference": {"start": null, "end": null},
+    "schools": []
   },
   {
     "conference": "American Athletic Conference",
