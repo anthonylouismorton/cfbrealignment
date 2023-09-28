@@ -119,10 +119,36 @@ export function mapFill(svg, getSchoolStates, mapdata, currentYear) {
               else {
                 stops.push(`<stop offset="75%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
               }
-        
             }
           }
+          else if (conferences.length === 5) {
+            for (let i = 0; i < numConferences; i++) {
+              const color = legendConferences.find((c) => c.conference === conferences[i]);
+              let offset;
 
+              if (i === 0) {
+                stops.push(`<stop offset="20%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+              } 
+              else if (i === 1) {
+                offset = '20%, 40%';
+                stops.push(`<stop offset="20%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+                stops.push(`<stop offset="40%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+              }
+              else if (i === 2) {
+                offset = '40%, 60%';
+                stops.push(`<stop offset="40%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+                stops.push(`<stop offset="60%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+              } 
+              else if (i === 3) {
+                offset = '60%, 80%';
+                stops.push(`<stop offset="60%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+                stops.push(`<stop offset="80%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+              }   
+              else {
+                stops.push(`<stop offset="80%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+              }
+            }
+          }
         svg
           .append('defs')
           .html(
