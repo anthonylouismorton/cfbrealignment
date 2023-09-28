@@ -63,7 +63,7 @@ export function mapFill(svg, getSchoolStates, mapdata, currentYear) {
     .style('fill', (d) => {
       const conferences = stateConferenceMap[d.id];
       if (conferences) {
-        console.log(conferences.length)
+        // A gradiant is applied to states that have more than one conference
         if (conferences.length === 1) {
           const color = legendConferences.find((c) => c.conference === conferences[0]);
           return color ? color.mapColor : '#D1D5DB';
@@ -98,6 +98,31 @@ export function mapFill(svg, getSchoolStates, mapdata, currentYear) {
         
             }
           }
+          else if (conferences.length === 4) {
+            for (let i = 0; i < numConferences; i++) {
+              const color = legendConferences.find((c) => c.conference === conferences[i]);
+              let offset;
+
+              if (i === 0) {
+                stops.push(`<stop offset="25%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+              } 
+              else if (i === 1) {
+                offset = '25%, 50%';
+                stops.push(`<stop offset="25%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+                stops.push(`<stop offset="50%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+              }
+              else if (i === 2) {
+                offset = '25%, 50%';
+                stops.push(`<stop offset="50%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+                stops.push(`<stop offset="75%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+              }  
+              else {
+                stops.push(`<stop offset="75%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+              }
+        
+            }
+          }
+
         svg
           .append('defs')
           .html(
