@@ -1982,6 +1982,16 @@
         "lon": 28.0587,
         "years": [2005,2006,2007,2008,2009,2010,2011,2012],
         "left": [{"year": 2013, "newConference": "AAC"}]
+      },
+      {
+        "school": "University of Connecticut",
+        "stateId": "09",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Connecticut_Huskies_logo.svg/800px-Connecticut_Huskies_logo.svg.png",
+        "division": null,
+        "lat": -72.1509,
+        "lon": 41.4826,
+        "years": [2004,2005,2006,2007,2008,2009,2010,2011,2012],
+        "left": [{"year": 2013, "newConference": "AAC"}]
       }
     ]
   },
@@ -3069,14 +3079,99 @@
     "primaryColor": "rgba(1, 86, 63, 0.90)",
     "mapColor": "rgba(1, 86, 63, 0.90)",
     "secondaryColor": "rgba(0, 0, 0, 0.90)",
-    "founded": null,
+    "founded": 1956,
     "history": null,
     "disbanded": null,
-    "logo": "https://collegepolltracker.com/logos/png/Indy_300_100.png",
-    "headquarters": null,
-    "names": null,
+    "divisionI": {"start": 1933, "end": 1977},
+    "divisionIAA": {"start": 1978, "end": null},
     "majorConference": {"start": null, "end": null},
-    "schools": []
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b8/Ivy_League_logo.svg/1280px-Ivy_League_logo.svg.png",
+    "headquarters": "Princeton, New Jersey",
+    "names": [
+      {
+        "conference": "Ivy League",
+        "abbreviation": "Ivy",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b8/Ivy_League_logo.svg/1280px-Ivy_League_logo.svg.png",
+        "primaryColor": "rgba(1, 86, 63, 0.90)",
+        "secondaryColor": "rgba(0, 0, 0, 0.90)",
+        "startYear": 1956,
+        "endYear": null
+      }
+    ],
+    "schools": [
+      {
+        "school": "Harvard University",
+        "stateId": "25",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Harvard_Crimson_logo_2020.svg/800px-Harvard_Crimson_logo_2020.svg.png",
+        "division": null,
+        "lon": 42.373611,
+        "lat": -71.109733,
+        "years": [1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "Yale University",
+        "stateId": "09",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Yale_Bulldogs_script.svg/1200px-Yale_Bulldogs_script.svg.png",
+        "division": null,
+        "lon": 41.3112,
+        "lat": -72.9267,
+        "years": [1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "Princeton University",
+        "stateId": "34",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Princeton_Tigers_logo.svg/1200px-Princeton_Tigers_logo.svg.png",
+        "division": null,
+        "lon": 40.3431,
+        "lat": -74.6552,
+        "years": [1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "Columbia University",
+        "stateId": "36",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Columbia_Lions_logo.svg/800px-Columbia_Lions_logo.svg.png",
+        "division": null,
+        "lon": 40.8075,
+        "lat": -73.9626,
+        "years": [1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "University of Pennsylvania",
+        "stateId": "42",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Penn_Quakers_logo.svg/800px-Penn_Quakers_logo.svg.png",
+        "division": null,
+        "lon": 39.9522,
+        "lat": -75.1932,
+        "years": [1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "Brown University",
+        "stateId": "44",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Brown_Bears_Athletics_logo.svg/800px-Brown_Bears_Athletics_logo.svg.png",
+        "division": null,
+        "lon": 41.8268,
+        "lat": -71.4025,
+        "years": [1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "Dartmouth College",
+        "stateId": "33",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Dartmouth_College_Big_Green_logo.svg/800px-Dartmouth_College_Big_Green_logo.svg.png",
+        "division": null,
+        "lon": 43.7044,
+        "lat": -72.2887,
+        "years": [1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "Cornell University",
+        "stateId": "36",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Cornell_Big_Red_logo.svg/1024px-Cornell_Big_Red_logo.svg.png",
+        "division": null,
+        "lon": 42.4534,
+        "lat": -76.4735,
+        "years": [1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      }      
+    ]
   },
   {
     "conference": "FBS Independent",
@@ -3134,16 +3229,210 @@
   {
     "conference": "American Athletic Conference",
     "abbreviation": "AAC",
-    "primaryColor": null,
-    "secondaryColor": null,
-    "founded": null,
+    "primaryColor": "rgba(226, 35, 26, 0.90)",
+    "secondaryColor": "rgba(100, 87, 42, 0.90)",
+    "mapColor": "rgba(255, 76, 48, 0.90)",
+    "founded": 2013,
     "history": null,
     "disbanded": null,
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/American_Athletic_Conference_logo.svg/1200px-American_Athletic_Conference_logo.svg.png",
-    "headquarters": null,
-    "names": null,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/American_Athletic_Conference_logo.svg/800px-American_Athletic_Conference_logo.svg.png",
+    "headquarters": "Irving, Texas",
+    "names": [
+      {
+        "conference": "American Athletic Conference",
+        "abbreviation": "AAC",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/American_Athletic_Conference_logo.svg/800px-American_Athletic_Conference_logo.svg.png",
+        "primaryColor": "rgba(226, 35, 26, 0.90)",
+        "secondaryColor": "rgba(100, 87, 42, 0.90)",
+        "startYear": 2013,
+        "endYear": null
+      }
+    ],
     "majorConference": {"start": null, "end": null},
-    "schools": []
+    "schools": [
+      {
+        "school": "University of Louisville",
+        "division": "Atlantic",
+        "stateId": "21",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/59/Louisville_Cardinals_logo.svg/800px-Louisville_Cardinals_logo.svg.png",
+        "lat": -85.7583,
+        "lon": 38.2064,
+        "years": [2013],
+        "left": [{"year": 2014, "newConference": "ACC"}]
+      },
+      {
+        "school": "Rutgers University",
+        "division": "East",
+        "stateId": "34",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Rutgers_Scarlet_Knights_logo.svg/1200px-Rutgers_Scarlet_Knights_logo.svg.png",
+        "lat": -74.4653,
+        "lon": 40.5136,
+        "years": [2013],
+        "left": [{"year": 2014, "newConference": "Big Ten"}]
+      },
+      {
+        "school": "Temple University",
+        "division": "Atlantic",
+        "stateId": "42",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Temple_T_logo.svg/1200px-Temple_T_logo.svg.png",
+        "lat": -75.0916,
+        "lon": 39.5853,
+        "years": [2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "University of Cincinnati",
+        "stateId": "39",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Cincinnati_Bearcats_logo.svg/1311px-Cincinnati_Bearcats_logo.svg.png",
+        "division": null,
+        "lat": -84.516,
+        "lon": 39.131,
+        "years": [2013,2014,2015,2016,2017,2018,2019,2020,2021,2022],
+        "left": [{"year": 2023, "newConference": "Big 12"}]
+      },
+      {
+        "school": "University of South Florida",
+        "stateId": "12",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/c/c1/South_Florida_Bulls_logo.svg",
+        "division": null,
+        "lat": -82.4139,
+        "lon": 28.0587,
+        "years": [2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],
+        "left": [{"year": 2013, "newConference": "AAC"}]
+      },
+      {
+        "school": "University of Connecticut",
+        "stateId": "09",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Connecticut_Huskies_logo.svg/800px-Connecticut_Huskies_logo.svg.png",
+        "division": null,
+        "lat": -72.1509,
+        "lon": 41.4826,
+        "years": [2013,2014,2015,2016,2017,2018,2019],
+        "left": [{"year": 2020, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "University of Houston",
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Houston_Cougars_primary_logo.svg/1200px-Houston_Cougars_primary_logo.svg.png",
+        "division": null,
+        "lat": -95.339162,
+        "lon": 29.718922,
+        "years": [2013,2014,2015,2016,2017,2018,2019,2020,2021,2022],
+        "left": [{"year": 2023, "newConference": "Big 12"}]
+      },
+      {
+        "school": "Southern Methodist University (SMU)",
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/SMU_Mustang_logo.svg/1200px-SMU_Mustang_logo.svg.png",
+        "division": null,
+        "lat": -96.47238,
+        "lon": 32.501192,
+        "years": [2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023],
+        "left": [{"year": 2023, "newConference": "ACC"}]
+      },
+      {
+        "school": "University of Memphis",
+        "stateId": "47",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/45/Memphis_Tigers_logo.svg/800px-Memphis_Tigers_logo.svg.png",
+        "nickName": "Tennessee",
+        "division": "East",
+        "lat": -89.5614,
+        "lon": 35.0708,
+        "years": [2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "University of Central Florida",
+        "stateId": "12",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/UCF_Knights_logo.svg/1200px-UCF_Knights_logo.svg.png",
+        "division": null,
+        "lat": -81.2005,
+        "lon": 28.6016,
+        "years": [2013,2014,2015,2016,2017,2018,2019,2020,2021,2022],
+        "left": [{"year": 2023, "newConference": "Big 12"}]
+      },
+      {
+        "school": "Tulane University",
+        "stateId": "22",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Tulane_Green_Wave_logo.svg/300px-Tulane_Green_Wave_logo.svg.png",
+        "nickName": "Tulane",
+        "division": "West",
+        "years":[2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],
+        "lat": -90.12,
+        "lon": 29.94
+      },
+      {
+        "school": "University of Tulsa",
+        "division": null,
+        "stateId": "40",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Tulsa_Golden_Hurricane_logo.svg/1280px-Tulsa_Golden_Hurricane_logo.svg.png",
+        "lat": -95.5647,
+        "lon": 36.0908,
+        "years":[2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "Eastern Carolina University",
+        "division": "Coastal",
+        "stateId": "37",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/East_Carolina_Pirates_logo.svg/800px-East_Carolina_Pirates_logo.svg.png",
+        "lat": -77.2205,
+        "lon":  35.3607,
+        "years":[2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "United States Naval Academy",
+        "stateId": "24",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Navy_Athletics_logo.svg/800px-Navy_Athletics_logo.svg.png",
+        "nickName": "Maryland",
+        "division": null,
+        "years":[2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],
+        "lat": -76.4851,
+        "lon": 39.9828
+      },
+      {
+        "school": "University of North Carolina at Charlotte",
+        "division": "Coastal",
+        "stateId": "37",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Charlotte_49ers_logo.svg/800px-Charlotte_49ers_logo.svg.png",
+        "lat": -80.435657,
+        "lon":  35.181280,
+        "years":[2023,2024]
+      },
+      {
+        "school": "Florida Atlantic University",
+        "stateId": "12",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/40/Florida_Atlantic_Owls_logo.svg/1920px-Florida_Atlantic_Owls_logo.svg.png",
+        "division": null,
+        "lat": -80.102,
+        "lon": 26.371,
+        "years": [2023,2024]
+      },
+      {
+        "school": "University of North Texas",
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/North_Texas_Mean_Green_logo.svg/800px-North_Texas_Mean_Green_logo.svg.png",
+        "division": "West",
+        "years": [2023,2024],
+        "lat": -97.90,
+        "lon": 33.1235
+      },
+      {
+        "school": "Rice University",
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Rice_Owls_logo.svg/180px-Rice_Owls_logo.svg.png",
+        "division": null,
+        "lat": -95.2433,
+        "lon": 29.4259,
+        "years": [2023,2024]
+      },
+      {
+        "school": "University of Alabama at Birmingham",
+        "stateId": "01",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/UAB_Blazers_logo.svg/1024px-UAB_Blazers_logo.svg.png",
+        "division": "West",
+        "years": [2023,2024],
+        "lat": -86.8079,
+        "lon": 33.5020
+      }
+    ]
   },
   {
     "conference": "Mid-American Conference",
