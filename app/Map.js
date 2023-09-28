@@ -79,6 +79,6 @@ export default function Map({ mapdata, currentYear, setCurrentYear, changesList,
     };
   }, [mapdata, currentYear, options, isYearVisible]);
 
-  return <div id="map"></div>
+  return <div className='w-full' id="map"></div>
   
 }

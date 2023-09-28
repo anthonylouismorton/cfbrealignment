@@ -1996,7 +1996,7 @@
     ]
   },
   {
-    "conference": "Border Conference",
+    "conference": "Border Intercollegiate Athletic Association",
     "abbreviation": "Border",
     "founded": 1931,
     "history": null,
@@ -2008,7 +2008,7 @@
     "divisionI": {"start": 1931, "end": 1962},
     "majorConference": {"start": null, "end": null},
     "names": [
-      {"conference": "Border Conference",
+      {"conference": "Border Intercollegiate Athletic Association",
         "startYear": 1931,
         "endYear": 1962,
         "abbreviation": "Border",
@@ -2075,7 +2075,7 @@
         "lat": -101.8729,
         "lon": 33.5911,
         "years": [1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956],
-        "left": [{"year": 1957, "newConference": "SWC"}]
+        "left": [{"year": 1957, "newConference": "FBS Independent"}]
       },
       {
         "school": "University of Texas at El Paso",
@@ -2265,7 +2265,7 @@
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Texas_Tech_Athletics_logo.svg/875px-Texas_Tech_Athletics_logo.svg.png",
         "lat": -101.8729,
         "lon": 33.5911,
-        "years": [1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995],
+        "years": [1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995],
         "left": [{"year": 1996, "newConference": "Big 12"}]
       }
     ]
@@ -2748,8 +2748,7 @@
         "school": "University of Louisiana at Lafayette",
         "stateId": "22",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/06/Ragin_Cajuns_logo.svg/1920px-Ragin_Cajuns_logo.svg.png",
-        "nickName": "LSU",
-        "division": "West",
+        "division": null,
         "lat": -92.019,
         "lon": 30.213,
         "years": [1993,1994,1995],
@@ -2759,7 +2758,7 @@
         "school": "Arkansas State University",
         "stateId": "05",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/36/Arkansas_State_Red_Wolves_logo.svg/1024px-Arkansas_State_Red_Wolves_logo.svg.png",
-        "division": "null",
+        "division": null,
         "years": [1993,1994,1995,1999,2000],
         "lat": -90.4047,
         "lon": 35.5028,
@@ -3790,7 +3789,7 @@
       },
       {
         "school": "Marshall University",
-        "division": null,
+        "division": "East",
         "stateId": "54",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Marshall_Thundering_Herd_logo.svg/1024px-Marshall_Thundering_Herd_logo.svg.png",
         "lat": -82.42046,
@@ -3810,7 +3809,7 @@
       },
       {
         "school": "Miami of Ohio University",
-        "division": null,
+        "division": "East",
         "stateId": "39",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Miami_Redhawks_logo.svg/1024px-Miami_Redhawks_logo.svg.png",
         "lat": -84.734674,
@@ -3819,7 +3818,7 @@
       },
       {
         "school": "Western Michigan University",
-        "division": null,
+        "division": "West",
         "stateId": "26",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Western_Michigan_Broncos_%282021%29_logo.svg/1024px-Western_Michigan_Broncos_%282021%29_logo.svg.png",
         "lat": -85.3650,
@@ -3828,7 +3827,7 @@
       },
       {
         "school": "Ohio University",
-        "division": null,
+        "division": "East",
         "stateId": "39",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/78/Ohio_Bobcats_logo.svg/1024px-Ohio_Bobcats_logo.svg.png",
         "lat": -82.102,
@@ -3837,7 +3836,7 @@
       },
       {
         "school": "Toledo University",
-        "division": null,
+        "division": "West",
         "stateId": "39",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/fa/Toledo_Rockets_logo.svg/1024px-Toledo_Rockets_logo.svg.png",
         "lat": -83.3649,
@@ -3846,7 +3845,7 @@
       },
       {
         "school": "Kent State University",
-        "division": null,
+        "division": "East",
         "stateId": "39",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Kent_State_football.svg/1024px-Kent_State_football.svg.png",
         "lat": -81.2036,
@@ -3855,7 +3854,7 @@
       },
       {
         "school": "Bowling Green State University",
-        "division": null,
+        "division": "East",
         "stateId": "39",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Bowling_Green_Falcons_logo.svg/1024px-Bowling_Green_Falcons_logo.svg.png",
         "lat": -83.63,
@@ -3864,7 +3863,7 @@
       },
       {
         "school": "Central Michigan University",
-        "division": null,
+        "division": "West",
         "stateId": "26",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Central_Michigan_Chippewas_logo.svg/1024px-Central_Michigan_Chippewas_logo.svg.png",
         "lat": -84.4639,
@@ -3873,7 +3872,7 @@
       },
       {
         "school": "Eastern Michigan University",
-        "division": null,
+        "division": "West",
         "stateId": "26",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Eastern_Michigan_Eagles_logo.svg/800px-Eastern_Michigan_Eagles_logo.svg.png",
         "lat": -83.3728,
@@ -3884,7 +3883,7 @@
         "school": "Northern Illinois University",
         "stateId": "17",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/8/87/Northern_Illinois_Huskies_logo.svg/1024px-Northern_Illinois_Huskies_logo.svg.png",
-        "division": null,
+        "division": "West",
         "lat": -88.4640,
         "lon": 41.562,
         "years": [1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],
@@ -3893,7 +3892,7 @@
       },
       {
         "school": "University of Akron",
-        "division": null,
+        "division": "East",
         "stateId": "39",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Akron_Zips_logo.svg/250px-Akron_Zips_logo.svg.png",
         "lat": -81.5115,
@@ -3904,19 +3903,121 @@
         "school": "State University of New York at Buffalo",
         "stateId": "36",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5e/Buffalo_Bulls_Athletic_Logo.svg/1024px-Buffalo_Bulls_Athletic_Logo.svg.png",
-        "division": null,
+        "division": "East",
         "lon": 43.0000,
         "lat": -78.4721,
         "years": [1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
       },
       {
         "school": "Ball State University",
-        "division": null,
+        "division": "West",
         "stateId": "18",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/Ball_State_Cardinals_logo.svg/800px-Ball_State_Cardinals_logo.svg.png",
         "lat": -85.40894318,
         "lon": 40.1983223,
         "years": [1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      }
+    ]
+  },
+  {
+    "conference": "Southland Conference",
+    "abbreviation": "Southland",
+    "primaryColor": "rgba(255, 215, 0, 0.90)",
+    "secondaryColor": "rgba(0, 0, 0, 0.90)",
+    "mapColor": "rgba(255, 215, 0, 0.90)",
+    "founded": 1964,
+    "history": null,
+    "disbanded": null,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Southland_Conference_primary_logo.svg/1920px-Southland_Conference_primary_logo.svg.png",
+    "headquarters": "Frisco, Texas",
+    "divisionI": {"start": 1964, "end": 1972},
+    "divisionII": {"start": 1973, "end": 1972},
+    "majorConference": {"start": null, "end": null},
+    "names": [
+      {
+        "conference": "Southland Conference",
+        "abbreviation": "Southland",
+        "primaryColor": "rgba(255, 215, 0, 0.90)",
+        "secondaryColor": "rgba(0, 0, 0, 0.90)",
+        "startYear": 1964,
+        "endYear": null,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Southland_Conference_primary_logo.svg/1920px-Southland_Conference_primary_logo.svg.png"
+      }
+    ],
+    "schools": [
+      {
+        "school": "Arkansas State University",
+        "stateId": "05",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/36/Arkansas_State_Red_Wolves_logo.svg/1024px-Arkansas_State_Red_Wolves_logo.svg.png",
+        "division": null,
+        "years": [1963,1964,1965,1966,1967,1968,1969,1970,1971,1972],
+        "lat": -90.4047,
+        "lon": 35.5028
+      },
+      {
+        "school": "Trinity University",
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f1/Trinity_Tigers_logo.svg/1920px-Trinity_Tigers_logo.svg.png",
+        "division": null,
+        "years": [1963,1964,1965,1966,1967,1968,1969,1970,1971],
+        "lat": -98.2855,
+        "lon": 29.2750,
+        "left": [{"year": 1972, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "Abilene Christian University",
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Abilene_Christian_Wildcats_logo.svg/1280px-Abilene_Christian_Wildcats_logo.svg.png",
+        "division": null,
+        "years": [1963,1964,1965,1966,1967,1968,1969,1970,1971,1972],
+        "lat": -99.4229,
+        "lon": 32.2810,
+        "left": [{"year": 1973, "newConference": "DII"}]
+      },
+      {
+        "school": "Lamar University",
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Lamar_Cardinals_logo.svg/1920px-Lamar_Cardinals_logo.svg.png",
+        "division": null,
+        "years": [1963,1964,1965,1966,1967,1968,1969,1970,1971,1972],
+        "lat": -94.0430,
+        "lon": 30.0231
+      },
+      {
+        "school": "University of Texas at Arlington",
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/35/UT_Arlington_Mavericks_logo.svg/1280px-UT_Arlington_Mavericks_logo.svg.png",
+        "division": null,
+        "years": [1963,1964,1965,1966,1967,1968,1969,1970,1971,1972],
+        "lat": -97.1146,
+        "lon": 32.7307
+      },
+      {
+        "school": "University of Louisiana at Lafayette",
+        "stateId": "22",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/06/Ragin_Cajuns_logo.svg/1920px-Ragin_Cajuns_logo.svg.png",
+        "division": "West",
+        "lat": -92.019,
+        "lon": 30.213,
+        "years": [1971,1972]
+      },
+      {
+        "school": "Louisiana Tech University",
+        "stateId": "22",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/8/86/Louisiana_Tech_Athletics_logo.svg/1920px-Louisiana_Tech_Athletics_logo.svg.png",
+        "division": null,
+        "lat": -92.3851,
+        "lon": 32.3139,
+        "years": [1971,1972]
+      },
+      {
+        "school": "McNeese State University",
+        "stateId": "22",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/8/86/Louisiana_Tech_Athletics_logo.svg/1920px-Louisiana_Tech_Athletics_logo.svg.png",
+        "division": null,
+        "lat": -93.1300,
+        "lon": 30.1050,
+        "years": [1972]
       }
     ]
   },
@@ -3932,6 +4033,8 @@
     "headquarters": null,
     "names": null,
     "majorConference": {"start": null, "end": null},
-    "schools": []
+    "schools": [
+
+    ]
   }
 ]
