@@ -76,7 +76,7 @@
     "history": null,
     "divisionI": {"start": 1933, "end": 1977},
     "divisionIA": {"start": 1978, "end": null},
-    "majorConference": {"start": 1933, "end": null},
+    "majorConference": {"start": 1895, "end": 1923},
     "disbanded": 1942,
     "names": [
       {
@@ -2513,7 +2513,7 @@
         "lat": -97.5620,
         "lon": 29.5320,
         "years": [2012],
-        "left": [{"year": 2013, "newConference": "C-USA"}]
+        "left": [{"year": 2013, "newConference": "Sun Belt"}]
       },
       {
         "school": "University of Tulsa",
@@ -3104,7 +3104,7 @@
     "secondaryColor": "rgba(24, 70, 139, 0.90)",
     "mapColor": "rgba(24, 70, 139, 0.90)",
     "headquarters": "Kansas City, Missouri",
-    "divisionI": {"start": 1907, "end": 1977},
+    "divisionI": {"start": 1928, "end": 1977},
     "names": [
       {
         "conference": "Missouri Valley Conference",
@@ -3561,6 +3561,227 @@
     ]
   },
   {
+    "conference": "Sun Belt Conference",
+    "abbreviation": "Sun Belt",
+    "primaryColor": null,
+    "secondaryColor": null,
+    "founded": null,
+    "history": null,
+    "disbanded": null,
+    "logo": "https://collegepolltracker.com/logos/png/Indy_300_100.png",
+    "headquarters": null,
+    "names": null,
+    "majorConference": {"start": null, "end": null},
+    "schools": [
+      {
+        "school": "Old Dominion University",
+        "division": "East",
+        "stateId": "51",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Old_Dominion_Athletics_logo_wordmark.svg/1024px-Old_Dominion_Athletics_logo_wordmark.svg.png",
+        "lat": -76.1819,
+        "lon": 36.5312,
+        "years": [2022,2023,2024]
+      },
+      {
+        "school": "Texas State University",
+        "division": "West",
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/9/97/Texas_State_Bobcats_logo.svg/800px-Texas_State_Bobcats_logo.svg.png",
+        "lat": -97.5620,
+        "lon": 29.5320,
+        "years": [2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "Arkansas State University",
+        "stateId": "05",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/36/Arkansas_State_Red_Wolves_logo.svg/1024px-Arkansas_State_Red_Wolves_logo.svg.png",
+        "division": "West",
+        "years": [2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],
+        "lat": -90.4047,
+        "lon": 35.5028
+      },
+      {
+        "school": "University of Southern Mississippi",
+        "stateId": "28",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5d/Southern_Miss_Athletics_logo.svg/1024px-Southern_Miss_Athletics_logo.svg.png",
+        "division": "West",
+        "lat": -89.2002,
+        "lon": 31.1947,
+        "years": [2022,2023,2024]
+      },
+      {
+        "school": "University of Louisiana at Lafayette",
+        "stateId": "22",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/06/Ragin_Cajuns_logo.svg/1920px-Ragin_Cajuns_logo.svg.png",
+        "division": "West",
+        "lat": -92.019,
+        "lon": 30.213,
+        "years": [2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "University of Louisiana at Monroe",
+        "stateId": "22",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c9/Louisiana-Monroe_Warhawks_logo.svg/1280px-Louisiana-Monroe_Warhawks_logo.svg.png",
+        "division": "West",
+        "lat": -92.074,
+        "lon": 32.527,
+        "years": [2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "Marshall University",
+        "division": "East",
+        "stateId": "54",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Marshall_Thundering_Herd_logo.svg/1024px-Marshall_Thundering_Herd_logo.svg.png",
+        "lat": -82.42046,
+        "lon": 38.42508,
+        "years": [2022,2023,2024]
+      },
+      {
+        "school": "University of North Texas",
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/North_Texas_Mean_Green_logo.svg/800px-North_Texas_Mean_Green_logo.svg.png",
+        "division": "West",
+        "lat": -97.90,
+        "lon": 33.1235,
+        "years": [2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012],
+        "left": [{"year": 2013, "newConference": "C-USA"}]
+      },
+      {
+        "school": "Middle Tennessee State University",
+        "stateId": "47",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Middle_Tennessee_MT_Logomark.svg/1024px-Middle_Tennessee_MT_Logomark.svg.png",
+        "division": "East",
+        "lat": -86.365,
+        "lon": 35.849,
+        "years": [2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012],
+        "left": [{"year": 2013, "newConference": "C-USA"}]
+      },
+      {
+        "school": "New Mexico State University",
+        "stateId": "35",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/New_Mexico_State_Aggies_logo.svg/1200px-New_Mexico_State_Aggies_logo.svg.png",
+        "division": null,
+        "lat": -106.748,
+        "lon": 32.2833,
+        "years": [2001,2002,2003,2004],
+        "left": [{"year": 2005, "newConference": "WAC"}]
+      },
+      {
+        "school": "University of Idaho",
+        "stateId": "16",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Idaho_Vandals_logo.svg/800px-Idaho_Vandals_logo.svg.png",
+        "division": null,
+        "lat": -117.011,
+        "lon": 46.726,
+        "years": [2001,2002,2003,2004],
+        "left": [{"year": 2005, "newConference": "WAC"}]
+      },
+      {
+        "school": "Utah State University",
+        "stateId": "49",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Utah_State_Aggies_logo.svg/1280px-Utah_State_Aggies_logo.svg.png",
+        "division": null,
+        "lat": -111.809,
+        "lon": 41.745,
+        "years": [2003,2004],
+        "left": [{"year": 2005, "newConference": "WAC"}]
+      },
+      {
+        "school": "Troy University",
+        "stateId": "01",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Troy_Trojans_logo.svg/800px-Troy_Trojans_logo.svg.png",
+        "division": "West",
+        "lat": -85.5714,
+        "lon": 31.4753,
+        "years": [2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "University of South Alabama",
+        "stateId": "01",
+        "logo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/6.png",
+        "division": "West",
+        "lat": -88.17873,
+        "lon": 30.69671,
+        "years": [2012,2013,2014,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "Florida Atlantic University",
+        "stateId": "12",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/40/Florida_Atlantic_Owls_logo.svg/1920px-Florida_Atlantic_Owls_logo.svg.png",
+        "division": null,
+        "lat": -80.102,
+        "lon": 26.371,
+        "years": [2004,2005,2006,2007,2008,2009,2010,2011,2012],
+        "left": [{"year": 2013, "newConference": "C-USA"}]
+      },
+      {
+        "school": "Western Kentucky University",
+        "stateId": "21",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1d/WKU_Athletics_logo.svg/1024px-WKU_Athletics_logo.svg.png",
+        "division": "East",
+        "lat": -86.2720,
+        "lon": 36.5910,
+        "years": [2009,2010,2011,2012,2013],
+        "left": [{"year": 2014, "newConference": "C-USA"}]
+      },
+      {
+        "school": "Florida International University",
+        "stateId": "12",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/40/Florida_Atlantic_Owls_logo.svg/1920px-Florida_Atlantic_Owls_logo.svg.png",
+        "division": null,
+        "lat": -80.374,
+        "lon": 25.757,
+        "years": [2004,2005,2006,2007,2008,2009,2010,2011,2012],
+        "left": [{"year": 2013, "newConference": "C-USA"}]
+      },
+      {
+        "school": "Georgia Southern University",
+        "stateId": "13",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/Georgia_Southern_Eagles_logo.svg/1920px-Georgia_Southern_Eagles_logo.svg.png",
+        "division": "East",
+        "lat": -81.4636,
+        "lon": 32.2510,
+        "years": [2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "Georgia State University",
+        "stateId": "13",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Georgia_State_Athletics_logo.svg/1024px-Georgia_State_Athletics_logo.svg.png",
+        "division": "East",
+        "lat": -84.23095,
+        "lon": 33.45133,
+        "years": [2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "Coastal Carolina University",
+        "stateId": "45",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/e/ef/Coastal_Carolina_Chanticleers_logo.svg/800px-Coastal_Carolina_Chanticleers_logo.svg.png",
+        "division": "East",
+        "years": [2017,2018,2019,2020,2021,2022,2023,2024],
+        "lat": -79.011667,
+        "lon": 33.794722
+      },
+      {
+        "school": "Appalachian State University",
+        "division": "East",
+        "stateId": "37",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Appalachian_State_Mountaineers_logo.svg/800px-Appalachian_State_Mountaineers_logo.svg.png",
+        "lat": -81.4043,
+        "lon":  36.1250,
+        "years": [2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "James Madison University",
+        "division": "East",
+        "stateId": "51",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/James_Madison_University_Athletics_logo.svg/1920px-James_Madison_University_Athletics_logo.svg.png",
+        "lat": -78.52255,
+        "lon": 38.26184,
+        "years": [2022,2023,2024]
+      }
+    ]
+  },
+  {
     "conference": "FBS Independent",
     "abbreviation": "FBS Independent",
     "primaryColor": null,
@@ -3587,7 +3808,7 @@
     "names": null,
     "majorConference": {"start": null, "end": null},
     "schools": []
-  }
+  },
   {
     "conference": "Division II",
     "abbreviation": "DII",
@@ -3811,7 +4032,7 @@
         "division": "West",
         "lat": -89.2002,
         "lon": 31.1947,
-        "years": [1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021],
+        "years": [1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021],
         "left": [{"year": 2022, "newConference": "Sun Belt"}]
       },
       {
@@ -4352,7 +4573,8 @@
         "stateId": "05",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/36/Arkansas_State_Red_Wolves_logo.svg/1024px-Arkansas_State_Red_Wolves_logo.svg.png",
         "division": null,
-        "years": [1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981],
+        "years": [1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981],
+        "left": [{"year": 1982, "newConference": "FBS Independent"}],
         "lat": -90.4047,
         "lon": 35.5028
       },
@@ -4361,7 +4583,7 @@
         "stateId": "48",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f1/Trinity_Tigers_logo.svg/1920px-Trinity_Tigers_logo.svg.png",
         "division": null,
-        "years": [1963,1964,1965,1966,1967,1968,1969,1970,1971],
+        "years": [1964,1965,1966,1967,1968,1969,1970,1971],
         "lat": -98.2855,
         "lon": 29.2750,
         "left": [{"year": 1972, "newConference": "FBS Independent"}]
@@ -4371,7 +4593,7 @@
         "stateId": "48",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Abilene_Christian_Wildcats_logo.svg/1280px-Abilene_Christian_Wildcats_logo.svg.png",
         "division": null,
-        "years": [1963,1964,1965,1966,1967,1968,1969,1970,1971,1972],
+        "years": [1964,1965,1966,1967,1968,1969,1970,1971,1972],
         "lat": -99.4229,
         "lon": 32.2810,
         "left": [{"year": 1973, "newConference": "DII"}]
@@ -4381,7 +4603,7 @@
         "stateId": "48",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Lamar_Cardinals_logo.svg/1920px-Lamar_Cardinals_logo.svg.png",
         "division": null,
-        "years": [1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981],
+        "years": [1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981],
         "lat": -94.0430,
         "lon": 30.0231
       },
@@ -4390,7 +4612,7 @@
         "stateId": "48",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/35/UT_Arlington_Mavericks_logo.svg/1280px-UT_Arlington_Mavericks_logo.svg.png",
         "division": null,
-        "years": [1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981],
+        "years": [1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981],
         "lat": -97.1146,
         "lon": 32.7307
       },
