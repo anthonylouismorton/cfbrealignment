@@ -1816,7 +1816,9 @@
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Oklahoma_State_University_system_logo.svg/1200px-Oklahoma_State_University_system_logo.svg.png",
         "lat": -97.0665,
         "lon": 36.1256,
-        "years": [1925,1926,1927,1928,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995]
+        "years": [1925,1926,1927,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995],
+        "left": [{"year": 1928, "newConference": "MVC"}],
+        "rejoined": [{"year": 1960, "oldConference":"FBS Independent"}]
       },
       {
         "school": "Drake University",
@@ -2065,7 +2067,7 @@
         "lat": -106.748,
         "lon": 32.2833,
         "years": [1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
-        "left": [{"year": 1962, "newConference": "MVC"}]
+        "left": [{"year": 1962, "newConference": "FBS Independent"}]
       },
       {
         "school": "Texas Tech University",
@@ -2564,9 +2566,10 @@
     "disbanded": 2000,
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Big_West_Conference_logo_2021.svg/1920px-Big_West_Conference_logo_2021.svg.png",
     "headquarters": null,
+    "majorConference": {"start": null, "end": null},
     "names": [
       {
-        "conference": "Pacific Coast Athletic Conference",
+        "conference": "Pacific Coast Athletic Association",
         "abbreviation": "PCAA",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Big_West_Conference_logo_2021.svg/1920px-Big_West_Conference_logo_2021.svg.png",
         "primaryColor": "rgba(213, 184, 255, 0.90)",
@@ -2574,15 +2577,14 @@
         "endYear": 1988
       },
       {
-        "conference": "Pacific Coast Athletic Conference",
-        "abbreviation": "PCAA",
+        "conference": "Big West Conference",
+        "abbreviation": "BWC",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Big_West_Conference_logo_2021.svg/1920px-Big_West_Conference_logo_2021.svg.png",
         "primaryColor": "rgba(213, 184, 255, 0.90)",
         "startYear": 1989,
         "endYear": 2000
       }
     ],
-    "majorConference": {"start": null, "end": null},
     "schools": [
       {
         "school": "Boise State University",
@@ -2662,7 +2664,7 @@
         "lat": -106.748,
         "lon": 32.2833,
         "years": [1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000],
-        "left": [{"year": 2001, "newConference": "WAC"}]
+        "left": [{"year": 2001, "newConference": "Sun Belt"}]
       },
       {
         "school": "San Diego State University",
@@ -2941,17 +2943,403 @@
     ]
   },
   {
+    "conference": "Rocky Mountain Athletic Conference",
+    "abbreviation": "RMAC",
+    "primaryColor": "rgba(253, 218, 0, 0.90)",
+    "mapColor": "rgba(143, 143, 140, 0.90)",
+    "secondaryColor": "rgba(2, 46, 100, 0.90) ",
+    "founded": 1909,
+    "disbanded": null,
+    "majorConference": {"start": null, "end": null},
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Rocky_Mountain_Athletic_Conference_logo.svg/1024px-Rocky_Mountain_Athletic_Conference_logo.svg.png",
+    "headquarters": "Colorado Springs, Colorado",
+    "names": [
+      {
+        "conference": "Colorado Faculty Athletic Conference",
+        "abbreviation": "CFAC",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Rocky_Mountain_Athletic_Conference_logo.svg/1024px-Rocky_Mountain_Athletic_Conference_logo.svg.png",
+        "primaryColor": "rgba(253, 218, 0, 0.90)",
+        "secondaryColor": "rgba(2, 46, 100, 0.90) ",
+        "startYear": 1909,
+        "endYear": 1910
+      },
+      {
+        "conference": "Rocky Mountain Faculty Athletic Conference",
+        "abbreviation": "RMFAC",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Rocky_Mountain_Athletic_Conference_logo.svg/1024px-Rocky_Mountain_Athletic_Conference_logo.svg.png",
+        "primaryColor": "rgba(253, 218, 0, 0.90)",
+        "secondaryColor": "rgba(2, 46, 100, 0.90) ",
+        "startYear": 1910,
+        "endYear": null
+      }
+    ],
+    "schools": [
+      {
+        "school": "Bringham Young University",
+        "stateId": "49",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/BYU_Cougars_logo.svg/2560px-BYU_Cougars_logo.svg.png",
+        "division": null,
+        "lat": -111.3857,
+        "lon": 40.153,
+        "years": [1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937],
+        "left": [{"year": 1938, "newConference": "Skyline"}]
+      },
+      {
+        "school": "Colorado State University",
+        "stateId": "08",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/14/Colorado_State_Rams_logo.svg/800px-Colorado_State_Rams_logo.svg.png",
+        "division": null,
+        "lat": -105.0519,
+        "lon": 40.3412,
+        "years": [1909,1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937],
+        "left": [{"year": 1938, "newConference": "Skyline"}]
+      },
+      {
+        "school": "University of Colorado Boulder",
+        "stateId": "08",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Colorado_Buffaloes_logo.svg/300px-Colorado_Buffaloes_logo.svg.png",
+        "division": null,
+        "lat": -105.267,
+        "lon": 40.009,
+        "years": [1909,1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937],
+        "left": [{"year": 1938, "newConference": "Skyline"}]
+      },
+      {
+        "school": "University of Wyoming",
+        "stateId": "56",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/9/91/Wyoming_Athletics_logo.svg",
+        "division": null,
+        "lat": -105.568,
+        "lon": 41.312,
+        "years": [1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937],
+        "left": [{"year": 1938, "newConference": "Skyline"}]
+      },
+      {
+        "school": "University of Utah",
+        "stateId": "49",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Utah_Utes_logo.svg/2242px-Utah_Utes_logo.svg.png",
+        "division": null,
+        "lat": -111.8421,
+        "lon": 40.7649,
+        "years": [1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937],
+        "left": [{"year": 1938, "newConference": "Skyline"}]
+      },
+      {
+        "school": "Utah State University",
+        "stateId": "49",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Utah_State_Aggies_logo.svg/1280px-Utah_State_Aggies_logo.svg.png",
+        "division": null,
+        "lat": -111.809,
+        "lon": 41.745,
+        "years": [1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937],
+        "left": [{"year": 1938, "newConference": "Skyline"}]
+      },
+      {
+        "school": "University of Denver",
+        "stateId": "08",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Denver_Pioneers_Athletics_logo.svg/1200px-Denver_Pioneers_Athletics_logo.svg.png",
+        "division": null,
+        "lat": -104.963,
+        "lon": 39.6815,
+        "years": [1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937],
+        "left": [{"year": 1938, "newConference": "Skyline"}]
+      },
+      {
+        "school": "Colorado School of Mines",
+        "stateId": "08",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Colorado_Mines_Block_M.svg/1280px-Colorado_Mines_Block_M.svg.png",
+        "division": null,
+        "lat": -105.1321,
+        "lon": 39.454,
+        "years": [1909,1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      },
+      {
+        "school": "Colorado College",
+        "stateId": "08",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Colorado_Mines_Block_M.svg/1280px-Colorado_Mines_Block_M.svg.png",
+        "division": null,
+        "lat": -104.8228,
+        "lon": 38.8479,
+        "years": [1909,1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963]
+      },
+      {
+        "school": "Montana State University",
+        "stateId": "30",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Montana_State_Bobcats_M_Logo.png",
+        "division": null,
+        "lat": -111.0300,
+        "lon": 45.4006,
+        "years": [1917,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959],
+        "left": [{"year": 1918, "newConference": null}],
+        "rejoined": [{"year": 1919, "oldConference": null}]
+      },
+      {
+        "school": "University of Northern Colorado",
+        "stateId": "08",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Northern_Colorado_Bears_logo.svg/1024px-Northern_Colorado_Bears_logo.svg.png",
+        "division": null,
+        "lat": -104.696741,
+        "lon": 40.404853,
+        "years": [1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972]
+      },
+      {
+        "school": "Western Colorado University",
+        "stateId": "08",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Western_State_Colorado_University_logo.svg/1280px-Western_State_Colorado_University_logo.svg.png",
+        "division": null,
+        "lat": -106.920,
+        "lon": 38.549,
+        "years": [1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+      }
+    ]
+  },
+  {
     "conference": "Missouri Valley Conference",
     "abbreviation": "MVC",
-    "primaryColor": null,
-    "secondaryColor": null,
-    "founded": null,
-    "disbanded": null,
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Missouri_Valley_Conference_logo.svg/270px-Missouri_Valley_Conference_logo.svg.png",
-    "headquarters": null,
-    "names": null,
-    "majorConference": {"start": null, "end": null},
-    "schools": []
+    "founded": 1928,
+    "history": null,
+    "disbanded": 1986,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Missouri_Valley_Conference_logo.svg/1920px-Missouri_Valley_Conference_logo.svg.png",
+    "primaryColor": "rgba(229, 22, 54, 0.90)",
+    "secondaryColor": "rgba(24, 70, 139, 0.90)",
+    "mapColor": "rgba(24, 70, 139, 0.90)",
+    "headquarters": "Kansas City, Missouri",
+    "divisionI": {"start": 1907, "end": 1977},
+    "names": [
+      {
+        "conference": "Missouri Valley Conference",
+        "abbreviation": "MVC",
+        "startYear": 1928,
+        "endYear": 1986,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Missouri_Valley_Conference_logo.svg/1920px-Missouri_Valley_Conference_logo.svg.png",
+        "primaryColor": "rgba(229, 22, 54, 0.90)",
+        "secondaryColor": "rgba(24, 70, 139, 0.90)"
+      }
+    ],
+    "schools": [
+      {
+        "school": "Oklahoma State University",
+        "stateId": "40",
+        "division": null,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Oklahoma_State_University_system_logo.svg/1200px-Oklahoma_State_University_system_logo.svg.png",
+        "lat": -97.0665,
+        "lon": 36.1256,
+        "years": [1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956],
+        "left": [{"year": 1957, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "Drake University",
+        "stateId": "19",
+        "division": null,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Drake_Bulldogs_%22D%22_logo.svg/1200px-Drake_Bulldogs_%22D%22_logo.svg.png",
+        "lat": -93.398,
+        "lon": 41.364,
+        "years": [1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985],
+        "left": [{"year": 1952, "newConference": "FBS Independent"}, {"year": 1986, "newConference": null}],
+        "rejoined": [{"year": 1971, "oldConference": "FBS Independent"}]
+      },
+      {
+        "school": "Grinnell College",
+        "stateId": "19",
+        "division": null,
+        "logo": "https://upload.wikimedia.org/wikipedia/en/e/ea/Honor_%27G%27.png",
+        "lat": -92.72013,
+        "lon": 41.749057,
+        "years": [1928,1929,1930,1931,1932,1933,1934,1935,1936],
+        "left": [{"year": 1986, "newConference": null}]
+      },
+      {
+        "school": "Washington University in St.Louis",
+        "stateId": "29",
+        "division": null,
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5a/WashU_Logo.svg/1200px-WashU_Logo.svg.png",
+        "lat": -90.305,
+        "lon": 38.648,
+        "years": [1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942],
+        "left": [{"year": 1986, "newConference": null}]
+      },
+      {
+        "school": "Creighton University",
+        "stateId": "31",
+        "division": null,
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6f/Creighton_Bluejays_logo.svg/1024px-Creighton_Bluejays_logo.svg.png",
+        "lat": -96.5646,
+        "lon": 41.1553,
+        "years": [1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942],
+        "left": [{"year": 1943, "newConference": null}]
+      },
+      {
+        "school": "Butler University",
+        "division": null,
+        "stateId": "18",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/06/Butler_Bulldogs_logo.svg/319px-Butler_Bulldogs_logo.svg.png?20210814001834",
+        "lat": -86.1017,
+        "lon": 39.5022,
+        "years": [1932,1933],
+        "left": [{"year": 1934, "newConference": "IIC"}]
+      },
+      {
+        "school": "University of Tulsa",
+        "division": null,
+        "stateId": "40",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Tulsa_Golden_Hurricane_logo.svg/1280px-Tulsa_Golden_Hurricane_logo.svg.png",
+        "lat": -95.5647,
+        "lon": 36.0908,
+        "years": [1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985],
+        "left": [{"year": 1986, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "Washburn University",
+        "stateId": "20",
+        "division": null,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Washburn_Ichabods_logo.svg/1280px-Washburn_Ichabods_logo.svg.png",
+        "lat": -95.4156,
+        "lon": 39.0202,
+        "years": [1935,1936,1937,1938,1939,1940],
+        "left": [{"year": 1941, "newConference": null}]
+      },
+      {
+        "school": "Saint Louis University",
+        "stateId": "29",
+        "division": null,
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Saint_Louis_Billikens_logo.svg/1024px-Saint_Louis_Billikens_logo.svg.png",
+        "lat": -90.1403,
+        "lon": 38.3811,
+        "years": [1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949],
+        "left": [{"year": 1950, "newConference": null}]
+      },
+      {
+        "school": "Wichita State University",
+        "stateId": "20",
+        "division": null,
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/9/90/Wichita_State_Shockers_logo.svg/1024px-Wichita_State_Shockers_logo.svg.png",
+        "lat": -97.1735,
+        "lon": 37.4309,
+        "years": [1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985],
+        "left": [{"year": 1986, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "University of Detroit Mercy",
+        "division": null,
+        "stateId": "26",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Detroit_Titans_logo.svg/1280px-Detroit_Titans_logo.svg.png",
+        "lat": -83.0817,
+        "lon": 42.2451,
+        "years": [1949,1950,1951,1952,1953,1954,1955,1956],
+        "left": [{"year": 1957, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "Bradley University",
+        "division": null,
+        "stateId": "17",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Bradley_Braves_logo.svg/800px-Bradley_Braves_logo.svg.png",
+        "lat": -83.0817,
+        "lon": 42.2451,
+        "years": [1949,1950,1951],
+        "left": [{"year": 1952, "newConference": null}]
+      },
+      {
+        "school": "University of Houston",
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Houston_Cougars_primary_logo.svg/1200px-Houston_Cougars_primary_logo.svg.png",
+        "division": null,
+        "lat": -95.339162,
+        "lon": 29.718922,
+        "years": [1951,1952,1953,1954,1955,1956,1957,1958,1959],
+        "left": [{"year": 1960, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "University of Cincinnati",
+        "stateId": "39",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Cincinnati_Bearcats_logo.svg/1311px-Cincinnati_Bearcats_logo.svg.png",
+        "division": null,
+        "lat": -84.516,
+        "lon": 39.131,
+        "years": [1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969],
+        "left": [{"year": 1970, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "University of North Texas",
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/North_Texas_Mean_Green_logo.svg/800px-North_Texas_Mean_Green_logo.svg.png",
+        "division": "West",
+        "lat": -97.90,
+        "lon": 33.1235,
+        "years": [1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974],
+        "left": [{"year": 1975, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "University of Louisville",
+        "division": "Atlantic",
+        "stateId": "21",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/59/Louisville_Cardinals_logo.svg/800px-Louisville_Cardinals_logo.svg.png",
+        "lat": -85.7583,
+        "lon": 38.2064,
+        "years": [1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974],
+        "left": [{"year": 1975, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "University of Memphis",
+        "stateId": "47",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/45/Memphis_Tigers_logo.svg/800px-Memphis_Tigers_logo.svg.png",
+        "nickName": "Tennessee",
+        "division": "East",
+        "lat": -89.5614,
+        "lon": 35.0708,
+        "years": [1968,1969,1970,1971,1972],
+        "left": [{"year": 1973, "newConference": "FBS Independent"}]
+      },
+      {
+        "school": "New Mexico State University",
+        "stateId": "35",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/New_Mexico_State_Aggies_logo.svg/1200px-New_Mexico_State_Aggies_logo.svg.png",
+        "division": null,
+        "lat": -106.748,
+        "lon": 32.2833,
+        "years": [1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983],
+        "left": [{"year": 1984, "newConference": "BWC"}]
+      },
+      {
+        "school": "West Texas A&M University",
+        "division": null,
+        "stateId": "48",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/60/WTAMU_Buffs_logo.png",
+        "lat": -101.9134,
+        "lon": 34.9844,
+        "years": [1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985],
+        "left": [{"year": 1986, "newConference": "DII"}]
+      },
+      {
+        "school": "Southern Illinois University",
+        "stateId": "17",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Southern_Illinois_Salukis_wordmark.svg/1920px-Southern_Illinois_Salukis_wordmark.svg.png",
+        "division": null,
+        "lat": -89.1310,
+        "lon": 37.4238,
+        "years": [1977,1978,1979,1980,1981,1982,1983,1984,1985],
+        "left": [{"year": 1986, "newConference": "MVFC"}]
+      },
+      {
+        "school": "Indiana State University",
+        "division": null,
+        "stateId": "18",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Indiana_State_Sycamores_logo.svg/1024px-Indiana_State_Sycamores_logo.svg.png",
+        "lat": -87.410,
+        "lon": 39.470,
+        "years": [1978,1979,1980,1981,1982,1983,1984,1985],
+        "left": [{"year": 1986, "newConference": "MVFC"}]
+      },
+      {
+        "school": "Illinois State University",
+        "stateId": "17",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f8/Illinois_State_Athletics_logo.svg/1920px-Illinois_State_Athletics_logo.svg.png",
+        "division": null,
+        "lat": -88.993,
+        "lon": 40.511,
+        "years": [1981,1982,1983,1984,1985],
+        "left": [{"year": 1986, "newConference": "MVFC"}]
+      }
+    ]
   },
   {
     "conference": "Frontier/New Mexico Conference ",
@@ -3186,6 +3574,20 @@
     "majorConference": {"start": null, "end": null},
     "schools": []
   },
+  {
+    "conference": "FCS Independent",
+    "abbreviation": "FCS",
+    "primaryColor": null,
+    "secondaryColor": null,
+    "founded": null,
+    "history": null,
+    "disbanded": null,
+    "logo": "https://collegepolltracker.com/logos/png/Indy_300_100.png",
+    "headquarters": null,
+    "names": null,
+    "majorConference": {"start": null, "end": null},
+    "schools": []
+  }
   {
     "conference": "Division II",
     "abbreviation": "DII",
@@ -3930,8 +4332,8 @@
     "disbanded": null,
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Southland_Conference_primary_logo.svg/1920px-Southland_Conference_primary_logo.svg.png",
     "headquarters": "Frisco, Texas",
-    "divisionI": {"start": 1964, "end": 1972},
-    "divisionII": {"start": 1973, "end": 1972},
+    "divisionI": {"start": 1964, "end": 1981},
+    "divisionIA": {"start": 1982, "end": null},
     "majorConference": {"start": null, "end": null},
     "names": [
       {
@@ -3950,7 +4352,7 @@
         "stateId": "05",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/36/Arkansas_State_Red_Wolves_logo.svg/1024px-Arkansas_State_Red_Wolves_logo.svg.png",
         "division": null,
-        "years": [1963,1964,1965,1966,1967,1968,1969,1970,1971,1972],
+        "years": [1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981],
         "lat": -90.4047,
         "lon": 35.5028
       },
@@ -3979,7 +4381,7 @@
         "stateId": "48",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Lamar_Cardinals_logo.svg/1920px-Lamar_Cardinals_logo.svg.png",
         "division": null,
-        "years": [1963,1964,1965,1966,1967,1968,1969,1970,1971,1972],
+        "years": [1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981],
         "lat": -94.0430,
         "lon": 30.0231
       },
@@ -3988,7 +4390,7 @@
         "stateId": "48",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/35/UT_Arlington_Mavericks_logo.svg/1280px-UT_Arlington_Mavericks_logo.svg.png",
         "division": null,
-        "years": [1963,1964,1965,1966,1967,1968,1969,1970,1971,1972],
+        "years": [1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981],
         "lat": -97.1146,
         "lon": 32.7307
       },
@@ -3999,7 +4401,7 @@
         "division": "West",
         "lat": -92.019,
         "lon": 30.213,
-        "years": [1971,1972]
+        "years": [1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981]
       },
       {
         "school": "Louisiana Tech University",
@@ -4008,7 +4410,7 @@
         "division": null,
         "lat": -92.3851,
         "lon": 32.3139,
-        "years": [1971,1972]
+        "years": [1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981]
       },
       {
         "school": "McNeese State University",
@@ -4017,7 +4419,7 @@
         "division": null,
         "lat": -93.1300,
         "lon": 30.1050,
-        "years": [1972]
+        "years": [1972,1973,1974,1975,1976,1977,1978,1979,1980,1981]
       }
     ]
   },
@@ -4034,7 +4436,36 @@
     "names": null,
     "majorConference": {"start": null, "end": null},
     "schools": [
-
+    ]
+  },
+  {
+    "conference": "Missouri Valley Football Conference",
+    "abbreviation": "MVFC",
+    "primaryColor": null,
+    "secondaryColor": null,
+    "founded": null,
+    "history": null,
+    "disbanded": null,
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/9/97/Missouri_Valley_Football_Conference_logo.svg/1024px-Missouri_Valley_Football_Conference_logo.svg.png",
+    "headquarters": null,
+    "names": null,
+    "majorConference": {"start": null, "end": null},
+    "schools": [
+    ]
+  },
+  {
+    "conference": "Indiana Intercollegiate Conference",
+    "abbreviation": "IIC",
+    "primaryColor": null,
+    "secondaryColor": null,
+    "founded": null,
+    "history": null,
+    "disbanded": null,
+    "logo": "https://static.wikia.nocookie.net/logopedia/images/a/ad/Dixie_1994_Logo.png/revision/latest?cb=20210130042944",
+    "headquarters": null,
+    "names": null,
+    "majorConference": {"start": null, "end": null},
+    "schools": [
     ]
   }
 ]
