@@ -2124,7 +2124,7 @@
   },
   {
     "conference": "Southwest Conference",
-    "abbreviation": "Southwest",
+    "abbreviation": "SWC",
     "founded": 1915,
     "history": null,
     "disbanded": 1996,
@@ -2139,7 +2139,7 @@
     "names": [
       {
         "conference": "Southwest Conference",
-        "abbreviation": "Southwest",
+        "abbreviation": "SWC",
         "logo": "https://upload.wikimedia.org/wikipedia/en/c/cb/Swc-logo-tshof-1.jpg",
         "primaryColor": "rgba(0, 128, 0, 0.90)",
         "secondaryColor": "rgba(255, 0, 0, 0.90) ",
@@ -3375,19 +3375,19 @@
     "primaryColor": "rgba(30, 144, 255, 0.90)",
     "mapColor": "rgba(30, 144, 255, 0.90)",
     "secondaryColor": "rgba(139, 69, 19, 0.90)",
-    "founded": 1937,
+    "founded": 1938,
     "disbanded": 1962,
     "logo": "https://upload.wikimedia.org/wikipedia/en/a/ac/Skyline_Conference_logo.jpg",
     "headquarters": null,
-    "divisionI": {"start": 1921, "end": 1977},
-    "majorConference": {"start": null, "end": null},
+    "divisionI": {"start": 1938, "end": 1962},
+    "majorConference": {"start": 1938, "end": 1962},
     "names": [
       {
         "conference": "Skyline Conference",
         "abbreviation": "Skyline",
         "primaryColor": "rgba(30, 144, 255, 0.90)",
         "secondaryColor": "rgba(139, 69, 19, 0.90)",
-        "startYear": 1937,
+        "startYear": 1938,
         "endYear": 1962,
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Southeastern_Conference_logo.svg/225px-Southeastern_Conference_logo.svg.png"
       }
@@ -3400,7 +3400,7 @@
         "division": null,
         "lat": -105.267,
         "lon": 40.009,
-        "years": [1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947],
+        "years": [1938,1939,1940,1941,1942,1943,1944,1945,1946,1947],
         "left": [{"year": 1948, "newConference": "Big 8"}]
       },
       {
@@ -3410,7 +3410,7 @@
         "division": null,
         "lat": -105.0519,
         "lon": 40.3412,
-        "years": [1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
+        "years": [1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
         "left": [{"year": 2024, "newConference": "Big 12"}]
       },
       {
@@ -3420,7 +3420,7 @@
         "division": null,
         "lat": -104.963,
         "lon": 39.6815,
-        "years": [1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
+        "years": [1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
         "left": [{"year": 2024, "newConference": "FBS Independent"}]
       },
       {
@@ -3430,7 +3430,7 @@
         "division": null,
         "lat": -111.3857,
         "lon": 40.153,
-        "years": [1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
+        "years": [1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
         "left": [{"year": 1962, "newConference": "WAC"}]
       },
       {
@@ -3440,7 +3440,7 @@
         "division": null,
         "lat": -111.8421,
         "lon": 40.7649,
-        "years": [1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
+        "years": [1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
         "left": [{"year": 1962, "newConference": "WAC"}]
       },
       {
@@ -3450,7 +3450,7 @@
         "division": null,
         "lat": -105.568,
         "lon": 41.312,
-        "years": [1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
+        "years": [1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
         "left": [{"year": 1962, "newConference": "WAC"}]
       },
       {
@@ -4351,7 +4351,7 @@
     "founded": 1947,
     "history": null,
     "disbanded": null,
-    "majorConference": {"start": null, "end": null},
+    "majorConference": {"start": 1962, "end": 1997},
     "powerConference": false,
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Mid-American_Conference_logo.svg/800px-Mid-American_Conference_logo.svg.png",
     "headquarters": "Cleveland, Ohio",

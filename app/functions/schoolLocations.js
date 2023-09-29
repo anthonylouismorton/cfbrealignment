@@ -1,4 +1,9 @@
-export function schoolLocations(svg, projection, currentConferences, year) {
+export function schoolLocations(svg, projection, currentConferences, year, smallLogos) {
+  var logoHeight = 28
+  console.log(smallLogos)
+  if(smallLogos){
+    logoHeight = 20
+  }
 
   currentConferences.forEach((conference) => {
     conference.schools.forEach((school) => {
@@ -10,10 +15,10 @@ export function schoolLocations(svg, projection, currentConferences, year) {
           //add bounce effect
           const schoolImage = svg
             .append('image')
-            .attr('x', x - 10)
-            .attr('y', y - 10)
-            .attr('width', 20)
-            .attr('height', 20)
+            .attr('x', x - logoHeight/2)
+            .attr('y', y - logoHeight/2)
+            .attr('width', logoHeight)
+            .attr('height', logoHeight)
             .attr('href', school.logo);
 
           // Apply the bounce effect by adding the CSS class "bouncing-element" to the image
@@ -22,10 +27,10 @@ export function schoolLocations(svg, projection, currentConferences, year) {
         else{
           svg
             .append('image')
-            .attr('x', x - 10) 
-            .attr('y', y - 10) 
-            .attr('width', 20) 
-            .attr('height', 20) 
+            .attr('x', x - logoHeight/2) 
+            .attr('y', y - logoHeight/2) 
+            .attr('width', logoHeight) 
+            .attr('height', logoHeight) 
             .attr('href', school.logo)
         }
       }

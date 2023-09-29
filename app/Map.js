@@ -3,7 +3,6 @@ import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 import conferenceData from './data/conferenceData.json';
 import { getConferences } from './functions/getConferences';
-import { getChanges } from './functions/getChanges';
 import { mapFill } from './functions/mapFill';
 import { schoolLocations } from './functions/schoolLocations';
 import AutoPlay from './AutoPlay';
@@ -66,12 +65,13 @@ export default function Map({ mapdata, currentYear, options, isYearVisible, setC
     const { getSchoolStates, getCurrentConferences, conferenceChanges } = getConferences(conferenceData, currentYear, options);
     setCurrentConferences(getCurrentConferences)
     setSchoolStates(getSchoolStates)
+
     const getLegendConferences = mapFill(svg, getSchoolStates, mapdata, currentYear)
     setActiveConferences(getLegendConferences)
     setChangesList(conferenceChanges)
 
     if(!options.hideLogos){
-      schoolLocations(svg, projection, getCurrentConferences, currentYear);
+      schoolLocations(svg, projection, getCurrentConferences, currentYear, options.smallLogos);
     }
     return () => {
       //Need to clear the map every year change or map duplicates
