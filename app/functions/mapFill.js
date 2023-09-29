@@ -82,13 +82,10 @@ export function mapFill(svg, getSchoolStates, mapdata, currentYear) {
           else if (conferences.length === 3) {
             for (let i = 0; i < numConferences; i++) {
               const color = legendConferences.find((c) => c.conference === conferences[i]);
-              let offset;
-              
               if (i === 0) {
                 stops.push(`<stop offset="33.33%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
               } 
               else if (i === 1) {
-                offset = '33.33%, 66.66%';
                 stops.push(`<stop offset="33.33%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
                 stops.push(`<stop offset="66.66%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
               } 
@@ -101,18 +98,15 @@ export function mapFill(svg, getSchoolStates, mapdata, currentYear) {
           else if (conferences.length === 4) {
             for (let i = 0; i < numConferences; i++) {
               const color = legendConferences.find((c) => c.conference === conferences[i]);
-              let offset;
 
               if (i === 0) {
                 stops.push(`<stop offset="25%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
               } 
               else if (i === 1) {
-                offset = '25%, 50%';
                 stops.push(`<stop offset="25%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
                 stops.push(`<stop offset="50%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
               }
               else if (i === 2) {
-                offset = '25%, 50%';
                 stops.push(`<stop offset="50%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
                 stops.push(`<stop offset="75%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
               }  
@@ -124,26 +118,50 @@ export function mapFill(svg, getSchoolStates, mapdata, currentYear) {
           else if (conferences.length === 5) {
             for (let i = 0; i < numConferences; i++) {
               const color = legendConferences.find((c) => c.conference === conferences[i]);
-              let offset;
 
               if (i === 0) {
                 stops.push(`<stop offset="20%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
               } 
               else if (i === 1) {
-                offset = '20%, 40%';
                 stops.push(`<stop offset="20%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
                 stops.push(`<stop offset="40%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
               }
               else if (i === 2) {
-                offset = '40%, 60%';
                 stops.push(`<stop offset="40%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
                 stops.push(`<stop offset="60%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
               } 
               else if (i === 3) {
-                offset = '60%, 80%';
                 stops.push(`<stop offset="60%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
                 stops.push(`<stop offset="80%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
               }   
+              else {
+                stops.push(`<stop offset="80%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+              }
+            }
+          }
+          else if (conferences.length === 6) {
+            for (let i = 0; i < numConferences; i++) {
+              const color = legendConferences.find((c) => c.conference === conferences[i]);
+
+              if (i === 0) {
+                stops.push(`<stop offset="20%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+              } 
+              else if (i === 1) {
+                stops.push(`<stop offset="20%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+                stops.push(`<stop offset="33.32%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+              }
+              else if (i === 2) {
+                stops.push(`<stop offset="33.32%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+                stops.push(`<stop offset="49.98%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+              } 
+              else if (i === 3) {
+                stops.push(`<stop offset="49.98%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+                stops.push(`<stop offset="66.64%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+              }   
+              else if (i === 4) {
+                stops.push(`<stop offset="66.64%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+                stops.push(`<stop offset="80%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
+              }
               else {
                 stops.push(`<stop offset="80%" stop-color="${color ? color.mapColor : '#D1D5DB'}"/>`);
               }
@@ -158,11 +176,11 @@ export function mapFill(svg, getSchoolStates, mapdata, currentYear) {
           );
 
         return `url(#${gradientId})`;
+        }
+      } 
+      else {
+        return '#D1D5DB';
       }
-    } 
-    else {
-      return '#D1D5DB';
-    }
-  });
+    });
   return legendConferences
 }

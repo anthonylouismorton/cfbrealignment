@@ -1,8 +1,7 @@
 import conferenceData from '../data/conferenceData.json';
 import cfbHistory from '../data/cfbHistory.json'
 
-export function getChanges(currentConferences, currentYear) {
-  var historyArray = []
+export function getChanges(currentConferences, currentYear, historyArray) {
   currentConferences.forEach((conference) => {
     if(conference.founded === currentYear){
       historyArray.push({change: 'founded', founded: conference.founded, conference: conference.conference, logo: conference.logo})

@@ -10,10 +10,10 @@ export function schoolLocations(svg, projection, currentConferences, year) {
           //add bounce effect
           const schoolImage = svg
             .append('image')
-            .attr('x', x - 15)
-            .attr('y', y - 15)
-            .attr('width', 30)
-            .attr('height', 30)
+            .attr('x', x - 10)
+            .attr('y', y - 10)
+            .attr('width', 20)
+            .attr('height', 20)
             .attr('href', school.logo);
 
           // Apply the bounce effect by adding the CSS class "bouncing-element" to the image
@@ -21,12 +21,12 @@ export function schoolLocations(svg, projection, currentConferences, year) {
         }
         else{
           svg
-          .append('image')
-          .attr('x', x - 15) 
-          .attr('y', y - 15) 
-          .attr('width', 30) 
-          .attr('height', 30) 
-          .attr('href', school.logo)
+            .append('image')
+            .attr('x', x - 10) 
+            .attr('y', y - 10) 
+            .attr('width', 20) 
+            .attr('height', 20) 
+            .attr('href', school.logo)
         }
       }
     })

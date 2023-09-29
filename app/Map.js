@@ -9,7 +9,7 @@ import { schoolLocations } from './functions/schoolLocations';
 import AutoPlay from './AutoPlay';
 import ReactDOMServer from 'react-dom/server';
 
-export default function Map({ mapdata, currentYear, setCurrentYear, changesList, options, isYearVisible, setChangesList, setSchoolStates, setCurrentConferences, setActiveConferences }) {
+export default function Map({ mapdata, currentYear, options, isYearVisible, setChangesList, setSchoolStates, setCurrentConferences, setActiveConferences }) {
   useEffect(() => {
     const width = 975;
     const height = 610;
@@ -61,13 +61,13 @@ export default function Map({ mapdata, currentYear, setCurrentYear, changesList,
     //   .style('width', '100%')
     //   .style('height', '100%')
     //   .html(autoPlayComponent);
-      
-    const { getSchoolStates, getCurrentConferences } = getConferences(conferenceData, currentYear, mapdata, options.majorConferences);
+
+    //Get conferences with applied filters and states conferences are active to fill the map  
+    const { getSchoolStates, getCurrentConferences, conferenceChanges } = getConferences(conferenceData, currentYear, options);
     setCurrentConferences(getCurrentConferences)
     setSchoolStates(getSchoolStates)
     const getLegendConferences = mapFill(svg, getSchoolStates, mapdata, currentYear)
     setActiveConferences(getLegendConferences)
-    var conferenceChanges = getChanges(getCurrentConferences, currentYear)
     setChangesList(conferenceChanges)
 
     if(!options.hideLogos){

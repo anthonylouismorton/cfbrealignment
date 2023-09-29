@@ -2,7 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 
 function History({ changesList }) {
-
   return (
     <div className="w-full pl-1 pb-5">
       <div className="text-center flex flex-col" id="change">
@@ -10,6 +9,13 @@ function History({ changesList }) {
         <div className='flex flex-wrap flex-column items-center w-full'>
           {changesList.map((change, index) => (
             <div key={index} className="change-item flex justify-center items-center pl-[1px] pr-[1px] mb-2 w-1/2 sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-full 2xl:w-full">
+              {change.change === 'dropped' && (
+                <div className='flex text-center items-center'>
+                    <div style={{color: `${change.primaryColor}`}} className="mr-2 change-conference text-sm xl:text-md 2xl:text-lg font-bold">{change.abbreviation}</div>
+                    <div className="change-conference text-sm text-white">{`to`}</div>
+                    <div className="ml-2 change-conference text-sm xl:text-md 2xl:text-lg font-bold text-white">{`Division ${change.division}`}</div>
+                </div>
+              )}
               {change.change === 'founded' && (
                 <div className='flex text-center items-center w-[140px]'>
                   <div className="change-logo mr-1 sm:mr-3 bg-white p-1">

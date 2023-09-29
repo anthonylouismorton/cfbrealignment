@@ -4,10 +4,10 @@ export function getOptions(options, currentConferences, setActiveConferences, cu
   var filterConferences = []
   if(!options.majorConferences){
     filterConferences = currentConferences.filter((conference) => {
+      console.log(conference)
       if((conference.majorConference.start >= currentYear && conference.majorConference.end > currentYear) || (conference.majorConference.start >= !conference.majorConference.end)){
         return conference
       }
-
     })
   }
   setActiveConferences(filterConferences)
