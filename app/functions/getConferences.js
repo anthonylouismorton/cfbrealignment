@@ -1,15 +1,47 @@
-export function getConferences(conferenceData, year, mapdata, majorConferences) {
+import { getChanges } from "./getChanges";
 
+export function getConferences(conferenceData, year, options) {
+  const { majorConferences, powerConferences, aqConferences} = options
   var getCurrentConferences = []
+  var historyArray = []
+
   conferenceData.forEach((conference) => {
-    if(conference.founded <= year && (conference.disbanded === null || conference.disbanded >= year)){
-      if(!majorConferences){
-        getCurrentConferences.push(conference)
+    if(conference.divisionIAA){
+      if(conference.divisionIAA.start <= year){
+        if(conference.divisionIAA.start === year){
+          historyArray.push({change: 'dropped', ...conference, division: "IAA"})
+        }
+        return;
       }
-      else{
-        if((conference.majorConference.start >= year && conference.majorConference.end > year) || (conference.majorConference.start >= !conference.majorConference.end)){
+    }
+    if(conference.divisionII){
+      if(conference.divisionII.start <= year){
+        if(conference.divisionII.start === year){
+          historyArray.push({change: 'dropped', ...conference, division: "II"})
+        }
+        return;
+      }
+    }
+    if(conference.founded <= year && (conference.disbanded === null || conference.disbanded >= year)){
+      if(majorConferences){
+        if((conference.majorConference.start <= year && conference.majorConference.end >= year) || (conference.majorConference.start <= year && conference.majorConference.end === null) && conference.majorConference.start !==null){
           getCurrentConferences.push(conference)
         }
+      }
+      else if(year >= 1998 && year < 2014 && aqConferences){
+        if(conference.aqConference){
+          if(conference.aqConference.start <= year && conference.aqConference.end >= year){
+            getCurrentConferences.push(conference)
+          }
+        }
+      }
+      else if(year >=2014 && powerConferences){
+        if(conference.powerConference){
+          getCurrentConferences.push(conference)
+        }
+      }
+      else{
+        getCurrentConferences.push(conference)
       }
     }
   });
@@ -25,5 +57,8 @@ export function getConferences(conferenceData, year, mapdata, majorConferences) 
     }
   })
   });
-  return { getSchoolStates, getCurrentConferences }
+  const conferenceChanges = getChanges(getCurrentConferences, year, historyArray)
+  console.log(conferenceChanges)
+
+  return { getSchoolStates, getCurrentConferences, conferenceChanges }
 }

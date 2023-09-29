@@ -71,21 +71,20 @@
     "primaryColor": "rgba(176, 152, 186, 0.90)",
     "mapColor": "rgba(176, 152, 186, 0.90)",
     "founded": 1895,
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Southern_Intercollegiate_Athletic_Association-USA-states.png",
+    "logo": "/SIAA.png",
     "headquarters": "Birmingham, Alabama",
     "history": null,
-    "divisionI": {"start": 1933, "end": 1977},
-    "divisionIA": {"start": 1978, "end": null},
-    "majorConference": {"start": 1895, "end": 1923},
+    "divisionI": {"start": 1895, "end": 1941},
+    "majorConference": {"start": 1895, "end": 1920},
     "disbanded": 1942,
     "names": [
       {
         "conference": "Southern Intercollegiate Athletic Association",
         "abbreviation": "SIAA",
         "primaryColor": "rgba(176, 152, 186, 0.90)",
-        "startYear": 1894,
-        "endYear": null,
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Southern_Intercollegiate_Athletic_Association-USA-states.png"
+        "startYear": 1895,
+        "endYear": 1941,
+        "logo": "/SIAA.png"
       }
     ],
     "schools": [
@@ -324,6 +323,8 @@
     "divisionI": {"start": 1933, "end": 1977},
     "divisionIA": {"start": 1978, "end": null},
     "majorConference": {"start": 1933, "end": null},
+    "aqConference": {"start": 1998, "end": 2013},
+    "powerConference": true,
     "disbanded": null,
     "names": [
       {
@@ -545,6 +546,8 @@
     "divisionI": {"start": 1915, "end": 1977},
     "divisionIA": {"start": 1978, "end": null},
     "majorConference": {"start": 1915, "end": null},
+    "aqConference": {"start": 1998, "end": 2013},
+    "powerConference": true,
     "names": [
       {
         "conference": "Pacific Coast Conference",
@@ -722,6 +725,8 @@
     "headquarters": "Irving, Texas",
     "divisionIA": {"start": 1996, "end": null},
     "majorConference": {"start": 1996, "end": null},
+    "aqConference": {"start": 1998, "end": 2013},
+    "powerConference": true,
     "names": [
       {
         "conference": "Big 12 Conference",
@@ -949,6 +954,8 @@
     "divisionI": {"start": 1953, "end": 1977},
     "divisionIA": {"start": 1978, "end": null},
     "majorConference": {"start": 1953, "end": null},
+    "aqConference": {"start": 1998, "end": 2013},
+    "powerConference": true,
     "names": [
       {
         "conference": "Atlantic Coast Conference",
@@ -1013,7 +1020,7 @@
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/59/Louisville_Cardinals_logo.svg/800px-Louisville_Cardinals_logo.svg.png",
         "lat": -85.7583,
         "lon": 38.2064,
-        "years": [2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
+        "years": [2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
       },
       {
         "school": "University of Miami",
@@ -1159,6 +1166,8 @@
     "divisionI": {"start": 1896, "end": 1977},
     "divisionIA": {"start": 1978, "end": null},
     "majorConference": {"start": 1896, "end": null},
+    "aqConference": {"start": 1998, "end": 2013},
+    "powerConference": true,
     "names": [
       {
         "conference": "Western Conference",
@@ -1418,7 +1427,7 @@
     "divisionI": {"start": 1921, "end": 1977},
     "divisionIA": {"start": 1978, "end": 1981},
     "divisionIAA": {"start": 1982, "end": null},
-    "majorConference": {"start": 1921, "end": 1952},
+    "majorConference": {"start": 1921, "end": 1981},
     "names": [
       {
       "conference": "Southern Conference",
@@ -1860,14 +1869,15 @@
     "mapColor": "rgba(250, 128, 114, 0.90)",
     "secondaryColor": "rgba(26, 66, 125, 0.90)",
     "headquarters": "Providence Rhode Island",
-    "divisionIA": {"start": 1991, "end": 2013},
-    "majorConference": {"start": 1991, "end": 2013},
+    "divisionIA": {"start": 1991, "end": 2012},
+    "majorConference": {"start": 1991, "end": 2012},
+    "aqConference": {"start": 1998, "end": 2012},
     "names": [
       {
         "conference": "Big East Conference",
         "abbreviation": "Big East",
         "startYear": 1991,
-        "endYear": 2013,
+        "endYear": 2012,
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Big_East_Conference_logo_stacked.svg/2560px-Big_East_Conference_logo_stacked.svg.png",
         "primaryColor": "rgba(228, 28, 57, 0.90)",
         "secondaryColor": "rgba(26, 66, 125, 0.90)"
@@ -1953,7 +1963,7 @@
         "lat": -80.4181,
         "lon": 37.2200,
         "years": [1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003],
-        "left": [{"year": 2004, "newConference": "AAC"}]
+        "left": [{"year": 2004, "newConference": "ACC"}]
       },
       {
         "school": "West Virginia University",
@@ -2007,12 +2017,13 @@
     "primaryColor": "rgba(125, 118, 98, 0.90)",
     "mapColor": "rgba(125, 118, 98, 0.90)",
     "headquarters": "Unknown",
-    "divisionI": {"start": 1931, "end": 1962},
-    "majorConference": {"start": null, "end": null},
+    "divisionI": {"start": 1931, "end": 1961},
+    "majorConference": {"start": 1931, "end": 1961},
     "names": [
-      {"conference": "Border Intercollegiate Athletic Association",
+      {
+        "conference": "Border Intercollegiate Athletic Association",
         "startYear": 1931,
-        "endYear": 1962,
+        "endYear": 1961,
         "abbreviation": "Border",
         "logo": "https://i.pinimg.com/originals/05/f6/8b/05f68b6df16ad6c83f85d4ed50a1638b.jpg",
         "primaryColor": "rgba(125, 118, 98, 0.90)"
@@ -2787,6 +2798,8 @@
     "secondaryColor": "rgba(143, 143, 140, 0.90) ",
     "founded": 1998,
     "disbanded": null,
+    "majorConference": {"start": null, "end": null},
+    "powerConference": false,
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Mountain_West_Conference_logo.svg/800px-Mountain_West_Conference_logo.svg.png",
     "headquarters": "Colorado Springs, Colorado",
     "names": [
@@ -2800,7 +2813,6 @@
         "endYear": null
       }
     ],
-    "majorConference": {"start": null, "end": null},
     "schools": [
       {
         "school": "Bringham Young University",
@@ -2950,7 +2962,9 @@
     "secondaryColor": "rgba(2, 46, 100, 0.90) ",
     "founded": 1909,
     "disbanded": null,
-    "majorConference": {"start": null, "end": null},
+    "divisionI": {"start": 1909, "end": 1972},
+    "majorConference": {"start": 1909, "end": 1937},
+    "divisionII": {"start": 1973, "end": null},
     "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Rocky_Mountain_Athletic_Conference_logo.svg/1024px-Rocky_Mountain_Athletic_Conference_logo.svg.png",
     "headquarters": "Colorado Springs, Colorado",
     "names": [
@@ -2961,7 +2975,7 @@
         "primaryColor": "rgba(253, 218, 0, 0.90)",
         "secondaryColor": "rgba(2, 46, 100, 0.90) ",
         "startYear": 1909,
-        "endYear": 1910
+        "endYear": 1909
       },
       {
         "conference": "Rocky Mountain Faculty Athletic Conference",
@@ -3056,7 +3070,7 @@
       {
         "school": "Colorado College",
         "stateId": "08",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Colorado_Mines_Block_M.svg/1280px-Colorado_Mines_Block_M.svg.png",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/Colorado_College_Tigers_logo.svg/800px-Colorado_College_Tigers_logo.svg.png",
         "division": null,
         "lat": -104.8228,
         "lon": 38.8479,
@@ -3105,6 +3119,7 @@
     "mapColor": "rgba(24, 70, 139, 0.90)",
     "headquarters": "Kansas City, Missouri",
     "divisionI": {"start": 1928, "end": 1977},
+    "majorConference": {"start": 1928, "end": 1977},
     "names": [
       {
         "conference": "Missouri Valley Conference",
@@ -3471,7 +3486,7 @@
     "disbanded": null,
     "divisionI": {"start": 1933, "end": 1977},
     "divisionIAA": {"start": 1978, "end": null},
-    "majorConference": {"start": null, "end": null},
+    "majorConference": {"start": 1933, "end": 1977},
     "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b8/Ivy_League_logo.svg/1280px-Ivy_League_logo.svg.png",
     "headquarters": "Princeton, New Jersey",
     "names": [
@@ -3563,15 +3578,27 @@
   {
     "conference": "Sun Belt Conference",
     "abbreviation": "Sun Belt",
-    "primaryColor": null,
-    "secondaryColor": null,
-    "founded": null,
+    "primaryColor": "rgba(242, 169, 0, 0.90)",
+    "secondaryColor": "rgba(12, 35, 66, 0.90)",
+    "mapColor": "rgba(242, 169, 0, 0.90)",
+    "founded": 2001,
     "history": null,
     "disbanded": null,
+    "majorConference": {"start": null, "end": null},
+    "powerConference": false,
     "logo": "https://collegepolltracker.com/logos/png/Indy_300_100.png",
     "headquarters": null,
-    "names": null,
-    "majorConference": {"start": null, "end": null},
+    "names": [
+      {
+        "conference": "Sun Belt Conference",
+        "abbreviation": "Sun Belt",
+        "primaryColor": "rgba(242, 169, 0, 0.90)",
+        "secondaryColor": "rgba(12, 35, 66, 0.90)",
+        "logo": "https://collegepolltracker.com/logos/png/Indy_300_100.png",
+        "startYear": 2001,
+        "endYear": null
+      }
+    ],
     "schools": [
       {
         "school": "Old Dominion University",
@@ -3782,60 +3809,6 @@
     ]
   },
   {
-    "conference": "FBS Independent",
-    "abbreviation": "FBS Independent",
-    "primaryColor": null,
-    "secondaryColor": null,
-    "founded": null,
-    "history": null,
-    "disbanded": null,
-    "logo": "https://collegepolltracker.com/logos/png/Indy_300_100.png",
-    "headquarters": null,
-    "names": null,
-    "majorConference": {"start": null, "end": null},
-    "schools": []
-  },
-  {
-    "conference": "FCS Independent",
-    "abbreviation": "FCS",
-    "primaryColor": null,
-    "secondaryColor": null,
-    "founded": null,
-    "history": null,
-    "disbanded": null,
-    "logo": "https://collegepolltracker.com/logos/png/Indy_300_100.png",
-    "headquarters": null,
-    "names": null,
-    "majorConference": {"start": null, "end": null},
-    "schools": []
-  },
-  {
-    "conference": "Division II",
-    "abbreviation": "DII",
-    "primaryColor": null,
-    "secondaryColor": null,
-    "founded": null,
-    "disbanded": null,
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/NCAA_DII_logo_c.svg/1920px-NCAA_DII_logo_c.svg.png",
-    "headquarters": null,
-    "names": null,
-    "majorConference": {"start": null, "end": null},
-    "schools": []
-  },
-  {
-    "conference": "Division III",
-    "abbreviation": "DIII",
-    "primaryColor": null,
-    "secondaryColor": null,
-    "founded": null,
-    "disbanded": null,
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/NCAA_DIII_logo_c.svg/2560px-NCAA_DIII_logo_c.svg.png",
-    "headquarters": null,
-    "names": null,
-    "majorConference": {"start": null, "end": null},
-    "schools": []
-  },
-  {
     "conference": "Conference USA",
     "abbreviation": "C-USA",
     "primaryColor": "rgba(166, 25, 46, 0.90)",
@@ -3845,6 +3818,8 @@
     "mapColor": "rgba(187, 188, 188, 0.90)",
     "founded": 1996,
     "disbanded": null,
+    "majorConference": {"start": null, "end": null},
+    "powerConference": false,
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/CUSA_logo.svg/375px-CUSA_logo.svg.png",
     "headquarters": "Dallas, Texas",
     "names": [
@@ -3860,7 +3835,6 @@
         "endYear": null
       }
     ],
-    "majorConference": {"start": null, "end": null},
     "schools": [
       {
         "school": "University of Louisville",
@@ -4167,6 +4141,9 @@
     "founded": 2013,
     "history": null,
     "disbanded": null,
+    "powerConference": false,
+    "majorConference": {"start": null, "end": null},
+    "aqConference": {"start": 2013, "end": 2013},
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/American_Athletic_Conference_logo.svg/800px-American_Athletic_Conference_logo.svg.png",
     "headquarters": "Irving, Texas",
     "names": [
@@ -4180,7 +4157,6 @@
         "endYear": null
       }
    ],
-    "majorConference": {"start": null, "end": null},
     "schools": [
       {
         "school": "University of Louisville",
@@ -4375,6 +4351,8 @@
     "founded": 1947,
     "history": null,
     "disbanded": null,
+    "majorConference": {"start": null, "end": null},
+    "powerConference": false,
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Mid-American_Conference_logo.svg/800px-Mid-American_Conference_logo.svg.png",
     "headquarters": "Cleveland, Ohio",
     "names": [
@@ -4388,7 +4366,6 @@
         "endYear": null
       }
     ],
-    "majorConference": {"start": null, "end": null},
     "schools": [
       {
         "school": "University of Cincinnati",
@@ -4553,8 +4530,9 @@
     "disbanded": null,
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Southland_Conference_primary_logo.svg/1920px-Southland_Conference_primary_logo.svg.png",
     "headquarters": "Frisco, Texas",
-    "divisionI": {"start": 1964, "end": 1981},
-    "divisionIA": {"start": 1982, "end": null},
+    "divisionI": {"start": 1964, "end": 1977},
+    "divisionIA": {"start": 1978, "end": 1981},
+    "divisionIAA": {"start": 1982, "end": null},
     "majorConference": {"start": null, "end": null},
     "names": [
       {
@@ -4689,5 +4667,59 @@
     "majorConference": {"start": null, "end": null},
     "schools": [
     ]
+  },
+  {
+    "conference": "FBS Independent",
+    "abbreviation": "FBS Independent",
+    "primaryColor": null,
+    "secondaryColor": null,
+    "founded": null,
+    "history": null,
+    "disbanded": null,
+    "logo": "https://collegepolltracker.com/logos/png/Indy_300_100.png",
+    "headquarters": null,
+    "names": null,
+    "majorConference": {"start": null, "end": null},
+    "schools": []
+  },
+  {
+    "conference": "FCS Independent",
+    "abbreviation": "FCS",
+    "primaryColor": null,
+    "secondaryColor": null,
+    "founded": null,
+    "history": null,
+    "disbanded": null,
+    "logo": "https://collegepolltracker.com/logos/png/Indy_300_100.png",
+    "headquarters": null,
+    "names": null,
+    "majorConference": {"start": null, "end": null},
+    "schools": []
+  },
+  {
+    "conference": "Division II",
+    "abbreviation": "DII",
+    "primaryColor": null,
+    "secondaryColor": null,
+    "founded": null,
+    "disbanded": null,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/NCAA_DII_logo_c.svg/1920px-NCAA_DII_logo_c.svg.png",
+    "headquarters": null,
+    "names": null,
+    "majorConference": {"start": null, "end": null},
+    "schools": []
+  },
+  {
+    "conference": "Division III",
+    "abbreviation": "DIII",
+    "primaryColor": null,
+    "secondaryColor": null,
+    "founded": null,
+    "disbanded": null,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/NCAA_DIII_logo_c.svg/2560px-NCAA_DIII_logo_c.svg.png",
+    "headquarters": null,
+    "names": null,
+    "majorConference": {"start": null, "end": null},
+    "schools": []
   }
 ]

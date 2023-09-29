@@ -15,7 +15,6 @@ export default function OptionsMenu({ options, setOptions, open, setOpen }) {
         [value]: e.target.checked,
       });
   };
-
   return (
     <div>
       <Modal
@@ -32,6 +31,14 @@ export default function OptionsMenu({ options, setOptions, open, setOpen }) {
             <div className='flex items-center'>
               <input type="checkbox" checked={options.majorConferences} value="majorConferences" onChange={handleOptions} />
               <label className='pl-2 text-[16px] text-white font-normal'>Major Conferences Only</label>
+            </div>
+            <div className='flex items-center'>
+              <input type="checkbox" checked={options.aqConferences} value="aqConferences" onChange={handleOptions} />
+              <label className='pl-2 text-[16px] text-white font-normal'>AQ Conferences (1998 - 2013)</label>
+            </div>
+            <div className='flex items-center'>
+              <input type="checkbox" checked={options.powerConferences} value="powerConferences" onChange={handleOptions} />
+              <label className='pl-2 text-[16px] text-white font-normal'>Power Five Conferences (2014 - Present)</label>
             </div>
             <div className='flex items-center'>
               <input type="checkbox" checked={options.hideHistory} value="hideHistory" onChange={handleOptions} />
