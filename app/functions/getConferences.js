@@ -6,6 +6,7 @@ export function getConferences(conferenceData, year, options) {
   var historyArray = []
 
   conferenceData.forEach((conference) => {
+    //Filter out conferences that dropped from division I to lower divisions
     if(conference.divisionIAA){
       if(conference.divisionIAA.start <= year){
         if(conference.divisionIAA.start === year){
@@ -58,7 +59,6 @@ export function getConferences(conferenceData, year, options) {
   })
   });
   const conferenceChanges = getChanges(getCurrentConferences, year, historyArray)
-  console.log(conferenceChanges)
 
   return { getSchoolStates, getCurrentConferences, conferenceChanges }
 }
