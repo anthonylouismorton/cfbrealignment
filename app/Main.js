@@ -17,15 +17,15 @@ function Main() {
   const [activeConferences, setActiveConferences] = useState(null);
   const [changesList, setChangesList] = useState([]);
   const [options, setOptions] = useState({hideLogos: false, majorConferences: false, aqConferences: false, powerConferences: false, hideHistory: false, hideLegend: false, hideHeader: false, hideSettings: false, hideYear: false, showWelcome: true, smallLogos: false, conFilter: true});
-  const [conList, setConList] = useState([])
+  const [conList, setConList] = useState({'SEC':false,'Pac-12':false,'Big 12':false,'ACC':false,'Big Ten':false,'SOCON':false,'Big 8':false,'Border':false,'SWC':false,'C-USA':false,'WAC':false,'MVC':false,'Skyline':false,'WIUFA':false,'SIAA':false,'Big East':false,'BWC':false,'MWC':false,'RMAC':false,'Ivy':false,'Sun Belt':false,'AAC':false,'MAC':false,'Southland':false})
   const [currentConferences, setCurrentConferences] = useState(null);
   const [schoolStates, setSchoolStates] = useState(null);
   const [isYearVisible,setIsYearVisible] = useState(false);
   const minWidth = (768)
 
   useEffect(() => {
-    if(localStorage.savedYear){
-    }
+    // if(localStorage.savedYear){
+    // }
     if(localStorage.savedOptions){
       setOptions(JSON.parse(localStorage.getItem('savedOptions')));
     }
@@ -58,7 +58,6 @@ function Main() {
     };
 
   }, [currentYear, options, isYearVisible]);
-
   return (
     <div>
       <div className="flex flex-col justify-center items-center">
@@ -66,7 +65,7 @@ function Main() {
           <Welcome options={options} setOptions={setOptions}/>
         }
         {isYearVisible &&
-          <MobileOptions options={options} setOptions={setOptions} activeConferences={activeConferences} />
+          <MobileOptions options={options} setOptions={setOptions} activeConferences={activeConferences} conList={conList} setConList={setConList}/>
         }
         {options.hideYear || !isYearVisible &&
           <Year currentYear={currentYear} setCurrentYear={setCurrentYear} />
@@ -97,6 +96,7 @@ function Main() {
               setCurrentConferences={setCurrentConferences}
               setActiveConferences={setActiveConferences}
               activeConferences={activeConferences}
+              conList={conList}
             />
             {isYearVisible &&
             <div className='flex w-full justify-center items-center text-center'>
@@ -113,7 +113,7 @@ function Main() {
                     <AutoPlay currentYear={currentYear} setCurrentYear={setCurrentYear} changesList={changesList} />
                   </div>
                 }
-                <Options options={options} setOptions={setOptions} activeConferences={activeConferences} />
+                <Options options={options} setOptions={setOptions} activeConferences={activeConferences} conList={conList} setConList={setConList}/>
               </div>
             {!options.hideLegend && !isYearVisible && (
               <Legend activeConferences={activeConferences} />

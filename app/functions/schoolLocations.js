@@ -1,6 +1,5 @@
 export function schoolLocations(svg, projection, currentConferences, year, smallLogos) {
   var logoHeight = 28
-  console.log(smallLogos)
   if(smallLogos){
     logoHeight = 20
   }

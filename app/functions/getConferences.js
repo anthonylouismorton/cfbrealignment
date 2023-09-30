@@ -1,11 +1,16 @@
 import { getChanges } from "./getChanges";
 
-export function getConferences(conferenceData, year, options) {
+export function getConferences(conferenceData, year, options, conList) {
   const { majorConferences, powerConferences, aqConferences} = options
   var getCurrentConferences = []
   var historyArray = []
 
   conferenceData.forEach((conference) => {
+    if(options.conFilter){
+      if(conList[conference.abbreviation] === false){
+        return;
+      }
+    }
     //Filter out conferences that dropped from division I to lower divisions
     if(conference.divisionIAA){
       if(conference.divisionIAA.start <= year){
