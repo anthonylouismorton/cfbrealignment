@@ -8,7 +8,7 @@ import { schoolLocations } from './functions/schoolLocations';
 import AutoPlay from './AutoPlay';
 import ReactDOMServer from 'react-dom/server';
 
-export default function Map({ mapdata, currentYear, options, isYearVisible, setChangesList, setSchoolStates, setCurrentConferences, setActiveConferences }) {
+export default function Map({ mapdata, currentYear, options, isYearVisible, setChangesList, setSchoolStates, setCurrentConferences, setActiveConferences, conList }) {
   useEffect(() => {
     const width = 975;
     const height = 610;
@@ -61,8 +61,8 @@ export default function Map({ mapdata, currentYear, options, isYearVisible, setC
     //   .style('height', '100%')
     //   .html(autoPlayComponent);
 
-    //Get conferences with applied filters and states conferences are active to fill the map  
-    const { getSchoolStates, getCurrentConferences, conferenceChanges } = getConferences(conferenceData, currentYear, options);
+    //Get conferences with applied filters and each state's conferences that are active to fill the map  
+    const { getSchoolStates, getCurrentConferences, conferenceChanges } = getConferences(conferenceData, currentYear, options, conList);
     setCurrentConferences(getCurrentConferences)
     setSchoolStates(getSchoolStates)
 
@@ -77,7 +77,7 @@ export default function Map({ mapdata, currentYear, options, isYearVisible, setC
       //Need to clear the map every year change or map duplicates
       d3.select('#map').select('svg').remove();
     };
-  }, [mapdata, currentYear, options, isYearVisible]);
+  }, [mapdata, currentYear, options, isYearVisible, conList]);
 
   return <div className='w-full' id="map"></div>
   
