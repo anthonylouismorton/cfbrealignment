@@ -24,8 +24,10 @@ function Main() {
   const minWidth = (768)
 
   useEffect(() => {
-    // if(localStorage.savedYear){
-    // }
+    console.log(localStorage.savedConferences)
+    if(localStorage.savedConferences){
+      setConList(JSON.parse(localStorage.getItem('savedConferences')));
+    }
     if(localStorage.savedOptions){
       setOptions(JSON.parse(localStorage.getItem('savedOptions')));
     }
@@ -51,13 +53,15 @@ function Main() {
     document.addEventListener('keydown', handleKeyDown);
     const saveToLocalStorage = () => {
       localStorage.setItem("savedOptions", JSON.stringify(options))
+      console.log(conList)
+      localStorage.setItem("savedConferences", JSON.stringify(conList))
     }
     saveToLocalStorage();
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
 
-  }, [currentYear, options, isYearVisible]);
+  }, [currentYear, options, isYearVisible, conList]);
   return (
     <div>
       <div className="flex flex-col justify-center items-center">
