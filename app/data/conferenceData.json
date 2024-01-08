@@ -1836,16 +1836,16 @@
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Drake_Bulldogs_%22D%22_logo.svg/1200px-Drake_Bulldogs_%22D%22_logo.svg.png",
         "lat": -93.398,
         "lon": 41.364,
-        "years": [1908,1909,1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928]
+        "years": [1908,1909,1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927]
       },
       {
         "school": "Grinnell College",
         "stateId": "19",
         "division": null,
-        "logo": "https://upload.wikimedia.org/wikipedia/en/e/ea/Honor_%27G%27.png",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Grinnell_logo_from_NCAA.svg/800px-Grinnell_logo_from_NCAA.svg.png",
         "lat": -92.72013,
         "lon": 41.749057,
-        "years": [1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928]
+        "years": [1918,1919,1920,1921,1922,1923,1924,1925,1926,1927]
       },
       {
         "school": "Washington University in St.Louis",
@@ -1854,7 +1854,7 @@
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5a/WashU_Logo.svg/1200px-WashU_Logo.svg.png",
         "lat": -90.305,
         "lon": 38.648,
-        "years": [1907,1908,1909,1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928]
+        "years": [1907,1908,1909,1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927]
       }
     ]
   },
@@ -3157,7 +3157,7 @@
         "school": "Grinnell College",
         "stateId": "19",
         "division": null,
-        "logo": "https://upload.wikimedia.org/wikipedia/en/e/ea/Honor_%27G%27.png",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Grinnell_logo_from_NCAA.svg/800px-Grinnell_logo_from_NCAA.svg.png",
         "lat": -92.72013,
         "lon": 41.749057,
         "years": [1928,1929,1930,1931,1932,1933,1934,1935,1936],
@@ -3725,7 +3725,7 @@
       {
         "school": "University of South Alabama",
         "stateId": "01",
-        "logo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/6.png",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/e/ee/Southalabama_jaguars_logo.png",
         "division": "West",
         "lat": -88.17873,
         "lon": 30.69671,
