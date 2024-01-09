@@ -656,7 +656,7 @@
         "stateId": "41",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Oregon_State_Beavers_logo.svg/1200px-Oregon_State_Beavers_logo.svg.png",
         "division": "North",
-        "lat": -123.163180,
+        "lat": -122.4,
         "lon": 44.332039,
         "years": [1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
       },
@@ -705,7 +705,7 @@
         "stateId": "53",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/07/Washington_State_Cougars_logo.svg/1200px-Washington_State_Cougars_logo.svg.png",
         "division": "North",
-        "lat": -117.1745,
+        "lat": -117.5,
         "lon": 46.7298,
         "years": [1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
       }
@@ -882,7 +882,7 @@
         "division": null,
         "lat": -111.3857,
         "lon": 40.153,
-        "years": [2023]
+        "years": [2023, 2024]
       },
       {
         "school": "University of Central Florida",
@@ -891,7 +891,7 @@
         "division": null,
         "lat": -81.2005,
         "lon": 28.6016,
-        "years": [2023]
+        "years": [2023, 2024]
       },
       {
         "school": "University of Cincinnati",
@@ -900,7 +900,7 @@
         "division": null,
         "lat": -84.516,
         "lon": 39.131,
-        "years": [2023]
+        "years": [2023, 2024]
       },
       {
         "school": "University of Houston",
@@ -909,7 +909,7 @@
         "division": null,
         "lat": -95.339162,
         "lon": 29.718922,
-        "years": [2023]
+        "years": [2023, 2024]
       },
       {
         "school": "University of Arizona",
@@ -2075,8 +2075,8 @@
         "stateId": "35",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/New_Mexico_State_Aggies_logo.svg/1200px-New_Mexico_State_Aggies_logo.svg.png",
         "division": null,
-        "lat": -106.748,
-        "lon": 32.2833,
+        "lat": -106.6,
+        "lon": 32.5,
         "years": [1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
         "left": [{"year": 1962, "newConference": "FBS Independent"}]
       },
@@ -2095,8 +2095,8 @@
         "division": null,
         "stateId": "48",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/UTEP_Miners_wordmark.svg/1200px-UTEP_Miners_wordmark.svg.png",
-        "lat": -106.3018,
-        "lon": 31.4612,
+        "lat": -105.8,
+        "lon": 31.8,
         "years": [1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961],
         "left": [{"year": 1962, "newConference": "FBS Independent"}]
       },
@@ -2391,7 +2391,7 @@
         "stateId": "16",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Idaho_Vandals_logo.svg/800px-Idaho_Vandals_logo.svg.png",
         "division": null,
-        "lat": -117.011,
+        "lat": -116.5,
         "lon": 46.726,
         "years": [2005,2006,2007,2008,2009,2010,2011,2012],
         "left": [{"year": 2013, "newConference": "FBS Independent"}]
@@ -2441,8 +2441,8 @@
         "stateId": "35",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/New_Mexico_State_Aggies_logo.svg/1200px-New_Mexico_State_Aggies_logo.svg.png",
         "division": null,
-        "lat": -106.748,
-        "lon": 32.2833,
+        "lat": -106.6,
+        "lon": 32.5,
         "years": [2005,2006,2007,2008,2009,2010,2011],
         "left": [{"year": 2012, "newConference": "FBS Independent"}]
       },
@@ -2461,8 +2461,8 @@
         "stateId": "06",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/San_Diego_State_Aztecs_logo.svg/1280px-San_Diego_State_Aztecs_logo.svg.png",
         "division": "North",
-        "lat": -117.0420,
-        "lon": 32.4631,
+        "lat": -116.8,
+        "lon": 32.9,
         "years": [1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998],
         "left": [{"year": 1999, "newConference": "MWC"}]
       },
@@ -2501,8 +2501,8 @@
         "division": null,
         "stateId": "48",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/UTEP_Miners_wordmark.svg/1200px-UTEP_Miners_wordmark.svg.png",
-        "lat": -106.3018,
-        "lon": 31.4612,
+        "lat": -105.8,
+        "lon": 31.8,
         "years": [1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004],
         "left": [{"year": 2005, "newConference": "C-USA"}]
       },
@@ -2632,7 +2632,7 @@
         "stateId": "16",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Idaho_Vandals_logo.svg/800px-Idaho_Vandals_logo.svg.png",
         "division": null,
-        "lat": -117.011,
+        "lat": -116.5,
         "lon": 46.726,
         "years": [1996,1997,1998,1999,2000],
         "left": [{"year": 2001, "newConference": "Sun Belt"}]
@@ -2672,8 +2672,8 @@
         "stateId": "35",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/New_Mexico_State_Aggies_logo.svg/1200px-New_Mexico_State_Aggies_logo.svg.png",
         "division": null,
-        "lat": -106.748,
-        "lon": 32.2833,
+        "lat": -106.6,
+        "lon": 32.5,
         "years": [1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000],
         "left": [{"year": 2001, "newConference": "Sun Belt"}]
       },
@@ -2682,8 +2682,8 @@
         "stateId": "06",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/San_Diego_State_Aztecs_logo.svg/1280px-San_Diego_State_Aztecs_logo.svg.png",
         "division": "North",
-        "lat": -117.0420,
-        "lon": 32.4631,
+        "lat": -116.8,
+        "lon": 32.9,
         "years": [1969,1970,1971,1972,1973,1974,1975],
         "left": [{"year": 1976, "newConference": "FBS Independent"}]
       },
@@ -2901,8 +2901,8 @@
         "stateId": "06",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/San_Diego_State_Aztecs_logo.svg/1280px-San_Diego_State_Aztecs_logo.svg.png",
         "division": "North",
-        "lat": -117.0420,
-        "lon": 32.4631,
+        "lat": -116.8,
+        "lon": 32.9,
         "years": [1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
       },
       {
@@ -3309,8 +3309,8 @@
         "stateId": "35",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/New_Mexico_State_Aggies_logo.svg/1200px-New_Mexico_State_Aggies_logo.svg.png",
         "division": null,
-        "lat": -106.748,
-        "lon": 32.2833,
+        "lat": -106.6,
+        "lon": 32.5,
         "years": [1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983],
         "left": [{"year": 1984, "newConference": "BWC"}]
       },
@@ -3688,8 +3688,8 @@
         "stateId": "35",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/New_Mexico_State_Aggies_logo.svg/1200px-New_Mexico_State_Aggies_logo.svg.png",
         "division": null,
-        "lat": -106.748,
-        "lon": 32.2833,
+        "lat": -106.6,
+        "lon": 32.5,
         "years": [2001,2002,2003,2004],
         "left": [{"year": 2005, "newConference": "WAC"}]
       },
@@ -3698,7 +3698,7 @@
         "stateId": "16",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Idaho_Vandals_logo.svg/800px-Idaho_Vandals_logo.svg.png",
         "division": null,
-        "lat": -117.011,
+        "lat": -116.5,
         "lon": 46.726,
         "years": [2001,2002,2003,2004],
         "left": [{"year": 2005, "newConference": "WAC"}]
@@ -3754,7 +3754,7 @@
       {
         "school": "Florida International University",
         "stateId": "12",
-        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/40/Florida_Atlantic_Owls_logo.svg/1920px-Florida_Atlantic_Owls_logo.svg.png",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1d/FIU_Panthers_logo.svg/1200px-FIU_Panthers_logo.svg.png",
         "division": null,
         "lat": -80.374,
         "lon": 25.757,
@@ -3961,7 +3961,7 @@
       {
         "school": "Florida International University",
         "stateId": "12",
-        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/40/Florida_Atlantic_Owls_logo.svg/1920px-Florida_Atlantic_Owls_logo.svg.png",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1d/FIU_Panthers_logo.svg/1200px-FIU_Panthers_logo.svg.png",
         "division": null,
         "lat": -80.374,
         "lon": 25.757,
@@ -4024,8 +4024,8 @@
         "division": null,
         "stateId": "48",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/UTEP_Miners_wordmark.svg/1200px-UTEP_Miners_wordmark.svg.png",
-        "lat": -106.3018,
-        "lon": 31.4612,
+        "lat": -105.8,
+        "lon": 31.8,
         "years": [2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024]
       },
       {
@@ -4108,8 +4108,8 @@
         "stateId": "35",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/New_Mexico_State_Aggies_logo.svg/1200px-New_Mexico_State_Aggies_logo.svg.png",
         "division": null,
-        "lat": -106.748,
-        "lon": 32.2833,
+        "lat": -106.6,
+        "lon": 32.5,
         "years": [2023,2024]
       },
       {
