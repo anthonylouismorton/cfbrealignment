@@ -54,12 +54,12 @@ export default function Map({ mapdata, currentYear, options, isYearVisible, setC
     setCurrentConferences(getCurrentConferences);
     setSchoolStates(getSchoolStates);
 
-    const getLegendConferences = mapFill(svg, getSchoolStates, mapdata, currentYear);
+    const getLegendConferences = mapFill(svg, getSchoolStates, mapdata, currentYear, options.schoolName);
     setActiveConferences(getLegendConferences);
     setChangesList(conferenceChanges);
 
     if(!options.hideLogos){
-      schoolLocations(svg, projection, getCurrentConferences, currentYear, options.smallLogos);
+      schoolLocations(svg, projection, getCurrentConferences, currentYear, options.smallLogos, options.schoolName);
     }
 
     return () => {
