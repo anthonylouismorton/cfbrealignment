@@ -42,32 +42,48 @@ export function schoolLocations(svg, projection, currentConferences, year, small
         else{
           const schoolGroup = svg.append('g')
           .attr('class', 'school-group')
-          .attr('transform', `translate(${x},${y})`) // Translate the group to the school's location
+          .attr('transform', `translate(${x},${y})`)
+  
+          schoolGroup
+            .append('circle')
+            .attr('r', 4)
+            .attr('fill', conference.mapColor)
+            .style('cursor', 'pointer')
+            .attr('id', school.nickName);
+
+          var tooltip = schoolGroup
+            .append('text')
+            .attr('id', 'tooltip-' + school.nickName) // Unique ID for the tooltip
+            .attr('x', 5)
+            .attr('dy', '0.35em')
+            .style('font-size', '12px')
+            .style('fill', conference.mapColor || 'black')
+            .style('font-weight', 'bold')
+            .style('cursor', 'pointer')
+            .style('visibility', 'hidden')
+            .text(school.nickName);
+      
+
+          d3.select('#' + school.nickName)
+            .on('mouseover', function () {
+              return d3.select('#tooltip-' + school.nickName).style('visibility', 'visible');
+            })
+            .on('mouseout', function () {
+              return d3.select('#tooltip-' + school.nickName).style('visibility', 'hidden');
+            });
+
         
-        // schoolGroup.append('rect')
-        // .attr('width', 8)
-        // .attr('height', 8)
-        // .attr('fill', conference.mapColor);
-        schoolGroup.append('circle')
-          .attr('r', 4)
-          .attr('fill', conference.mapColor);
-        // Add text (school name) next to the dot
-        // schoolGroup.append('text')
-        //   .attr('x', 10) // Adjust the distance from the dot along the x-axis
-        //   .attr('dy', '0.35em') // Adjust the vertical alignment if needed
-        //   .style('font-size', '12px') // Set the font size as needed
-        //   .style('fill', conference.mapColor || 'black') // Set the text color based on school.mapcolor, default to black
-        //   .style('cursor', 'pointer')
-        //   .text(school.nickName || school.school);
-        
-        // Attach event listeners if needed
-        schoolGroup
-          .on('mouseover', function () {
-            // Add your mouseover logic here
-          })
-          .on('mouseout', function () {
-            // Add your mouseout logic here
-          });
+          // if(school.years[0] === year){
+          //   console.log(school)
+          //   schoolGroup.append('text')
+          //     .attr('x', 10) // Adjust the distance from the dot along the x-axis
+          //     .attr('dy', '0.35em') // Adjust the vertical alignment if needed
+          //     .style('font-size', '12px') // Set the font size as needed
+          //     .style('fill', conference.mapColor || 'black') // Set the text color based on school.mapcolor, default to black
+          //     .style('cursor', 'pointer')
+          //     .text(school.nickName || school.school);
+          // }
+
         }
       }
     })
