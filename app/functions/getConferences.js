@@ -6,7 +6,6 @@ export function getConferences(conferenceData, year, options, conList) {
   var historyArray = []
 
   conferenceData.forEach((conference) => {
-    console.log(conference)
     if(options.conFilter){
       if(conList[conference.abbreviation] === false){
         return;
