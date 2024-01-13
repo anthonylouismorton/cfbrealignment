@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 
 function History({ changesList }) {
+  console.log(changesList )
   return (
     <div className="w-full pl-1 pb-5">
       <div className="text-center flex flex-col" id="change">
@@ -18,32 +19,40 @@ function History({ changesList }) {
               )}
               {change.change === 'founded' && (
                 <div className='flex text-center items-center w-[140px]'>
+                  {change.logo ? (
                   <div className="change-logo mr-1 sm:mr-3 bg-white p-1">
                     <Image
                       width={30}
                       height={30}
                       className='max-h-[30px] max-w-auto'
                       src={change.logo} alt={`${change.abbreviation} logo`} 
-                    />
+                      />
                   </div>
+                  ) : (
+                    <div style={{color: `${change.mapColor}`}} className="change-conference mr-1 sm:mr-3 text-sm lg:text-lg">{change.abbreviation}</div>
+                  )}
                   <div className="change-conference text-sm text-white">{`founded`}</div>
                 </div>
               )}
               {change.change === 'disbanded' && (
                 <div className='flex text-center items-center w-[140px]'>
-                  <div className="change-logo mr-1 sm:mr-3 bg-white p-1">
-                    <Image
-                      width={30}
-                      height={30}
-                      className='max-h-[30px] max-w-auto'
-                      src={change.logo} alt={`${change.abbreviation} logo`} 
-                    />
-                  </div>
+                  {change.logo ? (
+                    <div className="change-logo mr-1 sm:mr-3 bg-white p-1">
+                      <Image
+                        width={30}
+                        height={30}
+                        className='max-h-[30px] max-w-auto'
+                        src={change.logo} alt={`${change.abbreviation} logo`} 
+                        />
+                    </div>
+                  ) : (
+                    <div style={{color: `${change.mapColor}`}} className="change-conference mr-1 sm:mr-3 text-sm lg:text-lg">{change.abbreviation}</div>
+                  )}
                   <div className="change-conference text-sm lg:text-lg text-white">{`disbanded`}</div>
                 </div>
               )}
               {change.change === 'left' && (
-                <>
+                <div className='flex text-center items-center'>
                   <div className="change-logo mr-1 sm:mr-3 flex items-center bg-white p-1">
                     <Image
                       width={30}
@@ -53,26 +62,34 @@ function History({ changesList }) {
                     />
                   </div>
                   <div className="change-conference text-sm mr-1 sm:mr-3 text-white">{`leaves`}</div>
-                  <div className="change-logo mr-1 sm:mr-3 flex items-center bg-white p-1">
-                    <Image
-                      width={30}
-                      height={30}
-                      className='max-h-[30px] max-w-auto'
-                      src={change.oldConferenceLogo} alt={`old conference logo`}
-                    />
-                  </div>
+                    {change.oldConferenceLogo ? (
+                      <div className="change-logo mr-1 sm:mr-3 flex items-center bg-white p-1">
+                        <Image
+                          width={30}
+                          height={30}
+                          className='max-h-[30px] max-w-auto'
+                          src={change.oldConferenceLogo} alt={`old conference logo`}
+                        />
+                      </div>
+                    ) : (
+                      <div style={{color: `${change.oldConferenceColor}`}} className="change-conference mr-1 sm:mr-3 text-sm lg:text-lg">{change.oldConferenceAbrr}</div>
+                    )}
                   <div className="change-logo">
                   <div className="change-conference text-sm text-white">{`joins`}</div>
-                  </div>
-                  <div className="change-logo ml-1 sm:ml-3 flex items-center bg-white p-1">
-                    <Image
-                      width={30}
-                      height={30}
-                      className='max-h-[30px] max-w-auto'
-                      src={change.newConferenceLogo} alt={`new conference logo`}
-                    />
-                  </div>
-                </>
+                </div>
+                  {change.newConferenceLogo ? (
+                    <div className="change-logo ml-1 sm:ml-3 flex items-center bg-white p-1">
+                      <Image
+                        width={30}
+                        height={30}
+                        className='max-h-[30px] max-w-auto'
+                        src={change.newConferenceLogo} alt={`new conference logo`}
+                        />
+                    </div>
+                  ) : (
+                    <div style={{color: `${change.newConferenceColor}`}} className="change-conference mr-1 sm:mr-3 text-sm lg:text-lg">{change.newConferenceAbrr}</div>
+                  )}
+                </div>
               )}
               {change.change === 'joined' && (
                 <div className='flex text-center items-center w-[140px]'>
@@ -86,14 +103,20 @@ function History({ changesList }) {
                   </div>
                   <div className="change-logo flex items-center">
                   <div className="change-conference text-sm text-white">{`joins`}</div>
-                  </div>
-                  <div className="change-logo ml-1 sm:ml-3 flex items-center bg-white p-1">
-                    <Image
-                      width={30}
-                      height={30}
-                      className='max-h-[30px] max-w-auto'
-                      src={change.conferenceLogo} alt={`${change.conferenceLogo} logo`} 
-                    />
+                </div>
+                  <div className="change-logo ml-1 sm:ml-3 flex items-center">
+                  {change.conferenceLogo ? (
+                    <div className="change-logo mr-1 sm:mr-3 bg-white p-1">
+                      <Image
+                        width={30}
+                        height={30}
+                        className='max-h-[30px] max-w-auto'
+                        src={change.conferenceLogo} alt={`${change.conference} logo`} 
+                        />
+                    </div>
+                    ) : (
+                      <div style={{color: `${change.mapColor}`}} className="change-conference text-sm">{change.conference}</div>
+                    )}
                   </div>
                 </div>
               )}
@@ -110,13 +133,19 @@ function History({ changesList }) {
                   <div className="change-logo flex items-center">
                     <div className="change-conference text-sm text-white">{`rejoins`}</div>
                   </div>
-                  <div className="change-logo ml-1 sm:ml-3 flex items-center bg-white p-1">
-                    <Image                   
-                      width={30}
-                      height={30}
-                      className='max-h-[30px] max-w-auto'
-                      src={change.conferenceLogo} alt={`${change.conferenceLogo} logo`} 
-                    />
+                  <div className="change-logo ml-1 sm:ml-3 flex items-center">
+                    {change.conferenceLogo ? (
+                      <div className="change-logo mr-1 sm:mr-3 bg-white p-1">
+                        <Image
+                          width={30}
+                          height={30}
+                          className='max-h-[30px] max-w-auto'
+                          src={change.conferenceLogo} alt={`${change.conference} logo`} 
+                          />
+                      </div>
+                      ) : (
+                        <div style={{color: `${change.mapColor}`}} className="change-conference text-sm">{change.conference}</div>
+                      )}
                   </div>
                 </div>
               )}
@@ -134,9 +163,6 @@ function History({ changesList }) {
               )}
             </div>
           ))}
-          {/* {changesList.length === 0 && (
-              <h2 className='text-white text-lg'>Everything stable...for now</h2>
-          )} */}
         </div>
       </div>
     </div>

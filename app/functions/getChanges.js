@@ -4,21 +4,22 @@ import cfbHistory from '../data/cfbHistory.json'
 export function getChanges(currentConferences, currentYear, historyArray) {
   currentConferences.forEach((conference) => {
     if(conference.founded === currentYear){
-      historyArray.push({change: 'founded', founded: conference.founded, conference: conference.conference, logo: conference.logo})
+      console.log(conference)
+      historyArray.push({change: 'founded', ...conference})
     }
     if(conference.disbanded === currentYear){
-      historyArray.push({change: 'disbanded', disbanded: conference.disbanded, conference: conference.conference, logo: conference.logo})
+      historyArray.push({change: 'disbanded', ...conference})
     }
     conference.schools.forEach((school)=>{
       if(school.years[0] === currentYear){
-        historyArray.push({change: 'joined', joined: currentYear, conference: conference.abbreviation, conferenceLogo: conference.logo, ...school})
+        historyArray.push({change: 'joined', joined: currentYear, conference: conference.abbreviation, conferenceLogo: conference.logo, mapColor: conference.mapColor, ...school})
       }
       if(school.left){
         school.left.forEach((left) => {
           if(left.year === currentYear){
             conferenceData.forEach((item) => {
               if(left.newConference === item.abbreviation){
-                historyArray.push({change: 'left', left: left.year, newConferenceLogo: item.logo,  oldConferenceLogo: conference.logo, conference: conference.abbreviation, ...school})
+                historyArray.push({change: 'left', left: left.year, newConferenceLogo: item.logo, newConferenceAbrr: item.abbreviation, newConferenceAbbr: item.abbreviation, oldConferenceLogo: conference.logo, oldConferenceAbrr: conference.abbreviation, oldConferenceColor: conference.mapColor, conference: conference.abbreviation, ...school})
               }
             })
           }
