@@ -23,7 +23,7 @@ const iOSBoxShadow =
     { value: 1995, label: '1995' },
     { value: 2005, label: '2005' },
     { value: 2015, label: '2015' },
-    { value: 2024, label: '2024' }
+    { value: 2025, label: '2025' }
   ];
 
 
@@ -148,7 +148,7 @@ export default function YearSlider({currentYear, setCurrentYear}) {
   };
   const handleNextYear = () => {
     const newYear = currentYear + 1;
-    if (newYear <= 2024) {
+    if (newYear <= 2025) {
       setCurrentYear(newYear);
     }
   };
@@ -163,7 +163,7 @@ export default function YearSlider({currentYear, setCurrentYear}) {
         value={currentYear}
         valueLabelDisplay="auto"
         min={1891}
-        max={2024}
+        max={2025}
         marks={marks}
         onChange={handleSliderChange}
       />

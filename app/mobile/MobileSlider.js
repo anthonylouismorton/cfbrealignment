@@ -106,7 +106,7 @@ export default function YearSlider({currentYear, setCurrentYear}) {
         value={currentYear}
         valueLabelDisplay="auto"
         min={1891}
-        max={2024}
+        max={2025}
         onChange={handleSliderChange}
       />
     </Box>
