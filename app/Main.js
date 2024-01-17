@@ -11,6 +11,7 @@ import Welcome from './Welcome';
 import Map from './Map';
 import AutoPlay from './AutoPlay';
 import MobileOptions from './mobile/MobileOptions'
+import PlotlyMap from './PlotlyMap'
 
 function Main() {
   const [currentYear, setCurrentYear] = useState(1891);
@@ -64,7 +65,8 @@ function Main() {
   }, [currentYear, options, isYearVisible, conList]);
   return (
     <div>
-      <div className="flex flex-col justify-center items-center">
+      <PlotlyMap/>
+      {/* <div className="flex flex-col justify-center items-center">
         {options.showWelcome &&
           <Welcome options={options} setOptions={setOptions}/>
         }
@@ -132,7 +134,7 @@ function Main() {
             <History changesList={changesList}/>
           }
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
