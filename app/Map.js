@@ -37,7 +37,7 @@ export default function Map({
       .attr('style', 'width: 100%; height: auto;')
       .attr('viewBox', `0 0 ${width} ${height}`);
 
-    const content = svg.append('g'); // Create a group 'g' element for content
+    const content = svg.append('g');
     gRef.current = content;
 
     if (isYearVisible || options.hideHeader) {
@@ -66,6 +66,7 @@ export default function Map({
       options,
       conList
     );
+    
     setCurrentConferences(getCurrentConferences);
     setSchoolStates(getSchoolStates);
 
