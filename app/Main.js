@@ -63,10 +63,10 @@ function Main() {
     };
 
   }, [currentYear, options, isYearVisible, conList]);
+  console.log(currentYear)
   return (
     <div>
-      <PlotlyMap/>
-      {/* <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center">
         {options.showWelcome &&
           <Welcome options={options} setOptions={setOptions}/>
         }
@@ -88,7 +88,23 @@ function Main() {
             }
           </div>
           <div className="w-full md:w-[80%] lg:w-[75%] xl:w-[65%] flex flex-col items-center">
-            <Map
+            {/* <Map
+              mapdata={mapdata}
+              currentYear={currentYear}
+              setCurrentYear={setCurrentYear}
+              options={options}
+              isYearVisible={isYearVisible}
+              changesList={changesList}
+              setChangesList={setChangesList}
+              schoolStates={schoolStates}
+              setSchoolStates={setSchoolStates}
+              currentConferences={currentConferences}
+              setCurrentConferences={setCurrentConferences}
+              setActiveConferences={setActiveConferences}
+              activeConferences={activeConferences}
+              conList={conList}
+            /> */}
+            <PlotlyMap
               mapdata={mapdata}
               currentYear={currentYear}
               setCurrentYear={setCurrentYear}
@@ -134,7 +150,7 @@ function Main() {
             <History changesList={changesList}/>
           }
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

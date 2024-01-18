@@ -1,53 +1,75 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
+import MapData from './data/plotly.json';
+import conferenceData from './data/conferenceData.json';
+import { getConferences } from './functions/plotlyGetConf';
+import { mapFill } from './functions/mapFill';
+import { schoolLocations } from './functions/plotlyschoolLoc';
 
-const PlotlyMap = () => {
-  // Your plotly map configuration goes here
-  const data = [
-    // {
-    //   type:'scattergeo',
-    //   locationmode: 'USA-states',
-    //   lon: [10, 20, 30],
-    //   lat: [20, 30, 40],
-    //   text: ['A', 'B', 'C'],
-    //   mode: 'markers',
-    // },
-    {type: "scattermapbox", lon: [-86], lat: [34], marker: {size: 20, color: 'purple'}},
-    {
-      type: "choroplethmapbox",locations: ["AL"], z: [10], coloraxis: "coloraxis", geojson: {type: "Feature", id: "AL", geometry: {type: "Polygon", coordinates: [[
-      [-86, 35], [-85, 34], [-85, 32], [-85, 32], [-85, 32], [-85, 32], [-85, 31],
-      [-86, 31], [-87, 31], [-87, 31], [-88, 30], [-88, 30], [-88, 30], [-88, 30],
-      [-88, 34], [-88, 35]]]
-     }}}
-  ];
+const PlotlyMap = ({ mapdata, currentYear, options, isYearVisible, setChangesList, setSchoolStates, setCurrentConferences, setActiveConferences, conList }) => {
+  const [data, setdata] = useState([]);
+  const [layout, setlayout] = useState([]);
+  const [config, setconfig] = useState([]);
 
-  const layout = {
-    showlegend: false,
-    geo: {
-      scope: 'usa',
-      projection: {
-          type: 'albers usa'
+  const { getSchoolStates, getCurrentConferences, conferenceChanges } = getConferences(
+    conferenceData,
+    currentYear,
+    options,
+    conList
+  );
+
+  useEffect(() => {
+    let { schoolLat, schoolLon, conColor } = schoolLocations(
+      getCurrentConferences,
+      currentYear,
+    );
+  
+    console.log(conColor)
+    setdata([
+      {
+        type: 'scattergeo',
+        locationmode: 'USA-states',
+        lon: schoolLon,
+        lat: schoolLat,
+        mode: 'markers',
+        marker: {
+          color: conColor,
+          size: 8,
+          opacity: 0.8,
+          reversescale: true,
+          autocolorscale: false,
+          symbol: 'square',
+          line: {
+            width: 1
+          },
+        },
       },
-      showland: true,
-      landcolor: 'rgb(250,250,250)',
-      subunitcolor: 'rgb(217,217,217)',
-      countrycolor: 'rgb(217,217,217)',
-      countrywidth: 0.5,
-      subunitwidth: 0.5
-    },
-    locations: {
-      'California': 'red', // Set California to red
-      // Add more entries for other states if needed
-    }
-  }
+    ]);
 
-  const config = {
-    displaylogo: false,
-    modeBarButtonsToRemove: ['zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d',
-    'zoom3d', 'pan3d', 'orbitRotation', 'tableRotation', 'handleDrag3d', 'resetCameraDefault3d', 'resetCameraLastSave3d', 'hoverClosest3d','hoverClosestCartesian', 'hoverCompareCartesian','zoomInGeo', 'zoomOutGeo', 'resetGeo', 'hoverClosestGeo',
-    'hoverClosestGl2d', 'hoverClosestPie', 'toggleHover', 'resetViews', 'toImage', 'sendDataToCloud', 'toggleSpikelines', 'resetViewMapbox']
-  }
+    setlayout({
+      showlegend: false,
+      geo: {
+        scope: 'usa',
+        projection: {
+            type: 'albers usa'
+        },
+        showland: true,
+        landcolor: 'rgb(250,250,250)',
+        subunitcolor: 'rgb(217,217,217)',
+        countrycolor: 'rgb(217,217,217)',
+        countrywidth: 1,
+        subunitwidth: 1
+      },
+    })
 
+    setconfig({
+      displaylogo: false,
+      modeBarButtonsToRemove: ['zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'orbitRotation', 'tableRotation','hoverClosestCartesian', 'hoverCompareCartesian','zoomInGeo', 'zoomOutGeo', 'resetGeo', 'hoverClosestGeo',
+      'hoverClosestGl2d', 'hoverClosestPie', 'toggleHover', 'toImage', 'toggleSpikelines']
+    })
+
+  }, [mapdata, currentYear, options, isYearVisible, conList])
+  console.log(data)
   return <Plot data={data} layout={layout} config={config} />;
 };
 
