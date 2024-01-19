@@ -10,8 +10,8 @@ import MobileSlider from './mobile/MobileSlider';
 import Welcome from './Welcome';
 import Map from './Map';
 import AutoPlay from './AutoPlay';
-import MobileOptions from './mobile/MobileOptions'
-import PlotlyMap from './PlotlyMap'
+import MobileOptions from './mobile/MobileOptions';
+import ReactMap from './ReactMap';
 
 function Main() {
   const [currentYear, setCurrentYear] = useState(1891);
@@ -63,7 +63,6 @@ function Main() {
     };
 
   }, [currentYear, options, isYearVisible, conList]);
-  console.log(currentYear)
   return (
     <div>
       <div className="flex flex-col justify-center items-center">
@@ -88,38 +87,7 @@ function Main() {
             }
           </div>
           <div className="w-full md:w-[80%] lg:w-[75%] xl:w-[65%] flex flex-col items-center">
-            {/* <Map
-              mapdata={mapdata}
-              currentYear={currentYear}
-              setCurrentYear={setCurrentYear}
-              options={options}
-              isYearVisible={isYearVisible}
-              changesList={changesList}
-              setChangesList={setChangesList}
-              schoolStates={schoolStates}
-              setSchoolStates={setSchoolStates}
-              currentConferences={currentConferences}
-              setCurrentConferences={setCurrentConferences}
-              setActiveConferences={setActiveConferences}
-              activeConferences={activeConferences}
-              conList={conList}
-            /> */}
-            <PlotlyMap
-              mapdata={mapdata}
-              currentYear={currentYear}
-              setCurrentYear={setCurrentYear}
-              options={options}
-              isYearVisible={isYearVisible}
-              changesList={changesList}
-              setChangesList={setChangesList}
-              schoolStates={schoolStates}
-              setSchoolStates={setSchoolStates}
-              currentConferences={currentConferences}
-              setCurrentConferences={setCurrentConferences}
-              setActiveConferences={setActiveConferences}
-              activeConferences={activeConferences}
-              conList={conList}
-            />
+            <ReactMap/>
             {isYearVisible &&
             <div className='flex w-full justify-center items-center text-center'>
               <MobileSlider currentYear={currentYear} setCurrentYear={setCurrentYear} />
