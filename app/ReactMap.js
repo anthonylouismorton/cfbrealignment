@@ -40,11 +40,11 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
       getCurrentConferences,
       currentYear,
     );
-    
+
     setschools(schoolList)
     
   }, [mapdata, currentYear, options, isYearVisible, conList])
-
+  console.log(options)
   return (
     <div className="w-[86%]">
     <ComposableMap projection="geoAlbersUsa">
@@ -69,16 +69,22 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
           )}
         </Geographies>
         {schools && schools.map(school => (
-        <Marker key={school.name} coordinates={school.coordinates}>
-          <circle r={3} fill={school.color} />
-          {/* <text
-            textAnchor="middle"
-            y={markerOffset}
-            style={{ fontFamily: "system-ui", fill: "#5D5A6D" }}
-          >
-            {name}
-          </text> */}
-        </Marker>
+          <Marker key={school.name} coordinates={school.coordinates}>
+            {options.showLocation &&
+              <circle r={3} fill={school.color} />
+            }
+            {options.showLogos &&
+             <image
+                  href={school.logo}
+                  width="20"
+                  height="20"
+                  // Additional attributes for positioning and styling
+                  x="-10"
+                  y="-10"
+                  // You can add other attributes like opacity, rotation, etc.
+                />
+            }
+          </Marker>
       ))}
       </ZoomableGroup>
     </ComposableMap>

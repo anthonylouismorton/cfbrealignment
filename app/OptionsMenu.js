@@ -50,7 +50,7 @@ export default function OptionsMenu({ options, setOptions, open, setOpen, conLis
               <input
                 type="checkbox"
                 checked={options.showLocation}
-                value="schowLocation"
+                value="showLocation"
                 onChange={handleOptions}
               />
               <label className='pl-2 text-[16px] text-white font-normal'>School Locations</label>
