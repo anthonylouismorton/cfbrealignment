@@ -2,11 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
 import MapData from './data/plotly.json';
 import conferenceData from './data/conferenceData.json';
-import { getConferences } from './functions/plotlyGetConf';
-import { mapFill } from './functions/mapFill';
-import { schoolLocations } from './functions/plotlyschoolLoc';
-import { Fullscreen } from '@mui/icons-material';
-import "../styles.css";
+import { getConferences } from '../functions/ReactGetConf';
+import { mapFill } from './mapFill';
+import { schoolLocations } from '../functions/ReactMapSchoolLoc';
 
 const PlotlyMap = ({ mapdata, currentYear, options, isYearVisible, setChangesList, setSchoolStates, setCurrentConferences, setActiveConferences, conList }) => {
   const [data, setdata] = useState([]);
@@ -26,7 +24,6 @@ const PlotlyMap = ({ mapdata, currentYear, options, isYearVisible, setChangesLis
       currentYear,
     );
   
-    console.log(conColor)
     setdata([
       {
         type: 'scattergeo',

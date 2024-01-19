@@ -17,7 +17,10 @@ export default function OptionsMenu({ options, setOptions, open, setOpen, conLis
         });
         return updatedConList;
       });
-    }    
+    }  
+    // if (value === "showLocation") {
+
+    // }     
     
     setOptions({
       ...options,
@@ -46,11 +49,20 @@ export default function OptionsMenu({ options, setOptions, open, setOpen, conLis
             <div className='flex items-center w-full'>
               <input
                 type="checkbox"
-                checked={options.hideLogos}
-                value="hideLogos"
+                checked={options.showLocation}
+                value="schowLocation"
                 onChange={handleOptions}
               />
-              <label className='pl-2 text-[16px] text-white font-normal'>Logos off</label>
+              <label className='pl-2 text-[16px] text-white font-normal'>School Locations</label>
+            </div>
+            <div className='flex items-center w-full'>
+              <input
+                type="checkbox"
+                checked={options.showLogos}
+                value="showLogos"
+                onChange={handleOptions}
+              />
+              <label className='pl-2 text-[16px] text-white font-normal'>Show Logos</label>
             </div>
             <div className='flex items-center w-full'>
               <input

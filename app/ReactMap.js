@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
+import conferenceData from './data/conferenceData.json';
+import { getConferences } from './functions/ReactGetConf';
+import { mapFill } from './functions/reactMapFill';
+import { schoolLocations } from './functions/ReactMapSchoolLoc';
 import {
   ComposableMap,
   Geographies,
@@ -9,21 +13,38 @@ import {
 } from "react-simple-maps";
 import MapData from './data/reactMapData.json'
 
-const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
 
-// const offsets = {
-//   VT: [50, -8],
-//   NH: [34, 2],
-//   MA: [30, -1],
-//   RI: [28, 2],
-//   CT: [35, 10],
-//   NJ: [34, 1],
-//   DE: [33, 0],
-//   MD: [47, 10],
-//   DC: [49, 21]
-// };
+const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList, setSchoolStates, setCurrentConferences, setActiveConferences, conList }) => {
+  const [schools, setschools] = useState([]);
 
-const MapChart = () => {
+  useEffect(() => {
+    const { getSchoolStates, getCurrentConferences, conferenceChanges } = getConferences(
+      conferenceData,
+      currentYear,
+      options,
+      conList
+    );
+
+    setCurrentConferences(getCurrentConferences);
+    setSchoolStates(getSchoolStates);
+
+    const getLegendConferences = mapFill(
+      getSchoolStates,
+      currentYear,
+      options.schoolName
+    );
+    setActiveConferences(getLegendConferences);
+    setChangesList(conferenceChanges);
+
+    let schoolList = schoolLocations(
+      getCurrentConferences,
+      currentYear,
+    );
+    
+    setschools(schoolList)
+    
+  }, [mapdata, currentYear, options, isYearVisible, conList])
+
   return (
     <div className="w-[86%]">
     <ComposableMap projection="geoAlbersUsa">
@@ -44,10 +65,21 @@ const MapChart = () => {
                   }}
                 />
               ))}
-            
             </>
           )}
         </Geographies>
+        {schools && schools.map(school => (
+        <Marker key={school.name} coordinates={school.coordinates}>
+          <circle r={3} fill={school.color} />
+          {/* <text
+            textAnchor="middle"
+            y={markerOffset}
+            style={{ fontFamily: "system-ui", fill: "#5D5A6D" }}
+          >
+            {name}
+          </text> */}
+        </Marker>
+      ))}
       </ZoomableGroup>
     </ComposableMap>
     </div>

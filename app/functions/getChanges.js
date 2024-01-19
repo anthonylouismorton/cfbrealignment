@@ -4,7 +4,6 @@ import cfbHistory from '../data/cfbHistory.json'
 export function getChanges(currentConferences, currentYear, historyArray) {
   currentConferences.forEach((conference) => {
     if(conference.founded === currentYear){
-      console.log(conference)
       historyArray.push({change: 'founded', ...conference})
     }
     if(conference.disbanded === currentYear){
