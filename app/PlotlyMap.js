@@ -5,11 +5,13 @@ import conferenceData from './data/conferenceData.json';
 import { getConferences } from './functions/plotlyGetConf';
 import { mapFill } from './functions/mapFill';
 import { schoolLocations } from './functions/plotlyschoolLoc';
+import { Fullscreen } from '@mui/icons-material';
+import "../styles.css";
 
 const PlotlyMap = ({ mapdata, currentYear, options, isYearVisible, setChangesList, setSchoolStates, setCurrentConferences, setActiveConferences, conList }) => {
   const [data, setdata] = useState([]);
-  const [layout, setlayout] = useState([]);
-  const [config, setconfig] = useState([]);
+  const [layout, setlayout] = useState({});
+  const [config, setconfig] = useState({});
 
   const { getSchoolStates, getCurrentConferences, conferenceChanges } = getConferences(
     conferenceData,
@@ -53,13 +55,12 @@ const PlotlyMap = ({ mapdata, currentYear, options, isYearVisible, setChangesLis
         projection: {
             type: 'albers usa'
         },
-        showland: true,
-        landcolor: 'rgb(250,250,250)',
+        bgcolor: "black",
         subunitcolor: 'rgb(217,217,217)',
         countrycolor: 'rgb(217,217,217)',
-        countrywidth: 1,
-        subunitwidth: 1
       },
+      paper_bgcolor:'rgba(0,0,0,0)',
+      margin: { l: 0, r: 0, t: 0, b: 0 },
     })
 
     setconfig({
@@ -70,7 +71,7 @@ const PlotlyMap = ({ mapdata, currentYear, options, isYearVisible, setChangesLis
 
   }, [mapdata, currentYear, options, isYearVisible, conList])
   console.log(data)
-  return <Plot data={data} layout={layout} config={config} />;
+  return <Plot className="w-full" data={data} layout={layout} config={config} />;
 };
 
 export default PlotlyMap;
