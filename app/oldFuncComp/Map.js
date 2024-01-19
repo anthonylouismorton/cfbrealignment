@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
-import conferenceData from './data/conferenceData.json';
-import { getConferences } from './functions/getConferences';
-import { mapFill } from './functions/mapFill';
-import { schoolLocations } from './functions/schoolLocations';
-import AutoPlay from './AutoPlay';
+import conferenceData from '../data/conferenceData.json';
+import { getConferences } from '../functions/getConferences';
+import { mapFill } from './mapFill';
+import { schoolLocations } from '../functions/schoolLocations';
+import AutoPlay from '../AutoPlay';
 import ReactDOMServer from 'react-dom/server';
 
 export default function Map({
@@ -80,7 +80,7 @@ export default function Map({
     setActiveConferences(getLegendConferences);
     setChangesList(conferenceChanges);
 
-    if (!options.hideLogos) {
+    if (options.showLogos) {
       schoolLocations(
         content,
         projection,

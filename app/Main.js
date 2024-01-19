@@ -8,7 +8,7 @@ import Header from './Header';
 import Options from './Options';
 import MobileSlider from './mobile/MobileSlider';
 import Welcome from './Welcome';
-import Map from './Map';
+import Map from './oldFuncComp/Map';
 import AutoPlay from './AutoPlay';
 import MobileOptions from './mobile/MobileOptions';
 import ReactMap from './ReactMap';
@@ -17,22 +17,22 @@ function Main() {
   const [currentYear, setCurrentYear] = useState(1891);
   const [activeConferences, setActiveConferences] = useState(null);
   const [changesList, setChangesList] = useState([]);
-  const [options, setOptions] = useState({hideLogos: false, majorConferences: false, aqConferences: false, powerConferences: false, hideHistory: false, hideLegend: false, hideHeader: false, hideSettings: false, hideYear: false, showWelcome: true, smallLogos: false, conFilter: false, schoolName: true});
+  const [options, setOptions] = useState({showLogos: false, majorConferences: false, aqConferences: false, powerConferences: false, hideHistory: false, hideLegend: false, hideHeader: false, hideSettings: false, hideYear: false, showWelcome: true, smallLogos: false, conFilter: false, showLocation: true});
   const [conList, setConList] = useState({'SEC':false,'Pac-12':false,'Big 12':false,'ACC':false,'Big Ten':false,'SOCON':false,'Big 8':false,'Border':false,'SWC':false,'C-USA':false,'WAC':false,'MVC':false,'Skyline':false,'WIUFA':false,'SIAA':false,'Big East':false,'BWC':false,'MWC':false,'RMAC':false,'Ivy':false,'Sun Belt':false,'AAC':false,'MAC':false,'Southland':false})
   const [currentConferences, setCurrentConferences] = useState(null);
   const [schoolStates, setSchoolStates] = useState(null);
   const [isYearVisible,setIsYearVisible] = useState(false);
   const minWidth = (768)
 
-  useEffect(() => {
-    console.log(localStorage.savedConferences)
-    if(localStorage.savedConferences){
-      setConList(JSON.parse(localStorage.getItem('savedConferences')));
-    }
-    if(localStorage.savedOptions){
-      setOptions(JSON.parse(localStorage.getItem('savedOptions')));
-    }
-  },[])
+  // useEffect(() => {
+  //   // console.log(localStorage.savedConferences)
+  //   if(localStorage.savedConferences){
+  //     setConList(JSON.parse(localStorage.getItem('savedConferences')));
+  //   }
+  //   if(localStorage.savedOptions){
+  //     setOptions(JSON.parse(localStorage.getItem('savedOptions')));
+  //   }
+  // },[])
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -87,7 +87,22 @@ function Main() {
             }
           </div>
           <div className="w-full md:w-[80%] lg:w-[75%] xl:w-[65%] flex flex-col items-center">
-            <ReactMap/>
+            <ReactMap
+              mapdata={mapdata}
+              currentYear={currentYear}
+              setCurrentYear={setCurrentYear}
+              options={options}
+              isYearVisible={isYearVisible}
+              changesList={changesList}
+              setChangesList={setChangesList}
+              schoolStates={schoolStates}
+              setSchoolStates={setSchoolStates}
+              currentConferences={currentConferences}
+              setCurrentConferences={setCurrentConferences}
+              setActiveConferences={setActiveConferences}
+              activeConferences={activeConferences}
+              conList={conList}
+            />
             {isYearVisible &&
             <div className='flex w-full justify-center items-center text-center'>
               <MobileSlider currentYear={currentYear} setCurrentYear={setCurrentYear} />
