@@ -18,14 +18,33 @@ export default function OptionsMenu({ options, setOptions, open, setOpen, conLis
         return updatedConList;
       });
     }  
-    // if (value === "showLocation") {
-
-    // }     
-    
-    setOptions({
-      ...options,
-      [value]: checked,
-    });
+    if (value === "showLocation" && checked === false) {
+      setOptions({
+        ...options,
+        showLocation: checked,
+        showLogos: checked,
+      });
+    }
+    if (value === "smallLogos" && checked === true) {
+      setOptions({
+        ...options,
+        showLogos: checked,
+        [value]: checked
+      });
+    }  
+    if (value === "showLogos" && checked === false) {
+      setOptions({
+        ...options,
+        smallLogos: checked,
+        [value]: checked
+      });
+    }  
+    else{
+      setOptions({
+        ...options,
+        [value]: checked,
+      });
+    }
   };
   
 

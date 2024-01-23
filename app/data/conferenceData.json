@@ -251,16 +251,6 @@
         "left": [{"year": 1921, "newConference": "SOCON"}]
       },
       {
-        "school": "University of South Carolina",
-        "stateId": "45",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/South_Carolina_Gamecocks_logo.svg/933px-South_Carolina_Gamecocks_logo.svg.png",
-        "nickName": "SC",
-        "division": "East",
-        "years": [1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],
-        "lon": -81.0131,
-        "lat": 33.5951
-      },
-      {
         "school": "University of Tennessee",
         "stateId": "47",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Tennessee_Volunteers_logo.svg/1200px-Tennessee_Volunteers_logo.svg.png",
@@ -271,16 +261,6 @@
         "years": [1896,1897,1898,1899,1902,1903,1904,1905,1906,1907,1908,1909,1910,1911,1912,1913,1914,1915,1916,1919,1920],
         "left": [{"year": 1917, "newConference": "FBS Independent"}, {"year": 1921, "newConference": "SOCON"}],
         "rejoined": [{"year": 1919, "oldConference": "FBS Independent"}]
-      },
-      {
-        "school": "Texas A&M",
-        "stateId": "48",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Texas_A%26M_University_logo.svg/225px-Texas_A%26M_University_logo.svg.png",
-        "nickName": "TAMU",
-        "division": "West",
-        "years": [2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],
-        "lon": -96.2037,
-        "lat": 30.3637
       },
       {
         "school": "Tulane University",
@@ -303,16 +283,6 @@
         "lat": 36.148649,
         "years": [1895,1896,1897,1898,1899,1900,1901,1902,1903,1904,1905,1906,1907,1908,1909,1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921],
         "left": [{"year": 1922, "newConference": "SOCON"}]
-      },
-      {
-        "school": "University of Texas at Austin",
-        "stateId": "48",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Texas_Longhorns_logo.svg/300px-Texas_Longhorns_logo.svg.png",
-        "nickName": "UTAUS",
-        "division": null,
-        "years": [2024,2025],
-        "lon": -97.735,
-        "lat": 30.285
       }
     ]
   },

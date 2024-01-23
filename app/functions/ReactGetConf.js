@@ -2,8 +2,10 @@ import { getChanges } from "./getChanges";
 
 export function getConferences(conferenceData, year, options, conList) {
   const { majorConferences, powerConferences, aqConferences} = options
-  var getCurrentConferences = []
-  var historyArray = []
+  var getCurrentConferences = [];
+  var historyArray = [];
+  var getLegendConferences = [];
+  var getMapFill = [];
 
   conferenceData.forEach((conference) => {
     
@@ -62,19 +64,49 @@ export function getConferences(conferenceData, year, options, conList) {
     }
   });
 
-  var getSchoolStates = []
+  var getSchools = []
 
   //need the states for schools playing during the current year for filling in the states on the map to represent active conferences
   getCurrentConferences.forEach((conference) => {
-    conference.schools.forEach((school) => {
-      if(!getSchoolStates.includes(school.stateId) && (school.years.includes(year))){
-        getSchoolStates.push({state: school.stateId, ...conference})
-    }
+      getLegendConferences.push({
+        abbreviation: conference.abbreviation,
+        conference: conference.conference,
+        headquarters: conference.headquarters,
+        state: conference.state,
+        schools: conference.schools,
+        mapColor: conference.mapColor,
+        state: conference.state
   })
+    conference.schools.forEach((school) => {
+      if(school.years.includes(year)){
+        getSchools.push({color: conference.mapColor, conference: conference.abbreviation, coordinates: [ school.lon, school.lat], name: school.school, logo: school.logo, state: school.stateId})
+      }
+    });
+  });
+
+  getSchools.forEach((school) => {
+    const { state, conference, color } = school;
+    
+    const existingStateIndex = getMapFill.findIndex((currentState) => currentState.state === state);
+
+    if (existingStateIndex === -1) {
+      getMapFill.push({
+        state: state,
+        conferences: [ { conference: conference, color: color } ],
+      });
+    } else {
+      const existingConferenceIndex = getMapFill[existingStateIndex].conferences.findIndex((conf) => conf.conference === conference);
+
+      if (existingConferenceIndex === -1) {
+        getMapFill[existingStateIndex].conferences.push({ conference: conference, color: color });
+      } else {
+        getMapFill[existingStateIndex].conferences[existingConferenceIndex].color = color;
+      }
+    }
   });
 
   //Changes for the history component
   const conferenceChanges = getChanges(getCurrentConferences, year, historyArray)
 
-  return { getSchoolStates, getCurrentConferences, conferenceChanges }
+  return { getSchools, getCurrentConferences, conferenceChanges, getLegendConferences, getMapFill }
 }
