@@ -12,15 +12,16 @@ import {
 } from "react-simple-maps";
 import MapData from './data/reactMapData.json'
 import '../styles.css'
-
+import * as d3 from 'd3';
 
 const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList, setSchoolStates, setCurrentConferences, setActiveConferences, conList }) => {
   const [schools, setschools] = useState([]);
   const [logosize, setlogosize] = useState(20);
   const [logooffset, setlogooffset] = useState(-10);
-  const [center, setCenter] = useState([0,0]);
   const [position, setPosition] = useState({ coordinates: [-99, 38.758362677392945], zoom: 0.93});
-  const [mapfill, setmapfill] = useState([])
+  const [mapfill, setmapfill] = useState([]);
+  const [statetooltip, setstatetooltip] = useState({ visible: false, content: '' });
+  const [hoveredschool, sethoveredschool] = useState(null);
 
   useEffect(() => {
 
@@ -82,7 +83,7 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
     setSchoolStates(getSchools);
     setActiveConferences(getLegendConferences);
     setChangesList(conferenceChanges);
-    setmapfill(getMapFill);
+    setmapfill(getMapFill)
 
     // let schoolList = schoolLocations(
     //   getCurrentConferences,
@@ -101,6 +102,7 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
   const handleReset = () => {
     setPosition({ coordinates: [-99, 38.758362677392945], zoom: 0.93 })
   };
+
   console.log(mapfill)
   return (
     <div className="map-container">
@@ -114,12 +116,24 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
         {({ geographies }) =>
           geographies.map((geo) => {
             const stateInfo = mapfill.find((state) => state.state === geo.id);
-            const stateColor = stateInfo
-              ? stateInfo.conferences.length === 1
-                ? stateInfo.conferences[0].color
-                : `linear-gradient(to right, ${stateInfo.conferences.map((conf) => conf.color).join(', ')})`
-              : '#DDD';
+            let stateColor = '#DDD';
 
+            if (!options.showLocation && stateInfo) {
+              stateColor =
+                stateInfo.conferences.length === 1
+                  ? stateInfo.conferences[0].color
+                  : stateInfo.conferences.length === 2
+                  ? d3.scaleLinear().domain([0, 1]).range([stateInfo.conferences[0].color, stateInfo.conferences[1].color])(0.5)
+                  : stateInfo.conferences.length === 3
+                  ? d3.scaleLinear().domain([0, 1, 2]).range([stateInfo.conferences[0].color, stateInfo.conferences[1].color, stateInfo.conferences[2].color])(0.33)
+                  : stateInfo.conferences.length === 4
+                  ? d3.scaleLinear().domain([0, 1, 2, 3]).range([stateInfo.conferences[0].color, stateInfo.conferences[1].color, stateInfo.conferences[2].color, stateInfo.conferences[3].color])(0.25)
+                  : stateInfo.conferences.length === 5
+                  ? d3.scaleLinear().domain([0, 1, 2, 3, 4]).range([stateInfo.conferences[0].color, stateInfo.conferences[1].color, stateInfo.conferences[2].color, stateInfo.conferences[3].color, stateInfo.conferences[4].color])(0.2)
+                  : stateInfo.conferences.length === 6
+                  ? d3.scaleLinear().domain([0, 1, 2, 3, 4, 5]).range([stateInfo.conferences[0].color, stateInfo.conferences[1].color, stateInfo.conferences[2].color, stateInfo.conferences[3].color, stateInfo.conferences[4].color, stateInfo.conferences[5].color])(0.5)
+                  : '#DDD';
+            }
             return (
               <Geography
                 key={geo.rsmKey}
@@ -127,9 +141,15 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
                 style={{
                   default: {
                     fill: stateColor,
+                    transition: 'fill 0.3s ease-in-out',
+                    outline: "none"
                   },
-                  hover: { outline: "none" },
-                  pressed: { outline: "none" },
+                  hover: {
+                    fill: stateColor,
+                    ...(stateColor !== '#DDD' && { opacity: 0.7 }),
+                    outline: "none",
+                  },
+                  pressed: { outline: "none", fill: stateColor },
                 }}
               />
             );
@@ -137,9 +157,24 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
         }
         </Geographies>
         {schools && schools.map(school => (
-          <Marker key={school.name} coordinates={school.coordinates}>
+          <Marker key={school.name} coordinates={school.coordinates} onMouseEnter={() => sethoveredschool(school)} onMouseLeave={() => sethoveredschool(null)}>
             {options.showLocation && options.showLogos === false &&
+            <>
               <circle r={3} fill={school.color} />
+               {hoveredschool === school && (
+                  <foreignObject x={10} y={10} width="200" height="50">
+                    <div
+                      style={{
+                        background: "black",
+                        zIndex: 1000,
+                        display: "inline-block", // Ensures the div size is based on content
+                      }}
+                    >
+                      <p style={{ fontFamily: "system-ui", fontSize: "12px" ,color: "#DDD", margin: 0, padding: 5 }}>{hoveredschool.name}</p>
+                    </div>
+                  </foreignObject>
+                )}
+            </>
             }
             {options.showLogos &&
              <image
@@ -154,7 +189,7 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
       ))}
       </ZoomableGroup>
     </ComposableMap>
-    <button onClick={handleReset} className="className='bg-white text-black text-[16px] rounded p-2 font-bold' reset-button">Reset</button>
+    <button onClick={handleReset} className="className='bg-white text-black text-[14px] rounded font-bold' reset-button">Reset</button>
     </div>
   );
 };
