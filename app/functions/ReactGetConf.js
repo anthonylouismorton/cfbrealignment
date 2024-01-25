@@ -79,7 +79,7 @@ export function getConferences(conferenceData, year, options, conList) {
   })
     conference.schools.forEach((school) => {
       if(school.years.includes(year)){
-        getSchools.push({color: conference.mapColor, conference: conference.abbreviation, coordinates: [ school.lon, school.lat], name: school.school, logo: school.logo, state: school.stateId})
+        getSchools.push({color: conference.mapColor, conference: conference.abbreviation, coordinates: [ school.lon, school.lat], name: school.school, logo: school.logo, state: school.stateId, schoolInfo: {...school}})
       }
     });
   });
@@ -89,15 +89,16 @@ export function getConferences(conferenceData, year, options, conList) {
     
     const existingStateIndex = getMapFill.findIndex((currentState) => currentState.state === state);
 
-    if (existingStateIndex === -1) {
+    if(existingStateIndex === -1){
       getMapFill.push({
         state: state,
         conferences: [ { conference: conference, color: color } ],
       });
-    } else {
+    } 
+    else{
       const existingConferenceIndex = getMapFill[existingStateIndex].conferences.findIndex((conf) => conf.conference === conference);
 
-      if (existingConferenceIndex === -1) {
+      if(existingConferenceIndex === -1){
         getMapFill[existingStateIndex].conferences.push({ conference: conference, color: color });
       } else {
         getMapFill[existingStateIndex].conferences[existingConferenceIndex].color = color;

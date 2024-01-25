@@ -84,26 +84,18 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
     setActiveConferences(getLegendConferences);
     setChangesList(conferenceChanges);
     setmapfill(getMapFill)
-
-    // let schoolList = schoolLocations(
-    //   getCurrentConferences,
-    //   currentYear,
-    // );
-
     setschools(getSchools)
     
   }, [mapdata, currentYear, options, isYearVisible, conList, position.zoom])
 
   function handleMoveEnd(position) {
-    console.log(position)
     setPosition(position);
   }
 
   const handleReset = () => {
     setPosition({ coordinates: [-99, 38.758362677392945], zoom: 0.93 })
   };
-
-  console.log(mapfill)
+  console.log(schools)
   return (
     <div className="map-container">
     <ComposableMap projection="geoAlbersUsa">
@@ -117,7 +109,6 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
           geographies.map((geo) => {
             const stateInfo = mapfill.find((state) => state.state === geo.id);
             let stateColor = '#DDD';
-
             if (!options.showLocation && stateInfo) {
               stateColor =
                 stateInfo.conferences.length === 1
@@ -170,7 +161,12 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
                         display: "inline-block", // Ensures the div size is based on content
                       }}
                     >
-                      <p style={{ fontFamily: "system-ui", fontSize: "12px" ,color: "#DDD", margin: 0, padding: 5 }}>{hoveredschool.name}</p>
+                      <p style={{ fontFamily: "system-ui", fontSize: "12px" ,color: "#DDD", margin: 0 }}>
+                        {hoveredschool.name}
+                      </p>
+                      <p style={{ fontFamily: "system-ui", fontSize: "12px" ,color: "#DDD", margin: 0 }}>
+                        {hoveredschool.schoolInfo.rejoined ? `Member since ${hoveredschool.schoolInfo.rejoined[0].year}` :  `Member since ${hoveredschool.schoolInfo.years[0]}`}
+                      </p>
                     </div>
                   </foreignObject>
                 )}
