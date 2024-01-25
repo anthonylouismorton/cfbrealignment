@@ -54,7 +54,6 @@ function Main() {
     document.addEventListener('keydown', handleKeyDown);
     const saveToLocalStorage = () => {
       localStorage.setItem("savedOptions", JSON.stringify(options))
-      console.log(conList)
       localStorage.setItem("savedConferences", JSON.stringify(conList))
     }
     saveToLocalStorage();
