@@ -95,7 +95,7 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
   const handleReset = () => {
     setPosition({ coordinates: [-99, 38.758362677392945], zoom: 0.93 })
   };
-  console.log(schools)
+  console.log(hoveredschool)
   return (
     <div className="map-container">
     <ComposableMap projection="geoAlbersUsa">
@@ -150,39 +150,40 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
         {schools && schools.map(school => (
           <Marker key={school.name} coordinates={school.coordinates} onMouseEnter={() => sethoveredschool(school)} onMouseLeave={() => sethoveredschool(null)}>
             {options.showLocation && options.showLogos === false &&
-            <>
               <circle r={3} fill={school.color} />
-               {hoveredschool === school && (
-                  <foreignObject x={10} y={10} width="200" height="50">
-                    <div
-                      style={{
-                        background: "black",
-                        zIndex: 1000,
-                        display: "inline-block", // Ensures the div size is based on content
-                      }}
-                    >
-                      <p style={{ fontFamily: "system-ui", fontSize: "12px" ,color: "#DDD", margin: 0 }}>
-                        {hoveredschool.name}
-                      </p>
-                      <p style={{ fontFamily: "system-ui", fontSize: "12px" ,color: "#DDD", margin: 0 }}>
-                        {hoveredschool.schoolInfo.rejoined ? `Member since ${hoveredschool.schoolInfo.rejoined[0].year}` :  `Member since ${hoveredschool.schoolInfo.years[0]}`}
-                      </p>
-                    </div>
-                  </foreignObject>
-                )}
-            </>
             }
             {options.showLogos &&
              <image
-                  href={school.logo}
-                  width={logosize}
-                  height={logosize}
-                  x={logooffset}
-                  y={logooffset}
-                />
+                href={school.logo}
+                width={logosize}
+                height={logosize}
+                x={logooffset}
+                y={logooffset}
+              />
             }
           </Marker>
-      ))}
+        ))}
+        {hoveredschool && (
+          <Annotation
+            subject={hoveredschool.coordinates}
+            dx={0}
+            dy={0}
+          >
+            <foreignObject x={15} y={15} width="200" height="50">
+              <div className="bg-black z-10 bg-opacity-75 inline-block p-2 rounded">
+
+                <p style={{ fontSize: "12px" ,color: "#DDD", margin: 0 }}>
+                  {hoveredschool.name}
+                </p>
+                <p style={{ fontSize: "12px" ,color: "#DDD", margin: 0 }}>
+                  {hoveredschool.schoolInfo.rejoined ? `Member since: ${hoveredschool.schoolInfo.rejoined[0].year}` :  `Member since: ${hoveredschool.schoolInfo.years[0]}`}
+                </p>
+              </div>
+            </foreignObject>
+
+          </Annotation>
+        )}
+
       </ZoomableGroup>
     </ComposableMap>
     <button onClick={handleReset} className="className='bg-white text-black text-[14px] rounded font-bold' reset-button">Reset</button>
