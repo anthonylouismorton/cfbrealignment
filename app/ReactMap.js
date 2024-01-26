@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import conferenceData from './data/conferenceData.json';
 import { getConferences } from './functions/ReactGetConf';
 import { schoolLocations } from './functions/ReactMapSchoolLoc';
+import { Button } from '@mui/material';
 import {
   ComposableMap,
   Geographies,
@@ -22,9 +23,9 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
   const [mapfill, setmapfill] = useState([]);
   const [hoveredschool, sethoveredschool] = useState(null);
   const [selectedschool, setselectedschool] = useState(null);
-  const [mapsettings, setmapsettings] = useState({
+  const [styling, setstyling] = useState({
     circleRadius: 3,
-    foreignObject: { x: 10, y: -5, fontSize: "12px", padding: "py-[2px] px-[5px]"},
+    forO: { x: 10, y: -5, fontSize: "12px", padding: "py-[2px] px-[5px]", rounded: "rounded-sm"},
   });
 
   useEffect(() => {
@@ -83,17 +84,19 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
       setlogooffset(-2)
     }
     if (position.zoom > 2 && position.zoom < 4) {
-      setmapsettings({...mapsettings, circleRadius: 2,
-        foreignObject: { x: 7, y: -2, fontSize: "8px", padding: "py-[2px] px-[5px]"
-      }})
+      setstyling(prevStyling => ({...prevStyling, circleRadius: 2,
+        forO: {...prevStyling.forO, x: 7, y: -2, fontSize: "8px", padding: "py-[2px] px-[5px]"
+      }}))
     }
     else if(position.zoom > 4){
-      setmapsettings({...mapsettings, circleRadius: 1})
+      setstyling(prevStyling => ({...prevStyling, circleRadius: 1,
+        forO: {...prevStyling.forO,x: 2, y: -13, fontSize: "2px", padding: "py-[1px] px-[2px]", rounded: "rounded-[1px]"
+      }}))
     }
     else {
-      setmapsettings({...mapsettings, circleRadius: 3,
-        foreignObject: { x: 10, y: -5, fontSize: "12px", padding: "py-[2px] px-[5px]"
-      }})
+      setstyling(prevStyling => ({...prevStyling, circleRadius: 3,
+        forO: {...prevStyling.forO,x: 10, y: -5, fontSize: "12px", padding: "py-[2px] px-[5px]"
+      }}))
     
     }
     
@@ -114,7 +117,7 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
     setPosition({ coordinates: [-99, 38.758362677392945], zoom: 0.93 })
   };
 
-  console.log(position, mapsettings)
+  console.log(position, styling.forO)
   return (
     <div className="map-container">
     <ComposableMap projection="geoAlbersUsa">
@@ -169,7 +172,7 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
         {schools && schools.map(school => (
           <Marker key={school.name} coordinates={school.coordinates} onClick={()=> setselectedschool(school)} onMouseEnter={() => sethoveredschool(school)} onMouseLeave={() => sethoveredschool(null)}>
             {options.showLocation && options.showLogos === false &&
-              <circle r={mapsettings.circleRadius} fill={school.color} />
+              <circle r={styling.circleRadius} fill={school.color} />
             }
             {options.showLogos &&
              <image
@@ -188,13 +191,13 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
             dx={0}
             dy={0}
           >
-            <foreignObject x={mapsettings.foreignObject.x} y={mapsettings.foreignObject.y} width="500" height="50">
-              <div className={`bg-black z-10 bg-opacity-75 inline-block ${mapsettings.foreignObject.padding} rounded`}>
+            <foreignObject x={styling.forO.x} y={styling.forO.y} width="500" height="50">
+              <div className={`bg-black z-10 bg-opacity-75 inline-block ${styling.forO.padding} ${styling.forO.rounded}`}>
 
-                <p style={{ fontSize: mapsettings.foreignObject.fontSize ,color: "#DDD", margin: 0 }}>
+                <p style={{ fontSize: styling.forO.fontSize ,color: "#DDD", margin: 0 }}>
                   {hoveredschool.name}
                 </p>
-                <p style={{ fontSize: mapsettings.foreignObject.fontSize ,color: "#DDD", margin: 0 }}>
+                <p style={{ fontSize: styling.forO.fontSize ,color: "#DDD", margin: 0 }}>
                   {hoveredschool.schoolInfo.rejoined ? `Member since: ${hoveredschool.schoolInfo.rejoined[0].year}` :  `Member since: ${hoveredschool.schoolInfo.years[0]}`}
                 </p>
               </div>
@@ -204,7 +207,9 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
 
       </ZoomableGroup>
     </ComposableMap>
-    <button onClick={handleReset} className="className='bg-white text-black text-[14px] rounded font-bold' reset-button">Reset</button>
+    <Button className='absolute bottom-5 right-5 text-black text-[12px] sm:text-[12px] md:text-[14px] font-semibold bg-white border-white hover:bg-black hover:text-white hover:border-white' variant='outlined' onClick={handleReset}>
+      Reset
+    </Button>
     </div>
   );
 };
