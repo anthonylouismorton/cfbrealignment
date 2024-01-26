@@ -20,8 +20,12 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
   const [logooffset, setlogooffset] = useState(-10);
   const [position, setPosition] = useState({ coordinates: [-99, 38.758362677392945], zoom: 0.93});
   const [mapfill, setmapfill] = useState([]);
-  const [statetooltip, setstatetooltip] = useState({ visible: false, content: '' });
   const [hoveredschool, sethoveredschool] = useState(null);
+  const [selectedschool, setselectedschool] = useState(null);
+  const [mapsettings, setmapsettings] = useState({
+    circleRadius: 3,
+    foreignObject: { x: 10, y: -5, fontSize: "12px", padding: "py-[2px] px-[5px]"},
+  });
 
   useEffect(() => {
 
@@ -78,6 +82,20 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
       setlogosize(4)
       setlogooffset(-2)
     }
+    if (position.zoom > 2 && position.zoom < 4) {
+      setmapsettings({...mapsettings, circleRadius: 2,
+        foreignObject: { x: 7, y: -2, fontSize: "8px", padding: "py-[2px] px-[5px]"
+      }})
+    }
+    else if(position.zoom > 4){
+      setmapsettings({...mapsettings, circleRadius: 1})
+    }
+    else {
+      setmapsettings({...mapsettings, circleRadius: 3,
+        foreignObject: { x: 10, y: -5, fontSize: "12px", padding: "py-[2px] px-[5px]"
+      }})
+    
+    }
     
     setCurrentConferences(getCurrentConferences);
     setSchoolStates(getSchools);
@@ -95,7 +113,8 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
   const handleReset = () => {
     setPosition({ coordinates: [-99, 38.758362677392945], zoom: 0.93 })
   };
-  console.log(hoveredschool)
+
+  console.log(position, mapsettings)
   return (
     <div className="map-container">
     <ComposableMap projection="geoAlbersUsa">
@@ -148,9 +167,9 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
         }
         </Geographies>
         {schools && schools.map(school => (
-          <Marker key={school.name} coordinates={school.coordinates} onMouseEnter={() => sethoveredschool(school)} onMouseLeave={() => sethoveredschool(null)}>
+          <Marker key={school.name} coordinates={school.coordinates} onClick={()=> setselectedschool(school)} onMouseEnter={() => sethoveredschool(school)} onMouseLeave={() => sethoveredschool(null)}>
             {options.showLocation && options.showLogos === false &&
-              <circle r={3} fill={school.color} />
+              <circle r={mapsettings.circleRadius} fill={school.color} />
             }
             {options.showLogos &&
              <image
@@ -169,18 +188,17 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
             dx={0}
             dy={0}
           >
-            <foreignObject x={15} y={15} width="200" height="50">
-              <div className="bg-black z-10 bg-opacity-75 inline-block p-2 rounded">
+            <foreignObject x={mapsettings.foreignObject.x} y={mapsettings.foreignObject.y} width="500" height="50">
+              <div className={`bg-black z-10 bg-opacity-75 inline-block ${mapsettings.foreignObject.padding} rounded`}>
 
-                <p style={{ fontSize: "12px" ,color: "#DDD", margin: 0 }}>
+                <p style={{ fontSize: mapsettings.foreignObject.fontSize ,color: "#DDD", margin: 0 }}>
                   {hoveredschool.name}
                 </p>
-                <p style={{ fontSize: "12px" ,color: "#DDD", margin: 0 }}>
+                <p style={{ fontSize: mapsettings.foreignObject.fontSize ,color: "#DDD", margin: 0 }}>
                   {hoveredschool.schoolInfo.rejoined ? `Member since: ${hoveredschool.schoolInfo.rejoined[0].year}` :  `Member since: ${hoveredschool.schoolInfo.years[0]}`}
                 </p>
               </div>
             </foreignObject>
-
           </Annotation>
         )}
 
