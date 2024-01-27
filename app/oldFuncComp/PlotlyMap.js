@@ -67,7 +67,6 @@ const PlotlyMap = ({ mapdata, currentYear, options, isYearVisible, setChangesLis
     })
 
   }, [mapdata, currentYear, options, isYearVisible, conList])
-  console.log(data)
   return <Plot className="w-full" data={data} layout={layout} config={config} />;
 };
 
