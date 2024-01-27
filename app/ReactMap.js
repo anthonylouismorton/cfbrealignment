@@ -220,9 +220,9 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
 
       </ZoomableGroup>
     </ComposableMap>
-    <Button className='absolute bottom-5 right-5 text-black text-[12px] sm:text-[12px] md:text-[14px] font-semibold bg-white border-white hover:bg-black hover:text-white hover:border-white' variant='outlined' onClick={handleReset}>
+    <button className='absolute bottom-5 right-5 text-black text-[12px] sm:text-[12px] md:text-[14px] font-semibold bg-white border-white hover:bg-black hover:text-white hover:border-white' onClick={handleReset}>
       Reset
-    </Button>
+    </button>
     {selectedschool &&
       <SchoolInfo schoolmodal={schoolmodal} setschoolmodal={setschoolmodal} selectedschool={selectedschool} setselectedschool={setselectedschool} currentYear={currentYear}
       />
