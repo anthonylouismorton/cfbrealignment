@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import SchoolInfo from './schoolInfo';
 import conferenceData from './data/conferenceData.json';
 import { getConferences } from './functions/ReactGetConf';
 import { schoolLocations } from './functions/ReactMapSchoolLoc';
@@ -23,6 +24,7 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
   const [mapfill, setmapfill] = useState([]);
   const [hoveredschool, sethoveredschool] = useState(null);
   const [selectedschool, setselectedschool] = useState(null);
+  const [ schoolmodal, setschoolmodal] = useState(false);
   const [styling, setstyling] = useState({
     circleRadius: 3,
     forO: { x: 10, y: -5, fontSize: "12px", padding: "py-[2px] px-[5px]", rounded: "rounded-sm"},
@@ -51,7 +53,6 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
       setlogooffset(-9)
     }
     else if(!options.smallLogos && (position.zoom > 2 && position.zoom < 3)) {
-      console.log("in the else if")
       setlogosize(16)
       setlogooffset(-8)
     }
@@ -117,7 +118,11 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
     setPosition({ coordinates: [-99, 38.758362677392945], zoom: 0.93 })
   };
 
-  console.log(position, styling.forO)
+  const handleSchoolModal = (school) =>{
+    setschoolmodal(true)
+    setselectedschool(school)
+  }
+
   return (
     <div className="map-container">
     <ComposableMap projection="geoAlbersUsa">
@@ -170,7 +175,15 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
         }
         </Geographies>
         {schools && schools.map(school => (
-          <Marker key={school.name} coordinates={school.coordinates} onClick={()=> setselectedschool(school)} onMouseEnter={() => sethoveredschool(school)} onMouseLeave={() => sethoveredschool(null)}>
+          <Marker 
+            className='cursor-pointer'
+            key={school.name}
+            coordinates={school.coordinates} 
+            onClick={()=> handleSchoolModal(school)} 
+            onMouseEnter={() => sethoveredschool(school)} 
+            onMouseLeave={() => sethoveredschool(null)}
+
+          >
             {options.showLocation && options.showLogos === false &&
               <circle r={styling.circleRadius} fill={school.color} />
             }
@@ -210,6 +223,10 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
     <Button className='absolute bottom-5 right-5 text-black text-[12px] sm:text-[12px] md:text-[14px] font-semibold bg-white border-white hover:bg-black hover:text-white hover:border-white' variant='outlined' onClick={handleReset}>
       Reset
     </Button>
+    {selectedschool &&
+      <SchoolInfo schoolmodal={schoolmodal} setschoolmodal={setschoolmodal} selectedschool={selectedschool} setselectedschool={setselectedschool} currentYear={currentYear}
+      />
+    }
     </div>
   );
 };
