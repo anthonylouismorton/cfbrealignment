@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 export default  function Welcome({options, setOptions}){
@@ -43,7 +42,7 @@ export default  function Welcome({options, setOptions}){
             <label className='pl-2 text-white font-normal text-[12px] sm:text-[12px] md:text-[16px]'>Don&apos;t show me this message again</label>
           </div>
             <div className='flex justify-center items-center pt-2 lg:pt-5'>
-              <Button className='text-black text-[12px] sm:text-[12px] md:text-[14px] font-semibold bg-white border-white hover:bg-black hover:text-white hover:border-white' variant='outlined' onClick={handleClose}>Close</Button>
+              <button className='text-black text-[10px] sm:text-[12px] md:text-[14px] font-semibold bg-white border border-white hover:bg-black hover:text-white hover:border-white p-1 sm:p-2 rounded-sm' onClick={handleClose}>Close</button>
             </div>
         </Box>
       </Modal>

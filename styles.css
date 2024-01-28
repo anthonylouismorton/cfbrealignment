@@ -8,13 +8,3 @@ body {
   position: relative;
   width: 86%;
 }
-.reset-button {
-  position: absolute;
-  bottom: 10px; /* Adjust the distance from the bottom */
-  right: 10px; /* Adjust the distance from the right */
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  /* Add any other styles you need for the button */
-}
