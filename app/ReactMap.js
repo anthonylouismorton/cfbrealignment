@@ -3,7 +3,6 @@ import SchoolInfo from './schoolInfo';
 import conferenceData from './data/conferenceData.json';
 import { getConferences } from './functions/ReactGetConf';
 import { schoolLocations } from './functions/ReactMapSchoolLoc';
-import { Button } from '@mui/material';
 import {
   ComposableMap,
   Geographies,
@@ -220,7 +219,7 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
 
       </ZoomableGroup>
     </ComposableMap>
-    <button className='absolute bottom-5 right-5 text-black text-[12px] sm:text-[12px] md:text-[14px] font-semibold bg-white border-white hover:bg-black hover:text-white hover:border-white' onClick={handleReset}>
+    <button className='absolute bottom-5 right-5 text-black text-[10px] sm:text-[12px] md:text-[14px] font-semibold bg-white border border-white hover:bg-black hover:text-white hover:border-white p-1 sm:p-2 rounded-sm' onClick={handleReset}>
       Reset
     </button>
     {selectedschool &&

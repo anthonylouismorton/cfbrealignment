@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import Modal from '@mui/material/Modal';
-import { Button } from '@mui/material';
 
 export default function OptionsMenu({ options, setOptions, open, setOpen, conList, setConList}) {
   const handleClose = () =>{
@@ -183,9 +182,9 @@ export default function OptionsMenu({ options, setOptions, open, setOpen, conLis
               }
             </div>
           <div className='text-center py-3'>
-            <Button className=' text-black text-[14px] rounded-sm p-2 font-bold font-semibold bg-white border-white hover:bg-black hover:text-white hover:border-white' variant='outlined' onClick={handleClose}>
-              Hide
-            </Button>
+          <button className='absolute bottom-5 right-5 text-black text-[12px] sm:text-[12px] md:text-[14px] font-semibold bg-white border border-white hover:bg-black hover:text-white hover:border-white p-2 rounded-sm' onClick={handleClose}>
+            Hide
+          </button>
           </div>
         </div>
       </Modal>
