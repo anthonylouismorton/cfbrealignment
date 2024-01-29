@@ -62,7 +62,7 @@ export default function OptionsMenu({ options, setOptions, open, setOpen, conLis
         open={open}
         onClose={handleClose}
       >
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-h-full overflow-y-auto max-w-[700px] bg-black bg-opacity-80 p-6 rounded">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-h-full overflow-y-auto max-w-[700px] bg-black bg-opacity-80 py-4 px-6 rounded">
           <p className='flex flex-col p-3 text-center text-[20px] text-white font-semibold'>SETTINGS</p>
           <div className='pl-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
             <div className='flex items-center w-full'>
@@ -165,7 +165,9 @@ export default function OptionsMenu({ options, setOptions, open, setOpen, conLis
               <label className='pl-2 text-[16px] text-white font-normal'>Filter by Conference</label>
             </div>
           </div>
-          <p className='flex flex-col p-3 text-center text-[18px] text-white font-semibold'>Conferences</p>
+            {options.conFilter && conList &&
+              <p className='flex flex-col p-3 text-center text-[18px] text-white font-semibold'>Conferences</p>
+            }
             <div className='pl-2 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5'>
               {options.conFilter && conList &&
                 Object.entries(conList).map(([conference, checked]) => (
@@ -181,10 +183,10 @@ export default function OptionsMenu({ options, setOptions, open, setOpen, conLis
                 ))
               }
             </div>
-          <div className='text-center py-3'>
-          <button className='absolute bottom-5 right-5 text-black text-[12px] sm:text-[12px] md:text-[14px] font-semibold bg-white border border-white hover:bg-black hover:text-white hover:border-white p-2 rounded-sm' onClick={handleClose}>
-            Hide
-          </button>
+          <div className='text-center py-3 pt-6'>
+            <button className='text-black text-[12px] sm:text-[12px] md:text-[14px] font-semibold bg-white border border-white hover:bg-black hover:text-white hover:border-white p-2 rounded-sm' onClick={handleClose}>
+              Hide
+            </button>
           </div>
         </div>
       </Modal>
