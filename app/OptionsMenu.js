@@ -8,6 +8,7 @@ export default function OptionsMenu({ options, setOptions, open, setOpen, conLis
 
   const handleOptions = (e) => {
     const value = e.target.value;
+    console.log(value)
     const checked = e.target.checked;
     if (value === "conFilter") {
       setConList((prevConList) => {
