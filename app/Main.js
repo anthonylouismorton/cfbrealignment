@@ -22,6 +22,7 @@ function Main() {
   const [currentConferences, setCurrentConferences] = useState(null);
   const [schoolStates, setSchoolStates] = useState(null);
   const [isYearVisible,setIsYearVisible] = useState(false);
+  const [fullscreen, setfullscreen] = useState(false);
   const minWidth = (768)
 
   // useEffect(() => {
@@ -62,13 +63,15 @@ function Main() {
     };
 
   }, [currentYear, options, isYearVisible, conList]);
-  console.log(options.hideYear)
+  console.log(fullscreen)
   return (
     <div>
+      {options.showWelcome &&
+        <Welcome options={options} setOptions={setOptions}/>
+      }
+      {!fullscreen &&
+
       <div className="flex flex-col justify-center items-center">
-        {options.showWelcome &&
-          <Welcome options={options} setOptions={setOptions}/>
-        }
         {isYearVisible &&
           <MobileOptions options={options} setOptions={setOptions} activeConferences={activeConferences} conList={conList} setConList={setConList}/>
         }
@@ -102,6 +105,8 @@ function Main() {
               setActiveConferences={setActiveConferences}
               activeConferences={activeConferences}
               conList={conList}
+              fullscreen={fullscreen}
+              setfullscreen={setfullscreen}
             />
             {isYearVisible || options.hideYear &&
             <div className='flex w-full justify-center items-center text-center'>
@@ -127,7 +132,30 @@ function Main() {
           </div>
         </div>
       </div>
-      <div className="xl:hidden">
+      }
+      {fullscreen &&
+        <div>
+          <ReactMap
+            mapdata={mapdata}
+            currentYear={currentYear}
+            setCurrentYear={setCurrentYear}
+            options={options}
+            isYearVisible={isYearVisible}
+            changesList={changesList}
+            setChangesList={setChangesList}
+            schoolStates={schoolStates}
+            setSchoolStates={setSchoolStates}
+            currentConferences={currentConferences}
+            setCurrentConferences={setCurrentConferences}
+            setActiveConferences={setActiveConferences}
+            activeConferences={activeConferences}
+            conList={conList}
+            fullscreen={fullscreen}
+            setfullscreen={setfullscreen}
+          />
+        </div>
+      }
+       <div className="xl:hidden">
         <div className="w-full">
           {!options.hideHistory &&
             <History changesList={changesList}/>
