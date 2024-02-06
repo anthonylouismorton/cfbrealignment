@@ -93,10 +93,8 @@ export function getConferences(conferenceData, year, options, conList) {
       {color: "rgb(0, 140, 102)", conference: [conferenceData[6].abbreviation, conferenceData[8].abbreviation], coordinates: [ conferenceData[8].schools[1].lon, conferenceData[8].schools[1].lat], name: conferenceData[8].schools[1].school, logo: conferenceData[8].schools[1].logo, state: conferenceData[8].schools[1].stateId, schoolInfo: conferenceData[8].schools[0]}
     )
   } 
-  console.log(getSchools)
   getSchools.forEach((school) => {
     const { state, conference, color } = school;
-    
     const existingStateIndex = getMapFill.findIndex((currentState) => currentState.state === state);
 
     if(existingStateIndex === -1){
@@ -107,7 +105,6 @@ export function getConferences(conferenceData, year, options, conList) {
     } 
     else{
       const existingConferenceIndex = getMapFill[existingStateIndex].conferences.findIndex((conf) => conf.conference === conference);
-
       if(existingConferenceIndex === -1){
         getMapFill[existingStateIndex].conferences.push({ conference: conference, color: color });
       } else {

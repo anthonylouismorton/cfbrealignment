@@ -134,7 +134,7 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
           geographies.map((geo) => {
             const stateInfo = mapfill.find((state) => state.state === geo.id);
             let stateColor = '#DDD';
-            if (!options.showLocation && stateInfo) {
+            if(!options.showLocation && stateInfo){
               stateColor =
                 stateInfo.conferences.length === 1
                   ? stateInfo.conferences[0].color
@@ -202,16 +202,23 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
             dx={0}
             dy={0}
           >
-            <foreignObject x={styling.forO.x} y={styling.forO.y} width="500" height="50">
-              <div className={`bg-black z-10 bg-opacity-75 inline-block ${styling.forO.padding} ${styling.forO.rounded}`}>
+            <foreignObject x={styling.forO.x} y={styling.forO.y} width="500" height="100">
+            <div className={`bg-black z-10 bg-opacity-75 inline-block ${styling.forO.padding} ${styling.forO.rounded}`}>
+              <p style={{ fontSize: styling.forO.fontSize, color: "#DDD", margin: 0 }}>
+                {hoveredschool.name}
+              </p>
+              {(hoveredschool.name === "University of Iowa" && (currentYear === 1907 || currentYear === 1908)) ? (
+                <>
+                  <p style={{ fontSize: styling.forO.fontSize, color: "#DDD", margin: 0 }}>Big 8 Member Since: 1900</p>
+                  <p style={{ fontSize: styling.forO.fontSize, color: "#DDD", margin: 0 }}>Big Ten Member since: 1907</p>
+                </>
+              ) : (
+                <p style={{ fontSize: styling.forO.fontSize, color: "#DDD", margin: 0 }}>
+                  {hoveredschool.schoolInfo.rejoined ? `Member since: ${hoveredschool.schoolInfo.rejoined[0].year}` : `Member since: ${hoveredschool.schoolInfo.years[0]}`}
+                </p>
+              )}
+            </div>
 
-                <p style={{ fontSize: styling.forO.fontSize ,color: "#DDD", margin: 0 }}>
-                  {hoveredschool.name}
-                </p>
-                <p style={{ fontSize: styling.forO.fontSize ,color: "#DDD", margin: 0 }}>
-                  {hoveredschool.schoolInfo.rejoined ? `Member since: ${hoveredschool.schoolInfo.rejoined[0].year}` :  `Member since: ${hoveredschool.schoolInfo.years[0]}`}
-                </p>
-              </div>
             </foreignObject>
           </Annotation>
         )}
