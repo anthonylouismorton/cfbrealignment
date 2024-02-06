@@ -3,6 +3,9 @@ import SchoolInfo from './schoolInfo';
 import conferenceData from './data/conferenceData.json';
 import { getConferences } from './functions/ReactGetConf';
 import { schoolLocations } from './functions/ReactMapSchoolLoc';
+import FullscreenIcon from '@mui/icons-material/Fullscreen';
+import { IconButton } from '@mui/material';
+import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
 import {
   ComposableMap,
   Geographies,
@@ -15,22 +18,29 @@ import MapData from './data/reactMapData.json'
 import '../styles.css'
 import * as d3 from 'd3';
 
-const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList, setSchoolStates, setCurrentConferences, setActiveConferences, conList }) => {
+const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList, setSchoolStates, setCurrentConferences, setActiveConferences, conList, fullscreen, setfullscreen }) => {
   const [schools, setschools] = useState([]);
   const [logosize, setlogosize] = useState(20);
   const [logooffset, setlogooffset] = useState(-10);
-  const [position, setPosition] = useState({ coordinates: [-99, 38.758362677392945], zoom: 0.93});
+  const [position, setPosition] = useState({ coordinates: [-96.5, 38.758362677392945], zoom: 0.93});
   const [mapfill, setmapfill] = useState([]);
   const [hoveredschool, sethoveredschool] = useState(null);
   const [selectedschool, setselectedschool] = useState(null);
-  const [ schoolmodal, setschoolmodal] = useState(false);
+  const [schoolmodal, setschoolmodal] = useState(false);
+  const [mapsize, setmapsize] = useState([800,500]);
+
   const [styling, setstyling] = useState({
     circleRadius: 3,
     forO: { x: 10, y: -5, fontSize: "12px", padding: "py-[2px] px-[5px]", rounded: "rounded-sm"},
   });
 
   useEffect(() => {
-
+    if(!fullscreen){
+      setmapsize([800,500])
+    }
+    else{
+      setmapsize([1150,555])
+    }
 
     const { getSchools, getCurrentConferences, conferenceChanges, getLegendConferences, getMapFill } = getConferences(
       conferenceData,
@@ -107,23 +117,28 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
     setmapfill(getMapFill)
     setschools(getSchools)
     
-  }, [mapdata, currentYear, options, isYearVisible, conList, position.zoom])
+  }, [mapdata, currentYear, options, isYearVisible, conList, position.zoom, fullscreen])
 
   function handleMoveEnd(position) {
     setPosition(position);
   }
 
   const handleReset = () => {
-    setPosition({ coordinates: [-99, 38.758362677392945], zoom: 0.93 })
+    setPosition({ coordinates: [-96.5, 38.758362677392945], zoom: 0.93 })
   };
 
   const handleSchoolModal = (school) =>{
     setschoolmodal(true)
     setselectedschool(school)
   }
+  console.log(fullscreen, mapsize)
   return (
-    <div className="map-container">
-    <ComposableMap projection="geoAlbersUsa">
+    <div className="relative w-[100%]">
+    <ComposableMap
+     projection="geoAlbersUsa"
+     width={mapsize[0]}
+     height={mapsize[1]}
+    >
       <ZoomableGroup
           zoom={position.zoom}
           center={position.coordinates}
@@ -225,7 +240,16 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
 
       </ZoomableGroup>
     </ComposableMap>
-    <button className='absolute bottom-5 right-5 text-black text-[10px] sm:text-[12px] md:text-[14px] font-semibold bg-white border border-white hover:bg-black hover:text-white hover:border-white p-1 sm:p-2 rounded-sm' onClick={handleReset}>
+      {!fullscreen ?
+        <IconButton className="p-0 absolute bottom-2 right-2 lg:bottom-3 lg:right-3 fullScreen" id="fullscreen" onClick={()=>setfullscreen(true)}>
+          <FullscreenIcon className="text-white text-[15px] lg:text-[25px]" />
+        </IconButton>
+        :
+        <IconButton className="p-0 absolute bottom-5 right-5 fullScreen" id="closefullscreen" onClick={()=>setfullscreen(false)}>
+          <CloseFullscreenIcon className="text-white text-[15px] lg:text-[25px] xl:text-[35px] 2xl:text-[35px]" />
+        </IconButton>
+      }
+    <button className='absolute top-2 right-2 lg:top-3 lg:right-3 text-black text-[9px] sm:text-[12px] lg:text-[14px] font-semibold bg-white border border-white hover:bg-black hover:text-white hover:border-white p-1 rounded-sm' onClick={handleReset}>
       Reset
     </button>
     {selectedschool &&
