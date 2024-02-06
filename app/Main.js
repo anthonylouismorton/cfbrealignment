@@ -62,6 +62,7 @@ function Main() {
     };
 
   }, [currentYear, options, isYearVisible, conList]);
+  console.log(options.hideYear)
   return (
     <div>
       <div className="flex flex-col justify-center items-center">
@@ -102,7 +103,7 @@ function Main() {
               activeConferences={activeConferences}
               conList={conList}
             />
-            {isYearVisible &&
+            {isYearVisible || options.hideYear &&
             <div className='flex w-full justify-center items-center text-center'>
               <MobileSlider currentYear={currentYear} setCurrentYear={setCurrentYear} />
               <AutoPlay currentYear={currentYear} setCurrentYear={setCurrentYear} changesList={changesList} />
@@ -112,7 +113,7 @@ function Main() {
           <div className="flex flex-col hidden md:block md:w-[20%] lg:w-[25%] xl:w-[17.5%] pt-5 md:pt-8 xl:pt-2 2xl:pt-4">
             <div className="flex flex-col">
               <div className="flex flex-row justify-end">
-                {!isYearVisible &&
+                {!isYearVisible && options.hideYear === false &&
                   <div className="w-full">
                     <AutoPlay currentYear={currentYear} setCurrentYear={setCurrentYear} changesList={changesList} />
                   </div>

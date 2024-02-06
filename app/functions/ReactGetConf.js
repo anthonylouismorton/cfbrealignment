@@ -79,11 +79,21 @@ export function getConferences(conferenceData, year, options, conList) {
   })
     conference.schools.forEach((school) => {
       if(school.years.includes(year)){
-        getSchools.push({color: conference.mapColor, conference: conference.abbreviation, coordinates: [ school.lon, school.lat], name: school.school, logo: school.logo, state: school.stateId, schoolInfo: {...school}})
+        if((year === 1907 || year === 1908) && school.school === "University of Iowa"){
+
+        }
+        else{
+          getSchools.push({color: conference.mapColor, conference: conference.abbreviation, coordinates: [ school.lon, school.lat], name: school.school, logo: school.logo, state: school.stateId, schoolInfo: {...school}})
+        }
       }
     });
   });
-
+  if(year === 1907 || year === 1908){
+    getSchools.push(
+      {color: "rgb(0, 140, 102)", conference: [conferenceData[6].abbreviation, conferenceData[8].abbreviation], coordinates: [ conferenceData[8].schools[1].lon, conferenceData[8].schools[1].lat], name: conferenceData[8].schools[1].school, logo: conferenceData[8].schools[1].logo, state: conferenceData[8].schools[1].stateId, schoolInfo: conferenceData[8].schools[0]}
+    )
+  } 
+  console.log(getSchools)
   getSchools.forEach((school) => {
     const { state, conference, color } = school;
     

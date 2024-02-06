@@ -1,4 +1,4 @@
-import { getChanges } from "./getChanges";
+import { getChanges } from "../functions/getChanges";
 
 export function getConferences(conferenceData, year, options, conList) {
   const { majorConferences, powerConferences, aqConferences} = options

@@ -2,9 +2,6 @@ import * as React from 'react';
 import Slider from '@mui/material/Slider';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import { IconButton } from '@mui/material';
-import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
-import SkipNextIcon from '@mui/icons-material/SkipNext';
 
 const iOSBoxShadow =
   '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)';

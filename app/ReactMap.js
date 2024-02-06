@@ -121,7 +121,6 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
     setschoolmodal(true)
     setselectedschool(school)
   }
-
   return (
     <div className="map-container">
     <ComposableMap projection="geoAlbersUsa">
