@@ -65,7 +65,7 @@ function Main() {
     };
 
   }, [currentYear, option, isYearVisible, conList]);
-  console.log(option)
+
   return (
     <div>
       {option.showWelcome &&

@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 
 function History({ changesList }) {
-  console.log(changesList)
+
   return (
     <div className="w-full pl-1 pb-5">
       <div className="text-center flex flex-col" id="change">
@@ -22,6 +22,7 @@ function History({ changesList }) {
                   {change.logo ? (
                   <div className="change-logo mr-1 sm:mr-3 bg-white p-1">
                     <Image
+                      priority={true}
                       width={30}
                       height={30}
                       className='max-h-[30px] max-w-auto'
@@ -39,6 +40,7 @@ function History({ changesList }) {
                   {change.logo ? (
                     <div className="change-logo mr-1 sm:mr-3 bg-white p-1">
                       <Image
+                        priority={true}
                         width={30}
                         height={30}
                         className='max-h-[30px] max-w-auto'
@@ -55,6 +57,7 @@ function History({ changesList }) {
                 <div className='flex text-center items-center'>
                   <div className="change-logo mr-1 sm:mr-3 flex items-center bg-white p-1">
                     <Image
+                      priority={true}
                       width={30}
                       height={30}
                       className='max-h-[30px] max-w-auto'
@@ -65,6 +68,7 @@ function History({ changesList }) {
                     {change.oldConferenceLogo ? (
                       <div className="change-logo mr-1 sm:mr-3 flex items-center bg-white p-1">
                         <Image
+                          priority={true}
                           width={30}
                           height={30}
                           className='max-h-[30px] max-w-auto'
@@ -80,6 +84,7 @@ function History({ changesList }) {
                   {change.newConferenceLogo ? (
                     <div className="change-logo ml-1 sm:ml-3 flex items-center bg-white p-1">
                       <Image
+                        priority={true}
                         width={30}
                         height={30}
                         className='max-h-[30px] max-w-auto'
@@ -95,6 +100,7 @@ function History({ changesList }) {
                 <div className='flex text-center items-center w-[140px]'>
                   <div className="change-logo mr-1 sm:mr-3 flex items-center bg-white p-1">
                     <Image
+                      priority={true}
                       width={30}
                       height={30}
                       className='max-h-[30px] max-w-auto'
@@ -108,6 +114,7 @@ function History({ changesList }) {
                   {change.conferenceLogo ? (
                     <div className="change-logo mr-1 sm:mr-3 bg-white p-1">
                       <Image
+                        priority={true}
                         width={30}
                         height={30}
                         className='max-h-[30px] max-w-auto'
@@ -124,6 +131,7 @@ function History({ changesList }) {
                 <div className='flex text-center items-center w-[140px]'>
                   <div className="change-logo mr-1 sm:mr-3 flex items-center bg-white p-1">
                     <Image
+                      priority={true}
                       width={30}
                       height={30}
                       className='max-h-[30px] max-w-auto'
@@ -137,6 +145,7 @@ function History({ changesList }) {
                     {change.conferenceLogo ? (
                       <div className="change-logo mr-1 sm:mr-3 bg-white p-1">
                         <Image
+                          priority={true}
                           width={30}
                           height={30}
                           className='max-h-[30px] max-w-auto'
