@@ -18,7 +18,6 @@ export const options = createSlice({
     reducers: {
       changeOption: (state, action) => {
         const { option, value } = action.payload;
-        console.log(option,value)
         state[option] = value;
       },
     },
