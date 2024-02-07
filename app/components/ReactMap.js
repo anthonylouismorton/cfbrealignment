@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import SchoolInfo from './schoolInfo';
-import conferenceData from './data/conferenceData.json';
-import { getConferences } from './functions/ReactGetConf';
-import { schoolLocations } from './functions/ReactMapSchoolLoc';
+import conferenceData from '../data/conferenceData.json';
+import { getConferences } from '../functions/ReactGetConf';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import { IconButton } from '@mui/material';
 import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
+import { openFullscreen, closeFullscreen } from '../../redux/features/slices';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   ComposableMap,
   Geographies,
@@ -14,11 +15,14 @@ import {
   Annotation,
   ZoomableGroup
 } from "react-simple-maps";
-import MapData from './data/reactMapData.json'
-import '../styles.css'
+import MapData from '../data/reactMapData.json'
+import '../../styles.css'
 import * as d3 from 'd3';
 
-const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList, setSchoolStates, setCurrentConferences, setActiveConferences, conList, fullscreen, setfullscreen }) => {
+const MapChart = ({ mapdata, currentYear, isYearVisible, setChangesList, setSchoolStates, setCurrentConferences, setActiveConferences, conList }) => {
+  const dispatch = useDispatch();
+  const fullscreen = useSelector((state)=> state.fullscreenReducer);
+  const option = useSelector((state) => state.optionsReducer);
   const [schools, setschools] = useState([]);
   const [logosize, setlogosize] = useState(20);
   const [logooffset, setlogooffset] = useState(-10);
@@ -45,51 +49,51 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
     const { getSchools, getCurrentConferences, conferenceChanges, getLegendConferences, getMapFill } = getConferences(
       conferenceData,
       currentYear,
-      options,
+      option,
       conList
     );
    
-    if(options.smallLogos && position.zoom >= 1){
+    if(option.smallLogos && position.zoom >= 1){
       setlogosize(10)
       setlogooffset(-5)
     }
-    else if((!options.smallLogos && position.zoom >= 1 && position.zoom < 2)){
+    else if((!option.smallLogos && position.zoom >= 1 && position.zoom < 2)){
       setlogosize(20)
       setlogooffset(-10)
     }
-    else if(!options.smallLogos && (position.zoom > 1 && position.zoom < 2)) {
+    else if(!option.smallLogos && (position.zoom > 1 && position.zoom < 2)) {
       setlogosize(18)
       setlogooffset(-9)
     }
-    else if(!options.smallLogos && (position.zoom > 2 && position.zoom < 3)) {
+    else if(!option.smallLogos && (position.zoom > 2 && position.zoom < 3)) {
       setlogosize(16)
       setlogooffset(-8)
     }
-    else if(!options.smallLogos && (position.zoom > 3 && position.zoom < 4)) {
+    else if(!option.smallLogos && (position.zoom > 3 && position.zoom < 4)) {
       setlogosize(14)
       setlogooffset(-7)
     }
-    else if(!options.smallLogos && (position.zoom > 4 && position.zoom < 5)) {
+    else if(!option.smallLogos && (position.zoom > 4 && position.zoom < 5)) {
       setlogosize(12)
       setlogooffset(-6)
     }
-    else if(!options.smallLogos && (position.zoom > 5 && position.zoom < 6)) {
+    else if(!option.smallLogos && (position.zoom > 5 && position.zoom < 6)) {
       setlogosize(8)
       setlogooffset(-4)
     }
-    else if(!options.smallLogos && (position.zoom > 6 && position.zoom < 7)) {
+    else if(!option.smallLogos && (position.zoom > 6 && position.zoom < 7)) {
       setlogosize(6)
       setlogooffset(-3)
     }
-    else if(!options.smallLogos && (position.zoom > 7)) {
+    else if(!option.smallLogos && (position.zoom > 7)) {
       setlogosize(4)
       setlogooffset(-2)
     }
-    else if(options.smallLogos && (position.zoom > 6 && position.zoom < 7)) {
+    else if(option.smallLogos && (position.zoom > 6 && position.zoom < 7)) {
       setlogosize(6)
       setlogooffset(-3)
     }
-    else if(options.smallLogos && (position.zoom > 7)) {
+    else if(option.smallLogos && (position.zoom > 7)) {
       setlogosize(4)
       setlogooffset(-2)
     }
@@ -117,7 +121,7 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
     setmapfill(getMapFill)
     setschools(getSchools)
     
-  }, [mapdata, currentYear, options, isYearVisible, conList, position.zoom, fullscreen])
+  }, [mapdata, currentYear, option, isYearVisible, conList, position.zoom, fullscreen])
 
   function handleMoveEnd(position) {
     setPosition(position);
@@ -131,7 +135,7 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
     setschoolmodal(true)
     setselectedschool(school)
   }
-  console.log(fullscreen, mapsize)
+
   return (
     <div className="relative w-[100%]">
     <ComposableMap
@@ -149,7 +153,7 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
           geographies.map((geo) => {
             const stateInfo = mapfill.find((state) => state.state === geo.id);
             let stateColor = '#DDD';
-            if(!options.showLocation && stateInfo){
+            if(!option.showLocation && stateInfo){
               stateColor =
                 stateInfo.conferences.length === 1
                   ? stateInfo.conferences[0].color
@@ -197,10 +201,10 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
             onMouseLeave={() => sethoveredschool(null)}
 
           >
-            {options.showLocation && options.showLogos === false &&
+            {option.showLocation && option.showLogos === false &&
               <circle r={styling.circleRadius} fill={school.color} />
             }
-            {options.showLogos &&
+            {option.showLogos &&
              <image
                 href={school.logo}
                 width={logosize}
@@ -241,12 +245,12 @@ const MapChart = ({ mapdata, currentYear, options, isYearVisible, setChangesList
       </ZoomableGroup>
     </ComposableMap>
       {!fullscreen ?
-        <IconButton className="p-0 absolute bottom-2 right-2 lg:bottom-3 lg:right-3 fullScreen" id="fullscreen" onClick={()=>setfullscreen(true)}>
+        <IconButton className="p-0 absolute bottom-2 right-2 lg:bottom-3 lg:right-3 fullScreen" id="fullscreen" onClick={()=> dispatch(openFullscreen())}>
           <FullscreenIcon className="text-white text-[15px] lg:text-[25px]" />
         </IconButton>
         :
-        <IconButton className="p-0 absolute bottom-5 right-5 fullScreen" id="closefullscreen" onClick={()=>setfullscreen(false)}>
-          <CloseFullscreenIcon className="text-white text-[15px] lg:text-[25px] xl:text-[35px] 2xl:text-[35px]" />
+        <IconButton className="p-0 absolute bottom-5 right-5 fullScreen" id="closefullscreen" onClick={()=> dispatch(closeFullscreen())}>
+          <CloseFullscreenIcon className="text-white text-[15px] lg:text-[25px]" />
         </IconButton>
       }
     <button className='absolute top-2 right-2 lg:top-3 lg:right-3 text-black text-[9px] sm:text-[12px] lg:text-[14px] font-semibold bg-white border border-white hover:bg-black hover:text-white hover:border-white p-1 rounded-sm' onClick={handleReset}>

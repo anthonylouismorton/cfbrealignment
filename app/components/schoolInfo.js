@@ -1,71 +1,56 @@
 import React, { useEffect, useRef } from 'react';
 import Modal from '@mui/material/Modal';
+import { Button } from '@mui/material';
+import Image from 'next/image';
 
-export default function OptionsMenu({ options, setOptions, open, setOpen, conList, setConList}) {
+export default function OptionsMenu({schoolmodal, setschoolmodal, selectedschool, setselectedschool, currentYear}) {
   const handleClose = () =>{
-    setOpen(!open);
+    setschoolmodal(!schoolmodal);
+    setselectedschool(null);
   }
-
-  const handleOptions = (e) => {
-    const value = e.target.value;
-    console.log(value)
-    const checked = e.target.checked;
-    if (value === "conFilter") {
-      setConList((prevConList) => {
-        const updatedConList = { ...prevConList };
-        Object.keys(updatedConList).forEach((conference) => {
-          updatedConList[conference] = checked;
-        });
-        return updatedConList;
-      });
-    }  
-    if (value === "showLocation" && checked === false) {
-      setOptions({
-        ...options,
-        showLocation: checked,
-        showLogos: checked,
-      });
-    }
-    if (value === "smallLogos" && checked === true) {
-      setOptions({
-        ...options,
-        showLogos: checked,
-        [value]: checked
-      });
-    }  
-    if (value === "showLogos" && checked === false) {
-      setOptions({
-        ...options,
-        smallLogos: checked,
-        [value]: checked
-      });
-    }  
-    else{
-      setOptions({
-        ...options,
-        [value]: checked,
-      });
-    }
-  };
-  
-
-  const handleConferences = (e) => {
-    const value = e.target.value;
-      setConList({
-        ...conList,
-        [value]: e.target.checked,
-      });
-  };
+  var schoolInfo = selectedschool.schoolInfo
 
   return (
     <div>
       <Modal
-        open={open}
+        open={schoolmodal}
         onClose={handleClose}
-      >
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-h-full overflow-y-auto max-w-[700px] bg-black bg-opacity-80 py-4 px-6 rounded">
-          <p className='flex flex-col p-3 text-center text-[20px] text-white font-semibold'>SETTINGS</p>
-          <div className='pl-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
+        >
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-h-full overflow-y-auto max-w-[600px] bg-black bg-opacity-90 px-5 pt-4 pb-1 rounded">
+        <div className="flex items-center justify-center p-1 mb-1">
+          {selectedschool.logo &&
+            <Image
+              width={40}
+              height={40}
+              className='max-h-[40px] max-w-auto mr-4 p-1'
+              src={selectedschool.logo}
+              alt={`${selectedschool.abbreviation} logo`} 
+            />
+          }
+          <span className='text-center text-[20px] text-white font-semibold'>
+            {selectedschool.name}
+          </span>
+        </div>
+          <div>
+            <p className='text-white'>
+              Conference: {selectedschool.conference}
+            </p>
+            {schoolInfo.rejoined && schoolInfo.rejoined.some(x => x.year <= currentYear) ?
+              <div>
+              <p className='text-white'>
+                First Joined: {schoolInfo.years[0]}
+              </p>
+              <p className='text-white'>
+                Rejoined Conference: {schoolInfo.rejoined[0].year} from {schoolInfo.rejoined[0].oldConference}
+              </p>
+              </div>
+              :
+              <p className='text-white'>
+                Member Since: {schoolInfo.years[0]}
+              </p>
+            }
+          </div>
+          {/* <div className='pl-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
             <div className='flex items-center w-full'>
               <input
                 type="checkbox"
@@ -166,9 +151,7 @@ export default function OptionsMenu({ options, setOptions, open, setOpen, conLis
               <label className='pl-2 text-[16px] text-white font-normal'>Filter by Conference</label>
             </div>
           </div>
-            {options.conFilter && conList &&
-              <p className='flex flex-col p-3 text-center text-[18px] text-white font-semibold'>Conferences</p>
-            }
+          <p className='flex flex-col p-3 text-center text-[18px] text-white font-semibold'>Conferences</p>
             <div className='pl-2 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5'>
               {options.conFilter && conList &&
                 Object.entries(conList).map(([conference, checked]) => (
@@ -183,11 +166,11 @@ export default function OptionsMenu({ options, setOptions, open, setOpen, conLis
                   </div>
                 ))
               }
-            </div>
-          <div className='text-center py-3 pt-6'>
-            <button className='text-black text-[12px] sm:text-[12px] md:text-[14px] font-semibold bg-white border border-white hover:bg-black hover:text-white hover:border-white p-2 rounded-sm' onClick={handleClose}>
+            </div> */}
+          <div className='text-center py-3'>
+            <Button className=' text-black text-[14px] rounded-sm p-2 font-bold font-semibold bg-white border-white hover:bg-black hover:text-white hover:border-white' variant='outlined' onClick={handleClose}>
               Hide
-            </button>
+            </Button>
           </div>
         </div>
       </Modal>

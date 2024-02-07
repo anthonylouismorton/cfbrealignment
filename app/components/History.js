@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 
 function History({ changesList }) {
-  
+  console.log(changesList)
   return (
     <div className="w-full pl-1 pb-5">
       <div className="text-center flex flex-col" id="change">
@@ -72,7 +72,7 @@ function History({ changesList }) {
                         />
                       </div>
                     ) : (
-                      <div style={{color: `${change.oldConferenceColor}`}} className="change-conference mr-1 sm:mr-3 text-sm lg:text-lg">{change.oldConferenceAbrr}</div>
+                      <div style={{color: `${change.oldConferenceColor}`}} className="change-conference mr-1 sm:mr-3 text-sm">{change.oldConferenceAbrr}</div>
                     )}
                   <div className="change-logo">
                   <div className="change-conference text-sm text-white">{`joins`}</div>
@@ -87,7 +87,7 @@ function History({ changesList }) {
                         />
                     </div>
                   ) : (
-                    <div style={{color: `${change.newConferenceColor}`}} className="change-conference mr-1 sm:mr-3 text-sm lg:text-lg">{change.newConferenceAbrr}</div>
+                    <div style={{color: `${change.newConferenceColor}`}} className="change-conference ml-1 sm:ml-3 text-sm">{change.newConferenceAbbr}</div>
                   )}
                 </div>
               )}

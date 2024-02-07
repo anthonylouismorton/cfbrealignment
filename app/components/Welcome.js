@@ -2,17 +2,22 @@ import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
+import { useDispatch } from 'react-redux';
+import { changeOption } from '../../redux/features/optionsSlices';
 
-export default  function Welcome({options, setOptions}){
+export default  function Welcome(){
   const [open, setOpen] = useState(true);
-  const [welcomeCheck, setWelcomeCheck] = useState(false)
+  const dispatch = useDispatch();
+  const [welcomeCheck, setWelcomeCheck] = useState(false);
   const handleClose = () =>{
     setOpen(false);
-    setOptions({...options, showWelcome: !welcomeCheck})
+    if(welcomeCheck){
+      dispatch(changeOption({ option: 'showWelcome', value: false }));
+    }
   }
 
   const handleCheck = (e) => {
-    setWelcomeCheck(e.target.checked)
+    setWelcomeCheck(e.target.checked);
   }
 
   return (
