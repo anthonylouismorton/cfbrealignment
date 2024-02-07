@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import OptionsMenu from './OptionsMenu';
 
-export default function Options({ options, setOptions, conList, setConList}) {
+export default function Options({conList, setConList}) {
   const [open, setOpen] = useState(false);
-
   const handleOpen = () => {
     setOpen(!open);
   };
 
   return (
     <div className='menu-container z-10 flex justify-end pr-1 lg:pr-2'>
-      {!options.hideSettings && (
-        <div>
+      <div>
         <button
           onClick={handleOpen}
           className="flex flex-col items-center text-center font-bold"
@@ -21,9 +19,8 @@ export default function Options({ options, setOptions, conList, setConList}) {
           </h1>
         </button>
       </div>
-      )}
       <div>
-        <OptionsMenu options={options} setOptions={setOptions} open={open} setOpen={setOpen} conList={conList} setConList={setConList}/>
+        <OptionsMenu open={open} setOpen={setOpen} conList={conList} setConList={setConList}/>
       </div>
     </div>
   );

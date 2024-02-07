@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import OptionsMenu from '../OptionsMenu';
+import OptionsMenu from '../components/OptionsMenu';
 
-export default function Options({ options, setOptions }) {
+export default function Options() {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -22,7 +22,7 @@ export default function Options({ options, setOptions }) {
         </button>
       </div>s
       <div>
-        <OptionsMenu options={options} setOptions={setOptions} open={open} setOpen={setOpen} />
+        <OptionsMenu open={open} setOpen={setOpen} />
       </div>
     </div>
   );

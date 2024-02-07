@@ -3556,7 +3556,7 @@
     "secondaryColor": "rgb(139, 69, 19, 0.90)",
     "founded": 1938,
     "disbanded": 1962,
-    "logo": "https://upload.wikimedia.org/wikipedia/en/a/ac/Skyline_Conference_logo.jpg",
+    "logo": null,
     "headquarters": null,
     "divisionI": {"start": 1938, "end": 1962},
     "majorConference": {"start": 1938, "end": 1962},
