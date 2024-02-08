@@ -11,7 +11,7 @@ export const options = createSlice({
     hideLegend: false, 
     hideHeader: false, 
     hideYear: false, 
-    showWelcome: true, 
+    showWelcome: false, 
     smallLogos: false, 
     conFilter: false, 
     showLocation: true
