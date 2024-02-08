@@ -8,6 +8,8 @@ import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
 import { openFullscreen, closeFullscreen } from '../../redux/features/layoutSlices';
 import { setLegend, setChanges } from '@/redux/features/conInfoSlices';
 import { useDispatch, useSelector } from 'react-redux';
+import Autoplay from './AutoPlay';
+
 import {
   ComposableMap,
   Geographies,
@@ -148,47 +150,47 @@ const MapChart = () => {
           onMoveEnd={handleMoveEnd}
       >
         <Geographies geography={MapData}>
-        {({ geographies }) =>
-          geographies.map((geo) => {
-            const stateInfo = mapfill.find((state) => state.state === geo.id);
-            let stateColor = '#DDD';
-            if(!option.showLocation && stateInfo){
-              stateColor =
-                stateInfo.conferences.length === 1
-                  ? stateInfo.conferences[0].color
-                  : stateInfo.conferences.length === 2
-                  ? d3.scaleLinear().domain([0, 1]).range([stateInfo.conferences[0].color, stateInfo.conferences[1].color])(0.5)
-                  : stateInfo.conferences.length === 3
-                  ? d3.scaleLinear().domain([0, 1, 2]).range([stateInfo.conferences[0].color, stateInfo.conferences[1].color, stateInfo.conferences[2].color])(0.33)
-                  : stateInfo.conferences.length === 4
-                  ? d3.scaleLinear().domain([0, 1, 2, 3]).range([stateInfo.conferences[0].color, stateInfo.conferences[1].color, stateInfo.conferences[2].color, stateInfo.conferences[3].color])(0.25)
-                  : stateInfo.conferences.length === 5
-                  ? d3.scaleLinear().domain([0, 1, 2, 3, 4]).range([stateInfo.conferences[0].color, stateInfo.conferences[1].color, stateInfo.conferences[2].color, stateInfo.conferences[3].color, stateInfo.conferences[4].color])(0.2)
-                  : stateInfo.conferences.length === 6
-                  ? d3.scaleLinear().domain([0, 1, 2, 3, 4, 5]).range([stateInfo.conferences[0].color, stateInfo.conferences[1].color, stateInfo.conferences[2].color, stateInfo.conferences[3].color, stateInfo.conferences[4].color, stateInfo.conferences[5].color])(0.5)
-                  : '#DDD';
-            }
-            return (
-              <Geography
-                key={geo.rsmKey}
-                geography={geo}
-                style={{
-                  default: {
-                    fill: stateColor,
-                    transition: 'fill 0.3s ease-in-out',
-                    outline: "none"
-                  },
-                  hover: {
-                    fill: stateColor,
-                    ...(stateColor !== '#DDD' && { opacity: 0.7 }),
-                    outline: "none",
-                  },
-                  pressed: { outline: "none", fill: stateColor },
-                }}
-              />
-            );
-          })
-        }
+          {({ geographies }) =>
+            geographies.map((geo) => {
+              const stateInfo = mapfill.find((state) => state.state === geo.id);
+              let stateColor = '#DDD';
+              if(!option.showLocation && stateInfo){
+                stateColor =
+                  stateInfo.conferences.length === 1
+                    ? stateInfo.conferences[0].color
+                    : stateInfo.conferences.length === 2
+                    ? d3.scaleLinear().domain([0, 1]).range([stateInfo.conferences[0].color, stateInfo.conferences[1].color])(0.5)
+                    : stateInfo.conferences.length === 3
+                    ? d3.scaleLinear().domain([0, 1, 2]).range([stateInfo.conferences[0].color, stateInfo.conferences[1].color, stateInfo.conferences[2].color])(0.33)
+                    : stateInfo.conferences.length === 4
+                    ? d3.scaleLinear().domain([0, 1, 2, 3]).range([stateInfo.conferences[0].color, stateInfo.conferences[1].color, stateInfo.conferences[2].color, stateInfo.conferences[3].color])(0.25)
+                    : stateInfo.conferences.length === 5
+                    ? d3.scaleLinear().domain([0, 1, 2, 3, 4]).range([stateInfo.conferences[0].color, stateInfo.conferences[1].color, stateInfo.conferences[2].color, stateInfo.conferences[3].color, stateInfo.conferences[4].color])(0.2)
+                    : stateInfo.conferences.length === 6
+                    ? d3.scaleLinear().domain([0, 1, 2, 3, 4, 5]).range([stateInfo.conferences[0].color, stateInfo.conferences[1].color, stateInfo.conferences[2].color, stateInfo.conferences[3].color, stateInfo.conferences[4].color, stateInfo.conferences[5].color])(0.5)
+                    : '#DDD';
+              }
+              return (
+                <Geography
+                  key={geo.rsmKey}
+                  geography={geo}
+                  style={{
+                    default: {
+                      fill: stateColor,
+                      transition: 'fill 0.3s ease-in-out',
+                      outline: "none"
+                    },
+                    hover: {
+                      fill: stateColor,
+                      ...(stateColor !== '#DDD' && { opacity: 0.7 }),
+                      outline: "none",
+                    },
+                    pressed: { outline: "none", fill: stateColor },
+                  }}
+                />
+              );
+            })
+          }
         </Geographies>
         {schools && schools.map(school => (
           <Marker 
@@ -236,11 +238,19 @@ const MapChart = () => {
                 </p>
               )}
             </div>
-
             </foreignObject>
           </Annotation>
+          
         )}
-
+        <Annotation
+          subject={[-84, 50]}
+          dx={0}
+          dy={0}
+        >
+          <foreignObject width="150" height="35">
+        <Autoplay />
+          </foreignObject>
+        </Annotation>
       </ZoomableGroup>
     </ComposableMap>
       {!fullscreen ?

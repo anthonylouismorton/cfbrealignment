@@ -68,51 +68,43 @@ function Main() {
         <Welcome/>
       }
       {!fullscreen &&
-
-      <div className="flex flex-col justify-center items-center">
-        {isYearVis &&
-          <MobileOptions/>
-        }
-        {option.hideYear || !isYearVis &&
-          <Year/>
-        }
-        {!option.hideHeader &&
-        <div>
-          <Header/>
-        </div>
-        }
-        <div className="flex w-full">
-          <div className="hidden xl:block xl:w-[17.5%] xl:pt-2 2xl:pt-4">
-            {!option.hideHistory &&
-              <History/>
-            }
+        <div className="flex flex-col justify-center items-center">
+          {isYearVis &&
+            <MobileOptions/>
+          }
+          {option.hideYear || !isYearVis &&
+            <Year/>
+          }
+          {!option.hideHeader &&
+          <div>
+            <Header/>
           </div>
-          <div className="w-full md:w-[80%] lg:w-[75%] xl:w-[65%] flex flex-col items-center">
-            <ReactMap/>
-            {isYearVis || option.hideYear &&
-            <div className='flex w-full justify-center items-center text-center'>
-              <MobileSlider />
-              <AutoPlay/>
+          }
+          <div className="flex w-full">
+            <div className="hidden xl:block xl:w-[17.5%] xl:pt-2 2xl:pt-4">
+              {!option.hideHistory &&
+                <History/>
+              }
             </div>
-            }
-          </div>
-          <div className="flex flex-col hidden md:block md:w-[20%] lg:w-[25%] xl:w-[17.5%] pt-5 md:pt-8 xl:pt-2 2xl:pt-4">
-            <div className="flex flex-col">
-              <div className="flex flex-row justify-end">
-                {!isYearVis && option.hideYear === false &&
-                  <div className="w-full">
-                    <AutoPlay/>
-                  </div>
-                }
-                <Options/>
+            <div className="w-full md:w-[80%] lg:w-[75%] xl:w-[65%] flex flex-col items-center">
+              <ReactMap/>
+              {isYearVis || option.hideYear &&
+              <div className='flex w-full justify-center items-center text-center'>
+                <MobileSlider />
+                <AutoPlay/>
               </div>
-            {!option.hideLegend && !isYearVis && (
-              <Legend/>
-            )}
+              }
+            </div>
+            <div className="flex flex-col hidden md:block md:w-[20%] lg:w-[25%] xl:w-[17.5%] pt-5 md:pt-8 xl:pt-2 2xl:pt-4">
+                {!option.hideLegend && !isYearVis && (
+                  <Legend/>
+                )}
+            </div>
+            <div>
+              <Options/>
             </div>
           </div>
         </div>
-      </div>
       }
       {fullscreen &&
         <div>
