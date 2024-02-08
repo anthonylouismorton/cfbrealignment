@@ -1,12 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 import { useSelector } from 'react-redux';
+import '../../Legend.css'
 
 function History() {
   const { conferenceChanges } = useSelector(state => state.conInfoReducer);
 
   return (
-    <div className="w-full pl-1 pb-5">
+    <div className="w-full pl-1 pr-1 pb-5 legend-history-container overflow-auto">
       <div className="text-center flex flex-col" id="change">
         <p className="text-md md:text-lg lg:text-xl font-bold pb-4 text-white">HISTORY</p>
         <div className='flex flex-wrap flex-column items-center w-full'>

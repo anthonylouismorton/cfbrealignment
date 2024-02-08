@@ -72,14 +72,12 @@ function Main() {
           {isYearVis &&
             <MobileOptions/>
           }
-          {option.hideYear || !isYearVis &&
+          {!isYearVis &&
             <Year/>
           }
-          {!option.hideHeader &&
           <div>
             <Header/>
           </div>
-          }
           <div className="flex w-full">
             <div className="hidden xl:block xl:w-[17.5%] xl:pt-2 2xl:pt-4">
               {!option.hideHistory &&
@@ -88,7 +86,7 @@ function Main() {
             </div>
             <div className="w-full md:w-[80%] lg:w-[75%] xl:w-[65%] flex flex-col items-center">
               <ReactMap/>
-              {isYearVis || option.hideYear &&
+              {isYearVis &&
               <div className='flex w-full justify-center items-center text-center'>
                 <MobileSlider />
                 <AutoPlay/>

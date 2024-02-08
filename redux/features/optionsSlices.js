@@ -9,8 +9,6 @@ export const options = createSlice({
     powerConferences: false, 
     hideHistory: false, 
     hideLegend: false, 
-    hideHeader: false, 
-    hideYear: false, 
     showWelcome: false, 
     smallLogos: false, 
     conFilter: false, 

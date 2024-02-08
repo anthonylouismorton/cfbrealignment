@@ -117,24 +117,6 @@ export default function OptionsMenu({open, setOpen}) {
               />
               <label className='pl-2 text-[16px] text-white font-normal'>Hide Legend</label>
             </div>
-            <div className='hidden md:flex items-center w-full'>
-              <input
-                type="checkbox"
-                checked={option.hideHeader}
-                value="hideHeader"
-                onChange={handleOptions}
-              />
-              <label className='pl-2 text-[16px] text-white font-normal'>Hide Header</label>
-            </div>
-            <div className='hidden md:flex items-center w-full'>
-              <input
-                type="checkbox"
-                checked={option.hideYear}
-                value="hideYear"
-                onChange={handleOptions}
-              />
-              <label className='pl-2 text-[16px] text-white font-normal'>Hide Year Bar</label>
-            </div>
             <div className='flex items-center w-full'>
               <input
                 type="checkbox"
