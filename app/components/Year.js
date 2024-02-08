@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import YearSlider from './YearSlider';
 
-function Year({ currentYear, setCurrentYear }) {
+function Year() {
   const [isVisible, setIsVisible] = useState(true);
   let hideTimer;
 
@@ -40,7 +40,7 @@ function Year({ currentYear, setCurrentYear }) {
       onFocus={showSlider}
     >
       {isVisible &&
-        <YearSlider currentYear={currentYear} setCurrentYear={setCurrentYear} />
+        <YearSlider/>
       }
     </div>
   );

@@ -14,7 +14,8 @@ export const options = createSlice({
     showWelcome: true, 
     smallLogos: false, 
     conFilter: false, 
-    showLocation: true},
+    showLocation: true
+  },
     reducers: {
       changeOption: (state, action) => {
         const { option, value } = action.payload;

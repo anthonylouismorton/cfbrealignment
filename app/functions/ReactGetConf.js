@@ -1,6 +1,6 @@
 import { getChanges } from "./getChanges";
 
-export function getConferences(conferenceData, year, option, conList) {
+export function getConferences(conferenceData, year, option, conferences) {
   const { majorConferences, powerConferences, aqConferences} = option
   var getCurrentConferences = [];
   var historyArray = [];
@@ -16,7 +16,7 @@ export function getConferences(conferenceData, year, option, conList) {
 
     //Filter by user selected conferences only
     if(option.conFilter){
-      if(conList[conference.abbreviation] === false){
+      if(conferences[conference.abbreviation] === false){
         return;
       }
     }
@@ -116,5 +116,5 @@ export function getConferences(conferenceData, year, option, conList) {
   //Changes for the history component
   const conferenceChanges = getChanges(getCurrentConferences, year, historyArray)
 
-  return { getSchools, getCurrentConferences, conferenceChanges, getLegendConferences, getMapFill }
+  return { getSchools, conferenceChanges, getLegendConferences, getMapFill }
 }

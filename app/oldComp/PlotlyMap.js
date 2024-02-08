@@ -3,7 +3,7 @@ import Plot from 'react-plotly.js';
 import MapData from './data/plotly.json';
 import conferenceData from './data/conferenceData.json';
 import { getConferences } from '../functions/ReactGetConf';
-import { mapFill } from './mapFill';
+import { mapFill } from '../oldFunc/mapFill';
 import { schoolLocations } from '../functions/ReactMapSchoolLoc';
 
 const PlotlyMap = ({ mapdata, currentYear, options, isYearVisible, setChangesList, setSchoolStates, setCurrentConferences, setActiveConferences, conList }) => {

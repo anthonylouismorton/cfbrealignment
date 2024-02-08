@@ -2,11 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 import conferenceData from '../data/conferenceData.json';
-import { getConferences } from './getConferences';
-import { mapFill } from './mapFill';
-import { schoolLocations } from './schoolLocations';
-import AutoPlay from '../AutoPlay';
-import ReactDOMServer from 'react-dom/server';
+import { getConferences } from '../oldFunc/getConferences';
+import { mapFill } from '../oldFunc/mapFill';
+import { schoolLocations } from '../oldFunc/schoolLocations';
 
 export default function Map({
   mapdata,

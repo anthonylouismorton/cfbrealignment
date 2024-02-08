@@ -5,7 +5,8 @@ import { getConferences } from '../functions/ReactGetConf';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import { IconButton } from '@mui/material';
 import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
-import { openFullscreen, closeFullscreen } from '../../redux/features/slices';
+import { openFullscreen, closeFullscreen } from '../../redux/features/layoutSlices';
+import { setLegend, setChanges } from '@/redux/features/conInfoSlices';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   ComposableMap,
@@ -15,14 +16,15 @@ import {
   Annotation,
   ZoomableGroup
 } from "react-simple-maps";
-import MapData from '../data/reactMapData.json'
-import '../../styles.css'
+import MapData from '../data/reactMapData.json';
 import * as d3 from 'd3';
 
-const MapChart = ({ mapdata, currentYear, isYearVisible, setChangesList, setSchoolStates, setCurrentConferences, setActiveConferences, conList }) => {
+const MapChart = () => {
   const dispatch = useDispatch();
-  const fullscreen = useSelector((state)=> state.fullscreenReducer);
+  const { fullscreen, isYearVis } = useSelector((state)=> state.layoutReducer);
+  const conFilter = useSelector(state => state.conFilterReducer);
   const option = useSelector((state) => state.optionsReducer);
+  const year = useSelector(state => state.yearReducer);
   const [schools, setschools] = useState([]);
   const [logosize, setlogosize] = useState(20);
   const [logooffset, setlogooffset] = useState(-10);
@@ -46,11 +48,11 @@ const MapChart = ({ mapdata, currentYear, isYearVisible, setChangesList, setScho
       setmapsize([1150,555])
     }
 
-    const { getSchools, getCurrentConferences, conferenceChanges, getLegendConferences, getMapFill } = getConferences(
+    const { getSchools, conferenceChanges, getLegendConferences, getMapFill } = getConferences(
       conferenceData,
-      currentYear,
+      year,
       option,
-      conList
+      conFilter
     );
    
     if(option.smallLogos && position.zoom >= 1){
@@ -113,15 +115,12 @@ const MapChart = ({ mapdata, currentYear, isYearVisible, setChangesList, setScho
       }}))
     
     }
+    dispatch(setLegend(getLegendConferences));
+    dispatch(setChanges(conferenceChanges));
+    setmapfill(getMapFill);
+    setschools(getSchools);
     
-    setCurrentConferences(getCurrentConferences);
-    setSchoolStates(getSchools);
-    setActiveConferences(getLegendConferences);
-    setChangesList(conferenceChanges);
-    setmapfill(getMapFill)
-    setschools(getSchools)
-    
-  }, [mapdata, currentYear, option, isYearVisible, conList, position.zoom, fullscreen])
+  }, [year, option, isYearVis, conFilter, position.zoom, fullscreen])
 
   function handleMoveEnd(position) {
     setPosition(position);
@@ -226,7 +225,7 @@ const MapChart = ({ mapdata, currentYear, isYearVisible, setChangesList, setScho
               <p style={{ fontSize: styling.forO.fontSize, color: "#DDD", margin: 0 }}>
                 {hoveredschool.name}
               </p>
-              {(hoveredschool.name === "University of Iowa" && (currentYear === 1907 || currentYear === 1908)) ? (
+              {(hoveredschool.name === "University of Iowa" && (year === 1907 || year === 1908)) ? (
                 <>
                   <p style={{ fontSize: styling.forO.fontSize, color: "#DDD", margin: 0 }}>Big 8 Member Since: 1900</p>
                   <p style={{ fontSize: styling.forO.fontSize, color: "#DDD", margin: 0 }}>Big Ten Member since: 1907</p>
@@ -257,7 +256,7 @@ const MapChart = ({ mapdata, currentYear, isYearVisible, setChangesList, setScho
       Reset
     </button>
     {selectedschool &&
-      <SchoolInfo schoolmodal={schoolmodal} setschoolmodal={setschoolmodal} selectedschool={selectedschool} setselectedschool={setselectedschool} currentYear={currentYear}
+      <SchoolInfo schoolmodal={schoolmodal} setschoolmodal={setschoolmodal} selectedschool={selectedschool} setselectedschool={setselectedschool} year={year}
       />
     }
     </div>

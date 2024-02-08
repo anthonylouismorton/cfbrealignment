@@ -1,13 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-function Legend({ activeConferences }) {
+function Legend() {
+  const { legendConferences } = useSelector(state => state.conInfoReducer);
 
   return (
     <div className='flex flex-col lg:ml-[10px] lg:mt-[50px] lg:mt-[75px] 2xl:mt-[150px]'>
       <h2 className="lg:mb-1 xl:mb-2 text-[6px] sm:text-[10px] md:text-[12px] lg:text-[16px] xl:text-[20px] font-semibold text-white">
         CONFERENCES
       </h2>
-      {activeConferences && activeConferences.map((conference, index) => (
+      {legendConferences && legendConferences.map((conference, index) => (
         <div key={index} className="legend-item xl:mb-1">
           <div className='flex flex-row items-center'>
             <div
