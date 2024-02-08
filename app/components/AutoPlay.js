@@ -3,8 +3,13 @@ import PauseIcon from '@mui/icons-material/Pause';
 import { IconButton } from '@mui/material';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import ReplayIcon from '@mui/icons-material/Replay';
+import { useSelector, useDispatch } from 'react-redux';
+import { setYear } from '@/redux/features/yearSlices';
 
-export default function Autoplay({changesList, currentYear, setCurrentYear}){
+export default function Autoplay(){
+  const dispatch = useDispatch();
+  const year = useSelector(state => state.yearReducer);
+  const { conferenceChanges } = useSelector(state => state.conInfoReducer);
   const [start, setStart] = useState(false);
   const [showReplay, setShowReplay] = useState(false);
   const timeIntervalRef = useRef(null);
@@ -16,21 +21,21 @@ export default function Autoplay({changesList, currentYear, setCurrentYear}){
     setStart(false);
   };
   const handleReplay = () => {
-    setCurrentYear(1891)
+    dispatch(setYear(1891));
     setStart(true);
-    setShowReplay(false)
+    setShowReplay(false);
   };
 
   
   useEffect(() => {
     let time = 2000
-    let nextYear = currentYear + 1
-    if(changesList.length === 0){
+    let nextYear = year + 1
+    if(conferenceChanges.length === 0){
       time = 500
     }
     if (start && nextYear < 2025) {
       timeIntervalRef.current = setInterval(() => {
-        setCurrentYear((prevYear) => prevYear + 1);
+        dispatch(setYear(year + 1));
       }, time);
     } 
     else if (!start) {
@@ -45,7 +50,7 @@ export default function Autoplay({changesList, currentYear, setCurrentYear}){
     return () => {
       clearInterval(timeIntervalRef.current);
     };
-  }, [start, currentYear, setCurrentYear, changesList]);
+  }, [start, year, conferenceChanges]);
 
   return (
     <div className='flex justify-center items-center'>

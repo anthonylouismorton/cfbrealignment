@@ -2,6 +2,8 @@ import * as React from 'react';
 import Slider from '@mui/material/Slider';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
+import { useSelector, useDispatch } from 'react-redux';
+import { setYear } from '@/redux/features/yearSlices';
 
 const iOSBoxShadow =
   '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)';
@@ -93,14 +95,17 @@ const CustomSlider = styled(Slider)(({ theme }) => ({
 }));
 
 
-export default function YearSlider({currentYear, setCurrentYear}) {
+export default function YearSlider() {
+  const dispatch = useDispatch();
+  const year = useSelector(state => state.yearReducer);
   const handleSliderChange = (e, newValue) => {
-    setCurrentYear(newValue);
+    dispatch(setYear(newValue));
   };
+
   return (
     <Box className="w-[50%] lg:w-[90%] flex items-center justify-center content-center mr-3">
       <CustomSlider
-        value={currentYear}
+        value={year}
         valueLabelDisplay="auto"
         min={1891}
         max={2025}

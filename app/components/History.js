@@ -1,14 +1,16 @@
 import React from 'react';
 import Image from 'next/image';
+import { useSelector } from 'react-redux';
 
-function History({ changesList }) {
+function History() {
+  const { conferenceChanges } = useSelector(state => state.conInfoReducer);
 
   return (
     <div className="w-full pl-1 pb-5">
       <div className="text-center flex flex-col" id="change">
         <p className="text-md md:text-lg lg:text-xl font-bold pb-4 text-white">HISTORY</p>
         <div className='flex flex-wrap flex-column items-center w-full'>
-          {changesList.map((change, index) => (
+          {conferenceChanges.map((change, index) => (
             <div key={index} className="change-item flex justify-center items-center pl-[1px] pr-[1px] mb-2 w-1/2 sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-full 2xl:w-full">
               {change.change === 'dropped' && (
                 <div className='flex text-center items-center'>
@@ -30,7 +32,7 @@ function History({ changesList }) {
                       />
                   </div>
                   ) : (
-                    <div style={{color: `${change.mapColor}`}} className="change-conference mr-1 sm:mr-3 text-sm lg:text-lg">{change.abbreviation}</div>
+                    <div style={{color: `${change.mapColor}`}} className="change-conference mr-1 sm:mr-3 text-sm">{change.abbreviation}</div>
                   )}
                   <div className="change-conference text-sm text-white">{`founded`}</div>
                 </div>

@@ -1,11 +1,13 @@
 import React from 'react';
 import Modal from '@mui/material/Modal';
 import { changeOption } from '../../redux/features/optionsSlices';
+import { filterCon } from '@/redux/features/conFilterSlices';
 import { useDispatch, useSelector } from 'react-redux';
 
-export default function OptionsMenu({open, setOpen, conList, setConList}) {
+export default function OptionsMenu({open, setOpen}) {
   const dispatch = useDispatch();
   const option = useSelector((state) => state.optionsReducer);
+  const conFilter = useSelector(state => state.conFilterReducer);
   const handleClose = () =>{
     setOpen(!open);
   }
@@ -13,19 +15,7 @@ export default function OptionsMenu({open, setOpen, conList, setConList}) {
   const handleOptions = (e) => {
     const value = e.target.value;
     const checked = e.target.checked;
-    if (value === "conFilter") {
-      setConList((prevConList) => {
-        const updatedConList = { ...prevConList };
-        Object.keys(updatedConList).forEach((conference) => {
-          updatedConList[conference] = checked;
-        });
-        return updatedConList;
-      });
-    }  
-    // if (value === "showLocation" && checked === false) {
-    //   dispatch(changeOption({ option: value, value: checked }));
-    //   dispatch(changeOption({ option: "showLogos", value: checked }));
-    // }
+
     if (value === "smallLogos" && checked === true) {
       dispatch(changeOption({ option: value, value: checked }));
       dispatch(changeOption({ option: "showLogos", value: checked }));
@@ -42,10 +32,8 @@ export default function OptionsMenu({open, setOpen, conList, setConList}) {
 
   const handleConferences = (e) => {
     const value = e.target.value;
-      setConList({
-        ...conList,
-        [value]: e.target.checked,
-      });
+    const checked = e.target.checked;
+      dispatch(filterCon({ option: value, value: checked }));
   };
 
   return (
@@ -157,12 +145,12 @@ export default function OptionsMenu({open, setOpen, conList, setConList}) {
               <label className='pl-2 text-[16px] text-white font-normal'>Filter by Conference</label>
             </div>
           </div>
-            {option.conFilter && conList &&
+            {option.conFilter && conFilter &&
               <p className='flex flex-col p-3 text-center text-[18px] text-white font-semibold'>Conferences</p>
             }
             <div className='pl-2 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5'>
-              {option.conFilter && conList &&
-                Object.entries(conList).map(([conference, checked]) => (
+              {option.conFilter && conFilter &&
+                Object.entries(conFilter).map(([conference, checked]) => (
                   <div key={conference} className='flex items-center'>
                     <input
                       type="checkbox"

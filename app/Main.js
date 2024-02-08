@@ -1,6 +1,5 @@
 "use client"
-import { useEffect, useState } from 'react';
-import mapdata from './data/reactMapData.json';
+import { useEffect } from 'react';
 import Year from './components/Year';
 import Legend from './components/Legend';
 import History from './components/History';
@@ -8,63 +7,60 @@ import Header from './components/Header';
 import Options from './components/Options';
 import MobileSlider from './mobile/MobileSlider';
 import Welcome from './components/Welcome';
-import AutoPlay from './AutoPlay';
+import AutoPlay from './components/AutoPlay';
 import MobileOptions from './mobile/MobileOptions';
 import ReactMap from './components/ReactMap';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeOption } from '../redux/features/optionsSlices';
+import { filterCon } from '../redux/features/conFilterSlices';
+import { setYear } from '@/redux/features/yearSlices';
+import { setYearVis } from '@/redux/features/layoutSlices';
 
 function Main() {
   const dispatch = useDispatch();
-  const fullscreen = useSelector((state)=> state.fullscreenReducer);
+  const { fullscreen, isYearVis } = useSelector((state)=> state.layoutReducer);
   const option = useSelector((state)=> state.optionsReducer);
-  const [currentYear, setCurrentYear] = useState(1891);
-  const [activeConferences, setActiveConferences] = useState(null);
-  const [changesList, setChangesList] = useState([]);
-  const [conList, setConList] = useState({'SEC':false,'Pac-12':false,'Big 12':false,'ACC':false,'Big Ten':false,'SOCON':false,'Big 8':false,'Border':false,'SWC':false,'C-USA':false,'WAC':false,'MVC':false,'Skyline':false,'WIUFA':false,'SIAA':false,'Big East':false,'BWC':false,'MWC':false,'RMAC':false,'Ivy':false,'Sun Belt':false,'AAC':false,'MAC':false,'Southland':false})
-  const [currentConferences, setCurrentConferences] = useState(null);
-  const [schoolStates, setSchoolStates] = useState(null);
-  const [isYearVisible,setIsYearVisible] = useState(false);
-  const minWidth = (768);
+  const conFilter = useSelector(state => state.conFilterReducer);
+  const year = useSelector(state => state.yearReducer);
 
+  const minWidth = (768);
+  //need to fix saving to local storage
   // useEffect(() => {
-  //   // console.log(localStorage.savedConferences)
   //   if(localStorage.savedConferences){
-  //     setConList(JSON.parse(localStorage.getItem('savedConferences')));
+  //     const savedConfList = JSON.parse(localStorage.getItem('savedConferences'));
+  //     dispatch(filterCon(savedConfList));
   //   }
   //   if(localStorage.savedOptions){
   //     const savedOptions = JSON.parse(localStorage.getItem('savedOptions'));
   //     dispatch(changeOption(savedOptions));
   //   }
-  // },[])
+  // },[]);
   useEffect(() => {
     const handleWindowResize = () => {
-      setIsYearVisible(
-        window.innerWidth <= minWidth
-      );
+      dispatch(setYearVis(window.innerWidth <= minWidth))
     };
 
     handleWindowResize();
     window.addEventListener('resize', handleWindowResize);
     const handleKeyDown = (e) => {
       if (e.keyCode === 37) {
-        setCurrentYear(currentYear - 1);
+        dispatch(setYear(year - 1));
       } 
       else if (e.keyCode === 39) {
-        setCurrentYear(currentYear + 1);
+        dispatch(setYear(year + 1));
       }
     };
     document.addEventListener('keydown', handleKeyDown);
     const saveToLocalStorage = () => {
       localStorage.setItem("savedOptions", JSON.stringify(option))
-      localStorage.setItem("savedConferences", JSON.stringify(conList))
+      localStorage.setItem("savedConferences", JSON.stringify(conFilter))
     }
     saveToLocalStorage();
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
 
-  }, [currentYear, option, isYearVisible, conList]);
+  }, [year, option, isYearVis, conFilter]);
 
   return (
     <div>
@@ -74,58 +70,44 @@ function Main() {
       {!fullscreen &&
 
       <div className="flex flex-col justify-center items-center">
-        {isYearVisible &&
-          <MobileOptions activeConferences={activeConferences} conList={conList} setConList={setConList}/>
+        {isYearVis &&
+          <MobileOptions/>
         }
-        {option.hideYear || !isYearVisible &&
-          <Year currentYear={currentYear} setCurrentYear={setCurrentYear} />
+        {option.hideYear || !isYearVis &&
+          <Year/>
         }
         {!option.hideHeader &&
         <div>
-          <Header currentYear={currentYear} />
+          <Header/>
         </div>
         }
         <div className="flex w-full">
           <div className="hidden xl:block xl:w-[17.5%] xl:pt-2 2xl:pt-4">
             {!option.hideHistory &&
-              <History changesList={changesList}/>
+              <History/>
             }
           </div>
           <div className="w-full md:w-[80%] lg:w-[75%] xl:w-[65%] flex flex-col items-center">
-            <ReactMap
-              mapdata={mapdata}
-              currentYear={currentYear}
-              setCurrentYear={setCurrentYear}
-              isYearVisible={isYearVisible}
-              changesList={changesList}
-              setChangesList={setChangesList}
-              schoolStates={schoolStates}
-              setSchoolStates={setSchoolStates}
-              currentConferences={currentConferences}
-              setCurrentConferences={setCurrentConferences}
-              setActiveConferences={setActiveConferences}
-              activeConferences={activeConferences}
-              conList={conList}
-            />
-            {isYearVisible || option.hideYear &&
+            <ReactMap/>
+            {isYearVis || option.hideYear &&
             <div className='flex w-full justify-center items-center text-center'>
-              <MobileSlider currentYear={currentYear} setCurrentYear={setCurrentYear} />
-              <AutoPlay currentYear={currentYear} setCurrentYear={setCurrentYear} changesList={changesList} />
+              <MobileSlider />
+              <AutoPlay/>
             </div>
             }
           </div>
           <div className="flex flex-col hidden md:block md:w-[20%] lg:w-[25%] xl:w-[17.5%] pt-5 md:pt-8 xl:pt-2 2xl:pt-4">
             <div className="flex flex-col">
               <div className="flex flex-row justify-end">
-                {!isYearVisible && option.hideYear === false &&
+                {!isYearVis && option.hideYear === false &&
                   <div className="w-full">
-                    <AutoPlay currentYear={currentYear} setCurrentYear={setCurrentYear} changesList={changesList} />
+                    <AutoPlay/>
                   </div>
                 }
-                <Options activeConferences={activeConferences} conList={conList} setConList={setConList}/>
+                <Options/>
               </div>
-            {!option.hideLegend && !isYearVisible && (
-              <Legend activeConferences={activeConferences} />
+            {!option.hideLegend && !isYearVis && (
+              <Legend/>
             )}
             </div>
           </div>
@@ -134,27 +116,13 @@ function Main() {
       }
       {fullscreen &&
         <div>
-          <ReactMap
-            mapdata={mapdata}
-            currentYear={currentYear}
-            setCurrentYear={setCurrentYear}
-            isYearVisible={isYearVisible}
-            changesList={changesList}
-            setChangesList={setChangesList}
-            schoolStates={schoolStates}
-            setSchoolStates={setSchoolStates}
-            currentConferences={currentConferences}
-            setCurrentConferences={setCurrentConferences}
-            setActiveConferences={setActiveConferences}
-            activeConferences={activeConferences}
-            conList={conList}
-          />
+          <ReactMap/>
         </div>
       }
        <div className="xl:hidden">
         <div className="w-full">
           {!option.hideHistory &&
-            <History changesList={changesList}/>
+            <History/>
           }
         </div>
       </div>
