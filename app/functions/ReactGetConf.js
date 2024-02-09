@@ -111,51 +111,48 @@ export function getConferences(conferenceData, year, option, conferences) {
       };
     };
   });
-  getMapFill.map((state) => {
-    if(state.conferences.length > 1){
-      if(state.conferences.length === 2){
-        const abbreviation = `${state.conferences[0].conference} / ${state.conferences[1].conference}`
-        if(!getLegendConferences.some(item => item.abbreviation === abbreviation)){
-          getLegendConferences.push({
-            abbreviation: abbreviation,
-            mapColor: d3.scaleLinear().domain([0, 1]).range([state.conferences[0].color, state.conferences[1].color])(0.5)
-          });
-        }
-      }
-      else if(state.conferences.length === 3){
-        if(!getLegendConferences.some(item => item.abbreviation === `${state.conferences[0].conference} / ${state.conferences[1].conference} / ${state.conferences[2].conference}`)){
-          getLegendConferences.push({
-            abbreviation: `${state.conferences[0].conference} / ${state.conferences[1].conference} / ${state.conferences[2].conference}`,
-            mapColor: d3.scaleLinear().domain([0, 1, 2]).range([state.conferences[0].color, state.conferences[1].color, state.conferences[2].color])(0.33)
-          });
-        }
-      }
-      else if(state.conferences.length === 4){
-        if(!getLegendConferences.some(item => item.abbreviation === `${state.conferences[0].conference} / ${state.conferences[1].conference} / ${state.conferences[2].conference} / ${state.conferences[3].conference}`)){
-          getLegendConferences.push({
-            abbreviation: `${state.conferences[0].conference} / ${state.conferences[1].conference} / ${state.conferences[2].conference} / ${state.conferences[3].conference}`,
-            mapColor: d3.scaleLinear().domain([0, 1, 2, 3]).range([state.conferences[0].color, state.conferences[1].color, state.conferences[2].color, state.conferences[3].color])(0.25)
-          });
-        }
-      }
-      else if(state.conferences.length === 5){
-        if(!getLegendConferences.some(item => item.abbreviation === `${state.conferences[0].conference} / ${state.conferences[1].conference} / ${state.conferences[2].conference} / ${state.conferences[3].conference} / ${state.conferences[4].conference}`)){
-          getLegendConferences.push({
-            abbreviation: `${state.conferences[0].conference} / ${state.conferences[1].conference} / ${state.conferences[2].conference} / ${state.conferences[3].conference} / ${state.conferences[4].conference}`,
-            mapColor: d3.scaleLinear().domain([0, 1, 2, 3, 4]).range([state.conferences[0].color, state.conferences[1].color, state.conferences[2].color, state.conferences[3].color, state.conferences[4].color])(0.2)
-          });
-        }
-      }
-      else if(state.conferences.length === 6){
-        if(!getLegendConferences.some(item => item.abbreviation === `${state.conferences[0].conference} / ${state.conferences[1].conference} / ${state.conferences[2].conference} / ${state.conferences[3].conference} / ${state.conferences[4].conference} / ${state.conferences[5].conference}`)){
-          getLegendConferences.push({
-            abbreviation: `${state.conferences[0].conference} / ${state.conferences[1].conference} / ${state.conferences[2].conference} / ${state.conferences[3].conference} / ${state.conferences[4].conference} / ${state.conferences[5].conference}`,
-            mapColor: d3.scaleLinear().domain([0, 1, 2, 3, 4, 5]).range([state.conferences[0].color, state.conferences[1].color, state.conferences[2].color, state.conferences[3].color, state.conferences[4].color, state.conferences[5].color])(0.5)
-          });
-        }
+
+  getMapFill = getSchools.reduce((accumulator, school) => {
+    const { state, conference, color } = school;
+    const existingState = accumulator.find(item => item.state === state);
+  
+    if (!existingState) {
+      accumulator.push({
+        state,
+        conferences: [{ conference, color }],
+      });
+    } else {
+      const existingConference = existingState.conferences.find(conf => conf.conference === conference);
+  
+      if (!existingConference) {
+        existingState.conferences.push({ conference, color });
+      } else {
+        existingConference.color = color;
       }
     }
-  })
+    return accumulator;
+  }, []);
+
+  getMapFill.forEach((state) => {
+    if (state.conferences.length > 1) {
+      const abbreviation = state.conferences.map(conf => conf.conference).join(' / ');
+      const existingItem = getLegendConferences.find(item => item.abbreviation === abbreviation);
+  
+      if (!existingItem) {
+        const mapColor = d3.scaleLinear()
+          .domain([...Array(state.conferences.length).keys()])
+          .range(state.conferences.map(conf => conf.color))
+          .call(this, state.conferences.length / 2);
+  
+        getLegendConferences.push({
+          abbreviation: abbreviation,
+          mapColor: mapColor
+        });
+      }
+    }
+  });
+  
+
 
   const conferenceChanges = getChanges(getCurrentConferences, year, historyArray);
   return { getSchools, conferenceChanges, getLegendConferences, getMapFill };

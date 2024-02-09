@@ -89,7 +89,6 @@ function Main() {
               {isYearVis &&
               <div className='flex w-full justify-center items-center text-center'>
                 <MobileSlider />
-                <AutoPlay/>
               </div>
               }
             </div>

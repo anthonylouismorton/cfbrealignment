@@ -20,6 +20,7 @@ import {
 } from "react-simple-maps";
 import MapData from '../data/reactMapData.json';
 import * as d3 from 'd3';
+import { geoPath } from 'd3-geo';
 
 const MapChart = () => {
   const dispatch = useDispatch();
@@ -33,9 +34,11 @@ const MapChart = () => {
   const [position, setPosition] = useState({ coordinates: [-96.5, 38.758362677392945], zoom: 0.93});
   const [mapfill, setmapfill] = useState([]);
   const [hoveredschool, sethoveredschool] = useState(null);
+  const [hoveredstate, sethoveredstate] = useState(null);
   const [selectedschool, setselectedschool] = useState(null);
   const [schoolmodal, setschoolmodal] = useState(false);
   const [mapsize, setmapsize] = useState([800,500]);
+  const path = geoPath();
 
   const [styling, setstyling] = useState({
     circleRadius: 3,
@@ -136,7 +139,7 @@ const MapChart = () => {
     setschoolmodal(true)
     setselectedschool(school)
   }
-
+  console.log(hoveredschool)
   return (
     <div className="relative w-[100%]">
     <ComposableMap
@@ -172,6 +175,9 @@ const MapChart = () => {
               }
               return (
                 <Geography
+                  onMouseEnter={() => sethoveredstate({stateInfo, center: path.centroid(geo)})} 
+                  onMouseLeave={() => sethoveredstate(null)}
+                  title={"hello"}
                   key={geo.rsmKey}
                   geography={geo}
                   style={{
@@ -187,10 +193,10 @@ const MapChart = () => {
                     },
                     pressed: { outline: "none", fill: stateColor },
                   }}
-                />
+                />  
               );
             })
-          }
+          } 
         </Geographies>
         {schools && schools.map(school => (
           <Marker 
@@ -216,6 +222,23 @@ const MapChart = () => {
             }
           </Marker>
         ))}
+        {hoveredstate && hoveredstate.stateInfo && (
+                <>
+                <Annotation
+                  subject={hoveredstate.center}
+                  dx={0}
+                  dy={0}
+                >
+                  <foreignObject x={styling.forO.x} y={styling.forO.y} width="500" height="100">
+                  <div className={`bg-black z-10 bg-opacity-75 inline-block ${styling.forO.padding} ${styling.forO.rounded}`}>
+                    <p style={{ fontSize: styling.forO.fontSize, color: "#DDD", margin: 0 }}>
+                      hello
+                    </p>
+                  </div>
+                  </foreignObject>
+                </Annotation>
+                </>
+              )}
         {hoveredschool && (
           <Annotation
             subject={hoveredschool.coordinates}
@@ -240,7 +263,6 @@ const MapChart = () => {
             </div>
             </foreignObject>
           </Annotation>
-          
         )}
         <Annotation
           subject={[-84, 50]}
