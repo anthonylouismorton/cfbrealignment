@@ -28,7 +28,6 @@ const iOSBoxShadow =
     { value: 2025, label: '2025' }
   ];
 
-
   const CustomSlider = styled(Slider)(({ theme }) => ({
     color: theme.palette.mode === 'dark' ? '#3880ff' : '#3880ff',
     height: 2,
@@ -94,10 +93,21 @@ const iOSBoxShadow =
       opacity: 0.5,
       backgroundColor: 'white',
       color: 'white',
-      '&:focus, &:hover': {
-        color: 'white',
-        height: '6px'
-      }
+      position: 'relative',
+      // '&:focus, &:hover': {
+      //   color: 'white',
+      //   height: '6px',
+      //   '&::after': {
+      //     top: '25px',
+      //     transform: 'translateX(-50%)',
+      //     // backgroundColor: 'rgba(255, 255, 255, 0.9)',
+      //     color: 'white',
+      //     padding: '4px',
+      //     borderRadius: '4px',
+      //     fontSize: '12px',
+      //     whiteSpace: 'nowrap',
+      //   },
+      // },
     },
     '& .MuiSlider-mark': {
       backgroundColor: 'gray',
