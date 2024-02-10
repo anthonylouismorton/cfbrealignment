@@ -179,6 +179,7 @@ const MapChart = () => {
                       fill: stateColor,
                       ...(stateColor !== '#DDD' && { opacity: 0.7 }),
                       outline: "none",
+                      cursor: "pointer"
                     },
                     pressed: { outline: "none", fill: stateColor },
                   }}
@@ -261,7 +262,7 @@ const MapChart = () => {
     </button>
     {hoveredstate && toolTipPos && hoveredstate.stateInfo && (
       <div style={{position: 'absolute', left: toolTipPos[0]-240, top: toolTipPos[1]-125}} width="200" height="100">
-        <div className={`bg-black z-10 bg-opacity-75 inline-block py-2 px-2 rounded-sm`}>
+        <div className={`bg-black z-10 bg-opacity-75 inline-block py-1 px-1 rounded-sm`}>
           {hoveredstate && hoveredstate.stateInfo.conferences.map((conference, index) =>
             <p key={index} style={{ fontSize: styling.forO.fontSize, color: "#DDD", margin: 0 }}>
               {conference.conference}
