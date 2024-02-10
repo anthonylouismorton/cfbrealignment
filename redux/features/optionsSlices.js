@@ -12,7 +12,7 @@ export const options = createSlice({
     showWelcome: false, 
     smallLogos: false, 
     conFilter: false, 
-    showLocation: true
+    showLocation: false
   },
     reducers: {
       changeOption: (state, action) => {
