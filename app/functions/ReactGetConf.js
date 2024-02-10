@@ -98,61 +98,31 @@ export function getConferences(conferenceData, year, option, conferences) {
     if(existingStateIndex === -1){
       getMapFill.push({
         state: state,
-        conferences: [ { conference: conference, color: color } ],
+        conferences: [{conference: conference, color: color}],
+        color: color
       });
     } 
     else{
       const existingConferenceIndex = getMapFill[existingStateIndex].conferences.findIndex((conf) => conf.conference === conference);
       if(existingConferenceIndex === -1){
-        getMapFill[existingStateIndex].conferences.push({ conference: conference, color: color });
-      }
-      else{
-        getMapFill[existingStateIndex].conferences[existingConferenceIndex].color = color;
+        const updatedConferences = [...getMapFill[existingStateIndex].conferences, {conference: conference, color: color}];
+        var newColor = d3.scaleLinear()
+        .domain([...Array(updatedConferences.length).keys()])
+        .range(updatedConferences.map(conf => conf.color))
+        (1/updatedConferences.length);
+        getMapFill[existingStateIndex].conferences = (updatedConferences);
+        getMapFill[existingStateIndex].color = newColor;
+        const conferenceAbbreviation = updatedConferences.map(con => con.conference).join(' / ');
+        // if(!getLegendConferences.find(con => con.abbreviation === conferenceAbbreviation)){
+        //   getLegendConferences.push({
+        //     abbreviation: updatedConferences.map(con => con.conference).join(' / '),
+        //     mapColor: newColor
+        //   });
+        // }
       };
     };
   });
-
-  getMapFill = getSchools.reduce((accumulator, school) => {
-    const { state, conference, color } = school;
-    const existingState = accumulator.find(item => item.state === state);
-  
-    if (!existingState) {
-      accumulator.push({
-        state,
-        conferences: [{ conference, color }],
-      });
-    } else {
-      const existingConference = existingState.conferences.find(conf => conf.conference === conference);
-  
-      if (!existingConference) {
-        existingState.conferences.push({ conference, color });
-      } else {
-        existingConference.color = color;
-      }
-    }
-    return accumulator;
-  }, []);
-
-  getMapFill.forEach((state) => {
-    if (state.conferences.length > 1) {
-      const abbreviation = state.conferences.map(conf => conf.conference).join(' / ');
-      const existingItem = getLegendConferences.find(item => item.abbreviation === abbreviation);
-  
-      if (!existingItem) {
-        const mapColor = d3.scaleLinear()
-          .domain([...Array(state.conferences.length).keys()])
-          .range(state.conferences.map(conf => conf.color))
-          .call(this, state.conferences.length / 2);
-  
-        getLegendConferences.push({
-          abbreviation: abbreviation,
-          mapColor: mapColor
-        });
-      }
-    }
-  });
-  
-
+  console.log(getLegendConferences)
 
   const conferenceChanges = getChanges(getCurrentConferences, year, historyArray);
   return { getSchools, conferenceChanges, getLegendConferences, getMapFill };

@@ -19,8 +19,6 @@ import {
   ZoomableGroup
 } from "react-simple-maps";
 import MapData from '../data/reactMapData.json';
-import * as d3 from 'd3';
-import { geoPath } from 'd3-geo';
 
 const MapChart = () => {
   const dispatch = useDispatch();
@@ -38,8 +36,7 @@ const MapChart = () => {
   const [selectedschool, setselectedschool] = useState(null);
   const [schoolmodal, setschoolmodal] = useState(false);
   const [mapsize, setmapsize] = useState([800,500]);
-  const path = geoPath();
-
+  const [toolTipPos, settoolTipPos] = useState(null);
   const [styling, setstyling] = useState({
     circleRadius: 3,
     forO: { x: 10, y: -5, fontSize: "12px", padding: "py-[2px] px-[5px]", rounded: "rounded-sm"},
@@ -136,12 +133,20 @@ const MapChart = () => {
   };
 
   const handleSchoolModal = (school) =>{
-    setschoolmodal(true)
-    setselectedschool(school)
-  }
-  console.log(hoveredschool)
+    setschoolmodal(true);
+    setselectedschool(school);
+  };
+
+  const handleMouseMove = (event) => {
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+    const tooltipX = mouseX + 10;
+    const tooltipY = mouseY + 10;
+
+    settoolTipPos([tooltipX, tooltipY]);
+  };
   return (
-    <div className="relative w-[100%]">
+    <div onMouseMove={handleMouseMove} className="relative w-[100%]">
     <ComposableMap
      projection="geoAlbersUsa"
      width={mapsize[0]}
@@ -156,26 +161,10 @@ const MapChart = () => {
           {({ geographies }) =>
             geographies.map((geo) => {
               const stateInfo = mapfill.find((state) => state.state === geo.id);
-              let stateColor = '#DDD';
-              if(!option.showLocation && stateInfo){
-                stateColor =
-                  stateInfo.conferences.length === 1
-                    ? stateInfo.conferences[0].color
-                    : stateInfo.conferences.length === 2
-                    ? d3.scaleLinear().domain([0, 1]).range([stateInfo.conferences[0].color, stateInfo.conferences[1].color])(0.5)
-                    : stateInfo.conferences.length === 3
-                    ? d3.scaleLinear().domain([0, 1, 2]).range([stateInfo.conferences[0].color, stateInfo.conferences[1].color, stateInfo.conferences[2].color])(0.33)
-                    : stateInfo.conferences.length === 4
-                    ? d3.scaleLinear().domain([0, 1, 2, 3]).range([stateInfo.conferences[0].color, stateInfo.conferences[1].color, stateInfo.conferences[2].color, stateInfo.conferences[3].color])(0.25)
-                    : stateInfo.conferences.length === 5
-                    ? d3.scaleLinear().domain([0, 1, 2, 3, 4]).range([stateInfo.conferences[0].color, stateInfo.conferences[1].color, stateInfo.conferences[2].color, stateInfo.conferences[3].color, stateInfo.conferences[4].color])(0.2)
-                    : stateInfo.conferences.length === 6
-                    ? d3.scaleLinear().domain([0, 1, 2, 3, 4, 5]).range([stateInfo.conferences[0].color, stateInfo.conferences[1].color, stateInfo.conferences[2].color, stateInfo.conferences[3].color, stateInfo.conferences[4].color, stateInfo.conferences[5].color])(0.5)
-                    : '#DDD';
-              }
+              let stateColor = stateInfo?.color || '#DDD';
               return (
                 <Geography
-                  onMouseEnter={() => sethoveredstate({stateInfo, center: path.centroid(geo)})} 
+                  onMouseOver={!option.showLocation ? () => sethoveredstate({ stateInfo }) : undefined}
                   onMouseLeave={() => sethoveredstate(null)}
                   title={"hello"}
                   key={geo.rsmKey}
@@ -205,7 +194,7 @@ const MapChart = () => {
             coordinates={school.coordinates} 
             onClick={()=> handleSchoolModal(school)} 
             onMouseEnter={() => sethoveredschool(school)} 
-            onMouseLeave={() => sethoveredschool(null)}
+            onMouseLeave={()=> sethoveredschool(null)}
 
           >
             {option.showLocation && option.showLogos === false &&
@@ -222,23 +211,6 @@ const MapChart = () => {
             }
           </Marker>
         ))}
-        {hoveredstate && hoveredstate.stateInfo && (
-                <>
-                <Annotation
-                  subject={hoveredstate.center}
-                  dx={0}
-                  dy={0}
-                >
-                  <foreignObject x={styling.forO.x} y={styling.forO.y} width="500" height="100">
-                  <div className={`bg-black z-10 bg-opacity-75 inline-block ${styling.forO.padding} ${styling.forO.rounded}`}>
-                    <p style={{ fontSize: styling.forO.fontSize, color: "#DDD", margin: 0 }}>
-                      hello
-                    </p>
-                  </div>
-                  </foreignObject>
-                </Annotation>
-                </>
-              )}
         {hoveredschool && (
           <Annotation
             subject={hoveredschool.coordinates}
@@ -287,6 +259,18 @@ const MapChart = () => {
     <button className='absolute top-2 right-2 lg:top-3 lg:right-3 text-black text-[9px] sm:text-[12px] lg:text-[14px] font-semibold bg-white border border-white hover:bg-black hover:text-white hover:border-white p-1 rounded-sm' onClick={handleReset}>
       Reset
     </button>
+    {hoveredstate && toolTipPos && hoveredstate.stateInfo && (
+      <div style={{position: 'absolute', left: toolTipPos[0]-240, top: toolTipPos[1]-125}} width="200" height="100">
+        <div className={`bg-black z-10 bg-opacity-75 inline-block py-2 px-2 rounded-sm`}>
+          {hoveredstate && hoveredstate.stateInfo.conferences.map((conference, index) =>
+            <p key={index} style={{ fontSize: styling.forO.fontSize, color: "#DDD", margin: 0 }}>
+              {conference.conference}
+            </p>
+          
+          )}
+        </div>
+      </div>
+    )}
     {selectedschool &&
       <SchoolInfo schoolmodal={schoolmodal} setschoolmodal={setschoolmodal} selectedschool={selectedschool} setselectedschool={setselectedschool} year={year}
       />
