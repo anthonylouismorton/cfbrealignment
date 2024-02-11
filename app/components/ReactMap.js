@@ -9,6 +9,7 @@ import { openFullscreen, closeFullscreen } from '../../redux/features/layoutSlic
 import { setLegend, setChanges } from '@/redux/features/conInfoSlices';
 import { useDispatch, useSelector } from 'react-redux';
 import Autoplay from './AutoPlay';
+import { geoCentroid } from 'd3-geo';
 
 import {
   ComposableMap,
@@ -37,6 +38,7 @@ const MapChart = () => {
   const [schoolmodal, setschoolmodal] = useState(false);
   const [mapsize, setmapsize] = useState([800,500]);
   const [toolTipPos, settoolTipPos] = useState(null);
+  const [tooltipcenter,settooltipcenter] = useState(null);
   const [styling, setstyling] = useState({
     circleRadius: 3,
     forO: { x: 10, y: -5, fontSize: "12px", padding: "py-[2px] px-[5px]", rounded: "rounded-sm"},
@@ -145,6 +147,7 @@ const MapChart = () => {
 
     settoolTipPos([tooltipX, tooltipY]);
   };
+  console.log(tooltipcenter)
   return (
     <div onMouseMove={handleMouseMove} className="relative w-[100%]">
     <ComposableMap
@@ -164,7 +167,12 @@ const MapChart = () => {
               let stateColor = stateInfo?.color || '#DDD';
               return (
                 <Geography
-                  onMouseOver={!option.showLocation ? () => sethoveredstate({ stateInfo }) : undefined}
+                  onMouseOver={() => {
+                    if (!option.showLocation) {
+                      sethoveredstate({ stateInfo });
+                      settooltipcenter(geoCentroid(geo));
+                    }
+                  }}
                   onMouseLeave={() => sethoveredstate(null)}
                   title={"hello"}
                   key={geo.rsmKey}
