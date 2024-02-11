@@ -34,7 +34,7 @@ function History() {
                       src={change.logo} alt={`${change.abbreviation} logo`} 
                     />
                     {hovered === index &&
-                      <div className="opacity-0 bg-black text-white text-center text-sm absolute left-full py-2 px-4 rounded-md transition duration-300 opacity-100 z-10">
+                      <div className="opacity-0 bg-white text-black text-center text-sm absolute left-full py-2 px-4 rounded-md transition duration-300 opacity-100 z-10">
                         {change.conference}
                       </div>
                     }
@@ -59,7 +59,7 @@ function History() {
                         src={change.logo} alt={`${change.abbreviation} logo`} 
                       />
                       {hovered === index &&
-                        <div className="opacity-0 bg-black text-white text-center text-sm absolute left-full py-2 px-4 rounded-md transition duration-300 opacity-100 z-10">
+                        <div className="opacity-0 bg-white text-black text-center text-sm absolute left-full py-2 px-4 rounded-md transition duration-300 opacity-100 z-10">
                           {change.abbreviation}
                         </div>
                       }
@@ -83,7 +83,7 @@ function History() {
                       src={change.logo} alt={`${change.school} logo`}
                     />
                     {hovered === index + change.school &&
-                      <div className="opacity-0 bg-black text-white text-center text-sm absolute left-full py-2 px-4 rounded-md transition duration-300 opacity-100 z-10">
+                      <div className="opacity-0 bg-white text-black text-center text-sm absolute left-full py-2 px-4 rounded-md transition duration-300 opacity-100 z-10">
                         {change.school}
                       </div>
                     }
@@ -101,7 +101,7 @@ function History() {
                         src={change.oldConferenceLogo} alt={`old conference logo`}
                       />
                       {hovered === index + change.oldConferenceAbrr &&
-                        <div className="opacity-0 bg-black text-white text-center text-sm absolute left-full py-2 px-4 rounded-md transition duration-300 opacity-100 z-10">
+                        <div className="opacity-0 bg-white text-black text-center text-sm absolute left-full py-2 px-4 rounded-md transition duration-300 opacity-100 z-10">
                           {change.oldConferenceAbrr}
                         </div>
                       }
@@ -124,7 +124,7 @@ function History() {
                         src={change.newConferenceLogo} alt={`new conference logo`}
                       />
                       {hovered === index + change.newConferenceAbbr &&
-                        <div className="opacity-0 bg-black text-white text-center text-sm absolute left-full py-2 px-4 rounded-md transition duration-300 opacity-100 z-10">
+                        <div className="opacity-0 bg-white text-black text-center text-sm absolute left-full py-2 px-4 rounded-md transition duration-300 opacity-100 z-10">
                           {change.newConferenceAbbr}
                         </div>
                       }
@@ -147,7 +147,7 @@ function History() {
                       src={change.logo} alt={`${change.school} logo`}
                     />
                     {hovered === index + change.school &&
-                      <div className="opacity-0 bg-black text-white text-center text-sm absolute left-full py-2 px-4 rounded-md transition duration-300 opacity-100 z-10">
+                      <div className="opacity-0 bg-white text-black text-center text-sm absolute left-full py-2 px-4 rounded-md transition duration-300 opacity-100 z-10">
                         {change.school}
                       </div>
                     }
@@ -168,7 +168,7 @@ function History() {
                           src={change.conferenceLogo} alt={`${change.conference} logo`} 
                         />
                         {hovered === index + change.conference &&
-                        <div className="opacity-0 bg-black text-white text-center text-sm absolute left-full py-2 px-4 rounded-md transition duration-300 opacity-100 z-10">
+                        <div className="opacity-0 bg-white text-black text-center text-sm absolute left-full py-2 px-4 rounded-md transition duration-300 opacity-100 z-10">
                           {change.conference}
                         </div>
                         }
@@ -192,7 +192,7 @@ function History() {
                       src={change.logo} alt={`${change.school} logo`} 
                     />
                     {hovered === index + change.school &&
-                      <div className="opacity-0 bg-black text-white text-center text-sm absolute left-full py-2 px-4 rounded-md transition duration-300 opacity-100 z-10">
+                      <div className="opacity-0 bg-white text-black text-center text-sm absolute left-full py-2 px-4 rounded-md transition duration-300 opacity-100 z-10">
                         {change.school}
                       </div>
                     }
@@ -213,7 +213,7 @@ function History() {
                           src={change.conferenceLogo} alt={`${change.conference} logo`} 
                         />
                         {hovered === index + change.conference &&
-                          <div className="opacity-0 bg-black text-white text-center text-sm absolute left-full py-2 px-4 rounded-md transition duration-300 opacity-100 z-10">
+                          <div className="opacity-0 bg-white text-black text-center text-sm absolute left-full py-2 px-4 rounded-md transition duration-300 opacity-100 z-10">
                             {change.conference}
                           </div>
                         }
