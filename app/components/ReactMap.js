@@ -9,7 +9,7 @@ import { openFullscreen, closeFullscreen } from '../../redux/features/layoutSlic
 import { setLegend, setChanges } from '@/redux/features/conInfoSlices';
 import { useDispatch, useSelector } from 'react-redux';
 import Autoplay from './AutoPlay';
-import { geoCentroid } from 'd3-geo';
+import { geoAlbersUsa, geoPath } from 'd3-geo';
 
 import {
   ComposableMap,
@@ -17,7 +17,7 @@ import {
   Geography,
   Marker,
   Annotation,
-  ZoomableGroup
+  ZoomableGroup,
 } from "react-simple-maps";
 import MapData from '../data/reactMapData.json';
 
@@ -37,8 +37,8 @@ const MapChart = () => {
   const [selectedschool, setselectedschool] = useState(null);
   const [schoolmodal, setschoolmodal] = useState(false);
   const [mapsize, setmapsize] = useState([800,500]);
-  const [toolTipPos, settoolTipPos] = useState(null);
-  const [tooltipcenter,settooltipcenter] = useState(null);
+  const projection = geoAlbersUsa();
+  const [toolTipPos, settoolTipPos] = useState({longitude: null, latitude: null, longOffSet: 0, latOffSet: 0});
   const [styling, setstyling] = useState({
     circleRadius: 3,
     forO: { x: 10, y: -5, fontSize: "12px", padding: "py-[2px] px-[5px]", rounded: "rounded-sm"},
@@ -139,19 +139,20 @@ const MapChart = () => {
     setselectedschool(school);
   };
 
-  const handleMouseMove = (event) => {
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
-    const tooltipX = mouseX + 10;
-    const tooltipY = mouseY + 10;
-
-    settoolTipPos([tooltipX, tooltipY]);
+  const handleMouseMove = (event, geo) => {
+    const gp = geoPath().projection(projection)
+    const dim = event.target.getBoundingClientRect();
+    const cx = event.clientX - dim.left
+    const cy = event.clientY - dim.top
+    const [orgX, orgY] = gp.bounds(geo)[0]
+    const [x,y] = projection.invert([orgX + cx, orgY + cy])
+    console.log(x,y)
+    settoolTipPos({...toolTipPos, longitude: x, latitude: y});
   };
-  console.log(tooltipcenter)
   return (
-    <div onMouseMove={handleMouseMove} className="relative w-[100%]">
+    <div className="relative w-[100%]">
     <ComposableMap
-     projection="geoAlbersUsa"
+     projection={projection}
      width={mapsize[0]}
      height={mapsize[1]}
     >
@@ -167,10 +168,10 @@ const MapChart = () => {
               let stateColor = stateInfo?.color || '#DDD';
               return (
                 <Geography
+                  onMouseMove={() => handleMouseMove(event, geo)}
                   onMouseOver={() => {
                     if (!option.showLocation) {
                       sethoveredstate({ stateInfo });
-                      settooltipcenter(geoCentroid(geo));
                     }
                   }}
                   onMouseLeave={() => sethoveredstate(null)}
@@ -187,8 +188,8 @@ const MapChart = () => {
                       fill: stateColor,
                       ...(stateColor !== '#DDD' && { opacity: 0.7 }),
                       outline: "none",
-                      cursor: "pointer"
-                    },
+                      cursor: stateColor !== '#DDD' ? "pointer" : "default"
+                    },                    
                     pressed: { outline: "none", fill: stateColor },
                   }}
                 />  
@@ -245,13 +246,30 @@ const MapChart = () => {
             </foreignObject>
           </Annotation>
         )}
+        {hoveredstate && toolTipPos && hoveredstate.stateInfo && (
+          <Annotation
+            subject={[toolTipPos.longitude, toolTipPos.latitude]}
+            dx={0}
+            dy={0}
+          >
+            <foreignObject width="200" height="100">
+              <div className={`bg-black z-10 bg-opacity-75 inline-block py-1 px-1 rounded-sm`}>
+                {hoveredstate && hoveredstate.stateInfo.conferences.map((conference, index) =>
+                  <p key={index} style={{ fontSize: styling.forO.fontSize, color: "#DDD", margin: 0 }}>
+                    {conference.conference}
+                  </p>
+                )}
+              </div>
+            </foreignObject>
+          </Annotation>
+        )}
         <Annotation
           subject={[-84, 50]}
           dx={0}
           dy={0}
         >
           <foreignObject width="150" height="35">
-        <Autoplay />
+            <Autoplay />
           </foreignObject>
         </Annotation>
       </ZoomableGroup>
@@ -268,18 +286,6 @@ const MapChart = () => {
     <button className='absolute top-2 right-2 lg:top-3 lg:right-3 text-black text-[9px] sm:text-[12px] lg:text-[14px] font-semibold bg-white border border-white hover:bg-black hover:text-white hover:border-white p-1 rounded-sm' onClick={handleReset}>
       Reset
     </button>
-    {hoveredstate && toolTipPos && hoveredstate.stateInfo && (
-      <div style={{position: 'absolute', left: toolTipPos[0]-240, top: toolTipPos[1]-125}} width="200" height="100">
-        <div className={`bg-black z-10 bg-opacity-75 inline-block py-1 px-1 rounded-sm`}>
-          {hoveredstate && hoveredstate.stateInfo.conferences.map((conference, index) =>
-            <p key={index} style={{ fontSize: styling.forO.fontSize, color: "#DDD", margin: 0 }}>
-              {conference.conference}
-            </p>
-          
-          )}
-        </div>
-      </div>
-    )}
     {selectedschool &&
       <SchoolInfo schoolmodal={schoolmodal} setschoolmodal={setschoolmodal} selectedschool={selectedschool} setselectedschool={setselectedschool} year={year}
       />
