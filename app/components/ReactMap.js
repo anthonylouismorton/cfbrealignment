@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import SchoolInfo from './schoolInfo';
 import conferenceData from '../data/conferenceData.json';
 import { getConferences } from '../functions/ReactGetConf';
@@ -23,6 +23,7 @@ import MapData from '../data/reactMapData.json';
 
 const MapChart = () => {
   const dispatch = useDispatch();
+  const wrapperRef = useRef(null);
   const { fullscreen, isYearVis } = useSelector((state)=> state.layoutReducer);
   const conFilter = useSelector(state => state.conFilterReducer);
   const option = useSelector((state) => state.optionsReducer);
@@ -36,8 +37,8 @@ const MapChart = () => {
   const [hoveredstate, sethoveredstate] = useState(null);
   const [selectedschool, setselectedschool] = useState(null);
   const [schoolmodal, setschoolmodal] = useState(false);
-  const [mapsize, setmapsize] = useState([800,500]);
-  const projection = geoAlbersUsa();
+  const [mapsize, setmapsize] = useState({width: 800, height: 500});
+  const projection = geoAlbersUsa().translate([mapsize.width/2, mapsize.height/2]).scale(1000);
   const [toolTipPos, settoolTipPos] = useState({longitude: null, latitude: null, longOffSet: 0, latOffSet: 0});
   const [styling, setstyling] = useState({
     circleRadius: 3,
@@ -46,10 +47,10 @@ const MapChart = () => {
 
   useEffect(() => {
     if(!fullscreen){
-      setmapsize([800,500])
+      setmapsize({width: 800, height: 500})
     }
     else{
-      setmapsize([1150,555])
+      setmapsize({width: 1150, height: 555})
     }
 
     const { getSchools, conferenceChanges, getLegendConferences, getMapFill } = getConferences(
@@ -131,7 +132,7 @@ const MapChart = () => {
   }
 
   const handleReset = () => {
-    setPosition({ coordinates: [-96.5, 38.758362677392945], zoom: 0.93 })
+    setPosition({ coordinates: [-96.5, 38.758362677392945], zoom: 1 })
   };
 
   const handleSchoolModal = (school) =>{
@@ -139,22 +140,41 @@ const MapChart = () => {
     setselectedschool(school);
   };
 
-  const handleMouseMove = (event, geo) => {
-    const gp = geoPath().projection(projection)
-    const dim = event.target.getBoundingClientRect();
-    const cx = event.clientX - dim.left
-    const cy = event.clientY - dim.top
-    const [orgX, orgY] = gp.bounds(geo)[0]
-    const [x,y] = projection.invert([orgX + cx, orgY + cy])
-    console.log(x,y)
-    settoolTipPos({...toolTipPos, longitude: x, latitude: y});
+  const handleMouseMove = (event) => {
+
+    const box = wrapperRef.current.getBoundingClientRect();
+    console.log(box);
+    const width = mapsize.width
+    const height = mapsize.height
+    const { top, left } = box
+    const resizeFactorX = 1 / width * box.width
+    const resizeFactorY = 1 / height * box.height
+
+    // const originalCenter = [mapsize.width/2, mapsize.height/2]
+    // const prevCenter = projection(position.coordinates)
+
+    // const offsetX = prevCenter[0] - originalCenter[0]
+    // const offsetY = prevCenter[1] - originalCenter[1]
+    const clientX = (event.clientX - left) / resizeFactorX
+    const clientY = (event.clientY - top) / resizeFactorY
+
+    const x = clientX
+    const y = clientY
+
+    const center = projection.invert([x,y])
+    console.log(center)
+    // const cx = event.clientX - dim.left;
+    // const cy = event.clientY - dim.top;
+    // const [orgX, orgY] = gp.bounds(geo)[0];
+    // const [x, y] = projection.invert([orgX + cx, orgY + cy]);
+    settoolTipPos({ longitude: center[0], latitude: center[1] });
   };
   return (
-    <div className="relative w-[100%]">
+    <div ref={wrapperRef} onMouseMove={handleMouseMove} className='relative w-[100%]'>
     <ComposableMap
      projection={projection}
-     width={mapsize[0]}
-     height={mapsize[1]}
+     width={mapsize.width}
+     height={mapsize.height}
     >
       <ZoomableGroup
           zoom={position.zoom}
@@ -169,12 +189,15 @@ const MapChart = () => {
               return (
                 <Geography
                   onMouseMove={() => handleMouseMove(event, geo)}
-                  onMouseOver={() => {
+                  onMouseEnter={() => {
                     if (!option.showLocation) {
                       sethoveredstate({ stateInfo });
                     }
                   }}
-                  onMouseLeave={() => sethoveredstate(null)}
+                  onMouseLeave={() => {
+                    sethoveredstate(null)
+                    settoolTipPos({...toolTipPos, longitude: null, latitude: null})
+                  }}
                   title={"hello"}
                   key={geo.rsmKey}
                   geography={geo}
@@ -246,13 +269,13 @@ const MapChart = () => {
             </foreignObject>
           </Annotation>
         )}
-        {hoveredstate && toolTipPos && hoveredstate.stateInfo && (
+        {hoveredstate && toolTipPos && hoveredstate.stateInfo && toolTipPos.longitude && (
           <Annotation
             subject={[toolTipPos.longitude, toolTipPos.latitude]}
             dx={0}
             dy={0}
           >
-            <foreignObject width="200" height="100">
+            <foreignObject width="75" height="100">
               <div className={`bg-black z-10 bg-opacity-75 inline-block py-1 px-1 rounded-sm`}>
                 {hoveredstate && hoveredstate.stateInfo.conferences.map((conference, index) =>
                   <p key={index} style={{ fontSize: styling.forO.fontSize, color: "#DDD", margin: 0 }}>
