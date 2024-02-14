@@ -26,7 +26,6 @@ export function getChanges(currentConferences, currentYear, historyArray) {
       }
       if(school.rejoined){
         school.rejoined.forEach((rejoined) => {
-          console.log(rejoined)
           if(rejoined.year === currentYear){
             historyArray.push({change: 'rejoined', year: rejoined.year, oldConference: rejoined.oldConference, conference: conference.abbreviation, conferenceLogo: conference.logo, ...school, mapColor: conference.mapColor})
           }

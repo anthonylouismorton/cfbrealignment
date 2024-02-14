@@ -91,38 +91,31 @@ export function getConferences(conferenceData, year, option, conferences) {
       {color: "rgb(0, 140, 102)", conference: [conferenceData[6].abbreviation, conferenceData[8].abbreviation], coordinates: [ conferenceData[8].schools[1].lon, conferenceData[8].schools[1].lat], name: conferenceData[8].schools[1].school, logo: conferenceData[8].schools[1].logo, state: conferenceData[8].schools[1].stateId, schoolInfo: conferenceData[8].schools[0]}
     );
   } ;
-
-  getSchools.forEach((school) => {
-    const { state, conference, color } = school;
-    const existingStateIndex = getMapFill.findIndex((currentState) => currentState.state === state);
-    if(existingStateIndex === -1){
-      getMapFill.push({
-        state: state,
-        conferences: [{conference: conference, color: color}],
-        color: color
-      });
-    } 
-    else{
-      const existingConferenceIndex = getMapFill[existingStateIndex].conferences.findIndex((conf) => conf.conference === conference);
-      if(existingConferenceIndex === -1){
-        const updatedConferences = [...getMapFill[existingStateIndex].conferences, {conference: conference, color: color}];
-        var newColor = d3.scaleLinear()
-        .domain([...Array(updatedConferences.length).keys()])
-        .range(updatedConferences.map(conf => conf.color))
-        (1/updatedConferences.length);
-        getMapFill[existingStateIndex].conferences = (updatedConferences);
-        getMapFill[existingStateIndex].color = newColor;
-        const conferenceAbbreviation = updatedConferences.map(con => con.conference).join(' / ');
-        // if(!getLegendConferences.find(con => con.abbreviation === conferenceAbbreviation)){
-        //   getLegendConferences.push({
-        //     abbreviation: updatedConferences.map(con => con.conference).join(' / '),
-        //     mapColor: newColor
-        //   });
-        // }
+  if(!option.showLocation){
+    getSchools.forEach((school) => {
+      const { state, conference, color } = school;
+      const existingStateIndex = getMapFill.findIndex((currentState) => currentState.state === state);
+      if(existingStateIndex === -1){
+        getMapFill.push({
+          state: state,
+          conferences: [{conference: conference, color: color}],
+          color: color
+        });
+      } 
+      else{
+        const existingConferenceIndex = getMapFill[existingStateIndex].conferences.findIndex((conf) => conf.conference === conference);
+        if(existingConferenceIndex === -1){
+          const updatedConferences = [...getMapFill[existingStateIndex].conferences, {conference: conference, color: color}];
+          var newColor = d3.scaleLinear()
+          .domain([...Array(updatedConferences.length).keys()])
+          .range(updatedConferences.map(conf => conf.color))
+          (1/updatedConferences.length);
+          getMapFill[existingStateIndex].conferences = (updatedConferences);
+          getMapFill[existingStateIndex].color = newColor;
+        };
       };
-    };
-  });
-  console.log(getLegendConferences)
+    });
+  };
 
   const conferenceChanges = getChanges(getCurrentConferences, year, historyArray);
   return { getSchools, conferenceChanges, getLegendConferences, getMapFill };
