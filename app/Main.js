@@ -63,7 +63,7 @@ function Main() {
   }, [year, option, isYearVis, conFilter]);
 
   return (
-    <div>
+    <div className="w-full">
       {option.showWelcome &&
         <Welcome/>
       }
@@ -104,9 +104,9 @@ function Main() {
         </div>
       }
       {fullscreen &&
-        <div>
-          <ReactMap/>
-        </div>
+      <div className='flex flex-col items-center justify-center items-center'>
+        <ReactMap/>
+      </div>
       }
        <div className="xl:hidden">
         <div className="w-full">
