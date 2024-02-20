@@ -9,7 +9,7 @@ import { openFullscreen, closeFullscreen } from '../../redux/features/layoutSlic
 import { setLegend, setChanges } from '@/redux/features/conInfoSlices';
 import { useDispatch, useSelector } from 'react-redux';
 import Autoplay from './AutoPlay';
-import { geoAlbersUsa, geoPath } from 'd3-geo';
+import { geoAlbersUsa } from 'd3-geo';
 
 import {
   ComposableMap,
@@ -31,7 +31,7 @@ const MapChart = () => {
   const [schools, setschools] = useState([]);
   const [logosize, setlogosize] = useState(20);
   const [logooffset, setlogooffset] = useState(-10);
-  const [position, setPosition] = useState({ coordinates: [-96.5, 38.758362677392945], zoom: 0.93});
+  const [position, setPosition] = useState({ coordinates: [-96.5, 38.758362677392945], zoom: 1});
   const [mapfill, setmapfill] = useState([]);
   const [hoveredschool, sethoveredschool] = useState(null);
   const [hoveredstate, sethoveredstate] = useState(null);
@@ -44,7 +44,8 @@ const MapChart = () => {
     circleRadius: 3,
     forO: { x: 10, y: -5, fontSize: "12px", padding: "py-[2px] px-[5px]", rounded: "rounded-sm"},
   });
-
+  const textRef = useRef(null);
+  const rectRef = useRef(null);
   useEffect(() => {
     if(!fullscreen){
       setmapsize({width: 800, height: 500})
@@ -124,8 +125,13 @@ const MapChart = () => {
     dispatch(setChanges(conferenceChanges));
     setmapfill(getMapFill);
     setschools(getSchools);
+    if (textRef.current && rectRef.current) {
+      const textBoundingBox = textRef.current.getBBox();
+      rectRef.current.setAttribute('width', textBoundingBox.width); // Add padding
+      rectRef.current.setAttribute('height', textBoundingBox.height); // Add padding
+    }
     
-  }, [year, option, isYearVis, conFilter, position.zoom, fullscreen])
+  }, [year, option, isYearVis, conFilter, position.zoom, fullscreen, hoveredstate])
 
   function handleMoveEnd(position) {
     setPosition(position);
@@ -143,7 +149,6 @@ const MapChart = () => {
   const handleMouseMove = (event) => {
 
     const box = wrapperRef.current.getBoundingClientRect();
-    console.log(box);
     const width = mapsize.width
     const height = mapsize.height
     const { top, left } = box
@@ -157,18 +162,42 @@ const MapChart = () => {
     // const offsetY = prevCenter[1] - originalCenter[1]
     const clientX = (event.clientX - left) / resizeFactorX
     const clientY = (event.clientY - top) / resizeFactorY
-
+    console.log(position.zoom)
     const x = clientX
     const y = clientY
+    var xOffset = 0;
+    var yOffset = 0;
+    const center = projection.invert([x,y]);
 
-    const center = projection.invert([x,y])
-    console.log(center)
+    if(center[0] < -156){
+      xOffset = 1.25
+    }
+    else if(center[0] < -130 && center[0] > -156){
+      xOffset = -2.5
+      yOffset = 0.25
+    }
+    else if(center[0] < -113 && center[0] > -122){
+      xOffset = 1.25
+    }
+    else if(center[0] > -113){
+      xOffset = 1.5
+    }
+    if(center[1] < 31 && center[1] > 29 && center[0] > -150){
+      console.log("in here")
+      yOffset = 2
+    }
+    else if(center[1] < 29 && center[0] > -150){
+      console.log("in here")
+      yOffset = 4
+    }
+    console.log(xOffset, yOffset)
     // const cx = event.clientX - dim.left;
     // const cy = event.clientY - dim.top;
     // const [orgX, orgY] = gp.bounds(geo)[0];
     // const [x, y] = projection.invert([orgX + cx, orgY + cy]);
-    settoolTipPos({ longitude: center[0], latitude: center[1] });
+    settoolTipPos({ longitude: center[0] + xOffset, latitude: center[1] + yOffset });
   };
+  console.log(position.zoom)
   return (
     <div ref={wrapperRef} onMouseMove={handleMouseMove} className='relative w-[100%]'>
     <ComposableMap
@@ -185,7 +214,7 @@ const MapChart = () => {
           {({ geographies }) =>
             geographies.map((geo) => {
               const stateInfo = mapfill.find((state) => state.state === geo.id);
-              let stateColor = stateInfo?.color || '#DDD';
+              let stateColor = stateInfo?.color || '#b4b4b4';
               return (
                 <Geography
                   onMouseMove={() => handleMouseMove(event, geo)}
@@ -209,9 +238,9 @@ const MapChart = () => {
                     },
                     hover: {
                       fill: stateColor,
-                      ...(stateColor !== '#DDD' && { opacity: 0.7 }),
+                      ...(stateColor !== '#b4b4b4' && { opacity: 0.7 }),
                       outline: "none",
-                      cursor: stateColor !== '#DDD' ? "pointer" : "default"
+                      cursor: stateColor !== '#b4b4b4' ? "pointer" : "default"
                     },                    
                     pressed: { outline: "none", fill: stateColor },
                   }}
@@ -252,16 +281,16 @@ const MapChart = () => {
           >
             <foreignObject x={styling.forO.x} y={styling.forO.y} width="500" height="100">
             <div className={`bg-black z-10 bg-opacity-75 inline-block ${styling.forO.padding} ${styling.forO.rounded}`}>
-              <p style={{ fontSize: styling.forO.fontSize, color: "#DDD", margin: 0 }}>
+              <p style={{ fontSize: styling.forO.fontSize, color: "#b4b4b4", margin: 0 }}>
                 {hoveredschool.name}
               </p>
               {(hoveredschool.name === "University of Iowa" && (year === 1907 || year === 1908)) ? (
                 <>
-                  <p style={{ fontSize: styling.forO.fontSize, color: "#DDD", margin: 0 }}>Big 8 Member Since: 1900</p>
-                  <p style={{ fontSize: styling.forO.fontSize, color: "#DDD", margin: 0 }}>Big Ten Member since: 1907</p>
+                  <p style={{ fontSize: styling.forO.fontSize, color: "#b4b4b4", margin: 0 }}>Big 8 Member Since: 1900</p>
+                  <p style={{ fontSize: styling.forO.fontSize, color: "#b4b4b4", margin: 0 }}>Big Ten Member since: 1907</p>
                 </>
               ) : (
-                <p style={{ fontSize: styling.forO.fontSize, color: "#DDD", margin: 0 }}>
+                <p style={{ fontSize: styling.forO.fontSize, color: "#b4b4b4", margin: 0 }}>
                   {hoveredschool.schoolInfo.rejoined ? `Member since: ${hoveredschool.schoolInfo.rejoined[0].year}` : `Member since: ${hoveredschool.schoolInfo.years[0]}`}
                 </p>
               )}
@@ -275,17 +304,20 @@ const MapChart = () => {
             dx={0}
             dy={0}
           >
-            <foreignObject width="75" height="100">
-              <div className={`bg-black z-10 bg-opacity-75 inline-block py-1 px-1 rounded-sm`}>
-                {hoveredstate && hoveredstate.stateInfo.conferences.map((conference, index) =>
-                  <p key={index} style={{ fontSize: styling.forO.fontSize, color: "#DDD", margin: 0 }}>
-                    {conference.conference}
-                  </p>
-                )}
-              </div>
-            </foreignObject>
+          {hoveredstate.stateInfo.conferences.map((conference, index) => (
+            <text
+              key={index}
+              y={(index + 1) * 15}
+              fill="white"
+              fontSize="12px"
+              style={{ pointerEvents: 'none' }}
+            >
+              {conference.conference}
+            </text>
+          ))}
           </Annotation>
         )}
+
         <Annotation
           subject={[-84, 50]}
           dx={0}
@@ -298,13 +330,17 @@ const MapChart = () => {
       </ZoomableGroup>
     </ComposableMap>
       {!fullscreen ?
-        <IconButton className="p-0 absolute bottom-2 right-2 lg:bottom-3 lg:right-3 fullScreen" id="fullscreen" onClick={()=> dispatch(openFullscreen())}>
-          <FullscreenIcon className="text-white text-[15px] lg:text-[25px]" />
-        </IconButton>
+        <div className='absolute bottom-2 right-2 lg:bottom-3 lg:right-3'>
+          <IconButton className="p-0 fullScreen" id="fullscreen" onClick={()=> dispatch(openFullscreen())}>
+            <FullscreenIcon className="text-white text-[15px] lg:text-[25px]" />
+          </IconButton>
+        </div>
         :
-        <IconButton className="p-0 absolute bottom-5 right-5 fullScreen" id="closefullscreen" onClick={()=> dispatch(closeFullscreen())}>
-          <CloseFullscreenIcon className="text-white text-[15px] lg:text-[25px]" />
-        </IconButton>
+        <div className='absolute bottom-2 right-2 lg:bottom-3 lg:right-3'>
+          <IconButton className="p-0 absolute bottom-5 right-5 fullScreen" id="closefullscreen" onClick={()=> dispatch(closeFullscreen())}>
+            <CloseFullscreenIcon className="text-white text-[15px] lg:text-[25px]" />
+          </IconButton>
+        </div>
       }
     <button className='absolute top-2 right-2 lg:top-3 lg:right-3 text-black text-[9px] sm:text-[12px] lg:text-[14px] font-semibold bg-white border border-white hover:bg-black hover:text-white hover:border-white p-1 rounded-sm' onClick={handleReset}>
       Reset
