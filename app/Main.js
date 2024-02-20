@@ -9,7 +9,7 @@ import MobileSlider from './mobile/MobileSlider';
 import Welcome from './components/Welcome';
 import AutoPlay from './components/AutoPlay';
 import MobileOptions from './mobile/MobileOptions';
-import ReactMap from './components/ReactMap';
+import ReactMap from './components/map/ReactMap';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeOption } from '../redux/features/optionsSlices';
 import { filterCon } from '../redux/features/conFilterSlices';
