@@ -1,48 +1,40 @@
-export function handleZoom(option, zoom){
-  let updateLogoSize = 20;
-  let updateLogoOffset = -10;
-  let updateStyling = { circleRadius: 3, hoveredSchool: { x: 10, y: -5, fontSize: "12px", padding: "py-[2px] px-[5px]", rounded: "rounded-sm", logoSize: 20, logoOffset: -10}}
+
+export function handleZoom(option, zoom, styling, logoSize, logoOffSet){
+  let updateStyling = styling
+  let updateLogoSize = logoSize;
+  let updateLogoOffset = logoOffSet;
+
   if(option.smallLogos && zoom >= 1){
   }
   else if((!option.smallLogos && zoom >= 1 && zoom < 2)){
-    updateLogoSize = 20;
-    updateLogoOffset = -10;
+    updateLogoSize = 18;
   }
   else if(!option.smallLogos && (zoom > 1 && zoom < 2)) {
-    updateLogoSize = 18;
-    updateLogoOffset = -9;
+    updateLogoSize = 12;
   }
   else if(!option.smallLogos && (zoom > 2 && zoom < 3)) {
-    updateLogoSize = 16;
-    updateLogoOffset = -8;
+    updateLogoSize = 10;
   }
   else if(!option.smallLogos && (zoom > 3 && zoom < 4)) {
-    updateLogoSize = 14;
-    updateLogoOffset = -7;
+    updateLogoSize = 10;
   }
   else if(!option.smallLogos && (zoom > 4 && zoom < 5)) {
-    updateLogoSize = 12;
-    updateLogoOffset = -6;
+    updateLogoSize = 8;
   }
   else if(!option.smallLogos && (zoom > 5 && zoom < 6)) {
-    updateLogoSize = 8;
-    updateLogoOffset = -4;
+    updateLogoSize = 6;
   }
   else if(!option.smallLogos && (zoom > 6 && zoom < 7)) {
-    updateLogoSize = 6;
-    updateLogoOffset = -3;
+    updateLogoSize = 4;
   }
   else if(!option.smallLogos && (zoom > 7)) {
-    updateLogoSize = 4;
-    updateLogoOffset = -2;
+    updateLogoSize = 2;
   }
   else if(option.smallLogos && (zoom > 6 && zoom < 7)) {
     updateLogoSize = 6;
-    updateLogoOffset = -3;
   }
   else if(option.smallLogos && (zoom > 7)) {
     updateLogoSize = 4;
-    updateLogoOffset = -2;
   }
   if(zoom > 2 && zoom < 4){
     updateStyling = {
@@ -80,5 +72,6 @@ export function handleZoom(option, zoom){
       }
     };
   }
+  updateLogoOffset = -(updateLogoSize/2);
   return { updateStyling: {...updateStyling, logoSize: updateLogoSize, logoOffset: updateLogoOffset}}
 }
