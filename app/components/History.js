@@ -130,7 +130,8 @@ function History() {
                       }
                     </div>
                   ) : (
-                    <div style={{color: `${change.newConferenceColor}`}} className="change-conference ml-1 sm:ml-3 text-sm">{change.newConferenceAbbr}</div>
+                    <div style={{ color: change.newConferenceColor ? change.newConferenceColor : 'red' }}
+                    className="change-conference ml-1 sm:ml-3 text-sm">{change.newConferenceAbbr}</div>
                   )}
                 </div>
               )}

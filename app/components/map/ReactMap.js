@@ -110,7 +110,7 @@ const MapChart = () => {
   };
 
   return (
-    <div ref={wrapperRef} onMouseMove={hoveredState.stateInfo ? handleMouseMove : null} className='relative w-[100%]'>
+    <div ref={wrapperRef} className='relative w-[100%]'>
     <ComposableMap
      projection={projection}
      width={mapSize.width}
@@ -123,7 +123,7 @@ const MapChart = () => {
       >
         <States handleMouseMove={handleMouseMove}/>
         <SchoolLocation wrapper={wrapperRef}/>
-        {hoveredState.stateInfo && toolTipPos.longitude && toolTipPos.latitude && (
+        {/* {hoveredState.stateInfo && toolTipPos.longitude && toolTipPos.latitude && (
           <Annotation
           subject={[toolTipPos.longitude, toolTipPos.latitude]}
           dx={0}
@@ -141,7 +141,7 @@ const MapChart = () => {
             </text>
           ))}
           </Annotation>
-        )}
+        )} */}
         <Annotation
           subject={[-84, 50]}
           dx={0}
