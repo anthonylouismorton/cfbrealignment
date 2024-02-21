@@ -1,3 +1,4 @@
+import React from "react";
 import { Geographies, Geography } from "react-simple-maps";
 import MapData from '../../data/reactMapData.json';
 import { useSelector, useDispatch } from "react-redux";
