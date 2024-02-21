@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setMapInfo } from '@/redux/features/mapSlices';
 import { setSchool } from '@/redux/features/mapSlices';
 
-const SchoolLocations = () => {
+const SchoolLocation = () => {
   const { schools, hoveredSchool, styling } = useSelector(state => state.mapReducer);
   const { schoolModal } = useSelector(state => state.mapReducer);
   const option = useSelector((state) => state.optionsReducer);
@@ -68,4 +68,4 @@ const SchoolLocations = () => {
   )
 };
 
-export default SchoolLocations;
+export default SchoolLocation;

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import States from './States';
 import SchoolInfo from './schoolInfo';
-import SchoolLocations from './SchoolLocations';
+import SchoolLocation from './SchoolLocation';
 import conferenceData from '../../data/conferenceData.json';
 import { getConferences } from '../../functions/ReactGetConf';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
@@ -122,7 +122,7 @@ const MapChart = () => {
           onMoveEnd={handleMoveEnd}
       >
         <States handleMouseMove={handleMouseMove}/>
-        <SchoolLocations wrapper={wrapperRef}/>
+        <SchoolLocation wrapper={wrapperRef}/>
         {hoveredState.stateInfo && toolTipPos.longitude && toolTipPos.latitude && (
           <Annotation
           subject={[toolTipPos.longitude, toolTipPos.latitude]}
