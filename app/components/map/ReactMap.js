@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import States from './States';
 import SchoolInfo from './schoolInfo';
-import SchoolLocations from './schoolLocations';
+import SchoolLocations from './SchoolLocations';
 import conferenceData from '../../data/conferenceData.json';
 import { getConferences } from '../../functions/ReactGetConf';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
