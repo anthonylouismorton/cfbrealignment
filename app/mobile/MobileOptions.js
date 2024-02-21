@@ -20,7 +20,7 @@ export default function Options() {
             SETTINGS
           </h1>
         </button>
-      </div>s
+      </div>
       <div>
         <OptionsMenu open={open} setOpen={setOpen} />
       </div>

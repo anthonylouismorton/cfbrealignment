@@ -7,18 +7,15 @@ import Header from './components/Header';
 import Options from './components/Options';
 import MobileSlider from './mobile/MobileSlider';
 import Welcome from './components/Welcome';
-import AutoPlay from './components/AutoPlay';
 import MobileOptions from './mobile/MobileOptions';
 import ReactMap from './components/map/ReactMap';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeOption } from '../redux/features/optionsSlices';
-import { filterCon } from '../redux/features/conFilterSlices';
 import { setYear } from '@/redux/features/yearSlices';
-import { setYearVis } from '@/redux/features/layoutSlices';
+import { setShowMobile } from '@/redux/features/layoutSlices';
 
 function Main() {
   const dispatch = useDispatch();
-  const { fullscreen, isYearVis } = useSelector((state)=> state.layoutReducer);
+  const { fullscreen, showMobile } = useSelector((state)=> state.layoutReducer);
   const option = useSelector((state)=> state.optionsReducer);
   const conFilter = useSelector(state => state.conFilterReducer);
   const year = useSelector(state => state.yearReducer);
@@ -37,7 +34,7 @@ function Main() {
   // },[]);
   useEffect(() => {
     const handleWindowResize = () => {
-      dispatch(setYearVis(window.innerWidth <= minWidth))
+      dispatch(setShowMobile(window.innerWidth <= minWidth))
     };
 
     handleWindowResize();
@@ -60,7 +57,7 @@ function Main() {
       document.removeEventListener('keydown', handleKeyDown);
     };
 
-  }, [year, option, isYearVis, conFilter]);
+  }, [year, option, showMobile, conFilter]);
 
   return (
     <div className="w-full">
@@ -69,10 +66,10 @@ function Main() {
       }
       {!fullscreen &&
         <div className="flex flex-col justify-center items-center">
-          {isYearVis &&
+          {showMobile &&
             <MobileOptions/>
           }
-          {!isYearVis &&
+          {!showMobile &&
             <Year/>
           }
           <div>
@@ -86,20 +83,22 @@ function Main() {
             </div>
             <div className="w-full md:w-[80%] lg:w-[75%] xl:w-[65%] flex flex-col items-center">
               <ReactMap/>
-              {isYearVis &&
+              {showMobile &&
               <div className='flex w-full justify-center items-center text-center'>
                 <MobileSlider />
               </div>
               }
             </div>
             <div className="flex flex-col hidden md:block md:w-[20%] lg:w-[25%] xl:w-[17.5%] pt-5 md:pt-8 xl:pt-2 2xl:pt-4">
-                {!option.hideLegend && !isYearVis && (
+                {!option.hideLegend && !showMobile && (
                   <Legend/>
                 )}
             </div>
-            <div>
-              <Options/>
-            </div>
+            {!showMobile &&
+              <div>
+                <Options/>
+              </div>
+            }
           </div>
         </div>
       }

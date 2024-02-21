@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import States from './States';
 import SchoolInfo from './schoolInfo';
 import SchoolLocation from './SchoolLocation';
@@ -14,7 +14,6 @@ import { handleZoom } from '../../functions/handleZoom';
 import { useDispatch, useSelector } from 'react-redux';
 import Autoplay from '../AutoPlay';
 import { geoAlbersUsa } from 'd3-geo';
-
 import {
   ComposableMap,
   Annotation,
@@ -24,7 +23,8 @@ import {
 const MapChart = () => {
   const dispatch = useDispatch();
   const wrapperRef = useRef(null);
-  const { fullscreen, isYearVis } = useSelector((state)=> state.layoutReducer);
+  const { fullscreen, showMobile } = useSelector((state)=> state.layoutReducer);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const { styling, logoOffSet, logoSize, mapSize, position, toolTipPos, hoveredState } = useSelector(state => state.mapReducer);
   const conFilter = useSelector(state => state.conFilterReducer);
   const option = useSelector((state) => state.optionsReducer);
@@ -53,7 +53,7 @@ const MapChart = () => {
     dispatch(setMapInfo({map: "schools", value: getSchools}));
     dispatch(setMapInfo({map: "mapFill", value: getMapFill}));
     
-  }, [year, option, isYearVis, conFilter, position.zoom, fullscreen, hoveredState])
+  }, [year, option, showMobile, conFilter, position.zoom, fullscreen, hoveredState])
 
   function handleMoveEnd(position) {
     dispatch(setMapInfo({map: "position", value: position}));
@@ -109,8 +109,23 @@ const MapChart = () => {
     }
   };
 
+  
+  const handleFullscreenButtonClick = () => {
+    // Check if fullscreen is supported by the browser
+    if (document.fullscreenEnabled) {
+      // Request fullscreen mode
+      document.documentElement.requestFullscreen().then(() => {
+        setIsFullscreen(!isFullscreen);
+      }).catch((error) => {
+        console.error('Error entering fullscreen mode:', error);
+      });
+    } else {
+      console.error('Fullscreen mode is not supported by the browser.');
+    }
+  };
+
   return (
-    <div ref={wrapperRef} className='relative w-[100%]'>
+    <div ref={wrapperRef} className='relative w-[100%] border-solid border-white border-[2px] rounded-sm'>
     <ComposableMap
      projection={projection}
      width={mapSize.width}
@@ -153,20 +168,38 @@ const MapChart = () => {
         </Annotation>
       </ZoomableGroup>
     </ComposableMap>
-      {!fullscreen ?
-        <div className='absolute bottom-2 right-2 lg:bottom-3 lg:right-3'>
-          <IconButton className="p-0 fullScreen" id="fullscreen" onClick={()=> dispatch(openFullscreen())}>
-            <FullscreenIcon className="text-white text-[15px] lg:text-[25px]" />
-          </IconButton>
-        </div>
-        :
-        <div className='absolute bottom-2 right-2 lg:bottom-3 lg:right-3'>
-          <IconButton className="p-0 absolute bottom-5 right-5 fullScreen" id="closefullscreen" onClick={()=> dispatch(closeFullscreen())}>
-            <CloseFullscreenIcon className="text-white text-[15px] lg:text-[25px]" />
-          </IconButton>
-        </div>
-      }
-    <button className='absolute top-2 right-2 lg:top-3 lg:right-3 text-black text-[9px] sm:text-[12px] lg:text-[14px] font-semibold bg-white border border-white hover:bg-black hover:text-white hover:border-white p-1 rounded-sm' onClick={handleReset}>
+    {!showMobile ? (
+        !fullscreen ? (
+          <div className='absolute bottom-2 right-2 lg:bottom-3 lg:right-3'>
+            <IconButton className="p-0 fullScreen" id="fullscreen" onClick={()=> dispatch(openFullscreen())}>
+              <FullscreenIcon className="text-white text-[15px] lg:text-[25px]" />
+            </IconButton>
+          </div>
+        ) : ( // Fullscreen mode is active
+          <div className='absolute bottom-2 right-2 lg:bottom-3 lg:right-3'>
+            <IconButton className="p-0 absolute bottom-5 right-5 fullScreen" id="closefullscreen" onClick={()=> dispatch(closeFullscreen())}>
+              <CloseFullscreenIcon className="text-white text-[15px] lg:text-[25px]" />
+            </IconButton>
+          </div>
+        )
+      ) : (
+        !isFullscreen ? (
+          <div className='absolute bottom-2 right-2 lg:bottom-3 lg:right-3'>
+            <IconButton className="p-0 fullScreen" id="fullscreen" onClick={handleFullscreenButtonClick}>
+              <FullscreenIcon className="text-white text-[15px] lg:text-[25px]" />
+            </IconButton>
+          </div>
+        ) : (
+          <div className='absolute bottom-2 right-2 lg:bottom-3 lg:right-3'>
+            <IconButton className="p-0 absolute bottom-5 right-5 fullScreen" id="closefullscreen" onClick={handleFullscreenButtonClick}>
+              <CloseFullscreenIcon className="text-white text-[15px] lg:text-[25px]" />
+            </IconButton>
+          </div>
+        )
+      )
+    }
+
+    <button className='absolute top-1 right-1 sm:top-2 sm:right-2 lg:top-3 lg:right-3 text-black text-[8px] sm:text-[12px] lg:text-[14px] font-semibold bg-white border border-white hover:bg-black hover:text-white hover:border-white p-0.5 sm:p-1 rounded-sm' onClick={handleReset}>
       Reset
     </button>
       <SchoolInfo/>

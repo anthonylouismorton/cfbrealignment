@@ -4,7 +4,7 @@ export const layout = createSlice({
   name: "layout",
   initialState: {
     fullscreen: false,
-    isYearVis: true
+    showMobile: true
   },
   reducers: {
     openFullscreen: (state) => {
@@ -13,11 +13,11 @@ export const layout = createSlice({
     closeFullscreen: (state) => {
       state.fullscreen = false;
     },
-    setYearVis: (state, action) => {
-      state.isYearVis = action.payload;
+    setShowMobile: (state, action) => {
+      state.showMobile = action.payload;
     }
   }
 })
 
-export const {openFullscreen, closeFullscreen, setYearVis} = layout.actions;
+export const {openFullscreen, closeFullscreen, setShowMobile} = layout.actions;
 export default layout.reducer;
