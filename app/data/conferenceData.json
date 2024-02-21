@@ -78,7 +78,7 @@
     "headquarters": "Birmingham, Alabama",
     "history": null,
     "divisionI": {"start": 1895, "end": 1941},
-    "majorConference": {"start": 1895, "end": 1920},
+    "majorConference": {"start": 1895, "end": 1923},
     "disbanded": 1942,
     "names": [
       {
@@ -284,6 +284,40 @@
         "lat": 36.148649,
         "years": [1895,1896,1897,1898,1899,1900,1901,1902,1903,1904,1905,1906,1907,1908,1909,1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921],
         "left": [{"year": 1922, "newConference": "SOCON"}]
+      },
+      {
+        "school": "University of Nashville",
+        "stateId": "47",
+        "logo": "https://img.federalregister.gov/ER05OC12.059/ER05OC12.059_original_size.png",
+        "nickName": "UN",
+        "division": "East",
+        "lon": -86.4605,
+        "lat": 36.0915,
+        "years": [1895,1896,1897,1898,1899,1900,1901,1902,1903,1904,1905,1906,1907,1908],
+        "left": [{"year": 1909, "newConference": null}]
+      },
+      {
+        "school": "Rhodes College",
+        "stateId": "47",
+        "logo": "https://banner2.cleanpng.com/20180723/ev/kisspng-rhodes-college-sewanee-the-university-of-the-sout-lacrosse-graphics-5b5678d2e216c7.8214700615323936829261.jpg",
+        "nickName": "RC",
+        "division": "East",
+        "lon": -89.9910,
+        "lat": 35.1558,
+        "years": [1895,1896,1897,1898,1899,1900,1901,1902,1903],
+        "left": [{"year": 1904, "newConference": "Unknown"}]
+      },
+      {
+        "school": "Eastern Kentucky University",
+        "stateId": "21",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Eastern_Kentucky_Colonels_logo.svg/1200px-Eastern_Kentucky_Colonels_logo.svg.png",
+        "nickName": "EKU",
+        "division": "East",
+        "lon": -89.9910,
+        "lat": 35.1558,
+        "years": [1896,1899,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941],
+        "left": [{"year": 1897, "newConference": "Unknown"},{"year": 1900, "newConference": "Unknown"},{"year": 1942, "newConference": "Unknown"}],
+        "rejoined": [{"year": 1899, "oldConference": "Unknown"},{"year": 1928, "oldConference": "Unknown"}]
       }
     ]
   },
@@ -1162,7 +1196,8 @@
         "stateId": "24",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Maryland_Terrapins_logo.svg/1200px-Maryland_Terrapins_logo.svg.png",
         "division": null,
-        "years": [1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014],
+        "years": [1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013],
+        "left": [{"year": 2014, "newConference": "Big Ten"}],
         "lon": -76.623322,
         "lat": 39.278088
       },
@@ -5022,6 +5057,19 @@
     "founded": null,
     "disbanded": null,
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/NCAA_DIII_logo_c.svg/2560px-NCAA_DIII_logo_c.svg.png",
+    "headquarters": null,
+    "names": null,
+    "majorConference": {"start": null, "end": null},
+    "schools": []
+  },
+  {
+    "conference": "Unknown",
+    "abbreviation": "Unknown",
+    "primaryColor": null,
+    "secondaryColor": null,
+    "founded": null,
+    "disbanded": null,
+    "logo": null,
     "headquarters": null,
     "names": null,
     "majorConference": {"start": null, "end": null},
