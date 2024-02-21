@@ -2,11 +2,16 @@ import React from "react"
 import { Marker, Annotation } from "react-simple-maps";
 import { useDispatch, useSelector } from 'react-redux';
 import { setMapInfo } from '@/redux/features/mapSlices';
+import { setSchool } from '@/redux/features/mapSlices';
 
 const schoolLocations = () => {
-  const { schools, hoveredSchool, styling} = useSelector(state => state.mapReducer);
+  const { schools, hoveredSchool, styling } = useSelector(state => state.mapReducer);
+  const { schoolModal } = useSelector(state => state.mapReducer);
   const option = useSelector((state) => state.optionsReducer);
   const dispatch = useDispatch();
+  const handleSchoolModal = (school) =>{
+    dispatch(setSchool({modal: !schoolModal, school: school}));
+  };
 
   return (
     <>

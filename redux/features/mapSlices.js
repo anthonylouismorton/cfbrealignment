@@ -4,8 +4,14 @@ export const map = createSlice({
   name: "map",
   initialState: {
     schools: [],
+    schoolModal: false,
+    selectedSchool: null,
     hoveredSchool: null,
-    hoveredState: null,
+    hoveredState: { stateInfo: null },
+    position: { coordinates: [-96.6, 38.7], zoom: 1 },
+    mapSize: { width: 800, height: 500 },
+    mapFill: [],
+    toolTipPos: { longitude: null, latitude: null, longOffSet: 0, latOffSet: 0 },
     styling: {
       circleRadius: 3,
       logoOffset: 20,
@@ -19,11 +25,16 @@ export const map = createSlice({
         state[map] = value;
       },
       setLogo: (state, action) => {
-        console.log(action.payload)
         state.styling = action.payload.updateStyling;
       },
+      setSchool: (state, action) => {
+        if(action.payload.modal){
+          state.schoolModal = action.payload.modal;
+        }
+        state.selectedSchool = action.payload.school
+      }
     },
 });
 
-export const { setMapInfo, setLogo } = map.actions;
+export const { setMapInfo, setLogo, setSchool } = map.actions;
 export default map.reducer;

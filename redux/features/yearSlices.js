@@ -10,5 +10,5 @@ export const year = createSlice({
   }
 })
 
-export const {setYear} = year.actions;
+export const { setYear } = year.actions;
 export default year.reducer;
