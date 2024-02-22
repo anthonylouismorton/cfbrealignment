@@ -33,8 +33,11 @@ export const conFilter = createSlice({
         const { option, value } = action.payload;
         state[option] = value;
       },
+      setConFromStor: (state, action) => {
+        return action.payload;
+      },
     },
 })
 
-export const { filterCon } = conFilter.actions;
+export const { filterCon, setConFromStor } = conFilter.actions;
 export default conFilter.reducer;

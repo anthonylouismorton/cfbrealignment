@@ -12,6 +12,9 @@ import ReactMap from './components/map/ReactMap';
 import { useSelector, useDispatch } from 'react-redux';
 import { setYear } from '@/redux/features/yearSlices';
 import { setShowMobile } from '@/redux/features/layoutSlices';
+import { setLocalStorage, getLocalStorage } from './functions/handleLocalStorage';
+import { filterCon, setConFromStor } from '@/redux/features/conFilterSlices';
+import { setOptFromStor } from '@/redux/features/optionsSlices';
 
 function Main() {
   const dispatch = useDispatch();
@@ -21,20 +24,17 @@ function Main() {
   const year = useSelector(state => state.yearReducer);
 
   const minWidth = (500);
-  //need to fix saving to local storage
-  // useEffect(() => {
-  //   if(localStorage.savedConferences){
-  //     const savedConfList = JSON.parse(localStorage.getItem('savedConferences'));
-  //     dispatch(filterCon(savedConfList));
-  //   }
-  //   if(localStorage.savedOptions){
-  //     const savedOptions = JSON.parse(localStorage.getItem('savedOptions'));
-  //     dispatch(changeOption(savedOptions));
-  //   }
-  // },[]);
+  useEffect(() => {
+    const { savedConfList, savedOptions, savedYear } = getLocalStorage();
+    if(savedConfList && savedOptions && savedYear){
+      dispatch(setYear(savedYear));
+      dispatch(setConFromStor(savedConfList));
+      dispatch(setOptFromStor(savedOptions));
+    }
+  },[]);
+
   useEffect(() => {
     const handleWindowResize = () => {
-      console.log(window.innerWidth)
       dispatch(setShowMobile(window.innerWidth <= minWidth))
     };
 
@@ -49,17 +49,13 @@ function Main() {
       }
     };
     document.addEventListener('keydown', handleKeyDown);
-    const saveToLocalStorage = () => {
-      localStorage.setItem("savedOptions", JSON.stringify(option))
-      localStorage.setItem("savedConferences", JSON.stringify(conFilter))
-    }
-    saveToLocalStorage();
+    setLocalStorage(option, conFilter, year);
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
 
   }, [year, option, showMobile, conFilter]);
-  console.log(showMobile)
+
   return (
     <div className="w-full">
       {option.showWelcome &&

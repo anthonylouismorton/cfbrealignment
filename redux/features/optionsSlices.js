@@ -19,8 +19,11 @@ export const options = createSlice({
         const { option, value } = action.payload;
         state[option] = value;
       },
+      setOptFromStor: (state, action) => {
+        return action.payload;
+      },
     },
 })
 
-export const { changeOption } = options.actions;
+export const { changeOption,setOptFromStor } = options.actions;
 export default options.reducer;
