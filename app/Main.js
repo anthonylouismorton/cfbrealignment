@@ -20,7 +20,7 @@ function Main() {
   const conFilter = useSelector(state => state.conFilterReducer);
   const year = useSelector(state => state.yearReducer);
 
-  const minWidth = (768);
+  const minWidth = (500);
   //need to fix saving to local storage
   // useEffect(() => {
   //   if(localStorage.savedConferences){
@@ -34,6 +34,7 @@ function Main() {
   // },[]);
   useEffect(() => {
     const handleWindowResize = () => {
+      console.log(window.innerWidth)
       dispatch(setShowMobile(window.innerWidth <= minWidth))
     };
 
@@ -58,7 +59,7 @@ function Main() {
     };
 
   }, [year, option, showMobile, conFilter]);
-
+  console.log(showMobile)
   return (
     <div className="w-full">
       {option.showWelcome &&

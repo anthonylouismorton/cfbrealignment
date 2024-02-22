@@ -36,7 +36,7 @@ function Year() {
   return (
     <div
       id="yearDiv"
-      className="hidden md:block w-full text-center h-20 mt-200"
+      className="w-full text-center h-20 mt-200"
       onFocus={showSlider}
     >
       {isVisible &&
