@@ -3,8 +3,9 @@ export function handleZoom(option, zoom, styling, logoSize, logoOffSet){
   let updateStyling = styling
   let updateLogoSize = logoSize;
   let updateLogoOffset = logoOffSet;
-
-  if(option.smallLogos && zoom >= 1){
+  console.log(updateLogoSize)
+  if(option.smallLogos && (zoom < 6)){
+    updateLogoSize = 12;
   }
   else if((!option.smallLogos && zoom >= 1 && zoom < 2)){
     updateLogoSize = 18;
@@ -73,5 +74,6 @@ export function handleZoom(option, zoom, styling, logoSize, logoOffSet){
     };
   }
   updateLogoOffset = -(updateLogoSize/2);
+  console.log(updateLogoSize)
   return { updateStyling: {...updateStyling, logoSize: updateLogoSize, logoOffset: updateLogoOffset}}
 }
