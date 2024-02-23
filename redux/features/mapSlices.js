@@ -6,6 +6,8 @@ export const map = createSlice({
     schools: [],
     schoolModal: false,
     selectedSchool: null,
+    stateModal: false,
+    selectedState: null,
     hoveredSchool: null,
     hoveredState: { stateInfo: null },
     position: { coordinates: [-96.6, 38.7], zoom: 1 },
@@ -32,9 +34,15 @@ export const map = createSlice({
           state.schoolModal = action.payload.modal;
         }
         state.selectedSchool = action.payload.school
+      },
+      setState: (state, action) => {
+        if(action.payload.modal){
+          state.stateModal = action.payload.modal;
+        }
+        state.selectedState = action.payload.state
       }
     },
 });
 
-export const { setMapInfo, setLogo, setSchool } = map.actions;
+export const { setMapInfo, setLogo, setSchool, setState } = map.actions;
 export default map.reducer;

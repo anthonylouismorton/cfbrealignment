@@ -6,11 +6,9 @@ export function handleMouseMove(event){
   const resizeFactorY = 1 / mapSize.height * box.height
 
   const originalCenter = [mapSize.width/2, mapSize.height/2]
-  console.log(projection.invert([originalCenter[0],originalCenter[1]]));
   const prevCenter = projection(position.coordinates)
   const offsetX = prevCenter[0] - originalCenter[0]
   const offsetY = prevCenter[1] - originalCenter[1]
-  console.log(offsetX, offsetY);
   const clientX = (event.clientX - left) / resizeFactorX
   const clientY = (event.clientY - top) / resizeFactorY
   const x = clientX
