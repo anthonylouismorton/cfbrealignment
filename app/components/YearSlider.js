@@ -94,20 +94,6 @@ const iOSBoxShadow =
       backgroundColor: 'white',
       color: 'white',
       position: 'relative',
-      // '&:focus, &:hover': {
-      //   color: 'white',
-      //   height: '6px',
-      //   '&::after': {
-      //     top: '25px',
-      //     transform: 'translateX(-50%)',
-      //     // backgroundColor: 'rgba(255, 255, 255, 0.9)',
-      //     color: 'white',
-      //     padding: '4px',
-      //     borderRadius: '4px',
-      //     fontSize: '12px',
-      //     whiteSpace: 'nowrap',
-      //   },
-      // },
     },
     '& .MuiSlider-mark': {
       backgroundColor: 'gray',

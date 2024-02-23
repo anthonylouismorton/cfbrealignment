@@ -103,7 +103,7 @@ export default function YearSlider() {
   };
 
   return (
-    <Box className="w-[50%] lg:w-[90%] flex items-center justify-center content-center mr-3">
+    <Box className="w-[50%] lg:w-[90%] flex items-center justify-center content-center mr-3 pt-3">
       <CustomSlider
         value={year}
         valueLabelDisplay="auto"

@@ -13,7 +13,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setYear } from '@/redux/features/yearSlices';
 import { setShowMobile } from '@/redux/features/layoutSlices';
 import { setLocalStorage, getLocalStorage } from './functions/handleLocalStorage';
-import { filterCon, setConFromStor } from '@/redux/features/conFilterSlices';
+import { setConFromStor } from '@/redux/features/conFilterSlices';
 import { setOptFromStor } from '@/redux/features/optionsSlices';
 
 function Main() {
