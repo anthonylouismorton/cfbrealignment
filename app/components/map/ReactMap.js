@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import States from './States';
 import SchoolInfo from './schoolInfo';
+import StateInfo from './StateInfo';
 import SchoolLocation from './SchoolLocation';
 import conferenceData from '../../data/conferenceData.json';
 import { getConferences } from '../../functions/ReactGetConf';
@@ -181,6 +182,7 @@ const MapChart = () => {
       Reset
     </button>
       <SchoolInfo/>
+      {/* <StateInfo/> */}
     </div>
   );
 };

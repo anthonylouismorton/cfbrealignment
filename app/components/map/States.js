@@ -2,12 +2,16 @@ import React from "react";
 import { Geographies, Geography } from "react-simple-maps";
 import MapData from '../../data/reactMapData.json';
 import { useSelector, useDispatch } from "react-redux";
-import { setMapInfo } from "@/redux/features/mapSlices";
+import { setMapInfo, setState } from "@/redux/features/mapSlices";
 
 const States = ({ handleMouseMove }) => {
   const dispatch = useDispatch();
-  const { mapFill, toolTipPos, mapSize } = useSelector(state => state.mapReducer);
+  const { mapFill, toolTipPos } = useSelector(state => state.mapReducer);
   const option = useSelector((state) => state.optionsReducer);
+  const { stateModal } = useSelector(state => state.mapReducer);
+  const handleStateModal = (state, conferences) =>{
+    dispatch(setState({modal: !stateModal, state: {state, conferences}}));
+  };
   
   return(
     <Geographies geography={MapData}>
@@ -27,6 +31,7 @@ const States = ({ handleMouseMove }) => {
                 dispatch(setMapInfo({map: "hoveredState", value: {stateInfo: null} }));
                 dispatch(setMapInfo({map: "toolTipPos", value: {...toolTipPos, longitude: null, latitude: null}}));
               }}
+              onClick={() => handleStateModal(geo.properties.name, stateInfo)}
               key={geo.rsmKey}
               geography={geo}
               style={{

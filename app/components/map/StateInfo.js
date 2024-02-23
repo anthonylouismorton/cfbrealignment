@@ -7,50 +7,51 @@ import { setSchool } from '@/redux/features/mapSlices';
 
 export default function OptionsMenu() {
   const { year } = useSelector(state => state.yearReducer);
-  const { selectedSchool, schoolModal } = useSelector(state => state.mapReducer);
+  const { selectedState, stateModal } = useSelector(state => state.mapReducer);
   const dispatch = useDispatch();
   const handleClose = () =>{
-    dispatch(setSchool({modal: !schoolModal, school: null}));
+    dispatch(setSchool({modal: !stateModal, school: null}));
   }
 
   return (
     <div>
-      {selectedSchool &&
+      {selectedState &&
       <Modal
-        open={schoolModal}
+        open={stateModal}
         onClose={handleClose}
         >
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-h-full overflow-y-auto max-w-[600px] bg-black bg-opacity-90 px-5 pt-4 pb-1 rounded">
-        <div className="flex items-center justify-center p-1 mb-1">
-          {selectedSchool.logo &&
-            <Image
-              width={40}
-              height={40}
-              className='max-h-[40px] max-w-auto mr-4 p-1'
-              src={selectedSchool.logo}
-              alt={`${selectedSchool.abbreviation} logo`} 
-            />
-          }
-          <span className='text-center text-[20px] text-white font-semibold'>
-            {selectedSchool.name}
-          </span>
-        </div>
+          <h1 className='text-white'>{selectedState.state}</h1>
+          {/* <div className="flex items-center justify-center p-1 mb-1">
+            {selectedState.logo &&
+              <Image
+                width={40}
+                height={40}
+                className='max-h-[40px] max-w-auto mr-4 p-1'
+                src={selectedState.logo}
+                alt={`${selectedState.abbreviation} logo`} 
+              />
+            }
+            <span className='text-center text-[20px] text-white font-semibold'>
+              {selectedState.name}
+            </span>
+          </div>
           <div>
             <p className='text-white'>
-              Conference: {selectedSchool.conference}
+              Conference: {selectedState.conference}
             </p>
-            {selectedSchool.schoolInfo.rejoined && selectedSchool.schoolInfo.rejoined.some(x => x.year <= year) ?
+            {selectedState.schoolInfo.rejoined && selectedState.schoolInfo.rejoined.some(x => x.year <= year) ?
               <div>
               <p className='text-white'>
-                First Joined: {selectedSchool.schoolInfo.years[0]}
+                First Joined: {selectedState.schoolInfo.years[0]}
               </p>
               <p className='text-white'>
-                Rejoined Conference: {selectedSchool.schoolInfo.rejoined[0].year} from {selectedSchool.schoolInfo.rejoined[0].oldConference}
+                Rejoined Conference: {selectedState.schoolInfo.rejoined[0].year} from {selectedState.schoolInfo.rejoined[0].oldConference}
               </p>
               </div>
               :
               <p className='text-white'>
-                Member Since: {selectedSchool.schoolInfo.years[0]}
+                Member Since: {selectedState.schoolInfo.years[0]}
               </p>
             }
           </div>
@@ -58,7 +59,7 @@ export default function OptionsMenu() {
             <Button className=' text-black text-[14px] rounded-sm p-2 font-bold font-semibold bg-white border-white hover:bg-black hover:text-white hover:border-white' variant='outlined' onClick={handleClose}>
               Hide
             </Button>
-          </div>
+          </div> */}
         </div>
       </Modal>
       }
