@@ -12,7 +12,7 @@ import { setLegend, setChanges } from '@/redux/features/conInfoSlices';
 import { setMapInfo, setLogo } from '@/redux/features/mapSlices';
 import { handleZoom } from '../../functions/handleZoom';
 import { useDispatch, useSelector } from 'react-redux';
-import Autoplay from '../AutoPlay';
+import Autoplay from './AutoPlay';
 import { geoAlbersUsa } from 'd3-geo';
 import {
   ComposableMap,
@@ -24,7 +24,6 @@ const MapChart = () => {
   const dispatch = useDispatch();
   const wrapperRef = useRef(null);
   const { fullscreen, showMobile } = useSelector((state)=> state.layoutReducer);
-  const [isFullscreen, setIsFullscreen] = useState(false);
   const { styling, logoOffSet, logoSize, mapSize, position, toolTipPos, hoveredState } = useSelector(state => state.mapReducer);
   const conFilter = useSelector(state => state.conFilterReducer);
   const option = useSelector((state) => state.optionsReducer);
@@ -151,6 +150,17 @@ const MapChart = () => {
             <Autoplay />
           </foreignObject>
         </Annotation>
+        {showMobile &&
+          <Annotation
+            subject={[-89, 28]}
+            dx={0}
+            dy={0}
+          >
+            <foreignObject width="150" height="35">
+              <div className='text-white'>{year}</div>
+            </foreignObject>
+          </Annotation>
+        }
       </ZoomableGroup>
     </ComposableMap>
     {!fullscreen ? (
