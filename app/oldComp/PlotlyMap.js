@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
 import MapData from './data/plotly.json';
 import conferenceData from './data/conferenceData.json';
-import { getConferences } from '../functions/ReactGetConf';
+import { getConferences } from '../functions/getConInfo';
 import { mapFill } from '../oldFunc/mapFill';
-import { schoolLocations } from '../functions/ReactMapSchoolLoc';
+import { schoolLocations } from './getSchoolLoc';
 
 const PlotlyMap = ({ mapdata, currentYear, options, isYearVisible, setChangesList, setSchoolStates, setCurrentConferences, setActiveConferences, conList }) => {
   const [data, setdata] = useState([]);

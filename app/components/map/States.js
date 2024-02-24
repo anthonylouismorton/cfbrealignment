@@ -9,8 +9,9 @@ const States = ({ handleMouseMove }) => {
   const { mapFill, toolTipPos } = useSelector(state => state.mapReducer);
   const option = useSelector((state) => state.optionsReducer);
   const { stateModal } = useSelector(state => state.mapReducer);
+
   const handleStateModal = (state, conferences) =>{
-    dispatch(setState({modal: !stateModal, state: {state, conferences}}));
+    dispatch(setState({modal: !stateModal, state: {name: state, ...conferences}}));
   };
   
   return(
@@ -19,6 +20,9 @@ const States = ({ handleMouseMove }) => {
         geographies.map((geo) => {
           const stateInfo = mapFill.find((state) => state.state === geo.id);
           let stateColor = stateInfo?.color || '#b4b4b4';
+          if(option.showLocation){
+            stateColor = '#b4b4b4'
+          }
           return (
             <Geography
               onMouseMove={stateInfo ? (event) => handleMouseMove(event, geo) : null}
@@ -31,7 +35,7 @@ const States = ({ handleMouseMove }) => {
                 dispatch(setMapInfo({map: "hoveredState", value: {stateInfo: null} }));
                 dispatch(setMapInfo({map: "toolTipPos", value: {...toolTipPos, longitude: null, latitude: null}}));
               }}
-              onClick={() => handleStateModal(geo.properties.name, stateInfo)}
+              onClick={() => !option.showLocation && stateInfo ? handleStateModal(geo.properties.name, stateInfo) : null}
               key={geo.rsmKey}
               geography={geo}
               style={{
