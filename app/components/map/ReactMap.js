@@ -4,7 +4,7 @@ import SchoolInfo from './schoolInfo';
 import StateInfo from './StateInfo';
 import SchoolLocation from './SchoolLocation';
 import conferenceData from '../../data/conferenceData.json';
-import { getConferences } from '../../functions/ReactGetConf';
+import { getConferences } from '../../functions/getConInfo';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import { IconButton } from '@mui/material';
 import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
@@ -39,19 +39,20 @@ const MapChart = () => {
       dispatch(setMapInfo({map: "mapSize", value: {width: 1150, height: 555}}))
     }
 
-    const { getSchools, conferenceChanges, getLegendConferences, getMapFill } = getConferences(
+    const { getSchools, conferenceChanges, getLegendConferences, getMapFill2 } = getConferences(
       conferenceData,
       year,
       option,
       conFilter
     );
+    console.log();
    
     let { updateStyling } = handleZoom(option, position.zoom, styling, logoOffSet, logoSize);
     dispatch(setLegend(getLegendConferences));
     dispatch(setChanges(conferenceChanges));
     dispatch(setLogo({ updateStyling }));
     dispatch(setMapInfo({map: "schools", value: getSchools}));
-    dispatch(setMapInfo({map: "mapFill", value: getMapFill}));
+    dispatch(setMapInfo({map: "mapFill", value: getMapFill2}));
     
   }, [year, option, showMobile, conFilter, position.zoom, fullscreen, hoveredState])
 
@@ -182,7 +183,7 @@ const MapChart = () => {
       Reset
     </button>
       <SchoolInfo/>
-      {/* <StateInfo/> */}
+      <StateInfo/>
     </div>
   );
 };

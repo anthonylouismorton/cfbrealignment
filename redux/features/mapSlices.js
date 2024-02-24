@@ -36,6 +36,7 @@ export const map = createSlice({
         state.selectedSchool = action.payload.school
       },
       setState: (state, action) => {
+        console.log(action.payload)
         if(action.payload.modal){
           state.stateModal = action.payload.modal;
         }
