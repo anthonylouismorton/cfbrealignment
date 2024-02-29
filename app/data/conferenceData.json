@@ -168,7 +168,7 @@
         "division": "East",
         "lon": -84.396,
         "lat": 33.776,
-        "years": [1896,1897,1898,1899,1900,1902,1903,1904,1905,1906,1907,1908,1909,1910,1911,1912,1913,1916,1919,1920],
+        "years": [1896,1897,1898,1899,1900,1902,1903,1904,1905,1906,1907,1908,1909,1910,1911,1912,1913,1916,1917,1918,1919,1920],
         "left": [{"year": 1901, "newConference": "FBS"}, {"year": 1913, "newConference": "FBS"}],
         "rejoined": [{"year": 1902, "oldConference": "FBS"},{"year": 1916, "oldConference": "FBS"}]
       },
@@ -204,7 +204,7 @@
         "lat": 38.0157,
         "years": [1896,1897,1898,1899,1900,1901,1902,1903,1911,1912,1913,1914,1915,1919,1920],
         "left": [{"year": 1904, "newConference": "FBS"}, {"year": 1921, "newConference": "SOCON"}],
-        "rejoined": [{"year": 1911, "oldConference": "FBS"},{"year": 1919, "oldConference": "FBS"}]
+        "rejoined": [{"year": 1911, "oldConference": "FBS"}, {"year": 1919, "oldConference": "FBS"}]
       },
       {
         "school": "Louisiana State University",
