@@ -73,6 +73,7 @@ function History() {
               {change.change === 'left' && (
                 <div key={index} className='flex text-center items-center'>
                   <div className="change-logo mr-1 sm:mr-2 flex items-center overflow-visible bg-white p-1 relative">
+                  {console.log(change.logo)}
                     <Image
                       onMouseOver={() => sethovered(index + change.school)}
                       onMouseLeave={() => sethovered(null)}
