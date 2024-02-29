@@ -6,7 +6,6 @@ export function getConferences(conferenceData, year, option, conferences) {
   var getCurrentConferences = [];
   var historyArray = [];
   var getLegendConferences = [];
-  var getMapFill = [];
   var getMapFill2 = [];
 
   conferenceData.forEach((conference) => {
@@ -147,7 +146,7 @@ export function getConferences(conferenceData, year, option, conferences) {
   //     };
   //   });
   // };
-  console.log(getSchools)
+
   const conferenceChanges = getChanges(getCurrentConferences, year, historyArray);
   return { getSchools, conferenceChanges, getLegendConferences, getMapFill2 };
 };

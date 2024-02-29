@@ -3,7 +3,7 @@ import States from './States';
 import SchoolInfo from './schoolInfo';
 import StateInfo from './StateInfo';
 import SchoolLocation from './SchoolLocation';
-import conferenceData from '../../data/conferenceData.json';
+import conferenceData from '../../data/updatedConferenceData.json';
 import { getConferences } from '../../functions/getConInfo';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import { IconButton } from '@mui/material';
@@ -20,6 +20,7 @@ import {
   Annotation,
   ZoomableGroup,
 } from "react-simple-maps";
+
 
 const MapChart = () => {
   const dispatch = useDispatch();
