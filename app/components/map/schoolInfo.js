@@ -1,16 +1,35 @@
 import React from 'react';
 import Modal from '@mui/material/Modal';
-import { Button } from '@mui/material';
 import Image from 'next/image';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSchool } from '@/redux/features/mapSlices';
+import { select } from 'd3';
 
 export default function OptionsMenu() {
-  const { year } = useSelector(state => state.yearReducer);
+  const year = useSelector(state => state.yearReducer);
   const { selectedSchool, schoolModal } = useSelector(state => state.mapReducer);
   const dispatch = useDispatch();
+
   const handleClose = () =>{
     dispatch(setSchool({modal: !schoolModal, school: null}));
+  }
+
+  var rejoinYear = null
+  if(selectedSchool){
+    if(selectedSchool.schoolInfo.rejoined){
+      for(const rejoin of selectedSchool.schoolInfo.rejoined){
+        if(rejoin.year <= year){
+          if(!rejoinYear){
+            rejoinYear = rejoin;
+          }
+          else{
+            if(rejoin.year > rejoinYear.year){
+              rejoinYear = rejoin
+            }
+          }
+        }
+      }
+    }
   }
 
   return (
@@ -39,25 +58,20 @@ export default function OptionsMenu() {
             <p className='text-white'>
               Conference: {selectedSchool.conference}
             </p>
-            {selectedSchool.schoolInfo.rejoined && selectedSchool.schoolInfo.rejoined.some(x => x.year <= year) ?
-              <div>
+            {rejoinYear ? (
               <p className='text-white'>
-                First Joined: {selectedSchool.schoolInfo.years[0]}
+                Rejoined: {rejoinYear.year}
               </p>
-              <p className='text-white'>
-                Rejoined Conference: {selectedSchool.schoolInfo.rejoined[0].year} from {selectedSchool.schoolInfo.rejoined[0].oldConference}
-              </p>
-              </div>
-              :
+            ) : (
               <p className='text-white'>
                 Member Since: {selectedSchool.schoolInfo.years[0]}
               </p>
-            }
+            )}
           </div>
           <div className='text-center py-3'>
-            <Button className=' text-black text-[14px] rounded-sm p-2 font-bold font-semibold bg-white border-white hover:bg-black hover:text-white hover:border-white' variant='outlined' onClick={handleClose}>
+            <button className='text-black text-[12px] sm:text-[12px] md:text-[14px] font-semibold bg-white border border-white hover:bg-black hover:text-white hover:border-white p-2 rounded-sm' onClick={handleClose}>
               Hide
-            </Button>
+            </button>
           </div>
         </div>
       </Modal>
