@@ -63,7 +63,7 @@ function Main() {
       }
       {!fullscreen &&
         <div className="flex flex-col justify-center items-center">
-          {showMobile &&
+          {showMobile && showMobile &&
             <MobileOptions/>
           }
           {!showMobile &&
