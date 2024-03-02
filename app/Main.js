@@ -59,7 +59,7 @@ function Main() {
 
   return (
     <div className="w-full">
-      {/* {option.showWelcome &&
+      {option.showWelcome &&
         <Welcome/>
       }
       {!fullscreen &&
@@ -111,8 +111,8 @@ function Main() {
             <History/>
           }
         </div>
-      </div> */}
-      <Conferences/>
+      </div>
+      {/* <Conferences/> */}
     </div>
   );
 }
