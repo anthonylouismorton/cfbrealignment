@@ -46,7 +46,6 @@ const MapChart = () => {
       option,
       conFilter
     );
-    console.log();
    
     let { updateStyling } = handleZoom(option, position.zoom, styling, logoOffSet, logoSize);
     dispatch(setLegend(getLegendConferences));

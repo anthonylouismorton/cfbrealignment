@@ -15,6 +15,7 @@ import { setShowMobile } from '@/redux/features/layoutSlices';
 import { setLocalStorage, getLocalStorage } from './functions/handleLocalStorage';
 import { setConFromStor } from '@/redux/features/conFilterSlices';
 import { setOptFromStor } from '@/redux/features/optionsSlices';
+import Conferences from './components/Conferences';
 
 function Main() {
   const dispatch = useDispatch();
@@ -58,7 +59,7 @@ function Main() {
 
   return (
     <div className="w-full">
-      {option.showWelcome &&
+      {/* {option.showWelcome &&
         <Welcome/>
       }
       {!fullscreen &&
@@ -87,9 +88,9 @@ function Main() {
               }
             </div>
             <div className="flex flex-col hidden md:block md:w-[20%] lg:w-[25%] xl:w-[17.5%] pt-5 md:pt-8 xl:pt-2 2xl:pt-4">
-                {!option.hideLegend && !showMobile && (
-                  <Legend/>
-                )}
+              {!option.hideLegend && !showMobile && (
+                <Legend/>
+              )}
             </div>
             {!showMobile &&
               <div>
@@ -110,7 +111,8 @@ function Main() {
             <History/>
           }
         </div>
-      </div>
+      </div> */}
+      <Conferences/>
     </div>
   );
 }
