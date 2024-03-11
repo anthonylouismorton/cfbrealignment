@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import OptionsMenu from '../components/OptionsMenu';
+import OptionsMenu from '../components/mapView/OptionsMenu';
 
 export default function Options() {
   const [open, setOpen] = useState(false);

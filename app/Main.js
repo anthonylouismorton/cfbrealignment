@@ -1,10 +1,10 @@
 "use client"
 import { useEffect } from 'react';
-import Year from './components/Year';
-import Legend from './components/Legend';
-import History from './components/History';
-import Header from './components/Header';
-import Options from './components/Options';
+import Year from './components/mapView/Year';
+import Legend from './components/mapView/Legend';
+import History from './components/mapView/History';
+import Header from './components/mapView/MapHeader';
+import Options from './components/mapView/Options';
 import MobileSlider from './mobile/MobileSlider';
 import Welcome from './components/Welcome';
 import MobileOptions from './mobile/MobileOptions';
@@ -15,7 +15,7 @@ import { setShowMobile } from '@/redux/features/layoutSlices';
 import { setLocalStorage, getLocalStorage } from './functions/handleLocalStorage';
 import { setConFromStor } from '@/redux/features/conFilterSlices';
 import { setOptFromStor } from '@/redux/features/optionsSlices';
-import Conferences from './components/Conferences';
+import Conferences from './components/listView/Conferences';
 import View from './components/View';
 
 function Main() {
@@ -104,7 +104,10 @@ function Main() {
           </div>
         </>
       ) : (
-        <Conferences/>
+        <div className='flex w-full'>
+          <Conferences/>
+          <View/>
+        </div>
       )}
     </div>
   );

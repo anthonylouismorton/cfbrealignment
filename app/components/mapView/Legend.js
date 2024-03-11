@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import '../../Legend.css'
+import '../../../Legend.css'
 
 function Legend() {
   const { legendConferences } = useSelector(state => state.conInfoReducer);

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Image from 'next/image';
 import { useSelector } from 'react-redux';
-import '../../Legend.css'
+import '../../../Legend.css'
 
 function History() {
   const { conferenceChanges } = useSelector(state => state.conInfoReducer);
