@@ -1,5 +1,5 @@
 import React from "react";
-import conferenceData from "../data/updatedConferenceData.json"
+import conferenceData from "../../data/updatedConferenceData.json"
 import Image from "next/image";
 
 export default function Conferences(){
@@ -8,28 +8,32 @@ export default function Conferences(){
     let startYear = years[0];
     let endYear = years[0];
 
-    for (let i = 1; i < years.length; i++) {
-        if (years[i] === endYear + 1) {
-            endYear = years[i];
-        } else {
-            if (startYear === endYear) {
-                simplifiedYears.push(startYear.toString());
-            } else {
-                simplifiedYears.push(`${startYear} - ${endYear}`);
-            }
-            startYear = years[i];
-            endYear = years[i];
+    for(const year of years.slice(1)){
+      if(year === endYear + 1){
+          endYear = year;
+      }
+      else{
+        if(startYear === endYear){
+          simplifiedYears.push(startYear.toString());
         }
-    }
+        else{
+          simplifiedYears.push(`${startYear} - ${endYear}`);
+        }
+        startYear = year;
+        endYear = year;
+      }
+  }
 
-    if (startYear === endYear) {
-        simplifiedYears.push(startYear.toString());
-    } else {
-        simplifiedYears.push(`${startYear} - ${endYear}`);
+    if(startYear === endYear){
+      simplifiedYears.push(startYear.toString());
+    }
+    else{
+      simplifiedYears.push(`${startYear} - ${endYear}`);
     }
 
     return simplifiedYears.join(', ');
-}
+  }
+
   return (
     <div className="pl-24 pr-24 pt-2">
       <p className="text-white text-[32px] font-semibold text-center">Conferences</p>
@@ -82,11 +86,14 @@ export default function Conferences(){
                 <div className="pt-6">
                   <p className='text-center text-[20px] text-white font-semibold'>Members</p>
                   <div className="flex flex-wrap pt-2 text-center">
-                    {conference.schools.map((school, index) => (
+                  {conference.schools
+                    .slice()
+                    .sort((a, b) => a.years[0] - b.years[0])
+                    .map((school, index) => (
                       <div key={index} className="flex flex-col text-white w-1/2 md:w-1/3 px-1">
-                        <p>{school.school} {getYears(school.years)}</p>
+                        <p>{school.school} {getYears(school.years)}, {school.years.length} years</p>
                       </div>
-                    ))}
+                  ))}
                   </div>
                 </div>
               </div>

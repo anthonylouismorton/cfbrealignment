@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from '@mui/material/Modal';
-import { changeOption } from '../../redux/features/optionsSlices';
+import { changeOption } from '../../../redux/features/optionsSlices';
 import { filterCon } from '@/redux/features/conFilterSlices';
 import { useDispatch, useSelector } from 'react-redux';
 
