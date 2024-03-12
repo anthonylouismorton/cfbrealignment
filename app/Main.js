@@ -16,7 +16,8 @@ import { setLocalStorage, getLocalStorage } from './functions/handleLocalStorage
 import { setConFromStor } from '@/redux/features/conFilterSlices';
 import { setOptFromStor } from '@/redux/features/optionsSlices';
 import Conferences from './components/listView/Conferences';
-import View from './components/View';
+import MapButton from './components/mapView/MapButton';
+import ListButton from './components/listView/ListButton';
 
 function Main() {
   const dispatch = useDispatch();
@@ -85,8 +86,8 @@ function Main() {
                 </div>
                 {!showMobile && (
                   <div>
+                    <MapButton/>
                     <Options/>
-                    <View/>
                   </div>
                 )}
               </div>
@@ -106,7 +107,7 @@ function Main() {
       ) : (
         <div className='flex w-full'>
           <Conferences/>
-          <View/>
+          <ListButton/>
         </div>
       )}
     </div>

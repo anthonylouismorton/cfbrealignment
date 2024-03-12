@@ -5,7 +5,7 @@ export const layout = createSlice({
   initialState: {
     fullscreen: false,
     showMobile: false,
-    showList: false
+    showList: true
   },
   reducers: {
     openFullscreen: (state) => {
