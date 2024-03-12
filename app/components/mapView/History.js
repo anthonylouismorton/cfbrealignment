@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Image from 'next/image';
+// import img from 'next/img';
 import { useSelector } from 'react-redux';
 import '../../../Legend.css'
 
@@ -24,14 +24,14 @@ function History() {
                 <div key={index} className='flex text-center items-center w-[140px]'>
                   {change.logo ? (
                   <div className="change-logo mr-1 sm:mr-2 flex items-center bg-white p-1 overflow-visible relative">
-                    <Image
+                    <img
                       onMouseOver={() => sethovered(index)}
                       onMouseLeave={() => sethovered(null)}
-                      priority={true}
+                      src={change.logo}
+                      alt={`${change.abbreviation} logo`}
                       width={30}
                       height={30}
                       className='max-h-[30px] max-w-auto'
-                      src={change.logo} alt={`${change.abbreviation} logo`} 
                     />
                     {hovered === index &&
                         <div className="opacity-0 bg-white max-w-24 translate-y-2 text-black text-center text-[10px] absolute top-full py-2 px-2 rounded-sm transition duration-300 opacity-100 z-10 whitespace-nowrap">
@@ -49,7 +49,7 @@ function History() {
                 <div key={index} className='flex text-center items-center w-[140px]'>
                   {change.logo ? (
                     <div className="change-logo mr-1 sm:mr-2 flex items-center bg-white p-1 overflow-visible relative">
-                      <Image
+                      <img
                         onMouseOver={() => sethovered(index)}
                         onMouseLeave={() => sethovered(null)}
                         priority={true}
@@ -74,7 +74,7 @@ function History() {
                 <div key={index} className='flex text-center items-center'>
                   <div className="change-logo mr-1 sm:mr-2 flex items-center overflow-visible bg-white p-1 relative">
                   {console.log(change.logo)}
-                    <Image
+                    <img
                       onMouseOver={() => sethovered(index + change.school)}
                       onMouseLeave={() => sethovered(null)}
                       priority={true}
@@ -92,7 +92,7 @@ function History() {
                   <div className="change-conference text-sm mr-1 sm:mr-2 text-white">{`leaves`}</div>
                   {change.oldConferenceLogo ? (
                     <div className="change-logo mr-1 sm:mr-2 flex items-center bg-white p-1 overflow-visible relative">
-                      <Image
+                      <img
                         onMouseOver={() => sethovered(index + change.oldConferenceAbrr)}
                         onMouseLeave={() => sethovered(null)}
                         priority={true}
@@ -115,7 +115,7 @@ function History() {
                   </div>
                   {change.newConferenceLogo ? (
                     <div className="change-logo ml-1 sm:ml-3 flex items-center bg-white p-1 overflow-visible relative">
-                      <Image
+                      <img
                         onMouseOver={() => sethovered(index + change.newConferenceAbbr)}
                         onMouseLeave={() => sethovered(null)}
                         priority={true}
@@ -139,7 +139,7 @@ function History() {
               {change.change === 'joined' && (
                 <div key={index} className='flex text-center items-center w-[140px]'>
                   <div className="change-logo mr-1 sm:mr-2 flex items-center bg-white p-1 overflow-visible relative">
-                    <Image
+                    <img
                       onMouseOver={() => sethovered(index + change.school)}
                       onMouseLeave={() => sethovered(null)}
                       priority={true}
@@ -160,7 +160,7 @@ function History() {
                   <div className="change-logo ml-1 sm:ml-3 flex items-center">
                     {change.conferenceLogo ? (
                       <div className="change-logo mr-1 sm:mr-2 flex items-center bg-white p-1 overflow-visible relative">
-                        <Image
+                        <img
                           onMouseOver={() => sethovered(index + change.conference)}
                           onMouseLeave={() => sethovered(null)}
                           priority={true}
@@ -184,7 +184,7 @@ function History() {
               {change.change === 'rejoined' && (
                 <div className='flex text-center items-center w-[140px]'>
                   <div className="change-logo mr-1 sm:mr-2 flex items-center bg-white p-1 relative">
-                    <Image
+                    <img
                       onMouseOver={() => sethovered(index + change.school)}
                       onMouseLeave={() => sethovered(null)}
                       priority={true}
@@ -205,7 +205,7 @@ function History() {
                   <div className="change-logo ml-1 sm:ml-3 flex items-center">
                     {change.conferenceLogo ? (
                       <div className="change-logo mr-1 sm:mr-2 flex items-center bg-white p-1 overflow-visible relative">
-                        <Image
+                        <img
                           onMouseOver={() => sethovered(index + change.conference)}
                           onMouseLeave={() => sethovered(null)}
                           priority={true}
