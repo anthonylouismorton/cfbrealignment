@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
 import MapData from './data/plotly.json';
-import conferenceData from './data/conferenceData.json';
+import conferenceData from '../../data/updatedConferenceData.json';
 import { getConferences } from '../functions/getConInfo';
 import { mapFill } from '../oldFunc/mapFill';
 import { schoolLocations } from './getSchoolLoc';

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
-import conferenceData from '../data/conferenceData.json';
+import conferenceData from '../../data/updatedConferenceData.json';
 import { getConferences } from '../oldFunc/getConferences';
 import { mapFill } from '../oldFunc/mapFill';
 import { schoolLocations } from '../oldFunc/schoolLocations';

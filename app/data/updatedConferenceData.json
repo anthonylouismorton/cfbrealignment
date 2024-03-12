@@ -30,7 +30,8 @@
         "division": "West",
         "stateId": "19",
         "logo": "/images/schools/UniversityofIowa.png",
-        "nickName": "UI",
+        "abbreviation": "UI",
+        "nickName": "Iowa",
         "lon": -91.5511,
         "lat": 41.6587,
         "years": [
@@ -53,7 +54,8 @@
         "stateId": "20",
         "division": null,
         "logo": "/images/schools/UniversityofKansas.png",
-        "nickName": "KU",
+        "abbreviation": "KU",
+        "nickName": "Kansas",
         "lon": -96.5939,
         "lat": 39.202,
         "years": [
@@ -76,7 +78,8 @@
         "stateId": "29",
         "division": null,
         "logo": "/images/schools/UniversityofMissouri.png",
-        "nickName": "UM",
+        "abbreviation": "UM",
+        "nickName": "Mizzou",
         "lon": -92.3288,
         "lat": 38.9453,
         "years": [
@@ -99,7 +102,8 @@
         "stateId": "31",
         "division": null,
         "logo": "/images/schools/UniversityofNebraska-Lincoln.png",
-        "nickName": "UNL",
+        "abbreviation": "UNL",
+        "nickName": "Nebraska",
         "lon": -96.7056,
         "lat": 40.8207,
         "years": [
@@ -150,7 +154,8 @@
     "schools": [
       {
         "school": "University of Alabama",
-        "nickName": "UA",
+        "abbreviation": "UA",
+        "nickName": "Alabama",
         "stateId": "01",
         "logo": "/images/schools/UniversityofAlabama.png",
         "division": "West",
@@ -202,6 +207,7 @@
       },
       {
         "school": "University of North Carolina at Chapel Hill",
+        "abbreviation": "UNC",
         "nickName": "UNC",
         "division": "Coastal",
         "stateId": "37",
@@ -224,7 +230,8 @@
         "school": "Sewanee",
         "stateId": "47",
         "logo": "/images/schools/Sewanee.png",
-        "nickName": "SEW",
+        "abbreviation": "SEW",
+        "nickName": "Sewanee",
         "division": "East",
         "years": [
           1895,
@@ -276,7 +283,8 @@
         "school": "Auburn University",
         "stateId": "01",
         "logo": "/images/schools/AuburnUniversity.png",
-        "nickName": "AU",
+        "abbreviation": "AU",
+        "nickName": "Auburn",
         "division": "West",
         "lon": -85.486,
         "lat": 32.603,
@@ -319,7 +327,8 @@
         "school": "University of Florida",
         "stateId": "12",
         "logo": "/images/schools/UniversityofFlorida.png",
-        "nickName": "UF",
+        "abbreviation": "UF",
+        "nickName": "Florida",
         "division": "East",
         "years": [
           1911,
@@ -347,7 +356,8 @@
         "school": "University of Georgia",
         "stateId": "13",
         "logo": "/images/schools/UniversityofGeorgia.png",
-        "nickName": "UGA",
+        "abbreviation": "UGA",
+        "nickName": "Georgia",
         "division": "East",
         "lon": -83.2228,
         "lat": 33.5721,
@@ -398,7 +408,8 @@
         "school": "Georgia Institute of Technology",
         "stateId": "13",
         "logo": "/images/schools/GeorgiaInstituteofTechnology.png",
-        "nickName": "GT",
+        "abbreviation": "GT",
+        "nickName": "Georgia Tech",
         "division": "East",
         "lon": -84.396,
         "lat": 33.776,
@@ -449,7 +460,8 @@
       },
       {
         "school": "Clemson University",
-        "nickName": "CU",
+        "abbreviation": "CU",
+        "nickName": "Clemson",
         "division": null,
         "stateId": "45",
         "logo": "/images/schools/ClemsonUniversity.png",
@@ -487,6 +499,7 @@
       },
       {
         "school": "Cumberland University",
+        "abbreviation": "CU",
         "nickName": "Cumberland",
         "division": null,
         "stateId": "47",
@@ -517,7 +530,8 @@
         "school": "University of Kentucky",
         "stateId": "21",
         "logo": "/images/schools/UniversityofKentucky.png",
-        "nickName": "UK",
+        "abbreviation": "UK",
+        "nickName": "Kentucky",
         "division": "East",
         "lon": -84.3009,
         "lat": 38.0157,
@@ -563,6 +577,7 @@
         "school": "Louisiana State University",
         "stateId": "22",
         "logo": "/images/schools/LouisianaStateUniversity.png",
+        "abbreviation": "LSU",
         "nickName": "LSU",
         "division": "West",
         "lon": -91.1042,
@@ -613,7 +628,8 @@
         "school": "Mercer University",
         "stateId": "13",
         "logo": "/images/schools/MercerUniversity.png",
-        "nickName": "MU",
+        "abbreviation": "MU",
+        "nickName": "Mercer",
         "division": "East",
         "lon": -83.3855,
         "lat": 32.4945,
@@ -671,7 +687,8 @@
         "school": "University of Mississippi",
         "stateId": "28",
         "logo": "/images/schools/UniversityofMississippi.png",
-        "nickName": "UM",
+        "abbreviation": "UM",
+        "nickName": "Ole Miss",
         "division": "West",
         "lon": -89.5384,
         "lat": 34.3647,
@@ -710,7 +727,8 @@
         "school": "Mississippi State University",
         "stateId": "28",
         "logo": "/images/schools/MississippiStateUniversity.png",
-        "nickName": "MSU",
+        "abbreviation": "MSU",
+        "nickName": "Mississippi State",
         "division": "West",
         "years": [
           1896,
@@ -752,7 +770,8 @@
         "school": "University of Tennessee",
         "stateId": "47",
         "logo": "/images/schools/UniversityofTennessee.png",
-        "nickName": "UT",
+        "abbreviation": "UT",
+        "nickName": "Tennessee",
         "division": "East",
         "lon": -83.925,
         "lat": 35.925011,
@@ -800,7 +819,8 @@
         "school": "Tulane University",
         "stateId": "22",
         "logo": "/images/schools/TulaneUniversity.png",
-        "nickName": "TU",
+        "abbreviation": "TU",
+        "nickName": "Tulane",
         "division": "West",
         "years": [
           1896,
@@ -839,7 +859,8 @@
         "school": "Vanderbilt University",
         "stateId": "47",
         "logo": "/images/schools/VanderbiltUniversity.png",
-        "nickName": "VU",
+        "abbreviation": "VU",
+        "nickName": "Vandy",
         "division": "East",
         "lon": -86.804972,
         "lat": 36.148649,
@@ -883,7 +904,8 @@
         "school": "University of Nashville",
         "stateId": "47",
         "logo": "/images/schools/UniversityofNashville.png",
-        "nickName": "UN",
+        "abbreviation": "UN",
+        "nickName": "Nashville",
         "division": "East",
         "lon": -86.4605,
         "lat": 36.0915,
@@ -914,7 +936,8 @@
         "school": "Rhodes College",
         "stateId": "47",
         "logo": "/images/schools/RhodesCollege.jpg",
-        "nickName": "RC",
+        "abbreviation": "RC",
+        "nickName": "Rhodes",
         "division": "East",
         "lon": -89.991,
         "lat": 35.1558,
@@ -940,7 +963,8 @@
         "school": "Eastern Kentucky University",
         "stateId": "21",
         "logo": "/images/schools/EasternKentuckyUniversity.png",
-        "nickName": "EKU",
+        "abbreviation": "EKU",
+        "nickName": "Eastern",
         "division": "East",
         "lon": -89.991,
         "lat": 35.1558,
@@ -1031,7 +1055,8 @@
     "schools": [
       {
         "school": "University of Alabama",
-        "nickName": "UA",
+        "abbreviation": "UA",
+        "nickName": "Alabama",
         "stateId": "01",
         "logo": "/images/schools/UniversityofAlabama.png",
         "division": "West",
@@ -1137,7 +1162,8 @@
         "school": "University of Arkansas",
         "stateId": "05",
         "logo": "/images/schools/UniversityofArkansas.png",
-        "nickName": "UArk",
+        "abbreviation": "UA",
+        "nickName": "Arkansas",
         "division": "West",
         "years": [
           1991,
@@ -1183,7 +1209,8 @@
         "school": "Auburn University",
         "stateId": "01",
         "logo": "/images/schools/AuburnUniversity.png",
-        "nickName": "AU",
+        "abbreviation": "AU",
+        "nickName": "Auburn",
         "division": "West",
         "years": [
           1933,
@@ -1287,7 +1314,8 @@
         "school": "University of Florida",
         "stateId": "12",
         "logo": "/images/schools/UniversityofFlorida.png",
-        "nickName": "UF",
+        "abbreviation": "UF",
+        "nickName": "Florida",
         "division": "East",
         "years": [
           1933,
@@ -1391,7 +1419,8 @@
         "school": "University of Georgia",
         "stateId": "13",
         "logo": "/images/schools/UniversityofGeorgia.png",
-        "nickName": "UGA",
+        "abbreviation": "UGA",
+        "nickName": "Georgia",
         "division": "East",
         "years": [
           1933,
@@ -1495,7 +1524,8 @@
         "school": "Georgia Institute of Technology",
         "stateId": "13",
         "logo": "/images/schools/GeorgiaInstituteofTechnology.png",
-        "nickName": "GT",
+        "abbreviation": "GT",
+        "nickName": "Georgia Tech",
         "division": "East",
         "years": [
           1933,
@@ -1543,7 +1573,8 @@
         "school": "University of Kentucky",
         "stateId": "21",
         "logo": "/images/schools/UniversityofKentucky.png",
-        "nickName": "UK",
+        "abbreviation": "UK",
+        "nickName": "Kentucky",
         "division": "East",
         "years": [
           1933,
@@ -1647,6 +1678,7 @@
         "school": "Louisiana State University",
         "stateId": "22",
         "logo": "/images/schools/LouisianaStateUniversity.png",
+        "abbreviation": "LSU",
         "nickName": "LSU",
         "division": "West",
         "years": [
@@ -1751,7 +1783,8 @@
         "school": "University of Mississippi",
         "stateId": "28",
         "logo": "/images/schools/UniversityofMississippi.png",
-        "nickName": "UM",
+        "abbreviation": "UM",
+        "nickName": "Ole Miss",
         "division": "West",
         "years": [
           1933,
@@ -1855,7 +1888,8 @@
         "school": "Mississippi State University",
         "stateId": "28",
         "logo": "/images/schools/MississippiStateUniversity.png",
-        "nickName": "MSU",
+        "abbreviation": "MSU",
+        "nickName": "Mississippi State",
         "division": "West",
         "years": [
           1933,
@@ -1959,7 +1993,8 @@
         "school": "University of Missouri",
         "stateId": "29",
         "logo": "/images/schools/UniversityofMissouri.png",
-        "nickName": "UM",
+        "abbreviation": "UM",
+        "nickName": "Mizzou",
         "division": "East",
         "years": [
           2012,
@@ -1984,7 +2019,8 @@
         "school": "Sewanee",
         "stateId": "47",
         "logo": "/images/schools/Sewanee.png",
-        "nickName": "SEW",
+        "abbreviation": "SEW",
+        "nickName": "Sewanee",
         "division": "East",
         "years": [
           1933,
@@ -2008,7 +2044,8 @@
         "school": "University of South Carolina",
         "stateId": "45",
         "logo": "/images/schools/UniversityofSouthCarolina.png",
-        "nickName": "SC",
+        "abbreviation": "USC",
+        "nickName": "South Carolina",
         "division": "East",
         "years": [
           1991,
@@ -2054,7 +2091,8 @@
         "school": "University of Tennessee",
         "stateId": "47",
         "logo": "/images/schools/UniversityofTennessee.png",
-        "nickName": "UT",
+        "abbreviation": "UT",
+        "nickName": "Tennessee",
         "division": "East",
         "years": [
           1933,
@@ -2155,10 +2193,11 @@
         "lat": 35.925011
       },
       {
-        "school": "Texas A&M",
+        "school": "Texas A&M University",
         "stateId": "48",
         "logo": "/images/schools/TexasA&M.png",
-        "nickName": "TAMU",
+        "abbreviation": "TAMU",
+        "nickName": "Texas A&M",
         "division": "West",
         "years": [
           2012,
@@ -2183,7 +2222,8 @@
         "school": "Tulane University",
         "stateId": "22",
         "logo": "/images/schools/TulaneUniversity.png",
-        "nickName": "TU",
+        "abbreviation": "TU",
+        "nickName": "Tulane",
         "division": "West",
         "years": [
           1933,
@@ -2233,7 +2273,8 @@
         "school": "Vanderbilt University",
         "stateId": "47",
         "logo": "/images/schools/VanderbiltUniversity.png",
-        "nickName": "VU",
+        "abbreviation": "VU",
+        "nickName": "Vandy",
         "division": "East",
         "years": [
           1933,
@@ -2337,7 +2378,8 @@
         "school": "University of Oklahoma",
         "stateId": "40",
         "logo": "/images/schools/UniversityofOklahoma.png",
-        "nickName": "OU",
+        "abbreviation": "OU",
+        "nickName": "Oklahoma",
         "division": null,
         "years": [
           2024,
@@ -2350,7 +2392,8 @@
         "school": "University of Texas at Austin",
         "stateId": "48",
         "logo": "/images/schools/UniversityofTexasatAustin.png",
-        "nickName": "UTAUS",
+        "abbreviation": "UT",
+        "nickName": "Texas",
         "division": null,
         "years": [
           2024,
@@ -2440,7 +2483,8 @@
     "schools": [
       {
         "school": "University of Arizona",
-        "nickName": "UA",
+        "abbreviation": "UA",
+        "nickName": "Arizona",
         "stateId": "04",
         "logo": "/images/schools/UniversityofArizona.png",
         "division": "South",
@@ -2503,7 +2547,8 @@
       },
       {
         "school": "Arizona State University",
-        "nickName": "ASU",
+        "abbreviation": "ASU",
+        "nickName": "Arizona State",
         "stateId": "04",
         "logo": "/images/schools/ArizonaStateUniversity.png",
         "division": "South",
@@ -2566,6 +2611,7 @@
       },
       {
         "school": "University of California, Berkeley",
+        "abbreviation": "Cal",
         "nickName": "Cal",
         "stateId": "06",
         "logo": "/images/schools/UniversityofCalifornia,Berkeley.png",
@@ -2692,6 +2738,7 @@
       },
       {
         "school": "University of California, Los Angeles",
+        "abbreviation": "UCLA",
         "nickName": "UCLA",
         "stateId": "06",
         "logo": "/images/schools/UniversityofCalifornia,LosAngeles.png",
@@ -2818,7 +2865,8 @@
       },
       {
         "school": "University of Colorado Boulder",
-        "nickName": "CU",
+        "abbreviation": "CU",
+        "nickName": "Colorado",
         "stateId": "08",
         "logo": "/images/schools/UniversityofColoradoBoulder.png",
         "division": "South",
@@ -2848,7 +2896,8 @@
       },
       {
         "school": "University of Oregon",
-        "nickName": "UO",
+        "abbreviation": "UO",
+        "nickName": "Oregon",
         "stateId": "41",
         "logo": "/images/schools/UniversityofOregon.png",
         "division": "North",
@@ -2974,7 +3023,8 @@
       },
       {
         "school": "Oregon State University",
-        "nickName": "OSU",
+        "abbreviation": "OSU",
+        "nickName": "Oregon State",
         "stateId": "41",
         "logo": "/images/schools/OregonStateUniversity.png",
         "division": "North",
@@ -3096,7 +3146,8 @@
       },
       {
         "school": "Stanford University",
-        "nickName": "SU",
+        "abbreviation": "SU",
+        "nickName": "Stanford",
         "stateId": "06",
         "logo": "/images/schools/StanfordUniversity.png",
         "division": "North",
@@ -3219,6 +3270,7 @@
       },
       {
         "school": "University of Southern California",
+        "abbreviation": "USC",
         "nickName": "USC",
         "stateId": "06",
         "logo": "/images/schools/UniversityofSouthernCalifornia.png",
@@ -3338,7 +3390,8 @@
       },
       {
         "school": "University of Utah",
-        "nickName": "UU",
+        "abbreviation": "UU",
+        "nickName": "Utah",
         "stateId": "49",
         "logo": "/images/schools/UniversityofUtah.png",
         "division": "South",
@@ -3368,7 +3421,8 @@
       },
       {
         "school": "University of Washington",
-        "nickName": "UW",
+        "abbreviation": "UW",
+        "nickName": "Washington",
         "stateId": "53",
         "logo": "/images/schools/UniversityofWashington.png",
         "division": "North",
@@ -3494,7 +3548,8 @@
       },
       {
         "school": "Washington State University",
-        "nickName": "WSU",
+        "abbreviation": "WSU",
+        "nickName": "Wazzu",
         "stateId": "53",
         "logo": "/images/schools/WashingtonStateUniversity.png",
         "division": "North",
@@ -3654,7 +3709,8 @@
     "schools": [
       {
         "school": "Baylor University",
-        "nickName": "BU",
+        "abbreviation": "BU",
+        "nickName": "Baylor",
         "division": null,
         "stateId": "48",
         "logo": "/images/schools/BaylorUniversity.png",
@@ -3695,7 +3751,8 @@
       },
       {
         "school": "University of Colorado Boulder",
-        "nickName": "CU",
+        "abbreviation": "CU",
+        "nickName": "Colorado",
         "stateId": "08",
         "logo": "/images/schools/UniversityofColoradoBoulder.png",
         "division": "South",
@@ -3735,7 +3792,8 @@
       },
       {
         "school": "Iowa State University",
-        "nickName": "ISU",
+        "abbreviation": "ISU",
+        "nickName": "Iowa State",
         "division": null,
         "stateId": "19",
         "logo": "/images/schools/IowaStateUniversity.png",
@@ -3776,7 +3834,8 @@
       },
       {
         "school": "University of Kansas",
-        "nickName": "KU",
+        "abbreviation": "KU",
+        "nickName": "Kansas",
         "stateId": "20",
         "division": null,
         "logo": "/images/schools/UniversityofKansas.png",
@@ -3817,7 +3876,8 @@
       },
       {
         "school": "Kansas State University",
-        "nickName": "KSU",
+        "abbreviation": "KSU",
+        "nickName": "Kansas State",
         "stateId": "20",
         "division": null,
         "logo": "/images/schools/KansasStateUniversity.png",
@@ -3858,7 +3918,8 @@
       },
       {
         "school": "University of Missouri",
-        "nickName": "UM",
+        "abbreviation": "UM",
+        "nickName": "Mizzou",
         "stateId": "29",
         "division": null,
         "logo": "/images/schools/UniversityofMissouri.png",
@@ -3891,7 +3952,8 @@
       },
       {
         "school": "University of Nebraska-Lincoln",
-        "nickName": "UNL",
+        "abbreviation": "UNL",
+        "nickName": "Nebraska",
         "stateId": "31",
         "division": null,
         "logo": "/images/schools/UniversityofNebraska-Lincoln.png",
@@ -3923,7 +3985,8 @@
       },
       {
         "school": "University of Oklahoma",
-        "nickName": "OU",
+        "abbreviation": "OU",
+        "nickName": "Oklahoma",
         "stateId": "40",
         "division": null,
         "logo": "/images/schools/UniversityofOklahoma.png",
@@ -3968,7 +4031,8 @@
       },
       {
         "school": "Oklahoma State University",
-        "nickName": "OSU",
+        "abbreviation": "OSU",
+        "nickName": "Oklahoma State",
         "stateId": "40",
         "division": null,
         "logo": "/images/schools/OklahomaStateUniversity.png",
@@ -4009,6 +4073,7 @@
       },
       {
         "school": "Texas Christian University",
+        "abbreviation": "TCU",
         "nickName": "TCU",
         "division": null,
         "stateId": "48",
@@ -4037,7 +4102,8 @@
         "division": null,
         "stateId": "48",
         "logo": "/images/schools/UniversityofTexasatAustin.png",
-        "nickName": "UTAUS",
+        "abbreviation": "UT",
+        "nickName": "Texas",
         "lon": -97.735,
         "lat": 30.285,
         "years": [
@@ -4078,10 +4144,11 @@
         ]
       },
       {
-        "school": "Texas A&M",
+        "school": "Texas A&M University",
         "stateId": "48",
         "logo": "/images/schools/TexasA&M.png",
-        "nickName": "TAMU",
+        "abbreviation": "TAMU",
+        "nickName": "Texas A&M",
         "division": null,
         "years": [
           1996,
@@ -4112,7 +4179,8 @@
       },
       {
         "school": "Texas Tech University",
-        "nickName": "TTU",
+        "abbreviation": "TTU",
+        "nickName": "Texas Tech",
         "division": null,
         "stateId": "48",
         "logo": "/images/schools/TexasTechUniversity.png",
@@ -4153,7 +4221,8 @@
       },
       {
         "school": "West Virginia University",
-        "nickName": "WVU",
+        "abbreviation": "WVU",
+        "nickName": "West Virginia",
         "division": null,
         "stateId": "54",
         "logo": "/images/schools/WestVirginiaUniversity.png",
@@ -4178,6 +4247,7 @@
       },
       {
         "school": "Bringham Young University",
+        "abbreviation": "BYU",
         "nickName": "BYU",
         "stateId": "49",
         "logo": "/images/schools/BringhamYoungUniversity.png",
@@ -4192,6 +4262,7 @@
       },
       {
         "school": "University of Central Florida",
+        "abbreviation": "UCF",
         "nickName": "UCF",
         "stateId": "12",
         "logo": "/images/schools/UniversityofCentralFlorida.png",
@@ -4206,7 +4277,8 @@
       },
       {
         "school": "University of Cincinnati",
-        "nickName": "UC",
+        "abbreviation": "UC",
+        "nickName": "Cincy",
         "stateId": "39",
         "logo": "/images/schools/UniversityofCincinnati.png",
         "division": null,
@@ -4220,7 +4292,8 @@
       },
       {
         "school": "University of Houston",
-        "nickName": "UH",
+        "abbreviation": "UH",
+        "nickName": "Houston",
         "stateId": "48",
         "logo": "/images/schools/UniversityofHouston.png",
         "division": null,
@@ -4234,7 +4307,8 @@
       },
       {
         "school": "University of Arizona",
-        "nickName": "UA",
+        "abbreviation": "UA",
+        "nickName": "Arizona",
         "stateId": "04",
         "logo": "/images/schools/UniversityofArizona.png",
         "division": null,
@@ -4247,7 +4321,8 @@
       },
       {
         "school": "Arizona State University",
-        "nickName": "ASU",
+        "abbreviation": "ASU",
+        "nickName": "Arizona State",
         "stateId": "04",
         "logo": "/images/schools/ArizonaStateUniversity.png",
         "division": null,
@@ -4260,7 +4335,8 @@
       },
       {
         "school": "University of Utah",
-        "nickName": "UU",
+        "abbreviation": "UU",
+        "nickName": "Utah",
         "stateId": "49",
         "logo": "/images/schools/UniversityofUtah.png",
         "division": null,
@@ -4315,7 +4391,8 @@
     "schools": [
       {
         "school": "Boston College",
-        "nickName": "BC",
+        "abbreviation": "BC",
+        "nickName": "Boston College",
         "division": "Atlantic",
         "stateId": "25",
         "logo": "/images/schools/BostonCollege.png",
@@ -4347,7 +4424,8 @@
       },
       {
         "school": "Clemson University",
-        "nickName": "CU",
+        "abbreviation": "CU",
+        "nickName": "Clemson",
         "division": "Atlantic",
         "stateId": "45",
         "logo": "/images/schools/ClemsonUniversity.png",
@@ -4431,7 +4509,8 @@
       },
       {
         "school": "Duke University",
-        "nickName": "DU",
+        "abbreviation": "DU",
+        "nickName": "Duke",
         "division": "Coastal",
         "stateId": "37",
         "logo": "/images/schools/DukeUniversity.png",
@@ -4515,7 +4594,8 @@
       },
       {
         "school": "Florida State University",
-        "nickName": "FSU",
+        "abbreviation": "FSU",
+        "nickName": "Florida State",
         "division": "Atlantic",
         "stateId": "12",
         "logo": "/images/schools/FloridaStateUniversity.png",
@@ -4561,7 +4641,8 @@
       },
       {
         "school": "Georgia Institute of Technology (Georgia Tech)",
-        "nickName": "GT",
+        "abbreviation": "GT",
+        "nickName": "Georgia Tech",
         "division": "Coastal",
         "stateId": "13",
         "logo": "/images/schools/GeorgiaInstituteofTechnology(GeorgiaTech).png",
@@ -4619,7 +4700,8 @@
       },
       {
         "school": "University of Louisville",
-        "nickName": "UofL",
+        "abbreviation": "UofL",
+        "nickName": "Louisville",
         "division": "Atlantic",
         "stateId": "21",
         "logo": "/images/schools/UniversityofLouisville.png",
@@ -4642,7 +4724,8 @@
       },
       {
         "school": "University of Miami",
-        "nickName": "UMiami",
+        "abbreviation": "UM",
+        "nickName": "Miami",
         "division": "Coastal",
         "stateId": "12",
         "logo": "/images/schools/UniversityofMiami.png",
@@ -4675,6 +4758,7 @@
       },
       {
         "school": "University of North Carolina at Chapel Hill",
+        "abbreviation": "UNC",
         "nickName": "UNC",
         "division": "Coastal",
         "stateId": "37",
@@ -4759,7 +4843,8 @@
       },
       {
         "school": "North Carolina State University",
-        "nickName": "NCSU",
+        "abbreviation": "NCSU",
+        "nickName": "North Carolina State",
         "division": "Atlantic",
         "stateId": "37",
         "logo": "/images/schools/NorthCarolinaStateUniversity.png",
@@ -4843,7 +4928,8 @@
       },
       {
         "school": "University of Notre Dame",
-        "nickName": "ND",
+        "abbreviation": "ND",
+        "nickName": "Notre Dame",
         "division": "Atlantic",
         "stateId": "18",
         "logo": "/images/schools/UniversityofNotreDame.png",
@@ -4855,6 +4941,7 @@
       },
       {
         "school": "University of Pittsburgh",
+        "abbreviation": "Pitt",
         "nickName": "Pitt",
         "division": "Coastal",
         "stateId": "42",
@@ -4879,7 +4966,8 @@
       },
       {
         "school": "Syracuse University",
-        "nickName": "SU",
+        "abbreviation": "SU",
+        "nickName": "Syracuse",
         "division": "Atlantic",
         "stateId": "36",
         "logo": "/images/schools/SyracuseUniversity.png",
@@ -4903,7 +4991,8 @@
       },
       {
         "school": "University of Virginia",
-        "nickName": "UVA",
+        "abbreviation": "UVA",
+        "nickName": "Virginia",
         "division": "Coastal",
         "stateId": "51",
         "logo": "/images/schools/UniversityofVirginia.png",
@@ -4986,8 +5075,9 @@
         ]
       },
       {
-        "school": "Virginia Polytechnic Institute and State University",
-        "nickName": "VT",
+        "school": "Virginia Tech",
+        "abbreviation": "VT",
+        "nickName": "Virginia Tech",
         "division": "Coastal",
         "stateId": "51",
         "logo": "/images/schools/VirginiaPolytechnicInstituteandStateUniversity.png",
@@ -5020,7 +5110,7 @@
       },
       {
         "school": "Wake Forest University",
-        "nickName": "WFU",
+        "abbreviation": "WFU",
         "division": "Atlantic",
         "stateId": "37",
         "logo": "/images/schools/WakeForestUniversity.png",
@@ -5104,6 +5194,7 @@
       },
       {
         "school": "University of California, Berkeley",
+        "abbreviation": "Cal",
         "nickName": "Cal",
         "stateId": "06",
         "logo": "/images/schools/UniversityofCalifornia,Berkeley.png",
@@ -5117,7 +5208,8 @@
       },
       {
         "school": "Stanford University",
-        "nickName": "SU",
+        "abbreviation": "SU",
+        "nickName": "Stanford",
         "stateId": "06",
         "logo": "/images/schools/StanfordUniversity.png",
         "division": null,
@@ -5130,7 +5222,7 @@
       },
       {
         "school": "Southern Methodist University",
-        "nickName": "SMU",
+        "abbreviation": "SMU",
         "stateId": "48",
         "logo": "/images/schools/SouthernMethodistUniversity.png",
         "division": null,
@@ -5143,7 +5235,7 @@
       },
       {
         "school": "University of Maryland",
-        "nickName": "UMD",
+        "abbreviation": "UMD",
         "stateId": "24",
         "logo": "/images/schools/UniversityofMaryland.png",
         "division": null,
@@ -5223,7 +5315,8 @@
         "school": "University of South Carolina",
         "stateId": "45",
         "logo": "/images/schools/UniversityofSouthCarolina.png",
-        "nickName": "SC",
+        "abbreviation": "USC",
+        "nickName": "South Carolina",
         "division": null,
         "years": [
           1953,
@@ -5333,7 +5426,7 @@
         "division": "West",
         "stateId": "17",
         "logo": "/images/schools/UniversityofIllinoisUrbana-Champaign.png",
-        "nickName": "U of I",
+        "abbreviation": "U of I",
         "lon": -88.149,
         "lat": 40.557,
         "years": [
@@ -5474,7 +5567,7 @@
         "division": "East",
         "stateId": "18",
         "logo": "/images/schools/IndianaUniversityBloomington.png",
-        "nickName": "IU",
+        "abbreviation": "IU",
         "lon": -86.5256,
         "lat": 39.1809,
         "years": [
@@ -5611,7 +5704,8 @@
         "division": "West",
         "stateId": "19",
         "logo": "/images/schools/UniversityofIowa.png",
-        "nickName": "UI",
+        "abbreviation": "UI",
+        "nickName": "Iowa",
         "lon": -91.5511,
         "lat": 41.6587,
         "years": [
@@ -5754,7 +5848,7 @@
         "division": "East",
         "stateId": "24",
         "logo": "/images/schools/UniversityofMaryland.png",
-        "nickName": "UMD",
+        "abbreviation": "UMD",
         "lon": -76.623322,
         "lat": 39.278088,
         "years": [
@@ -5777,7 +5871,7 @@
         "division": "East",
         "stateId": "26",
         "logo": "/images/schools/UniversityofMichigan.png",
-        "nickName": "U-M",
+        "abbreviation": "U-M",
         "lon": -83.748695,
         "lat": 42.265835,
         "years": [
@@ -5920,7 +6014,7 @@
         "division": "East",
         "stateId": "26",
         "logo": "/images/schools/MichiganStateUniversity.png",
-        "nickName": "MSU",
+        "abbreviation": "MSU",
         "lon": -84.4849,
         "lat": 42.7282,
         "years": [
@@ -6007,7 +6101,7 @@
         "division": "West",
         "stateId": "27",
         "logo": "/images/schools/UniversityofMinnesota.png",
-        "nickName": "UMN",
+        "abbreviation": "UMN",
         "lon": -93.2286,
         "lat": 44.9754,
         "years": [
@@ -6148,7 +6242,8 @@
         "division": "West",
         "stateId": "31",
         "logo": "/images/schools/UniversityofNebraska-Lincoln.png",
-        "nickName": "UNL",
+        "abbreviation": "UNL",
+        "nickName": "Nebraska",
         "lon": -96.7056,
         "lat": 40.8207,
         "years": [
@@ -6171,7 +6266,7 @@
       },
       {
         "school": "Northwestern University",
-        "nickName": "NU",
+        "abbreviation": "NU",
         "division": "West",
         "stateId": "17",
         "logo": "/images/schools/NorthwesternUniversity.png",
@@ -6315,7 +6410,7 @@
         "division": "East",
         "stateId": "39",
         "logo": "/images/schools/OhioStateUniversity.png",
-        "nickName": "OSU",
+        "abbreviation": "OSU",
         "lon": -83.0197,
         "lat": 40.0017,
         "years": [
@@ -6437,7 +6532,7 @@
       },
       {
         "school": "Pennsylvania State University",
-        "nickName": "PSU",
+        "abbreviation": "PSU",
         "division": "East",
         "stateId": "42",
         "logo": "/images/schools/PennsylvaniaStateUniversity.png",
@@ -6484,7 +6579,7 @@
         "division": "West",
         "stateId": "18",
         "logo": "/images/schools/PurdueUniversity.png",
-        "nickName": "PU",
+        "abbreviation": "PU",
         "lon": -86.9184,
         "lat": 40.4344,
         "years": [
@@ -6625,7 +6720,7 @@
         "division": "East",
         "stateId": "34",
         "logo": "/images/schools/RutgersUniversity.png",
-        "nickName": "RU",
+        "abbreviation": "RU",
         "lon": -74.4653,
         "lat": 40.5136,
         "years": [
@@ -6648,7 +6743,7 @@
         "division": "West",
         "stateId": "55",
         "logo": "/images/schools/UniversityofWisconsin-Madison.png",
-        "nickName": "UW",
+        "abbreviation": "UW",
         "lon": -89.2446,
         "lat": 43.412,
         "years": [
@@ -6786,7 +6881,8 @@
       },
       {
         "school": "University of Oregon",
-        "nickName": "UO",
+        "abbreviation": "UO",
+        "nickName": "Oregon",
         "stateId": "41",
         "logo": "/images/schools/UniversityofOregon.png",
         "division": null,
@@ -6799,6 +6895,7 @@
       },
       {
         "school": "University of California, Los Angeles",
+        "abbreviation": "UCLA",
         "nickName": "UCLA",
         "stateId": "06",
         "logo": "/images/schools/UniversityofCalifornia,LosAngeles.png",
@@ -6812,7 +6909,8 @@
       },
       {
         "school": "University of Washington",
-        "nickName": "UW",
+        "abbreviation": "UW",
+        "nickName": "Washington",
         "stateId": "53",
         "logo": "/images/schools/UniversityofWashington.png",
         "division": "North",
@@ -6825,6 +6923,7 @@
       },
       {
         "school": "University of Southern California",
+        "abbreviation": "USC",
         "nickName": "USC",
         "stateId": "06",
         "logo": "/images/schools/UniversityofSouthernCalifornia.png",
@@ -6840,7 +6939,7 @@
         "school": "University of Chicago",
         "stateId": "17",
         "logo": "/images/schools/UniversityofChicago.png",
-        "nickName": "UChi",
+        "abbreviation": "UChi",
         "division": null,
         "lon": -87.3559,
         "lat": 41.4723,
@@ -6935,7 +7034,8 @@
     "schools": [
       {
         "school": "University of Alabama",
-        "nickName": "UA",
+        "abbreviation": "UA",
+        "nickName": "Alabama",
         "stateId": "01",
         "logo": "/images/schools/UniversityofAlabama.png",
         "division": null,
@@ -6966,7 +7066,8 @@
         "school": "Auburn University",
         "stateId": "01",
         "logo": "/images/schools/AuburnUniversity.png",
-        "nickName": "AU",
+        "abbreviation": "AU",
+        "nickName": "Auburn",
         "division": null,
         "years": [
           1921,
@@ -6995,7 +7096,8 @@
         "school": "University of Florida",
         "stateId": "12",
         "logo": "/images/schools/UniversityofFlorida.png",
-        "nickName": "UF",
+        "abbreviation": "UF",
+        "nickName": "Florida",
         "division": null,
         "years": [
           1922,
@@ -7023,7 +7125,8 @@
         "school": "University of Georgia",
         "stateId": "13",
         "logo": "/images/schools/UniversityofGeorgia.png",
-        "nickName": "UGA",
+        "abbreviation": "UGA",
+        "nickName": "Georgia",
         "division": null,
         "years": [
           1921,
@@ -7052,7 +7155,8 @@
         "school": "Georgia Institute of Technology",
         "stateId": "13",
         "logo": "/images/schools/GeorgiaInstituteofTechnology.png",
-        "nickName": "GT",
+        "abbreviation": "GT",
+        "nickName": "Georgia Tech",
         "division": null,
         "years": [
           1921,
@@ -7081,7 +7185,8 @@
         "school": "University of Kentucky",
         "stateId": "21",
         "logo": "/images/schools/UniversityofKentucky.png",
-        "nickName": "UK",
+        "abbreviation": "UK",
+        "nickName": "Kentucky",
         "division": null,
         "years": [
           1921,
@@ -7110,6 +7215,7 @@
         "school": "Louisiana State University",
         "stateId": "22",
         "logo": "/images/schools/LouisianaStateUniversity.png",
+        "abbreviation": "LSU",
         "nickName": "LSU",
         "division": null,
         "years": [
@@ -7138,7 +7244,8 @@
         "school": "University of Mississippi",
         "stateId": "28",
         "logo": "/images/schools/UniversityofMississippi.png",
-        "nickName": "UM",
+        "abbreviation": "UM",
+        "nickName": "Ole Miss",
         "division": null,
         "years": [
           1922,
@@ -7166,7 +7273,8 @@
         "school": "Mississippi State University",
         "stateId": "28",
         "logo": "/images/schools/MississippiStateUniversity.png",
-        "nickName": "MSU",
+        "abbreviation": "MSU",
+        "nickName": "Mississippi State",
         "division": null,
         "years": [
           1921,
@@ -7195,7 +7303,8 @@
         "school": "University of South Carolina",
         "stateId": "45",
         "logo": "/images/schools/UniversityofSouthCarolina.png",
-        "nickName": "SC",
+        "abbreviation": "USC",
+        "nickName": "South Carolina",
         "division": null,
         "years": [
           1922,
@@ -7237,7 +7346,8 @@
         "school": "University of Tennessee",
         "stateId": "47",
         "logo": "/images/schools/UniversityofTennessee.png",
-        "nickName": "UT",
+        "abbreviation": "UT",
+        "nickName": "Tennessee",
         "division": null,
         "years": [
           1921,
@@ -7266,7 +7376,8 @@
         "school": "Tulane University",
         "stateId": "22",
         "logo": "/images/schools/TulaneUniversity.png",
-        "nickName": "TU",
+        "abbreviation": "TU",
+        "nickName": "Tulane",
         "division": null,
         "years": [
           1922,
@@ -7294,7 +7405,8 @@
         "school": "Vanderbilt University",
         "stateId": "47",
         "logo": "/images/schools/VanderbiltUniversity.png",
-        "nickName": "VU",
+        "abbreviation": "VU",
+        "nickName": "Vandy",
         "division": null,
         "years": [
           1922,
@@ -7322,7 +7434,7 @@
         "school": "Virginia Military Institute",
         "stateId": "51",
         "logo": "/images/schools/VirginiaMilitaryInstitute.png",
-        "nickName": "VMI",
+        "abbreviation": "VMI",
         "division": null,
         "years": [
           1923,
@@ -7361,7 +7473,8 @@
       },
       {
         "school": "Clemson University",
-        "nickName": "CU",
+        "abbreviation": "CU",
+        "nickName": "Clemson",
         "division": null,
         "stateId": "45",
         "logo": "/images/schools/ClemsonUniversity.png",
@@ -7404,7 +7517,8 @@
       },
       {
         "school": "Duke University",
-        "nickName": "DU",
+        "abbreviation": "DU",
+        "nickName": "Duke",
         "division": null,
         "stateId": "37",
         "logo": "/images/schools/DukeUniversity.png",
@@ -7439,6 +7553,7 @@
       },
       {
         "school": "University of North Carolina at Chapel Hill",
+        "abbreviation": "UNC",
         "nickName": "UNC",
         "division": null,
         "stateId": "37",
@@ -7482,7 +7597,8 @@
       },
       {
         "school": "North Carolina State University",
-        "nickName": "NCSU",
+        "abbreviation": "NCSU",
+        "nickName": "North Carolina State",
         "division": null,
         "stateId": "37",
         "logo": "/images/schools/NorthCarolinaStateUniversity.png",
@@ -7525,7 +7641,8 @@
       },
       {
         "school": "University of Virginia",
-        "nickName": "UVA",
+        "abbreviation": "UVA",
+        "nickName": "Virginia",
         "division": null,
         "stateId": "51",
         "logo": "/images/schools/UniversityofVirginia.png",
@@ -7552,8 +7669,9 @@
         ]
       },
       {
-        "school": "Virginia Polytechnic Institute and State University",
-        "nickName": "VT",
+        "school": "Virginia Tech",
+        "abbreviation": "VT",
+        "nickName": "Virginia Tech",
         "division": null,
         "stateId": "51",
         "logo": "/images/schools/VirginiaPolytechnicInstituteandStateUniversity.png",
@@ -7598,7 +7716,7 @@
         "school": "University of Maryland",
         "stateId": "24",
         "logo": "/images/schools/UniversityofMaryland.png",
-        "nickName": "UMD",
+        "abbreviation": "UMD",
         "division": null,
         "years": [
           1921,
@@ -7639,7 +7757,7 @@
       },
       {
         "school": "Wake Forest University",
-        "nickName": "WFU",
+        "abbreviation": "WFU",
         "division": null,
         "stateId": "37",
         "logo": "/images/schools/WakeForestUniversity.png",
@@ -7669,7 +7787,8 @@
         "school": "Sewanee",
         "stateId": "47",
         "logo": "/images/schools/Sewanee.png",
-        "nickName": "SEW",
+        "abbreviation": "SEW",
+        "nickName": "Sewanee",
         "division": null,
         "years": [
           1923,
@@ -7696,7 +7815,7 @@
         "school": "Washington and Lee",
         "stateId": "51",
         "logo": "/images/schools/WashingtonandLee.png",
-        "nickName": "W\\&L",
+        "abbreviation": "W\\&L",
         "division": null,
         "years": [
           1921,
@@ -7737,7 +7856,8 @@
       },
       {
         "school": "West Virginia University",
-        "nickName": "WVU",
+        "abbreviation": "WVU",
+        "nickName": "West Virginia",
         "division": null,
         "stateId": "54",
         "logo": "/images/schools/WestVirginiaUniversity.png",
@@ -7835,7 +7955,8 @@
     "schools": [
       {
         "school": "University of Colorado Boulder",
-        "nickName": "CU",
+        "abbreviation": "CU",
+        "nickName": "Colorado",
         "stateId": "08",
         "logo": "/images/schools/UniversityofColoradoBoulder.png",
         "division": "South",
@@ -7903,7 +8024,8 @@
         "division": "West",
         "stateId": "19",
         "logo": "/images/schools/UniversityofIowa.png",
-        "nickName": "UI",
+        "abbreviation": "UI",
+        "nickName": "Iowa",
         "lon": -91.5511,
         "lat": 41.6587,
         "years": [
@@ -7919,7 +8041,8 @@
       },
       {
         "school": "Iowa State University",
-        "nickName": "ISU",
+        "abbreviation": "ISU",
+        "nickName": "Iowa State",
         "division": null,
         "stateId": "19",
         "logo": "/images/schools/IowaStateUniversity.png",
@@ -8018,7 +8141,8 @@
       },
       {
         "school": "University of Kansas",
-        "nickName": "KU",
+        "abbreviation": "KU",
+        "nickName": "Kansas",
         "stateId": "20",
         "division": null,
         "logo": "/images/schools/UniversityofKansas.png",
@@ -8118,7 +8242,8 @@
       },
       {
         "school": "Kansas State University",
-        "nickName": "KSU",
+        "abbreviation": "KSU",
+        "nickName": "Kansas State",
         "stateId": "20",
         "division": null,
         "logo": "/images/schools/KansasStateUniversity.png",
@@ -8212,7 +8337,8 @@
       },
       {
         "school": "University of Missouri",
-        "nickName": "UM",
+        "abbreviation": "UM",
+        "nickName": "Mizzou",
         "stateId": "29",
         "division": null,
         "logo": "/images/schools/UniversityofMissouri.png",
@@ -8312,7 +8438,8 @@
       },
       {
         "school": "University of Nebraska-Lincoln",
-        "nickName": "UNL",
+        "abbreviation": "UNL",
+        "nickName": "Nebraska",
         "stateId": "31",
         "division": null,
         "logo": "/images/schools/UniversityofNebraska-Lincoln.png",
@@ -8420,7 +8547,8 @@
       },
       {
         "school": "University of Oklahoma",
-        "nickName": "OU",
+        "abbreviation": "OU",
+        "nickName": "Oklahoma",
         "stateId": "40",
         "division": null,
         "logo": "/images/schools/UniversityofOklahoma.png",
@@ -8514,7 +8642,8 @@
       },
       {
         "school": "Oklahoma State University",
-        "nickName": "OSU",
+        "abbreviation": "OSU",
+        "nickName": "Oklahoma State",
         "stateId": "40",
         "division": null,
         "logo": "/images/schools/OklahomaStateUniversity.png",
@@ -8576,7 +8705,7 @@
       },
       {
         "school": "Drake University",
-        "nickName": "Drake",
+        "abbreviation": "Drake",
         "stateId": "19",
         "division": null,
         "logo": "/images/schools/DrakeUniversity.png",
@@ -8607,7 +8736,7 @@
       },
       {
         "school": "Grinnell College",
-        "nickName": "Grin",
+        "abbreviation": "Grin",
         "stateId": "19",
         "division": null,
         "logo": "/images/schools/GrinnellCollege.png",
@@ -8628,7 +8757,7 @@
       },
       {
         "school": "Washington University in St.Louis",
-        "nickName": "WashU",
+        "abbreviation": "WashU",
         "stateId": "29",
         "division": null,
         "logo": "/images/schools/WashingtonUniversityinSt.Louis.png",
@@ -8697,7 +8826,8 @@
     "schools": [
       {
         "school": "Boston College",
-        "nickName": "BC",
+        "nickName": "Boston College",
+        "abbreviation": "BC",
         "division": "Atlantic",
         "stateId": "25",
         "logo": "/images/schools/BostonCollege.png",
@@ -8728,7 +8858,8 @@
       },
       {
         "school": "University of Louisville",
-        "nickName": "UofL",
+        "abbreviation": "UofL",
+        "nickName": "Louisville",
         "division": "Atlantic",
         "stateId": "21",
         "logo": "/images/schools/UniversityofLouisville.png",
@@ -8753,7 +8884,8 @@
       },
       {
         "school": "University of Miami",
-        "nickName": "UMiami",
+        "abbreviation": "UMiami",
+        "nickName": "Miami",
         "division": "Coastal",
         "stateId": "12",
         "logo": "/images/schools/UniversityofMiami.png",
@@ -8783,6 +8915,7 @@
       },
       {
         "school": "University of Pittsburgh",
+        "abbreviation": "Pitt",
         "nickName": "Pitt",
         "division": "Coastal",
         "stateId": "42",
@@ -8822,7 +8955,7 @@
       },
       {
         "school": "Rutgers University",
-        "nickName": "RU",
+        "abbreviation": "RU",
         "division": "East",
         "stateId": "34",
         "logo": "/images/schools/RutgersUniversity.png",
@@ -8861,7 +8994,8 @@
       },
       {
         "school": "Syracuse University",
-        "nickName": "SU",
+        "abbreviation": "SU",
+        "nickName": "Syracuse",
         "division": "Atlantic",
         "stateId": "36",
         "logo": "/images/schools/SyracuseUniversity.png",
@@ -8900,7 +9034,7 @@
       },
       {
         "school": "Temple University",
-        "nickName": "TU",
+        "abbreviation": "TU",
         "division": "Atlantic",
         "stateId": "42",
         "logo": "/images/schools/TempleUniversity.png",
@@ -8937,8 +9071,9 @@
         ]
       },
       {
-        "school": "Virginia Polytechnic Institute and State University",
-        "nickName": "VT",
+        "school": "Virginia Tech",
+        "abbreviation": "VT",
+        "nickName": "Virginia Tech",
         "division": "Coastal",
         "stateId": "51",
         "logo": "/images/schools/VirginiaPolytechnicInstituteandStateUniversity.png",
@@ -8968,7 +9103,8 @@
       },
       {
         "school": "West Virginia University",
-        "nickName": "WVU",
+        "abbreviation": "WVU",
+        "nickName": "West Virginia",
         "division": null,
         "stateId": "54",
         "logo": "/images/schools/WestVirginiaUniversity.png",
@@ -9006,7 +9142,8 @@
       },
       {
         "school": "University of Cincinnati",
-        "nickName": "UC",
+        "abbreviation": "UC",
+        "nickName": "Cincy",
         "stateId": "39",
         "logo": "/images/schools/UniversityofCincinnati.png",
         "division": null,
@@ -9031,7 +9168,7 @@
       },
       {
         "school": "University of South Florida",
-        "nickName": "USF",
+        "abbreviation": "USF",
         "stateId": "12",
         "logo": "/images/schools/UniversityofSouthFlorida.png",
         "division": null,
@@ -9056,7 +9193,7 @@
       },
       {
         "school": "University of Connecticut",
-        "nickName": "Uconn",
+        "abbreviation": "Uconn",
         "stateId": "09",
         "logo": "/images/schools/UniversityofConnecticut.png",
         "division": null,
@@ -9113,7 +9250,8 @@
     "schools": [
       {
         "school": "University of Arizona",
-        "nickName": "UA",
+        "abbreviation": "UA",
+        "nickName": "Arizona",
         "stateId": "04",
         "logo": "/images/schools/UniversityofArizona.png",
         "division": null,
@@ -9161,7 +9299,8 @@
       },
       {
         "school": "Arizona State University",
-        "nickName": "ASU",
+        "abbreviation": "ASU",
+        "nickName": "Arizona State",
         "stateId": "04",
         "logo": "/images/schools/ArizonaStateUniversity.png",
         "division": null,
@@ -9209,7 +9348,7 @@
       },
       {
         "school": "Nothern Arizona University",
-        "nickName": "NAU",
+        "abbreviation": "NAU",
         "stateId": "04",
         "logo": "/images/schools/NothernArizonaUniversity.png",
         "division": null,
@@ -9248,7 +9387,7 @@
       },
       {
         "school": "University of New Mexico",
-        "nickName": "UNM",
+        "abbreviation": "UNM",
         "stateId": "35",
         "logo": "/images/schools/UniversityofNewMexico.png",
         "division": null,
@@ -9285,7 +9424,7 @@
       },
       {
         "school": "New Mexico State University",
-        "nickName": "NMSU",
+        "abbreviation": "NMSU",
         "stateId": "35",
         "logo": "/images/schools/NewMexicoStateUniversity.png",
         "division": null,
@@ -9333,7 +9472,8 @@
       },
       {
         "school": "Texas Tech University",
-        "nickName": "TTU",
+        "abbreviation": "TTU",
+        "nickName": "Texas Tech",
         "division": null,
         "stateId": "48",
         "logo": "/images/schools/TexasTechUniversity.png",
@@ -9375,7 +9515,7 @@
       },
       {
         "school": "University of Texas at El Paso",
-        "nickName": "UTEP",
+        "abbreviation": "UTEP",
         "division": null,
         "stateId": "48",
         "logo": "/images/schools/UniversityofTexasatElPaso.png",
@@ -9419,7 +9559,7 @@
       },
       {
         "school": "West Texas A&M University",
-        "nickName": "WTAMU",
+        "abbreviation": "WTAMU",
         "division": null,
         "stateId": "48",
         "logo": "/images/schools/WestTexasA&MUniversity.png",
@@ -9457,7 +9597,7 @@
       },
       {
         "school": "Hardin-Simmons University",
-        "nickName": "HSU",
+        "abbreviation": "HSU",
         "division": null,
         "stateId": "48",
         "logo": "/images/schools/Hardin-SimmonsUniversity.png",
@@ -9534,7 +9674,8 @@
         "school": "University of Arkansas",
         "stateId": "05",
         "logo": "/images/schools/UniversityofArkansas.png",
-        "nickName": "UArk",
+        "abbreviation": "UA",
+        "nickName": "Arkansas",
         "division": "West",
         "years": [
           1915,
@@ -9625,7 +9766,8 @@
       },
       {
         "school": "Baylor University",
-        "nickName": "BU",
+        "abbreviation": "BU",
+        "nickName": "Baylor",
         "division": null,
         "stateId": "48",
         "logo": "/images/schools/BaylorUniversity.png",
@@ -9723,7 +9865,8 @@
       },
       {
         "school": "University of Houston",
-        "nickName": "UH",
+        "abbreviation": "UH",
+        "nickName": "Houston",
         "stateId": "48",
         "logo": "/images/schools/UniversityofHouston.png",
         "division": null,
@@ -9764,7 +9907,8 @@
       },
       {
         "school": "University of Oklahoma",
-        "nickName": "OU",
+        "abbreviation": "OU",
+        "nickName": "Oklahoma",
         "stateId": "40",
         "division": null,
         "logo": "/images/schools/UniversityofOklahoma.png",
@@ -9785,7 +9929,8 @@
       },
       {
         "school": "Oklahoma State University",
-        "nickName": "OSU",
+        "abbreviation": "OSU",
+        "nickName": "Oklahoma State",
         "stateId": "40",
         "division": null,
         "logo": "/images/schools/OklahomaStateUniversity.png",
@@ -9812,7 +9957,7 @@
       },
       {
         "school": "Phillips University",
-        "nickName": "PU",
+        "abbreviation": "PU",
         "stateId": "40",
         "logo": "/images/schools/PhillipsUniversity.png",
         "division": null,
@@ -9830,7 +9975,7 @@
       },
       {
         "school": "Rice University",
-        "nickName": "Rice",
+        "abbreviation": "Rice",
         "stateId": "48",
         "logo": "/images/schools/RiceUniversity.png",
         "division": null,
@@ -9928,7 +10073,7 @@
       },
       {
         "school": "Southern Methodist University",
-        "nickName": "SMU",
+        "abbreviation": "SMU",
         "stateId": "48",
         "logo": "/images/schools/SouthernMethodistUniversity.png",
         "division": null,
@@ -10023,7 +10168,7 @@
       },
       {
         "school": "Southwestern University",
-        "nickName": "SU",
+        "abbreviation": "SU",
         "stateId": "48",
         "logo": "/images/schools/SouthwesternUniversity.png",
         "division": null,
@@ -10042,6 +10187,7 @@
       },
       {
         "school": "Texas Christian University",
+        "abbreviation": "TCU",
         "nickName": "TCU",
         "division": null,
         "stateId": "48",
@@ -10135,7 +10281,8 @@
         "division": null,
         "stateId": "48",
         "logo": "/images/schools/UniversityofTexasatAustin.png",
-        "nickName": "UTAUS",
+        "abbreviation": "UT",
+        "nickName": "Texas",
         "lon": -97.735,
         "lat": 30.285,
         "years": [
@@ -10229,10 +10376,11 @@
         ]
       },
       {
-        "school": "Texas A&M",
+        "school": "Texas A&M University",
         "stateId": "48",
         "logo": "/images/schools/TexasA&M.png",
-        "nickName": "TAMU",
+        "abbreviation": "TAMU",
+        "nickName": "Texas A&M",
         "division": null,
         "years": [
           1915,
@@ -10328,7 +10476,8 @@
       },
       {
         "school": "Texas Tech University",
-        "nickName": "TTU",
+        "abbreviation": "TTU",
+        "nickName": "Texas Tech",
         "division": null,
         "stateId": "48",
         "logo": "/images/schools/TexasTechUniversity.png",
@@ -10409,7 +10558,8 @@
     "schools": [
       {
         "school": "University of Arizona",
-        "nickName": "UA",
+        "abbreviation": "UA",
+        "nickName": "Arizona",
         "stateId": "04",
         "logo": "/images/schools/UniversityofArizona.png",
         "division": "South",
@@ -10442,7 +10592,8 @@
       },
       {
         "school": "Arizona State University",
-        "nickName": "ASU",
+        "abbreviation": "ASU",
+        "nickName": "Arizona State",
         "stateId": "04",
         "logo": "/images/schools/ArizonaStateUniversity.png",
         "division": "South",
@@ -10475,6 +10626,7 @@
       },
       {
         "school": "Bringham Young University",
+        "abbreviation": "BYU",
         "nickName": "BYU",
         "stateId": "49",
         "logo": "/images/schools/BringhamYoungUniversity.png",
@@ -10529,7 +10681,7 @@
       },
       {
         "school": "Air Force",
-        "nickName": "AF",
+        "abbreviation": "AF",
         "stateId": "08",
         "logo": "/images/schools/AirForce.png",
         "division": null,
@@ -10565,7 +10717,7 @@
       },
       {
         "school": "Boise State University",
-        "nickName": "BSU",
+        "abbreviation": "BSU",
         "stateId": "16",
         "logo": "/images/schools/BoiseStateUniversity.png",
         "division": null,
@@ -10592,7 +10744,7 @@
       },
       {
         "school": "California State University, Fresno",
-        "nickName": "Fresno",
+        "abbreviation": "Fresno",
         "stateId": "06",
         "logo": "/images/schools/CaliforniaStateUniversity,Fresno.png",
         "division": "North",
@@ -10629,7 +10781,7 @@
       },
       {
         "school": "Colorado State University",
-        "nickName": "CSU",
+        "abbreviation": "CSU",
         "stateId": "08",
         "logo": "/images/schools/ColoradoStateUniversity.png",
         "division": null,
@@ -10678,7 +10830,7 @@
       },
       {
         "school": "Hawaii at Manoa",
-        "nickName": "UH",
+        "abbreviation": "UH",
         "stateId": "15",
         "logo": "/images/schools/HawaiiatManoa.png",
         "division": null,
@@ -10728,7 +10880,8 @@
       },
       {
         "school": "University of Idaho",
-        "nickName": "UI",
+        "abbreviation": "UI",
+        "nickName": "Iowa",
         "stateId": "16",
         "logo": "/images/schools/UniversityofIdaho.png",
         "division": null,
@@ -10753,7 +10906,7 @@
       },
       {
         "school": "Louisiana Tech University",
-        "nickName": "LTU",
+        "abbreviation": "LTU",
         "stateId": "22",
         "logo": "/images/schools/LouisianaTechUniversity.png",
         "division": "West",
@@ -10782,7 +10935,7 @@
       },
       {
         "school": "University of Nevada, Las Vegas",
-        "nickName": "UNLV",
+        "abbreviation": "UNLV",
         "stateId": "32",
         "logo": "/images/schools/UniversityofNevada,LasVegas.png",
         "division": "West",
@@ -10802,7 +10955,7 @@
       },
       {
         "school": "University of Nevada, Reno",
-        "nickName": "UNR",
+        "abbreviation": "UNR",
         "stateId": "32",
         "logo": "/images/schools/UniversityofNevada,Reno.png",
         "division": "West",
@@ -10831,7 +10984,7 @@
       },
       {
         "school": "University of New Mexico",
-        "nickName": "UNM",
+        "abbreviation": "UNM",
         "stateId": "35",
         "logo": "/images/schools/UniversityofNewMexico.png",
         "division": null,
@@ -10885,7 +11038,7 @@
       },
       {
         "school": "New Mexico State University",
-        "nickName": "NMSU",
+        "abbreviation": "NMSU",
         "stateId": "35",
         "logo": "/images/schools/NewMexicoStateUniversity.png",
         "division": null,
@@ -10909,7 +11062,7 @@
       },
       {
         "school": "Rice University",
-        "nickName": "Rice",
+        "abbreviation": "Rice",
         "stateId": "48",
         "logo": "/images/schools/RiceUniversity.png",
         "division": null,
@@ -10935,7 +11088,7 @@
       },
       {
         "school": "San Diego State University",
-        "nickName": "SDSU",
+        "abbreviation": "SDSU",
         "stateId": "06",
         "logo": "/images/schools/SanDiegoStateUniversity.png",
         "division": "North",
@@ -10973,7 +11126,7 @@
       },
       {
         "school": "San Jose State University",
-        "nickName": "SJSU",
+        "abbreviation": "SJSU",
         "stateId": "06",
         "logo": "/images/schools/SanJoseStateUniversity.png",
         "division": "North",
@@ -11007,7 +11160,7 @@
       },
       {
         "school": "Southern Methodist University",
-        "nickName": "SMU",
+        "abbreviation": "SMU",
         "stateId": "48",
         "logo": "/images/schools/SouthernMethodistUniversity.png",
         "division": null,
@@ -11033,6 +11186,7 @@
       },
       {
         "school": "Texas Christian University",
+        "abbreviation": "TCU",
         "nickName": "TCU",
         "division": null,
         "stateId": "48",
@@ -11055,7 +11209,7 @@
       },
       {
         "school": "University of Texas at El Paso",
-        "nickName": "UTEP",
+        "abbreviation": "UTEP",
         "division": null,
         "stateId": "48",
         "logo": "/images/schools/UniversityofTexasatElPaso.png",
@@ -11110,7 +11264,7 @@
       },
       {
         "school": "University of Texas at San Antonio",
-        "nickName": "UTSA",
+        "abbreviation": "UTSA",
         "division": null,
         "stateId": "48",
         "logo": "/images/schools/UniversityofTexasatSanAntonio.png",
@@ -11128,7 +11282,7 @@
       },
       {
         "school": "Texas State University",
-        "nickName": "TXST",
+        "abbreviation": "TXST",
         "division": null,
         "stateId": "48",
         "logo": "/images/schools/TexasStateUniversity.png",
@@ -11146,7 +11300,7 @@
       },
       {
         "school": "University of Tulsa",
-        "nickName": "Tulsa",
+        "abbreviation": "Tulsa",
         "division": null,
         "stateId": "40",
         "logo": "/images/schools/UniversityofTulsa.png",
@@ -11172,7 +11326,8 @@
       },
       {
         "school": "University of Utah",
-        "nickName": "UU",
+        "abbreviation": "UU",
+        "nickName": "Utah",
         "stateId": "49",
         "logo": "/images/schools/UniversityofUtah.png",
         "division": null,
@@ -11226,7 +11381,7 @@
       },
       {
         "school": "Utah State University",
-        "nickName": "USU",
+        "abbreviation": "USU",
         "stateId": "49",
         "logo": "/images/schools/UtahStateUniversity.png",
         "division": null,
@@ -11251,7 +11406,7 @@
       },
       {
         "school": "University of Wyoming",
-        "nickName": "UW",
+        "abbreviation": "UW",
         "stateId": "56",
         "logo": "/images/schools/UniversityofWyoming.png",
         "division": null,
@@ -11339,7 +11494,7 @@
     "schools": [
       {
         "school": "Boise State University",
-        "nickName": "BSU",
+        "abbreviation": "BSU",
         "stateId": "16",
         "logo": "/images/schools/BoiseStateUniversity.png",
         "division": null,
@@ -11361,7 +11516,7 @@
       },
       {
         "school": "California State University, Fresno",
-        "nickName": "Fresno",
+        "abbreviation": "Fresno",
         "stateId": "06",
         "logo": "/images/schools/CaliforniaStateUniversity,Fresno.png",
         "division": "North",
@@ -11401,7 +11556,7 @@
       },
       {
         "school": "California State University, Los Angeles",
-        "nickName": "CSULA",
+        "abbreviation": "CSULA",
         "stateId": "06",
         "logo": "/images/schools/CaliforniaStateUniversity,LosAngeles.png",
         "division": "North",
@@ -11423,7 +11578,8 @@
       },
       {
         "school": "University of Idaho",
-        "nickName": "UI",
+        "abbreviation": "UI",
+        "nickName": "Iowa",
         "stateId": "16",
         "logo": "/images/schools/UniversityofIdaho.png",
         "division": null,
@@ -11445,7 +11601,7 @@
       },
       {
         "school": "Louisiana Tech University",
-        "nickName": "LTU",
+        "abbreviation": "LTU",
         "stateId": "22",
         "logo": "/images/schools/LouisianaTechUniversity.png",
         "division": "West",
@@ -11465,7 +11621,7 @@
       },
       {
         "school": "University of Nevada, Las Vegas",
-        "nickName": "UNLV",
+        "abbreviation": "UNLV",
         "stateId": "32",
         "logo": "/images/schools/UniversityofNevada,LasVegas.png",
         "division": "West",
@@ -11496,7 +11652,7 @@
       },
       {
         "school": "University of Nevada, Reno",
-        "nickName": "UNR",
+        "abbreviation": "UNR",
         "stateId": "32",
         "logo": "/images/schools/UniversityofNevada,Reno.png",
         "division": "West",
@@ -11521,7 +11677,7 @@
       },
       {
         "school": "New Mexico State University",
-        "nickName": "NMSU",
+        "abbreviation": "NMSU",
         "stateId": "35",
         "logo": "/images/schools/NewMexicoStateUniversity.png",
         "division": null,
@@ -11555,7 +11711,7 @@
       },
       {
         "school": "San Diego State University",
-        "nickName": "SDSU",
+        "abbreviation": "SDSU",
         "stateId": "06",
         "logo": "/images/schools/SanDiegoStateUniversity.png",
         "division": "North",
@@ -11579,7 +11735,7 @@
       },
       {
         "school": "San Jose State University",
-        "nickName": "SJSU",
+        "abbreviation": "SJSU",
         "stateId": "06",
         "logo": "/images/schools/SanJoseStateUniversity.png",
         "division": "North",
@@ -11623,7 +11779,7 @@
       },
       {
         "school": "California State University, Long Beach",
-        "nickName": "CSULB",
+        "abbreviation": "CSULB",
         "stateId": "06",
         "logo": "/images/schools/CaliforniaStateUniversity,LongBeach.png",
         "division": "North",
@@ -11663,7 +11819,7 @@
       },
       {
         "school": "California State University, Fullerton",
-        "nickName": "CSUF",
+        "abbreviation": "CSUF",
         "stateId": "06",
         "logo": "/images/schools/CaliforniaStateUniversity,Fullerton.png",
         "division": "North",
@@ -11698,7 +11854,7 @@
       },
       {
         "school": "University of California, Santa Barbara",
-        "nickName": "UCSB",
+        "abbreviation": "UCSB",
         "stateId": "06",
         "logo": "/images/schools/UniversityofCalifornia,SantaBarbara.png",
         "division": "North",
@@ -11718,7 +11874,7 @@
       },
       {
         "school": "Utah State University",
-        "nickName": "USU",
+        "abbreviation": "USU",
         "stateId": "49",
         "logo": "/images/schools/UtahStateUniversity.png",
         "division": null,
@@ -11758,7 +11914,7 @@
       },
       {
         "school": "University of the Pacific",
-        "nickName": "UOP",
+        "abbreviation": "UOP",
         "stateId": "06",
         "logo": "/images/schools/UniversityofthePacific.png",
         "division": null,
@@ -11802,7 +11958,7 @@
       },
       {
         "school": "Northern Illinois University",
-        "nickName": "NIU",
+        "abbreviation": "NIU",
         "stateId": "17",
         "logo": "/images/schools/NorthernIllinoisUniversity.png",
         "division": null,
@@ -11822,7 +11978,7 @@
       },
       {
         "school": "University of Louisiana at Lafayette",
-        "nickName": "ULL",
+        "abbreviation": "ULL",
         "stateId": "22",
         "logo": "/images/schools/UniversityofLouisianaatLafayette.png",
         "division": null,
@@ -11842,7 +11998,7 @@
       },
       {
         "school": "Arkansas State University",
-        "nickName": "AState",
+        "abbreviation": "AState",
         "stateId": "05",
         "logo": "/images/schools/ArkansasStateUniversity.png",
         "division": null,
@@ -11874,7 +12030,7 @@
       },
       {
         "school": "University of North Texas",
-        "nickName": "UNT",
+        "abbreviation": "UNT",
         "stateId": "48",
         "logo": "/images/schools/UniversityofNorthTexas.png",
         "division": "West",
@@ -11925,6 +12081,7 @@
     "schools": [
       {
         "school": "Bringham Young University",
+        "abbreviation": "BYU",
         "nickName": "BYU",
         "stateId": "49",
         "logo": "/images/schools/BringhamYoungUniversity.png",
@@ -11954,7 +12111,7 @@
       },
       {
         "school": "Air Force",
-        "nickName": "AF",
+        "abbreviation": "AF",
         "stateId": "08",
         "logo": "/images/schools/AirForce.png",
         "division": null,
@@ -11992,7 +12149,7 @@
       },
       {
         "school": "Boise State University",
-        "nickName": "BSU",
+        "abbreviation": "BSU",
         "stateId": "16",
         "logo": "/images/schools/BoiseStateUniversity.png",
         "division": null,
@@ -12018,7 +12175,7 @@
       },
       {
         "school": "California State University, Fresno",
-        "nickName": "Fresno",
+        "abbreviation": "Fresno",
         "stateId": "06",
         "logo": "/images/schools/CaliforniaStateUniversity,Fresno.png",
         "division": "North",
@@ -12043,7 +12200,7 @@
       },
       {
         "school": "Colorado State University",
-        "nickName": "CSU",
+        "abbreviation": "CSU",
         "stateId": "08",
         "logo": "/images/schools/ColoradoStateUniversity.png",
         "division": null,
@@ -12081,7 +12238,7 @@
       },
       {
         "school": "Hawaii at Manoa",
-        "nickName": "UH",
+        "abbreviation": "UH",
         "stateId": "15",
         "logo": "/images/schools/HawaiiatManoa.png",
         "division": null,
@@ -12106,7 +12263,7 @@
       },
       {
         "school": "University of Nevada, Las Vegas",
-        "nickName": "UNLV",
+        "abbreviation": "UNLV",
         "stateId": "32",
         "logo": "/images/schools/UniversityofNevada,LasVegas.png",
         "division": "West",
@@ -12144,7 +12301,7 @@
       },
       {
         "school": "University of Nevada, Reno",
-        "nickName": "UNR",
+        "abbreviation": "UNR",
         "stateId": "32",
         "logo": "/images/schools/UniversityofNevada,Reno.png",
         "division": "West",
@@ -12169,7 +12326,7 @@
       },
       {
         "school": "University of New Mexico",
-        "nickName": "UNM",
+        "abbreviation": "UNM",
         "stateId": "35",
         "logo": "/images/schools/UniversityofNewMexico.png",
         "division": null,
@@ -12207,7 +12364,7 @@
       },
       {
         "school": "San Diego State University",
-        "nickName": "SDSU",
+        "abbreviation": "SDSU",
         "stateId": "06",
         "logo": "/images/schools/SanDiegoStateUniversity.png",
         "division": "North",
@@ -12245,7 +12402,7 @@
       },
       {
         "school": "San Jose State University",
-        "nickName": "SJSU",
+        "abbreviation": "SJSU",
         "stateId": "06",
         "logo": "/images/schools/SanJoseStateUniversity.png",
         "division": "North",
@@ -12269,6 +12426,7 @@
       },
       {
         "school": "Texas Christian University",
+        "abbreviation": "TCU",
         "nickName": "TCU",
         "division": null,
         "stateId": "48",
@@ -12293,7 +12451,8 @@
       },
       {
         "school": "University of Utah",
-        "nickName": "UU",
+        "abbreviation": "UU",
+        "nickName": "Utah",
         "stateId": "49",
         "logo": "/images/schools/UniversityofUtah.png",
         "division": null,
@@ -12322,7 +12481,7 @@
       },
       {
         "school": "Utah State University",
-        "nickName": "USU",
+        "abbreviation": "USU",
         "stateId": "49",
         "logo": "/images/schools/UtahStateUniversity.png",
         "division": null,
@@ -12346,7 +12505,7 @@
       },
       {
         "school": "University of Wyoming",
-        "nickName": "UW",
+        "abbreviation": "UW",
         "stateId": "56",
         "logo": "/images/schools/UniversityofWyoming.png",
         "division": null,
@@ -12429,6 +12588,7 @@
     "schools": [
       {
         "school": "Bringham Young University",
+        "abbreviation": "BYU",
         "nickName": "BYU",
         "stateId": "49",
         "logo": "/images/schools/BringhamYoungUniversity.png",
@@ -12462,7 +12622,7 @@
       },
       {
         "school": "Colorado State University",
-        "nickName": "CSU",
+        "abbreviation": "CSU",
         "stateId": "08",
         "logo": "/images/schools/ColoradoStateUniversity.png",
         "division": null,
@@ -12508,7 +12668,8 @@
       },
       {
         "school": "University of Colorado Boulder",
-        "nickName": "CU",
+        "abbreviation": "CU",
+        "nickName": "Colorado",
         "stateId": "08",
         "logo": "/images/schools/UniversityofColoradoBoulder.png",
         "division": null,
@@ -12554,7 +12715,7 @@
       },
       {
         "school": "University of Wyoming",
-        "nickName": "UW",
+        "abbreviation": "UW",
         "stateId": "56",
         "logo": "/images/schools/UniversityofWyoming.png",
         "division": null,
@@ -12598,7 +12759,8 @@
       },
       {
         "school": "University of Utah",
-        "nickName": "UU",
+        "abbreviation": "UU",
+        "nickName": "Utah",
         "stateId": "49",
         "logo": "/images/schools/UniversityofUtah.png",
         "division": null,
@@ -12643,7 +12805,7 @@
       },
       {
         "school": "Utah State University",
-        "nickName": "USU",
+        "abbreviation": "USU",
         "stateId": "49",
         "logo": "/images/schools/UtahStateUniversity.png",
         "division": null,
@@ -12684,7 +12846,7 @@
       },
       {
         "school": "University of Denver",
-        "nickName": "DU",
+        "abbreviation": "DU",
         "stateId": "08",
         "logo": "/images/schools/UniversityofDenver.png",
         "division": null,
@@ -12729,7 +12891,7 @@
       },
       {
         "school": "Colorado School of Mines",
-        "nickName": "Mines",
+        "abbreviation": "Mines",
         "stateId": "08",
         "logo": "/images/schools/ColoradoSchoolofMines.png",
         "division": null,
@@ -12857,7 +13019,7 @@
       },
       {
         "school": "Colorado College",
-        "nickName": "CC",
+        "abbreviation": "CC",
         "stateId": "08",
         "logo": "/images/schools/ColoradoCollege.png",
         "division": null,
@@ -12923,7 +13085,7 @@
       },
       {
         "school": "Montana State University",
-        "nickName": "MSU",
+        "abbreviation": "MSU",
         "stateId": "30",
         "logo": "/images/schools/MontanaStateUniversity.png",
         "division": null,
@@ -12988,6 +13150,7 @@
       },
       {
         "school": "University of Northern Colorado",
+        "abbreviation": "UNC",
         "nickName": "UNC",
         "stateId": "08",
         "logo": "/images/schools/UniversityofNorthernColorado.png",
@@ -13047,7 +13210,7 @@
       },
       {
         "school": "Western Colorado University",
-        "nickName": "WCU",
+        "abbreviation": "WCU",
         "stateId": "08",
         "logo": "/images/schools/WesternColoradoUniversity.png",
         "division": null,
@@ -13192,7 +13355,8 @@
     "schools": [
       {
         "school": "Oklahoma State University",
-        "nickName": "OSU",
+        "abbreviation": "OSU",
+        "nickName": "Oklahoma State",
         "stateId": "40",
         "division": null,
         "logo": "/images/schools/OklahomaStateUniversity.png",
@@ -13238,7 +13402,7 @@
       },
       {
         "school": "Drake University",
-        "nickName": "Drake",
+        "abbreviation": "Drake",
         "stateId": "19",
         "division": null,
         "logo": "/images/schools/DrakeUniversity.png",
@@ -13304,7 +13468,7 @@
       },
       {
         "school": "Grinnell College",
-        "nickName": "Grin",
+        "abbreviation": "Grin",
         "stateId": "19",
         "division": null,
         "logo": "/images/schools/GrinnellCollege.png",
@@ -13330,7 +13494,7 @@
       },
       {
         "school": "Washington University in St.Louis",
-        "nickName": "WashU",
+        "abbreviation": "WashU",
         "stateId": "29",
         "division": null,
         "logo": "/images/schools/WashingtonUniversityinSt.Louis.png",
@@ -13362,7 +13526,7 @@
       },
       {
         "school": "Creighton University",
-        "nickName": "CU",
+        "abbreviation": "CU",
         "stateId": "31",
         "division": null,
         "logo": "/images/schools/CreightonUniversity.png",
@@ -13394,7 +13558,7 @@
       },
       {
         "school": "Butler University",
-        "nickName": "Butler",
+        "abbreviation": "Butler",
         "division": null,
         "stateId": "18",
         "logo": "/images/schools/ButlerUniversity.png",
@@ -13413,7 +13577,7 @@
       },
       {
         "school": "University of Tulsa",
-        "nickName": "Tulsa",
+        "abbreviation": "Tulsa",
         "division": null,
         "stateId": "40",
         "logo": "/images/schools/UniversityofTulsa.png",
@@ -13481,7 +13645,7 @@
       },
       {
         "school": "Washburn University",
-        "nickName": "WU",
+        "abbreviation": "WU",
         "stateId": "20",
         "division": null,
         "logo": "/images/schools/WashburnUniversity.png",
@@ -13504,7 +13668,7 @@
       },
       {
         "school": "Saint Louis University",
-        "nickName": "SLU",
+        "abbreviation": "SLU",
         "stateId": "29",
         "division": null,
         "logo": "/images/schools/SaintLouisUniversity.png",
@@ -13534,7 +13698,7 @@
       },
       {
         "school": "Wichita State University",
-        "nickName": "WSU",
+        "abbreviation": "WSU",
         "stateId": "20",
         "division": null,
         "logo": "/images/schools/WichitaStateUniversity.png",
@@ -13590,7 +13754,7 @@
       },
       {
         "school": "University of Detroit Mercy",
-        "nickName": "UDM",
+        "abbreviation": "UDM",
         "division": null,
         "stateId": "26",
         "logo": "/images/schools/UniversityofDetroitMercy.png",
@@ -13615,7 +13779,7 @@
       },
       {
         "school": "Bradley University",
-        "nickName": "Brad",
+        "abbreviation": "Brad",
         "division": null,
         "stateId": "17",
         "logo": "/images/schools/BradleyUniversity.png",
@@ -13635,7 +13799,8 @@
       },
       {
         "school": "University of Houston",
-        "nickName": "UH",
+        "abbreviation": "UH",
+        "nickName": "Houston",
         "stateId": "48",
         "logo": "/images/schools/UniversityofHouston.png",
         "division": null,
@@ -13661,7 +13826,8 @@
       },
       {
         "school": "University of Cincinnati",
-        "nickName": "UC",
+        "abbreviation": "UC",
+        "nickName": "Cincy",
         "stateId": "39",
         "logo": "/images/schools/UniversityofCincinnati.png",
         "division": null,
@@ -13691,7 +13857,7 @@
       },
       {
         "school": "University of North Texas",
-        "nickName": "UNT",
+        "abbreviation": "UNT",
         "stateId": "48",
         "logo": "/images/schools/UniversityofNorthTexas.png",
         "division": "West",
@@ -13726,7 +13892,8 @@
       },
       {
         "school": "University of Louisville",
-        "nickName": "UofL",
+        "abbreviation": "UofL",
+        "nickName": "Louisville",
         "division": "Atlantic",
         "stateId": "21",
         "logo": "/images/schools/UniversityofLouisville.png",
@@ -13755,7 +13922,7 @@
       },
       {
         "school": "University of Memphis",
-        "nickName": "UofM",
+        "abbreviation": "UofM",
         "stateId": "47",
         "logo": "/images/schools/UniversityofMemphis.png",
         "division": "East",
@@ -13777,7 +13944,7 @@
       },
       {
         "school": "New Mexico State University",
-        "nickName": "NMSU",
+        "abbreviation": "NMSU",
         "stateId": "35",
         "logo": "/images/schools/NewMexicoStateUniversity.png",
         "division": null,
@@ -13806,7 +13973,7 @@
       },
       {
         "school": "West Texas A&M University",
-        "nickName": "WTAMU",
+        "abbreviation": "WTAMU",
         "division": null,
         "stateId": "48",
         "logo": "/images/schools/WestTexasA&MUniversity.png",
@@ -13838,7 +14005,7 @@
       },
       {
         "school": "Southern Illinois University",
-        "nickName": "SIU",
+        "abbreviation": "SIU",
         "stateId": "17",
         "logo": "/images/schools/SouthernIllinoisUniversity.png",
         "division": null,
@@ -13864,7 +14031,7 @@
       },
       {
         "school": "Indiana State University",
-        "nickName": "ISU",
+        "abbreviation": "ISU",
         "division": null,
         "stateId": "18",
         "logo": "/images/schools/IndianaStateUniversity.png",
@@ -13889,7 +14056,7 @@
       },
       {
         "school": "Illinois State University",
-        "nickName": "ISU",
+        "abbreviation": "ISU",
         "stateId": "17",
         "logo": "/images/schools/IllinoisStateUniversity.png",
         "division": null,
@@ -13959,7 +14126,8 @@
     "schools": [
       {
         "school": "University of Colorado Boulder",
-        "nickName": "CU",
+        "abbreviation": "CU",
+        "nickName": "Colorado",
         "stateId": "08",
         "logo": "/images/schools/UniversityofColoradoBoulder.png",
         "division": null,
@@ -13986,7 +14154,7 @@
       },
       {
         "school": "Colorado State University",
-        "nickName": "CSU",
+        "abbreviation": "CSU",
         "stateId": "08",
         "logo": "/images/schools/ColoradoStateUniversity.png",
         "division": null,
@@ -14027,7 +14195,7 @@
       },
       {
         "school": "University of Denver",
-        "nickName": "DU",
+        "abbreviation": "DU",
         "stateId": "08",
         "logo": "/images/schools/UniversityofDenver.png",
         "division": null,
@@ -14068,6 +14236,7 @@
       },
       {
         "school": "Bringham Young University",
+        "abbreviation": "BYU",
         "nickName": "BYU",
         "stateId": "49",
         "logo": "/images/schools/BringhamYoungUniversity.png",
@@ -14109,7 +14278,8 @@
       },
       {
         "school": "University of Utah",
-        "nickName": "UU",
+        "abbreviation": "UU",
+        "nickName": "Utah",
         "stateId": "49",
         "logo": "/images/schools/UniversityofUtah.png",
         "division": null,
@@ -14150,7 +14320,7 @@
       },
       {
         "school": "University of Wyoming",
-        "nickName": "UW",
+        "abbreviation": "UW",
         "stateId": "56",
         "logo": "/images/schools/UniversityofWyoming.png",
         "division": null,
@@ -14191,7 +14361,7 @@
       },
       {
         "school": "University of New Mexico",
-        "nickName": "UNM",
+        "abbreviation": "UNM",
         "stateId": "35",
         "logo": "/images/schools/UniversityofNewMexico.png",
         "division": null,
@@ -14219,7 +14389,7 @@
       },
       {
         "school": "University of Montana",
-        "nickName": "UMT",
+        "abbreviation": "UMT",
         "stateId": "30",
         "logo": "/images/schools/UniversityofMontana.png",
         "division": null,
@@ -14284,7 +14454,7 @@
     "schools": [
       {
         "school": "Harvard University",
-        "nickName": "HU",
+        "abbreviation": "HU",
         "stateId": "25",
         "logo": "/images/schools/HarvardUniversity.png",
         "division": null,
@@ -14365,7 +14535,7 @@
       },
       {
         "school": "Yale University",
-        "nickName": "Yale",
+        "abbreviation": "Yale",
         "stateId": "09",
         "logo": "/images/schools/YaleUniversity.png",
         "division": null,
@@ -14446,7 +14616,7 @@
       },
       {
         "school": "Princeton University",
-        "nickName": "PU",
+        "abbreviation": "PU",
         "stateId": "34",
         "logo": "/images/schools/PrincetonUniversity.png",
         "division": null,
@@ -14527,7 +14697,7 @@
       },
       {
         "school": "Columbia University",
-        "nickName": "CU",
+        "abbreviation": "CU",
         "stateId": "36",
         "logo": "/images/schools/ColumbiaUniversity.png",
         "division": null,
@@ -14608,7 +14778,7 @@
       },
       {
         "school": "University of Pennsylvania",
-        "nickName": "Penn",
+        "abbreviation": "Penn",
         "stateId": "42",
         "logo": "/images/schools/UniversityofPennsylvania.png",
         "division": null,
@@ -14689,7 +14859,7 @@
       },
       {
         "school": "Brown University",
-        "nickName": "Brown",
+        "abbreviation": "Brown",
         "stateId": "44",
         "logo": "/images/schools/BrownUniversity.png",
         "division": null,
@@ -14770,7 +14940,7 @@
       },
       {
         "school": "Dartmouth College",
-        "nickName": "DC",
+        "abbreviation": "DC",
         "stateId": "33",
         "logo": "/images/schools/DartmouthCollege.png",
         "division": null,
@@ -14851,7 +15021,7 @@
       },
       {
         "school": "Cornell University",
-        "nickName": "Corn",
+        "abbreviation": "Corn",
         "stateId": "36",
         "logo": "/images/schools/CornellUniversity.png",
         "division": null,
@@ -14962,7 +15132,7 @@
     "schools": [
       {
         "school": "Old Dominion University",
-        "nickName": "ODU",
+        "abbreviation": "ODU",
         "division": "East",
         "stateId": "51",
         "logo": "/images/schools/OldDominionUniversity.png",
@@ -14977,7 +15147,7 @@
       },
       {
         "school": "Texas State University",
-        "nickName": "TXST",
+        "abbreviation": "TXST",
         "division": "West",
         "stateId": "48",
         "logo": "/images/schools/TexasStateUniversity.png",
@@ -15001,7 +15171,7 @@
       },
       {
         "school": "Arkansas State University",
-        "nickName": "AState",
+        "abbreviation": "AState",
         "stateId": "05",
         "logo": "/images/schools/ArkansasStateUniversity.png",
         "division": "West",
@@ -15037,7 +15207,7 @@
       },
       {
         "school": "University of Southern Mississippi",
-        "nickName": "USM",
+        "abbreviation": "USM",
         "stateId": "28",
         "logo": "/images/schools/UniversityofSouthernMississippi.png",
         "division": "West",
@@ -15052,7 +15222,7 @@
       },
       {
         "school": "University of Louisiana at Lafayette",
-        "nickName": "ULL",
+        "abbreviation": "ULL",
         "stateId": "22",
         "logo": "/images/schools/UniversityofLouisianaatLafayette.png",
         "division": "West",
@@ -15088,7 +15258,7 @@
       },
       {
         "school": "University of Louisiana at Monroe",
-        "nickName": "ULM",
+        "abbreviation": "ULM",
         "stateId": "22",
         "logo": "/images/schools/UniversityofLouisianaatMonroe.png",
         "division": "West",
@@ -15124,7 +15294,8 @@
       },
       {
         "school": "Marshall University",
-        "nickName": "MU",
+        "abbreviation": "MU",
+        "nickName": "Marshall",
         "division": "East",
         "stateId": "54",
         "logo": "/images/schools/MarshallUniversity.png",
@@ -15139,7 +15310,7 @@
       },
       {
         "school": "University of North Texas",
-        "nickName": "UNT",
+        "abbreviation": "UNT",
         "stateId": "48",
         "logo": "/images/schools/UniversityofNorthTexas.png",
         "division": "West",
@@ -15168,7 +15339,7 @@
       },
       {
         "school": "Middle Tennessee State University",
-        "nickName": "MTSU",
+        "abbreviation": "MTSU",
         "stateId": "47",
         "logo": "/images/schools/MiddleTennesseeStateUniversity.png",
         "division": "East",
@@ -15197,7 +15368,7 @@
       },
       {
         "school": "New Mexico State University",
-        "nickName": "NMSU",
+        "abbreviation": "NMSU",
         "stateId": "35",
         "logo": "/images/schools/NewMexicoStateUniversity.png",
         "division": null,
@@ -15218,7 +15389,8 @@
       },
       {
         "school": "University of Idaho",
-        "nickName": "UI",
+        "abbreviation": "UI",
+        "nickName": "Iowa",
         "stateId": "16",
         "logo": "/images/schools/UniversityofIdaho.png",
         "division": null,
@@ -15239,7 +15411,7 @@
       },
       {
         "school": "Utah State University",
-        "nickName": "USU",
+        "abbreviation": "USU",
         "stateId": "49",
         "logo": "/images/schools/UtahStateUniversity.png",
         "division": null,
@@ -15258,7 +15430,7 @@
       },
       {
         "school": "Troy University",
-        "nickName": "Troy",
+        "abbreviation": "Troy",
         "stateId": "01",
         "logo": "/images/schools/TroyUniversity.png",
         "division": "West",
@@ -15289,7 +15461,7 @@
       },
       {
         "school": "University of South Alabama",
-        "nickName": "USA",
+        "abbreviation": "USA",
         "stateId": "01",
         "logo": "/images/schools/UniversityofSouthAlabama.png",
         "division": "West",
@@ -15312,7 +15484,7 @@
       },
       {
         "school": "Florida Atlantic University",
-        "nickName": "FAU",
+        "abbreviation": "FAU",
         "stateId": "12",
         "logo": "/images/schools/FloridaAtlanticUniversity.png",
         "division": null,
@@ -15338,7 +15510,7 @@
       },
       {
         "school": "Western Kentucky University",
-        "nickName": "WKU",
+        "abbreviation": "WKU",
         "stateId": "21",
         "logo": "/images/schools/WesternKentuckyUniversity.png",
         "division": "East",
@@ -15360,7 +15532,7 @@
       },
       {
         "school": "Florida International University",
-        "nickName": "FIU",
+        "abbreviation": "FIU",
         "stateId": "12",
         "logo": "/images/schools/FloridaInternationalUniversity.png",
         "division": null,
@@ -15386,7 +15558,7 @@
       },
       {
         "school": "Georgia Southern University",
-        "nickName": "GeSo",
+        "abbreviation": "GeSo",
         "stateId": "13",
         "logo": "/images/schools/GeorgiaSouthernUniversity.png",
         "division": "East",
@@ -15409,7 +15581,7 @@
       },
       {
         "school": "Georgia State University",
-        "nickName": "GSU",
+        "abbreviation": "GSU",
         "stateId": "13",
         "logo": "/images/schools/GeorgiaStateUniversity.png",
         "division": "East",
@@ -15432,7 +15604,7 @@
       },
       {
         "school": "Coastal Carolina University",
-        "nickName": "CCU",
+        "abbreviation": "CCU",
         "stateId": "45",
         "logo": "/images/schools/CoastalCarolinaUniversity.png",
         "division": "East",
@@ -15452,7 +15624,7 @@
       },
       {
         "school": "Appalachian State University",
-        "nickName": "APP",
+        "abbreviation": "APP",
         "division": "East",
         "stateId": "37",
         "logo": "/images/schools/AppalachianStateUniversity.png",
@@ -15475,7 +15647,7 @@
       },
       {
         "school": "James Madison University",
-        "nickName": "JMU",
+        "abbreviation": "JMU",
         "division": "East",
         "stateId": "51",
         "logo": "/images/schools/JamesMadisonUniversity.png",
@@ -15523,7 +15695,8 @@
     "schools": [
       {
         "school": "University of Louisville",
-        "nickName": "UofL",
+        "abbreviation": "UofL",
+        "nickName": "Louisville",
         "division": "Atlantic",
         "stateId": "21",
         "logo": "/images/schools/UniversityofLouisville.png",
@@ -15549,7 +15722,8 @@
       },
       {
         "school": "University of Cincinnati",
-        "nickName": "UC",
+        "abbreviation": "UC",
+        "nickName": "Cincy",
         "stateId": "39",
         "logo": "/images/schools/UniversityofCincinnati.png",
         "division": null,
@@ -15575,7 +15749,7 @@
       },
       {
         "school": "University of South Florida",
-        "nickName": "USF",
+        "abbreviation": "USF",
         "stateId": "12",
         "logo": "/images/schools/UniversityofSouthFlorida.png",
         "division": null,
@@ -15594,7 +15768,8 @@
       },
       {
         "school": "University of Houston",
-        "nickName": "UH",
+        "abbreviation": "UH",
+        "nickName": "Houston",
         "stateId": "48",
         "logo": "/images/schools/UniversityofHouston.png",
         "division": null,
@@ -15628,7 +15803,7 @@
       },
       {
         "school": "Southern Methodist University",
-        "nickName": "SMU",
+        "abbreviation": "SMU",
         "stateId": "48",
         "logo": "/images/schools/SouthernMethodistUniversity.png",
         "division": null,
@@ -15653,7 +15828,7 @@
       },
       {
         "school": "University of Memphis",
-        "nickName": "UofM",
+        "abbreviation": "UofM",
         "stateId": "47",
         "logo": "/images/schools/UniversityofMemphis.png",
         "division": "East",
@@ -15687,6 +15862,7 @@
       },
       {
         "school": "University of Central Florida",
+        "abbreviation": "UCF",
         "nickName": "UCF",
         "stateId": "12",
         "logo": "/images/schools/UniversityofCentralFlorida.png",
@@ -15714,7 +15890,8 @@
         "school": "Tulane University",
         "stateId": "22",
         "logo": "/images/schools/TulaneUniversity.png",
-        "nickName": "TU",
+        "abbreviation": "TU",
+        "nickName": "Tulane",
         "division": "West",
         "lon": -90.12,
         "lat": 29.94,
@@ -15747,7 +15924,7 @@
       },
       {
         "school": "University of Tulsa",
-        "nickName": "Tulsa",
+        "abbreviation": "Tulsa",
         "division": null,
         "stateId": "40",
         "logo": "/images/schools/UniversityofTulsa.png",
@@ -15773,7 +15950,7 @@
       },
       {
         "school": "Eastern Carolina University",
-        "nickName": "ECU",
+        "abbreviation": "ECU",
         "division": "Coastal",
         "stateId": "37",
         "logo": "/images/schools/EasternCarolinaUniversity.png",
@@ -15799,7 +15976,7 @@
       },
       {
         "school": "University of North Carolina at Charlotte",
-        "nickName": "UNCC",
+        "abbreviation": "UNCC",
         "division": "Coastal",
         "stateId": "37",
         "logo": "/images/schools/UniversityofNorthCarolinaatCharlotte.png",
@@ -15824,7 +16001,7 @@
       },
       {
         "school": "Florida Atlantic University",
-        "nickName": "FAU",
+        "abbreviation": "FAU",
         "stateId": "12",
         "logo": "/images/schools/FloridaAtlanticUniversity.png",
         "division": null,
@@ -15851,7 +16028,7 @@
       },
       {
         "school": "Florida International University",
-        "nickName": "FIU",
+        "abbreviation": "FIU",
         "stateId": "12",
         "logo": "/images/schools/FloridaInternationalUniversity.png",
         "division": null,
@@ -15881,7 +16058,7 @@
       },
       {
         "school": "University of North Texas",
-        "nickName": "UNT",
+        "abbreviation": "UNT",
         "stateId": "48",
         "logo": "/images/schools/UniversityofNorthTexas.png",
         "division": "West",
@@ -15908,7 +16085,7 @@
       },
       {
         "school": "Rice University",
-        "nickName": "Rice",
+        "abbreviation": "Rice",
         "stateId": "48",
         "logo": "/images/schools/RiceUniversity.png",
         "division": null,
@@ -15935,7 +16112,7 @@
       },
       {
         "school": "University of Alabama at Birmingham",
-        "nickName": "UAB",
+        "abbreviation": "UAB",
         "stateId": "01",
         "logo": "/images/schools/UniversityofAlabamaatBirmingham.png",
         "division": "West",
@@ -15984,7 +16161,7 @@
       },
       {
         "school": "University of Southern Mississippi",
-        "nickName": "USM",
+        "abbreviation": "USM",
         "stateId": "28",
         "logo": "/images/schools/UniversityofSouthernMississippi.png",
         "division": "West",
@@ -16027,6 +16204,7 @@
       },
       {
         "school": "Texas Christian University",
+        "abbreviation": "TCU",
         "nickName": "TCU",
         "division": null,
         "stateId": "48",
@@ -16048,7 +16226,7 @@
       },
       {
         "school": "University of Texas at El Paso",
-        "nickName": "UTEP",
+        "abbreviation": "UTEP",
         "division": null,
         "stateId": "48",
         "logo": "/images/schools/UniversityofTexasatElPaso.png",
@@ -16080,7 +16258,8 @@
       },
       {
         "school": "Marshall University",
-        "nickName": "MU",
+        "abbreviation": "MU",
+        "nickName": "Marshall",
         "division": null,
         "stateId": "54",
         "logo": "/images/schools/MarshallUniversity.png",
@@ -16114,7 +16293,7 @@
       },
       {
         "school": "Louisiana Tech University",
-        "nickName": "LTU",
+        "abbreviation": "LTU",
         "stateId": "22",
         "logo": "/images/schools/LouisianaTechUniversity.png",
         "division": "West",
@@ -16138,7 +16317,7 @@
       },
       {
         "school": "Middle Tennessee State University",
-        "nickName": "MTSU",
+        "abbreviation": "MTSU",
         "stateId": "47",
         "logo": "/images/schools/MiddleTennesseeStateUniversity.png",
         "division": "East",
@@ -16162,7 +16341,7 @@
       },
       {
         "school": "Old Dominion University",
-        "nickName": "ODU",
+        "abbreviation": "ODU",
         "division": null,
         "stateId": "51",
         "logo": "/images/schools/OldDominionUniversity.png",
@@ -16187,7 +16366,7 @@
       },
       {
         "school": "University of Texas at San Antonio",
-        "nickName": "UTSA",
+        "abbreviation": "UTSA",
         "division": null,
         "stateId": "48",
         "logo": "/images/schools/UniversityofTexasatSanAntonio.png",
@@ -16214,7 +16393,7 @@
       },
       {
         "school": "Western Kentucky University",
-        "nickName": "WKU",
+        "abbreviation": "WKU",
         "stateId": "21",
         "logo": "/images/schools/WesternKentuckyUniversity.png",
         "division": "East",
@@ -16237,7 +16416,7 @@
       },
       {
         "school": "Jacksonville State University",
-        "nickName": "JSU",
+        "abbreviation": "JSU",
         "stateId": "01",
         "logo": "/images/schools/JacksonvilleStateUniversity.png",
         "division": "West",
@@ -16251,7 +16430,7 @@
       },
       {
         "school": "Liberty University",
-        "nickName": "LU",
+        "abbreviation": "LU",
         "division": null,
         "stateId": "51",
         "logo": "/images/schools/LibertyUniversity.png",
@@ -16265,7 +16444,7 @@
       },
       {
         "school": "New Mexico State University",
-        "nickName": "NMSU",
+        "abbreviation": "NMSU",
         "stateId": "35",
         "logo": "/images/schools/NewMexicoStateUniversity.png",
         "division": null,
@@ -16279,7 +16458,7 @@
       },
       {
         "school": "Sam Houston State University",
-        "nickName": "SHSU",
+        "abbreviation": "SHSU",
         "division": null,
         "stateId": "48",
         "logo": "/images/schools/SamHoustonStateUniversity.png",
@@ -16293,7 +16472,7 @@
       },
       {
         "school": "Kennesaw State University",
-        "nickName": "KSU",
+        "abbreviation": "KSU",
         "stateId": "13",
         "logo": "/images/schools/KennesawStateUniversity.png",
         "division": "East",
@@ -16306,7 +16485,7 @@
       },
       {
         "school": "University of delaware",
-        "nickName": "UD",
+        "abbreviation": "UD",
         "stateId": "10",
         "logo": "/images/schools/Universityofdelaware.png",
         "division": null,
@@ -16352,7 +16531,8 @@
     "schools": [
       {
         "school": "University of Louisville",
-        "nickName": "UofL",
+        "abbreviation": "UofL",
+        "nickName": "Louisville",
         "division": null,
         "stateId": "21",
         "logo": "/images/schools/UniversityofLouisville.png",
@@ -16370,7 +16550,7 @@
       },
       {
         "school": "Rutgers University",
-        "nickName": "RU",
+        "abbreviation": "RU",
         "division": null,
         "stateId": "34",
         "logo": "/images/schools/RutgersUniversity.png",
@@ -16388,7 +16568,7 @@
       },
       {
         "school": "Temple University",
-        "nickName": "TU",
+        "abbreviation": "TU",
         "division": "East",
         "stateId": "42",
         "logo": "/images/schools/TempleUniversity.png",
@@ -16412,7 +16592,8 @@
       },
       {
         "school": "University of Cincinnati",
-        "nickName": "UC",
+        "abbreviation": "UC",
+        "nickName": "Cincy",
         "stateId": "39",
         "logo": "/images/schools/UniversityofCincinnati.png",
         "division": "East",
@@ -16439,7 +16620,7 @@
       },
       {
         "school": "University of South Florida",
-        "nickName": "USF",
+        "abbreviation": "USF",
         "stateId": "12",
         "logo": "/images/schools/UniversityofSouthFlorida.png",
         "division": "East",
@@ -16469,7 +16650,7 @@
       },
       {
         "school": "University of Connecticut",
-        "nickName": "Uconn",
+        "abbreviation": "Uconn",
         "stateId": "09",
         "logo": "/images/schools/UniversityofConnecticut.png",
         "division": "East",
@@ -16493,7 +16674,8 @@
       },
       {
         "school": "University of Houston",
-        "nickName": "UH",
+        "abbreviation": "UH",
+        "nickName": "Houston",
         "stateId": "48",
         "logo": "/images/schools/UniversityofHouston.png",
         "division": "West",
@@ -16520,7 +16702,7 @@
       },
       {
         "school": "Southern Methodist University",
-        "nickName": "SMU",
+        "abbreviation": "SMU",
         "stateId": "48",
         "logo": "/images/schools/SouthernMethodistUniversity.png",
         "division": "West",
@@ -16548,7 +16730,7 @@
       },
       {
         "school": "University of Memphis",
-        "nickName": "UofM",
+        "abbreviation": "UofM",
         "stateId": "47",
         "logo": "/images/schools/UniversityofMemphis.png",
         "division": "West",
@@ -16572,6 +16754,7 @@
       },
       {
         "school": "University of Central Florida",
+        "abbreviation": "UCF",
         "nickName": "UCF",
         "stateId": "12",
         "logo": "/images/schools/UniversityofCentralFlorida.png",
@@ -16601,7 +16784,8 @@
         "school": "Tulane University",
         "stateId": "22",
         "logo": "/images/schools/TulaneUniversity.png",
-        "nickName": "TU",
+        "abbreviation": "TU",
+        "nickName": "Tulane",
         "division": "West",
         "years": [
           2014,
@@ -16622,7 +16806,7 @@
       },
       {
         "school": "University of Tulsa",
-        "nickName": "Tulsa",
+        "abbreviation": "Tulsa",
         "division": "West",
         "stateId": "40",
         "logo": "/images/schools/UniversityofTulsa.png",
@@ -16645,7 +16829,7 @@
       },
       {
         "school": "Eastern Carolina University",
-        "nickName": "ECU",
+        "abbreviation": "ECU",
         "division": "East",
         "stateId": "37",
         "logo": "/images/schools/EasternCarolinaUniversity.png",
@@ -16668,7 +16852,7 @@
       },
       {
         "school": "United States Naval Academy",
-        "nickName": "Navy",
+        "abbreviation": "Navy",
         "stateId": "24",
         "logo": "/images/schools/UnitedStatesNavalAcademy.png",
         "division": "West",
@@ -16690,7 +16874,7 @@
       },
       {
         "school": "University of North Carolina at Charlotte",
-        "nickName": "UNCC",
+        "abbreviation": "UNCC",
         "division": null,
         "stateId": "37",
         "logo": "/images/schools/UniversityofNorthCarolinaatCharlotte.png",
@@ -16704,7 +16888,7 @@
       },
       {
         "school": "Florida Atlantic University",
-        "nickName": "FAU",
+        "abbreviation": "FAU",
         "stateId": "12",
         "logo": "/images/schools/FloridaAtlanticUniversity.png",
         "division": null,
@@ -16718,7 +16902,7 @@
       },
       {
         "school": "University of North Texas",
-        "nickName": "UNT",
+        "abbreviation": "UNT",
         "stateId": "48",
         "logo": "/images/schools/UniversityofNorthTexas.png",
         "division": null,
@@ -16732,7 +16916,7 @@
       },
       {
         "school": "Rice University",
-        "nickName": "Rice",
+        "abbreviation": "Rice",
         "stateId": "48",
         "logo": "/images/schools/RiceUniversity.png",
         "division": null,
@@ -16746,7 +16930,7 @@
       },
       {
         "school": "University of Alabama at Birmingham",
-        "nickName": "UAB",
+        "abbreviation": "UAB",
         "stateId": "01",
         "logo": "/images/schools/UniversityofAlabamaatBirmingham.png",
         "division": null,
@@ -16760,7 +16944,7 @@
       },
       {
         "school": "United States Military Academy",
-        "nickName": "Army",
+        "abbreviation": "Army",
         "stateId": "36",
         "logo": "/images/schools/UnitedStatesMilitaryAcademy.png",
         "division": null,
@@ -16803,7 +16987,8 @@
     "schools": [
       {
         "school": "University of Cincinnati",
-        "nickName": "UC",
+        "abbreviation": "UC",
+        "nickName": "Cincy",
         "stateId": "39",
         "logo": "/images/schools/UniversityofCincinnati.png",
         "division": null,
@@ -16826,7 +17011,7 @@
       },
       {
         "school": "Butler University",
-        "nickName": "Butler",
+        "abbreviation": "Butler",
         "division": null,
         "stateId": "18",
         "logo": "/images/schools/ButlerUniversity.png",
@@ -16846,7 +17031,8 @@
       },
       {
         "school": "Marshall University",
-        "nickName": "MU",
+        "abbreviation": "MU",
+        "nickName": "Marshall",
         "division": "East",
         "stateId": "54",
         "logo": "/images/schools/MarshallUniversity.png",
@@ -16896,7 +17082,7 @@
       },
       {
         "school": "Western Reserve University",
-        "nickName": "CWRU",
+        "abbreviation": "CWRU",
         "division": null,
         "stateId": "39",
         "logo": "/images/schools/WesternReserveUniversity.png",
@@ -16915,7 +17101,7 @@
       },
       {
         "school": "Miami of Ohio University",
-        "nickName": "Miami",
+        "abbreviation": "Miami",
         "division": "East",
         "stateId": "39",
         "logo": "/images/schools/MiamiofOhioUniversity.png",
@@ -17005,7 +17191,7 @@
       },
       {
         "school": "Western Michigan University",
-        "nickName": "WMU",
+        "abbreviation": "WMU",
         "division": "West",
         "stateId": "26",
         "logo": "/images/schools/WesternMichiganUniversity.png",
@@ -17095,7 +17281,7 @@
       },
       {
         "school": "Ohio University",
-        "nickName": "Ohio",
+        "abbreviation": "Ohio",
         "division": "East",
         "stateId": "39",
         "logo": "/images/schools/OhioUniversity.png",
@@ -17185,7 +17371,7 @@
       },
       {
         "school": "Toledo University",
-        "nickName": "Toledo",
+        "abbreviation": "Toledo",
         "division": "West",
         "stateId": "39",
         "logo": "/images/schools/ToledoUniversity.png",
@@ -17270,7 +17456,7 @@
       },
       {
         "school": "Kent State University",
-        "nickName": "Kent",
+        "abbreviation": "Kent",
         "division": "East",
         "stateId": "39",
         "logo": "/images/schools/KentStateUniversity.png",
@@ -17356,7 +17542,7 @@
       },
       {
         "school": "Bowling Green State University",
-        "nickName": "BGSU",
+        "abbreviation": "BGSU",
         "division": "East",
         "stateId": "39",
         "logo": "/images/schools/BowlingGreenStateUniversity.png",
@@ -17441,7 +17627,7 @@
       },
       {
         "school": "Central Michigan University",
-        "nickName": "CMU",
+        "abbreviation": "CMU",
         "division": "West",
         "stateId": "26",
         "logo": "/images/schools/CentralMichiganUniversity.png",
@@ -17503,7 +17689,7 @@
       },
       {
         "school": "Eastern Michigan University",
-        "nickName": "EMU",
+        "abbreviation": "EMU",
         "division": "West",
         "stateId": "26",
         "logo": "/images/schools/EasternMichiganUniversity.png",
@@ -17565,7 +17751,7 @@
       },
       {
         "school": "Northern Illinois University",
-        "nickName": "NIU",
+        "abbreviation": "NIU",
         "stateId": "17",
         "logo": "/images/schools/NorthernIllinoisUniversity.png",
         "division": "West",
@@ -17628,7 +17814,8 @@
       },
       {
         "school": "University of Akron",
-        "nickName": "UA",
+        "abbreviation": "UA",
+        "nickName": "Alabama",
         "division": "East",
         "stateId": "39",
         "logo": "/images/schools/UniversityofAkron.png",
@@ -17673,7 +17860,7 @@
       },
       {
         "school": "State University of New York at Buffalo",
-        "nickName": "UB",
+        "abbreviation": "UB",
         "stateId": "36",
         "logo": "/images/schools/StateUniversityofNewYorkatBuffalo.png",
         "division": "East",
@@ -17711,7 +17898,7 @@
       },
       {
         "school": "Ball State University",
-        "nickName": "BSU",
+        "abbreviation": "BSU",
         "division": "West",
         "stateId": "18",
         "logo": "/images/schools/BallStateUniversity.png",
@@ -17814,7 +18001,7 @@
     "schools": [
       {
         "school": "Arkansas State University",
-        "nickName": "AState",
+        "abbreviation": "AState",
         "stateId": "05",
         "logo": "/images/schools/ArkansasStateUniversity.png",
         "division": null,
@@ -17849,7 +18036,7 @@
       },
       {
         "school": "Trinity University",
-        "nickName": "Trinity",
+        "abbreviation": "Trinity",
         "stateId": "48",
         "logo": "/images/schools/TrinityUniversity.png",
         "division": null,
@@ -17874,7 +18061,7 @@
       },
       {
         "school": "Abilene Christian University",
-        "nickName": "ACU",
+        "abbreviation": "ACU",
         "stateId": "48",
         "logo": "/images/schools/AbileneChristianUniversity.png",
         "division": null,
@@ -17900,7 +18087,7 @@
       },
       {
         "school": "Lamar University",
-        "nickName": "LU",
+        "abbreviation": "LU",
         "stateId": "48",
         "logo": "/images/schools/LamarUniversity.png",
         "division": null,
@@ -17929,7 +18116,7 @@
       },
       {
         "school": "University of Texas at Arlington",
-        "nickName": "UTA",
+        "abbreviation": "UTA",
         "stateId": "48",
         "logo": "/images/schools/UniversityofTexasatArlington.png",
         "division": null,
@@ -17958,7 +18145,7 @@
       },
       {
         "school": "University of Louisiana at Lafayette",
-        "nickName": "ULL",
+        "abbreviation": "ULL",
         "stateId": "22",
         "logo": "/images/schools/UniversityofLouisianaatLafayette.png",
         "division": "West",
@@ -17980,7 +18167,7 @@
       },
       {
         "school": "Louisiana Tech University",
-        "nickName": "LTU",
+        "abbreviation": "LTU",
         "stateId": "22",
         "logo": "/images/schools/LouisianaTechUniversity.png",
         "division": null,
@@ -18002,7 +18189,7 @@
       },
       {
         "school": "McNeese State University",
-        "nickName": "McNeese",
+        "abbreviation": "McNeese",
         "stateId": "22",
         "logo": "/images/schools/McNeeseStateUniversity.png",
         "division": null,
