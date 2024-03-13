@@ -7,13 +7,11 @@ function Legend() {
 
   return (
     <div className='flex flex-col legend-history-container overflow-auto pb-5'>
-      <h2 className="lg:mb-1 xl:mb-2 text-[6px] sm:text-[10px] md:text-[12px] lg:text-[16px] xl:text-[20px] font-semibold text-white text-center">
-        CONFERENCES
-      </h2>
+        <p className="text-md md:text-lg lg:text-xl font-semibold pb-2 text-white text-center">Conferences</p>
       {legendConferences &&
         legendConferences
-          .slice() // Create a copy of the array to avoid mutating the original
-          .sort((a, b) => a.abbreviation.localeCompare(b.abbreviation)) // Sort alphabetically by abbreviation
+          .slice()
+          .sort((a, b) => a.abbreviation.localeCompare(b.abbreviation))
           .map((conference, index) => (
             <div key={index} className="legend-item xl:mb-1 pl-2">
               <div className='flex flex-row items-center'>

@@ -955,7 +955,7 @@
         "left": [
           {
             "year": 1904,
-            "newConference": "Unknown"
+            "newConference": "UNK"
           }
         ]
       },
@@ -989,15 +989,15 @@
         "left": [
           {
             "year": 1897,
-            "newConference": "Unknown"
+            "newConference": "UNK"
           },
           {
             "year": 1900,
-            "newConference": "Unknown"
+            "newConference": "UNK"
           },
           {
             "year": 1942,
-            "newConference": "Unknown"
+            "newConference": "UNK"
           }
         ],
         "rejoined": [
@@ -18475,7 +18475,7 @@
     "founded": null,
     "history": null,
     "disbanded": null,
-    "logo": "/images/conferences/FBS.png",
+    "logo": null,
     "headquarters": null,
     "names": null,
     "majorConference": {
@@ -18492,7 +18492,7 @@
     "founded": null,
     "history": null,
     "disbanded": null,
-    "logo": "/images/conferences/FCS.png",
+    "logo": null,
     "headquarters": null,
     "names": null,
     "majorConference": {
@@ -18535,7 +18535,7 @@
   },
   {
     "conference": "Unknown",
-    "abbreviation": "Unknown",
+    "abbreviation": "UNK",
     "primaryColor": null,
     "secondaryColor": null,
     "founded": null,

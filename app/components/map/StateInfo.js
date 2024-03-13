@@ -6,7 +6,6 @@ import { setState } from '@/redux/features/mapSlices';
 
 export default function StateInfo() {
   const year = useSelector(state => state.yearReducer);
-  console.log(year)
   const { selectedState, stateModal } = useSelector(state => state.mapReducer);
   const dispatch = useDispatch();
   const handleClose = () =>{
