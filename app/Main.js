@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import Year from './components/mapView/Year';
 import Legend from './components/mapView/Legend';
-import History from './components/mapView/History';
+import History from './components/mapView/History/ConferenceHistory';
 import Header from './components/mapView/MapHeader';
 import Options from './components/mapView/Options';
 import MobileSlider from './mobile/MobileSlider';
@@ -70,7 +70,7 @@ function Main() {
               {!showMobile && <Year/>}
               <Header/>
               <div className="flex w-full">
-                <div className="hidden xl:block xl:w-[17.5%] xl:pt-2 2xl:pt-4">
+                <div className="hidden xl:block xl:w-[20%] xl:pt-2 2xl:pt-4">
                   {!option.hideHistory && <History/>}
                 </div>
                 <div className="w-full md:w-[80%] lg:w-[75%] xl:w-[65%] flex flex-col items-center">
@@ -81,7 +81,7 @@ function Main() {
                     </div>
                   )}
                 </div>
-                <div className="flex flex-col hidden md:block md:w-[20%] lg:w-[25%] xl:w-[17.5%] pt-5 md:pt-8 xl:pt-2 2xl:pt-4">
+                <div className="flex flex-col hidden md:block md:w-[20%] lg:w-[25%] xl:w-[15%] pt-5 md:pt-8 xl:pt-2 2xl:pt-4">
                   {!option.hideLegend && !showMobile && <Legend/>}
                 </div>
                 {!showMobile && (
