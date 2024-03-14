@@ -8,8 +8,7 @@ function Rejoined({sethovered, index, change, hovered }) {
         <img
           onMouseOver={() => sethovered(index + change.school)}
           onMouseLeave={() => sethovered(null)}
-          priority={true}
-          className='h-auto w-[35px]'
+          className='h-auto w-[35px] p-[1px]'
           src={change.logo} alt={`${change.school} logo`} 
         />
         {hovered === index + change.school &&
@@ -19,7 +18,7 @@ function Rejoined({sethovered, index, change, hovered }) {
         }
       </div>
       <div className="change-logo flex items-center">
-        <div className="change-conference text-sm text-white">rejoins</div>
+        <div className="change-conference text-md text-white">rejoins</div>
       </div>
       <div className="change-logo ml-1 sm:ml-2 flex items-center">
         {change.conferenceLogo ? (
@@ -27,10 +26,7 @@ function Rejoined({sethovered, index, change, hovered }) {
             <img
               onMouseOver={() => sethovered(index + change.conference)}
               onMouseLeave={() => sethovered(null)}
-              priority={true}
-              width={30}
-              height={30}
-              className='h-auto w-[35px]'
+              className='h-auto w-[35px] p-[1px]'
               src={change.conferenceLogo} alt={`${change.conference} logo`} 
             />
             {hovered === index + change.conference &&
@@ -40,7 +36,7 @@ function Rejoined({sethovered, index, change, hovered }) {
             }
           </div>
           ) : (
-            <div style={{color: `${change.mapColor}`}} className="change-conference text-sm font-bold">{change.conference}</div>
+            <div style={{color: `${change.mapColor}`}} className="change-conference text-md font-bold">{change.conference}</div>
           )}
       </div>
     </div>

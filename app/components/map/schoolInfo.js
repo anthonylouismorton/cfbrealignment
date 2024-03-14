@@ -43,9 +43,7 @@ export default function OptionsMenu() {
         <div className="flex items-center justify-center p-1 mb-1">
           {selectedSchool.logo &&
             <img
-              width={40}
-              height={40}
-              className='max-h-[40px] max-w-auto mr-4 p-1'
+              className='max-h-[40px] max-w-auto mr-4 p-[1px]'
               src={selectedSchool.logo}
               alt={`${selectedSchool.abbreviation} logo`} 
             />

@@ -48,9 +48,7 @@ export default function Conferences(){
                   <div className="flex items-center justify-center">
                     {conference.logo &&
                       <img
-                        width={40}
-                        height={40}
-                        className='max-h-[40px] max-w-auto mr-2 bg-white p-1'
+                        className='max-h-[40px] max-w-auto mr-2 bg-white p-[1px]'
                         src={conference.logo}
                         alt={`${conference.abbreviation} logo`} 
                       />
