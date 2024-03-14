@@ -111,7 +111,7 @@ function ConferenceHistory() {
                       <div className="text-md text-white">joins</div>
                     </div>
                     {change.newConferenceLogo ? (
-                      <div className="ml-1 sm:ml-2 flex items-center bg-white p-1">
+                      <div key={index} className="ml-1 sm:ml-2 flex items-center bg-white p-1">
                         <img
                           onMouseOver={() => sethovered(index + change.newConferenceAbbr)}
                           onMouseLeave={() => sethovered(null)}
@@ -175,7 +175,7 @@ function ConferenceHistory() {
               </div>
             )}
             {change.change === 'rejoined' && (
-              <div className='flex text-center items-center'>
+              <div key={index} className='flex text-center items-center'>
                 <div className="change-logo mr-1 sm:mr-2 flex items-center bg-white p-1 relative">
                   <img
                     onMouseOver={() => sethovered(index + change.school)}
