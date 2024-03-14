@@ -70,10 +70,10 @@ function Main() {
               {!showMobile && <Year/>}
               <Header/>
               <div className="flex w-full">
-                <div className="hidden xl:block xl:w-[20%] xl:pt-2 2xl:pt-4">
+                <div className="hidden md:block md:w-[12%] lg:w-[18%] xl:w-[20%]">
                   {!option.hideHistory && <History/>}
                 </div>
-                <div className="w-full md:w-[80%] lg:w-[75%] xl:w-[65%] flex flex-col items-center">
+                <div className="w-full md:w-[80%] lg:w-[70%] xl:w-[65%] flex flex-col items-center">
                   <ReactMap/>
                   {showMobile && (
                     <div className='flex w-full justify-center items-center text-center'>
@@ -81,7 +81,7 @@ function Main() {
                     </div>
                   )}
                 </div>
-                <div className="flex flex-col hidden md:block md:w-[20%] lg:w-[25%] xl:w-[15%] pt-5 md:pt-8 xl:pt-2 2xl:pt-4">
+                <div className="flex flex-col hidden md:block md:w-[8%] lg:w-[12%] xl:w-[15%]">
                   {!option.hideLegend && !showMobile && <Legend/>}
                 </div>
                 {!showMobile && (
@@ -98,7 +98,7 @@ function Main() {
               <ReactMap/>
             </div>
           )}
-          <div className="xl:hidden">
+          <div className="md:hidden">
             <div className="w-full">
               {!option.hideHistory && <History/>}
             </div>

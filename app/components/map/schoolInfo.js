@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from '@mui/material/Modal';
-import Image from 'next/image';
+
 import { useSelector, useDispatch } from 'react-redux';
 import { setSchool } from '@/redux/features/mapSlices';
 import { select } from 'd3';
@@ -42,7 +42,7 @@ export default function OptionsMenu() {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-h-full overflow-y-auto max-w-[600px] bg-black bg-opacity-90 px-5 pt-4 pb-1 rounded">
         <div className="flex items-center justify-center p-1 mb-1">
           {selectedSchool.logo &&
-            <Image
+            <img
               width={40}
               height={40}
               className='max-h-[40px] max-w-auto mr-4 p-1'

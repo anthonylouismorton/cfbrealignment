@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from '@mui/material/Modal';
-import Image from 'next/image';
+
 import { useSelector, useDispatch } from 'react-redux';
 import { setState } from '@/redux/features/mapSlices';
 

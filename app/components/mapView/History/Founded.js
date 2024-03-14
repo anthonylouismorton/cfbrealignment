@@ -1,18 +1,16 @@
 import React from 'react';
-import Image from 'next/image';
+
 
 function Founded({sethovered, index, change, hovered }) {
   return (
-    <div key={index} className='flex text-center items-center w-[140px]'>
+    <div key={index} className='flex text-center items-center'>
       {change.logo ? (
       <div className="change-logo mr-1 sm:mr-2 flex items-center bg-white p-1 overflow-visible relative">
-        <Image
+        <img
           onMouseOver={() => sethovered(index)}
           onMouseLeave={() => sethovered(null)}
           priority={true}
-          width={30}
-          height={30}
-          className='max-h-[30px] max-w-auto'
+          className='h-auto w-[35px]'
           src={change.logo} alt={`${change.abbreviation} logo`} 
         />
         {hovered === index &&

@@ -1,6 +1,5 @@
 import React from "react";
-import conferenceData from "../../data/updatedConferenceData.json"
-import Image from "next/image";
+import conferenceData from "../../data/updatedConferenceData.json";
 
 export default function Conferences(){
   function getYears(years) {
@@ -48,7 +47,7 @@ export default function Conferences(){
                 <div>
                   <div className="flex items-center justify-center">
                     {conference.logo &&
-                      <Image
+                      <img
                         width={40}
                         height={40}
                         className='max-h-[40px] max-w-auto mr-2 bg-white p-1'
