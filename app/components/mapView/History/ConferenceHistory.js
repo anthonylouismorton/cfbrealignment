@@ -16,16 +16,16 @@ function ConferenceHistory() {
       <div className="inline-block text-left legend-history-container pb-5">
         <p className="text-md md:text-lg lg:text-xl xl:text-2xl font-semibold pb-2 text-white text-center">History</p>
         {conferenceChanges.map((change, index) => (
-          <div className='mb-1'>
+          <div key={index} className='mb-1'>
             {change.change === 'dropped' && (
-              <div key={index} className='flex text-center items-center'>
+              <div className='flex text-center items-center'>
                   <div style={{color: `${change.primaryColor}`}} className="mr-2 change-conference text-sm xl:text-md 2xl:text-lg font-bold">{change.abbreviation}</div>
                   <div className="change-conference text-md text-white">to</div>
                   <div className="ml-2 change-conference text-sm xl:text-md 2xl:text-lg font-bold text-white">{`Division ${change.division}`}</div>
               </div>
             )}
             {change.change === 'founded' && (
-              <div key={index} className='flex text-center items-center'>
+              <div className='flex text-center items-center'>
                 {change.logo ? (
                 <div className="change-logo mr-1 sm:mr-2 flex items-center bg-white p-1">
                   <img
@@ -47,7 +47,7 @@ function ConferenceHistory() {
               </div>
             )}
             {change.change === 'disbanded' && (
-              <div key={index} className='flex text-center items-center'>
+              <div className='flex text-center items-center'>
                {change.logo ? (
                  <div className="change-logo mr-1 sm:mr-2 flex items-center bg-white p-1">
                    <img
@@ -69,7 +69,7 @@ function ConferenceHistory() {
               </div>
             )}
             {change.change === 'left' && (
-              <div key={index} className='flex text-center items-center'>
+              <div className='flex text-center items-center'>
                 <div className="mr-1 sm:mr-2 flex items-center overflow-visible bg-white p-1 relative">
                   <img
                     onMouseOver={() => sethovered(index + change.school)}
@@ -111,7 +111,7 @@ function ConferenceHistory() {
                       <div className="text-md text-white">joins</div>
                     </div>
                     {change.newConferenceLogo ? (
-                      <div key={index} className="ml-1 sm:ml-2 flex items-center bg-white p-1">
+                      <div className="ml-1 sm:ml-2 flex items-center bg-white p-1">
                         <img
                           onMouseOver={() => sethovered(index + change.newConferenceAbbr)}
                           onMouseLeave={() => sethovered(null)}
@@ -136,7 +136,7 @@ function ConferenceHistory() {
               </div>
             )}
             {change.change === 'joined' && (
-              <div key={index} className='flex text-center items-center'>
+              <div className='flex text-center items-center'>
                 <div className="change-logo mr-1 sm:mr-2 flex items-center bg-white p-1">
                   <img
                     onMouseOver={() => sethovered(index + change.school)}
@@ -175,7 +175,7 @@ function ConferenceHistory() {
               </div>
             )}
             {change.change === 'rejoined' && (
-              <div key={index} className='flex text-center items-center'>
+              <div className='flex text-center items-center'>
                 <div className="change-logo mr-1 sm:mr-2 flex items-center bg-white p-1 relative">
                   <img
                     onMouseOver={() => sethovered(index + change.school)}
@@ -214,14 +214,14 @@ function ConferenceHistory() {
               </div>
             )}
             {change.change === 'nameChange' && (
-              <div key={index} className='flex text-center items-center'>
+              <div className='flex text-center items-center'>
                 <div style={{color: `${change.mapColor}`}} className="mr-1 change-conference text-sm xl:text-md 2xl:text-lg font-bold">{change.oldName}</div>
                 <div className="change-conference text-sm xl:text-sm 2xl:text-md text-white">rebrands to</div>
                 <div style={{color: `${change.mapColor}`}}  className="ml-1 change-conference text-sm xl:text-md 2xl:text-lg font-bold">{change.newName}</div>
               </div>
             )}
             {change.change === 'history' && (
-              <div  key={index} className='flex text-center items-center'>
+              <div  className='flex text-center items-center'>
                 <div className="p-4 change-conference text-md text-white font-semibold">{change.event}</div>
               </div>
             )}
