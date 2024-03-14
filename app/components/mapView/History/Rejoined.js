@@ -1,17 +1,15 @@
 import React from 'react';
-import Image from 'next/image';
+
 
 function Rejoined({sethovered, index, change, hovered }) {
   return (
-    <div className='flex text-center items-center w-[140px]'>
+    <div className='flex text-center items-center'>
       <div className="change-logo mr-1 sm:mr-2 flex items-center bg-white p-1 relative">
-        <Image
+        <img
           onMouseOver={() => sethovered(index + change.school)}
           onMouseLeave={() => sethovered(null)}
           priority={true}
-          width={30}
-          height={30}
-          className='max-h-[30px] max-w-auto'
+          className='h-auto w-[35px]'
           src={change.logo} alt={`${change.school} logo`} 
         />
         {hovered === index + change.school &&
@@ -26,13 +24,13 @@ function Rejoined({sethovered, index, change, hovered }) {
       <div className="change-logo ml-1 sm:ml-2 flex items-center">
         {change.conferenceLogo ? (
           <div className="change-logo mr-1 sm:mr-2 flex items-center bg-white p-1 overflow-visible relative">
-            <Image
+            <img
               onMouseOver={() => sethovered(index + change.conference)}
               onMouseLeave={() => sethovered(null)}
               priority={true}
               width={30}
               height={30}
-              className='max-h-[30px] max-w-auto'
+              className='h-auto w-[35px]'
               src={change.conferenceLogo} alt={`${change.conference} logo`} 
             />
             {hovered === index + change.conference &&

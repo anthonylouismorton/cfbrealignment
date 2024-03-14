@@ -1,17 +1,15 @@
 import React from 'react';
-import Image from 'next/image';
+
 
 function Left({sethovered, index, change, hovered }) {
   return (
     <div key={index} className='flex text-center items-center'>
     <div className="mr-1 sm:mr-2 flex items-center overflow-visible bg-white p-1 relative">
-      <Image
+      <img
         onMouseOver={() => sethovered(index + change.school)}
         onMouseLeave={() => sethovered(null)}
         priority={true}
-        width={30}
-        height={30}
-        className='max-h-[30px] max-w-auto'
+        className='h-auto w-[35px]'
         src={change.logo} alt={`${change.school} logo`}
       />
       {hovered === index + change.school &&
@@ -23,13 +21,12 @@ function Left({sethovered, index, change, hovered }) {
     <div className="text-sm mr-1 sm:mr-2 text-white">leaves</div>
     {change.oldConferenceLogo ? (
       <div className="mr-1 sm:mr-2 flex items-center bg-white p-1 overflow-visible relative">
-        <Image
+        <img
           onMouseOver={() => sethovered(index + change.oldConferenceAbrr)}
           onMouseLeave={() => sethovered(null)}
           priority={true}
-          width={30}
-          height={30}
-          className='max-h-[30px] max-w-auto'
+
+          className='h-auto w-[35px]'
           src={change.oldConferenceLogo} alt={`old conference logo`}
         />
         {hovered === index + change.oldConferenceAbrr &&
@@ -52,13 +49,13 @@ function Left({sethovered, index, change, hovered }) {
         </div>
         {change.newConferenceLogo ? (
           <div className="ml-1 sm:ml-2 flex items-center bg-white p-1 overflow-visible relative">
-            <Image
+            <img
               onMouseOver={() => sethovered(index + change.newConferenceAbbr)}
               onMouseLeave={() => sethovered(null)}
               priority={true}
               width={30}
               height={30}
-              className='max-h-[30px] max-w-auto'
+              className='h-auto w-[35px]'
               src={change.newConferenceLogo} alt={`new conference logo`}
             />
             {hovered === index + change.newConferenceAbbr &&

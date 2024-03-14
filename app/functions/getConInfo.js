@@ -69,10 +69,13 @@ export function getConferences(conferenceData, year, option, conferences) {
 
   //need the states for schools playing during the current year for filling in the states on the map to represent active conferences
   getCurrentConferences.forEach((conference, index) => {
-    getLegendConferences.push({
-      abbreviation: conference.abbreviation,
-      mapColor: conference.mapColor
-    });
+    console.log(conference)
+    if(conference.disbanded !== year){
+      getLegendConferences.push({
+        abbreviation: conference.abbreviation,
+        mapColor: conference.mapColor
+      });
+    }
 
     conference.schools.forEach((school) => {
       if(school.years.includes(year)){
@@ -120,32 +123,6 @@ export function getConferences(conferenceData, year, option, conferences) {
       {color: "rgb(0, 140, 102)", conference: [conferenceData[6].abbreviation, conferenceData[8].abbreviation], coordinates: [ conferenceData[8].schools[1].lon, conferenceData[8].schools[1].lat], name: conferenceData[8].schools[1].school, logo: conferenceData[8].schools[1].logo, state: conferenceData[8].schools[1].stateId, schoolInfo: conferenceData[8].schools[0]}
     );
   };
-
-  // if(!option.showLocation){
-  //   getSchools.forEach((school) => {
-  //     const { state, conference, color } = school;
-  //     const existingStateIndex = getMapFill.findIndex((currentState) => currentState.state === state);
-  //     if(existingStateIndex === -1){
-  //       getMapFill.push({
-  //         state: state,
-  //         conferences: [{conference: conference, color: color}],
-  //         color: color
-  //       });
-  //     } 
-  //     else{
-  //       const existingConferenceIndex = getMapFill[existingStateIndex].conferences.findIndex((conf) => conf.conference === conference);
-  //       if(existingConferenceIndex === -1){
-  //         const updatedConferences = [...getMapFill[existingStateIndex].conferences, {conference: conference, color: color}];
-  //         var newColor = d3.scaleLinear()
-  //         .domain([...Array(updatedConferences.length).keys()])
-  //         .range(updatedConferences.map(conf => conf.color))
-  //         (1/updatedConferences.length);
-  //         getMapFill[existingStateIndex].conferences = (updatedConferences);
-  //         getMapFill[existingStateIndex].color = newColor;
-  //       };
-  //     };
-  //   });
-  // };
 
   const conferenceChanges = getChanges(getCurrentConferences, year, historyArray);
   return { getSchools, conferenceChanges, getLegendConferences, getMapFill2 };
