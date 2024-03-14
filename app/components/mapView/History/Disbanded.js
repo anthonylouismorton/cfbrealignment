@@ -9,7 +9,7 @@ function Disbanded({sethovered, index, change, hovered }) {
         <img
           onMouseOver={() => sethovered(index)}
           onMouseLeave={() => sethovered(null)}
-          className='h-auto w-[35px]'
+          className='h-auto w-[35px] p-[1px]'
           src={change.logo} alt={`${change.abbreviation} logo`} 
         />
         {hovered === index &&
@@ -19,9 +19,9 @@ function Disbanded({sethovered, index, change, hovered }) {
         }
       </div>
       ) : (
-        <div style={{color: `${change.mapColor}`}} className="change-conference mr-1 sm:mr-2 text-sm font-bold">{change.abbreviation}</div>
+        <div style={{color: `${change.mapColor}`}} className="change-conference mr-1 sm:mr-2 text-md font-bold">{change.abbreviation}</div>
       )}
-      <div className="change-conference text-sm text-white">disbanded</div>
+      <div className="change-conference text-md text-white">disbanded</div>
     </div>
   );
 }
