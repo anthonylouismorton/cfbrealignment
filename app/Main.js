@@ -25,7 +25,6 @@ function Main() {
   const option = useSelector((state)=> state.optionsReducer);
   const conFilter = useSelector(state => state.conFilterReducer);
   const year = useSelector(state => state.yearReducer);
-  var screenSize = window.innerWidth
 
   const minWidth = (500);
   useEffect(() => {

@@ -8,10 +8,10 @@ function ConferenceHistory() {
   
   return (
     <div>
-      <div className="inline-block legend-history-container w-full pb-1 flex flex-col items-center">
+      <div className="inline-block legend-history-container w-full flex flex-col items-center">
         <p className="xl:text-xl 2xl:text-2xl font-semibold pb-2 text-white text-center">History</p>
         {conferenceChanges.map((change, index) => (
-          <div key={index} className='flex mb-1 w-[90%] items-center'>
+          <div key={index} className='flex xl:mb-1 w-[90%] items-center'>
             {change.change === 'dropped' && (
               <div className='flex'>
                   <div style={{color: `${change.primaryColor}`}} className="mr-2 change-conference text-sm xl:text-md 2xl:text-lg font-bold">{change.abbreviation}</div>
