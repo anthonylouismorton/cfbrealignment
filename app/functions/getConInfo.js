@@ -69,7 +69,7 @@ export function getConferences(conferenceData, year, option, conferences) {
 
   //need the states for schools playing during the current year for filling in the states on the map to represent active conferences
   getCurrentConferences.forEach((conference, index) => {
-    console.log(conference)
+
     if(conference.disbanded !== year){
       getLegendConferences.push({
         abbreviation: conference.abbreviation,
