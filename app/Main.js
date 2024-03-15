@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import Year from './components/mapView/Year';
 import Legend from './components/mapView/Legend';
-import History from './components/mapView/History/ConferenceHistory';
+import History from './components/mapView/ConferenceHistory';
 import Header from './components/mapView/MapHeader';
 import Options from './components/mapView/Options';
 import MobileSlider from './mobile/MobileSlider';
@@ -25,6 +25,7 @@ function Main() {
   const option = useSelector((state)=> state.optionsReducer);
   const conFilter = useSelector(state => state.conFilterReducer);
   const year = useSelector(state => state.yearReducer);
+  var screenSize = window.innerWidth
 
   const minWidth = (500);
   useEffect(() => {
@@ -39,6 +40,7 @@ function Main() {
   useEffect(() => {
     const handleWindowResize = () => {
       dispatch(setShowMobile(window.innerWidth <= minWidth))
+      console.log(window.innerWidth)
     };
 
     handleWindowResize();
@@ -58,7 +60,6 @@ function Main() {
     };
 
   }, [year, option, showMobile, conFilter]);
-
   return (
     <div className="w-full">
       {!showList ? (
@@ -70,10 +71,10 @@ function Main() {
               {!showMobile && <Year/>}
               <Header/>
               <div className="flex w-full">
-                <div className="hidden md:block md:w-[12%] lg:w-[18%] xl:w-[20%]">
+                <div className="hidden xl:block xl:w-[20%]">
                   {!option.hideHistory && <History/>}
                 </div>
-                <div className="w-full md:w-[80%] lg:w-[70%] xl:w-[65%] flex flex-col items-center">
+                <div className="w-full sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[65%] flex flex-col items-center">
                   <ReactMap/>
                   {showMobile && (
                     <div className='flex w-full justify-center items-center text-center'>
@@ -81,7 +82,7 @@ function Main() {
                     </div>
                   )}
                 </div>
-                <div className="flex flex-col hidden md:block md:w-[8%] lg:w-[12%] xl:w-[15%]">
+                <div className="flex flex-col hidden sm:block sm:w-[10%] md:w-[15%] lg:w-[20%] xl:w-[15%]">
                   {!option.hideLegend && !showMobile && <Legend/>}
                 </div>
                 {!showMobile && (
