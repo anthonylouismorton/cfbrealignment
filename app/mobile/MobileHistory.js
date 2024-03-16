@@ -8,7 +8,7 @@ function ConferenceHistory() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-4 mb-1">
       {conferenceChanges.map((change, index) => (
-        <div key={index} className='mb-1 flex items-start w-[80%] mx-auto'>
+        <div key={index} className='mb-1 w-[80%] mx-auto'>
           {change.change === 'dropped' && (
             <div className='flex'>
               <div style={{color: `${change.primaryColor}`}} className="mr-2 change-conference text-sm xl:text-md 2xl:text-lg font-bold">{change.abbreviation}</div>
