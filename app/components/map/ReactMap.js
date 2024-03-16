@@ -111,7 +111,7 @@ const MapChart = () => {
   };
 
   return (
-    <div ref={wrapperRef} className='relative w-[95%] sm:w-[100%] border-solid border-white border-[2px] rounded-sm'>
+    <div ref={wrapperRef} className='map' style={{ position: 'relative', width: '95%', '@media (minWidth: 640px)': { width: '100%' }, borderWidth: '2px', borderStyle: 'solid', borderColor: 'white', borderRadius: '0.375rem' }}>
     <ComposableMap
      projection={projection}
      width={mapSize.width}
@@ -124,25 +124,7 @@ const MapChart = () => {
       >
         <States handleMouseMove={handleMouseMove}/>
         <SchoolLocation wrapper={wrapperRef}/>
-        {/* {hoveredState.stateInfo && toolTipPos.longitude && toolTipPos.latitude && (
-          <Annotation
-          subject={[toolTipPos.longitude, toolTipPos.latitude]}
-          dx={0}
-          dy={0}
-          >
-          {hoveredState.stateInfo.conferences.map((conference, index) => (
-            <text
-              key={index}
-              y={(index + 1) * 15}
-              fill="white"
-              fontSize="12px"
-              style={{ pointerEvents: 'none' }}
-            >
-              {conference.conference}
-            </text>
-          ))}
-          </Annotation>
-        )} */}
+
         <Annotation
           subject={[-84, 50]}
           dx={0}

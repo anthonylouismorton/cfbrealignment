@@ -4,11 +4,12 @@ import '../../../Legend.css'
 
 function ConferenceHistory() {
   let { conferenceChanges } = useSelector(state => state.conInfoReducer);
+  const { mapHeight } = useSelector((state)=> state.layoutReducer);
   const [ hovered, sethovered] = useState(null);
   
   return (
     <div>
-      <div className="inline-block legend-history-container w-full flex flex-col items-center">
+      <div className="inline-block legend-history-container w-full flex flex-col items-center pb-5" style={{height: mapHeight? `${mapHeight}px` : "auto"}}>
         <p className="xl:text-xl 2xl:text-2xl font-semibold pb-2 text-white text-center">History</p>
         {conferenceChanges.map((change, index) => (
           <div key={index} className='flex xl:mb-1 w-[90%] items-center'>
@@ -120,7 +121,7 @@ function ConferenceHistory() {
                         }
                       </div>
                     ) : (
-                      <div style={{ color: change.newConferenceColor ? change.newConferenceColor : 'red' }} className="ml-1 sm:ml-2 text-md font-bold">
+                      <div style={{ color: change.newConferenceColor ? change.newConferenceColor : 'red' }} className="text-md font-bold">
                         {change.newConferenceAbbr}
                       </div>
                     )}

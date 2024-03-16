@@ -5,7 +5,8 @@ export const layout = createSlice({
   initialState: {
     fullscreen: false,
     showMobile: false,
-    showList: false
+    showList: false,
+    mapHeight: null
   },
   reducers: {
     openFullscreen: (state) => {
@@ -19,9 +20,12 @@ export const layout = createSlice({
     },
     setShowList: (state, action) => {
       state.showList = action.payload;
+    },
+    setMapHeight: (state, action) => {
+      state.mapHeight = action.payload;
     }
   }
 })
 
-export const {openFullscreen, closeFullscreen, setShowMobile, setShowList} = layout.actions;
+export const {openFullscreen, closeFullscreen, setShowMobile, setShowList, setMapHeight} = layout.actions;
 export default layout.reducer;
