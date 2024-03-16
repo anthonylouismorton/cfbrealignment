@@ -4,10 +4,11 @@ import '../../../Legend.css'
 
 function Legend() {
   const { legendConferences } = useSelector(state => state.conInfoReducer);
+  const { mapHeight } = useSelector((state)=> state.layoutReducer);
 
   return (
-    <div className='legend-history-container text-center'>
-      <div className="inline-block text-left pb-5">
+    <div className='text-center'>
+      <div className="inline-block text-left pb-5" style={{height: mapHeight? `${mapHeight}px` : "auto"}}>
         <p className="sm:text-sm md:text-lg lg:text-lg xl:text-xl 2xl:text-2xl font-semibold pb-1 xl:pb-2 text-white">Legend</p>
         {legendConferences &&
           legendConferences
