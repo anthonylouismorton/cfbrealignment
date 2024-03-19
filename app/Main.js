@@ -10,6 +10,7 @@ import MobileSlider from './mobile/MobileSlider';
 import MobileOptions from './mobile/MobileOptions';
 import MobileHistory from './mobile/MobileHistory';
 import MobileMapButton from './mobile/MobileMapButton';
+import MobileLegend from './mobile/MobileLegend';
 import ReactMap from './components/map/ReactMap';
 import { useSelector, useDispatch } from 'react-redux';
 import { setYear } from '@/redux/features/yearSlices';
@@ -105,14 +106,15 @@ function Main() {
             </div>
           )}
           {fullscreen && (
-            <div className='flex flex-col items-center justify-center'>
+            <div className='flex flex-col justify-center'>
               <ReactMap/>
             </div>
           )}
+          <div className="sm:hidden flex justify-center">
+              {!option.hideLegend && <MobileLegend/>}
+          </div>
           <div className="xl:hidden">
-            <div>
               {!option.hideHistory && <MobileHistory/>}
-            </div>
           </div>
         </>
       ) : (
