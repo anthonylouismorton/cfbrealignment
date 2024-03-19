@@ -10,13 +10,13 @@ export default function Options() {
   };
 
   return (
-    <div className='menu-container flex justify-start py-0.5'>
+    <div className='flex mr-2'>
       <div>
         <button
           onClick={handleOpen}
           className="flex flex-col"
           >
-          <h1 className=' text-white font-bold text-[8px] sm:text-[8px] md:text-[9px]'>
+          <h1 className='text-white font-bold text-[8px] sm:text-[8px] md:text-[9px]'>
             SETTINGS
           </h1>
         </button>

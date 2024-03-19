@@ -6,14 +6,14 @@ function ConferenceHistory() {
   const [ hovered, sethovered] = useState(null);
   
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-4 mb-1">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 space-y-1 mt-4 mb-1">
       {conferenceChanges.map((change, index) => (
-        <div key={index} className='mb-1 w-[80%] mx-auto'>
+        <div key={index} className='w-[80%] mx-auto flex'>
           {change.change === 'dropped' && (
             <div className='flex'>
               <div style={{color: `${change.primaryColor}`}} className="mr-1 xl:text-sm 2xl:text-md font-bold">{change.abbreviation}</div>
-              <div className="text-xs xl:text-sm 2xl:text-md text-white">drops to</div>
-              <div className="ml-1 text-xs xl:text-sm 2xl:text-md font-bold text-white">{`Division ${change.division}`}</div>
+              <div className="text-lg sm:text-md xl:text-sm 2xl:text-md text-white">drops to</div>
+              <div className="ml-1 text-lg sm:text-md xl:text-sm 2xl:text-md font-bold text-white">{`Division ${change.division}`}</div>
             </div>
           )}
           {change.change === 'founded' && (
@@ -33,9 +33,9 @@ function ConferenceHistory() {
                 }
               </div>
               ) : (
-                <div style={{color: `${change.mapColor}`}} className="mr-1 text-xs xl:text-sm 2xl:text-md font-bold">{change.abbreviation}</div>
+                <div style={{color: `${change.mapColor}`}} className="mr-1 text-lg sm:text-md xl:text-sm 2xl:text-md font-bold">{change.abbreviation}</div>
               )}
-              <div className="text-xs xl:text-sm 2xl:text-md text-white">founded</div>
+              <div className="text-lg sm:text-md xl:text-sm 2xl:text-md text-white">founded</div>
             </div>
           )}
           {change.change === 'disbanded' && (
@@ -55,9 +55,9 @@ function ConferenceHistory() {
                   }
                 </div>
                 ) : (
-                  <div style={{color: `${change.mapColor}`}} className="mr-1 text-xs xl:text-sm 2xl:text-md font-bold">{change.abbreviation}</div>
+                  <div style={{color: `${change.mapColor}`}} className="mr-1 text-lg sm:text-md xl:text-sm 2xl:text-md font-bold">{change.abbreviation}</div>
                 )}
-                <div className="text-xs xl:text-sm 2xl:text-md text-white">disbanded</div>
+                <div className="text-lg sm:text-md xl:text-sm 2xl:text-md text-white">disbanded</div>
             </div>
           )}
           {change.change === 'left' && (
@@ -75,7 +75,7 @@ function ConferenceHistory() {
                     </div>
                 }
               </div>
-              <div className="text-xs xl:text-sm 2xl:text-md mr-1 text-white">leaves</div>
+              <div className="text-lg sm:text-md xl:text-sm 2xl:text-md mr-1 text-white">leaves</div>
               {change.oldConferenceLogo ? (
                 <div className="mr-1 flex items-center bg-white p-1 relative">
                   <img
@@ -91,16 +91,16 @@ function ConferenceHistory() {
                   }
                 </div>
               ) : (
-                <div style={{color: `${change.oldConferenceColor}`}} className="mr-1 text-xs xl:text-sm 2xl:text-md font-bold">{change.oldConferenceAbrr}</div>
+                <div style={{color: `${change.oldConferenceColor}`}} className="mr-1 text-lg sm:text-md xl:text-sm 2xl:text-md font-bold">{change.oldConferenceAbrr}</div>
               )}
               {change.newConferenceAbbr === "FBS" ? (
                 <div>
-                  <p className="text-xs xl:text-sm 2xl:text-md text-white">becomes<span className="text-xs xl:text-sm 2xl:text-md font-bold text-blue-400 ml-1">IND</span></p>
+                  <p className="text-lg sm:text-md xl:text-sm 2xl:text-md text-white">becomes<span className="text-lg sm:text-md xl:text-sm 2xl:text-md font-bold text-blue-400 ml-1">IND</span></p>
                 </div>
               ) : (
                 <div className='flex'>
                   <div className='flex items-center'>
-                    <div className="text-xs xl:text-sm 2xl:text-md mr-1 text-white">joins</div>
+                    <div className="text-lg sm:text-md xl:text-sm 2xl:text-md mr-1 text-white">joins</div>
                   </div>
                   {change.newConferenceLogo ? (
                     <div className="flex items-center bg-white p-1 relative">
@@ -117,7 +117,7 @@ function ConferenceHistory() {
                       }
                     </div>
                   ) : (
-                    <div style={{ color: change.newConferenceColor ? change.newConferenceColor : 'red' }} className="text-xs xl:text-sm 2xl:text-md font-bold">
+                    <div style={{ color: change.newConferenceColor ? change.newConferenceColor : 'red' }} className="text-lg sm:text-md xl:text-sm 2xl:text-md font-bold">
                       {change.newConferenceAbbr}
                     </div>
                   )}
@@ -141,7 +141,7 @@ function ConferenceHistory() {
                 }
               </div>
               <div className="flex items-center">
-                <div className="text-xs xl:text-sm 2xl:text-md text-white">joins</div>
+                <div className="text-lg sm:text-md xl:text-sm 2xl:text-md text-white">joins</div>
               </div>
               <div className="ml-1 flex items-center">
                 {change.conferenceLogo ? (

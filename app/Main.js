@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Year from './components/mapView/Year';
 import Legend from './components/mapView/Legend';
 import History from './components/mapView/ConferenceHistory';
@@ -9,10 +9,11 @@ import Welcome from './components/Welcome';
 import MobileSlider from './mobile/MobileSlider';
 import MobileOptions from './mobile/MobileOptions';
 import MobileHistory from './mobile/MobileHistory';
+import MobileMapButton from './mobile/MobileMapButton';
 import ReactMap from './components/map/ReactMap';
 import { useSelector, useDispatch } from 'react-redux';
 import { setYear } from '@/redux/features/yearSlices';
-import { setShowMobile, setMapHeight } from '@/redux/features/layoutSlices';
+import { setMapHeight } from '@/redux/features/layoutSlices';
 import { setLocalStorage, getLocalStorage } from './functions/handleLocalStorage';
 import { setConFromStor } from '@/redux/features/conFilterSlices';
 import { setOptFromStor } from '@/redux/features/optionsSlices';
@@ -69,14 +70,15 @@ function Main() {
   }, [year, option, conFilter]);
 
   return (
-    <div className="min-w-[225px] w-full">
+    <div className="min-w-[400px] w-full">
       {!showList ? (
         <>
           {option.showWelcome && <Welcome/>}
           {!fullscreen && (
             <div className="flex flex-col justify-center items-center">
-              <div className='block lg:hidden'>
+              <div className='lg:hidden flex items-start w-[95%]'>
                 <MobileOptions/>
+                <MobileMapButton/>
               </div>
               <div className='hidden lg:block w-full'>
                 <Year/>
@@ -114,9 +116,9 @@ function Main() {
           </div>
         </>
       ) : (
-        <div className='flex w-full'>
-          <Conferences/>
+        <div className='flex flex-col items-center'>
           <ListButton/>
+          <Conferences/>
         </div>
       )}
     </div>

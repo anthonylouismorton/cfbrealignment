@@ -111,7 +111,7 @@ const MapChart = () => {
   };
 
   return (
-    <div ref={wrapperRef} className='map' style={{ position: 'relative', width: '95%', '@media (minWidth: 640px)': { width: '100%' }, borderWidth: '2px', borderStyle: 'solid', borderColor: 'white', borderRadius: '0.375rem' }}>
+    <div ref={wrapperRef} className='map' style={{ position: 'relative', width: '98%', borderWidth: '2px', borderStyle: 'solid', borderColor: 'white', borderRadius: '0.375rem' }}>
     <ComposableMap
      projection={projection}
      width={mapSize.width}
