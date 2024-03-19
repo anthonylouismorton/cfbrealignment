@@ -23,7 +23,7 @@ import ListButton from './components/listView/ListButton';
 
 function Main() {
   const dispatch = useDispatch();
-  const { fullscreen, showList, mapHeight } = useSelector((state)=> state.layoutReducer);
+  const { fullscreen, showList } = useSelector((state)=> state.layoutReducer);
   const option = useSelector((state)=> state.optionsReducer);
   const conFilter = useSelector(state => state.conFilterReducer);
   const year = useSelector(state => state.yearReducer);
@@ -70,13 +70,13 @@ function Main() {
   }, [year, option, conFilter]);
 
   return (
-    <div className="min-w-[300px] w-full">
+    <div className="min-w-[225px] w-full">
       {!showList ? (
         <>
           {option.showWelcome && <Welcome/>}
           {!fullscreen && (
             <div className="flex flex-col justify-center items-center">
-              <div className='lg:hidden flex items-start w-[95%]'>
+              <div className='lg:hidden flex items-start w-[95%] py-[1px]'>
                 <MobileOptions/>
                 <MobileMapButton/>
               </div>

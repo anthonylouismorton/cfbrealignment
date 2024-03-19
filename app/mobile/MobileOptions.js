@@ -16,7 +16,7 @@ export default function Options() {
           onClick={handleOpen}
           className="flex flex-col"
           >
-          <h1 className='text-white font-bold text-[8px] sm:text-[8px] md:text-[9px]'>
+          <h1 className='text-white font-bold text-[10px]'>
             SETTINGS
           </h1>
         </button>
