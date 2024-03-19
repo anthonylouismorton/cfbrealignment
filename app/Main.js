@@ -70,7 +70,7 @@ function Main() {
   }, [year, option, conFilter]);
 
   return (
-    <div className="min-w-[400px] w-full">
+    <div className="min-w-[300px] w-full">
       {!showList ? (
         <>
           {option.showWelcome && <Welcome/>}
