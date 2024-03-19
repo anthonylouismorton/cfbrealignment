@@ -1,22 +1,19 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setShowList } from '@/redux/features/layoutSlices';
+import { IconButton } from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 export default function ListButton() {
   const dispatch = useDispatch();
-  const { showList } = useSelector((state)=> state.layoutReducer);
   return (
-    <div className='flex'>
-      <div>
-        <button
-          onClick={()=> dispatch(setShowList(false))}
-          className="flex flex-col"
-         >
-          <h1 className='text-white font-bold text-[8px] sm:text-[8px] md:text-[9px]'>
-            MAP
-          </h1>
-        </button>
-      </div>
+    <div className='fixed top-0 left-0 flex justify-start bg-black bg-opacity-80'>
+      <IconButton onClick={()=> dispatch(setShowList(false))}>
+        <ArrowBackIcon className="text-white" style={{ fontSize: '15px' }}/>
+        <h1 className='text-white font-bold text-[10px]'>
+          Back to map
+        </h1>
+      </IconButton>
     </div>
   );
 }
