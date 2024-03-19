@@ -28,7 +28,8 @@ const CustomSlider = styled(Slider)(({ theme }) => ({
   '& .MuiSlider-valueLabel': {
     fontWeight: 'bold',
     fontSize: '12px',
-    top: 7,
+    top: 35,
+    left: 6,
     backgroundColor: 'transparent',
     color: 'white',
     '&:before': {
@@ -103,7 +104,7 @@ export default function YearSlider() {
   };
 
   return (
-    <Box className="w-[50%] lg:w-[90%] flex items-center justify-center content-center pt-1">
+    <Box className="w-[80%] flex items-center justify-center content-center pt-1">
       <CustomSlider
         value={year}
         valueLabelDisplay="auto"

@@ -1,19 +1,18 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setShowList } from '@/redux/features/layoutSlices';
 
-export default function ListButton() {
+export default function MapButton() {
   const dispatch = useDispatch();
-  const { showList } = useSelector((state)=> state.layoutReducer);
   return (
     <div className='flex'>
       <div>
         <button
-          onClick={()=> dispatch(setShowList(false))}
+          onClick={()=> dispatch(setShowList(true))}
           className="flex flex-col"
          >
           <h1 className='text-white font-bold text-[8px] sm:text-[8px] md:text-[9px]'>
-            MAP
+            LIST
           </h1>
         </button>
       </div>
