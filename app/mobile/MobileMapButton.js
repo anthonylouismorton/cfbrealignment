@@ -11,7 +11,7 @@ export default function MapButton() {
           onClick={()=> dispatch(setShowList(true))}
           className="flex flex-col"
          >
-          <h1 className='text-white font-bold text-[8px] sm:text-[8px] md:text-[9px]'>
+          <h1 className='text-white font-bold text-[10px]'>
             LIST
           </h1>
         </button>
