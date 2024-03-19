@@ -5,7 +5,7 @@ function Legend() {
   const { legendConferences } = useSelector(state => state.conInfoReducer);
 
   return (
-    <div className='flex flex-wrap text-center justify-center gap-1 w-[95%]'>
+    <div className='flex flex-wrap text-center justify-start gap-1 w-[95%]'>
       {legendConferences &&
         legendConferences
           .slice()

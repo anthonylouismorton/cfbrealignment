@@ -34,8 +34,8 @@ export default function Conferences(){
   }
 
   return (
-    <div className="pl-24 pr-24 pt-2">
-      <p className="text-white text-[32px] font-semibold text-center">Conferences</p>
+    <div className="px-1 md:px-24 pt-7 md:pt-5">
+      <p className="text-white text-[20px] md:text-[32px] font-semibold text-center">Conferences</p>
       <div className="grid gap-0 md:gap-2 grid-cols-1 md:grid-cols-1">
         {conferenceData
           .slice()
@@ -48,34 +48,34 @@ export default function Conferences(){
                   <div className="flex items-center justify-center">
                     {conference.logo &&
                       <img
-                        className='max-h-[40px] max-w-auto mr-2 bg-white p-[1px]'
+                        className='max-h-[25px] max-w-auto md:max-h-[40px] md:max-w-auto mr-2 bg-white p-[1px]'
                         src={conference.logo}
                         alt={`${conference.abbreviation} logo`} 
                       />
                     }
-                    <span className='text-center text-[22px] text-white font-semibold'>
+                    <span className='text-center text-[15px] md:text-[22px] text-white font-semibold'>
                       {conference.conference}
                     </span>
                   </div>
                     {conference.disbanded ? (
-                      <p className="text-white text-sm text-center">Years Active: {conference.founded} - {conference.disbanded}</p>
+                      <p className="text-white text-xs md:text-sm text-center">Years Active: {conference.founded} - {conference.disbanded}</p>
                     ) : (
-                      <p className="text-white text-sm text-center">Years Active: {conference.founded} - Present</p>
+                      <p className="text-white text-xs md:text-sm text-center">Years Active: {conference.founded} - Present</p>
                     )
                     }
                     {conference.headquarters &&
-                      <p className="text-white text-sm text-center">Headquarters: {conference.headquarters}</p>
+                      <p className="text-white text-xs md:text-sm text-center">Headquarters: {conference.headquarters}</p>
                     }
                     {conference.names.length > 1 && 
                       <div className="pt-6">
-                        <p className="text-center text-[20px] text-white font-semibold">Name History</p>
+                        <p className="text-center text-[14px] md:text-[20px] text-white font-semibold">Name History</p>
                         <div className="flex flex-wrap text-center">
                           {conference.names.map((names, index) => (
-                            <div key={index} className="flex flex-col text-white w-1/2 md:w-1/3 px-1">
+                            <div key={index} className="flex flex-col text-white md:w-1/3 px-1">
                               {names.endYear ? (
-                                <p className="text-white">{names.conference} {names.startYear} - {names.endYear}</p>
+                                <p className="text-white text-xs md:text-base">{names.conference} {names.startYear} - {names.endYear}</p>
                               ) : (
-                                <p className="text-white">{names.conference} {names.startYear} - Present</p>
+                                <p className="text-white text-xs md:text-base">{names.conference} {names.startYear} - Present</p>
                               )}
                             </div>
                           ))}
@@ -83,15 +83,15 @@ export default function Conferences(){
                       </div>
                     }
                 </div>
-                <div className="pt-6">
-                  <p className='text-center text-[20px] text-white font-semibold'>Members</p>
-                  <div className="flex flex-wrap pt-2 text-center">
+                <div className="pt-2 md:pt-6">
+                  <p className='text-center text-[14px] md:text-[20px] text-white font-semibold'>Members</p>
+                  <div className="flex flex-wrap pt-1 md:pt-2 text-center">
                   {conference.schools
                     .slice()
                     .sort((a, b) => a.years[0] - b.years[0])
                     .map((school, index) => (
-                      <div key={index} className="flex flex-col text-white w-1/2 md:w-1/3 px-1">
-                        <p>
+                      <div key={index} className="flex flex-col text-white md:w-1/3 px-1">
+                        <p className="text-xs md:text-base">
                           {school.years[0] === conference.founded ? <span className="text-red-500 text-bold">*</span> : null }
                           {school.nickName} {getYears(school.years)}, {school.years.length} years
                         </p>

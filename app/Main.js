@@ -118,7 +118,7 @@ function Main() {
           </div>
         </>
       ) : (
-        <div className='flex flex-col items-center'>
+        <div className='flex flex-col'>
           <ListButton/>
           <Conferences/>
         </div>
