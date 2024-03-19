@@ -22,11 +22,10 @@ import ListButton from './components/listView/ListButton';
 
 function Main() {
   const dispatch = useDispatch();
-  const { fullscreen, showMobile, showList, mapHeight } = useSelector((state)=> state.layoutReducer);
+  const { fullscreen, showList, mapHeight } = useSelector((state)=> state.layoutReducer);
   const option = useSelector((state)=> state.optionsReducer);
   const conFilter = useSelector(state => state.conFilterReducer);
   const year = useSelector(state => state.yearReducer);
-  const minWidth = (500);
 
   useEffect(() => {
     const { savedConfList, savedOptions, savedYear } = getLocalStorage();
@@ -50,13 +49,6 @@ function Main() {
 
     updateMapHeight();
 
-    const handleWindowResize = () => {
-      dispatch(setShowMobile(window.innerWidth <= minWidth));
-      console.log(window.innerWidth);
-    };
-
-
-    window.addEventListener('resize', handleWindowResize);
     window.addEventListener('resize', updateMapHeight);
 
     const handleKeyDown = (e) => {
@@ -74,39 +66,39 @@ function Main() {
       document.removeEventListener('keydown', handleKeyDown);
     };
 
-  }, [year, option, showMobile, conFilter]);
+  }, [year, option, conFilter]);
 
   return (
-    <div className="w-full">
+    <div className="min-w-[225px] w-full">
       {!showList ? (
         <>
           {option.showWelcome && <Welcome/>}
           {!fullscreen && (
             <div className="flex flex-col justify-center items-center">
-              {showMobile && <MobileOptions/>}
-              {!showMobile && <Year/>}
-              <Header/>
+              <div className='block lg:hidden'>
+                <MobileOptions/>
+              </div>
+              <div className='hidden lg:block w-full'>
+                <Year/>
+                <Header/>
+              </div>
               <div className="flex w-full">
                 <div className="hidden xl:block xl:w-[20%]">
                   {!option.hideHistory && <History/>}
                 </div>
                 <div className="w-full sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[65%] flex flex-col items-center">
                   <ReactMap/>
-                  {showMobile && (
-                    <div className='flex w-full justify-center items-center text-center'>
-                      <MobileSlider />
-                    </div>
-                  )}
+                  <div className='block lg:hidden flex w-full justify-center items-center text-center'>
+                    <MobileSlider/>
+                  </div>
                 </div>
                 <div className="flex flex-col hidden sm:block sm:w-[10%] md:w-[15%] lg:w-[20%] xl:w-[15%]">
-                  {!option.hideLegend && !showMobile && <Legend/>}
+                  {!option.hideLegend && <Legend/>}
                 </div>
-                {!showMobile && (
-                  <div>
-                    <MapButton/>
-                    <Options/>
-                  </div>
-                )}
+                <div className="hidden lg:block">
+                  <MapButton/>
+                  <Options/>
+                </div>
               </div>
             </div>
           )}
@@ -116,7 +108,7 @@ function Main() {
             </div>
           )}
           <div className="xl:hidden">
-            <div className="w-full flex items-center text-center">
+            <div>
               {!option.hideHistory && <MobileHistory/>}
             </div>
           </div>

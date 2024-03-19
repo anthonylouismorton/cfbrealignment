@@ -11,14 +11,15 @@ function ConferenceHistory() {
         <div key={index} className='mb-1 w-[80%] mx-auto'>
           {change.change === 'dropped' && (
             <div className='flex'>
-              <div style={{color: `${change.primaryColor}`}} className="mr-2 change-conference text-sm xl:text-md 2xl:text-lg font-bold">{change.abbreviation}</div>
-              <div className="change-conference text-xs xl:text-sm 2xl:text-md text-white">{`to Division ${change.division}`}</div>
+              <div style={{color: `${change.primaryColor}`}} className="mr-1 xl:text-sm 2xl:text-md font-bold">{change.abbreviation}</div>
+              <div className="text-xs xl:text-sm 2xl:text-md text-white">drops to</div>
+              <div className="ml-1 text-xs xl:text-sm 2xl:text-md font-bold text-white">{`Division ${change.division}`}</div>
             </div>
           )}
           {change.change === 'founded' && (
             <div className='flex text-center items-center'>
               {change.logo ? (
-              <div className="change-logo mr-1 flex items-center bg-white p-1">
+              <div className="mr-1 flex items-center bg-white p-1 relative">
                 <img
                   onMouseOver={() => sethovered(index)}
                   onMouseLeave={() => sethovered(null)}
@@ -32,15 +33,15 @@ function ConferenceHistory() {
                 }
               </div>
               ) : (
-                <div style={{color: `${change.mapColor}`}} className="change-conference mr-1 text-md font-bold">{change.abbreviation}</div>
+                <div style={{color: `${change.mapColor}`}} className="mr-1 text-xs xl:text-sm 2xl:text-md font-bold">{change.abbreviation}</div>
               )}
-              <div className="change-conference text-xs xl:text-sm 2xl:text-md text-white">founded</div>
+              <div className="text-xs xl:text-sm 2xl:text-md text-white">founded</div>
             </div>
           )}
           {change.change === 'disbanded' && (
             <div className='flex text-center items-center'>
               {change.logo ? (
-                <div className="change-logo mr-1 flex items-center bg-white p-1">
+                <div className="mr-1 flex items-center bg-white p-1 relative">
                   <img
                     onMouseOver={() => sethovered(index)}
                     onMouseLeave={() => sethovered(null)}
@@ -54,9 +55,9 @@ function ConferenceHistory() {
                   }
                 </div>
                 ) : (
-                  <div style={{color: `${change.mapColor}`}} className="change-conference mr-1 text-xs xl:text-sm 2xl:text-md font-bold">{change.abbreviation}</div>
+                  <div style={{color: `${change.mapColor}`}} className="mr-1 text-xs xl:text-sm 2xl:text-md font-bold">{change.abbreviation}</div>
                 )}
-                <div className="change-conference text-xs xl:text-sm 2xl:text-md text-white">disbanded</div>
+                <div className="text-xs xl:text-sm 2xl:text-md text-white">disbanded</div>
             </div>
           )}
           {change.change === 'left' && (
@@ -76,7 +77,7 @@ function ConferenceHistory() {
               </div>
               <div className="text-xs xl:text-sm 2xl:text-md mr-1 text-white">leaves</div>
               {change.oldConferenceLogo ? (
-                <div className="mr-1 flex items-center bg-white p-1">
+                <div className="mr-1 flex items-center bg-white p-1 relative">
                   <img
                     onMouseOver={() => sethovered(index + change.oldConferenceAbrr)}
                     onMouseLeave={() => sethovered(null)}
@@ -94,7 +95,7 @@ function ConferenceHistory() {
               )}
               {change.newConferenceAbbr === "FBS" ? (
                 <div>
-                  <p className="text-xs xl:text-sm 2xl:text-md text-white">becomes<span className="text-md font-bold text-blue-400 ml-1">IND</span></p>
+                  <p className="text-xs xl:text-sm 2xl:text-md text-white">becomes<span className="text-xs xl:text-sm 2xl:text-md font-bold text-blue-400 ml-1">IND</span></p>
                 </div>
               ) : (
                 <div className='flex'>
@@ -102,7 +103,7 @@ function ConferenceHistory() {
                     <div className="text-xs xl:text-sm 2xl:text-md mr-1 text-white">joins</div>
                   </div>
                   {change.newConferenceLogo ? (
-                    <div className="flex items-center bg-white p-1">
+                    <div className="flex items-center bg-white p-1 relative">
                       <img
                         onMouseOver={() => sethovered(index + change.newConferenceAbbr)}
                         onMouseLeave={() => sethovered(null)}
@@ -116,7 +117,7 @@ function ConferenceHistory() {
                       }
                     </div>
                   ) : (
-                    <div style={{ color: change.newConferenceColor ? change.newConferenceColor : 'red' }} className="text-sm lg:text-md font-bold">
+                    <div style={{ color: change.newConferenceColor ? change.newConferenceColor : 'red' }} className="text-xs xl:text-sm 2xl:text-md font-bold">
                       {change.newConferenceAbbr}
                     </div>
                   )}
@@ -126,7 +127,7 @@ function ConferenceHistory() {
           )}
           {change.change === 'joined' && (
             <div className='flex text-center items-center'>
-              <div className="change-logo mr-1 flex items-center bg-white p-1">
+              <div className="mr-1 flex items-center bg-white p-1 relative">
                 <img
                   onMouseOver={() => sethovered(index + change.school)}
                   onMouseLeave={() => sethovered(null)}
@@ -139,12 +140,12 @@ function ConferenceHistory() {
                     </div>
                 }
               </div>
-              <div className="change-logo flex items-center">
-                <div className="change-conference text-xs xl:text-sm 2xl:text-md text-white">joins</div>
+              <div className="flex items-center">
+                <div className="text-xs xl:text-sm 2xl:text-md text-white">joins</div>
               </div>
-              <div className="change-logo ml-1 flex items-center">
+              <div className="ml-1 flex items-center">
                 {change.conferenceLogo ? (
-                  <div className="change-logo flex items-center bg-white p-1">
+                  <div className="flex items-center bg-white p-1 relative">
                     <img
                       onMouseOver={() => sethovered(index + change.conference)}
                       onMouseLeave={() => sethovered(null)}
@@ -158,14 +159,14 @@ function ConferenceHistory() {
                     }
                   </div>
                 ) : (
-                  <div style={{color: `${change.mapColor}`}} className="change-conference text-md font-bold">{change.conference}</div>
+                  <div style={{color: `${change.mapColor}`}} className="text-xs xl:text-sm 2xl:text-md font-bold">{change.conference}</div>
                 )}
               </div>
             </div>
           )}
           {change.change === 'rejoined' && (
             <div className='flex text-center items-center'>
-              <div className="change-logo mr-1 flex items-center bg-white p-1 relative">
+              <div className="mr-1 flex items-center bg-white p-1 relative">
                 <img
                   onMouseOver={() => sethovered(index + change.school)}
                   onMouseLeave={() => sethovered(null)}
@@ -178,12 +179,12 @@ function ConferenceHistory() {
                     </div>
                 }
               </div>
-              <div className="change-logo flex items-center">
-                <div className="change-conference text-xs xl:text-sm 2xl:text-md mr-1 text-white">rejoins</div>
+              <div className="flex items-center">
+                <div className="text-xs xl:text-sm 2xl:text-md mr-1 text-white">rejoins</div>
               </div>
-              <div className="change-logo flex items-center">
+              <div className="flex items-center">
                 {change.conferenceLogo ? (
-                  <div className="change-logo mr-1 flex items-center bg-white p-1">
+                  <div className="mr-1 flex items-center bg-white p-1 relative">
                     <img
                       onMouseOver={() => sethovered(index + change.conference)}
                       onMouseLeave={() => sethovered(null)}
@@ -197,20 +198,20 @@ function ConferenceHistory() {
                     }
                   </div>
                   ) : (
-                    <div style={{color: `${change.mapColor}`}} className="change-conference text-md font-bold">{change.conference}</div>
+                    <div style={{color: `${change.mapColor}`}} className="text-xs xl:text-sm 2xl:text-md font-bold">{change.conference}</div>
                   )}
               </div>
             </div>
           )}
           {change.change === 'nameChange' && (
-            <div className='flex text-center items-center'>
-              <div style={{color: `${change.mapColor}`}} className="mr-1 change-conference text-sm xl:text-md 2xl:text-lg font-bold">{change.oldName}</div>
-              <div className="change-conference text-sm xl:text-sm 2xl:text-md text-white">rebrands to</div>
-              <div style={{color: `${change.mapColor}`}}  className="ml-1 change-conference text-sm xl:text-md 2xl:text-lg font-bold">{change.newName}</div>
+            <div className='flex items-center'>
+              <div style={{color: `${change.mapColor}`}} className="mr-1 text-xs xl:text-sm 2xl:text-md font-bold">{change.oldName}</div>
+              <div className="text-xs xl:text-sm 2xl:text-md text-white">becomes</div>
+              <div style={{color: `${change.mapColor}`}}  className="ml-1 text-xs xl:text-sm 2xl:text-md font-bold">{change.newName}</div>
             </div>
           )}
           {change.change === 'history' && (
-            <p className="change-conference text-left text-xs lg:text-sm text-white font-semibold">{change.event}</p>
+            <p className="text-left text-xs lg:text-sm text-white font-semibold">{change.event}</p>
           )}
         </div>
       ))}

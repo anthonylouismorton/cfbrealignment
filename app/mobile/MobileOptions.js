@@ -10,7 +10,7 @@ export default function Options() {
   };
 
   return (
-    <div className='menu-container flex justify-end w-[95%] pt-0.5'>
+    <div className='menu-container flex justify-start py-0.5'>
       <div>
         <button
           onClick={handleOpen}
