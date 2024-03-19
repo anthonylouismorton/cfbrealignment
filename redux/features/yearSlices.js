@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const year = createSlice({
   name: "year",
-  initialState: 1962,
+  initialState: 1938,
   reducers: {
     setYear: (state, action) => {
       return action.payload;
