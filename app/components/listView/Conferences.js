@@ -85,12 +85,12 @@ export default function Conferences(){
                 </div>
                 <div className="pt-2 md:pt-6">
                   <p className='text-center text-[14px] md:text-[20px] text-white font-semibold'>Members</p>
-                  <div className="flex flex-wrap pt-1 md:pt-2 text-center">
+                  <div className="flex flex-col sm:flex-row sm:flex-wrap pt-1 sm:pt-2">
                   {conference.schools
                     .slice()
                     .sort((a, b) => a.years[0] - b.years[0])
                     .map((school, index) => (
-                      <div key={index} className="flex flex-col text-white md:w-1/3 px-1">
+                      <div key={index} className="flex flex-col text-white sm:w-1/2 md:w-1/3 px-1">
                         <p className="text-xs md:text-base">
                           {school.years[0] === conference.founded ? <span className="text-red-500 text-bold">*</span> : null }
                           {school.nickName} {getYears(school.years)}, {school.years.length} years
