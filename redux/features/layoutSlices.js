@@ -4,7 +4,7 @@ export const layout = createSlice({
   name: "layout",
   initialState: {
     fullscreen: false,
-    showList: true,
+    showList: false,
     mapHeight: null
   },
   reducers: {

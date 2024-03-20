@@ -1,4 +1,5 @@
 import { getChanges } from "./getChanges";
+import getConName from "./getConName";
 import * as d3 from 'd3';
 
 export function getConferences(conferenceData, year, option, conferences) {
@@ -19,18 +20,18 @@ export function getConferences(conferenceData, year, option, conferences) {
     if(option.conFilter){
       if(conferences[conference.abbreviation] === false){
         return;
-      }
-    }
+      };
+    };
 
     //Filter out conferences that dropped from division I to IAA
     if(conference.divisionIAA){
       if(conference.divisionIAA.start <= year){
         if(conference.divisionIAA.start === year){
           historyArray.push({change: 'dropped', ...conference, division: "IAA"})
-        }
+        };
         return;
-      }
-    }
+      };
+    };
     //Filter out conferences that dropped from division I to II
     if(conference.divisionII){
       if(conference.divisionII.start <= year){
@@ -38,41 +39,45 @@ export function getConferences(conferenceData, year, option, conferences) {
           historyArray.push({change: 'dropped', ...conference, division: "II"})
         }
         return;
-      }
-    }
+      };
+    };
 
     if(conference.founded <= year && (conference.disbanded === null || conference.disbanded >= year)){
       if(majorConferences){
-        if((conference.majorConference.start <= year && conference.majorConference.end >= year) || (conference.majorConference.start <= year && conference.majorConference.end === null) && conference.majorConference.start !==null){
-          getCurrentConferences.push(conference)
-        }
+        if((conference.majorConference.start <= year && conference.majorConference.end >= year) || (conference.majorConference.start <= year && conference.majorConference.end === null) && conference.majorConference.start !== null){
+          const { currentAbbreviation, currentName } = getConName(conference, year);
+          getCurrentConferences.push({ ...conference, currentAbbreviation: currentAbbreviation,currentName: currentName });
+        };
       }
       else if(year >= 1998 && year < 2014 && aqConferences){
         if(conference.aqConference){
           if(conference.aqConference.start <= year && conference.aqConference.end >= year){
-            getCurrentConferences.push(conference)
-          }
-        }
+            const { currentAbbreviation, currentName } = getConName(conference, year);
+            getCurrentConferences.push({ ...conference, currentAbbreviation: currentAbbreviation,currentName: currentName });
+          };
+        };
       }
       else if(year >=2014 && powerConferences){
         if(conference.powerConference){
-          getCurrentConferences.push(conference)
-        }
+          const { currentAbbreviation, currentName } = getConName(conference, year);
+          getCurrentConferences.push({ ...conference, currentAbbreviation: currentAbbreviation,currentName: currentName });
+        };
       }
       else{
-        getCurrentConferences.push(conference)
-      }
-    }
+        const { currentAbbreviation, currentName } = getConName(conference, year);
+        getCurrentConferences.push({ ...conference, currentAbbreviation: currentAbbreviation,currentName: currentName });
+      };
+    };
   });
 
   var getSchools = [];
 
   //need the states for schools playing during the current year for filling in the states on the map to represent active conferences
-  getCurrentConferences.forEach((conference, index) => {
+  getCurrentConferences.forEach((conference) => {
 
     if(conference.disbanded !== year){
       getLegendConferences.push({
-        abbreviation: conference.abbreviation,
+        abbreviation: conference.currentAbbreviation,
         mapColor: conference.mapColor
       });
     }
@@ -127,3 +132,4 @@ export function getConferences(conferenceData, year, option, conferences) {
   const conferenceChanges = getChanges(getCurrentConferences, year, historyArray);
   return { getSchools, conferenceChanges, getLegendConferences, getMapFill2 };
 };
+
