@@ -1,5 +1,5 @@
 import conferenceData from '../data/updatedConferenceData.json';
-import cfbHistory from '../data/cfbHistory.json'
+import cfbHistory from '../data/cfbHistory.json';
 
 export function getChanges(currentConferences, currentYear, historyArray) {
   currentConferences.forEach((conference) => {

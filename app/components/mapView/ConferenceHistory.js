@@ -6,7 +6,7 @@ function ConferenceHistory() {
   let { conferenceChanges } = useSelector(state => state.conInfoReducer);
   const { mapHeight } = useSelector((state)=> state.layoutReducer);
   const [ hovered, sethovered] = useState(null);
-  
+  console.log(conferenceChanges);
   return (
     <div>
       <div className="inline-block legend-history-container w-full flex flex-col items-center pb-5" style={{height: mapHeight? `${mapHeight}px` : "auto"}}>
@@ -15,7 +15,7 @@ function ConferenceHistory() {
           <div key={index} className='flex xl:mb-1 w-[90%] items-center'>
             {change.change === 'dropped' && (
               <div className='flex items-center'>
-                  <div style={{color: `${change.primaryColor}`}} className="mr-1 text-xs xl:text-sm 2xl:text-base font-bold">{change.abbreviation}</div>
+                  <div style={{color: `${change.primaryColor}`}} className="mr-1 text-xs xl:text-sm 2xl:text-base font-bold">{change.currentAbbreviation}</div>
                   <div className="text-xs xl:text-sm 2xl:text-base text-white">drops to</div>
                   <div className="ml-1 text-xs xl:text-sm 2xl:text-base font-bold text-white">{`Division ${change.division}`}</div>
               </div>
@@ -28,7 +28,7 @@ function ConferenceHistory() {
                     onMouseOver={() => sethovered(index)}
                     onMouseLeave={() => sethovered(null)}
                     className='h-auto min-w-[20px] w-[20px] xl:min-w-[28px] xl:w-[28px] 2xl:min-w-[35px] 2xl:w-[35px] p-[1px]'
-                    src={change.logo} alt={`${change.abbreviation} logo`} 
+                    src={change.logo} alt={`${change.currentAbbreviation} logo`} 
                   />
                   {hovered === index &&
                       <div className="bg-white max-w-24 translate-y-2 text-black text-center text-[10px] absolute top-full py-2 px-2 rounded-sm transition duration-300 z-10 whitespace-nowrap">
@@ -37,7 +37,7 @@ function ConferenceHistory() {
                   }
                 </div>
                 ) : (
-                  <div style={{color: `${change.mapColor}`}} className="mr-1 text-xs xl:text-sm 2xl:text-base font-bold">{change.abbreviation}</div>
+                  <div style={{color: `${change.mapColor}`}} className="mr-1 text-xs xl:text-sm 2xl:text-base font-bold">{change.currentAbbreviation}</div>
                 )}
                 <div className="text-xs xl:text-sm 2xl:text-base text-white">founded</div>
               </div>
@@ -50,16 +50,16 @@ function ConferenceHistory() {
                      onMouseOver={() => sethovered(index)}
                      onMouseLeave={() => sethovered(null)}
                      className='h-auto min-w-[20px] w-[20px] xl:min-w-[28px] xl:w-[28px] 2xl:min-w-[35px] 2xl:w-[35px] p-[1px]'
-                     src={change.logo} alt={`${change.abbreviation} logo`} 
+                     src={change.logo} alt={`${change.currentAbbreviation} logo`} 
                    />
                    {hovered === index &&
                      <div className="bg-white max-w-24 translate-y-2 text-black text-center text-[10px] absolute top-full py-2 px-2 rounded-sm transition duration-300 z-10 whitespace-nowrap">
-                       {change.abbreviation}
+                       {change.currentAbbreviation}
                      </div>
                    }
                  </div>
                  ) : (
-                   <div style={{color: `${change.mapColor}`}} className="mr-1 text-xs xl:text-sm 2xl:text-base font-bold">{change.abbreviation}</div>
+                   <div style={{color: `${change.mapColor}`}} className="mr-1 text-xs xl:text-sm 2xl:text-base font-bold">{change.currentAbbreviation}</div>
                  )}
                  <div className="text-xs xl:text-sm 2xl:text-base text-white">disbanded</div>
               </div>

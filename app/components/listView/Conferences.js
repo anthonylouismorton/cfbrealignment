@@ -36,6 +36,7 @@ export default function Conferences(){
   return (
     <div className="px-1 md:px-24 pt-7 md:pt-5">
       <p className="text-white text-[20px] md:text-[32px] font-semibold text-center">Conferences</p>
+      <p className="text-white text-xs md:text-sm text-center"><span className="text-red-500 text-bold">*</span> Annotates conference founding member</p>
       <div className="grid gap-0 md:gap-2 grid-cols-1 md:grid-cols-1">
         {conferenceData
           .slice()
