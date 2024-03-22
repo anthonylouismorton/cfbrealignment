@@ -10,7 +10,7 @@ import { IconButton } from '@mui/material';
 import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
 import { openFullscreen, closeFullscreen } from '../../../redux/features/layoutSlices';
 import { setLegend, setChanges } from '@/redux/features/conInfoSlices';
-import { setMapInfo, setLogo } from '@/redux/features/mapSlices';
+import { setMapInfo, setLogo, setMapStyling } from '@/redux/features/mapSlices';
 import { handleZoom } from '../../functions/handleZoom';
 import { useDispatch, useSelector } from 'react-redux';
 import Autoplay from './AutoPlay';
@@ -26,21 +26,22 @@ const MapChart = () => {
   const dispatch = useDispatch();
   const wrapperRef = useRef(null);
   const { fullscreen, showMobile } = useSelector((state)=> state.layoutReducer);
-  const { styling, logoOffSet, logoSize, mapSize, position, toolTipPos, hoveredState } = useSelector(state => state.mapReducer);
+  const { styling, logoOffSet, logoSize, mapSize, position, hoveredState, mapStyle } = useSelector(state => state.mapReducer);
   const conFilter = useSelector(state => state.conFilterReducer);
   const option = useSelector((state) => state.optionsReducer);
   const year = useSelector(state => state.yearReducer);
   const projection = geoAlbersUsa().translate([mapSize.width/2, mapSize.height/2]).scale(1000);
 
   useEffect(() => {
+
     if(!fullscreen){
-      dispatch(setMapInfo({map: "mapSize", value: {width: 800, height: 500}}))
+      dispatch(setMapInfo({map: "mapSize", value: {width: 800, height: 500}}));
     }
     else{
-      dispatch(setMapInfo({map: "mapSize", value: {width: 1150, height: 555}}))
-    }
+      dispatch(setMapInfo({map: "mapSize", value: {width: 1150, height: 555}}));
+    };
 
-    const { getSchools, conferenceChanges, getLegendConferences, getMapFill2 } = getConferences(
+    const { getSchools, conferenceChanges, getLegendConferences, getMapFill } = getConferences(
       conferenceData,
       year,
       option,
@@ -48,13 +49,21 @@ const MapChart = () => {
     );
    
     let { updateStyling } = handleZoom(option, position.zoom, styling, logoOffSet, logoSize);
+
     dispatch(setLegend(getLegendConferences));
     dispatch(setChanges(conferenceChanges));
     dispatch(setLogo({ updateStyling }));
     dispatch(setMapInfo({map: "schools", value: getSchools}));
-    dispatch(setMapInfo({map: "mapFill", value: getMapFill2}));
+    dispatch(setMapInfo({map: "mapFill", value: getMapFill}));
+
+    if(fullscreen){
+      dispatch(setMapStyling({ position: 'relative', width: '100%' }))
+    }
+    else{
+      dispatch(setMapStyling({ position: 'relative', width: '98%', borderWidth: '2px', borderStyle: 'solid', borderColor: 'white', borderRadius: '0.375rem' }))
+    }
     
-  }, [year, option, showMobile, conFilter, position.zoom, fullscreen, hoveredState])
+  }, [year, option, showMobile, conFilter, position.zoom, fullscreen, hoveredState, fullscreen])
 
   function handleMoveEnd(position) {
     dispatch(setMapInfo({map: "position", value: position}));
@@ -109,9 +118,9 @@ const MapChart = () => {
 
     }
   };
-
+  console.log(mapStyle)
   return (
-    <div ref={wrapperRef} className='map' style={{ position: 'relative', width: '98%', borderWidth: '2px', borderStyle: 'solid', borderColor: 'white', borderRadius: '0.375rem' }}>
+    <div ref={wrapperRef} className='map' style={mapStyle}>
     <ComposableMap
      projection={projection}
      width={mapSize.width}
@@ -148,15 +157,15 @@ const MapChart = () => {
       </ZoomableGroup>
     </ComposableMap>
     {!fullscreen ? (
-      <div className='hidden sm:block absolute bottom-2 right-2 lg:bottom-3 lg:right-3'>
+      <div className='hidden xl:block absolute bottom-3 right-3'>
         <IconButton className="p-0 fullScreen" id="fullscreen" onClick={()=> dispatch(openFullscreen())}>
-          <FullscreenIcon className="text-white text-[15px] lg:text-[25px]" />
+          <FullscreenIcon className="text-white text-[25px]" />
         </IconButton>
       </div>
     ) : (
-      <div className='hidden sm:block absolute bottom-2 right-2 lg:bottom-3 lg:right-3'>
+      <div className='hidden xl:block absolute bottom-3 lg:right-3'>
         <IconButton className="p-0 absolute bottom-5 right-5 fullScreen" id="closefullscreen" onClick={()=> dispatch(closeFullscreen())}>
-          <CloseFullscreenIcon className="text-white text-[15px] lg:text-[25px]" />
+          <CloseFullscreenIcon className="text-white text-[25px]" />
         </IconButton>
       </div>
     )}

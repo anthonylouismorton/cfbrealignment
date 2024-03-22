@@ -1,5 +1,6 @@
 import conferenceData from '../data/updatedConferenceData.json';
 import cfbHistory from '../data/cfbHistory.json';
+import getConName from './getConName';
 
 export function getChanges(currentConferences, currentYear, historyArray) {
   currentConferences.forEach((conference) => {
@@ -13,7 +14,7 @@ export function getChanges(currentConferences, currentYear, historyArray) {
 
     conference.schools.forEach((school)=>{
       if(school.years[0] === currentYear){
-        historyArray.push({change: 'joined', joined: currentYear, conference: conference.abbreviation, conferenceLogo: conference.logo, mapColor: conference.mapColor, ...school});
+        historyArray.push({change: 'joined', joined: currentYear, conferenceLogo: conference.logo, mapColor: conference.mapColor, ...school, currentAbbreviation: conference.currentAbbreviation});
       };
 
       if(school.left){
@@ -21,7 +22,8 @@ export function getChanges(currentConferences, currentYear, historyArray) {
           if(left.year === currentYear){
             conferenceData.forEach((item) => {
               if(left.newConference === item.abbreviation){
-                historyArray.push({change: 'left', left: left.year, newConferenceColor: item.mapColor, newConferenceLogo: item.logo, newConferenceAbbr: item.abbreviation, oldConferenceLogo: conference.logo, oldConferenceAbrr: conference.abbreviation, oldConferenceColor: conference.mapColor, conference: conference.abbreviation, ...school});
+                const { currentAbbreviation } = getConName(item, currentYear);
+                historyArray.push({change: 'left', left: left.year, newConferenceColor: item.mapColor, newConferenceLogo: item.logo, newConferenceAbbr: currentAbbreviation, oldConferenceLogo: conference.logo, oldConferenceAbrr: conference.currentAbbreviation, oldConferenceColor: conference.mapColor, ...school});
               };
             });
           };
@@ -31,7 +33,7 @@ export function getChanges(currentConferences, currentYear, historyArray) {
       if(school.rejoined){
         school.rejoined.forEach((rejoined) => {
           if(rejoined.year === currentYear){
-            historyArray.push({change: 'rejoined', year: rejoined.year, oldConference: rejoined.oldConference, conference: conference.abbreviation, conferenceLogo: conference.logo, ...school, mapColor: conference.mapColor})
+            historyArray.push({change: 'rejoined', year: rejoined.year, oldConference: rejoined.oldConference, conferenceLogo: conference.logo, ...school, mapColor: conference.mapColor, currentAbbreviation: conference.currentAbbreviation})
           };
         });
       };

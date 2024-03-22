@@ -24,14 +24,14 @@ export default function StateInfo() {
             <p className='text-center text-white font-semibold'>
               Conferences
             </p>
-            {selectedState.conferences.map((conference) => (
-              <div key={conference.id}>
+            {selectedState.conferences.map((conference, index) => (
+              <div key={index}>
                 <p className='font-semibold' style={{ color: `${conference.color}` }}>{conference.conference}</p>
-                {conference.currentSchools.map((school) => {
+                {conference.currentSchools.map((school, index) => {
                   const { rejoined } = school.schoolInfo;
                   if(!rejoined){
                     return(
-                      <p key={school.id} className='text-white'>
+                      <p key={index} className='text-white'>
                         {school.name} - Member Since: {school.schoolInfo.years[0]}
                       </p>
                     );
@@ -52,14 +52,14 @@ export default function StateInfo() {
                     }
                     if(rejoinYear){
                       return(
-                        <p key={school.id} className='text-white'>
+                        <p key={index} className='text-white'>
                           {school.name} - Rejoined: {rejoinYear.year}
                         </p>
                       )
                     }
                     else{
                       return(
-                        <p key={school.id} className='text-white'>
+                        <p key={index} className='text-white'>
                           {school.name} - Member Since: {school.schoolInfo.years[0]}
                         </p>
                       ); 

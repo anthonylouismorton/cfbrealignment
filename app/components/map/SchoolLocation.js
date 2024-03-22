@@ -7,6 +7,7 @@ import { setSchool } from '@/redux/features/mapSlices';
 const SchoolLocation = () => {
   const { schools, hoveredSchool, styling } = useSelector(state => state.mapReducer);
   const { schoolModal } = useSelector(state => state.mapReducer);
+  const { year } = useSelector(state => state.yearReducer);
   const option = useSelector((state) => state.optionsReducer);
   const dispatch = useDispatch();
   const handleSchoolModal = (school) =>{

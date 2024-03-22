@@ -14,6 +14,7 @@ export const map = createSlice({
     mapSize: { width: 800, height: 500 },
     mapFill: [],
     toolTipPos: { longitude: null, latitude: null, longOffSet: 0, latOffSet: 0 },
+    mapStyle: { position: 'relative', width: '98%', borderWidth: '2px', borderStyle: 'solid', borderColor: 'white', borderRadius: '0.375rem' },
     styling: {
       circleRadius: 3,
       logoOffset: 20,
@@ -33,17 +34,19 @@ export const map = createSlice({
         if(action.payload.modal){
           state.schoolModal = action.payload.modal;
         }
-        state.selectedSchool = action.payload.school
+        state.selectedSchool = action.payload.school;
       },
       setState: (state, action) => {
-        console.log(action.payload)
         if(action.payload.modal){
           state.stateModal = action.payload.modal;
         }
         state.selectedState = action.payload.state
-      }
+      },
+      setMapStyling: (state, action) => {
+        state.mapStyle = action.payload;
+      },
     },
 });
 
-export const { setMapInfo, setLogo, setSchool, setState } = map.actions;
+export const { setMapInfo, setLogo, setSchool, setState, setMapStyling } = map.actions;
 export default map.reducer;
