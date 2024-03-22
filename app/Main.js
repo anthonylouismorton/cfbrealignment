@@ -14,7 +14,7 @@ import MobileLegend from './mobile/MobileLegend';
 import ReactMap from './components/map/ReactMap';
 import { useSelector, useDispatch } from 'react-redux';
 import { setYear } from '@/redux/features/yearSlices';
-import { setMapHeight } from '@/redux/features/layoutSlices';
+import { setMapHeight, openFullscreen, closeFullscreen } from '@/redux/features/layoutSlices';
 import { setLocalStorage, getLocalStorage } from './functions/handleLocalStorage';
 import { setConFromStor } from '@/redux/features/conFilterSlices';
 import { setOptFromStor } from '@/redux/features/optionsSlices';
@@ -49,9 +49,16 @@ function Main() {
       
     };
 
+    const handleResize = () => {
+      if(window.innerWidth < 1280){
+        dispatch(closeFullscreen());
+      }
+    };
+
     updateMapHeight();
 
     window.addEventListener('resize', updateMapHeight);
+    window.addEventListener('resize', handleResize);
 
     const handleKeyDown = (e) => {
       if (e.keyCode === 37) {

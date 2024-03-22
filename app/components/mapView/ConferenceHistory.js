@@ -6,7 +6,7 @@ function ConferenceHistory() {
   let { conferenceChanges } = useSelector(state => state.conInfoReducer);
   const { mapHeight } = useSelector((state)=> state.layoutReducer);
   const [ hovered, sethovered] = useState(null);
-  console.log(conferenceChanges);
+  
   return (
     <div>
       <div className="inline-block legend-history-container w-full flex flex-col items-center pb-5" style={{height: mapHeight? `${mapHeight}px` : "auto"}}>
@@ -32,7 +32,7 @@ function ConferenceHistory() {
                   />
                   {hovered === index &&
                       <div className="bg-white max-w-24 translate-y-2 text-black text-center text-[10px] absolute top-full py-2 px-2 rounded-sm transition duration-300 z-10 whitespace-nowrap">
-                      {change.conference}
+                      {change.currentAbbreviation}
                     </div>
                   }
                 </div>
@@ -151,19 +151,19 @@ function ConferenceHistory() {
                   {change.conferenceLogo ? (
                     <div className="flex items-center bg-white p-1 relative">
                       <img
-                        onMouseOver={() => sethovered(index + change.conference)}
+                        onMouseOver={() => sethovered(index + change.currentAbbreviation)}
                         onMouseLeave={() => sethovered(null)}
                         className='h-auto min-w-[20px] w-[20px] xl:min-w-[28px] xl:w-[28px] 2xl:min-w-[35px] 2xl:w-[35px] p-[1px]'
-                        src={change.conferenceLogo} alt={`${change.conference} logo`} 
+                        src={change.conferenceLogo} alt={`${change.currentAbbreviation} logo`} 
                       />
-                      {hovered === index + change.conference &&
+                      {hovered === index + change.currentAbbreviation &&
                       <div className="bg-white max-w-24 translate-y-2 text-black text-center text-[10px] absolute top-full py-2 px-2 rounded-sm transition duration-300 z-10 whitespace-nowrap">
-                        {change.conference}
+                        {change.currentAbbreviation}
                       </div>
                       }
                     </div>
                   ) : (
-                    <div style={{color: `${change.mapColor}`}} className="text-xs xl:text-sm 2xl:text-base font-bold">{change.conference}</div>
+                    <div style={{color: `${change.mapColor}`}} className="text-xs xl:text-sm 2xl:text-base font-bold">{change.currentAbbreviation}</div>
                   )}
                 </div>
               </div>
@@ -190,19 +190,19 @@ function ConferenceHistory() {
                   {change.conferenceLogo ? (
                     <div className="mr-1 flex items-center bg-white p-1 relative">
                       <img
-                        onMouseOver={() => sethovered(index + change.conference)}
+                        onMouseOver={() => sethovered(index + change.currentAbbreviation)}
                         onMouseLeave={() => sethovered(null)}
                         className='h-auto min-w-[20px] w-[20px] xl:min-w-[28px] xl:w-[28px] 2xl:min-w-[35px] 2xl:w-[35px] p-[1px]'
-                        src={change.conferenceLogo} alt={`${change.conference} logo`} 
+                        src={change.conferenceLogo} alt={`${change.currentAbbreviation} logo`} 
                       />
-                      {hovered === index + change.conference &&
+                      {hovered === index + change.currentAbbreviation &&
                         <div className="bg-white max-w-24 translate-y-2 text-black text-center text-[10px] absolute top-full py-2 px-2 rounded-sm transition duration-300 z-10 whitespace-nowrap">  
-                          {change.conference}
+                          {change.currentAbbreviation}
                         </div>
                       }
                     </div>
                     ) : (
-                      <div style={{color: `${change.mapColor}`}} className="text-base font-bold">{change.conference}</div>
+                      <div style={{color: `${change.mapColor}`}} className="text-base font-bold">{change.currentAbbreviation}</div>
                     )}
                 </div>
               </div>

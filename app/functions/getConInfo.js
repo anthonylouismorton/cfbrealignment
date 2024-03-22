@@ -3,12 +3,11 @@ import getConName from "./getConName";
 import * as d3 from 'd3';
 
 export function getConferences(conferenceData, year, option, conferences) {
-  const { majorConferences, powerConferences, aqConferences} = option
+  const { majorConferences, powerConferences, aqConferences } = option;
   var getCurrentConferences = [];
   var historyArray = [];
   var getLegendConferences = [];
-  var getMapFill2 = [];
-
+  var getMapFill = [];
   conferenceData.forEach((conference) => {
     
     //Need to filter out conferences with no data or unused currently
@@ -74,7 +73,6 @@ export function getConferences(conferenceData, year, option, conferences) {
 
   //need the states for schools playing during the current year for filling in the states on the map to represent active conferences
   getCurrentConferences.forEach((conference) => {
-
     if(conference.disbanded !== year){
       getLegendConferences.push({
         abbreviation: conference.currentAbbreviation,
@@ -84,28 +82,31 @@ export function getConferences(conferenceData, year, option, conferences) {
 
     conference.schools.forEach((school) => {
       if(school.years.includes(year)){
-        const existingStateIndex = getMapFill2.findIndex((currentState) => currentState.state === school.stateId);
-        if(existingStateIndex === -1){
-          getMapFill2.push({
+        const existingStateIndex = getMapFill.findIndex((currentState) => currentState.state === school.stateId);
+        if((year === 1907 || year === 1908) && school.school === "University of Iowa"){
+
+        }
+        else if(existingStateIndex === -1){
+          getMapFill.push({
             state: school.stateId,
-            conferences: [{conference: conference.abbreviation, color: conference.mapColor, currentSchools: [{coordinates: [ school.lon, school.lat], name: school.school, logo: school.logo, state: school.stateId, schoolInfo: {...school}}]}],
+            conferences: [{ conference: conference.currentAbbreviation, color: conference.mapColor, currentSchools: [{coordinates: [ school.lon, school.lat], name: school.school, logo: school.logo, state: school.stateId, schoolInfo: { ...school }}] }],
             color: conference.mapColor
           });
         } 
         else{
-          const existingConferenceIndex = getMapFill2[existingStateIndex].conferences.findIndex((conf) => conf.conference === conference.abbreviation);
+          const existingConferenceIndex = getMapFill[existingStateIndex].conferences.findIndex((conf) => conf.conference === conference.currentAbbreviation);
           if(existingConferenceIndex === -1){
-            const updatedConferences = [...getMapFill2[existingStateIndex].conferences, { conference: conference.abbreviation, color: conference.mapColor, currentSchools: [{coordinates: [ school.lon, school.lat ], name: school.school, logo: school.logo, state: school.stateId, schoolInfo: {...school}}]
+            const updatedConferences = [ ...getMapFill[existingStateIndex].conferences, { conference: conference.currentAbbreviation, color: conference.mapColor, currentSchools: [{coordinates: [ school.lon, school.lat ], name: school.school, logo: school.logo, state: school.stateId, schoolInfo: { ...school } }]
             }];
             var newColor = d3.scaleLinear()
             .domain([...Array(updatedConferences.length).keys()])
             .range(updatedConferences.map(conf => conf.color))
             (1/updatedConferences.length);
-            getMapFill2[existingStateIndex].conferences = (updatedConferences);
-            getMapFill2[existingStateIndex].color = newColor;
+            getMapFill[existingStateIndex].conferences = (updatedConferences);
+            getMapFill[existingStateIndex].color = newColor;
           }
           else{
-            getMapFill2[existingStateIndex].conferences[existingConferenceIndex].currentSchools.push({coordinates: [ school.lon, school.lat ], name: school.school, logo: school.logo, state: school.stateId, schoolInfo: {...school}})
+            getMapFill[existingStateIndex].conferences[existingConferenceIndex].currentSchools.push({ coordinates: [ school.lon, school.lat ], name: school.school, logo: school.logo, state: school.stateId, schoolInfo: { ...school } })
           }
         };
       };
@@ -114,22 +115,27 @@ export function getConferences(conferenceData, year, option, conferences) {
 
         }
         else{
-          getSchools.push({color: conference.mapColor, conference: conference.abbreviation, coordinates: [ school.lon, school.lat], name: school.school, logo: school.logo, state: school.stateId, schoolInfo: {...school}});
+          getSchools.push({color: conference.mapColor, conference: conference.currentAbbreviation, coordinates: [ school.lon, school.lat], name: school.school, logo: school.logo, state: school.stateId, schoolInfo: {...school}});
         };
       };
     });
   });
 
   if(year === 1907 || year === 1908){
-    const iowaIndex = getMapFill2.findIndex((state) => state.state === "19");
-    getMapFill2[iowaIndex] = {color: "rgb(0, 140, 102)", conference: [conferenceData[6].abbreviation, conferenceData[8].abbreviation], coordinates: [ conferenceData[8].schools[1].lon, conferenceData[8].schools[1].lat], name: conferenceData[8].schools[1].school, logo: conferenceData[8].schools[1].logo, state: conferenceData[8].schools[1].stateId, schoolInfo: conferenceData[8].schools[0]};
+    const westernIowa = conferenceData[6];
+    const mviaaIowa = conferenceData[8]
+    getMapFill.push({
+      state: conferenceData[8].schools[1].stateId,
+      color: "rgb(0, 140, 102)",
+      conferences: [{ conference: westernIowa.abbreviation, color: westernIowa.mapColor, currentSchools: [{ coordinates: [ westernIowa.schools[2].lon, westernIowa.schools[2].lat ], name: westernIowa.schools[2].school, logo: westernIowa.schools[2].logo, state: westernIowa.schools[2].stateId, schoolInfo: westernIowa.schools[2] }] }, { conference: mviaaIowa.abbreviation, color: mviaaIowa.mapColor, currentSchools: [{ coordinates: [ mviaaIowa.schools[1].lon, mviaaIowa.schools[1].lat ], name: mviaaIowa.schools[1].school, logo: mviaaIowa.schools[1].logo, state: mviaaIowa.schools[1].stateId, schoolInfo: mviaaIowa.schools[1] }] }]
+    });
 
     getSchools.push(
-      {color: "rgb(0, 140, 102)", conference: [conferenceData[6].abbreviation, conferenceData[8].abbreviation], coordinates: [ conferenceData[8].schools[1].lon, conferenceData[8].schools[1].lat], name: conferenceData[8].schools[1].school, logo: conferenceData[8].schools[1].logo, state: conferenceData[8].schools[1].stateId, schoolInfo: conferenceData[8].schools[0]}
+      { color: "rgb(0, 140, 102)", conference: `${conferenceData[6].abbreviation} and ${conferenceData[8].abbreviation}`, coordinates: [ conferenceData[8].schools[1].lon, conferenceData[8].schools[1].lat ], name: conferenceData[8].schools[1].school, logo: conferenceData[8].schools[1].logo, state: conferenceData[8].schools[1].stateId, schoolInfo: conferenceData[8].schools[1] }
     );
   };
 
   const conferenceChanges = getChanges(getCurrentConferences, year, historyArray);
-  return { getSchools, conferenceChanges, getLegendConferences, getMapFill2 };
+  return { getSchools, conferenceChanges, getLegendConferences, getMapFill };
 };
 
