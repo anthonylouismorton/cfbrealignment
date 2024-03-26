@@ -9,7 +9,7 @@ export const options = createSlice({
     powerConferences: false, 
     hideHistory: false, 
     hideLegend: false, 
-    showWelcome: false, 
+    showWelcome: true, 
     smallLogos: false, 
     conFilter: false, 
     showLocation: false

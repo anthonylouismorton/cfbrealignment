@@ -14,7 +14,7 @@ import MobileLegend from './mobile/MobileLegend';
 import ReactMap from './components/map/ReactMap';
 import { useSelector, useDispatch } from 'react-redux';
 import { setYear } from '@/redux/features/yearSlices';
-import { setMapHeight, openFullscreen, closeFullscreen } from '@/redux/features/layoutSlices';
+import { setMapHeight, closeFullscreen } from '@/redux/features/layoutSlices';
 import { setLocalStorage, getLocalStorage } from './functions/handleLocalStorage';
 import { setConFromStor } from '@/redux/features/conFilterSlices';
 import { setOptFromStor } from '@/redux/features/optionsSlices';
@@ -31,51 +31,50 @@ function Main() {
 
   useEffect(() => {
     const { savedConfList, savedOptions, savedYear } = getLocalStorage();
-    if(savedConfList && savedOptions && savedYear){
+    if (savedConfList && savedOptions && savedYear) {
       dispatch(setYear(savedYear));
       dispatch(setConFromStor(savedConfList));
       dispatch(setOptFromStor(savedOptions));
     }
-  },[]);
-
+  }, []);
+  
   useEffect(() => {
-
     const updateMapHeight = () => {
       const mapElements = document.getElementsByClassName('map');
       if (mapElements.length > 0) {
         const mapElement = mapElements[0].offsetHeight;
         dispatch(setMapHeight(mapElement));
       };
-      
     };
-
+  
     const handleResize = () => {
-      if(window.innerWidth < 1280){
+      if (window.innerWidth < 1280) {
         dispatch(closeFullscreen());
       }
     };
-
+  
     updateMapHeight();
-
+  
     window.addEventListener('resize', updateMapHeight);
     window.addEventListener('resize', handleResize);
-
+  
     const handleKeyDown = (e) => {
       if (e.keyCode === 37) {
         dispatch(setYear(year - 1));
-      } 
-      else if (e.keyCode === 39) {
+      } else if (e.keyCode === 39) {
         dispatch(setYear(year + 1));
       };
     };
-
+  
     document.addEventListener('keydown', handleKeyDown);
+  
     setLocalStorage(option, conFilter, year);
+  
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
-
-  }, [year, option, conFilter]);
+  }, [option, conFilter, year]);
+  
 
   return (
     <div className="min-w-[225px] w-full">

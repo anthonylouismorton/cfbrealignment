@@ -118,7 +118,7 @@ const MapChart = () => {
 
     }
   };
-  console.log(mapStyle)
+
   return (
     <div ref={wrapperRef} className='map' style={mapStyle}>
     <ComposableMap
