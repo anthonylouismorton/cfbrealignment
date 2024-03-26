@@ -3,7 +3,6 @@ import Modal from '@mui/material/Modal';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setSchool } from '@/redux/features/mapSlices';
-import { select } from 'd3';
 
 export default function OptionsMenu() {
   const year = useSelector(state => state.yearReducer);

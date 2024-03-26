@@ -1,34 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CFB Conference Map
 
-## Getting Started
+## Description
 
-First, run the development server:
+This map traces the evolution of Football Bowl Series (FBS) conferences, beginning before the formation of the Intercollegiate Athletic Association of the United States (IAAUS) on March 31, 1906, which later became known as the National Collegiate Athletic Association (NCAA). While only two conferences were operational before this date, it is essential to acknowledge the inaugural college football conference, the Western Interstate University Football Association (WIUFA), and the Southern Intercollegiate Athletic Association (SIAA), which would emerge as a prominent conference under the NCAA.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+At the time of the NCAA's establishment, college football lacked divisions, and only a few conferences existed. Most teams competed as independents. While this map does not track independent schools, it will highlight instances where schools left conferences to become independent. The timeline then follows the Division I college football landscape, beginning in 1973 after the NCAA divided college football into three divisions (Division I, II, and III). Subsequently, the map focuses on all Division I-A conferences, now recognized as FBS, following the subdivision that occurred in 1978.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Website
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+This project has a working website and can be viewed here: [College Football Conference Map](https://college-football-conference-map.netlify.app)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Screenshots
 
-## Learn More
+### Map
 
-To learn more about Next.js, take a look at the following resources:
+![Map Screenshot](public/images/screenshots/map.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Welcome
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![Welcome Screenshot](public/images/screenshots/welcome.png)
 
-## Deploy on Vercel
+## Technologies Used
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Frontend Framework:** Next.js
+- **CSS Framework:** Tailwind CSS
+- **Data Visualization:** React Simple Maps
+- **Data Structure:** JSON
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+
+This project is licensed under All Rights Reserved. For more details, please refer to the license.txt file.
+
+## Contact Information
+
+- **Name:** Anthony Morton
+- **Email:** anthonymorton760@gmail.com
+- **LinkedIn:** [Connect with Me on LinkedIn](www.linkedin.com/in/anthony-louis-morton/)
