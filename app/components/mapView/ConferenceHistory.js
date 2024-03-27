@@ -15,7 +15,7 @@ function ConferenceHistory() {
           <div key={index} className='flex xl:mb-1 w-[90%] items-center'>
             {change.change === 'dropped' && (
               <div className='flex items-center'>
-                  <div style={{color: `${change.primaryColor}`}} className="mr-1 text-xs xl:text-sm 2xl:text-base font-bold">{change.currentAbbreviation}</div>
+                  <div style={{color: `${change.primaryColor}`}} className="mr-1 text-xs xl:text-sm 2xl:text-base font-bold">{change.abbreviation}</div>
                   <div className="text-xs xl:text-sm 2xl:text-base text-white">drops to</div>
                   <div className="ml-1 text-xs xl:text-sm 2xl:text-base font-bold text-white">{`Division ${change.division}`}</div>
               </div>

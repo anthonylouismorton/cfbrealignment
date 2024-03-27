@@ -10,7 +10,7 @@ function MobileHistory() {
       {conferenceChanges.map((change, index) => (
         <div key={index} className='w-[85%] mx-auto flex'>
           {change.change === 'dropped' && (
-            <div className='flex'>
+            <div className='flex items-center'>
               <div style={{color: `${change.primaryColor}`}} className="mr-1 font-bold">{change.abbreviation}</div>
               <div className="text-lg sm:text-sm text-white">drops to</div>
               <div className="ml-1 text-lg sm:text-sm font-bold text-white">{`Division ${change.division}`}</div>
@@ -28,7 +28,7 @@ function MobileHistory() {
                 />
                 {hovered === index &&
                     <div className="bg-white max-w-24 translate-y-2 text-black text-center text-[10px] absolute top-full py-2 px-2 rounded-sm transition duration-300 z-10 whitespace-nowrap">
-                    {change.conference}
+                    {change.currentAbbreviation}
                   </div>
                 }
               </div>
@@ -147,19 +147,19 @@ function MobileHistory() {
                 {change.conferenceLogo ? (
                   <div className="flex items-center bg-white p-1 relative">
                     <img
-                      onMouseOver={() => sethovered(index + change.conference)}
+                      onMouseOver={() => sethovered(index + change.currentAbbreviation)}
                       onMouseLeave={() => sethovered(null)}
                       className='h-auto w-[35px] min-w-[35px] sm:w-[28px] sm:min-w-[28px] md:min-w-[20px] md:w-[20px]'
-                      src={change.conferenceLogo} alt={`${change.conference} logo`} 
+                      src={change.conferenceLogo} alt={`${change.currentAbbreviation} logo`} 
                     />
-                    {hovered === index + change.conference &&
+                    {hovered === index + change.currentAbbreviation &&
                     <div className="bg-white max-w-24 translate-y-2 text-black text-center text-[10px] absolute top-full py-2 px-2 rounded-sm transition duration-300 z-10 whitespace-nowrap">
-                      {change.conference}
+                      {change.currentAbbreviation}
                     </div>
                     }
                   </div>
                 ) : (
-                  <div style={{color: `${change.mapColor}`}} className="text-lg sm:text-sm font-bold">{change.conference}</div>
+                  <div style={{color: `${change.mapColor}`}} className="text-lg sm:text-sm font-bold">{change.currentAbbreviation}</div>
                 )}
               </div>
             </div>
@@ -186,19 +186,19 @@ function MobileHistory() {
                 {change.conferenceLogo ? (
                   <div className="mr-1 flex items-center bg-white p-1 relative">
                     <img
-                      onMouseOver={() => sethovered(index + change.conference)}
+                      onMouseOver={() => sethovered(index + change.currentAbbreviation)}
                       onMouseLeave={() => sethovered(null)}
                       className='h-auto w-[35px] min-w-[35px] sm:w-[28px] sm:min-w-[28px] md:min-w-[20px] md:w-[20px]'
-                      src={change.conferenceLogo} alt={`${change.conference} logo`} 
+                      src={change.conferenceLogo} alt={`${change.currentAbbreviation} logo`} 
                     />
-                    {hovered === index + change.conference &&
+                    {hovered === index + change.currentAbbreviation &&
                       <div className="bg-white max-w-24 translate-y-2 text-black text-center text-[10px] absolute top-full py-2 px-2 rounded-sm transition duration-300 z-10 whitespace-nowrap">  
-                        {change.conference}
+                        {change.currentAbbreviation}
                       </div>
                     }
                   </div>
                   ) : (
-                    <div style={{color: `${change.mapColor}`}} className="text-lg sm:text-sm font-bold">{change.conference}</div>
+                    <div style={{color: `${change.mapColor}`}} className="text-lg sm:text-sm font-bold">{change.currentAbbreviation}</div>
                   )}
               </div>
             </div>
