@@ -157,13 +157,13 @@ const MapChart = () => {
       </ZoomableGroup>
     </ComposableMap>
     {!fullscreen ? (
-      <div className='hidden xl:block absolute bottom-3 right-3'>
+      <div className='hidden lg:block absolute bottom-3 right-3'>
         <IconButton className="p-0 fullScreen" id="fullscreen" onClick={()=> dispatch(openFullscreen())}>
           <FullscreenIcon className="text-white text-[25px]" />
         </IconButton>
       </div>
     ) : (
-      <div className='hidden xl:block absolute bottom-3 lg:right-3'>
+      <div className='hidden lg:block absolute bottom-3 lg:right-3'>
         <IconButton className="p-0 absolute bottom-5 right-5 fullScreen" id="closefullscreen" onClick={()=> dispatch(closeFullscreen())}>
           <CloseFullscreenIcon className="text-white text-[25px]" />
         </IconButton>
@@ -173,6 +173,9 @@ const MapChart = () => {
     <button className='absolute top-1 right-1 sm:top-2 sm:right-2 lg:top-3 lg:right-3 text-black text-[10px] md:text-[12px] lg:text-[14px] font-semibold bg-white border border-white hover:bg-black hover:text-white hover:border-white p-[2px] md:p-[3px] lg:p-1 rounded-sm' onClick={handleReset}>
       Reset
     </button>
+    <p className='absolute top-1 left-1 sm:top-2 sm:left-2 lg:top-3 lg:left-3 text-white text-[10px] md:text-[12px] lg:text-[14px] font-semibold'>
+      Year: {year}
+    </p>
       <SchoolInfo/>
       <StateInfo/>
     </div>

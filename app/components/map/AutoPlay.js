@@ -28,12 +28,12 @@ export default function Autoplay(){
 
   
   useEffect(() => {
-    let time = 2000
+    let time = 2500
     let nextYear = year + 1
     if(conferenceChanges.length === 0){
-      time = 500
+      time = 750
     }
-    if (start && nextYear < 2025) {
+    if (start && nextYear < 2026) {
       timeIntervalRef.current = setInterval(() => {
         dispatch(setYear(year + 1));
       }, time);
@@ -41,7 +41,7 @@ export default function Autoplay(){
     else if (!start) {
       clearInterval(timeIntervalRef.current);
     }
-    else if(nextYear === 2025){
+    else if(nextYear === 2026){
       clearInterval(timeIntervalRef.current);
       setStart(false)
       setShowReplay(true)

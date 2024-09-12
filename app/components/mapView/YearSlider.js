@@ -25,7 +25,7 @@ const iOSBoxShadow =
     { value: 1995, label: '1995' },
     { value: 2005, label: '2005' },
     { value: 2015, label: '2015' },
-    { value: 2025, label: '2025' }
+    { value: 2026, label: '2026' }
   ];
 
   const CustomSlider = styled(Slider)(({ theme }) => ({
@@ -147,7 +147,7 @@ export default function YearSlider() {
   };
   const handleNextYear = () => {
     const newYear = year + 1;
-    if (newYear <= 2025) {
+    if (newYear <= 2026) {
       dispatch(setYear(newYear));
     }
   };
@@ -162,7 +162,7 @@ export default function YearSlider() {
         value={year}
         valueLabelDisplay="auto"
         min={1891}
-        max={2025}
+        max={2026}
         marks={marks}
         onChange={handleSliderChange}
       />

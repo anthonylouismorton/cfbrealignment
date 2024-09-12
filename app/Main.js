@@ -112,7 +112,7 @@ function Main() {
             </div>
           )}
           {fullscreen && (
-            <div className='flex flex-col justify-center'>
+            <div className='flex flex-col justify-center h-screen'>
               <ReactMap/>
             </div>
           )}
