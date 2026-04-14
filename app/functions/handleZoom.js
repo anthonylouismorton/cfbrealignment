@@ -7,11 +7,8 @@ export function handleZoom(option, zoom, styling, logoSize, logoOffSet){
   if(option.smallLogos && (zoom < 6)){
     updateLogoSize = 12;
   }
-  else if((!option.smallLogos && zoom >= 1 && zoom < 2)){
+  else if(!option.smallLogos && zoom >= 1 && zoom < 2){
     updateLogoSize = 18;
-  }
-  else if(!option.smallLogos && (zoom > 1 && zoom < 2)) {
-    updateLogoSize = 12;
   }
   else if(!option.smallLogos && (zoom > 2 && zoom < 3)) {
     updateLogoSize = 10;
@@ -75,4 +72,4 @@ export function handleZoom(option, zoom, styling, logoSize, logoOffSet){
   }
   updateLogoOffset = -(updateLogoSize/2);
   return { updateStyling: {...updateStyling, logoSize: updateLogoSize, logoOffset: updateLogoOffset}};
-}
+};

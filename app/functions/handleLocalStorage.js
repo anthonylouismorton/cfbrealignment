@@ -21,7 +21,6 @@ export function setLocalStorage(option, conFilter, year){
     localStorage.setItem("savedOptions", JSON.stringify(option));
     localStorage.setItem("savedConfList", JSON.stringify(conFilter));
     localStorage.setItem("savedYear", JSON.stringify(year));
-    console.log(JSON.parse(localStorage.getItem('savedYear')));
   }
   else{
     initialLoad = false;
