@@ -1,13 +1,28 @@
 import { getChanges } from "./getChanges";
 import getConName from "./getConName";
 import * as d3 from 'd3';
+import conferenceDataStatic from '../data/updatedConferenceData.json';
+
+// Pre-build index at module load: conference abbreviation -> year -> schools active that year
+const schoolsByYearByConf = new Map();
+conferenceDataStatic.forEach((conference) => {
+  if (!conference.schools) return;
+  const yearMap = new Map();
+  conference.schools.forEach(school => {
+    if (!school.years) return;
+    school.years.forEach(yr => {
+      if (!yearMap.has(yr)) yearMap.set(yr, []);
+      yearMap.get(yr).push(school);
+    });
+  });
+  schoolsByYearByConf.set(conference.abbreviation, yearMap);
+});
 
 export function getConferences(conferenceData, year, option, conferences) {
   const { majorConferences, powerConferences, aqConferences } = option;
   var getCurrentConferences = [];
   var historyArray = [];
   var getLegendConferences = [];
-  var getMapFill = [];
   conferenceData.forEach((conference) => {
     
     //Need to filter out conferences with no data or unused currently
@@ -71,6 +86,10 @@ export function getConferences(conferenceData, year, option, conferences) {
 
   var getSchools = [];
 
+  // Map-based state lookup for O(1) access instead of findIndex
+  // Shape: stateId -> { state, color, conferences: [], confsByAbbr: Map }
+  const mapFillByState = new Map();
+
   //need the states for schools playing during the current year for filling in the states on the map to represent active conferences
   getCurrentConferences.forEach((conference) => {
     if(conference.disbanded !== year){
@@ -80,46 +99,45 @@ export function getConferences(conferenceData, year, option, conferences) {
       });
     }
 
-    conference.schools.forEach((school) => {
-      if(school.years.includes(year)){
-        const existingStateIndex = getMapFill.findIndex((currentState) => currentState.state === school.stateId);
-        if((year === 1907 || year === 1908) && school.school === "University of Iowa"){
+    // Use pre-built year index instead of iterating all schools and checking .includes(year)
+    const activeSchools = schoolsByYearByConf.get(conference.abbreviation)?.get(year) ?? [];
+    activeSchools.forEach((school) => {
+      if((year === 1907 || year === 1908) && school.school === "University of Iowa"){
+        return;
+      }
 
-        }
-        else if(existingStateIndex === -1){
-          getMapFill.push({
-            state: school.stateId,
-            conferences: [{ conference: conference.currentAbbreviation, color: conference.mapColor, currentSchools: [{coordinates: [ school.lon, school.lat], name: school.school, logo: school.logo, state: school.stateId, schoolInfo: { ...school }}] }],
-            color: conference.mapColor
-          });
-        } 
-        else{
-          const existingConferenceIndex = getMapFill[existingStateIndex].conferences.findIndex((conf) => conf.conference === conference.currentAbbreviation);
-          if(existingConferenceIndex === -1){
-            const updatedConferences = [ ...getMapFill[existingStateIndex].conferences, { conference: conference.currentAbbreviation, color: conference.mapColor, currentSchools: [{coordinates: [ school.lon, school.lat ], name: school.school, logo: school.logo, state: school.stateId, schoolInfo: { ...school } }]
-            }];
-            var newColor = d3.scaleLinear()
-            .domain([...Array(updatedConferences.length).keys()])
-            .range(updatedConferences.map(conf => conf.color))
-            (1/updatedConferences.length);
-            getMapFill[existingStateIndex].conferences = (updatedConferences);
-            getMapFill[existingStateIndex].color = newColor;
-          }
-          else{
-            getMapFill[existingStateIndex].conferences[existingConferenceIndex].currentSchools.push({ coordinates: [ school.lon, school.lat ], name: school.school, logo: school.logo, state: school.stateId, schoolInfo: { ...school } })
-          }
-        };
-      };
-      if(school.years.includes(year)){
-        if((year === 1907 || year === 1908) && school.school === "University of Iowa"){
+      const schoolData = { coordinates: [ school.lon, school.lat ], name: school.school, logo: school.logo, state: school.stateId, schoolInfo: { ...school } };
 
+      if (!mapFillByState.has(school.stateId)) {
+        const confEntry = { conference: conference.currentAbbreviation, color: conference.mapColor, currentSchools: [schoolData] };
+        mapFillByState.set(school.stateId, {
+          state: school.stateId,
+          conferences: [confEntry],
+          confsByAbbr: new Map([[conference.currentAbbreviation, confEntry]]),
+          color: conference.mapColor
+        });
+      } else {
+        const stateEntry = mapFillByState.get(school.stateId);
+        if (!stateEntry.confsByAbbr.has(conference.currentAbbreviation)) {
+          const newConfEntry = { conference: conference.currentAbbreviation, color: conference.mapColor, currentSchools: [schoolData] };
+          stateEntry.conferences.push(newConfEntry);
+          stateEntry.confsByAbbr.set(conference.currentAbbreviation, newConfEntry);
+          const newColor = d3.scaleLinear()
+            .domain([...Array(stateEntry.conferences.length).keys()])
+            .range(stateEntry.conferences.map(conf => conf.color))
+            (1 / stateEntry.conferences.length);
+          stateEntry.color = newColor;
+        } else {
+          stateEntry.confsByAbbr.get(conference.currentAbbreviation).currentSchools.push(schoolData);
         }
-        else{
-          getSchools.push({color: conference.mapColor, conference: conference.currentAbbreviation, coordinates: [ school.lon, school.lat], name: school.school, logo: school.logo, state: school.stateId, schoolInfo: {...school}});
-        };
-      };
+      }
+
+      getSchools.push({ color: conference.mapColor, conference: conference.currentAbbreviation, coordinates: [ school.lon, school.lat ], name: school.school, logo: school.logo, state: school.stateId, schoolInfo: { ...school } });
     });
   });
+
+  // Convert Map to array, stripping the internal confsByAbbr tracking Map
+  const getMapFill = Array.from(mapFillByState.values()).map(({ confsByAbbr, ...rest }) => rest);
 
   if(year === 1907 || year === 1908){
     const westernIowa = conferenceData[6];

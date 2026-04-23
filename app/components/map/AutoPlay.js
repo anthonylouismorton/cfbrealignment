@@ -56,7 +56,7 @@ export default function Autoplay(){
     <div className='flex justify-center items-center'>
       <div className='flex items-center'>
         <h1 className='text-white text-[14px] xl:text-[15px] font-semibold pr-0 md:pr-1'>
-          AutoPlay
+          Play
         </h1>
       </div>
       {!start && !showReplay &&

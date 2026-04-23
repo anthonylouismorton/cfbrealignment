@@ -2,6 +2,8 @@ import conferenceData from '../data/updatedConferenceData.json';
 import cfbHistory from '../data/cfbHistory.json';
 import getConName from './getConName';
 
+const conferenceByAbbr = new Map(conferenceData.map(c => [c.abbreviation, c]));
+
 export function getChanges(currentConferences, currentYear, historyArray) {
   currentConferences.forEach((conference) => {
     if(conference.founded === currentYear){
@@ -20,12 +22,11 @@ export function getChanges(currentConferences, currentYear, historyArray) {
       if(school.left){
         school.left.forEach((left) => {
           if(left.year === currentYear){
-            conferenceData.forEach((item) => {
-              if(left.newConference === item.abbreviation){
-                const { currentAbbreviation } = getConName(item, currentYear);
-                historyArray.push({change: 'left', left: left.year, newConferenceColor: item.mapColor, newConferenceLogo: item.logo, newConferenceAbbr: currentAbbreviation, oldConferenceLogo: conference.logo, oldConferenceAbrr: conference.currentAbbreviation, oldConferenceColor: conference.mapColor, ...school});
-              };
-            });
+            const item = conferenceByAbbr.get(left.newConference);
+            if(item){
+              const { currentAbbreviation } = getConName(item, currentYear);
+              historyArray.push({change: 'left', left: left.year, newConferenceColor: item.mapColor, newConferenceLogo: item.logo, newConferenceAbbr: currentAbbreviation, oldConferenceLogo: conference.logo, oldConferenceAbrr: conference.currentAbbreviation, oldConferenceColor: conference.mapColor, ...school});
+            };
           };
         });
       };

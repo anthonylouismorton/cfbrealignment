@@ -19,13 +19,11 @@ export default function OptionsMenu({open, setOpen}) {
     if (value === "smallLogos" && checked === true) {
       dispatch(changeOption({ option: value, value: checked }));
       dispatch(changeOption({ option: "showLogos", value: checked }));
-    }  
-    if (value === "showLogos" && checked === false) {
+    } else if (value === "showLogos" && checked === false) {
       dispatch(changeOption({ option: value, value: checked }));
       dispatch(changeOption({ option: "smallLogos", value: checked }));
-    }  
-    else{
-      dispatch(changeOption({option: value, value: checked}))
+    } else {
+      dispatch(changeOption({option: value, value: checked}));
     }
   };
   

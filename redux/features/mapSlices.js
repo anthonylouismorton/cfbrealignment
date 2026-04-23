@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+//don't change the default position or mapsize, because this is the proper scale and center
+
 export const map = createSlice({
   name: "map",
   initialState: {
@@ -10,11 +12,12 @@ export const map = createSlice({
     selectedState: null,
     hoveredSchool: null,
     hoveredState: { stateInfo: null },
-    position: { coordinates: [-96.6, 38.7], zoom: 1 },
-    mapSize: { width: 800, height: 500 },
+    defaultZoom: 1,
+    position: { coordinates: [-98.7, 38.77], zoom: 1 },
+    mapSize: { width: 835, height: 500 },
     mapFill: [],
     toolTipPos: { longitude: null, latitude: null, longOffSet: 0, latOffSet: 0 },
-    mapStyle: { position: 'relative', width: '98%', borderWidth: '2px', borderStyle: 'solid', borderColor: 'white', borderRadius: '0.375rem' },
+    mapStyle: { position: 'relative', width: '100%', borderWidth: '2px', borderStyle: 'solid', borderColor: 'white', borderRadius: '0.375rem' },
     styling: {
       circleRadius: 3,
       logoOffset: 20,
@@ -31,15 +34,11 @@ export const map = createSlice({
         state.styling = action.payload.updateStyling;
       },
       setSchool: (state, action) => {
-        if(action.payload.modal){
-          state.schoolModal = action.payload.modal;
-        }
+        state.schoolModal = action.payload.modal;
         state.selectedSchool = action.payload.school;
       },
       setState: (state, action) => {
-        if(action.payload.modal){
-          state.stateModal = action.payload.modal;
-        }
+        state.stateModal = action.payload.modal;
         state.selectedState = action.payload.state
       },
       setMapStyling: (state, action) => {
