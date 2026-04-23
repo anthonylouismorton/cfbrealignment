@@ -1,5 +1,5 @@
 "use client"
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Year from './components/mapView/Year';
 import Legend from './components/mapView/Legend';
 import History from './components/mapView/ConferenceHistory';
@@ -26,6 +26,7 @@ import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
 
 function Main() {
   const dispatch = useDispatch();
+  const headerRef = useRef(null);
   const { fullscreen, showList } = useSelector((state)=> state.layoutReducer);
   const option = useSelector((state)=> state.optionsReducer);
   const conFilter = useSelector(state => state.conFilterReducer);
@@ -94,20 +95,20 @@ function Main() {
                 <MobileOptions/>
                 <MobileMapButton/>
               </div>
-              <div className='hidden lg:block w-full'>
+              <div className='hidden lg:block w-full' ref={headerRef}>
                 <Year/>
               </div>
               <div className="flex justify-center w-full">
-                <div className="hidden xl:block w-full min-w-80">
+                <div className="hidden lg:block w-80 min-w-80 max-w-80">
                   {!option.hideHistory && <History/>}
                 </div>
-                <div className="w-full flex flex-col items-center">
-                  <ReactMap/>
+                <div className="flex-1 flex flex-col items-center min-w-0">
+                  <ReactMap headerRef={headerRef}/>
                   <div className='block lg:hidden flex w-full justify-center items-center text-center'>
                     <MobileSlider/>
                   </div>
                 </div>
-                <div className="flex flex-col hidden sm:block w-full min-w-48">
+                <div className="hidden sm:block w-48 min-w-48 max-w-48">
                   {!option.hideLegend && <Legend/>}
                 </div>
                 <div className="hidden lg:block">
@@ -133,7 +134,7 @@ function Main() {
           <div className="sm:hidden flex justify-center">
               {!option.hideLegend && <MobileLegend/>}
           </div>
-          <div className="xl:hidden">
+          <div className="lg:hidden">
               {!option.hideHistory && <MobileHistory/>}
           </div>
         </>

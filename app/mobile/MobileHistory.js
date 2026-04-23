@@ -6,7 +6,7 @@ function MobileHistory() {
   const [ hovered, sethovered] = useState(null);
   
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 space-y-1 mt-2 mb-1">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 space-y-1 mt-2 mb-1 max-h-48 overflow-y-auto">
       {conferenceChanges.map((change, index) => (
         <div key={index} className='w-[85%] mx-auto flex'>
           {change.change === 'dropped' && (
