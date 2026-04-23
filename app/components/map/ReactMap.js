@@ -20,7 +20,7 @@ import {
   ZoomableGroup,
 } from "react-simple-maps";
 
-const MapChart = () => {
+const MapChart = ({ headerRef }) => {
   const dispatch = useDispatch();
   const wrapperRef = useRef(null);
   const { fullscreen, showMobile } = useSelector((state)=> state.layoutReducer);
@@ -52,7 +52,8 @@ const MapChart = () => {
     }
     else{
       if(screenWidth >= 1024){
-        mapHeight -= 128
+        const headerHeight = headerRef?.current?.getBoundingClientRect().height ?? 128;
+        mapHeight -= headerHeight;
       }
       mapWidth = Math.round(mapHeight * 1.67);
       console.log(adjustedWidth, mapWidth, screenWidth)
