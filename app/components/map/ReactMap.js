@@ -31,15 +31,18 @@ const MapChart = ({ headerRef }) => {
 //Projection should always have an aspect ratio fo 1.67 for width to height
   let projection = geoAlbersUsa().translate([mapSize.width/2, mapSize.height/2]);
 
-  function setMapDimensions(screenWidth, screenHeight, option){
+    function setMapDimensions(screenWidth, screenHeight, option){
     let mapHeight = screenHeight;
     let mapWidth = screenWidth;
     let adjustedWidth = screenWidth;
     let zoom = 1;
-    if(!option.hideHistory){
+    // History panel is only rendered at lg+ (>=1024px), Legend panel at sm+ (>=640px).
+    // Only reserve their space when they're actually visible, otherwise mobile
+    // screens end up with a negative adjustedWidth and the map fails to render.
+    if(!option.hideHistory && screenWidth >= 1024){
       adjustedWidth -= 320
     };
-    if(!option.hideLegend){
+    if(!option.hideLegend && screenWidth >= 640){
       adjustedWidth -= 192
     };
   
@@ -56,13 +59,19 @@ const MapChart = ({ headerRef }) => {
         mapHeight -= headerHeight;
       }
       mapWidth = Math.round(mapHeight * 1.67);
-      console.log(adjustedWidth, mapWidth, screenWidth)
       if(mapWidth >= adjustedWidth){
         mapWidth = adjustedWidth;
         mapHeight = Math.round(mapWidth /1.67);
       };
       
     };
+      // Safety floor: never let the map collapse to zero/negative dimensions
+      mapWidth = Math.max(mapWidth, 200);
+      mapHeight = Math.max(mapHeight, Math.round(mapWidth / 1.67));
+      zoom = Math.round(((mapWidth / 835) + Number.EPSILON) * 100) / 100;
+      return {mapHeight, mapWidth, zoom};
+  };
+
       zoom = Math.round(((mapWidth / 835) + Number.EPSILON) * 100) / 100;
       console.log(mapWidth)
       return {mapHeight, mapWidth, zoom};
