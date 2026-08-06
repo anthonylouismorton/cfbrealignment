@@ -72,11 +72,6 @@ const MapChart = ({ headerRef }) => {
       return {mapHeight, mapWidth, zoom};
   };
 
-      zoom = Math.round(((mapWidth / 835) + Number.EPSILON) * 100) / 100;
-      console.log(mapWidth)
-      return {mapHeight, mapWidth, zoom};
-  };
-
   const { getSchools, conferenceChanges, getLegendConferences, getMapFill } = useMemo(() =>
     getConferences(conferenceData, year, option, conFilter),
     [year, option, conFilter]
