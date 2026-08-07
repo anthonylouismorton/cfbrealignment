@@ -8,6 +8,7 @@ import { getConferences } from '../../functions/getConInfo';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import { IconButton } from '@mui/material';
 import { openFullscreen } from '../../../redux/features/layoutSlices';
+import { requestBrowserFullscreen } from '../../functions/handleFullscreen';
 import { setLegend, setChanges } from '@/redux/features/conInfoSlices';
 import { setMapInfo, setLogo, setMapStyling } from '@/redux/features/mapSlices';
 import { handleZoom } from '../../functions/handleZoom';
@@ -20,7 +21,7 @@ import {
   ZoomableGroup,
 } from "react-simple-maps";
 
-const MapChart = ({ headerRef }) => {
+const MapChart = ({ headerRef, onOpenFullscreen }) => {
   const dispatch = useDispatch();
   const wrapperRef = useRef(null);
   const { fullscreen, showMobile } = useSelector((state)=> state.layoutReducer);
@@ -241,9 +242,20 @@ const MapChart = ({ headerRef }) => {
     </ComposableMap>
     {!fullscreen && 
     <div>
-      <div className='hidden lg:block absolute bottom-3 right-3'>
-        <IconButton className="p-0 fullScreen" id="fullscreen" onClick={()=> dispatch(openFullscreen())}>
-          <FullscreenIcon className="text-white text-[25px]" />
+      <div className='absolute bottom-1 right-1 sm:bottom-2 sm:right-2 lg:bottom-3 lg:right-3'>
+        <IconButton
+          className="p-[2px] md:p-[3px] lg:p-1 fullScreen"
+          id="fullscreen"
+          onClick={() => {
+            if (onOpenFullscreen) {
+              onOpenFullscreen();
+            } else {
+              dispatch(openFullscreen());
+              requestBrowserFullscreen();
+            }
+          }}
+        >
+          <FullscreenIcon className="text-white text-[18px] sm:text-[20px] lg:text-[25px]" />
         </IconButton>
       </div>
       <div>

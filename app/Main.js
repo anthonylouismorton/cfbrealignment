@@ -13,7 +13,7 @@ import MobileLegend from './mobile/MobileLegend';
 import ReactMap from './components/map/ReactMap';
 import { useSelector, useDispatch } from 'react-redux';
 import { setYear } from '@/redux/features/yearSlices';
-import { setMapHeight, closeFullscreen } from '@/redux/features/layoutSlices';
+import { setMapHeight, closeFullscreen, openFullscreen } from '@/redux/features/layoutSlices';
 import { setMapInfo } from '@/redux/features/mapSlices';
 import { setLocalStorage, getLocalStorage } from './functions/handleLocalStorage';
 import { setConFromStor } from '@/redux/features/conFilterSlices';
@@ -23,10 +23,19 @@ import MapButton from './components/mapView/MapButton';
 import ListButton from './components/listView/ListButton';
 import { IconButton } from '@mui/material';
 import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
+import { requestBrowserFullscreen, exitBrowserFullscreen, isBrowserFullscreen, isPhoneLandscape, isTouchPrimaryDevice } from './functions/handleFullscreen';
 
 function Main() {
   const dispatch = useDispatch();
   const headerRef = useRef(null);
+  // true only while `fullscreen` is currently set by phone-rotation auto-fill (not a manual tap)
+  const autoFullscreenRef = useRef(false);
+  // true after the user manually exits fullscreen while still phone-landscape, so the
+  // orientation effect doesn't immediately re-trigger auto-fill; cleared on leaving landscape
+  const manualOverrideRef = useRef(false);
+  // mirrors `fullscreen` for the fullscreenchange listener (registered once on mount,
+  // would otherwise close over a stale value)
+  const fullscreenRef = useRef(false);
   const { fullscreen, showList } = useSelector((state)=> state.layoutReducer);
   const option = useSelector((state)=> state.optionsReducer);
   const conFilter = useSelector(state => state.conFilterReducer);
@@ -51,8 +60,15 @@ function Main() {
     };
   
     const handleResize = () => {
-      if (window.innerWidth < 1280) {
+      // Touch-primary devices (phones AND tablets, portrait or landscape) are exempt:
+      // mobile/tablet fullscreen must survive resize events from browser-chrome show/hide
+      // and orientation changes, not just desktop windows narrowed below lg. A device
+      // counts as touch-primary when its main input has no hover and a coarse pointer,
+      // which correctly excludes touchscreen laptops (their primary input stays
+      // mouse/trackpad even though touch is also available).
+      if (window.innerWidth < 1280 && !isTouchPrimaryDevice()) {
         dispatch(closeFullscreen());
+        exitBrowserFullscreen();
       }
     };
   
@@ -80,8 +96,86 @@ function Main() {
     };
   }, [option, conFilter, year]);
 
+  useEffect(() => {
+    fullscreenRef.current = fullscreen;
+  }, [fullscreen]);
+
+  useEffect(() => {
+    let orientationTimeout;
+
+    const handleOrientation = () => {
+      const phoneLandscape = isPhoneLandscape();
+      if (phoneLandscape) {
+        if (!fullscreen && !manualOverrideRef.current) {
+          autoFullscreenRef.current = true;
+          dispatch(openFullscreen());
+        }
+      } else {
+        manualOverrideRef.current = false;
+        if (fullscreen && autoFullscreenRef.current) {
+          autoFullscreenRef.current = false;
+          dispatch(closeFullscreen());
+        }
+      }
+    };
+
+    const handleOrientationChangeEvent = () => {
+      // Some browsers (notably older iOS Safari) fire `orientationchange` before
+      // window.innerWidth/innerHeight settle to the new viewport -- re-check shortly
+      // after so isPhoneLandscape() doesn't read stale dimensions.
+      clearTimeout(orientationTimeout);
+      orientationTimeout = setTimeout(handleOrientation, 150);
+    };
+
+    handleOrientation();
+
+    window.addEventListener('resize', handleOrientation);
+    window.addEventListener('orientationchange', handleOrientationChangeEvent);
+
+    return () => {
+      clearTimeout(orientationTimeout);
+      window.removeEventListener('resize', handleOrientation);
+      window.removeEventListener('orientationchange', handleOrientationChangeEvent);
+    };
+  }, [fullscreen, dispatch]);
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      // Only sync Redux back off when a real (manual) fullscreen session ends via
+      // OS controls (Esc, back gesture) -- rotation auto-fill never enters real
+      // browser fullscreen, so isBrowserFullscreen() is already false there.
+      if (!isBrowserFullscreen() && fullscreenRef.current && !autoFullscreenRef.current) {
+        dispatch(closeFullscreen());
+      }
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+      document.removeEventListener('webkitfullscreenchange', handleFullscreenChange);
+    };
+  }, [dispatch]);
+
   const handleReset = () => {
     dispatch(setMapInfo({map: "position", value: { coordinates: [-96.6, 38.7], zoom: 1 }}));
+  };
+
+  const handleOpenFullscreen = () => {
+    autoFullscreenRef.current = false;
+    manualOverrideRef.current = false;
+    dispatch(openFullscreen());
+    requestBrowserFullscreen();
+  };
+
+  const handleCloseFullscreen = () => {
+    if (isPhoneLandscape()) {
+      manualOverrideRef.current = true;
+    }
+    autoFullscreenRef.current = false;
+    dispatch(closeFullscreen());
+    exitBrowserFullscreen();
   };
 
   return (
@@ -103,7 +197,7 @@ function Main() {
                   {!option.hideHistory && <History/>}
                 </div>
                 <div className="flex-1 flex flex-col items-center min-w-0">
-                  <ReactMap headerRef={headerRef}/>
+                  <ReactMap headerRef={headerRef} onOpenFullscreen={handleOpenFullscreen}/>
                   <div className='block lg:hidden flex w-full justify-center items-center text-center'>
                     <MobileSlider/>
                   </div>
@@ -120,10 +214,10 @@ function Main() {
           )}
           {fullscreen && (
             <div className='w-full flex flex-col items-center'>
-              <ReactMap/>
-              <div className='hidden lg:block absolute bottom-3 lg:right-3'>
-                <IconButton className="p-0" id="closefullscreen" onClick={() => dispatch(closeFullscreen())}>
-                  <CloseFullscreenIcon className="text-white text-[25px]" />
+              <ReactMap onOpenFullscreen={handleOpenFullscreen}/>
+              <div className='absolute bottom-1 right-1 sm:bottom-2 sm:right-2 lg:bottom-3 lg:right-3'>
+                <IconButton className="p-[2px] md:p-[3px] lg:p-1" id="closefullscreen" onClick={handleCloseFullscreen}>
+                  <CloseFullscreenIcon className="text-white text-[18px] sm:text-[20px] lg:text-[25px]" />
                 </IconButton>
               </div>
               <button className='absolute top-1 right-1 sm:top-2 sm:right-2 lg:top-3 lg:right-3 text-black text-[10px] md:text-[12px] lg:text-[14px] font-semibold bg-white border border-white hover:bg-black hover:text-white hover:border-white p-[2px] md:p-[3px] lg:p-1 rounded-sm' onClick={handleReset}>
