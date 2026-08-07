@@ -12,9 +12,9 @@ const States = ({ handleMouseMove }) => {
   const { stateModal } = useSelector(state => state.mapReducer);
   const { conferenceChanges } = useSelector(state => state.conInfoReducer);
   const { glowByState } = useMemo(() => getGlowChanges(conferenceChanges), [conferenceChanges]);
-  // Glow the state fill only when the user is reading conferences off state
-  // color alone -- if logos are on, the school marker glows instead.
-  const showStateGlow = !option.showLogos && !option.showLocation;
+  // Flicker the state fill only when the user is reading conferences off
+  // state color alone -- if logos are on, the school marker glows instead.
+  const showStateFlicker = !option.showLogos && !option.showLocation;
 
   const handleStateModal = (state, conferences) =>{
     dispatch(setState({modal: !stateModal, state: {name: state, ...conferences}}));
@@ -29,7 +29,7 @@ const States = ({ handleMouseMove }) => {
           if(option.showLocation){
             stateColor = '#b4b4b4'
           }
-          const glowColor = showStateGlow ? glowByState.get(geo.id) : undefined;
+          const isChanged = showStateFlicker && glowByState.has(geo.id);
           return (
             <Geography
               onMouseMove={stateInfo ? (event) => handleMouseMove(event, geo) : null}
@@ -50,7 +50,7 @@ const States = ({ handleMouseMove }) => {
                   fill: stateColor,
                   transition: 'fill 0.3s ease-in-out',
                   outline: "none",
-                  ...(glowColor && { color: glowColor, animation: 'glow-pulse 1.6s ease-in-out infinite' })
+                  ...(isChanged && { animation: 'state-flicker 1s ease-in-out infinite' })
                 },
                 hover: {
                   fill: stateColor,
