@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Geographies, Geography } from "react-simple-maps";
 import MapData from '../../data/reactMapData.json';
 import { useSelector, useDispatch } from "react-redux";
 import { setMapInfo, setState } from "@/redux/features/mapSlices";
+import { getGlowChanges } from '../../functions/getGlowChanges';
 
 const States = ({ handleMouseMove }) => {
   const dispatch = useDispatch();
   const { mapFill, toolTipPos } = useSelector(state => state.mapReducer);
   const option = useSelector((state) => state.optionsReducer);
   const { stateModal } = useSelector(state => state.mapReducer);
+  const { conferenceChanges } = useSelector(state => state.conInfoReducer);
+  const { glowByState } = useMemo(() => getGlowChanges(conferenceChanges), [conferenceChanges]);
+  // Glow the state fill only when the user is reading conferences off state
+  // color alone -- if logos are on, the school marker glows instead.
+  const showStateGlow = !option.showLogos && !option.showLocation;
 
   const handleStateModal = (state, conferences) =>{
     dispatch(setState({modal: !stateModal, state: {name: state, ...conferences}}));
@@ -23,6 +29,7 @@ const States = ({ handleMouseMove }) => {
           if(option.showLocation){
             stateColor = '#b4b4b4'
           }
+          const glowColor = showStateGlow ? glowByState.get(geo.id) : undefined;
           return (
             <Geography
               onMouseMove={stateInfo ? (event) => handleMouseMove(event, geo) : null}
@@ -42,7 +49,8 @@ const States = ({ handleMouseMove }) => {
                 default: {
                   fill: stateColor,
                   transition: 'fill 0.3s ease-in-out',
-                  outline: "none"
+                  outline: "none",
+                  ...(glowColor && { color: glowColor, animation: 'glow-pulse 1.6s ease-in-out infinite' })
                 },
                 hover: {
                   fill: stateColor,

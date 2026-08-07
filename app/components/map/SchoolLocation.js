@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Marker, Annotation } from "react-simple-maps";
 import { useDispatch, useSelector } from 'react-redux';
 import { setMapInfo } from '@/redux/features/mapSlices';
 import { setSchool } from '@/redux/features/mapSlices';
+import { getGlowChanges } from '../../functions/getGlowChanges';
 
 const SchoolLocation = () => {
   const { schools, hoveredSchool, styling } = useSelector(state => state.mapReducer);
   const { schoolModal } = useSelector(state => state.mapReducer);
   const { year } = useSelector(state => state.yearReducer);
+  const { conferenceChanges } = useSelector(state => state.conInfoReducer);
   const option = useSelector((state) => state.optionsReducer);
   const dispatch = useDispatch();
+  const { glowBySchool } = useMemo(() => getGlowChanges(conferenceChanges), [conferenceChanges]);
   const handleSchoolModal = (school) =>{
     dispatch(setSchool({modal: !schoolModal, school: school}));
   };
@@ -36,6 +39,7 @@ const SchoolLocation = () => {
             height={styling.logoSize}
             x={styling.logoOffset}
             y={styling.logoOffset}
+            style={glowBySchool.has(school.name) ? { color: glowBySchool.get(school.name), animation: 'glow-pulse 1.6s ease-in-out infinite' } : undefined}
           />
         }
       </Marker>

@@ -17,14 +17,13 @@ import Autoplay from './AutoPlay';
 import { geoAlbersUsa } from 'd3-geo';
 import {
   ComposableMap,
-  Annotation,
   ZoomableGroup,
 } from "react-simple-maps";
 
 const MapChart = ({ headerRef, onOpenFullscreen }) => {
   const dispatch = useDispatch();
   const wrapperRef = useRef(null);
-  const { fullscreen, showMobile } = useSelector((state)=> state.layoutReducer);
+  const { fullscreen } = useSelector((state)=> state.layoutReducer);
   const { styling, logoOffSet, logoSize, mapSize, position, hoveredState, mapStyle, defaultZoom } = useSelector(state => state.mapReducer);
   const conFilter = useSelector(state => state.conFilterReducer);
   const option = useSelector((state) => state.optionsReducer);
@@ -87,7 +86,7 @@ const MapChart = ({ headerRef, onOpenFullscreen }) => {
     dispatch(setMapInfo({map: "schools", value: getSchools}));
     dispatch(setMapInfo({map: "mapFill", value: getMapFill}));
 
-  }, [year, option, showMobile, conFilter, position.zoom, fullscreen, hoveredState, getSchools, conferenceChanges, getLegendConferences, getMapFill]);
+  }, [year, option, conFilter, position.zoom, fullscreen, hoveredState, getSchools, conferenceChanges, getLegendConferences, getMapFill]);
 
   useEffect(()=> {
     let windowWidth = window.innerWidth;
@@ -206,41 +205,15 @@ const MapChart = ({ headerRef, onOpenFullscreen }) => {
       >
         <States handleMouseMove={handleMouseMove}/>
         <SchoolLocation wrapper={wrapperRef}/>
-
-        <Annotation
-          subject={[-84, 50]}
-          dx={0}
-          dy={0}
-        >
-          <foreignObject width="150" height="35">
-            <Autoplay />
-          </foreignObject>
-        </Annotation>
-        <Annotation
-          subject={[-130, 48]}
-          dx={0}
-          dy={0}
-        >
-          <foreignObject width="150" height="35">
-          <p className='absolute top-1 left-1 sm:top-2 sm:left-2 lg:top-3 lg:left-3 text-white text-[12px] md:text-[14px] lg:text-[16px] font-semibold'>
-            {year}
-          </p>
-          </foreignObject>
-        </Annotation>
-        {showMobile &&
-          <Annotation
-            subject={[-89, 28]}
-            dx={0}
-            dy={0}
-          >
-            <foreignObject width="150" height="35">
-              <div className='text-white'>{year}</div>
-            </foreignObject>
-          </Annotation>
-        }
       </ZoomableGroup>
     </ComposableMap>
-    {!fullscreen && 
+    <div className='absolute top-1 left-1 sm:top-2 sm:left-2 lg:top-3 lg:left-3 text-white text-[12px] md:text-[14px] lg:text-[16px] font-semibold'>
+      {year}
+    </div>
+    <div className='absolute bottom-1 left-1 sm:bottom-2 sm:left-2 lg:bottom-3 lg:left-3'>
+      <Autoplay />
+    </div>
+    {!fullscreen &&
     <div>
       <div className='absolute bottom-1 right-1 sm:bottom-2 sm:right-2 lg:bottom-3 lg:right-3'>
         <IconButton

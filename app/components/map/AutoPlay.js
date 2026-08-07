@@ -6,12 +6,19 @@ import ReplayIcon from '@mui/icons-material/Replay';
 import { useSelector, useDispatch } from 'react-redux';
 import { setYear } from '@/redux/features/yearSlices';
 
+const SPEEDS = {
+  slow: { label: 'S', changeTime: 4000, idleTime: 1200 },
+  medium: { label: 'M', changeTime: 2500, idleTime: 750 },
+  fast: { label: 'F', changeTime: 1200, idleTime: 400 },
+};
+
 export default function Autoplay(){
   const dispatch = useDispatch();
   const year = useSelector(state => state.yearReducer);
   const { conferenceChanges } = useSelector(state => state.conInfoReducer);
   const [start, setStart] = useState(false);
   const [showReplay, setShowReplay] = useState(false);
+  const [speed, setSpeed] = useState('medium');
   const timeIntervalRef = useRef(null);
 
   const handleStart = () => {
@@ -28,16 +35,16 @@ export default function Autoplay(){
 
   
   useEffect(() => {
-    let time = 2500
+    let time = SPEEDS[speed].changeTime
     let nextYear = year + 1
     if(conferenceChanges.length === 0){
-      time = 750
+      time = SPEEDS[speed].idleTime
     }
     if (start && nextYear < 2026) {
       timeIntervalRef.current = setInterval(() => {
         dispatch(setYear(year + 1));
       }, time);
-    } 
+    }
     else if (!start) {
       clearInterval(timeIntervalRef.current);
     }
@@ -50,14 +57,20 @@ export default function Autoplay(){
     return () => {
       clearInterval(timeIntervalRef.current);
     };
-  }, [start, year, conferenceChanges]);
+  }, [start, year, conferenceChanges, speed]);
 
   return (
     <div className='flex justify-center items-center'>
-      <div className='flex items-center'>
-        <h1 className='text-white text-[14px] xl:text-[15px] font-semibold pr-0 md:pr-1'>
-          Play
-        </h1>
+      <div className='flex items-center mr-1'>
+        {Object.entries(SPEEDS).map(([key, { label }]) => (
+          <button
+            key={key}
+            onClick={() => setSpeed(key)}
+            className={`text-[9px] xl:text-[10px] font-bold leading-none w-[13px] h-[13px] xl:w-[15px] xl:h-[15px] rounded-sm mr-[2px] ${speed === key ? 'bg-white text-black' : 'text-white border border-white'}`}
+          >
+            {label}
+          </button>
+        ))}
       </div>
       {!start && !showReplay &&
         <IconButton className='p-0' onClick={handleStart}>
