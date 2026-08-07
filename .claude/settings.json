@@ -2,7 +2,13 @@
   "permissions": {
     "allow": [
       "Bash(npx eslint *)",
-      "Bash(curl * http://localhost:3000*)"
+      "Bash(curl * http://localhost:3000*)",
+      "Bash(chromium-cli --help)",
+      "Bash(awk '{print $2}')",
+      "Bash(npm --version)",
+      "Bash(curl -sI -m 10 \"https://i.pinimg.com/originals/05/f6/8b/05f68b6df16ad6c83f85d4ed50a1638b.jpg\")",
+      "Read(//tmp/**)",
+      "Read(//c/Users/antho/.claude/projects/**)"
     ]
   }
 }
