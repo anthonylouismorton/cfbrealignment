@@ -75,7 +75,7 @@ const States = ({ handleMouseMove }) => {
                 onMouseMove={stateInfo ? (event) => handleMouseMove(event, geo) : null}
                 onMouseEnter={() => {
                   if (!option.showLocation && stateInfo) {
-                    dispatch(setMapInfo({map: "hoveredState", value: { stateInfo, name: geo.properties.name }}));
+                    dispatch(setMapInfo({map: "hoveredState", value: { stateInfo }}));
                   }
                 }}
                 onMouseLeave={() => {
@@ -109,9 +109,6 @@ const States = ({ handleMouseMove }) => {
         <Annotation subject={[toolTipPos.longitude, toolTipPos.latitude]} dx={0} dy={0}>
           <foreignObject x={-10} y={-45} width="220" height="160" style={{ overflow: 'visible', pointerEvents: 'none' }}>
             <div className="bg-black bg-opacity-75 inline-block py-1 px-2 rounded-sm">
-              <p className="text-white font-semibold" style={{ fontSize: '12px', margin: 0 }}>
-                {hoveredState.name}
-              </p>
               {hoveredState.stateInfo.conferences.map((conf, i) => (
                 <p key={i} style={{ fontSize: '11px', margin: 0, color: conf.color }}>
                   {conf.conference}

@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setMapInfo } from '@/redux/features/mapSlices';
 import { setSchool } from '@/redux/features/mapSlices';
 import { getGlowChanges } from '../../functions/getGlowChanges';
-import usStateNames from '../../functions/usStateNames';
 
 const SchoolLocation = () => {
   const { schools, hoveredSchool, styling } = useSelector(state => state.mapReducer);
@@ -70,9 +69,6 @@ const SchoolLocation = () => {
           </p>
           <p style={{ fontSize: styling.hoveredSchool.fontSize, color: "#b4b4b4", margin: 0 }}>
             Conference: {hoveredSchool.conference}
-          </p>
-          <p style={{ fontSize: styling.hoveredSchool.fontSize, color: "#b4b4b4", margin: 0 }}>
-            State: {usStateNames[hoveredSchool.state] || hoveredSchool.state}
           </p>
           {(hoveredSchool.name === "University of Iowa" && (year === 1907 || year === 1908)) ? (
             <>
