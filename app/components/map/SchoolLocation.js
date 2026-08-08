@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setMapInfo } from '@/redux/features/mapSlices';
 import { setSchool } from '@/redux/features/mapSlices';
 import { getGlowChanges } from '../../functions/getGlowChanges';
+import usStateNames from '../../functions/usStateNames';
 
 const SchoolLocation = () => {
   const { schools, hoveredSchool, styling } = useSelector(state => state.mapReducer);
@@ -19,15 +20,18 @@ const SchoolLocation = () => {
 
   return (
     <>
-    {schools && schools.map(school => (
-      <Marker 
+    {schools && schools.map(school => {
+      const ringColor = glowBySchool.get(school.name);
+      const ringRadius = styling.logoSize / 2 * 1.35;
+      return (
+      <Marker
         className='cursor-pointer'
         key={school.name}
-        coordinates={school.coordinates} 
-        onClick={()=> handleSchoolModal(school)} 
-        onMouseEnter={() => dispatch(setMapInfo({map: "hoveredSchool", value: school}))} 
+        coordinates={school.coordinates}
+        onClick={()=> handleSchoolModal(school)}
+        onMouseEnter={() => dispatch(setMapInfo({map: "hoveredSchool", value: school}))}
         onMouseLeave={() => dispatch(setMapInfo({map: "hoveredSchool", value: null}))}
-    
+
       >
         {option.showLocation && option.showLogos === false &&
           <circle r={styling.circleRadius} fill={school.color} />
@@ -39,21 +43,36 @@ const SchoolLocation = () => {
             height={styling.logoSize}
             x={styling.logoOffset}
             y={styling.logoOffset}
-            style={glowBySchool.has(school.name) ? { color: glowBySchool.get(school.name), animation: 'glow-pulse 1.6s ease-in-out infinite' } : undefined}
           />
         }
+        {option.showLogos && ringColor && (
+          <circle
+            r={ringRadius}
+            fill="none"
+            stroke={ringColor}
+            strokeWidth={Math.max(1, styling.logoSize / 10)}
+            style={{ color: ringColor, opacity: 0, animation: 'ring-pulse 1.4s ease-out 1 forwards' }}
+          />
+        )}
       </Marker>
-    ))}
+      );
+    })}
     {hoveredSchool && (
       <Annotation
         subject={hoveredSchool.coordinates}
         dx={0}
         dy={0}
       >
-        <foreignObject x={styling.hoveredSchool.x} y={styling.hoveredSchool.y} width="500" height="100">
+        <foreignObject x={styling.hoveredSchool.x} y={styling.hoveredSchool.y} width="500" height="140">
         <div className={`bg-black z-10 bg-opacity-75 inline-block ${styling.hoveredSchool.padding} ${styling.hoveredSchool.rounded}`}>
-          <p style={{ fontSize: styling.hoveredSchool.fontSize, color: "#b4b4b4", margin: 0 }}>
+          <p style={{ fontSize: styling.hoveredSchool.fontSize, color: "#b4b4b4", margin: 0, fontWeight: 600 }}>
             {hoveredSchool.name}
+          </p>
+          <p style={{ fontSize: styling.hoveredSchool.fontSize, color: "#b4b4b4", margin: 0 }}>
+            Conference: {hoveredSchool.conference}
+          </p>
+          <p style={{ fontSize: styling.hoveredSchool.fontSize, color: "#b4b4b4", margin: 0 }}>
+            State: {usStateNames[hoveredSchool.state] || hoveredSchool.state}
           </p>
           {(hoveredSchool.name === "University of Iowa" && (year === 1907 || year === 1908)) ? (
             <>
