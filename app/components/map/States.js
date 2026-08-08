@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { Geographies, Geography, Annotation } from "react-simple-maps";
+import { Geographies, Geography } from "react-simple-maps";
 import MapData from '../../data/reactMapData.json';
 import { useSelector, useDispatch } from "react-redux";
 import { setMapInfo, setState } from "@/redux/features/mapSlices";
@@ -9,7 +9,7 @@ const sanitizeId = (str) => str.replace(/[^a-zA-Z0-9_-]/g, '_');
 
 const States = ({ handleMouseMove }) => {
   const dispatch = useDispatch();
-  const { mapFill, toolTipPos, hoveredState } = useSelector(state => state.mapReducer);
+  const { mapFill } = useSelector(state => state.mapReducer);
   const option = useSelector((state) => state.optionsReducer);
   const { stateModal } = useSelector(state => state.mapReducer);
   const { conferenceChanges } = useSelector(state => state.conInfoReducer);
@@ -72,7 +72,7 @@ const States = ({ handleMouseMove }) => {
             const isChanged = showStateHighlight && glowByState.has(geo.id);
             return (
               <Geography
-                onMouseMove={stateInfo ? (event) => handleMouseMove(event, geo) : null}
+                onMouseMove={stateInfo ? (event) => handleMouseMove(event) : null}
                 onMouseEnter={() => {
                   if (!option.showLocation && stateInfo) {
                     dispatch(setMapInfo({map: "hoveredState", value: { stateInfo }}));
@@ -80,7 +80,7 @@ const States = ({ handleMouseMove }) => {
                 }}
                 onMouseLeave={() => {
                   dispatch(setMapInfo({map: "hoveredState", value: {stateInfo: null} }));
-                  dispatch(setMapInfo({map: "toolTipPos", value: {...toolTipPos, longitude: null, latitude: null}}));
+                  dispatch(setMapInfo({map: "toolTipPos", value: { x: null, y: null }}));
                 }}
                 onClick={() => !option.showLocation && stateInfo ? handleStateModal(geo.properties.name, stateInfo) : null}
                 key={geo.rsmKey}
@@ -105,19 +105,6 @@ const States = ({ handleMouseMove }) => {
           })
         }
       </Geographies>
-      {hoveredState?.stateInfo?.conferences && toolTipPos.longitude !== null && (
-        <Annotation subject={[toolTipPos.longitude, toolTipPos.latitude]} dx={0} dy={0}>
-          <foreignObject x={-10} y={-45} width="220" height="160" style={{ overflow: 'visible', pointerEvents: 'none' }}>
-            <div className="bg-black bg-opacity-75 inline-block py-1 px-2 rounded-sm">
-              {hoveredState.stateInfo.conferences.map((conf, i) => (
-                <p key={i} style={{ fontSize: '11px', margin: 0, color: conf.color }}>
-                  {conf.conference}
-                </p>
-              ))}
-            </div>
-          </foreignObject>
-        </Annotation>
-      )}
     </>
   )
 };

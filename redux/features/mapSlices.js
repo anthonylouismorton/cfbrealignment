@@ -16,7 +16,7 @@ export const map = createSlice({
     position: { coordinates: [-98.7, 38.77], zoom: 1 },
     mapSize: { width: 835, height: 500 },
     mapFill: [],
-    toolTipPos: { longitude: null, latitude: null, longOffSet: 0, latOffSet: 0 },
+    toolTipPos: { x: null, y: null },
     mapStyle: { position: 'relative', width: '100%', borderWidth: '2px', borderStyle: 'solid', borderColor: 'white', borderRadius: '0.375rem' },
     styling: {
       circleRadius: 3,
