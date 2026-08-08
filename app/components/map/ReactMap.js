@@ -78,7 +78,7 @@ const MapChart = ({ headerRef, onOpenFullscreen }) => {
   );
 
   useEffect(() => {
-    let { updateStyling } = handleZoom(option, position.zoom, styling, logoSize, logoOffSet);
+    let { updateStyling } = handleZoom(option, position.zoom, styling, logoSize, logoOffSet, mapSize.width);
 
     dispatch(setLegend(getLegendConferences));
     dispatch(setChanges(conferenceChanges));
@@ -86,7 +86,7 @@ const MapChart = ({ headerRef, onOpenFullscreen }) => {
     dispatch(setMapInfo({map: "schools", value: getSchools}));
     dispatch(setMapInfo({map: "mapFill", value: getMapFill}));
 
-  }, [year, option, conFilter, position.zoom, fullscreen, hoveredState, getSchools, conferenceChanges, getLegendConferences, getMapFill]);
+  }, [year, option, conFilter, position.zoom, fullscreen, hoveredState, getSchools, conferenceChanges, getLegendConferences, getMapFill, mapSize.width]);
 
   useEffect(()=> {
     let windowWidth = window.innerWidth;

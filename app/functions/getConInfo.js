@@ -1,6 +1,5 @@
 import { getChanges } from "./getChanges";
 import getConName from "./getConName";
-import * as d3 from 'd3';
 import conferenceDataStatic from '../data/updatedConferenceData.json';
 
 // Pre-build index at module load: conference abbreviation -> year -> schools active that year
@@ -119,14 +118,12 @@ export function getConferences(conferenceData, year, option, conferences) {
       } else {
         const stateEntry = mapFillByState.get(school.stateId);
         if (!stateEntry.confsByAbbr.has(conference.currentAbbreviation)) {
+          // Multi-conference states get a striped pattern fill instead of a
+          // blended color -- see States.js. `stateEntry.color` stays as the
+          // first conference's color, used only as the single-conference fallback.
           const newConfEntry = { conference: conference.currentAbbreviation, color: conference.mapColor, currentSchools: [schoolData] };
           stateEntry.conferences.push(newConfEntry);
           stateEntry.confsByAbbr.set(conference.currentAbbreviation, newConfEntry);
-          const newColor = d3.scaleLinear()
-            .domain([...Array(stateEntry.conferences.length).keys()])
-            .range(stateEntry.conferences.map(conf => conf.color))
-            (1 / stateEntry.conferences.length);
-          stateEntry.color = newColor;
         } else {
           stateEntry.confsByAbbr.get(conference.currentAbbreviation).currentSchools.push(schoolData);
         }

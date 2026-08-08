@@ -1,38 +1,49 @@
 
-export function handleZoom(option, zoom, styling, logoSize, logoOffSet){
+export function handleZoom(option, zoom, styling, logoSize, logoOffSet, mapWidth){
   let updateStyling = styling
   let updateLogoSize = logoSize;
   let updateLogoOffset = logoOffSet;
 
+  // Scale logos relative to the map's actual rendered width instead of a
+  // fixed pixel size, so they stay proportionate on any screen. 18px at the
+  // app's original default map width (835) is the anchor ratio -- every
+  // size below is expressed as a ratio of that same 18px baseline.
+  const baseLogoSize = (mapWidth || 835) * (18 / 835);
+  const ratio = (px) => baseLogoSize * (px / 18);
+
   if(option.smallLogos && (zoom < 6)){
-    updateLogoSize = 12;
+    updateLogoSize = ratio(12);
   }
-  else if(!option.smallLogos && zoom >= 1 && zoom < 2){
-    updateLogoSize = 18;
+  else if(!option.smallLogos && zoom < 2){
+    // No lower bound: a map narrower than the 835px baseline now produces
+    // zoom < 1, and logos there should just follow the auto-scaled base
+    // size rather than fall through unmatched (the old fixed-size lower
+    // bound of zoom >= 1 never had to account for that).
+    updateLogoSize = ratio(18);
   }
   else if(!option.smallLogos && (zoom > 2 && zoom < 3)) {
-    updateLogoSize = 10;
+    updateLogoSize = ratio(10);
   }
   else if(!option.smallLogos && (zoom > 3 && zoom < 4)) {
-    updateLogoSize = 10;
+    updateLogoSize = ratio(10);
   }
   else if(!option.smallLogos && (zoom > 4 && zoom < 5)) {
-    updateLogoSize = 8;
+    updateLogoSize = ratio(8);
   }
   else if(!option.smallLogos && (zoom > 5 && zoom < 6)) {
-    updateLogoSize = 6;
+    updateLogoSize = ratio(6);
   }
   else if(!option.smallLogos && (zoom > 6 && zoom < 7)) {
-    updateLogoSize = 4;
+    updateLogoSize = ratio(4);
   }
   else if(!option.smallLogos && (zoom > 7)) {
-    updateLogoSize = 2;
+    updateLogoSize = ratio(2);
   }
   else if(option.smallLogos && (zoom > 6 && zoom < 7)) {
-    updateLogoSize = 6;
+    updateLogoSize = ratio(6);
   }
   else if(option.smallLogos && (zoom > 7)) {
-    updateLogoSize = 4;
+    updateLogoSize = ratio(4);
   }
   if(zoom > 2 && zoom < 4){
     updateStyling = {
