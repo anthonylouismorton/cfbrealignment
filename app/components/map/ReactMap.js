@@ -24,7 +24,7 @@ const MapChart = ({ headerRef, onOpenFullscreen }) => {
   const dispatch = useDispatch();
   const wrapperRef = useRef(null);
   const { fullscreen } = useSelector((state)=> state.layoutReducer);
-  const { styling, logoOffSet, logoSize, mapSize, position, hoveredState, mapStyle, defaultZoom } = useSelector(state => state.mapReducer);
+  const { styling, logoOffSet, logoSize, mapSize, position, hoveredState, mapStyle, defaultZoom, toolTipPos } = useSelector(state => state.mapReducer);
   const conFilter = useSelector(state => state.conFilterReducer);
   const option = useSelector((state) => state.optionsReducer);
   const year = useSelector(state => state.yearReducer);
@@ -141,50 +141,17 @@ const MapChart = ({ headerRef, onOpenFullscreen }) => {
     dispatch(setMapInfo({map: "position", value: position}));
   }
 
+  // Screen-space position for the state hover tooltip (rendered as plain
+  // HTML below, not an SVG Annotation) -- deliberately NOT routed through
+  // the map projection. An earlier version converted this to a geographic
+  // point and back so it could use react-simple-maps' Annotation component,
+  // but projection() can return null for points outside its valid domain
+  // (it happened for real on the deployed build), which crashes Annotation's
+  // internal array-destructure with no way to guard against it from here.
+  // Plain cursor-relative coordinates can't have that failure mode.
   const handleMouseMove = (event) => {
-    const currentCenter = projection(position.coordinates);
-    if(currentCenter){
-      const box = wrapperRef.current.getBoundingClientRect();
-      const { top, left } = box
-      const resizeFactorX = 1 / mapSize.width * box.width
-      const resizeFactorY = 1 / mapSize.height * box.height
-  
-      //Need to account for people panning on the map. Find the original center of the map and adjust for the new center of the map when people pan to a new center on the map
-      const originalCenter = [ Number((mapSize.width / 2).toFixed(1)), Number((mapSize.height / 2).toFixed(1)) ];
-      const centerOffsetX = currentCenter[0].toFixed(1) - originalCenter[0];
-      const centerOffsetY = currentCenter[1].toFixed(1) - originalCenter[1];
-  
-      const clientX = (event.clientX - left) / resizeFactorX;
-      const clientY = (event.clientY - top) / resizeFactorY;
-      var xOffset = 0;
-      var yOffset = 0;
-      const center = projection.invert([ clientX + centerOffsetX, clientY + centerOffsetY]);
-  
-      if(center[0] < -156){
-        xOffset = 1.25;
-      }
-      else if(center[0] < -130 && center[0] > -156){
-        xOffset = -2.5;
-        yOffset = 0.25;
-      }
-      else if(center[0] < -113 && center[0] > -122){
-        xOffset = 1.25;
-      }
-      else if(center[0] > -113){
-        xOffset = 1.5;
-      };
-  
-      if(center[1] < 31 && center[1] > 29 && center[0] > -150){
-        yOffset = 2;
-      }
-      else if(center[1] < 29 && center[0] > -150){
-        yOffset = 4;
-      };
-      let long = center[0] + xOffset;
-      let lat = center[1] + yOffset;
-      dispatch(setMapInfo({map: "toolTipPos", value: { longitude: long, latitude: lat }}));
-
-    }
+    const box = wrapperRef.current.getBoundingClientRect();
+    dispatch(setMapInfo({map: "toolTipPos", value: { x: event.clientX - box.left, y: event.clientY - box.top }}));
   };
 
   const handleReset = () => {
@@ -210,6 +177,18 @@ const MapChart = ({ headerRef, onOpenFullscreen }) => {
     <div className='absolute top-1 left-1 sm:top-2 sm:left-2 lg:top-3 lg:left-3 text-white text-[12px] md:text-[14px] lg:text-[16px] font-semibold'>
       {year}
     </div>
+    {hoveredState?.stateInfo?.conferences && toolTipPos.x !== null && (
+      <div
+        className='absolute bg-black bg-opacity-75 py-1 px-2 rounded-sm'
+        style={{ left: toolTipPos.x + 12, top: toolTipPos.y - 10, pointerEvents: 'none' }}
+      >
+        {hoveredState.stateInfo.conferences.map((conf, i) => (
+          <p key={i} style={{ fontSize: '11px', margin: 0, color: conf.color }}>
+            {conf.conference}
+          </p>
+        ))}
+      </div>
+    )}
     <div className='absolute bottom-1 left-1 sm:bottom-2 sm:left-2 lg:bottom-3 lg:left-3'>
       <Autoplay />
     </div>
