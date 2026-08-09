@@ -28,6 +28,7 @@ import { requestBrowserFullscreen, exitBrowserFullscreen, isBrowserFullscreen, i
 function Main() {
   const dispatch = useDispatch();
   const headerRef = useRef(null);
+  const buttonsRef = useRef(null);
   // true only while `fullscreen` is currently set by phone-rotation auto-fill (not a manual tap)
   const autoFullscreenRef = useRef(false);
   // true after the user manually exits fullscreen while still phone-landscape, so the
@@ -193,21 +194,23 @@ function Main() {
                 <Year/>
               </div>
               <div className="flex justify-center w-full">
-                <div className="hidden lg:block w-80 min-w-80 max-w-80">
-                  {!option.hideHistory && <History/>}
-                </div>
-                <div className="flex-1 flex flex-col items-center min-w-0">
-                  <ReactMap headerRef={headerRef} onOpenFullscreen={handleOpenFullscreen}/>
-                  <div className='block lg:hidden flex w-full justify-center items-center text-center'>
-                    <MobileSlider/>
+                <div className="flex items-start">
+                  <div className="hidden lg:block w-80 min-w-80 max-w-80">
+                    {!option.hideHistory && <History/>}
                   </div>
-                </div>
-                <div className="hidden sm:block w-48 min-w-48 max-w-48">
-                  {!option.hideLegend && <Legend/>}
-                </div>
-                <div className="hidden lg:block">
-                  <MapButton/>
-                  <Options/>
+                  <div className="flex flex-col items-center">
+                    <ReactMap headerRef={headerRef} buttonsRef={buttonsRef} onOpenFullscreen={handleOpenFullscreen}/>
+                    <div className='block lg:hidden flex w-full justify-center items-center text-center'>
+                      <MobileSlider/>
+                    </div>
+                  </div>
+                  <div className="hidden sm:block w-48 min-w-48 max-w-48">
+                    {!option.hideLegend && <Legend/>}
+                  </div>
+                  <div className="hidden lg:block" ref={buttonsRef}>
+                    <MapButton/>
+                    <Options/>
+                  </div>
                 </div>
               </div>
             </div>

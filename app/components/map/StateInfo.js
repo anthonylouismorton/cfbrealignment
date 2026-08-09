@@ -4,6 +4,7 @@ import Modal from '@mui/material/Modal';
 import { useSelector, useDispatch } from 'react-redux';
 import { setState } from '@/redux/features/mapSlices';
 import schoolHistory from '../../data/schoolHistory.json';
+import LogoThumbnail from '../LogoThumbnail';
 
 // Present-tense end years look like a spoiler if you're viewing an earlier
 // year than the recorded end -- e.g. a stint that ends in 1932 shouldn't say
@@ -45,8 +46,9 @@ export default function StateInfo() {
                   return (
                     <div key={schoolIndex} className='flex items-start mb-2'>
                       {school.schoolInfo?.logo &&
-                        <img
-                          className='h-auto w-[20px] min-w-[20px] mr-2 mt-[2px] bg-white p-[1px]'
+                        <LogoThumbnail
+                          className='mr-2 mt-[2px]'
+                          imgClassName='h-auto w-[20px] min-w-[20px]'
                           src={school.schoolInfo.logo}
                           alt={`${school.name} logo`}
                         />
