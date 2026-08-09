@@ -9377,7 +9377,7 @@
     "disbanded": 1962,
     "logo": null,
     "primaryColor": "rgb(125, 118, 98, 0.90)",
-    "mapColor": "#7A4A2B",
+    "mapColor": "#623B22",
     "headquarters": "Unknown",
     "divisionI": {
       "start": 1931,
@@ -10694,7 +10694,7 @@
     "conference": "Western Athletic Conference",
     "abbreviation": "WAC",
     "primaryColor": "rgb(134, 38, 51, 0.90)",
-    "mapColor": "#7A4A2B",
+    "mapColor": "#925934",
     "secondaryColor": "rgb(238, 178, 17, 0.90) ",
     "founded": 1962,
     "disbanded": 2012,
