@@ -18,8 +18,10 @@ const States = ({ handleMouseMove }) => {
   // state color alone -- if logos are on, the school marker rings instead.
   const showStateHighlight = !option.showLogos && !option.showLocation;
 
-  // States with 2+ concurrent conferences get a diagonal-stripe pattern
-  // instead of a blended color, so each conference stays identifiable.
+  // States with concurrent conferences get one of three treatments depending
+  // on how many are stacked: 2 -> a thin diagonal split, 3-4 -> a diagonal
+  // stripe (one band per conference), 5+ -> a checkerboard, since that many
+  // stripes side by side stops reading as distinct bands.
   const stripePatterns = useMemo(() => {
     const patterns = new Map();
     mapFill.forEach((state) => {
@@ -41,18 +43,45 @@ const States = ({ handleMouseMove }) => {
     <>
       <defs>
         {[...stripePatterns.entries()].map(([key, colors]) => {
-          const bandWidth = 10;
+          const n = colors.length;
+          if (n <= 4) {
+            // n=2: a thin split. n=3-4: a stripe per conference, narrower bands.
+            // 3 and 4 also run opposite diagonals so they're distinguishable at a glance,
+            // not just by stripe count.
+            const band = n === 2 ? 16 : 12;
+            const angle = n === 4 ? -45 : 45;
+            return (
+              <pattern
+                key={key}
+                id={`conf-stripe-${sanitizeId(key)}`}
+                width={band * n}
+                height={band}
+                patternUnits="userSpaceOnUse"
+                patternTransform={`rotate(${angle})`}
+              >
+                {colors.map((color, i) => (
+                  <rect key={i} x={i * band} y={0} width={band} height={band} fill={color} />
+                ))}
+              </pattern>
+            );
+          }
+          const cell = 9;
+          const cells = [];
+          for (let row = 0; row < n; row++) {
+            for (let col = 0; col < n; col++) {
+              cells.push({ x: col * cell, y: row * cell, color: colors[(row + col) % n] });
+            }
+          }
           return (
             <pattern
               key={key}
               id={`conf-stripe-${sanitizeId(key)}`}
-              width={bandWidth * colors.length}
-              height={10}
+              width={cell * n}
+              height={cell * n}
               patternUnits="userSpaceOnUse"
-              patternTransform="rotate(45)"
             >
-              {colors.map((color, i) => (
-                <rect key={i} x={i * bandWidth} y={0} width={bandWidth} height={10} fill={color} />
+              {cells.map((c, i) => (
+                <rect key={i} x={c.x} y={c.y} width={cell} height={cell} fill={c.color} />
               ))}
             </pattern>
           );

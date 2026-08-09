@@ -20,7 +20,7 @@ import {
   ZoomableGroup,
 } from "react-simple-maps";
 
-const MapChart = ({ headerRef, onOpenFullscreen }) => {
+const MapChart = ({ headerRef, buttonsRef, onOpenFullscreen }) => {
   const dispatch = useDispatch();
   const wrapperRef = useRef(null);
   const { fullscreen } = useSelector((state)=> state.layoutReducer);
@@ -45,7 +45,13 @@ const MapChart = ({ headerRef, onOpenFullscreen }) => {
     if(!option.hideLegend && screenWidth >= 640){
       adjustedWidth -= 192
     };
-  
+    // MapButton + Options ("LIST"/"SETTINGS") column is always shown at lg+ and
+    // sizes to its content rather than a fixed Tailwind width, so measure it
+    // instead of guessing -- otherwise the row overflows the viewport by its width.
+    if(screenWidth >= 1024){
+      adjustedWidth -= (buttonsRef?.current?.getBoundingClientRect().width ?? 32);
+    };
+
     if(fullscreen){
       mapWidth = Math.round(mapHeight * 1.67);
       if(mapWidth > screenWidth){

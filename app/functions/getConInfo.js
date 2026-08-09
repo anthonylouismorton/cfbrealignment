@@ -91,10 +91,15 @@ export function getConferences(conferenceData, year, option, conferences) {
 
   //need the states for schools playing during the current year for filling in the states on the map to represent active conferences
   getCurrentConferences.forEach((conference) => {
+    // Major-conferences mode shows far fewer conferences at once, so most keep
+    // their regular map color; `majorMapColor` only exists on the handful that
+    // would otherwise collide with another conference simultaneously flagged major.
+    const displayColor = (majorConferences && conference.majorMapColor) || conference.mapColor;
+
     if(conference.disbanded !== year){
       getLegendConferences.push({
         abbreviation: conference.currentAbbreviation,
-        mapColor: conference.mapColor
+        mapColor: displayColor
       });
     }
 
@@ -108,20 +113,20 @@ export function getConferences(conferenceData, year, option, conferences) {
       const schoolData = { coordinates: [ school.lon, school.lat ], name: school.school, logo: school.logo, state: school.stateId, schoolInfo: { ...school } };
 
       if (!mapFillByState.has(school.stateId)) {
-        const confEntry = { conference: conference.currentAbbreviation, color: conference.mapColor, currentSchools: [schoolData] };
+        const confEntry = { conference: conference.currentAbbreviation, color: displayColor, currentSchools: [schoolData] };
         mapFillByState.set(school.stateId, {
           state: school.stateId,
           conferences: [confEntry],
           confsByAbbr: new Map([[conference.currentAbbreviation, confEntry]]),
-          color: conference.mapColor
+          color: displayColor
         });
       } else {
         const stateEntry = mapFillByState.get(school.stateId);
         if (!stateEntry.confsByAbbr.has(conference.currentAbbreviation)) {
-          // Multi-conference states get a striped pattern fill instead of a
+          // Multi-conference states get a checkerboard pattern fill instead of a
           // blended color -- see States.js. `stateEntry.color` stays as the
           // first conference's color, used only as the single-conference fallback.
-          const newConfEntry = { conference: conference.currentAbbreviation, color: conference.mapColor, currentSchools: [schoolData] };
+          const newConfEntry = { conference: conference.currentAbbreviation, color: displayColor, currentSchools: [schoolData] };
           stateEntry.conferences.push(newConfEntry);
           stateEntry.confsByAbbr.set(conference.currentAbbreviation, newConfEntry);
         } else {
@@ -129,7 +134,7 @@ export function getConferences(conferenceData, year, option, conferences) {
         }
       }
 
-      getSchools.push({ color: conference.mapColor, conference: conference.currentAbbreviation, coordinates: [ school.lon, school.lat ], name: school.school, logo: school.logo, state: school.stateId, schoolInfo: { ...school } });
+      getSchools.push({ color: displayColor, conference: conference.currentAbbreviation, coordinates: [ school.lon, school.lat ], name: school.school, logo: school.logo, state: school.stateId, schoolInfo: { ...school } });
     });
   });
 

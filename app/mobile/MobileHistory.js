@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
+import LogoThumbnail from '../components/LogoThumbnail';
+
+const LOGO_CLASS = 'h-auto w-[35px] min-w-[35px] sm:w-[28px] sm:min-w-[28px] md:min-w-[20px] md:w-[20px]';
 
 function MobileHistory() {
   let { conferenceChanges } = useSelector(state => state.conInfoReducer);
-  const [ hovered, sethovered] = useState(null);
-  
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 space-y-1 mt-2 mb-1 max-h-48 overflow-y-auto">
       {conferenceChanges.map((change, index) => (
@@ -19,19 +21,13 @@ function MobileHistory() {
           {change.change === 'founded' && (
             <div className='flex text-center items-center'>
               {change.logo ? (
-              <div className="mr-1 flex items-center bg-white p-1 relative">
-                <img
-                  onMouseOver={() => sethovered(index)}
-                  onMouseLeave={() => sethovered(null)}
-                  className='h-auto w-[35px] min-w-[35px] sm:w-[28px] sm:min-w-[28px] md:min-w-[20px] md:w-[20px]'
-                  src={change.logo} alt={`${change.abbreviation} logo`} 
+                <LogoThumbnail
+                  className='mr-1'
+                  imgClassName={LOGO_CLASS}
+                  src={change.logo}
+                  alt={`${change.abbreviation} logo`}
+                  tooltip={change.currentAbbreviation}
                 />
-                {hovered === index &&
-                    <div className="bg-white max-w-24 translate-y-2 text-black text-center text-[10px] absolute top-full py-2 px-2 rounded-sm transition duration-300 z-10 whitespace-nowrap">
-                    {change.currentAbbreviation}
-                  </div>
-                }
-              </div>
               ) : (
                 <div style={{color: `${change.mapColor}`}} className="mr-1 text-lg sm:text-sm font-bold">{change.abbreviation}</div>
               )}
@@ -41,19 +37,13 @@ function MobileHistory() {
           {change.change === 'disbanded' && (
             <div className='flex text-center items-center'>
               {change.logo ? (
-                <div className="mr-1 flex items-center bg-white p-1 relative">
-                  <img
-                    onMouseOver={() => sethovered(index)}
-                    onMouseLeave={() => sethovered(null)}
-                    className='h-auto w-[35px] min-w-[35px] sm:w-[28px] sm:min-w-[28px] md:min-w-[20px] md:w-[20px]'
-                    src={change.logo} alt={`${change.abbreviation} logo`} 
-                  />
-                  {hovered === index &&
-                    <div className="bg-white max-w-24 translate-y-2 text-black text-center text-[10px] absolute top-full py-2 px-2 rounded-sm transition duration-300 z-10 whitespace-nowrap">
-                      {change.abbreviation}
-                    </div>
-                  }
-                </div>
+                <LogoThumbnail
+                  className='mr-1'
+                  imgClassName={LOGO_CLASS}
+                  src={change.logo}
+                  alt={`${change.abbreviation} logo`}
+                  tooltip={change.abbreviation}
+                />
                 ) : (
                   <div style={{color: `${change.mapColor}`}} className="mr-1 text-lg sm:text-sm font-bold">{change.abbreviation}</div>
                 )}
@@ -62,34 +52,22 @@ function MobileHistory() {
           )}
           {change.change === 'left' && (
             <div className='flex text-center items-center'>
-              <div className="mr-1 flex items-center overflow-visible bg-white p-1 relative">
-                <img
-                  onMouseOver={() => sethovered(index + change.school)}
-                  onMouseLeave={() => sethovered(null)}
-                  className='h-auto w-[35px] min-w-[35px] sm:w-[28px] sm:min-w-[28px] md:min-w-[20px] md:w-[20px]'
-                  src={change.logo} alt={`${change.school} logo`}
-                />
-                {hovered === index + change.school &&
-                    <div className="bg-white max-w-24 translate-y-2 text-black text-center text-[10px] absolute top-full py-2 px-2 rounded-sm transition duration-300 z-10 whitespace-nowrap">
-                      {change.school}
-                    </div>
-                }
-              </div>
+              <LogoThumbnail
+                className='mr-1 overflow-visible'
+                imgClassName={LOGO_CLASS}
+                src={change.logo}
+                alt={`${change.school} logo`}
+                tooltip={change.school}
+              />
               <div className="text-lg sm:text-sm mr-1 text-white">leaves</div>
               {change.oldConferenceLogo ? (
-                <div className="mr-1 flex items-center bg-white p-1 relative">
-                  <img
-                    onMouseOver={() => sethovered(index + change.oldConferenceAbrr)}
-                    onMouseLeave={() => sethovered(null)}
-                    className='h-auto w-[35px] min-w-[35px] sm:w-[28px] sm:min-w-[28px] md:min-w-[20px] md:w-[20px]'
-                    src={change.oldConferenceLogo} alt={`old conference logo`}
-                  />
-                  {hovered === index + change.oldConferenceAbrr &&
-                    <div className="bg-white max-w-24 translate-y-2 text-black text-center text-[10px] absolute top-full py-2 px-2 rounded-sm transition duration-300 z-10 whitespace-nowrap">
-                      {change.oldConferenceAbrr}
-                    </div>
-                  }
-                </div>
+                <LogoThumbnail
+                  className='mr-1'
+                  imgClassName={LOGO_CLASS}
+                  src={change.oldConferenceLogo}
+                  alt="old conference logo"
+                  tooltip={change.oldConferenceAbrr}
+                />
               ) : (
                 <div style={{color: `${change.oldConferenceColor}`}} className="mr-1 text-lg sm:text-sm font-bold">{change.oldConferenceAbrr}</div>
               )}
@@ -103,19 +81,12 @@ function MobileHistory() {
                     <div className="text-lg sm:text-sm mr-1 text-white">joins</div>
                   </div>
                   {change.newConferenceLogo ? (
-                    <div className="flex items-center bg-white p-1 relative">
-                      <img
-                        onMouseOver={() => sethovered(index + change.newConferenceAbbr)}
-                        onMouseLeave={() => sethovered(null)}
-                        className='h-auto w-[35px] min-w-[35px] sm:w-[28px] sm:min-w-[28px] md:min-w-[20px] md:w-[20px]'
-                        src={change.newConferenceLogo} alt={`new conference logo`}
-                      />
-                      {hovered === index + change.newConferenceAbbr &&
-                        <div className="bg-white max-w-24 text-black text-center text-[10px] absolute translate-y-2 top-full py-2 px-2 rounded-sm transition duration-300 z-10 whitespace-nowrap">
-                        {change.newConferenceAbbr}
-                        </div>
-                      }
-                    </div>
+                    <LogoThumbnail
+                      imgClassName={LOGO_CLASS}
+                      src={change.newConferenceLogo}
+                      alt="new conference logo"
+                      tooltip={change.newConferenceAbbr}
+                    />
                   ) : (
                     <div style={{ color: change.newConferenceColor ? change.newConferenceColor : 'red' }} className="text-lg sm:text-sm font-bold">
                       {change.newConferenceAbbr}
@@ -127,37 +98,24 @@ function MobileHistory() {
           )}
           {change.change === 'joined' && (
             <div className='flex text-center items-center'>
-              <div className="mr-1 flex items-center bg-white p-1 relative">
-                <img
-                  onMouseOver={() => sethovered(index + change.school)}
-                  onMouseLeave={() => sethovered(null)}
-                  className='h-auto w-[35px] min-w-[35px] sm:w-[28px] sm:min-w-[28px] md:min-w-[20px] md:w-[20px]'
-                  src={change.logo} alt={`${change.school} logo`}
-                />
-                {hovered === index + change.school &&
-                    <div className="bg-white max-w-24 translate-y-2 text-black text-center text-[10px] absolute top-full py-2 px-2 rounded-sm transition duration-300 z-10 whitespace-nowrap">
-                      {change.school}
-                    </div>
-                }
-              </div>
+              <LogoThumbnail
+                className='mr-1'
+                imgClassName={LOGO_CLASS}
+                src={change.logo}
+                alt={`${change.school} logo`}
+                tooltip={change.school}
+              />
               <div className="flex items-center">
                 <div className="text-lg sm:text-sm text-white">joins</div>
               </div>
               <div className="ml-1 flex items-center">
                 {change.conferenceLogo ? (
-                  <div className="flex items-center bg-white p-1 relative">
-                    <img
-                      onMouseOver={() => sethovered(index + change.currentAbbreviation)}
-                      onMouseLeave={() => sethovered(null)}
-                      className='h-auto w-[35px] min-w-[35px] sm:w-[28px] sm:min-w-[28px] md:min-w-[20px] md:w-[20px]'
-                      src={change.conferenceLogo} alt={`${change.currentAbbreviation} logo`} 
-                    />
-                    {hovered === index + change.currentAbbreviation &&
-                    <div className="bg-white max-w-24 translate-y-2 text-black text-center text-[10px] absolute top-full py-2 px-2 rounded-sm transition duration-300 z-10 whitespace-nowrap">
-                      {change.currentAbbreviation}
-                    </div>
-                    }
-                  </div>
+                  <LogoThumbnail
+                    imgClassName={LOGO_CLASS}
+                    src={change.conferenceLogo}
+                    alt={`${change.currentAbbreviation} logo`}
+                    tooltip={change.currentAbbreviation}
+                  />
                 ) : (
                   <div style={{color: `${change.mapColor}`}} className="text-lg sm:text-sm font-bold">{change.currentAbbreviation}</div>
                 )}
@@ -166,37 +124,25 @@ function MobileHistory() {
           )}
           {change.change === 'rejoined' && (
             <div className='flex text-center items-center'>
-              <div className="mr-1 flex items-center bg-white p-1 relative">
-                <img
-                  onMouseOver={() => sethovered(index + change.school)}
-                  onMouseLeave={() => sethovered(null)}
-                  className='h-auto w-[35px] min-w-[35px] sm:w-[28px] sm:min-w-[28px] md:min-w-[20px] md:w-[20px]'
-                  src={change.logo} alt={`${change.school} logo`} 
-                />
-                {hovered === index + change.school &&
-                    <div className="bg-white max-w-24 translate-y-2 text-black text-center text-[10px] absolute top-full py-2 px-2 rounded-sm transition duration-300 z-10 whitespace-nowrap">
-                      {change.school}
-                    </div>
-                }
-              </div>
+              <LogoThumbnail
+                className='mr-1'
+                imgClassName={LOGO_CLASS}
+                src={change.logo}
+                alt={`${change.school} logo`}
+                tooltip={change.school}
+              />
               <div className="flex items-center">
                 <div className="text-lg sm:text-sm mr-1 text-white">rejoins</div>
               </div>
               <div className="flex items-center">
                 {change.conferenceLogo ? (
-                  <div className="mr-1 flex items-center bg-white p-1 relative">
-                    <img
-                      onMouseOver={() => sethovered(index + change.currentAbbreviation)}
-                      onMouseLeave={() => sethovered(null)}
-                      className='h-auto w-[35px] min-w-[35px] sm:w-[28px] sm:min-w-[28px] md:min-w-[20px] md:w-[20px]'
-                      src={change.conferenceLogo} alt={`${change.currentAbbreviation} logo`} 
-                    />
-                    {hovered === index + change.currentAbbreviation &&
-                      <div className="bg-white max-w-24 translate-y-2 text-black text-center text-[10px] absolute top-full py-2 px-2 rounded-sm transition duration-300 z-10 whitespace-nowrap">  
-                        {change.currentAbbreviation}
-                      </div>
-                    }
-                  </div>
+                  <LogoThumbnail
+                    className='mr-1'
+                    imgClassName={LOGO_CLASS}
+                    src={change.conferenceLogo}
+                    alt={`${change.currentAbbreviation} logo`}
+                    tooltip={change.currentAbbreviation}
+                  />
                   ) : (
                     <div style={{color: `${change.mapColor}`}} className="text-lg sm:text-sm font-bold">{change.currentAbbreviation}</div>
                   )}
