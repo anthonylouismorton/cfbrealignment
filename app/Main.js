@@ -182,10 +182,14 @@ function Main() {
   return (
     <div className='min-w-[225px] w-full'>
       {!showList ? (
-        <>
+        // Below lg this becomes a real viewport-height flex column so MobileHistory
+        // (flex-1 further down) can stretch to the bottom of the screen and scroll
+        // internally. `lg:contents` makes it disappear as a box at lg+ so desktop's
+        // layout is unaffected -- its children just flow into the parent as before.
+        <div className='flex flex-col h-[100dvh] lg:contents'>
           {/* {option.showWelcome && <Welcome/>} */}
           {!fullscreen && (
-            <div className="flex flex-col justify-center items-center w-full">
+            <div className="flex flex-col justify-center items-center w-full shrink-0">
               <div className='lg:hidden flex items-start w-[95%] py-[1px]'>
                 <MobileOptions/>
                 <MobileMapButton/>
@@ -216,7 +220,7 @@ function Main() {
             </div>
           )}
           {fullscreen && (
-            <div className='w-full flex flex-col items-center'>
+            <div className='w-full flex flex-col items-center shrink-0'>
               <ReactMap onOpenFullscreen={handleOpenFullscreen}/>
               <div className='absolute bottom-1 right-1 sm:bottom-2 sm:right-2 lg:bottom-3 lg:right-3'>
                 <IconButton className="p-[2px] md:p-[3px] lg:p-1" id="closefullscreen" onClick={handleCloseFullscreen}>
@@ -228,13 +232,13 @@ function Main() {
               </button>
             </div>
           )}
-          <div className="sm:hidden flex justify-center">
+          <div className="sm:hidden flex justify-center shrink-0">
               {!option.hideLegend && <MobileLegend/>}
           </div>
-          <div className="lg:hidden">
+          <div className="lg:hidden flex-1 min-h-0">
               {!option.hideHistory && <MobileHistory/>}
           </div>
-        </>
+        </div>
       ) : (
         <div className='flex flex-col'>
           <ListButton/>

@@ -4,9 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setMapInfo } from '@/redux/features/mapSlices';
 import { setSchool } from '@/redux/features/mapSlices';
 import { getGlowChanges } from '../../functions/getGlowChanges';
+import { HAWAII_STATE_ID, getHawaiiOffset } from '../../functions/mapAdjustments';
 
 const SchoolLocation = () => {
-  const { schools, hoveredSchool, styling } = useSelector(state => state.mapReducer);
+  const { schools, hoveredSchool, styling, mapSize } = useSelector(state => state.mapReducer);
+  const hawaiiOffset = getHawaiiOffset(mapSize);
   const { schoolModal } = useSelector(state => state.mapReducer);
   const { year } = useSelector(state => state.yearReducer);
   const { conferenceChanges } = useSelector(state => state.conInfoReducer);
@@ -22,10 +24,10 @@ const SchoolLocation = () => {
     {schools && schools.map(school => {
       const ringColor = glowBySchool.get(school.name);
       const ringRadius = styling.logoSize / 2 * 1.35;
-      return (
+      const marker = (
       <Marker
         className='cursor-pointer'
-        key={school.name}
+        key={school.state === HAWAII_STATE_ID ? undefined : school.name}
         coordinates={school.coordinates}
         onClick={()=> handleSchoolModal(school)}
         onMouseEnter={() => dispatch(setMapInfo({map: "hoveredSchool", value: school}))}
@@ -50,11 +52,20 @@ const SchoolLocation = () => {
             fill="none"
             stroke={ringColor}
             strokeWidth={Math.max(1, styling.logoSize / 10)}
-            style={{ color: ringColor, opacity: 0, animation: 'ring-pulse 1.4s ease-out 1 forwards' }}
+            style={{ color: ringColor, opacity: 0, animation: 'ring-pulse 3s ease-out 1 forwards' }}
           />
         )}
       </Marker>
       );
+      // Keep Hawaii's school marker(s) aligned with the shifted Hawaii shape in States.js.
+      if (school.state === HAWAII_STATE_ID) {
+        return (
+          <g key={school.name} transform={`translate(${hawaiiOffset.dx}, ${hawaiiOffset.dy})`}>
+            {marker}
+          </g>
+        );
+      }
+      return marker;
     })}
     {hoveredSchool && (
       <Annotation

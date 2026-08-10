@@ -4,12 +4,14 @@ import MapData from '../../data/reactMapData.json';
 import { useSelector, useDispatch } from "react-redux";
 import { setMapInfo, setState } from "@/redux/features/mapSlices";
 import { getGlowChanges } from '../../functions/getGlowChanges';
+import { ALASKA_STATE_ID, HAWAII_STATE_ID, getHawaiiOffset } from '../../functions/mapAdjustments';
 
 const sanitizeId = (str) => str.replace(/[^a-zA-Z0-9_-]/g, '_');
 
 const States = ({ handleMouseMove }) => {
   const dispatch = useDispatch();
-  const { mapFill } = useSelector(state => state.mapReducer);
+  const { mapFill, mapSize } = useSelector(state => state.mapReducer);
+  const hawaiiOffset = getHawaiiOffset(mapSize);
   const option = useSelector((state) => state.optionsReducer);
   const { stateModal } = useSelector(state => state.mapReducer);
   const { conferenceChanges } = useSelector(state => state.conInfoReducer);
@@ -89,7 +91,11 @@ const States = ({ handleMouseMove }) => {
       </defs>
       <Geographies geography={MapData}>
         {({ geographies }) =>
-          geographies.map((geo) => {
+          geographies
+            // No schools have ever played in Alaska -- drop it to reclaim the
+            // empty inset space AlbersUSA reserves for it in the lower-left.
+            .filter((geo) => geo.id !== ALASKA_STATE_ID)
+            .map((geo) => {
             const stateInfo = mapFill.find((state) => state.state === geo.id);
             let stateColor = stateInfo?.color || '#b4b4b4';
             if(option.showLocation){
@@ -99,7 +105,7 @@ const States = ({ handleMouseMove }) => {
               stateColor = `url(#conf-stripe-${sanitizeId(key)})`;
             }
             const isChanged = showStateHighlight && glowByState.has(geo.id);
-            return (
+            const geography = (
               <Geography
                 onMouseMove={stateInfo ? (event) => handleMouseMove(event) : null}
                 onMouseEnter={() => {
@@ -112,7 +118,7 @@ const States = ({ handleMouseMove }) => {
                   dispatch(setMapInfo({map: "toolTipPos", value: { x: null, y: null }}));
                 }}
                 onClick={() => !option.showLocation && stateInfo ? handleStateModal(geo.properties.name, stateInfo) : null}
-                key={geo.rsmKey}
+                key={geo.id === HAWAII_STATE_ID ? undefined : geo.rsmKey}
                 geography={geo}
                 style={{
                   default: {
@@ -131,6 +137,15 @@ const States = ({ handleMouseMove }) => {
                 }}
               />
             );
+            // Nudge Hawaii up-left into the space Alaska used to occupy.
+            if (geo.id === HAWAII_STATE_ID) {
+              return (
+                <g key={geo.rsmKey} transform={`translate(${hawaiiOffset.dx}, ${hawaiiOffset.dy})`}>
+                  {geography}
+                </g>
+              );
+            }
+            return geography;
           })
         }
       </Geographies>

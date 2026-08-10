@@ -52,16 +52,22 @@ body {
 
 /* Used for the school-logo "just changed conferences" ring -- the target
    sets `color` inline to the new conference's color and `currentColor` here
-   picks it up. Fades in/brightens then fades back out and stays gone, same
-   one-shot behavior as the state highlight. */
+   picks it up. Fades in with a brightness flash, holds fully visible for a
+   while, then fades back out and stays gone -- same one-shot behavior as the
+   state highlight, just with a longer visible hold (see the duration on the
+   inline animation in SchoolLocation.js). */
 @keyframes ring-pulse {
   0% {
     opacity: 0;
     filter: brightness(1);
   }
-  30% {
+  10% {
     opacity: 1;
     filter: brightness(1.8);
+  }
+  70% {
+    opacity: 1;
+    filter: brightness(1);
   }
   100% {
     opacity: 0;
