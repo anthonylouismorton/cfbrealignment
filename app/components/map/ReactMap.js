@@ -195,7 +195,10 @@ const MapChart = ({ headerRef, buttonsRef, onOpenFullscreen }) => {
         ))}
       </div>
     )}
-    <div className='absolute bottom-1 left-1 sm:bottom-2 sm:left-2 lg:bottom-3 lg:left-3'>
+    {/* Positioned over the Great Lakes -- empty water regardless of which
+        conferences are colored in, so the control stays legible without
+        needing its own opaque backdrop to fight the map underneath. */}
+    <div className='absolute' style={{ top: '16%', left: '63%' }}>
       <Autoplay />
     </div>
     {!fullscreen &&

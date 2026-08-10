@@ -7,15 +7,15 @@ function Legend() {
   const { mapHeight } = useSelector((state)=> state.layoutReducer);
 
   return (
-    <div className='text-center'>
-      <div className="inline-block text-left pb-5" style={{height: mapHeight? `${mapHeight}px` : "auto"}}>
-        <p className="sm:text-sm md:text-lg lg:text-lg xl:text-xl 2xl:text-2xl font-semibold pb-1 xl:pb-2 text-white">Legend</p>
+    <div className='w-full pl-2 xl:pl-3'>
+      <div className="w-full flex flex-col pb-5" style={{height: mapHeight? `${mapHeight}px` : "auto"}}>
+        <p className="sm:text-sm md:text-lg lg:text-lg xl:text-xl 2xl:text-2xl font-semibold pb-1 xl:pb-2 text-white text-center">Legend</p>
         {legendConferences &&
           legendConferences
             .slice()
             .sort((a, b) => a.abbreviation.localeCompare(b.abbreviation))
             .map((conference, index) => (
-              <div key={index} className="legend-item flex text-center items-center">
+              <div key={index} className="legend-item flex items-center">
                 <div
                   className="legend-color sm:w-[12px] sm:h-[12px] md:w-[14px] md:h-[14px] lg:w-[18px] lg:h-[18px] xl:w-[20px] xl:h-[20px] 2xl:w-[24px] 2xl:h-[24px] mr-[2px] md:mr-1 2xl:mr-2"
                   style={{ backgroundColor: conference.mapColor }}
