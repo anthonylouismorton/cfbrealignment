@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import LogoThumbnail from '../LogoThumbnail';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import '../../../Legend.css'
 
 const LOGO_CLASS = 'h-auto min-w-[20px] w-[20px] xl:min-w-[28px] xl:w-[28px] 2xl:min-w-[35px] 2xl:w-[35px] p-[1px]';
@@ -161,7 +162,20 @@ function ConferenceHistory() {
               </div>
             )}
             {change.change === 'history' && (
-              <p className="text-left text-xs xl:text-sm 2xl:text-base text-white font-semibold">{change.event}</p>
+              <div className="flex items-start">
+                <p className="text-left text-xs xl:text-sm 2xl:text-base text-white font-semibold">{change.event}</p>
+                {change.source && (
+                  <a
+                    href={change.source}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="View source"
+                    className="ml-1 mt-[2px] shrink-0 text-gray-400 hover:text-white"
+                  >
+                    <OpenInNewIcon style={{ fontSize: '0.9em' }} />
+                  </a>
+                )}
+              </div>
             )}
           </div>
         ))}

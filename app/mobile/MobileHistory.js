@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import LogoThumbnail from '../components/LogoThumbnail';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 const LOGO_CLASS = 'h-auto w-[22px] min-w-[22px] sm:w-[26px] sm:min-w-[26px] md:min-w-[20px] md:w-[20px]';
 
@@ -158,7 +159,20 @@ function MobileHistory() {
               </div>
             )}
             {change.change === 'history' && (
-              <p className="text-left text-xs sm:text-sm text-white font-semibold">{change.event}</p>
+              <div className="flex items-start">
+                <p className="text-left text-xs sm:text-sm text-white font-semibold">{change.event}</p>
+                {change.source && (
+                  <a
+                    href={change.source}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="View source"
+                    className="ml-1 mt-[2px] shrink-0 text-gray-400 hover:text-white"
+                  >
+                    <OpenInNewIcon style={{ fontSize: '0.9em' }} />
+                  </a>
+                )}
+              </div>
             )}
           </div>
         ))}

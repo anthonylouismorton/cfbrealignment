@@ -3,44 +3,64 @@
     {
       "year": 1906,
       "events": [
-        "The Intercollegiate Athletic Association of the United States (IAAUS) was established on March 31, 1906 and would later be known as the National Collegiate Athletic Association (NCAA).",
-        "College Football under the IAAUS began as one division."
+        { "text": "The Intercollegiate Athletic Association of the United States (IAAUS), now known as the National Collegiate Athletic Association (NCAA), was formally established on March 31, 1906 to reform the rules and regulations of college sports. Early football games often resulted in injury and even death, prompting some colleges and universities to close their football programs. The reforms were encouraged by President Roosevelt in 1905, after his son was injured while playing football for Harvard.", "source": "https://guides.loc.gov/chronicling-america-ncaa-college-football-reform" },
+        { "text": "For its first half-century, the NCAA had no formal divisional structure -- member schools competed as a single body, with no tiers, until the University Division and College Division were introduced in the 1950s.", "source": "https://en.wikipedia.org/wiki/NCAA_University_Division" }
       ]
     },
     {
       "year": 1907,
       "events": [
-        "Iowa helps form the new Missouri Valley Intercollegiate Athletic Association, while retaining its existing membership in the Western Conference."
+        { "text": "Iowa helps form the new Missouri Valley Intercollegiate Athletic Association, while retaining its existing membership in the Western Conference.", "source": "https://en.wikipedia.org/wiki/Missouri_Valley_Intercollegiate_Athletic_Association" },
+        { "text": "The Missouri Valley Intercollegiate Athletic Association (MVIAA) was a college athletic conference and the second college conference formed upon its foundation on January 12, 1907. The conference was initially formed by an agreement among representatives of five schools, the University of Kansas, University of Missouri, University of Nebraska, University of Iowa, and Washington University in St. Louis. Iowa State College and Drake University, both joined the conference together in March 1907. The University of Iowa, which had only taken part in football, left after the 1908 season and remained a member of the Big Ten Conference, but other schools joined the MVIAA, including Kansas State University, Grinnell College, the University of Oklahoma, and Oklahoma A&M.", "source": "https://en.wikipedia.org/wiki/Missouri_Valley_Intercollegiate_Athletic_Association" },
+        { "text": "In April 1907, Michigan was voted out of the conference for refusing to adhere to the new league rules, which limited football teams to no more than five games and players to three years of eligibility, and required the football coach to be a full-time university employee. Michigan remained independent until Ohio State joined in 1912, and as a result could no longer play Michigan until the school rejoined the conference after a nine-year absence. The first known references to the conference as \"the Big Ten\" were then made in December 1916 as a result.", "source": "https://en.wikipedia.org/wiki/Big_Ten_Conference" }
       ]
     },
     {
       "year": 1909,
       "events": [
-        "The University of Nashville ceases operations."
+        { "text": "The University of Nashville ceases operations.", "source": null }
+      ]
+    },
+    {
+      "year": 1928,
+      "events": [
+        { "text": "In 1928, the MVIAA split apart into two conferences, both of which claimed to be the legitimate heir to the MVIAA's history. Six schools — Iowa State, Kansas, Kansas State, Missouri, Nebraska, and Oklahoma — reorganized under the MVIAA name. This conference, popularly known as the \"Big Six Conference\" at the time and later as the Big Seven Conference, would eventually evolve into the Big Eight Conference. Drake, Grinnell, Washington, and Oklahoma A&M formed the Missouri Valley Conference, which retained the same administrative staff as the MVIAA. Until the Big Eight disbanded in 1996, both conferences claimed 1907 as their founding date and the same history through May 1928. To this day, it has never been definitively established which conference was the original.", "source": "https://en.wikipedia.org/wiki/Missouri_Valley_Intercollegiate_Athletic_Association" }
+      ]
+    },
+    {
+      "year": 1956,
+      "events": [
+        { "text": "In August 1956, NCAA executive director Walter Byers announced that the NCAA would begin holding separate basketball tournaments for major schools and smaller colleges, creating the \"University Division\" and \"College Division\" classification; the first University Division basketball tournament was held in March 1957. The classification was later extended to college football as well, though the exact date this happened is not well documented.", "source": "https://en.wikipedia.org/wiki/NCAA_University_Division" }
       ]
     },
     {
       "year": 1962,
       "events": [
-        "College football experiences its first subdivision. 140 larger schools now begin play in the \"University Division\", while the other 370 smaller schools begin play in the \"College Division\"."
+        { "text": "As of 1962, 140 college football teams were recognized as being part of the \"University Division\", while another 370 schools were in the \"College Division\" -- the exact year this classification was first extended from basketball to football is not well documented.", "source": "https://en.wikipedia.org/wiki/NCAA_University_Division" }
       ]
     },
     {
       "year": 1973,
       "events": [
-        "College football experiences further subdivision. The \"University Division\" is renamed to \"Division I\", while the \"College Division\" is subdivided into \"Division II\", and \"Division III\"."
+        { "text": "College football experiences further subdivision. The \"University Division\" is renamed to \"Division I\", while the \"College Division\" is subdivided into \"Division II\", and \"Division III\".", "source": "https://en.wikipedia.org/wiki/National_Collegiate_Athletic_Association" }
       ]
     },
     {
       "year": 1978,
       "events": [
-        "In January 1978, prior to the 1978 college football season, college football experiences another subdivision and was at the time the last subdivision to occur within NCAA college football. Division I is further subdivided into 'Division I-A,' considered the upper tier of Division I, and 'Division I-AA,' considered the lower tier of Division I."
+        { "text": "In January 1978, prior to the 1978 college football season, college football experiences another subdivision and was at the time the last subdivision to occur within NCAA college football. Division I is further subdivided into 'Division I-A,' considered the upper tier of Division I, and 'Division I-AA,' considered the lower tier of Division I.", "source": "https://en.wikipedia.org/wiki/National_Collegiate_Athletic_Association" }
       ]
     },
     {
       "year": 2006,
       "events": [
-        "Prior to the 2006 season Division I-A is renamed to the \"Football Bowl Subdivision\" and Division I-AA is renamed to the \"Football Championship Subdivision\"."
+        { "text": "Prior to the 2006 season Division I-A is renamed to the \"Football Bowl Subdivision\" and Division I-AA is renamed to the \"Football Championship Subdivision\".", "source": "https://en.wikipedia.org/wiki/National_Collegiate_Athletic_Association" }
+      ]
+    },
+    {
+      "year": 2009,
+      "events": [
+        { "text": "The Pac-10 make a fatal mistake and name Larry Scott as commissioner", "source": "https://www.seattletimes.com/sports/larry-scott-named-pac-10-commissioner/" }
       ]
     }
   ]

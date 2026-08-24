@@ -69,7 +69,7 @@ export function getChanges(currentConferences, currentYear, historyArray) {
   cfbHistory.history.find((year) => {
     if(year.year === currentYear){
       year.events.forEach((event) => {
-        filteredHistory.push({ change: 'history', event: event })
+        filteredHistory.push({ change: 'history', event: event.text, source: event.source })
       });
     };
   });
