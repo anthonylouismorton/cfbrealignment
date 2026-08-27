@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import LogoThumbnail from '../LogoThumbnail';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import '../../../Legend.css'
 
 const LOGO_CLASS = 'h-auto min-w-[20px] w-[20px] xl:min-w-[28px] xl:w-[28px] 2xl:min-w-[35px] 2xl:w-[35px] p-[1px]';
@@ -9,13 +10,37 @@ const LOGO_CLASS = 'h-auto min-w-[20px] w-[20px] xl:min-w-[28px] xl:w-[28px] 2xl
 function ConferenceHistory() {
   let { conferenceChanges } = useSelector(state => state.conInfoReducer);
   const { mapHeight } = useSelector((state)=> state.layoutReducer);
+  const scrollRef = useRef(null);
+  const [canScrollMore, setCanScrollMore] = useState(false);
+
+  const checkScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollMore(el.scrollHeight - el.scrollTop - el.clientHeight > 4);
+  };
+
+  useEffect(() => {
+    checkScroll();
+  }, [conferenceChanges, mapHeight]);
 
   return (
-    <div>
-      <div className="legend-history-container w-80 flex flex-col items-end pr-2 xl:pr-3 pb-5" style={{height: mapHeight? `${mapHeight}px` : "auto"}}>
-        <p className="w-full xl:text-xl 2xl:text-2xl font-semibold pb-2 text-white text-center">History</p>
+    <div className="relative">
+      <div
+        ref={scrollRef}
+        onScroll={checkScroll}
+        className="legend-history-container w-80 flex flex-col items-end pr-2 xl:pr-3 pb-5"
+        style={{height: mapHeight? `${mapHeight}px` : "auto"}}
+      >
+        <p className="w-full sm:text-sm md:text-lg lg:text-lg xl:text-xl 2xl:text-2xl font-semibold pb-2 text-white text-center">History</p>
         {conferenceChanges.map((change, index) => (
-          <div key={index} className='flex xl:mb-1 w-[90%] items-center'>
+          <div
+            key={index}
+            className={
+              change.change === 'history'
+                ? 'w-full mb-2.5 px-2 py-1.5 rounded-sm bg-white bg-opacity-5 border-l-2 border-white border-opacity-20'
+                : 'flex mb-1.5 w-[90%] items-center'
+            }
+          >
             {change.change === 'dropped' && (
               <div className='flex items-center'>
                   <div style={{color: `${change.primaryColor}`}} className="mr-1 text-xs xl:text-sm 2xl:text-base font-bold">{change.abbreviation}</div>
@@ -149,16 +174,16 @@ function ConferenceHistory() {
                       tooltip={change.currentAbbreviation}
                     />
                     ) : (
-                      <div style={{color: `${change.mapColor}`}} className="text-base font-bold">{change.currentAbbreviation}</div>
+                      <div style={{color: `${change.mapColor}`}} className="text-xs xl:text-sm 2xl:text-base font-bold">{change.currentAbbreviation}</div>
                     )}
                 </div>
               </div>
             )}
             {change.change === 'nameChange' && (
               <div className='flex text-center items-center'>
-                <div style={{color: `${change.mapColor}`}} className="mr-1 xl:text-sm 2xl:text-base font-bold">{change.oldName}</div>
-                <div className="text-sm xl:text-sm 2xl:text-base text-white">rebrands to</div>
-                <div style={{color: `${change.mapColor}`}}  className="ml-1 xl:text-sm 2xl:text-base font-bold">{change.newName}</div>
+                <div style={{color: `${change.mapColor}`}} className="mr-1 text-xs xl:text-sm 2xl:text-base font-bold">{change.oldName}</div>
+                <div className="text-xs xl:text-sm 2xl:text-base text-white">rebrands to</div>
+                <div style={{color: `${change.mapColor}`}}  className="ml-1 text-xs xl:text-sm 2xl:text-base font-bold">{change.newName}</div>
               </div>
             )}
             {change.change === 'history' && (
@@ -180,6 +205,11 @@ function ConferenceHistory() {
           </div>
         ))}
       </div>
+      {canScrollMore && (
+        <div className="pointer-events-none absolute bottom-1 left-1/2 -translate-x-1/2 flex items-center justify-center w-6 h-6 rounded-full bg-black bg-opacity-60 animate-bounce">
+          <KeyboardArrowDownIcon className="text-white text-[18px]" />
+        </div>
+      )}
     </div>
   );
 }

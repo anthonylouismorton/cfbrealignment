@@ -12,9 +12,6 @@ const SPEEDS = {
   fast: { label: 'F', title: 'Fast', changeTime: 1200, idleTime: 400 },
 };
 
-// Matches mapSize's own default/reference width (see redux/features/mapSlices.js) --
-// the control renders at its authored size when the map is that wide, and scales
-// up/down from there so it stays proportional to the map instead of the viewport.
 const BASE_MAP_WIDTH = 835;
 const MIN_SCALE = 0.65;
 const MAX_SCALE = 1.3;
@@ -68,6 +65,22 @@ export default function Autoplay(){
       clearInterval(timeIntervalRef.current);
     };
   }, [start, year, conferenceChanges, speed]);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.code !== 'Space') return;
+      const tag = e.target?.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || e.target?.isContentEditable) return;
+      e.preventDefault();
+      if (showReplay) {
+        handleReplay();
+      } else {
+        setStart(prev => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [showReplay]);
 
   return (
     <div

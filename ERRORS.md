@@ -141,13 +141,6 @@ not just gaps — flagged rather than picked a side on:
 
 
 
-
-- ~~**Eastern New Mexico's join year**...~~ **Confirmed.** Eastern New
-  Mexico's own season-by-season schedule shows games against both other
-  Texas Conference members that year (Howard Payne and McMurry — the only
-  two other schools left in the conference by 1954), directly verifying
-  football participation started in 1954, not just track.
-
 All 12 schools have years/`left`/`rejoined` entries (none left fully blank
 this time), but several of those years rest on the judgment calls above
 rather than clean unambiguous sourcing — worth a second look before treating
