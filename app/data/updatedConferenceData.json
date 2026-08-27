@@ -7116,7 +7116,7 @@
           },
           {
             "year": 1926,
-            "newConference": "FBS"
+            "newConference": "TXCON"
           }
         ],
         "rejoined": [
@@ -7139,7 +7139,7 @@
         "left": [
           {
             "year": 1926,
-            "newConference": "FBS"
+            "newConference": "TXCON"
           }
         ]
       },
@@ -7224,7 +7224,7 @@
         "left": [
           {
             "year": 1926,
-            "newConference": "FBS"
+            "newConference": "TXCON"
           }
         ]
       },
@@ -7258,7 +7258,7 @@
         "left": [
           {
             "year": 1931,
-            "newConference": "FBS"
+            "newConference": "LSC"
           }
         ]
       },
@@ -7275,7 +7275,7 @@
         "left": [
           {
             "year": 1926,
-            "newConference": "FBS"
+            "newConference": "TXCON"
           }
         ]
       },
@@ -7370,7 +7370,7 @@
         "left": [
           {
             "year": 1931,
-            "newConference": "FBS"
+            "newConference": "LSC"
           }
         ]
       },
@@ -7387,7 +7387,7 @@
         "left": [
           {
             "year": 1931,
-            "newConference": "FBS"
+            "newConference": "LSC"
           }
         ]
       },
@@ -7422,7 +7422,13 @@
         "logo": null,
         "lon": -98.9912,
         "lat": 31.7093,
-        "years": []
+        "years": [1924, 1925, 1926],
+        "left": [
+          {
+            "year": 1927,
+            "newConference": "UNK"
+          }
+        ]
       },
       {
         "school": "Hardin-Simmons University",
@@ -7444,7 +7450,801 @@
         "logo": null,
         "lon": -97.8686,
         "lat": 27.5211,
-        "years": []
+        "years": [1929, 1930, 1931]
+      }
+    ]
+  },
+  {
+    "conference": "Texas Conference",
+    "abbreviation": "TXCON",
+    "founded": 1926,
+    "history": null,
+    "disbanded": 1956,
+    "logo": null,
+    "primaryColor": "rgb(146, 89, 52, 0.90)",
+    "mapColor": "#925934",
+    "headquarters": "Unknown",
+    "divisionIA": null,
+    "majorConference": {
+      "start": null,
+      "end": null
+    },
+    "names": [
+      {
+        "conference": "Texas Conference",
+        "abbreviation": "TXCON",
+        "logo": null,
+        "primaryColor": "rgb(146, 89, 52, 0.90)",
+        "startYear": 1926,
+        "endYear": 1956
+      }
+    ],
+    "schools": [
+      {
+        "school": "Austin College",
+        "abbreviation": "AC",
+        "nickName": "Austin College",
+        "division": null,
+        "stateId": "48",
+        "logo": null,
+        "lon": -96.6081,
+        "lat": 33.6357,
+        "years": [1926, 1927, 1928, 1929, 1930, 1931, 1932, 1933, 1934, 1935, 1936, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947, 1948, 1949, 1950, 1951, 1952, 1953],
+        "left": [
+          {
+            "year": 1954,
+            "newConference": "FBS"
+          }
+        ]
+      },
+      {
+        "school": "Howard Payne College",
+        "abbreviation": "HP",
+        "nickName": "Howard Payne",
+        "division": null,
+        "stateId": "48",
+        "logo": null,
+        "lon": -98.9912,
+        "lat": 31.7093,
+        "years": [1926, 1927, 1928, 1929, 1930, 1931, 1932, 1933, 1934, 1935, 1936, 1937, 1938, 1939, 1940, 1941, 1942, 1946, 1947, 1948, 1949, 1950, 1951, 1952, 1953, 1954, 1955],
+        "left": [
+          {
+            "year": 1943,
+            "newConference": "FBS"
+          },
+          {
+            "year": 1956,
+            "newConference": "FBS"
+          }
+        ],
+        "rejoined": [
+          {
+            "year": 1946,
+            "oldConference": "FBS"
+          }
+        ]
+      },
+      {
+        "school": "Hardin-Simmons University",
+        "abbreviation": "HSU",
+        "nickName": "HSU",
+        "division": null,
+        "stateId": "48",
+        "logo": "/images/schools/Hardin-SimmonsUniversity.png",
+        "lon": -99.44109752,
+        "lat": 32.28297228,
+        "years": [1926, 1927, 1928, 1929, 1930, 1931, 1932, 1933, 1934, 1935, 1947, 1948],
+        "left": [
+          {
+            "year": 1936,
+            "newConference": "FBS"
+          },
+          {
+            "year": 1949,
+            "newConference": "FBS"
+          }
+        ],
+        "rejoined": [
+          {
+            "year": 1947,
+            "oldConference": "FBS"
+          }
+        ]
+      },
+      {
+        "school": "Southwestern University",
+        "abbreviation": "SU",
+        "nickName": "Southwestern",
+        "division": null,
+        "stateId": "48",
+        "logo": "/images/schools/SouthwesternUniversity.png",
+        "lon": -97.6648,
+        "lat": 30.636,
+        "years": [1926, 1927, 1928, 1929, 1930, 1931, 1932, 1933, 1934, 1935, 1936, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947, 1948, 1949, 1950],
+        "left": [
+          {
+            "year": 1951,
+            "newConference": null
+          }
+        ]
+      },
+      {
+        "school": "Trinity University",
+        "abbreviation": "Trinity",
+        "nickName": "Trinity",
+        "division": null,
+        "stateId": "48",
+        "logo": "/images/schools/TrinityUniversity.png",
+        "lon": -98.2855,
+        "lat": 29.275,
+        "years": [1926, 1927, 1928, 1929, 1930, 1931, 1932, 1934, 1935, 1936, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945],
+        "left": [
+          {
+            "year": 1933,
+            "newConference": "LSC"
+          },
+          {
+            "year": 1946,
+            "newConference": "UNK"
+          }
+        ],
+        "rejoined": [
+          {
+            "year": 1934,
+            "oldConference": "LSC"
+          }
+        ]
+      },
+      {
+        "school": "St. Edward's University",
+        "abbreviation": "SEU",
+        "nickName": "St. Edward's",
+        "division": null,
+        "stateId": "48",
+        "logo": null,
+        "lon": -97.7594,
+        "lat": 30.2444,
+        "years": [1927, 1928, 1929, 1930, 1931, 1932, 1933, 1934, 1935, 1936, 1937, 1938, 1939],
+        "left": [
+          {
+            "year": 1940,
+            "newConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "Abilene Christian University",
+        "abbreviation": "ACU",
+        "nickName": "Abilene Christian",
+        "division": null,
+        "stateId": "48",
+        "logo": "/images/schools/AbileneChristianUniversity.png",
+        "lon": -99.4229,
+        "lat": 32.281,
+        "years": [1933, 1934, 1935, 1936, 1937, 1938, 1939, 1940, 1941, 1942, 1946, 1947, 1948, 1949, 1950, 1951, 1952, 1953],
+        "left": [
+          {
+            "year": 1943,
+            "newConference": "UNK"
+          },
+          {
+            "year": 1954,
+            "newConference": "FBS"
+          }
+        ],
+        "rejoined": [
+          {
+            "year": 1946,
+            "oldConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "Daniel Baker College",
+        "abbreviation": "DB",
+        "nickName": "Daniel Baker",
+        "division": null,
+        "stateId": "48",
+        "logo": null,
+        "lon": -98.9912,
+        "lat": 31.7093,
+        "years": [1933, 1934, 1935, 1936, 1937, 1938, 1939, 1940, 1941, 1942],
+        "left": [
+          {
+            "year": 1943,
+            "newConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "McMurry University",
+        "abbreviation": "McM",
+        "nickName": "McMurry",
+        "division": null,
+        "stateId": "48",
+        "logo": null,
+        "lon": -99.723,
+        "lat": 32.4536,
+        "years": [1933, 1934, 1935, 1936, 1937, 1938, 1939, 1940, 1941, 1942, 1946, 1947, 1948, 1949, 1950, 1951, 1952, 1953, 1954, 1955],
+        "left": [
+          {
+            "year": 1943,
+            "newConference": "UNK"
+          },
+          {
+            "year": 1956,
+            "newConference": "UNK"
+          }
+        ],
+        "rejoined": [
+          {
+            "year": 1946,
+            "oldConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "Texas Wesleyan University",
+        "abbreviation": "TWU",
+        "nickName": "Texas Wesleyan",
+        "division": null,
+        "stateId": "48",
+        "logo": null,
+        "lon": -97.3055,
+        "lat": 32.7326,
+        "years": [1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947],
+        "left": [
+          {
+            "year": 1948,
+            "newConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "Texas A&M University-Kingsville",
+        "abbreviation": "TAMUK",
+        "nickName": "Texas A&M-Kingsville",
+        "division": null,
+        "stateId": "48",
+        "logo": null,
+        "lon": -97.8686,
+        "lat": 27.5211,
+        "years": [1949, 1950, 1951, 1952, 1953],
+        "left": [
+          {
+            "year": 1954,
+            "newConference": "LSC"
+          }
+        ]
+      },
+      {
+        "school": "Eastern New Mexico University",
+        "abbreviation": "ENMU",
+        "nickName": "Eastern New Mexico",
+        "division": null,
+        "stateId": "35",
+        "logo": null,
+        "lon": -103.3452,
+        "lat": 34.1848,
+        "years": [1954, 1955],
+        "left": [
+          {
+            "year": 1956,
+            "newConference": "UNK"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "conference": "Lone Star Conference",
+    "abbreviation": "LSC",
+    "founded": 1931,
+    "history": null,
+    "disbanded": null,
+    "logo": null,
+    "primaryColor": "rgb(192, 95, 178, 0.90)",
+    "mapColor": "#C05FB2",
+    "headquarters": "Unknown",
+    "divisionIA": null,
+    "majorConference": {
+      "start": null,
+      "end": null
+    },
+    "names": [
+      {
+        "conference": "Lone Star Conference",
+        "abbreviation": "LSC",
+        "logo": null,
+        "primaryColor": "rgb(192, 95, 178, 0.90)",
+        "startYear": 1931,
+        "endYear": null
+      }
+    ],
+    "schools": [
+      {
+        "school": "Texas A&M University-Commerce",
+        "abbreviation": "TAMUC",
+        "nickName": "Texas A&M-Commerce",
+        "division": null,
+        "stateId": "48",
+        "logo": null,
+        "lon": -95.9083,
+        "lat": 33.2459,
+        "years": [1931, 1932, 1933, 1934, 1935, 1936, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947, 1948, 1949, 1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957, 1958, 1959, 1960, 1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021],
+        "left": [
+          {
+            "year": 2022,
+            "newConference": "Southland"
+          }
+        ]
+      },
+      {
+        "school": "University of North Texas",
+        "abbreviation": "UNT",
+        "nickName": "North Texas",
+        "division": null,
+        "stateId": "48",
+        "logo": "/images/schools/UniversityofNorthTexas.png",
+        "lon": -97.9,
+        "lat": 33.1235,
+        "years": [1932, 1933, 1934, 1935, 1936, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947, 1948],
+        "left": [
+          {
+            "year": 1949,
+            "newConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "Sam Houston State University",
+        "abbreviation": "SHSU",
+        "nickName": "Sam Houston",
+        "division": null,
+        "stateId": "48",
+        "logo": "/images/schools/SamHoustonStateUniversity.png",
+        "lon": -95.325,
+        "lat": 30.425,
+        "years": [1931, 1932, 1933, 1934, 1935, 1936, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947, 1948, 1949, 1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957, 1958, 1959, 1960, 1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983],
+        "left": [
+          {
+            "year": 1984,
+            "newConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "Texas State University",
+        "abbreviation": "TXST",
+        "nickName": "Texas State",
+        "division": null,
+        "stateId": "48",
+        "logo": "/images/schools/TexasStateUniversity.png",
+        "lon": -97.562,
+        "lat": 29.532,
+        "years": [1932, 1933, 1934, 1935, 1936, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947, 1948, 1949, 1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957, 1958, 1959, 1960, 1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983],
+        "left": [
+          {
+            "year": 1984,
+            "newConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "Stephen F. Austin State University",
+        "abbreviation": "SFA",
+        "nickName": "Stephen F. Austin",
+        "division": null,
+        "stateId": "48",
+        "logo": null,
+        "lon": -94.6552,
+        "lat": 31.6035,
+        "years": [1931, 1932, 1933, 1934, 1935, 1936, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947, 1948, 1949, 1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957, 1958, 1959, 1960, 1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983],
+        "left": [
+          {
+            "year": 1984,
+            "newConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "Angelo State University",
+        "abbreviation": "ASU",
+        "nickName": "Angelo State",
+        "division": null,
+        "stateId": "48",
+        "logo": null,
+        "lon": -100.4426,
+        "lat": 31.4358,
+        "years": [1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+      },
+      {
+        "school": "Eastern New Mexico University",
+        "abbreviation": "ENMU",
+        "nickName": "Eastern New Mexico",
+        "division": null,
+        "stateId": "35",
+        "logo": null,
+        "lon": -103.3452,
+        "lat": 34.1848,
+        "years": [1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+      },
+      {
+        "school": "Midwestern State University",
+        "abbreviation": "MSU",
+        "nickName": "Midwestern State",
+        "division": null,
+        "stateId": "48",
+        "logo": null,
+        "lon": -98.5442,
+        "lat": 33.8845,
+        "years": [1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+      },
+      {
+        "school": "Sul Ross State University",
+        "abbreviation": "SRSU",
+        "nickName": "Sul Ross",
+        "division": null,
+        "stateId": "48",
+        "logo": null,
+        "lon": -103.6614,
+        "lat": 30.3596,
+        "years": [1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957, 1958, 1959, 1960, 1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 2024, 2025, 2026],
+        "left": [
+          {
+            "year": 1976,
+            "newConference": "UNK"
+          }
+        ],
+        "rejoined": [
+          {
+            "year": 2024,
+            "oldConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "Texas A&M University-Kingsville",
+        "abbreviation": "TAMUK",
+        "nickName": "Texas A&M-Kingsville",
+        "division": null,
+        "stateId": "48",
+        "logo": null,
+        "lon": -97.8686,
+        "lat": 27.5211,
+        "years": [1954, 1955, 1956, 1957, 1958, 1959, 1960, 1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+      },
+      {
+        "school": "University of Texas Permian Basin",
+        "abbreviation": "UTPB",
+        "nickName": "UT Permian Basin",
+        "division": null,
+        "stateId": "48",
+        "logo": null,
+        "lon": -102.5008,
+        "lat": 31.8946,
+        "years": [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+      },
+      {
+        "school": "West Texas A&M University",
+        "abbreviation": "WTAMU",
+        "nickName": "WTAMU",
+        "division": null,
+        "stateId": "48",
+        "logo": "/images/schools/WestTexasA&MUniversity.png",
+        "lon": -101.9134,
+        "lat": 34.9844,
+        "years": [1986, 1987, 1988, 1989, 1990, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+        "left": [
+          {
+            "year": 1991,
+            "newConference": "UNK"
+          }
+        ],
+        "rejoined": [
+          {
+            "year": 1995,
+            "oldConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "Western New Mexico University",
+        "abbreviation": "WNMU",
+        "nickName": "Western New Mexico",
+        "division": null,
+        "stateId": "35",
+        "logo": null,
+        "lon": -108.2801,
+        "lat": 32.7701,
+        "years": [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+      },
+      {
+        "school": "Central Washington University",
+        "abbreviation": "CWU",
+        "nickName": "Central Washington",
+        "division": null,
+        "stateId": "53",
+        "logo": null,
+        "lon": -120.5478,
+        "lat": 46.9965,
+        "years": [2022, 2023, 2024, 2025, 2026]
+      },
+      {
+        "school": "Western Oregon University",
+        "abbreviation": "WOU",
+        "nickName": "Western Oregon",
+        "division": null,
+        "stateId": "41",
+        "logo": null,
+        "lon": -123.2335,
+        "lat": 44.8485,
+        "years": [2022, 2023, 2024, 2025, 2026]
+      },
+      {
+        "school": "Abilene Christian University",
+        "abbreviation": "ACU",
+        "nickName": "Abilene Christian",
+        "division": null,
+        "stateId": "48",
+        "logo": "/images/schools/AbileneChristianUniversity.png",
+        "lon": -99.4229,
+        "lat": 32.281,
+        "years": [1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012],
+        "left": [
+          {
+            "year": 2013,
+            "newConference": "Southland"
+          }
+        ]
+      },
+      {
+        "school": "University of Arkansas at Fort Smith",
+        "abbreviation": "UAFS",
+        "nickName": "Arkansas-Fort Smith",
+        "division": null,
+        "stateId": "05",
+        "logo": null,
+        "lon": -94.3985,
+        "lat": 35.3859,
+        "years": [2019, 2020, 2021, 2022, 2023, 2024],
+        "left": [
+          {
+            "year": 2025,
+            "newConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "University of Central Oklahoma",
+        "abbreviation": "UCO",
+        "nickName": "Central Oklahoma",
+        "division": null,
+        "stateId": "40",
+        "logo": null,
+        "lon": -97.4784,
+        "lat": 35.6528,
+        "years": [1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010],
+        "left": [
+          {
+            "year": 2011,
+            "newConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "East Central University",
+        "abbreviation": "ECU",
+        "nickName": "East Central",
+        "division": null,
+        "stateId": "40",
+        "logo": null,
+        "lon": -96.6786,
+        "lat": 34.7746,
+        "years": [1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011],
+        "left": [
+          {
+            "year": 2012,
+            "newConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "Harding University",
+        "abbreviation": "HU",
+        "nickName": "Harding",
+        "division": null,
+        "stateId": "05",
+        "logo": null,
+        "lon": -91.7362,
+        "lat": 35.2506,
+        "years": [1996, 1997, 1998, 1999, 2000],
+        "left": [
+          {
+            "year": 2001,
+            "newConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "University of Houston",
+        "abbreviation": "UH",
+        "nickName": "Houston",
+        "division": null,
+        "stateId": "48",
+        "logo": "/images/schools/UniversityofHouston.png",
+        "lon": -95.3414,
+        "lat": 29.7199,
+        "years": [1946, 1947, 1948],
+        "left": [
+          {
+            "year": 1949,
+            "newConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "Howard Payne University",
+        "abbreviation": "HP",
+        "nickName": "Howard Payne",
+        "division": null,
+        "stateId": "48",
+        "logo": null,
+        "lon": -98.9912,
+        "lat": 31.7093,
+        "years": [1957, 1958, 1959, 1960, 1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986],
+        "left": [
+          {
+            "year": 1987,
+            "newConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "University of the Incarnate Word",
+        "abbreviation": "UIW",
+        "nickName": "Incarnate Word",
+        "division": null,
+        "stateId": "48",
+        "logo": null,
+        "lon": -98.4794,
+        "lat": 29.4699,
+        "years": [2010, 2011, 2012],
+        "left": [
+          {
+            "year": 2013,
+            "newConference": "Southland"
+          }
+        ]
+      },
+      {
+        "school": "Lamar University",
+        "abbreviation": "Lamar",
+        "nickName": "Lamar",
+        "division": null,
+        "stateId": "48",
+        "logo": "/images/schools/LamarUniversity.png",
+        "lon": -94.0776,
+        "lat": 30.0532,
+        "years": [1951, 1952, 1953, 1954, 1955, 1956, 1957, 1958, 1959, 1960, 1961, 1962],
+        "left": [
+          {
+            "year": 1963,
+            "newConference": "Southland"
+          }
+        ]
+      },
+      {
+        "school": "McMurry University",
+        "abbreviation": "McM",
+        "nickName": "McMurry",
+        "division": null,
+        "stateId": "48",
+        "logo": null,
+        "lon": -99.723,
+        "lat": 32.4536,
+        "years": [1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972],
+        "left": [
+          {
+            "year": 1973,
+            "newConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "Northeastern State University",
+        "abbreviation": "NSU",
+        "nickName": "Northeastern State",
+        "division": null,
+        "stateId": "40",
+        "logo": null,
+        "lon": -94.9702,
+        "lat": 35.9151,
+        "years": [1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010],
+        "left": [
+          {
+            "year": 2011,
+            "newConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "Ouachita Baptist University",
+        "abbreviation": "OBU",
+        "nickName": "Ouachita Baptist",
+        "division": null,
+        "stateId": "05",
+        "logo": null,
+        "lon": -93.0538,
+        "lat": 34.1209,
+        "years": [1997, 1998, 1999],
+        "left": [
+          {
+            "year": 2000,
+            "newConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "Southeastern Oklahoma State University",
+        "abbreviation": "SOSU",
+        "nickName": "Southeastern Oklahoma State",
+        "division": null,
+        "stateId": "40",
+        "logo": null,
+        "lon": -96.3877,
+        "lat": 33.9937,
+        "years": [1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011],
+        "left": [
+          {
+            "year": 2012,
+            "newConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "Southwestern Oklahoma State University",
+        "abbreviation": "SWOSU",
+        "nickName": "Southwestern Oklahoma State",
+        "division": null,
+        "stateId": "40",
+        "logo": null,
+        "lon": -98.7026,
+        "lat": 35.5262,
+        "years": [1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010],
+        "left": [
+          {
+            "year": 2011,
+            "newConference": "UNK"
+          }
+        ]
+      },
+      {
+        "school": "Tarleton State University",
+        "abbreviation": "TSU",
+        "nickName": "Tarleton State",
+        "division": null,
+        "stateId": "48",
+        "logo": null,
+        "lon": -98.2011,
+        "lat": 32.2207,
+        "years": [1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
+        "left": [
+          {
+            "year": 1976,
+            "newConference": "UNK"
+          },
+          {
+            "year": 2020,
+            "newConference": "WAC"
+          }
+        ],
+        "rejoined": [
+          {
+            "year": 1995,
+            "oldConference": "UNK"
+          }
+        ]
       }
     ]
   }
