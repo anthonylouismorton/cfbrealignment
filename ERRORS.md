@@ -70,26 +70,17 @@ year/destination for that school's actual departure from *that* conference.
 
 ## 3. Worth a human double-check (plausible history, not clear-cut)
 
-These didn't fit the "obviously wrong" bucket above, but the gaps are large
-enough to be worth verifying against a source:
+Cumberland University's SIAA gap (previously flagged here) has been resolved
+— confirmed against Cumberland's own athletics site that the program dropped
+football after 1906 and didn't resume until 1912, outside the SIAA. Data
+updated accordingly.
 
-- **Cumberland University (SIAA)** — active 1896–1906, then a `left` entry
-  says it departed in 1921 (15-year gap, no activity recorded in between) for
-  a generic "FBS" independent status.
-- **University of Iowa (Big 8)** — active only 1907–1908, `left` says 1912
-  for Big Ten (4-year gap). This may be real history — Iowa was suspended
-  from the Western Conference around 1907–1908 — but worth confirming the
-  1912 date.
-- **Auburn University (SIAA)** — active through 1920, `left` says 1922 for
-  SOCON (1-year gap). SOCON was founded in 1921, so this may just reflect a
-  transitional year.
-
-## 4. Broken reference
+## 4. Broken reference — RESOLVED
 
 - **Southwestern University (SWC)** — its `left` entry names `"TIAA"` as the
-  destination conference, but no conference with that abbreviation exists
-  anywhere in the dataset. Any UI text built from this field (e.g. "joins
-  TIAA") will point at nothing.
+  destination conference. This used to point at nothing; **TIAA has since
+  been added as a full conference** (see § 7 below), so the reference now
+  resolves correctly.
 
 ## 5. Logos
 
@@ -115,10 +106,134 @@ enough to be worth verifying against a source:
 
 ---
 
+## 7. New: Texas Intercollegiate Athletic Association (TIAA) added
+
+Added as a full conference (1909–1932, `mapColor: #1F78B4`) to resolve the
+broken reference in § 4. Built from the TIAA's own Wikipedia page plus
+season-by-season football team pages for individual schools. 16 of 21
+schools have solid or reasonably-bracketed years with correct `left`/
+`rejoined` entries. The rest have real, sourced gaps rather than guessed
+dates:
+
+| School | Status |
+|---|---|
+| Stephen F. Austin State University | `years: []` — no join year documented anywhere found; confirmed a member by 1929 and a 1931 Lone Star Conference founder, but the start is a total unknown |
+| Texas A&M University–Commerce (East Texas at the time) | `years: []` — same situation as Stephen F. Austin: confirmed member by 1929, no documented join year |
+| Hardin-Simmons University (Simmons University at the time) | `years: []` — confirmed a member by the mid-1920s and part of the 1925 five-school split to the (untracked) Texas Conference, but no join year found |
+| Texas A&M University–Kingsville (Texas A&I at the time) | `years: []` — Wikipedia's own pages contradict each other here: the program's conference-history infobox says only 1930, but the 1932 season article lists TIAA as that year's conference too, and other sources claim TIAA titles in both 1931 and 1932. Not resolved, flagged rather than picked arbitrarily |
+| Daniel Baker College | `years: [1924, 1925, 1926]` — directly confirmed via three individual season pages (1924, 1925, and the 1926 TIAA championship). No page exists for 1922, 1923, or 1927, so `left` is set to 1927 as a placeholder, but the true join year (pre-1924) and actual departure are still unconfirmed |
+
+Also note: the destinations the 1931 Lone Star Conference founders moved to
+still aren't tracked in this dataset (same situation TIAA itself was in
+before this fix) — their `left` entries use `"FBS"` as a generic placeholder.
+**The four schools that left TIAA for the Texas Conference in 1926
+(Southwestern, Austin College, Trinity, Howard Payne) have since been
+updated to point at `"TXCON"` instead**, now that it's tracked (see § 8).
+
+## 8. New: Texas Conference (TXCON) added
+
+Added as a full conference (1926–1956, `mapColor: #925934`) — the
+destination the five church-affiliated schools split off to when they left
+TIAA in 1925/1926. Built the same way as TIAA: the conference's own
+Wikipedia page plus individual school season/program pages. This one had
+noticeably more genuine contradiction *between sources that should agree*,
+not just gaps — flagged rather than picked a side on:
+
+
+
+
+- ~~**Eastern New Mexico's join year**...~~ **Confirmed.** Eastern New
+  Mexico's own season-by-season schedule shows games against both other
+  Texas Conference members that year (Howard Payne and McMurry — the only
+  two other schools left in the conference by 1954), directly verifying
+  football participation started in 1954, not just track.
+
+All 12 schools have years/`left`/`rejoined` entries (none left fully blank
+this time), but several of those years rest on the judgment calls above
+rather than clean unambiguous sourcing — worth a second look before treating
+this one as final the way TIAA's high-confidence entries can be.
+
+## 9. New: Lone Star Conference (LSC) added — still active, largest scope yet
+
+Added as a conference founded 1931, **`disbanded: null`** — unlike TIAA and
+Texas Conference, this one is still running today (18 full members plus 2
+football-only affiliates as of 2025). This closes out the `"FBS"`
+placeholders that were left in TIAA (Sam Houston, North Texas, Texas State,
+all departing 1931) and Texas Conference (Texas A&M-Kingsville, departing
+1954) — those four now point at `"LSC"` directly.
+
+**Color**: `#C05FB2` (magenta/orchid) — a genuinely new addition to the
+palette, not a reuse. LSC's 1931–present span is long enough that *every one*
+of the 14 existing map colors gets used by something else at some point
+within it, so nothing could be safely reused this time.
+
+**Scope note — only football-playing members included.** The LSC's current
+"18 full members" is an all-sports count; only 10 of those 18 actually field
+football (the rest — Dallas Baptist, Lubbock Christian, Oklahoma Christian,
+St. Edward's, St. Mary's, TAMIU, UT Dallas, UT Tyler, Texas Woman's — have no
+football program at all, confirmed via each school's own page). **Cameron**
+is a current all-sports LSC member but dropped football after 1992 and never
+brought it back — excluded here for the same reason. Two future members
+(Texas A&M-Texarkana, Texas Wesleyan, both joining 2026–2028) aren't
+included since they're beyond this dataset's 2026 horizon and haven't
+actually joined yet.
+
+**30 schools added.** This research pass surfaced far more cross-source
+contradiction than TIAA or Texas Conference did — nearly every school that
+went through the 1990s Oklahoma/Arkansas expansion wave has a 1–2 year
+discrepancy between the LSC's own summary Wikipedia page and that school's
+individual football program page. Convention used throughout: when the two
+disagree, the school's own team page wins (same reasoning as before — it's
+consistently been the more reliable source type across all three of these
+conference buildouts). Every case where that rule was applied is listed
+below rather than silently absorbed:
+
+| School | Contradiction | Resolution |
+|---|---|---|
+| North Texas | Join 1931 (LSC page) vs. 1932 (team page); leave 1949 vs. 1948 | Used team page: 1932–1948 |
+| Southwest Texas State (Texas State) | Join 1931 vs. 1932 | Used team page: 1932– |
+| Sul Ross State | First departure 1976 (LSC page) vs. 1979 (LSC standings-table article) — **two LSC-side sources disagree with each other**, not a team-page conflict | Used 1976 (main LSC page); genuinely unresolved which is right |
+| Midwestern State | LSC page claims an original 1948–49 stint; the school's own conference-affiliations table shows Texas Conference (1947–48) and Gulf Coast Conference (1949–56) instead — **LSC membership doesn't start until 1995** | Excluded the 1948–49 claim entirely as contradicted, not just imprecise |
+| Abilene Christian | Leave 2013 (LSC page) vs. 2012 (team page) | Used team page: through 2012 |
+| Central Oklahoma | Join 1987 vs. 1988; leave 2011 vs. 2010 | Used team page: 1988–2010 |
+| East Central (OK) | Join 1995 vs. 1997 | Used team page: 1997– |
+| Harding | Join 1995 (LSC page) vs. ~1996 (secondary source); LSC page also claims a second 2012–2015 affiliate stint **that no football source corroborates at all** | Used 1996–2000 only; second stint not modeled |
+| Houston | Join 1945 vs. 1946; leave 1949 vs. 1948 | Used team page: 1946–1948 |
+| Howard Payne | Join 1956 vs. 1957; leave 1987 vs. 1986; **LSC page lists the 1987 destination as "TIAA"** | Used team page years (1957–1986); destination set to `UNK`, not `TIAA` — this is almost certainly the *other*, unrelated 1976–1996 small-college conference that happens to share the TIAA name (see the note under TIAA's own section above), not the 1909–1932 conference this dataset tracks. Linking it to our real `TIAA` entry would have been factually wrong |
+| Incarnate Word | Leave 2013 vs. 2012 | Used team page: through 2012 |
+| Lamar | Leave 1965 (LSC page) vs. 1962 (team page) — the largest discrepancy found, a 3-year gap | Used team page: through 1962 |
+| McMurry | Join 1964 vs. 1965; LSC page also claims a second 2013–2015 affiliate stint that the team's own page contradicts down to a single, itself-uncertain 2014 season | Used team page for main stint (1965–1972); second stint not modeled |
+| Northeastern State | Join 1995 vs. 1997; leave 2011 vs. 2010 | Used team page: 1997–2010 |
+| Ouachita Baptist | Join 1995 vs. 1997; leave 2000 vs. 1999 | Used team page: 1997–1999 |
+| Southwestern Oklahoma State | Join 1996 vs. 1997 | Used team page's own direct quote: "1997–2010" |
+| Tarleton State | LSC page lists the school's 1976 departure destination as "TIAA" | Same issue and same resolution as Howard Payne above — set to `UNK`, not linked to the real TIAA entry |
+
+**Not modeled at all (too uncertain to include, not just imprecise):**
+- **Trinity University's LSC stint** (a 1932–1934, 1946–1949 stretch per search
+  corroboration only) — still skipped for now, but the reasoning behind
+  skipping it has changed. This was originally passed on partly because
+  Trinity's Texas Conference entry looked contradicted -- it wasn't (see the
+  correction under § 8 above; that was a wrong-school citation, not a real
+  conflict). Trinity's Texas Conference record is now fully resolved and
+  actually lines up with this LSC stretch reasonably well (TXCON: left 1933,
+  rejoined 1934, left again 1946 to an unstated destination -- which this
+  1946–1949 LSC window would neatly explain). Worth adding if asked; not
+  added unprompted since this LSC-side date range is still only
+  search-corroborated, not sourced from a dedicated table the way the fix
+  above was.
+- **Southeastern Oklahoma State's exact join year** — no dedicated
+  conference-affiliations table found anywhere; only indirectly triangulated
+  to roughly 1996. Included with `1996` as the best available estimate, but
+  confidence is genuinely low (unlike every other school in this table,
+  which have real per-school sourcing).
+- **Western New Mexico's join year (2016)** — corroborated only indirectly,
+  no full conference-history table found. Included as-is but flagged as the
+  weakest-sourced "current member" entry.
+
 ## Clean / no issues found
 
 - No duplicate conference `abbreviation` values.
 - No schools with out-of-range coordinates, missing `stateId`, or
   unsorted/duplicated `years[]`.
 - No `left[]` entries pointing at a conference abbreviation that doesn't
-  exist, other than the one TIAA case above.
+  exist.
