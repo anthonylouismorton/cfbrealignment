@@ -13,6 +13,7 @@ import MobileLegend from './mobile/MobileLegend';
 import ReactMap from './components/map/ReactMap';
 import { useSelector, useDispatch } from 'react-redux';
 import { setYear } from '@/redux/features/yearSlices';
+import { MIN_YEAR, MAX_YEAR } from '@/app/constants';
 import { setMapHeight, closeFullscreen, openFullscreen } from '@/redux/features/layoutSlices';
 import { setMapInfo } from '@/redux/features/mapSlices';
 import { setLocalStorage, getLocalStorage } from './functions/handleLocalStorage';
@@ -79,9 +80,9 @@ function Main() {
     window.addEventListener('resize', handleResize);
   
     const handleKeyDown = (e) => {
-      if (e.keyCode === 37 && year > 1891) {
+      if (e.keyCode === 37 && year > MIN_YEAR) {
         dispatch(setYear(year - 1));
-      } else if (e.keyCode === 39 && year < 2026) {
+      } else if (e.keyCode === 39 && year < MAX_YEAR) {
         dispatch(setYear(year + 1));
       };
     };

@@ -7,12 +7,13 @@ import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import { useSelector, useDispatch  } from 'react-redux';
 import { setYear } from '@/redux/features/yearSlices';
+import { MIN_YEAR, MAX_YEAR } from '@/app/constants';
 
 const iOSBoxShadow =
   '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)';
 
   const marks = [
-    { value: 1891, label: '1891' }, 
+    { value: MIN_YEAR, label: String(MIN_YEAR) }, 
     { value: 1905, label: '1905' }, 
     { value: 1915, label: '1915' }, 
     { value: 1925, label: '1925' },
@@ -25,7 +26,7 @@ const iOSBoxShadow =
     { value: 1995, label: '1995' },
     { value: 2005, label: '2005' },
     { value: 2015, label: '2015' },
-    { value: 2026, label: '2026' }
+    { value: MAX_YEAR, label: String(MAX_YEAR) }
   ];
 
   const CustomSlider = styled(Slider)(({ theme }) => ({
@@ -141,13 +142,13 @@ export default function YearSlider() {
   };
   const handlePrevYear = () => {
     const newYear = year - 1;
-    if (newYear >= 1891) {
+    if (newYear >= MIN_YEAR) {
       dispatch(setYear(newYear));
     }
   };
   const handleNextYear = () => {
     const newYear = year + 1;
-    if (newYear <= 2026) {
+    if (newYear <= MAX_YEAR) {
       dispatch(setYear(newYear));
     }
   };
@@ -161,8 +162,8 @@ export default function YearSlider() {
         aria-label="Custom marks"
         value={year}
         valueLabelDisplay="auto"
-        min={1891}
-        max={2026}
+        min={MIN_YEAR}
+        max={MAX_YEAR}
         marks={marks}
         onChange={handleSliderChange}
       />

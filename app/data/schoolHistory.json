@@ -25,7 +25,7 @@
       {
         "conference": "Sun Belt",
         "startYear": 2014,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -55,7 +55,7 @@
       {
         "conference": "Big 12",
         "startYear": 2024,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -85,7 +85,7 @@
       {
         "conference": "Sun Belt",
         "startYear": 2001,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -110,7 +110,7 @@
       {
         "conference": "SEC",
         "startYear": 1933,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -125,7 +125,7 @@
       {
         "conference": "MAC",
         "startYear": 1975,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -145,7 +145,7 @@
       {
         "conference": "Big 12",
         "startYear": 1996,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -175,7 +175,7 @@
       {
         "conference": "Pac-12",
         "startYear": 2026,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -195,7 +195,7 @@
       {
         "conference": "ACC",
         "startYear": 2005,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -210,7 +210,7 @@
       {
         "conference": "MAC",
         "startYear": 1952,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -260,7 +260,7 @@
       {
         "conference": "Big 12",
         "startYear": 2023,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -275,7 +275,7 @@
       {
         "conference": "Ivy",
         "startYear": 1956,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -325,7 +325,7 @@
       {
         "conference": "Pac-12",
         "startYear": 2026,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -374,6 +374,21 @@
       }
     ]
   },
+  "California State University, Sacramento": {
+    "abbreviation": "Sac St",
+    "nickName": "Sac State",
+    "stateId": "06",
+    "logo": "/images/schools/CaliforniaStateUniversity,Sacramento.png",
+    "lon": -121.4246,
+    "lat": 38.5608,
+    "conferenceHistory": [
+      {
+        "conference": "MAC",
+        "startYear": 2026,
+        "endYear": 2028
+      }
+    ]
+  },
   "Case Western Reserve University": {
     "abbreviation": "CWRU",
     "nickName": "Case Western Reserve",
@@ -400,7 +415,7 @@
       {
         "conference": "MAC",
         "startYear": 1975,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -435,7 +450,7 @@
       {
         "conference": "ACC",
         "startYear": 1953,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -450,7 +465,7 @@
       {
         "conference": "Sun Belt",
         "startYear": 2017,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -480,7 +495,7 @@
       {
         "conference": "RMAC",
         "startYear": 1909,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -515,7 +530,7 @@
       {
         "conference": "Pac-12",
         "startYear": 2026,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -530,7 +545,7 @@
       {
         "conference": "Ivy",
         "startYear": 1956,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -545,7 +560,7 @@
       {
         "conference": "Ivy",
         "startYear": 1956,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -590,7 +605,7 @@
       {
         "conference": "Ivy",
         "startYear": 1956,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -635,7 +650,7 @@
       {
         "conference": "ACC",
         "startYear": 1953,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -655,7 +670,7 @@
       {
         "conference": "AAC",
         "startYear": 2014,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -695,7 +710,7 @@
       {
         "conference": "MAC",
         "startYear": 1975,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -720,7 +735,7 @@
       {
         "conference": "AAC",
         "startYear": 2023,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -740,7 +755,7 @@
       {
         "conference": "C-USA",
         "startYear": 2013,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -755,7 +770,7 @@
       {
         "conference": "ACC",
         "startYear": 1991,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -805,7 +820,7 @@
       {
         "conference": "ACC",
         "startYear": 1979,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -820,7 +835,7 @@
       {
         "conference": "Sun Belt",
         "startYear": 2014,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -835,7 +850,7 @@
       {
         "conference": "Sun Belt",
         "startYear": 2014,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -885,7 +900,7 @@
       {
         "conference": "Ivy",
         "startYear": 1956,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -905,7 +920,7 @@
       {
         "conference": "MWC",
         "startYear": 2012,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -950,7 +965,7 @@
       {
         "conference": "Big Ten",
         "startYear": 1900,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -970,7 +985,7 @@
       {
         "conference": "Big 12",
         "startYear": 1996,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -985,7 +1000,7 @@
       {
         "conference": "C-USA",
         "startYear": 2023,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1000,7 +1015,12 @@
       {
         "conference": "Sun Belt",
         "startYear": 2022,
-        "endYear": 2026
+        "endYear": 2027
+      },
+      {
+        "conference": "AAC",
+        "startYear": 2028,
+        "endYear": 2028
       }
     ]
   },
@@ -1020,7 +1040,7 @@
       {
         "conference": "Big 12",
         "startYear": 1996,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1035,7 +1055,7 @@
       {
         "conference": "C-USA",
         "startYear": 2024,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1050,7 +1070,7 @@
       {
         "conference": "MAC",
         "startYear": 1951,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1080,7 +1100,7 @@
       {
         "conference": "C-USA",
         "startYear": 2023,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1110,7 +1130,7 @@
       {
         "conference": "SEC",
         "startYear": 1933,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1140,7 +1160,12 @@
       {
         "conference": "C-USA",
         "startYear": 2013,
-        "endYear": 2026
+        "endYear": 2025
+      },
+      {
+        "conference": "Sun Belt",
+        "startYear": 2026,
+        "endYear": 2028
       }
     ]
   },
@@ -1170,7 +1195,7 @@
       {
         "conference": "Sun Belt",
         "startYear": 2022,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1215,7 +1240,7 @@
       {
         "conference": "MAC",
         "startYear": 1947,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1230,7 +1255,7 @@
       {
         "conference": "Big Ten",
         "startYear": 1950,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1250,7 +1275,7 @@
       {
         "conference": "C-USA",
         "startYear": 2013,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1275,7 +1300,22 @@
       {
         "conference": "SEC",
         "startYear": 1933,
-        "endYear": 2026
+        "endYear": 2028
+      }
+    ]
+  },
+  "Missouri State University": {
+    "abbreviation": "MSU",
+    "nickName": "Missouri State",
+    "stateId": "29",
+    "logo": "/images/schools/MissouriStateUniversity.png",
+    "lon": -93.2806,
+    "lat": 37.1985,
+    "conferenceHistory": [
+      {
+        "conference": "C-USA",
+        "startYear": 2025,
+        "endYear": 2028
       }
     ]
   },
@@ -1335,7 +1375,7 @@
       {
         "conference": "C-USA",
         "startYear": 2023,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1355,7 +1395,22 @@
       {
         "conference": "ACC",
         "startYear": 1953,
-        "endYear": 2026
+        "endYear": 2028
+      }
+    ]
+  },
+  "North Dakota State University": {
+    "abbreviation": "NDSU",
+    "nickName": "NDSU",
+    "stateId": "38",
+    "logo": "/images/schools/NorthDakotaStateUniversity.png",
+    "lon": -96.8003,
+    "lat": 46.8977,
+    "conferenceHistory": [
+      {
+        "conference": "MWC",
+        "startYear": 2026,
+        "endYear": 2028
       }
     ]
   },
@@ -1380,7 +1435,12 @@
       {
         "conference": "MAC",
         "startYear": 1997,
-        "endYear": 2026
+        "endYear": 2025
+      },
+      {
+        "conference": "MWC",
+        "startYear": 2026,
+        "endYear": 2028
       }
     ]
   },
@@ -1395,7 +1455,7 @@
       {
         "conference": "Big Ten",
         "startYear": 1896,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1425,7 +1485,7 @@
       {
         "conference": "Big Ten",
         "startYear": 1912,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1440,7 +1500,7 @@
       {
         "conference": "MAC",
         "startYear": 1947,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1475,7 +1535,7 @@
       {
         "conference": "Big 12",
         "startYear": 1996,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1495,7 +1555,7 @@
       {
         "conference": "Sun Belt",
         "startYear": 2022,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1510,7 +1570,7 @@
       {
         "conference": "Pac-12",
         "startYear": 1915,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1525,7 +1585,7 @@
       {
         "conference": "Big Ten",
         "startYear": 1993,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1555,7 +1615,7 @@
       {
         "conference": "Ivy",
         "startYear": 1956,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1570,7 +1630,7 @@
       {
         "conference": "Big Ten",
         "startYear": 1896,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1615,7 +1675,7 @@
       {
         "conference": "AAC",
         "startYear": 2023,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1640,7 +1700,7 @@
       {
         "conference": "Big Ten",
         "startYear": 2014,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1670,7 +1730,7 @@
       {
         "conference": "C-USA",
         "startYear": 2023,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1700,7 +1760,7 @@
       {
         "conference": "Pac-12",
         "startYear": 2026,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1725,7 +1785,7 @@
       {
         "conference": "MWC",
         "startYear": 2013,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1810,7 +1870,7 @@
       {
         "conference": "ACC",
         "startYear": 2024,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1845,7 +1905,7 @@
       {
         "conference": "ACC",
         "startYear": 2024,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1860,7 +1920,7 @@
       {
         "conference": "MAC",
         "startYear": 1999,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1880,7 +1940,7 @@
       {
         "conference": "ACC",
         "startYear": 2013,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1905,7 +1965,7 @@
       {
         "conference": "AAC",
         "startYear": 2013,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1930,7 +1990,7 @@
       {
         "conference": "SEC",
         "startYear": 2012,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1965,7 +2025,7 @@
       {
         "conference": "Big 12",
         "startYear": 2012,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -1985,7 +2045,12 @@
       {
         "conference": "Sun Belt",
         "startYear": 2013,
-        "endYear": 2026
+        "endYear": 2025
+      },
+      {
+        "conference": "Pac-12",
+        "startYear": 2026,
+        "endYear": 2028
       }
     ]
   },
@@ -2010,7 +2075,7 @@
       {
         "conference": "Big 12",
         "startYear": 1996,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2025,7 +2090,7 @@
       {
         "conference": "MAC",
         "startYear": 1952,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2060,7 +2125,7 @@
       {
         "conference": "Sun Belt",
         "startYear": 2017,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2105,7 +2170,7 @@
       {
         "conference": "AAC",
         "startYear": 2014,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2125,7 +2190,7 @@
       {
         "conference": "MWC",
         "startYear": 1999,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2140,7 +2205,7 @@
       {
         "conference": "AAC",
         "startYear": 2024,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2155,7 +2220,7 @@
       {
         "conference": "AAC",
         "startYear": 2015,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2170,7 +2235,7 @@
       {
         "conference": "MAC",
         "startYear": 1992,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2200,7 +2265,7 @@
       {
         "conference": "SEC",
         "startYear": 1933,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2225,7 +2290,7 @@
       {
         "conference": "AAC",
         "startYear": 2023,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2255,7 +2320,7 @@
       {
         "conference": "Big 12",
         "startYear": 2024,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2275,7 +2340,7 @@
       {
         "conference": "SEC",
         "startYear": 1991,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2295,7 +2360,7 @@
       {
         "conference": "ACC",
         "startYear": 2024,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2315,7 +2380,7 @@
       {
         "conference": "Big Ten",
         "startYear": 2024,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2355,7 +2420,7 @@
       {
         "conference": "Big 12",
         "startYear": 2023,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2410,7 +2475,7 @@
       {
         "conference": "Big 12",
         "startYear": 2023,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2450,7 +2515,7 @@
       {
         "conference": "Big 12",
         "startYear": 2024,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2485,7 +2550,7 @@
       {
         "conference": "C-USA",
         "startYear": 2025,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2545,7 +2610,7 @@
       {
         "conference": "SEC",
         "startYear": 1933,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2575,7 +2640,7 @@
       {
         "conference": "SEC",
         "startYear": 1933,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2610,7 +2675,7 @@
       {
         "conference": "Big 12",
         "startYear": 2023,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2650,7 +2715,7 @@
       {
         "conference": "Big Ten",
         "startYear": 1896,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2700,7 +2765,7 @@
       {
         "conference": "Big 12",
         "startYear": 1996,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2735,7 +2800,7 @@
       {
         "conference": "SEC",
         "startYear": 1933,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2760,7 +2825,7 @@
       {
         "conference": "Sun Belt",
         "startYear": 2001,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2775,7 +2840,7 @@
       {
         "conference": "Sun Belt",
         "startYear": 2001,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2810,7 +2875,7 @@
       {
         "conference": "ACC",
         "startYear": 2014,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2835,7 +2900,7 @@
       {
         "conference": "Big Ten",
         "startYear": 2014,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2860,7 +2925,7 @@
       {
         "conference": "AAC",
         "startYear": 2013,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2880,7 +2945,7 @@
       {
         "conference": "ACC",
         "startYear": 2004,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2900,7 +2965,7 @@
       {
         "conference": "Big Ten",
         "startYear": 1917,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2915,7 +2980,7 @@
       {
         "conference": "Big Ten",
         "startYear": 1896,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2950,7 +3015,7 @@
       {
         "conference": "SEC",
         "startYear": 1933,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -2980,7 +3045,7 @@
       {
         "conference": "SEC",
         "startYear": 2012,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3045,7 +3110,7 @@
       {
         "conference": "Big Ten",
         "startYear": 2011,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3070,7 +3135,7 @@
       {
         "conference": "MWC",
         "startYear": 1999,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3095,7 +3160,7 @@
       {
         "conference": "MWC",
         "startYear": 2012,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3125,7 +3190,7 @@
       {
         "conference": "MWC",
         "startYear": 1999,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3150,7 +3215,7 @@
       {
         "conference": "ACC",
         "startYear": 1953,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3170,7 +3235,7 @@
       {
         "conference": "AAC",
         "startYear": 2023,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3205,7 +3270,7 @@
       {
         "conference": "AAC",
         "startYear": 2023,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3265,7 +3330,7 @@
       {
         "conference": "SEC",
         "startYear": 2024,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3285,7 +3350,7 @@
       {
         "conference": "Big Ten",
         "startYear": 2024,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3300,7 +3365,7 @@
       {
         "conference": "Ivy",
         "startYear": 1956,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3320,7 +3385,7 @@
       {
         "conference": "ACC",
         "startYear": 2013,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3340,7 +3405,7 @@
       {
         "conference": "Sun Belt",
         "startYear": 2017,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3365,7 +3430,7 @@
       {
         "conference": "SEC",
         "startYear": 1991,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3390,7 +3455,7 @@
       {
         "conference": "AAC",
         "startYear": 2013,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3410,7 +3475,7 @@
       {
         "conference": "Big Ten",
         "startYear": 2024,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3430,7 +3495,7 @@
       {
         "conference": "Sun Belt",
         "startYear": 2022,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3465,7 +3530,7 @@
       {
         "conference": "SEC",
         "startYear": 1933,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3505,7 +3570,7 @@
       {
         "conference": "SEC",
         "startYear": 2024,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3530,7 +3595,12 @@
       {
         "conference": "C-USA",
         "startYear": 2005,
-        "endYear": 2026
+        "endYear": 2025
+      },
+      {
+        "conference": "MWC",
+        "startYear": 2026,
+        "endYear": 2028
       }
     ]
   },
@@ -3595,7 +3665,7 @@
       {
         "conference": "AAC",
         "startYear": 2014,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3635,7 +3705,7 @@
       {
         "conference": "Big 12",
         "startYear": 2024,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3655,7 +3725,7 @@
       {
         "conference": "ACC",
         "startYear": 1953,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3675,7 +3745,7 @@
       {
         "conference": "Big Ten",
         "startYear": 2024,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3690,7 +3760,7 @@
       {
         "conference": "Big Ten",
         "startYear": 1896,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3720,7 +3790,7 @@
       {
         "conference": "MWC",
         "startYear": 1999,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3755,7 +3825,12 @@
       {
         "conference": "MWC",
         "startYear": 2013,
-        "endYear": 2026
+        "endYear": 2025
+      },
+      {
+        "conference": "Pac-12",
+        "startYear": 2026,
+        "endYear": 2028
       }
     ]
   },
@@ -3780,7 +3855,7 @@
       {
         "conference": "SEC",
         "startYear": 1933,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3820,7 +3895,7 @@
       {
         "conference": "ACC",
         "startYear": 2004,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3840,7 +3915,7 @@
       {
         "conference": "ACC",
         "startYear": 1953,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3885,7 +3960,7 @@
       {
         "conference": "Pac-12",
         "startYear": 1917,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3950,7 +4025,7 @@
       {
         "conference": "Big 12",
         "startYear": 2012,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3965,7 +4040,7 @@
       {
         "conference": "RMAC",
         "startYear": 1925,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -3985,7 +4060,7 @@
       {
         "conference": "C-USA",
         "startYear": 2014,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -4000,7 +4075,7 @@
       {
         "conference": "MAC",
         "startYear": 1947,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   },
@@ -4030,7 +4105,7 @@
       {
         "conference": "Ivy",
         "startYear": 1956,
-        "endYear": 2026
+        "endYear": 2028
       }
     ]
   }

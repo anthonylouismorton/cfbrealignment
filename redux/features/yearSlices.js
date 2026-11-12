@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { MIN_YEAR } from '@/app/constants';
 
 export const year = createSlice({
   name: "year",
-  initialState: 1891,
+  initialState: MIN_YEAR,
   reducers: {
     setYear: (state, action) => {
       return action.payload;

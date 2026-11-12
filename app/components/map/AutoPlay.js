@@ -5,6 +5,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import ReplayIcon from '@mui/icons-material/Replay';
 import { useSelector, useDispatch } from 'react-redux';
 import { setYear } from '@/redux/features/yearSlices';
+import { MIN_YEAR, MAX_YEAR } from '@/app/constants';
 
 const SPEEDS = {
   slow: { label: 'S', title: 'Slow', changeTime: 4000, idleTime: 1200 },
@@ -35,7 +36,7 @@ export default function Autoplay(){
     setStart(false);
   };
   const handleReplay = () => {
-    dispatch(setYear(1891));
+    dispatch(setYear(MIN_YEAR));
     setStart(true);
     setShowReplay(false);
   };
@@ -47,7 +48,7 @@ export default function Autoplay(){
     if(conferenceChanges.length === 0){
       time = SPEEDS[speed].idleTime
     }
-    if (start && nextYear < 2026) {
+    if (start && nextYear <= MAX_YEAR) {
       timeIntervalRef.current = setInterval(() => {
         dispatch(setYear(year + 1));
       }, time);
@@ -55,7 +56,7 @@ export default function Autoplay(){
     else if (!start) {
       clearInterval(timeIntervalRef.current);
     }
-    else if(nextYear === 2026){
+    else if(nextYear > MAX_YEAR){
       clearInterval(timeIntervalRef.current);
       setStart(false)
       setShowReplay(true)

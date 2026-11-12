@@ -4,6 +4,7 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import { useSelector, useDispatch } from 'react-redux';
 import { setYear } from '@/redux/features/yearSlices';
+import { MIN_YEAR, MAX_YEAR } from '@/app/constants';
 
 const iOSBoxShadow =
   '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)';
@@ -108,8 +109,8 @@ export default function YearSlider() {
       <CustomSlider
         value={year}
         valueLabelDisplay="auto"
-        min={1891}
-        max={2025}
+        min={MIN_YEAR}
+        max={MAX_YEAR}
         onChange={handleSliderChange}
       />
     </Box>
